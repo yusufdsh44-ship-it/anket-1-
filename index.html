@@ -921,7 +921,8 @@
         const state = {
             allSurveys: [],
             processedData: null,
-            currentOpenResponses: null
+            currentOpenResponses: null,
+            charts: {}
         };
 
         const utils = {
@@ -2671,9 +2672,555 @@
                 }).join('');
             }
         };
+        
+        const dashboardManager = {
+            renderDashboard: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) return;
+                
+                dashboardManager.renderMetrics();
+                dashboardManager.renderMudurlukBarChart();
+                dashboardManager.renderTopBottomMudurlukler();
+                dashboardManager.renderTemaRadarChart();
+                dashboardManager.renderSosyalMedya();
+                dashboardManager.renderCriticalFindings();
+                dashboardManager.renderAcikUcluSummary();
+                dashboardManager.renderRuhSagligi();
+            },
+            
+            renderMetrics: () => {
+                const container = document.getElementById('dashboardMetrics');
+                if (!container) return;
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
+                const totalKatilan = state.allSurveys.length;
+                const katilimOrani = utils.formatPercentage((totalKatilan / totalPersonel) * 100);
+                
+                const genelMemnuniyet = tableRenderer.calculateGenelBelediyeTemalar();
+                const avgMemnuniyet = utils.formatPercentage(
+                    Object.values(genelMemnuniyet).reduce((sum, val) => sum + parseFloat(val), 0) / 10
+                );
+                
+                const workload = utils.calculateAverage(allValidSurveys, THEME_QUESTIONS.hizmetTalepYogunlugu);
+                const support = utils.calculateAverage(allValidSurveys, 
+                    [...THEME_QUESTIONS.yoneticilerleIliskiler, ...THEME_QUESTIONS.calismaArkadaslari, ...THEME_QUESTIONS.kurumIciIletisim]
+                );
+                const denge = utils.formatPercentage(parseFloat(support) - parseFloat(workload));
+                
+                const sosyalMedya = utils.calculateSocialMedia(allValidSurveys);
+                
+                container.innerHTML = `
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
+                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Toplam Katılım</div>
+                            <div style="font-size: 32px; font-weight: 700;">${katilimOrani}%</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">${totalKatilan}/${totalPersonel} kişi</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 12px; color: white;">
+                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Genel Memnuniyet</div>
+                            <div style="font-size: 32px; font-weight: 700;">${avgMemnuniyet}%</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">10 tema ortalaması</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 12px; color: white;">
+                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">İş Yükü-Destek Dengesi</div>
+                            <div style="font-size: 32px; font-weight: 700;">${denge >= 0 ? '+' : ''}${denge}%</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">${denge >= 0 ? 'Pozitif denge' : 'Negatif denge'}</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 20px; border-radius: 12px; color: white;">
+                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Sosyal Medya Takip</div>
+                            <div style="font-size: 32px; font-weight: 700;">${sosyalMedya.toplam}%</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Genel takip oranı</div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderMudurlukBarChart: () => {
+                const canvas = document.getElementById('mudurlukBarChart');
+                if (!canvas) return;
+                
+                if (state.charts.mudurlukBar) {
+                    state.charts.mudurlukBar.destroy();
+                }
+                
+                const mudurlukler = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.genelMemnuniyet) - parseFloat(a.genelMemnuniyet));
+                
+                const ctx = canvas.getContext('2d');
+                state.charts.mudurlukBar = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: mudurlukler.map(m => `#${m.kod}`),
+                        datasets: [{
+                            label: 'Genel Memnuniyet (%)',
+                            data: mudurlukler.map(m => parseFloat(m.genelMemnuniyet)),
+                            backgroundColor: mudurlukler.map(m => {
+                                const score = parseFloat(m.genelMemnuniyet);
+                                if (score >= 70) return '#10b981';
+                                if (score >= 50) return '#f59e0b';
+                                return '#ef4444';
+                            })
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    title: (context) => {
+                                        const m = mudurlukler[context[0].dataIndex];
+                                        return `#${m.kod} - ${m.ad}`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: { display: true, text: 'Memnuniyet Skoru (%)' }
+                            }
+                        }
+                    }
+                });
+            },
+            
+            renderTopBottomMudurlukler: () => {
+                const topContainer = document.getElementById('topMudurlukler');
+                const bottomContainer = document.getElementById('bottomMudurlukler');
+                if (!topContainer || !bottomContainer) return;
+                
+                const sorted = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.genelMemnuniyet) - parseFloat(a.genelMemnuniyet));
+                
+                const top5 = sorted.slice(0, 5);
+                const bottom5 = sorted.slice(-5).reverse();
+                
+                topContainer.innerHTML = top5.map((m, i) => `
+                    <div style="display: flex; align-items: center; padding: 12px; background: #f0fdf4; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #10b981;">
+                        <div style="font-size: 20px; font-weight: 700; color: #10b981; width: 30px;">${i + 1}</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #1a1a1a;">#${m.kod} - ${m.ad}</div>
+                            <div style="font-size: 12px; color: #6b7280;">${m.gecerliAnketler.length} anket</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: #10b981;">${m.genelMemnuniyet}%</div>
+                    </div>
+                `).join('');
+                
+                bottomContainer.innerHTML = bottom5.map((m, i) => `
+                    <div style="display: flex; align-items: center; padding: 12px; background: #fef2f2; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #ef4444;">
+                        <div style="font-size: 20px; font-weight: 700; color: #ef4444; width: 30px;">${i + 1}</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #1a1a1a;">#${m.kod} - ${m.ad}</div>
+                            <div style="font-size: 12px; color: #6b7280;">${m.gecerliAnketler.length} anket</div>
+                        </div>
+                        <div style="font-size: 24px; font-weight: 700; color: #ef4444;">${m.genelMemnuniyet}%</div>
+                    </div>
+                `).join('');
+            },
+            
+            renderTemaRadarChart: () => {
+                const canvas = document.getElementById('temaRadarChart');
+                if (!canvas) return;
+                
+                if (state.charts.temaRadar) {
+                    state.charts.temaRadar.destroy();
+                }
+                
+                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
+                const temaLabels = Object.entries(THEME_INFO).map(([key, info]) => info.title);
+                const temaData = Object.keys(THEME_INFO).map(key => parseFloat(genelTemalar[key]) || 0);
+                
+                const ctx = canvas.getContext('2d');
+                state.charts.temaRadar = new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: temaLabels,
+                        datasets: [{
+                            label: 'Genel Belediye',
+                            data: temaData,
+                            backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                            borderColor: 'rgba(102, 126, 234, 1)',
+                            borderWidth: 2,
+                            pointBackgroundColor: 'rgba(102, 126, 234, 1)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: { stepSize: 20 }
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false }
+                        }
+                    }
+                });
+            },
+            
+            renderSosyalMedya: () => {
+                const container = document.getElementById('dashboardSosyalMedya');
+                if (!container) return;
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const sm = utils.calculateSocialMedia(allValidSurveys);
+                
+                const sorted = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.sosyalMedya.toplam) - parseFloat(a.sosyalMedya.toplam));
+                
+                container.innerHTML = `
+                    <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                        <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                            📱 Sosyal Medya Takip Özeti
+                        </h2>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
+                            <div style="background: #f0fdf4; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Toplam Takip</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #10b981;">${sm.toplam}%</div>
+                            </div>
+                            <div style="background: #eff6ff; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Belediye Hesapları</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #3b82f6;">${sm.belediye}%</div>
+                            </div>
+                            <div style="background: #fef3c7; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Başkan Hesapları</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">${sm.baskan}%</div>
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #10b981;">En Aktif Takipçi</div>
+                                <div style="background: #f0fdf4; padding: 10px; border-radius: 6px;">
+                                    #${sorted[0].kod} - ${sorted[0].ad} <strong>(${sorted[0].sosyalMedya.toplam}%)</strong>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #ef4444;">En Pasif Takipçi</div>
+                                <div style="background: #fef2f2; padding: 10px; border-radius: 6px;">
+                                    #${sorted[sorted.length-1].kod} - ${sorted[sorted.length-1].ad} <strong>(${sorted[sorted.length-1].sosyalMedya.toplam}%)</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderCriticalFindings: () => {
+                const lowContainer = document.getElementById('lowScores');
+                const highContainer = document.getElementById('highScores');
+                if (!lowContainer || !highContainer) return;
+                
+                const allScores = [];
+                Object.values(state.processedData).forEach(md => {
+                    Object.entries(md.temalar).forEach(([key, value]) => {
+                        allScores.push({
+                            mudurluk: md.ad,
+                            kod: md.kod,
+                            tema: THEME_INFO[key]?.title || key,
+                            score: parseFloat(value)
+                        });
+                    });
+                });
+                
+                const sorted = allScores.sort((a, b) => a.score - b.score);
+                const lowest5 = sorted.slice(0, 5);
+                const highest5 = sorted.slice(-5).reverse();
+                
+                lowContainer.innerHTML = lowest5.map((item, i) => `
+                    <div style="padding: 10px; background: #fef2f2; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #ef4444;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #1a1a1a; font-size: 13px;">${item.tema}</div>
+                                <div style="font-size: 11px; color: #6b7280;">#${item.kod} - ${item.mudurluk}</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 700; color: #ef4444;">${item.score}%</div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                highContainer.innerHTML = highest5.map((item, i) => `
+                    <div style="padding: 10px; background: #f0fdf4; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #10b981;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; color: #1a1a1a; font-size: 13px;">${item.tema}</div>
+                                <div style="font-size: 11px; color: #6b7280;">#${item.kod} - ${item.mudurluk}</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 700; color: #10b981;">${item.score}%</div>
+                        </div>
+                    </div>
+                `).join('');
+            },
+            
+            renderAcikUcluSummary: () => {
+                const container = document.getElementById('dashboardAcikUclu');
+                if (!container) return;
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const keywords = utils.analyzeKeywords(allValidSurveys);
+                const totalResponses = allValidSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                
+                const wordSizes = keywords.map(k => Math.min(40, 14 + k.count * 2));
+                
+                container.innerHTML = `
+                    <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                        <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                            💬 Açık Uçlu Cevaplar Özeti
+                        </h2>
+                        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 15px;">
+                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Toplam Cevap Sayısı</div>
+                            <div style="font-size: 36px; font-weight: 700; color: #667eea;">${totalResponses}</div>
+                        </div>
+                        <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%); border-radius: 8px;">
+                            ${keywords.map((k, i) => `
+                                <span style="display: inline-block; margin: 8px; padding: 8px 16px; background: white; border-radius: 20px; font-size: ${wordSizes[i]}px; font-weight: 600; color: #667eea; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    ${k.name} (${k.count})
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderRuhSagligi: () => {
+                const container = document.getElementById('dashboardRuhSagligi');
+                if (!container) return;
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const ruhSagligi = utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]);
+                
+                const smokers = allValidSurveys.filter(s => s.sigara && ['evet', 'yes'].includes(s.sigara.toLowerCase())).length;
+                const sigaraOrani = allValidSurveys.length > 0 ? utils.formatPercentage(smokers / allValidSurveys.length * 100) : '0';
+                
+                const sorted = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.ruhSagligi) - parseFloat(a.ruhSagligi));
+                
+                container.innerHTML = `
+                    <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                        <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                            🚬 Ruh Sağlığı ve Sigara Kullanımı
+                        </h2>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                            <div style="background: #fef2f2; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Ruh Sağlığı Skoru</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #ef4444;">${ruhSagligi}%</div>
+                                <div style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Yüksek = Olumsuz</div>
+                            </div>
+                            <div style="background: #fef3c7; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Sigara Kullanım Oranı</div>
+                                <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">${sigaraOrani}%</div>
+                                <div style="font-size: 10px; color: #9ca3af; margin-top: 4px;">${smokers} kişi</div>
+                            </div>
+                            <div style="background: #fef2f2; padding: 16px; border-radius: 8px;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">En Riskli Müdürlük</div>
+                                <div style="font-size: 14px; font-weight: 600; color: #1a1a1a;">#${sorted[0].kod}</div>
+                                <div style="font-size: 11px; color: #6b7280;">${sorted[0].ruhSagligi}% skor</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            exportPDF: () => {
+                alert('PDF rapor özelliği yakında eklenecek!');
+            }
+        };
+        
+        const comparisonManager = {
+            updateComparison: () => {
+                const select1 = document.getElementById('karsilastir1');
+                const select2 = document.getElementById('karsilastir2');
+                const container = document.getElementById('comparisonResult');
+                
+                if (!select1 || !select2 || !container) return;
+                
+                const kod1 = select1.value;
+                const kod2 = select2.value;
+                
+                if (!kod1 || !kod2) {
+                    container.innerHTML = '<div style="text-align: center; padding: 40px; color: #9ca3af;">Lütfen iki müdürlük seçiniz...</div>';
+                    return;
+                }
+                
+                if (kod1 === kod2) {
+                    container.innerHTML = '<div class="warning-box">⚠️ Lütfen farklı iki müdürlük seçiniz.</div>';
+                    return;
+                }
+                
+                const md1 = state.processedData[kod1];
+                const md2 = state.processedData[kod2];
+                
+                container.innerHTML = `
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #667eea;">
+                            <h3 style="color: #667eea; margin-bottom: 15px;">#${md1.kod} - ${md1.ad}</h3>
+                            <div style="margin-bottom: 20px;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Genel Memnuniyet</div>
+                                <div style="font-size: 32px; font-weight: 700; color: #667eea;">${md1.genelMemnuniyet}%</div>
+                            </div>
+                            ${Object.entries(md1.temalar).map(([key, value]) => `
+                                <div style="display: flex; justify-content: space-between; padding: 8px; background: #f9fafb; border-radius: 6px; margin-bottom: 6px;">
+                                    <span style="font-size: 13px; color: #374151;">${THEME_INFO[key]?.title}</span>
+                                    <span style="font-weight: 600; color: #667eea;">${value}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; border: 2px solid #f5576c;">
+                            <h3 style="color: #f5576c; margin-bottom: 15px;">#${md2.kod} - ${md2.ad}</h3>
+                            <div style="margin-bottom: 20px;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Genel Memnuniyet</div>
+                                <div style="font-size: 32px; font-weight: 700; color: #f5576c;">${md2.genelMemnuniyet}%</div>
+                            </div>
+                            ${Object.entries(md2.temalar).map(([key, value]) => `
+                                <div style="display: flex; justify-content: space-between; padding: 8px; background: #f9fafb; border-radius: 6px; margin-bottom: 6px;">
+                                    <span style="font-size: 13px; color: #374151;">${THEME_INFO[key]?.title}</span>
+                                    <span style="font-weight: 600; color: #f5576c;">${value}%</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid #e5e7eb;">
+                        <h3 style="margin-bottom: 15px;">📊 Tema Bazlı Farklar</h3>
+                        ${Object.keys(THEME_INFO).map(key => {
+                            const fark = parseFloat(md1.temalar[key]) - parseFloat(md2.temalar[key]);
+                            const farkClass = fark >= 0 ? 'positive' : 'negative';
+                            const farkSymbol = fark >= 0 ? '+' : '';
+                            return `
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #f3f4f6;">
+                                    <span style="font-weight: 500;">${THEME_INFO[key].title}</span>
+                                    <span class="${farkClass}" style="font-weight: 700;">${farkSymbol}${utils.formatPercentage(fark)}%</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            },
+            
+            populateSelects: () => {
+                const select1 = document.getElementById('karsilastir1');
+                const select2 = document.getElementById('karsilastir2');
+                
+                if (!select1 || !select2 || !state.processedData) return;
+                
+                const options = Object.values(state.processedData)
+                    .map(md => `<option value="${md.kod}">#${md.kod} - ${md.ad}</option>`)
+                    .join('');
+                
+                if (select1.options.length === 1) {
+                    select1.innerHTML += options;
+                }
+                if (select2.options.length === 1) {
+                    select2.innerHTML += options;
+                }
+            }
+        };
 
         const pageManager = {
             pages: {
+                'dashboard': () => `
+                    <div class="info-box" style="margin-bottom: 20px;">
+                        <strong>📊 Hoş Geldiniz!</strong> Bu sayfa tüm anket sonuçlarının özet görünümünü sunar. Detaylı analizler için sol menüden ilgili bölümü seçebilirsiniz.
+                    </div>
+                    
+                    ${!state.processedData || Object.keys(state.processedData).length === 0 ? `
+                        <div style="text-align: center; padding: 60px 20px;">
+                            <span class="material-icons" style="font-size: 80px; color: #d1d5db;">analytics</span>
+                            <h2 style="margin: 20px 0; color: #6b7280;">Henüz Veri Girilmemiş</h2>
+                            <p style="color: #9ca3af; margin-bottom: 30px;">Dashboard'u görüntülemek için önce "Veri Girişi" bölümünden anket verilerini girin.</p>
+                            <button class="btn" onclick="pageManager.showPage('veri-girisi')">
+                                <span class="material-icons">input</span> Veri Girişine Git
+                            </button>
+                        </div>
+                    ` : `
+                        <!-- KRİTİK METRİKLER -->
+                        <div id="dashboardMetrics"></div>
+                        
+                        <!-- MÜDÜRLÜK PERFORMANS GRAFİĞİ -->
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                            <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                                📊 Müdürlük Memnuniyet Karşılaştırması
+                            </h2>
+                            <canvas id="mudurlukBarChart" style="max-height: 400px;"></canvas>
+                        </div>
+                        
+                        <!-- EN İYİ VE EN KÖTÜ MÜDÜRLÜKLER -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
+                                    🏆 En Başarılı 5 Müdürlük
+                                </h3>
+                                <div id="topMudurlukler"></div>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
+                                    ⚠️ Dikkat Gerektiren 5 Müdürlük
+                                </h3>
+                                <div id="bottomMudurlukler"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- TEMA RADAR GRAFİĞİ -->
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                            <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                                🎯 10 Tema Performans Haritası
+                            </h2>
+                            <div style="max-width: 600px; margin: 0 auto;">
+                                <canvas id="temaRadarChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- SOSYAL MEDYA ÖZETİ -->
+                        <div id="dashboardSosyalMedya"></div>
+                        
+                        <!-- KRİTİK BULGULAR -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
+                                    🔴 En Düşük 5 Skor
+                                </h3>
+                                <div id="lowScores"></div>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
+                                    🟢 En Yüksek 5 Skor
+                                </h3>
+                                <div id="highScores"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- AÇIK UÇLU ÖZET -->
+                        <div id="dashboardAcikUclu"></div>
+                        
+                        <!-- RUH SAĞLIĞI ÖZET -->
+                        <div id="dashboardRuhSagligi"></div>
+                        
+                        <!-- HIZLI ERİŞİM -->
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin: 20px 0; text-align: center;">
+                            <h3 style="color: white; font-size: 18px; margin-bottom: 20px;">Detaylı Analizler</h3>
+                            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                                <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: white; color: #667eea;">
+                                    <span class="material-icons">dashboard</span> Genel Skorlar
+                                </button>
+                                <button class="btn" onclick="pageManager.showPage('temalar')" style="background: white; color: #667eea;">
+                                    <span class="material-icons">insights</span> Tema Detayları
+                                </button>
+                                <button class="btn" onclick="pageManager.showPage('mudurluk-karsilastir')" style="background: white; color: #667eea;">
+                                    <span class="material-icons">compare_arrows</span> Müdürlük Karşılaştır
+                                </button>
+                                <button class="btn" onclick="dashboardManager.exportPDF()" style="background: white; color: #667eea;">
+                                    <span class="material-icons">picture_as_pdf</span> PDF Rapor İndir
+                                </button>
+                            </div>
+                        </div>
+                    `}
+                `,
+                
                 'veri-girisi': () => `
                     <div style="margin: 15px 0;">
                         <button class="btn" onclick="dataInput.addTableRows(10)">
@@ -2963,6 +3510,29 @@
 
                     <div id="responsesContainer" class="responses-container"></div>
                 `,
+                
+                'mudurluk-karsilastir': () => `
+                    <div class="info-box">
+                        <strong>ℹ️ Açıklama:</strong> İki müdürlüğü yan yana karşılaştırarak güçlü ve zayıf yönlerini analiz edin.
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            <label style="font-weight: 600; color: #374151; margin-bottom: 8px; display: block;">1. Müdürlük Seçin:</label>
+                            <select id="karsilastir1" onchange="comparisonManager.updateComparison()" style="width: 100%;">
+                                <option value="">-- Müdürlük Seçiniz --</option>
+                            </select>
+                        </div>
+                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            <label style="font-weight: 600; color: #374151; margin-bottom: 8px; display: block;">2. Müdürlük Seçin:</label>
+                            <select id="karsilastir2" onchange="comparisonManager.updateComparison()" style="width: 100%;">
+                                <option value="">-- Müdürlük Seçiniz --</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="comparisonResult"></div>
+                `,
 
                 'mudurluk-sec': () => `
                     <div class="info-box">
@@ -3024,6 +3594,14 @@
                         setTimeout(() => dataInput.setupPasteHandler(), 100);
                     }
                     
+                    if (pageId === 'dashboard') {
+                        setTimeout(() => dashboardManager.renderDashboard(), 100);
+                    }
+                    
+                    if (pageId === 'mudurluk-karsilastir') {
+                        setTimeout(() => comparisonManager.populateSelects(), 100);
+                    }
+                    
                     setTimeout(() => tableRenderer.renderAllTables(), 100);
                 }
             },
@@ -3050,7 +3628,7 @@
                     });
                 });
                 
-                pageManager.showPage('veri-girisi');
+                pageManager.showPage('dashboard');
             }
         };
 
@@ -3063,6 +3641,9 @@
             window.sosyalMedyaManager = sosyalMedyaManager;
             window.sorularManager = sorularManager;
             window.themeManager = themeManager;
+            window.dashboardManager = dashboardManager;
+            window.comparisonManager = comparisonManager;
+            window.pageManager = pageManager;
             
             pageManager.initMenu();
             
