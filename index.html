@@ -3599,7 +3599,10 @@
                     }
                     
                     if (pageId === 'mudurluk-karsilastir') {
-                        setTimeout(() => comparisonManager.populateSelects(), 100);
+                        setTimeout(() => {
+                            comparisonManager.populateSelects();
+                            comparisonManager.updateComparison();
+                        }, 100);
                     }
                     
                     setTimeout(() => tableRenderer.renderAllTables(), 100);
