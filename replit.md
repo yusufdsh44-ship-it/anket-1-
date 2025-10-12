@@ -12,13 +12,26 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 **Current State:** Fully functional dashboard-focused web application with data visualization running on Python HTTP server
 
 ## Recent Changes
+- 2025-10-12: Enhanced dashboard as management control center
+  - Updated all terminology for clarity ("Hissedilen İş Yükü/Stresine Karşılık Kurum Desteği/Kaynakları", "En Memnun/Az Memnun")
+  - Added executive summary panel (Quick Summary) at dashboard top with strongest areas and attention areas
+  - Created detailed "En Güçlü 5 Alan" cards with scores, open-ended quote examples, and navigation buttons
+  - Created detailed "Geliştirilmesi Gereken 5 Alan" cards with scores, open-ended quote examples, and navigation buttons
+  - Replaced radar chart with horizontal bar chart for theme analysis (better readability)
+  - Enhanced social media section with personnel counts (e.g., "62.5% - 25/40 kişi")
+  - Separated mental health and smoking analysis into distinct cards
+  - Added top 5 smoking departments ranking
+  - Added top 10 keyword list alongside word cloud in open-ended section
+  - Implemented action priority matrix (low scores + high personnel = high priority)
+  - Added navigation buttons throughout dashboard linking to detailed analysis pages
+
 - 2025-10-11: Dashboard and visualization features implemented
-  - Added Chart.js for data visualization (bar charts, radar charts)
+  - Added Chart.js for data visualization (bar charts)
   - Created comprehensive dashboard as landing page with:
     - Key metrics cards (participation rate, satisfaction, work-life balance, social media)
     - Department performance comparison bar chart
     - Top 5 and bottom 5 departments display
-    - Theme analysis radar chart
+    - Theme analysis visualization
     - Social media tracking summary
     - Critical findings (lowest/highest scores)
     - Open-ended responses word cloud
@@ -51,13 +64,20 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 ```
 
 ### Key Features
-1. **Dashboard (Landing Page):** Comprehensive analytics overview with visualizations
-   - Key performance metrics
-   - Department comparison charts
-   - Theme analysis
-   - Social media tracking
-   - Critical findings identification
-   - Word cloud for open responses
+1. **Dashboard (Landing Page):** Executive management control center with comprehensive analytics
+   - Quick summary panel with strongest areas and improvement priorities
+   - Key performance metrics (participation, satisfaction, work-life balance, social media)
+   - Detailed strongest 5 areas cards with scores, examples, and navigation
+   - Detailed improvement-needed 5 areas cards with scores, examples, and navigation
+   - Department performance comparison bar chart
+   - Top 5 and bottom 5 departments ranking
+   - Theme performance horizontal bar chart
+   - Social media tracking with personnel counts
+   - Mental health screening summary
+   - Smoking usage analysis with top 5 departments
+   - Open-ended responses analysis (word cloud + top 10 keywords)
+   - Action priority matrix (intervention priorities based on scores and personnel)
+   - Navigation buttons linking to all detailed analysis pages
    
 2. **Department Comparison:** Side-by-side detailed comparison of two departments
    - Overall satisfaction comparison
@@ -92,8 +112,8 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 - `utils`: Utility functions for calculations and formatting
 
 #### Chart Types
-- **Bar Charts:** Department performance comparison
-- **Radar Charts:** Theme analysis visualization
+- **Horizontal Bar Charts:** Theme analysis and performance comparison (sorted by score)
+- **Vertical Bar Charts:** Department performance comparison
 - **Word Clouds:** Open-ended response keyword visualization
 
 ### Configuration
