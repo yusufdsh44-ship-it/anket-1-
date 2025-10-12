@@ -2711,27 +2711,33 @@
                 
                 const temaListesi = Object.entries(genelMemnuniyet).map(([key, val]) => THEME_INFO[key]?.title || key).join(', ');
                 
+                const temaBoxes = Object.entries(genelMemnuniyet).map(([key, val]) => {
+                    const info = THEME_INFO[key];
+                    return `<span style="display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; margin: 2px 4px; font-size: 11px; font-weight: 600;">${info?.title || key}: ${val}%</span>`;
+                }).join('');
+                
                 container.innerHTML = `
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Toplam Katılım</div>
-                            <div style="font-size: 32px; font-weight: 700;">${katilimOrani}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px; line-height: 1.4;">
-                                Belediyedeki ${totalPersonel} kişiden ${totalKatilan} kişi katıldı. ${allValidSurveys.length} anket kontrol sorularını geçti ve geçerli sayıldı.
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 20px 0;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 16px; color: white; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);">
+                            <div style="font-size: 14px; font-weight: 600; opacity: 0.95; margin-bottom: 12px; letter-spacing: 0.5px;">TOPLAM KATILIM</div>
+                            <div style="font-size: 56px; font-weight: 900; line-height: 1; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">${katilimOrani}%</div>
+                            <div style="font-size: 13px; opacity: 0.9; line-height: 1.5; font-weight: 500;">
+                                <strong style="font-size: 18px;">${totalKatilan} kişi</strong> katıldı<br>
+                                <strong style="font-size: 18px;">${allValidSurveys.length} anket</strong> geçerli sayıldı
                             </div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Genel Memnuniyet</div>
-                            <div style="font-size: 32px; font-weight: 700;">${avgMemnuniyet}%</div>
-                            <div style="font-size: 10px; opacity: 0.8; margin-top: 4px; line-height: 1.3;">
-                                ${temaListesi}
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 25px; border-radius: 16px; color: white; box-shadow: 0 8px 20px rgba(240, 147, 251, 0.4);">
+                            <div style="font-size: 14px; font-weight: 600; opacity: 0.95; margin-bottom: 12px; letter-spacing: 0.5px;">GENEL MEMNUNİYET</div>
+                            <div style="font-size: 56px; font-weight: 900; line-height: 1; margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">${avgMemnuniyet}%</div>
+                            <div style="font-size: 10px; opacity: 0.95; line-height: 1.4;">
+                                ${temaBoxes}
                             </div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 11px; opacity: 0.9; margin-bottom: 8px;">Algılanan Belediye Desteğinin Hissedilen İş Stresi ile Dengesi</div>
-                            <div style="font-size: 32px; font-weight: 700;">${denge >= 0 ? '+' : ''}${denge}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">
-                                ${denge >= 0 ? `Personeller belediye desteğini doğal iş stresine karşılık +${denge}'te görüyor` : `Personeller ${Math.abs(denge)} puan destek eksikliği hissediyor`}
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 16px; color: white; box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);">
+                            <div style="font-size: 13px; font-weight: 600; opacity: 0.95; margin-bottom: 12px; letter-spacing: 0.3px;">ALGILANAN BELEDİYE DESTEĞİNİN HİSSEDİLEN İŞ STRESİ İLE DENGESİ</div>
+                            <div style="font-size: 56px; font-weight: 900; line-height: 1; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">${denge >= 0 ? '+' : ''}${denge}%</div>
+                            <div style="font-size: 13px; opacity: 0.95; line-height: 1.5; font-weight: 500;">
+                                ${denge >= 0 ? `Personeller <strong style="font-size: 16px;">+${denge} puan</strong> destek görüyor` : `<strong style="font-size: 16px;">${Math.abs(denge)} puan</strong> destek eksikliği`}
                             </div>
                         </div>
                     </div>
