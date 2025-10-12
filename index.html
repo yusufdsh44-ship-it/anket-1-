@@ -3102,6 +3102,33 @@
                     `;
                 };
 
+                // Calculate bottom 5 departments by social media score
+                const mudurluklerSorted = Object.values(state.processedData)
+                    .filter(md => md.sosyalMedya && md.sosyalMedya.detay)
+                    .map(md => {
+                        const sm = md.sosyalMedya;
+                        const allPlatforms = [
+                            parseFloat(sm.detay?.instagram_belediye || 0),
+                            parseFloat(sm.detay?.instagram_baskan || 0),
+                            parseFloat(sm.detay?.twitter_belediye || 0),
+                            parseFloat(sm.detay?.twitter_baskan || 0),
+                            parseFloat(sm.detay?.facebook_belediye || 0),
+                            parseFloat(sm.detay?.facebook_baskan || 0),
+                            parseFloat(sm.detay?.nextsosyal_belediye || 0),
+                            parseFloat(sm.detay?.nextsosyal_baskan || 0)
+                        ];
+                        const avgScore = allPlatforms.reduce((sum, val) => sum + val, 0) / 8;
+                        
+                        return {
+                            ad: md.ad,
+                            score: avgScore,
+                            anketSayisi: md.gecerliAnketler.length
+                        };
+                    })
+                    .sort((a, b) => a.score - b.score);
+                
+                const bottom5 = mudurluklerSorted.slice(0, 5);
+
                 container.innerHTML = `
                     <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                         <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 20px; color: #1a1a1a;">
@@ -3121,6 +3148,29 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div style="background: #fef2f2; padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid #fecaca;">
+                            <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
+                                <span class="material-icons" style="font-size: 20px;">trending_down</span>
+                                En Az Takip Eden 5 Müdürlük
+                            </h3>
+                            <div style="display: grid; gap: 10px;">
+                                ${bottom5.map((md, i) => `
+                                    <div style="display: flex; align-items: center; padding: 12px; background: white; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <div style="font-size: 20px; font-weight: 700; color: #ef4444; width: 40px; text-align: center;">${i + 1}</div>
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 600; color: #1a1a1a; font-size: 14px;">${md.ad}</div>
+                                            <div style="font-size: 12px; color: #6b7280;">${md.anketSayisi} anket</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 20px; font-weight: 700; color: #ef4444;">${md.score.toFixed(1)}%</div>
+                                            <div style="font-size: 11px; color: #6b7280;">ortalama takip</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
                         <div style="text-align: center; margin-top: 20px;">
                             <button class="btn" onclick="pageManager.showPage('sosyal-medya')" style="background: #3b82f6;">
                                 <span class="material-icons">analytics</span>
