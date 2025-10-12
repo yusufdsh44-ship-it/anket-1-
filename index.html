@@ -2773,10 +2773,10 @@
                     if (!tema.questions || tema.questions.length === 0) return [];
                     return tema.questions.map(qNum => {
                         const score = utils.calculateAverage(allValidSurveys, [qNum]);
-                        const question = QUESTIONS[qNum - 1];
+                        const question = SORULAR[qNum - 1];
                         return {
                             number: qNum,
-                            text: question?.text || `Soru ${qNum}`,
+                            text: question || `Soru ${qNum}`,
                             score: parseFloat(score)
                         };
                     });
