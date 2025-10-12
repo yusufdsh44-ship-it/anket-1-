@@ -3046,45 +3046,52 @@
                 const sorted = Object.values(state.processedData)
                     .sort((a, b) => parseFloat(b.sosyalMedya.toplam) - parseFloat(a.sosyalMedya.toplam));
                 
+                const top5 = sorted.slice(0, 5);
+                const bottom5 = sorted.slice(-5).reverse();
+                
                 container.innerHTML = `
                     <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                         <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
                             📱 Sosyal Medya Takip Özeti
                         </h2>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px;">
-                            <div style="background: #f0fdf4; padding: 16px; border-radius: 8px; text-align: center;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Toplam Takip</div>
-                                <div style="font-size: 28px; font-weight: 700; color: #10b981;">${sm.toplam}%</div>
-                            </div>
-                            <div style="background: #eff6ff; padding: 16px; border-radius: 8px; text-align: center;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Belediye Hesapları</div>
-                                <div style="font-size: 28px; font-weight: 700; color: #3b82f6;">${sm.belediye}%</div>
-                            </div>
-                            <div style="background: #fef3c7; padding: 16px; border-radius: 8px; text-align: center;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Başkan Hesapları</div>
-                                <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">${sm.baskan}%</div>
-                            </div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                             <div>
-                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #10b981;">En Çok Takip Edenler</div>
-                                <div style="background: #f0fdf4; padding: 10px; border-radius: 6px;">
-                                    <div style="font-weight: 600;">#${sorted[0].kod} - ${sorted[0].ad}</div>
-                                    <div style="font-size: 13px; color: #10b981; margin-top: 4px;">
-                                        <strong>${sorted[0].sosyalMedya.toplam}%</strong> 
-                                        (${Math.round(parseFloat(sorted[0].sosyalMedya.toplam) * sorted[0].gecerliAnketler.length / 100)}/${sorted[0].gecerliAnketler.length} kişi)
-                                    </div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 10px; color: #10b981;">
+                                    ✅ En Çok Takip Eden 5 Müdürlük
                                 </div>
+                                ${top5.map((m, i) => {
+                                    const kisiSayisi = Math.round(parseFloat(m.sosyalMedya.toplam) * m.gecerliAnketler.length / 100);
+                                    return `
+                                        <div style="display: flex; align-items: center; padding: 10px; background: #f0fdf4; border-radius: 6px; margin-bottom: 6px; border-left: 3px solid #10b981;">
+                                            <div style="font-size: 16px; font-weight: 700; color: #10b981; width: 25px;">${i + 1}</div>
+                                            <div style="flex: 1;">
+                                                <div style="font-weight: 600; font-size: 13px; color: #1a1a1a;">#${m.kod} - ${m.ad}</div>
+                                                <div style="font-size: 12px; color: #10b981; margin-top: 2px;">
+                                                    <strong>${m.sosyalMedya.toplam}%</strong> - ${kisiSayisi}/${m.gecerliAnketler.length} kişi takip ediyor
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
                             </div>
                             <div>
-                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #ef4444;">En Az Takip Edenler</div>
-                                <div style="background: #fef2f2; padding: 10px; border-radius: 6px;">
-                                    <div style="font-weight: 600;">#${sorted[sorted.length-1].kod} - ${sorted[sorted.length-1].ad}</div>
-                                    <div style="font-size: 13px; color: #ef4444; margin-top: 4px;">
-                                        <strong>${sorted[sorted.length-1].sosyalMedya.toplam}%</strong> 
-                                        (${Math.round(parseFloat(sorted[sorted.length-1].sosyalMedya.toplam) * sorted[sorted.length-1].gecerliAnketler.length / 100)}/${sorted[sorted.length-1].gecerliAnketler.length} kişi)
-                                    </div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 10px; color: #ef4444;">
+                                    📉 En Az Takip Eden 5 Müdürlük
                                 </div>
+                                ${bottom5.map((m, i) => {
+                                    const kisiSayisi = Math.round(parseFloat(m.sosyalMedya.toplam) * m.gecerliAnketler.length / 100);
+                                    return `
+                                        <div style="display: flex; align-items: center; padding: 10px; background: #fef2f2; border-radius: 6px; margin-bottom: 6px; border-left: 3px solid #ef4444;">
+                                            <div style="font-size: 16px; font-weight: 700; color: #ef4444; width: 25px;">${i + 1}</div>
+                                            <div style="flex: 1;">
+                                                <div style="font-weight: 600; font-size: 13px; color: #1a1a1a;">#${m.kod} - ${m.ad}</div>
+                                                <div style="font-size: 12px; color: #ef4444; margin-top: 2px;">
+                                                    <strong>${m.sosyalMedya.toplam}%</strong> - ${kisiSayisi}/${m.gecerliAnketler.length} kişi takip ediyor
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
                             </div>
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
