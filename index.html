@@ -2677,14 +2677,84 @@
             renderDashboard: () => {
                 if (!state.processedData || Object.keys(state.processedData).length === 0) return;
                 
+                dashboardManager.renderQuickSummary();
                 dashboardManager.renderMetrics();
+                dashboardManager.renderStrongWeakAreas();
                 dashboardManager.renderMudurlukBarChart();
                 dashboardManager.renderTopBottomMudurlukler();
-                dashboardManager.renderTemaRadarChart();
+                dashboardManager.renderTemaBarChart();
                 dashboardManager.renderSosyalMedya();
                 dashboardManager.renderCriticalFindings();
                 dashboardManager.renderAcikUcluSummary();
                 dashboardManager.renderRuhSagligi();
+                dashboardManager.renderActionPriority();
+            },
+            
+            renderQuickSummary: () => {
+                const container = document.getElementById('dashboardQuickSummary');
+                if (!container) return;
+                
+                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
+                const temaArray = Object.entries(genelTemalar).map(([key, value]) => ({
+                    key,
+                    name: THEME_INFO[key]?.title || key,
+                    score: parseFloat(value)
+                }));
+                
+                const sorted = temaArray.sort((a, b) => b.score - a.score);
+                const strongAreas = sorted.slice(0, 3);
+                const weakAreas = sorted.slice(-3).reverse();
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
+                const katilimOrani = (allValidSurveys.length / totalPersonel) * 100;
+                
+                const ruhSagligiSkor = parseFloat(utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]));
+                
+                container.innerHTML = `
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 16px; margin-bottom: 25px; color: white;">
+                        <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                            <span class="material-icons" style="font-size: 32px;">dashboard</span>
+                            Yönetici Özet Paneli
+                        </h2>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 12px;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                                    <span class="material-icons">check_circle</span>
+                                    Güçlü Yönler
+                                </h3>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    ${strongAreas.map(area => `
+                                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
+                                            <strong>${area.name}:</strong> ${area.score}%
+                                        </li>
+                                    `).join('')}
+                                    <li style="padding: 8px 0; font-size: 14px;">
+                                        <strong>Katılım Oranı:</strong> ${utils.formatPercentage(katilimOrani)}%
+                                    </li>
+                                </ul>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 12px;">
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                                    <span class="material-icons">warning</span>
+                                    Acil Dikkat Gerektiren Alanlar
+                                </h3>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    ${weakAreas.map(area => `
+                                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
+                                            <strong>${area.name}:</strong> ${area.score}%
+                                        </li>
+                                    `).join('')}
+                                    ${ruhSagligiSkor > 50 ? `
+                                        <li style="padding: 8px 0; font-size: 14px;">
+                                            <strong>Ruh Sağlığı Riski:</strong> ${ruhSagligiSkor}% (Yüksek)
+                                        </li>
+                                    ` : ''}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
             },
             
             renderMetrics: () => {
@@ -2722,7 +2792,7 @@
                             <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">10 tema ortalaması</div>
                         </div>
                         <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">İş Yükü-Destek Dengesi</div>
+                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Hissedilen İş Yükü/Stresine Karşılık Kurum Desteği/Kaynakları</div>
                             <div style="font-size: 32px; font-weight: 700;">${denge >= 0 ? '+' : ''}${denge}%</div>
                             <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">${denge >= 0 ? 'Pozitif denge' : 'Negatif denge'}</div>
                         </div>
@@ -2730,6 +2800,127 @@
                             <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Sosyal Medya Takip</div>
                             <div style="font-size: 32px; font-weight: 700;">${sosyalMedya.toplam}%</div>
                             <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Genel takip oranı</div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderStrongWeakAreas: () => {
+                const strongContainer = document.getElementById('dashboardStrongAreas');
+                const weakContainer = document.getElementById('dashboardWeakAreas');
+                if (!strongContainer || !weakContainer) return;
+                
+                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                
+                const temaArray = Object.entries(genelTemalar).map(([key, value]) => ({
+                    key,
+                    name: THEME_INFO[key]?.title || key,
+                    description: THEME_INFO[key]?.description || '',
+                    score: parseFloat(value),
+                    questions: THEME_QUESTIONS[key] || []
+                }));
+                
+                const sorted = temaArray.sort((a, b) => b.score - a.score);
+                const strongAreas = sorted.slice(0, 5);
+                const weakAreas = sorted.slice(-5).reverse();
+                
+                const getExampleComments = (tema) => {
+                    const comments = allValidSurveys
+                        .filter(s => s.acikUclu && s.acikUclu.trim())
+                        .map(s => s.acikUclu)
+                        .filter(comment => {
+                            const keywords = tema.name.toLowerCase().split(' ');
+                            return keywords.some(kw => comment.toLowerCase().includes(kw));
+                        })
+                        .slice(0, 2);
+                    return comments.length > 0 ? comments : ['Belirli bir yorum bulunamadı'];
+                };
+                
+                strongContainer.innerHTML = `
+                    <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #10b981; margin: 20px 0;">
+                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #10b981; display: flex; align-items: center; gap: 10px;">
+                            <span class="material-icons" style="font-size: 28px;">trending_up</span>
+                            ✅ Belediyenin En Güçlü 5 Alanı
+                        </h2>
+                        ${strongAreas.map((area, i) => {
+                            const examples = getExampleComments(area);
+                            return `
+                                <div style="background: #f0fdf4; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #10b981;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <div>
+                                            <span style="font-size: 18px; font-weight: 700; color: #10b981; margin-right: 10px;">${i + 1}.</span>
+                                            <strong style="font-size: 16px; color: #1a1a1a;">${area.name}</strong>
+                                        </div>
+                                        <div style="font-size: 24px; font-weight: 700; color: #10b981;">${area.score}%</div>
+                                    </div>
+                                    <div style="font-size: 13px; color: #6b7280; margin-bottom: 12px; font-style: italic;">
+                                        ${area.description}
+                                    </div>
+                                    <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
+                                        <div style="font-size: 12px; font-weight: 600; color: #10b981; margin-bottom: 8px;">💬 Örnek Yorumlar:</div>
+                                        ${examples.map(comment => `
+                                            <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="btn" onclick="pageManager.showPage('acik-uclu-cevaplar')" style="flex: 1;">
+                                <span class="material-icons">comment</span>
+                                Tüm Açık Uçlu Cevapları Gör
+                            </button>
+                            <button class="btn" onclick="pageManager.showPage('konular')" style="flex: 1; background: #10b981;">
+                                <span class="material-icons">analytics</span>
+                                Detaylı Tema Analizi
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                weakContainer.innerHTML = `
+                    <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #ef4444; margin: 20px 0;">
+                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #ef4444; display: flex; align-items: center; gap: 10px;">
+                            <span class="material-icons" style="font-size: 28px;">trending_down</span>
+                            ⚠️ Geliştirilmesi Gereken 5 Alan
+                        </h2>
+                        ${weakAreas.map((area, i) => {
+                            const examples = getExampleComments(area);
+                            return `
+                                <div style="background: #fef2f2; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #ef4444;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                        <div>
+                                            <span style="font-size: 18px; font-weight: 700; color: #ef4444; margin-right: 10px;">${i + 1}.</span>
+                                            <strong style="font-size: 16px; color: #1a1a1a;">${area.name}</strong>
+                                        </div>
+                                        <div style="font-size: 24px; font-weight: 700; color: #ef4444;">${area.score}%</div>
+                                    </div>
+                                    <div style="font-size: 13px; color: #6b7280; margin-bottom: 12px; font-style: italic;">
+                                        ${area.description}
+                                    </div>
+                                    <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
+                                        <div style="font-size: 12px; font-weight: 600; color: #ef4444; margin-bottom: 8px;">💬 Örnek Yorumlar:</div>
+                                        ${examples.map(comment => `
+                                            <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button class="btn" onclick="pageManager.showPage('acik-uclu-cevaplar')" style="flex: 1;">
+                                <span class="material-icons">comment</span>
+                                Tüm Açık Uçlu Cevapları Gör
+                            </button>
+                            <button class="btn" onclick="pageManager.showPage('konular')" style="flex: 1; background: #ef4444;">
+                                <span class="material-icons">analytics</span>
+                                Detaylı Tema Analizi
+                            </button>
                         </div>
                     </div>
                 `;
@@ -2821,7 +3012,7 @@
                 `).join('');
             },
             
-            renderTemaRadarChart: () => {
+            renderTemaBarChart: () => {
                 const canvas = document.getElementById('temaRadarChart');
                 if (!canvas) return;
                 
@@ -2830,35 +3021,55 @@
                 }
                 
                 const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
-                const temaLabels = Object.entries(THEME_INFO).map(([key, info]) => info.title);
-                const temaData = Object.keys(THEME_INFO).map(key => parseFloat(genelTemalar[key]) || 0);
+                const temaArray = Object.entries(genelTemalar).map(([key, value]) => ({
+                    label: THEME_INFO[key]?.title || key,
+                    value: parseFloat(value)
+                }));
+                
+                temaArray.sort((a, b) => b.value - a.value);
+                
+                const temaLabels = temaArray.map(t => t.label);
+                const temaData = temaArray.map(t => t.value);
                 
                 const ctx = canvas.getContext('2d');
                 state.charts.temaRadar = new Chart(ctx, {
-                    type: 'radar',
+                    type: 'bar',
                     data: {
                         labels: temaLabels,
                         datasets: [{
-                            label: 'Genel Belediye',
+                            label: 'Memnuniyet Skoru (%)',
                             data: temaData,
-                            backgroundColor: 'rgba(102, 126, 234, 0.2)',
-                            borderColor: 'rgba(102, 126, 234, 1)',
-                            borderWidth: 2,
-                            pointBackgroundColor: 'rgba(102, 126, 234, 1)'
+                            backgroundColor: temaData.map(val => {
+                                if (val >= 70) return '#10b981';
+                                if (val >= 50) return '#f59e0b';
+                                return '#ef4444';
+                            }),
+                            borderRadius: 6
                         }]
                     },
                     options: {
+                        indexAxis: 'y',
                         responsive: true,
                         maintainAspectRatio: true,
-                        scales: {
-                            r: {
-                                beginAtZero: true,
-                                max: 100,
-                                ticks: { stepSize: 20 }
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => `${context.parsed.x}%`
+                                }
                             }
                         },
-                        plugins: {
-                            legend: { display: false }
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: { display: true, text: 'Memnuniyet Skoru (%)' }
+                            },
+                            y: {
+                                ticks: {
+                                    autoSkip: false
+                                }
+                            }
                         }
                     }
                 });
@@ -2895,17 +3106,31 @@
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                             <div>
-                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #10b981;">En Aktif Takipçi</div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #10b981;">En Çok Takip Edenler</div>
                                 <div style="background: #f0fdf4; padding: 10px; border-radius: 6px;">
-                                    #${sorted[0].kod} - ${sorted[0].ad} <strong>(${sorted[0].sosyalMedya.toplam}%)</strong>
+                                    <div style="font-weight: 600;">#${sorted[0].kod} - ${sorted[0].ad}</div>
+                                    <div style="font-size: 13px; color: #10b981; margin-top: 4px;">
+                                        <strong>${sorted[0].sosyalMedya.toplam}%</strong> 
+                                        (${Math.round(parseFloat(sorted[0].sosyalMedya.toplam) * sorted[0].gecerliAnketler.length / 100)}/${sorted[0].gecerliAnketler.length} kişi)
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #ef4444;">En Pasif Takipçi</div>
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #ef4444;">En Az Takip Edenler</div>
                                 <div style="background: #fef2f2; padding: 10px; border-radius: 6px;">
-                                    #${sorted[sorted.length-1].kod} - ${sorted[sorted.length-1].ad} <strong>(${sorted[sorted.length-1].sosyalMedya.toplam}%)</strong>
+                                    <div style="font-weight: 600;">#${sorted[sorted.length-1].kod} - ${sorted[sorted.length-1].ad}</div>
+                                    <div style="font-size: 13px; color: #ef4444; margin-top: 4px;">
+                                        <strong>${sorted[sorted.length-1].sosyalMedya.toplam}%</strong> 
+                                        (${Math.round(parseFloat(sorted[sorted.length-1].sosyalMedya.toplam) * sorted[sorted.length-1].gecerliAnketler.length / 100)}/${sorted[sorted.length-1].gecerliAnketler.length} kişi)
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="btn" onclick="pageManager.showPage('sosyal-medya')" style="background: #3b82f6;">
+                                <span class="material-icons">thumb_up</span>
+                                Detaylı Sosyal Medya Analizini Gör
+                            </button>
                         </div>
                     </div>
                 `;
@@ -2972,55 +3197,230 @@
                         <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
                             💬 Açık Uçlu Cevaplar Özeti
                         </h2>
-                        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 15px;">
+                        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
                             <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Toplam Cevap Sayısı</div>
                             <div style="font-size: 36px; font-weight: 700; color: #667eea;">${totalResponses}</div>
                         </div>
-                        <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%); border-radius: 8px;">
-                            ${keywords.map((k, i) => `
-                                <span style="display: inline-block; margin: 8px; padding: 8px 16px; background: white; border-radius: 20px; font-size: ${wordSizes[i]}px; font-weight: 600; color: #667eea; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                    ${k.name} (${k.count})
-                                </span>
-                            `).join('')}
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #374151;">Kelime Bulutu</h3>
+                                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%); border-radius: 8px; min-height: 200px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
+                                    ${keywords.map((k, i) => `
+                                        <span style="display: inline-block; margin: 6px; padding: 6px 12px; background: white; border-radius: 20px; font-size: ${Math.min(28, 12 + k.count * 1.5)}px; font-weight: 600; color: #667eea; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                            ${k.name} (${k.count})
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #374151;">En Sık Geçen 10 Kelime</h3>
+                                <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
+                                    ${keywords.slice(0, 10).map((k, i) => `
+                                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid ${i < 3 ? '#667eea' : '#9ca3af'};">
+                                            <div>
+                                                <span style="font-weight: 700; color: ${i < 3 ? '#667eea' : '#6b7280'}; margin-right: 8px;">${i + 1}.</span>
+                                                <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">${k.name}</span>
+                                            </div>
+                                            <div style="background: ${i < 3 ? '#667eea' : '#e5e7eb'}; color: ${i < 3 ? 'white' : '#374151'}; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">
+                                                ${k.count} kez
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="btn" onclick="pageManager.showPage('acik-uclu')" style="background: #667eea;">
+                                <span class="material-icons">feedback</span>
+                                Tüm Açık Uçlu Cevapları Gör
+                            </button>
                         </div>
                     </div>
                 `;
             },
             
             renderRuhSagligi: () => {
-                const container = document.getElementById('dashboardRuhSagligi');
-                if (!container) return;
+                const ruhSagligiContainer = document.getElementById('dashboardRuhSagligi');
+                const sigaraContainer = document.getElementById('dashboardSigara');
+                if (!ruhSagligiContainer || !sigaraContainer) return;
                 
                 const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
-                const ruhSagligi = utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]);
+                const ruhSagligiSkor = utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]);
+                
+                const ruhSagligiSorted = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.ruhSagligi) - parseFloat(a.ruhSagligi));
+                
+                ruhSagligiContainer.innerHTML = `
+                    <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                        <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
+                            🧠 Ruh Sağlığı Taraması
+                        </h2>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div style="background: #fef2f2; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Genel Ruh Sağlığı Skoru</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #ef4444;">${ruhSagligiSkor}%</div>
+                                <div style="font-size: 11px; color: #9ca3af; margin-top: 4px;">Yüksek skor = Olumsuz durum</div>
+                            </div>
+                            <div style="background: #f9fafb; padding: 20px; border-radius: 8px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #6b7280; margin-bottom: 12px;">En Riskli 3 Müdürlük</div>
+                                ${ruhSagligiSorted.slice(0, 3).map((md, i) => `
+                                    <div style="padding: 8px; background: #fef2f2; border-radius: 6px; margin-bottom: 6px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span style="font-size: 13px;">${i + 1}. #${md.kod} - ${md.ad}</span>
+                                            <strong style="color: #ef4444;">${md.ruhSagligi}%</strong>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="btn" onclick="pageManager.showPage('ruh-sagligi')" style="background: #ec4899;">
+                                <span class="material-icons">psychology</span>
+                                Detaylı Ruh Sağlığı Analizini Gör
+                            </button>
+                        </div>
+                    </div>
+                `;
                 
                 const smokers = allValidSurveys.filter(s => s.sigara && ['evet', 'yes'].includes(s.sigara.toLowerCase())).length;
                 const sigaraOrani = allValidSurveys.length > 0 ? utils.formatPercentage(smokers / allValidSurveys.length * 100) : '0';
                 
-                const sorted = Object.values(state.processedData)
-                    .sort((a, b) => parseFloat(b.ruhSagligi) - parseFloat(a.ruhSagligi));
+                const sigaraSorted = Object.values(state.processedData)
+                    .map(md => {
+                        const mdSmokers = md.gecerliAnketler.filter(s => s.sigara && ['evet', 'yes'].includes(s.sigara.toLowerCase())).length;
+                        const mdSigaraOrani = md.gecerliAnketler.length > 0 ? (mdSmokers / md.gecerliAnketler.length * 100) : 0;
+                        return {
+                            ...md,
+                            sigaraKisiSayisi: mdSmokers,
+                            sigaraOranNumeric: mdSigaraOrani
+                        };
+                    })
+                    .sort((a, b) => b.sigaraOranNumeric - a.sigaraOranNumeric)
+                    .filter(md => md.sigaraKisiSayisi > 0);
                 
-                container.innerHTML = `
+                sigaraContainer.innerHTML = `
                     <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                         <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
-                            🚬 Ruh Sağlığı ve Sigara Kullanımı
+                            🚬 Sigara Kullanım Analizi
                         </h2>
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-                            <div style="background: #fef2f2; padding: 16px; border-radius: 8px; text-align: center;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Ruh Sağlığı Skoru</div>
-                                <div style="font-size: 28px; font-weight: 700; color: #ef4444;">${ruhSagligi}%</div>
-                                <div style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Yüksek = Olumsuz</div>
+                        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+                            <div style="background: #fef3c7; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Genel Sigara Kullanım Oranı</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #f59e0b;">${sigaraOrani}%</div>
+                                <div style="font-size: 11px; color: #9ca3af; margin-top: 4px;">${smokers} kişi</div>
                             </div>
-                            <div style="background: #fef3c7; padding: 16px; border-radius: 8px; text-align: center;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">Sigara Kullanım Oranı</div>
-                                <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">${sigaraOrani}%</div>
-                                <div style="font-size: 10px; color: #9ca3af; margin-top: 4px;">${smokers} kişi</div>
+                            <div style="background: #f9fafb; padding: 20px; border-radius: 8px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #6b7280; margin-bottom: 12px;">En Çok Sigara Kullanan 5 Müdürlük</div>
+                                ${sigaraSorted.slice(0, 5).map((md, i) => `
+                                    <div style="padding: 10px; background: white; border: 1px solid #fde68a; border-radius: 6px; margin-bottom: 8px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <div style="flex: 1;">
+                                                <span style="font-size: 14px; font-weight: 600;">${i + 1}. #${md.kod} - ${md.ad}</span>
+                                            </div>
+                                            <div style="text-align: right;">
+                                                <div style="font-size: 16px; font-weight: 700; color: #f59e0b;">${utils.formatPercentage(md.sigaraOranNumeric)}%</div>
+                                                <div style="font-size: 11px; color: #6b7280;">${md.sigaraKisiSayisi} kişi</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
-                            <div style="background: #fef2f2; padding: 16px; border-radius: 8px;">
-                                <div style="font-size: 12px; color: #6b7280; margin-bottom: 4px;">En Riskli Müdürlük</div>
-                                <div style="font-size: 14px; font-weight: 600; color: #1a1a1a;">#${sorted[0].kod}</div>
-                                <div style="font-size: 11px; color: #6b7280;">${sorted[0].ruhSagligi}% skor</div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="btn" onclick="pageManager.showPage('ruh-sagligi')" style="background: #f59e0b;">
+                                <span class="material-icons">analytics</span>
+                                Detaylı Ruh Sağlığı ve Sigara Analizini Gör
+                            </button>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            renderActionPriority: () => {
+                const container = document.getElementById('dashboardActionPriority');
+                if (!container) return;
+                
+                const priorityData = Object.values(state.processedData).map(md => {
+                    const personelSayisi = MUDURLUKLER[md.kod]?.personel || md.gecerliAnketler.length;
+                    const memnuniyetSkoru = parseFloat(md.genelMemnuniyet);
+                    const priorityScore = (100 - memnuniyetSkoru) * (personelSayisi / 100);
+                    
+                    return {
+                        kod: md.kod,
+                        ad: md.ad,
+                        memnuniyet: memnuniyetSkoru,
+                        personel: personelSayisi,
+                        priorityScore: priorityScore,
+                        category: priorityScore > 15 ? 'high' : priorityScore > 8 ? 'medium' : 'low'
+                    };
+                }).sort((a, b) => b.priorityScore - a.priorityScore);
+                
+                const highPriority = priorityData.filter(d => d.category === 'high');
+                const mediumPriority = priorityData.filter(d => d.category === 'medium');
+                
+                container.innerHTML = `
+                    <div style="background: white; padding: 25px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #1a1a1a; display: flex; align-items: center; gap: 10px;">
+                            <span class="material-icons" style="font-size: 28px; color: #ef4444;">priority_high</span>
+                            Aksiyon Öncelik Matrisi
+                        </h2>
+                        <p style="color: #6b7280; margin-bottom: 20px; font-size: 14px;">
+                            Düşük memnuniyet skoru + yüksek personel sayısı = yüksek müdahale önceliği
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
+                                    <span class="material-icons">error</span>
+                                    Yüksek Öncelik (${highPriority.length} Müdürlük)
+                                </h3>
+                                ${highPriority.length > 0 ? highPriority.map((d, i) => `
+                                    <div style="background: #fef2f2; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #ef4444;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                            <div style="font-weight: 600; color: #1a1a1a;">${i + 1}. #${d.kod} - ${d.ad}</div>
+                                            <div style="background: #ef4444; color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+                                                Öncelik: ${d.priorityScore.toFixed(1)}
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 15px; font-size: 13px; color: #6b7280;">
+                                            <span>📉 Memnuniyet: ${d.memnuniyet}%</span>
+                                            <span>👥 Personel: ${d.personel} kişi</span>
+                                        </div>
+                                    </div>
+                                `).join('') : '<div style="color: #9ca3af; padding: 20px; text-align: center;">Yüksek öncelikli müdürlük bulunmuyor.</div>'}
                             </div>
+                            
+                            <div>
+                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #f59e0b; display: flex; align-items: center; gap: 8px;">
+                                    <span class="material-icons">warning</span>
+                                    Orta Öncelik (${mediumPriority.length} Müdürlük)
+                                </h3>
+                                ${mediumPriority.length > 0 ? mediumPriority.slice(0, 5).map((d, i) => `
+                                    <div style="background: #fef3c7; padding: 12px; border-radius: 8px; margin-bottom: 8px; border-left: 4px solid #f59e0b;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                            <div style="font-weight: 600; color: #1a1a1a; font-size: 14px;">${i + 1}. #${d.kod} - ${d.ad}</div>
+                                            <div style="background: #f59e0b; color: white; padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">
+                                                ${d.priorityScore.toFixed(1)}
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 12px; font-size: 12px; color: #6b7280;">
+                                            <span>📉 ${d.memnuniyet}%</span>
+                                            <span>👥 ${d.personel} kişi</span>
+                                        </div>
+                                    </div>
+                                `).join('') : '<div style="color: #9ca3af; padding: 20px; text-align: center;">Orta öncelikli müdürlük bulunmuyor.</div>'}
+                                ${mediumPriority.length > 5 ? `
+                                    <div style="text-align: center; margin-top: 10px; color: #6b7280; font-size: 13px;">
+                                        +${mediumPriority.length - 5} müdürlük daha...
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px;">
+                            <button class="btn" onclick="pageManager.showPage('mudurluk-detay')" style="background: #ef4444;">
+                                <span class="material-icons">business</span>
+                                Müdürlük Detay Analizine Git
+                            </button>
                         </div>
                     </div>
                 `;
@@ -3138,8 +3538,17 @@
                             </button>
                         </div>
                     ` : `
+                        <!-- HIZLI ÖZET PANELİ -->
+                        <div id="dashboardQuickSummary"></div>
+                        
                         <!-- KRİTİK METRİKLER -->
                         <div id="dashboardMetrics"></div>
+                        
+                        <!-- EN GÜÇLÜ 5 ALAN -->
+                        <div id="dashboardStrongAreas"></div>
+                        
+                        <!-- GELİŞTİRİLMESİ GEREKEN 5 ALAN -->
+                        <div id="dashboardWeakAreas"></div>
                         
                         <!-- MÜDÜRLÜK PERFORMANS GRAFİĞİ -->
                         <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
@@ -3147,31 +3556,43 @@
                                 📊 Müdürlük Memnuniyet Karşılaştırması
                             </h2>
                             <canvas id="mudurlukBarChart" style="max-height: 400px;"></canvas>
+                            <div style="text-align: center; margin-top: 15px;">
+                                <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: #667eea;">
+                                    <span class="material-icons">table_chart</span>
+                                    Detaylı Müdürlük Skorlarını Gör
+                                </button>
+                            </div>
                         </div>
                         
                         <!-- EN İYİ VE EN KÖTÜ MÜDÜRLÜKLER -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
                             <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
                                 <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
-                                    🏆 En Başarılı 5 Müdürlük
+                                    ✅ En Memnun 5 Müdürlük
                                 </h3>
                                 <div id="topMudurlukler"></div>
                             </div>
                             <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
                                 <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
-                                    ⚠️ Dikkat Gerektiren 5 Müdürlük
+                                    📉 En Az Memnun 5 Müdürlük
                                 </h3>
                                 <div id="bottomMudurlukler"></div>
                             </div>
                         </div>
                         
-                        <!-- TEMA RADAR GRAFİĞİ -->
+                        <!-- TEMA BAR GRAFİĞİ -->
                         <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                             <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
                                 🎯 10 Tema Performans Haritası
                             </h2>
-                            <div style="max-width: 600px; margin: 0 auto;">
+                            <div style="max-width: 900px; margin: 0 auto;">
                                 <canvas id="temaRadarChart"></canvas>
+                            </div>
+                            <div style="text-align: center; margin-top: 15px;">
+                                <button class="btn" onclick="pageManager.showPage('konular')" style="background: #667eea;">
+                                    <span class="material-icons">analytics</span>
+                                    Detaylı Tema Analizini Gör
+                                </button>
                             </div>
                         </div>
                         
@@ -3199,6 +3620,12 @@
                         
                         <!-- RUH SAĞLIĞI ÖZET -->
                         <div id="dashboardRuhSagligi"></div>
+                        
+                        <!-- SİGARA KULLANIMI ANALİZİ -->
+                        <div id="dashboardSigara"></div>
+                        
+                        <!-- AKSİYON ÖNCELİK MATRİSİ -->
+                        <div id="dashboardActionPriority"></div>
                         
                         <!-- HIZLI ERİŞİM -->
                         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin: 20px 0; text-align: center;">
