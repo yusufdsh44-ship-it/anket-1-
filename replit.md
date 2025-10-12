@@ -15,7 +15,7 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 - 2025-10-12: Dashboard UI/UX improvements for better visual hierarchy and clarity
   - **Enhanced Metric Cards:** Increased font size to 56px with 900 weight, added box-shadow effects, created pill-style theme boxes showing individual scores
   - **Removed Department Codes:** All "#116", "#101" style codes removed from dashboard for cleaner presentation, now showing only department names
-  - **Redesigned Social Media Section:** Added authentic platform logos (Instagram gradient, Twitter blue, Facebook, YouTube), split display into Belediye/Başkan accounts with individual counts (e.g., "25 kişi takip ediyor (62.5%)")
+  - **Redesigned Social Media Section:** Homepage now mirrors detailed page design with two separate sections ("Belediye Hesapları Genel Durum" and "Başkan Hesapları Genel Durum"), vertical platform lists showing handles (@arnavutkoybelediyesi, @mcanaroglutr), large percentages with "X kişi takip ediyor" text, and color-coded left borders
   - **Compact Strong/Weak Areas:** Converted to side-by-side grid layout with accordion-style expand/collapse for space efficiency
   - Updated all terminology for clarity ("Hissedilen İş Yükü/Stresine Karşılık Kurum Desteği/Kaynakları", "En Memnun/Az Memnun")
   - Added executive summary panel (Quick Summary) at dashboard top with strongest areas and attention areas
