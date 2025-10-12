@@ -2677,7 +2677,6 @@
             renderDashboard: () => {
                 if (!state.processedData || Object.keys(state.processedData).length === 0) return;
                 
-                dashboardManager.renderQuickSummary();
                 dashboardManager.renderMetrics();
                 dashboardManager.renderStrongWeakAreas();
                 dashboardManager.renderMudurlukBarChart();
@@ -2688,73 +2687,6 @@
                 dashboardManager.renderAcikUcluSummary();
                 dashboardManager.renderRuhSagligi();
                 dashboardManager.renderActionPriority();
-            },
-            
-            renderQuickSummary: () => {
-                const container = document.getElementById('dashboardQuickSummary');
-                if (!container) return;
-                
-                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
-                const temaArray = Object.entries(genelTemalar).map(([key, value]) => ({
-                    key,
-                    name: THEME_INFO[key]?.title || key,
-                    score: parseFloat(value)
-                }));
-                
-                const sorted = temaArray.sort((a, b) => b.score - a.score);
-                const strongAreas = sorted.slice(0, 3);
-                const weakAreas = sorted.slice(-3).reverse();
-                
-                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
-                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
-                const katilimOrani = (allValidSurveys.length / totalPersonel) * 100;
-                
-                const ruhSagligiSkor = parseFloat(utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]));
-                
-                container.innerHTML = `
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 16px; margin-bottom: 25px; color: white;">
-                        <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                            <span class="material-icons" style="font-size: 32px;">dashboard</span>
-                            Yönetici Özet Paneli
-                        </h2>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 12px;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-icons">check_circle</span>
-                                    Güçlü Yönler
-                                </h3>
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    ${strongAreas.map(area => `
-                                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
-                                            <strong>${area.name}:</strong> ${area.score}%
-                                        </li>
-                                    `).join('')}
-                                    <li style="padding: 8px 0; font-size: 14px;">
-                                        <strong>Katılım Oranı:</strong> ${utils.formatPercentage(katilimOrani)}%
-                                    </li>
-                                </ul>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 20px; border-radius: 12px;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-icons">warning</span>
-                                    Acil Dikkat Gerektiren Alanlar
-                                </h3>
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    ${weakAreas.map(area => `
-                                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
-                                            <strong>${area.name}:</strong> ${area.score}%
-                                        </li>
-                                    `).join('')}
-                                    ${ruhSagligiSkor > 50 ? `
-                                        <li style="padding: 8px 0; font-size: 14px;">
-                                            <strong>Ruh Sağlığı Riski:</strong> ${ruhSagligiSkor}% (Yüksek)
-                                        </li>
-                                    ` : ''}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                `;
             },
             
             renderMetrics: () => {
@@ -3538,9 +3470,6 @@
                             </button>
                         </div>
                     ` : `
-                        <!-- HIZLI ÖZET PANELİ -->
-                        <div id="dashboardQuickSummary"></div>
-                        
                         <!-- KRİTİK METRİKLER -->
                         <div id="dashboardMetrics"></div>
                         
