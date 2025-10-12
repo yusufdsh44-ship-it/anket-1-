@@ -2682,7 +2682,6 @@
                 dashboardManager.renderMudurlukBarChart();
                 dashboardManager.renderTopBottomMudurlukler();
                 dashboardManager.renderSosyalMedya();
-                dashboardManager.renderCriticalFindings();
                 dashboardManager.renderAcikUcluSummary();
                 dashboardManager.renderRuhSagligi();
                 dashboardManager.renderActionPriority();
@@ -3104,52 +3103,6 @@
                 `;
             },
             
-            renderCriticalFindings: () => {
-                const lowContainer = document.getElementById('lowScores');
-                const highContainer = document.getElementById('highScores');
-                if (!lowContainer || !highContainer) return;
-                
-                const allScores = [];
-                Object.values(state.processedData).forEach(md => {
-                    Object.entries(md.temalar).forEach(([key, value]) => {
-                        allScores.push({
-                            mudurluk: md.ad,
-                            kod: md.kod,
-                            tema: THEME_INFO[key]?.title || key,
-                            score: parseFloat(value)
-                        });
-                    });
-                });
-                
-                const sorted = allScores.sort((a, b) => a.score - b.score);
-                const lowest5 = sorted.slice(0, 5);
-                const highest5 = sorted.slice(-5).reverse();
-                
-                lowContainer.innerHTML = lowest5.map((item, i) => `
-                    <div style="padding: 10px; background: #fef2f2; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #ef4444;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <div style="font-weight: 600; color: #1a1a1a; font-size: 13px;">${item.tema}</div>
-                                <div style="font-size: 11px; color: #6b7280;">#${item.kod} - ${item.mudurluk}</div>
-                            </div>
-                            <div style="font-size: 20px; font-weight: 700; color: #ef4444;">${item.score}%</div>
-                        </div>
-                    </div>
-                `).join('');
-                
-                highContainer.innerHTML = highest5.map((item, i) => `
-                    <div style="padding: 10px; background: #f0fdf4; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #10b981;">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div style="flex: 1;">
-                                <div style="font-weight: 600; color: #1a1a1a; font-size: 13px;">${item.tema}</div>
-                                <div style="font-size: 11px; color: #6b7280;">#${item.kod} - ${item.mudurluk}</div>
-                            </div>
-                            <div style="font-size: 20px; font-weight: 700; color: #10b981;">${item.score}%</div>
-                        </div>
-                    </div>
-                `).join('');
-            },
-            
             renderAcikUcluSummary: () => {
                 const container = document.getElementById('dashboardAcikUclu');
                 if (!container) return;
@@ -3547,22 +3500,6 @@
                         
                         <!-- SOSYAL MEDYA ÖZETİ -->
                         <div id="dashboardSosyalMedya"></div>
-                        
-                        <!-- KRİTİK BULGULAR -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
-                                    🔴 En Düşük 5 Skor
-                                </h3>
-                                <div id="lowScores"></div>
-                            </div>
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
-                                    🟢 En Yüksek 5 Skor
-                                </h3>
-                                <div id="highScores"></div>
-                            </div>
-                        </div>
                         
                         <!-- AÇIK UÇLU ÖZET -->
                         <div id="dashboardAcikUclu"></div>
