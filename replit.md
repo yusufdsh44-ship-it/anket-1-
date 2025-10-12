@@ -12,13 +12,16 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 **Current State:** Fully functional dashboard-focused web application with data visualization running on Python HTTP server
 
 ## Recent Changes
-- 2025-10-12: Enhanced dashboard as management control center
+- 2025-10-12: Dashboard UI/UX improvements for better visual hierarchy and clarity
+  - **Enhanced Metric Cards:** Increased font size to 56px with 900 weight, added box-shadow effects, created pill-style theme boxes showing individual scores
+  - **Removed Department Codes:** All "#116", "#101" style codes removed from dashboard for cleaner presentation, now showing only department names
+  - **Redesigned Social Media Section:** Added authentic platform logos (Instagram gradient, Twitter blue, Facebook, YouTube), split display into Belediye/Başkan accounts with individual counts (e.g., "25 kişi takip ediyor (62.5%)")
+  - **Compact Strong/Weak Areas:** Converted to side-by-side grid layout with accordion-style expand/collapse for space efficiency
   - Updated all terminology for clarity ("Hissedilen İş Yükü/Stresine Karşılık Kurum Desteği/Kaynakları", "En Memnun/Az Memnun")
   - Added executive summary panel (Quick Summary) at dashboard top with strongest areas and attention areas
   - Created detailed "En Güçlü 5 Alan" cards with scores, open-ended quote examples, and navigation buttons
   - Created detailed "Geliştirilmesi Gereken 5 Alan" cards with scores, open-ended quote examples, and navigation buttons
   - Replaced radar chart with horizontal bar chart for theme analysis (better readability)
-  - Enhanced social media section with personnel counts (e.g., "62.5% - 25/40 kişi")
   - Separated mental health and smoking analysis into distinct cards
   - Added top 5 smoking departments ranking
   - Added top 10 keyword list alongside word cloud in open-ended section
