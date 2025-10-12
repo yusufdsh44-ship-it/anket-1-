@@ -2783,11 +2783,11 @@
                 };
                 
                 strongContainer.innerHTML = `
-                    <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #10b981; margin: 20px 0;">
-                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #10b981; display: flex; align-items: center; gap: 10px;">
-                            <span class="material-icons" style="font-size: 28px;">trending_up</span>
-                            ✅ Belediyenin En Güçlü 5 Alanı
-                        </h2>
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
+                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #10b981; display: flex; align-items: center; gap: 8px;">
+                            <span class="material-icons" style="font-size: 20px;">trending_up</span>
+                            ✅ En Güçlü 5 Alan
+                        </h3>
                         ${strongAreas.map((area, i) => {
                             const examples = getExampleComments(area);
                             const questionScores = getQuestionScores(area);
@@ -2795,82 +2795,88 @@
                             const hasMore = examples.length > 5;
                             const strongId = `strong_${i}`;
                             return `
-                                <div style="background: #f0fdf4; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #10b981;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                        <div>
-                                            <span style="font-size: 18px; font-weight: 700; color: #10b981; margin-right: 10px;">${i + 1}.</span>
-                                            <strong style="font-size: 16px; color: #1a1a1a;">${area.name}</strong>
+                                <div style="background: #f0fdf4; padding: 10px; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #10b981;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="
+                                        const details = document.getElementById('${strongId}_details');
+                                        const icon = document.getElementById('${strongId}_icon');
+                                        if (details.style.display === 'none') {
+                                            details.style.display = 'block';
+                                            icon.textContent = 'expand_less';
+                                        } else {
+                                            details.style.display = 'none';
+                                            icon.textContent = 'expand_more';
+                                        }
+                                    ">
+                                        <div style="flex: 1;">
+                                            <span style="font-size: 14px; font-weight: 700; color: #10b981;">${i + 1}.</span>
+                                            <strong style="font-size: 14px; color: #1a1a1a;">${area.name}</strong>
                                         </div>
-                                        <div style="font-size: 24px; font-weight: 700; color: #10b981;">${area.score}%</div>
-                                    </div>
-                                    <div style="font-size: 13px; color: #6b7280; margin-bottom: 12px; font-style: italic;">
-                                        ${area.description}
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="font-size: 18px; font-weight: 700; color: #10b981;">${area.score}%</div>
+                                            <span class="material-icons" id="${strongId}_icon" style="font-size: 20px; color: #10b981;">expand_more</span>
+                                        </div>
                                     </div>
                                     
-                                    ${questionScores.length > 0 ? `
-                                        <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
-                                            <div style="font-size: 12px; font-weight: 600; color: #10b981; margin-bottom: 8px;">📊 Tema Soruları ve Memnuniyet Oranları:</div>
-                                            ${questionScores.map(q => `
-                                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                    <div style="font-size: 12px; color: #374151; flex: 1;">${q.text}</div>
-                                                    <div style="font-size: 13px; font-weight: 600; color: #10b981; margin-left: 10px;">${q.score}%</div>
-                                                </div>
-                                            `).join('')}
+                                    <div id="${strongId}_details" style="display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #10b981;">
+                                        <div style="font-size: 11px; color: #6b7280; margin-bottom: 8px; font-style: italic;">
+                                            ${area.description}
                                         </div>
-                                    ` : ''}
-                                    
-                                    <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
-                                        <div style="font-size: 12px; font-weight: 600; color: #10b981; margin-bottom: 8px;">💬 Açık Uçlu Yorumlar (İlk 5):</div>
-                                        ${displayComments.map((comment, idx) => `
-                                            <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                <strong>${idx + 1}.</strong> "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                        
+                                        ${questionScores.length > 0 ? `
+                                            <div style="background: white; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                                                <div style="font-size: 11px; font-weight: 600; color: #10b981; margin-bottom: 6px;">📊 Sorular:</div>
+                                                ${questionScores.map(q => `
+                                                    <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed #e5e7eb; font-size: 11px;">
+                                                        <div style="color: #374151; flex: 1;">${q.text}</div>
+                                                        <div style="font-weight: 600; color: #10b981; margin-left: 8px;">${q.score}%</div>
+                                                    </div>
+                                                `).join('')}
                                             </div>
-                                        `).join('')}
-                                        <div id="${strongId}_rest" style="display: none;">
-                                            ${examples.slice(5).map((comment, idx) => `
-                                                <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                    <strong>${idx + 6}.</strong> "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                        ` : ''}
+                                        
+                                        <div style="background: white; padding: 8px; border-radius: 4px;">
+                                            <div style="font-size: 11px; font-weight: 600; color: #10b981; margin-bottom: 6px;">💬 Yorumlar:</div>
+                                            ${displayComments.map((comment, idx) => `
+                                                <div style="font-size: 11px; color: #374151; padding: 4px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                    <strong>${idx + 1}.</strong> "${comment.substring(0, 120)}${comment.length > 120 ? '...' : ''}"
                                                 </div>
                                             `).join('')}
+                                            <div id="${strongId}_rest" style="display: none;">
+                                                ${examples.slice(5).map((comment, idx) => `
+                                                    <div style="font-size: 11px; color: #374151; padding: 4px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                        <strong>${idx + 6}.</strong> "${comment.substring(0, 120)}${comment.length > 120 ? '...' : ''}"
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                            ${hasMore ? `
+                                                <button onclick="event.stopPropagation(); 
+                                                    const el = document.getElementById('${strongId}_rest');
+                                                    const btn = event.target;
+                                                    if (el.style.display === 'none') {
+                                                        el.style.display = 'block';
+                                                        btn.textContent = 'Daha Az';
+                                                    } else {
+                                                        el.style.display = 'none';
+                                                        btn.textContent = 'Tümü (${examples.length})';
+                                                    }
+                                                " style="margin-top: 6px; padding: 4px 8px; background: #10b981; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 10px;">
+                                                    Tümü (${examples.length})
+                                                </button>
+                                            ` : ''}
                                         </div>
-                                        ${hasMore ? `
-                                            <button onclick="
-                                                const el = document.getElementById('${strongId}_rest');
-                                                const btn = event.target;
-                                                if (el.style.display === 'none') {
-                                                    el.style.display = 'block';
-                                                    btn.textContent = 'Daha Az Göster';
-                                                } else {
-                                                    el.style.display = 'none';
-                                                    btn.textContent = 'Tamamını Gör (${examples.length} yorum)';
-                                                }
-                                            " style="margin-top: 8px; padding: 6px 12px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 12px;">
-                                                Tamamını Gör (${examples.length} yorum)
-                                            </button>
-                                        ` : ''}
                                     </div>
                                 </div>
                             `;
                         }).join('')}
-                        <div style="display: flex; gap: 10px; margin-top: 20px;">
-                            <button class="btn" onclick="pageManager.showPage('acik-uclu-cevaplar')" style="flex: 1;">
-                                <span class="material-icons">comment</span>
-                                Tüm Açık Uçlu Cevapları Gör
-                            </button>
-                            <button class="btn" onclick="pageManager.showPage('konular')" style="flex: 1; background: #10b981;">
-                                <span class="material-icons">analytics</span>
-                                Detaylı Tema Analizi
-                            </button>
-                        </div>
                     </div>
                 `;
                 
                 weakContainer.innerHTML = `
-                    <div style="background: white; padding: 25px; border-radius: 12px; border: 2px solid #ef4444; margin: 20px 0;">
-                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #ef4444; display: flex; align-items: center; gap: 10px;">
-                            <span class="material-icons" style="font-size: 28px;">trending_down</span>
+                    <div style="background: white; padding: 15px; border-radius: 8px; border: 2px solid #ef4444;">
+                        <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
+                            <span class="material-icons" style="font-size: 20px;">trending_down</span>
                             ⚠️ Geliştirilmesi Gereken 5 Alan
-                        </h2>
+                        </h3>
                         ${weakAreas.map((area, i) => {
                             const examples = getExampleComments(area);
                             const questionScores = getQuestionScores(area);
@@ -2878,73 +2884,79 @@
                             const hasMore = examples.length > 5;
                             const weakId = `weak_${i}`;
                             return `
-                                <div style="background: #fef2f2; padding: 18px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #ef4444;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                        <div>
-                                            <span style="font-size: 18px; font-weight: 700; color: #ef4444; margin-right: 10px;">${i + 1}.</span>
-                                            <strong style="font-size: 16px; color: #1a1a1a;">${area.name}</strong>
+                                <div style="background: #fef2f2; padding: 10px; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #ef4444;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="
+                                        const details = document.getElementById('${weakId}_details');
+                                        const icon = document.getElementById('${weakId}_icon');
+                                        if (details.style.display === 'none') {
+                                            details.style.display = 'block';
+                                            icon.textContent = 'expand_less';
+                                        } else {
+                                            details.style.display = 'none';
+                                            icon.textContent = 'expand_more';
+                                        }
+                                    ">
+                                        <div style="flex: 1;">
+                                            <span style="font-size: 14px; font-weight: 700; color: #ef4444;">${i + 1}.</span>
+                                            <strong style="font-size: 14px; color: #1a1a1a;">${area.name}</strong>
                                         </div>
-                                        <div style="font-size: 24px; font-weight: 700; color: #ef4444;">${area.score}%</div>
-                                    </div>
-                                    <div style="font-size: 13px; color: #6b7280; margin-bottom: 12px; font-style: italic;">
-                                        ${area.description}
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="font-size: 18px; font-weight: 700; color: #ef4444;">${area.score}%</div>
+                                            <span class="material-icons" id="${weakId}_icon" style="font-size: 20px; color: #ef4444;">expand_more</span>
+                                        </div>
                                     </div>
                                     
-                                    ${questionScores.length > 0 ? `
-                                        <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
-                                            <div style="font-size: 12px; font-weight: 600; color: #ef4444; margin-bottom: 8px;">📊 Tema Soruları ve Memnuniyet Oranları:</div>
-                                            ${questionScores.map(q => `
-                                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                    <div style="font-size: 12px; color: #374151; flex: 1;">${q.text}</div>
-                                                    <div style="font-size: 13px; font-weight: 600; color: #ef4444; margin-left: 10px;">${q.score}%</div>
-                                                </div>
-                                            `).join('')}
+                                    <div id="${weakId}_details" style="display: none; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ef4444;">
+                                        <div style="font-size: 11px; color: #6b7280; margin-bottom: 8px; font-style: italic;">
+                                            ${area.description}
                                         </div>
-                                    ` : ''}
-                                    
-                                    <div style="background: white; padding: 12px; border-radius: 6px; margin-top: 10px;">
-                                        <div style="font-size: 12px; font-weight: 600; color: #ef4444; margin-bottom: 8px;">💬 Açık Uçlu Yorumlar (İlk 5):</div>
-                                        ${displayComments.map((comment, idx) => `
-                                            <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                <strong>${idx + 1}.</strong> "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                        
+                                        ${questionScores.length > 0 ? `
+                                            <div style="background: white; padding: 8px; border-radius: 4px; margin-bottom: 8px;">
+                                                <div style="font-size: 11px; font-weight: 600; color: #ef4444; margin-bottom: 6px;">📊 Sorular:</div>
+                                                ${questionScores.map(q => `
+                                                    <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed #e5e7eb; font-size: 11px;">
+                                                        <div style="color: #374151; flex: 1;">${q.text}</div>
+                                                        <div style="font-weight: 600; color: #ef4444; margin-left: 8px;">${q.score}%</div>
+                                                    </div>
+                                                `).join('')}
                                             </div>
-                                        `).join('')}
-                                        <div id="${weakId}_rest" style="display: none;">
-                                            ${examples.slice(5).map((comment, idx) => `
-                                                <div style="font-size: 13px; color: #374151; padding: 6px 0; border-bottom: 1px dashed #e5e7eb;">
-                                                    <strong>${idx + 6}.</strong> "${comment.substring(0, 150)}${comment.length > 150 ? '...' : ''}"
+                                        ` : ''}
+                                        
+                                        <div style="background: white; padding: 8px; border-radius: 4px;">
+                                            <div style="font-size: 11px; font-weight: 600; color: #ef4444; margin-bottom: 6px;">💬 Yorumlar:</div>
+                                            ${displayComments.map((comment, idx) => `
+                                                <div style="font-size: 11px; color: #374151; padding: 4px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                    <strong>${idx + 1}.</strong> "${comment.substring(0, 120)}${comment.length > 120 ? '...' : ''}"
                                                 </div>
                                             `).join('')}
+                                            <div id="${weakId}_rest" style="display: none;">
+                                                ${examples.slice(5).map((comment, idx) => `
+                                                    <div style="font-size: 11px; color: #374151; padding: 4px 0; border-bottom: 1px dashed #e5e7eb;">
+                                                        <strong>${idx + 6}.</strong> "${comment.substring(0, 120)}${comment.length > 120 ? '...' : ''}"
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                            ${hasMore ? `
+                                                <button onclick="event.stopPropagation(); 
+                                                    const el = document.getElementById('${weakId}_rest');
+                                                    const btn = event.target;
+                                                    if (el.style.display === 'none') {
+                                                        el.style.display = 'block';
+                                                        btn.textContent = 'Daha Az';
+                                                    } else {
+                                                        el.style.display = 'none';
+                                                        btn.textContent = 'Tümü (${examples.length})';
+                                                    }
+                                                " style="margin-top: 6px; padding: 4px 8px; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 10px;">
+                                                    Tümü (${examples.length})
+                                                </button>
+                                            ` : ''}
                                         </div>
-                                        ${hasMore ? `
-                                            <button onclick="
-                                                const el = document.getElementById('${weakId}_rest');
-                                                const btn = event.target;
-                                                if (el.style.display === 'none') {
-                                                    el.style.display = 'block';
-                                                    btn.textContent = 'Daha Az Göster';
-                                                } else {
-                                                    el.style.display = 'none';
-                                                    btn.textContent = 'Tamamını Gör (${examples.length} yorum)';
-                                                }
-                                            " style="margin-top: 8px; padding: 6px 12px; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 12px;">
-                                                Tamamını Gör (${examples.length} yorum)
-                                            </button>
-                                        ` : ''}
                                     </div>
                                 </div>
                             `;
                         }).join('')}
-                        <div style="display: flex; gap: 10px; margin-top: 20px;">
-                            <button class="btn" onclick="pageManager.showPage('acik-uclu-cevaplar')" style="flex: 1;">
-                                <span class="material-icons">comment</span>
-                                Tüm Açık Uçlu Cevapları Gör
-                            </button>
-                            <button class="btn" onclick="pageManager.showPage('konular')" style="flex: 1; background: #ef4444;">
-                                <span class="material-icons">analytics</span>
-                                Detaylı Tema Analizi
-                            </button>
-                        </div>
                     </div>
                 `;
             },
@@ -3478,11 +3490,11 @@
                         <!-- KRİTİK METRİKLER -->
                         <div id="dashboardMetrics"></div>
                         
-                        <!-- EN GÜÇLÜ 5 ALAN -->
-                        <div id="dashboardStrongAreas"></div>
-                        
-                        <!-- GELİŞTİRİLMESİ GEREKEN 5 ALAN -->
-                        <div id="dashboardWeakAreas"></div>
+                        <!-- EN GÜÇLÜ VE GELİŞTİRİLMESİ GEREKEN ALANLAR -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+                            <div id="dashboardStrongAreas"></div>
+                            <div id="dashboardWeakAreas"></div>
+                        </div>
                         
                         <!-- MÜDÜRLÜK PERFORMANS GRAFİĞİ -->
                         <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
