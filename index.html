@@ -2711,27 +2711,30 @@
                 
                 const sosyalMedya = utils.calculateSocialMedia(allValidSurveys);
                 
+                const temaListesi = Object.entries(genelMemnuniyet).map(([key, val]) => THEME_INFO[key]?.title || key).join(', ');
+                
                 container.innerHTML = `
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
                         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white;">
                             <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Toplam Katılım</div>
                             <div style="font-size: 32px; font-weight: 700;">${katilimOrani}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">${totalKatilan}/${totalPersonel} kişi</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px; line-height: 1.4;">
+                                Belediyedeki ${totalPersonel} kişiden ${totalKatilan} kişi katıldı. ${allValidSurveys.length} anket kontrol sorularını geçti ve geçerli sayıldı.
+                            </div>
                         </div>
                         <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 12px; color: white;">
                             <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Genel Memnuniyet</div>
                             <div style="font-size: 32px; font-weight: 700;">${avgMemnuniyet}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">10 tema ortalaması</div>
+                            <div style="font-size: 10px; opacity: 0.8; margin-top: 4px; line-height: 1.3;">
+                                ${temaListesi}
+                            </div>
                         </div>
                         <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Hissedilen İş Yükü/Stresine Karşılık Kurum Desteği/Kaynakları</div>
+                            <div style="font-size: 11px; opacity: 0.9; margin-bottom: 8px;">Algılanan Belediye Desteğinin Hissedilen İş Stresi ile Dengesi</div>
                             <div style="font-size: 32px; font-weight: 700;">${denge >= 0 ? '+' : ''}${denge}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">${denge >= 0 ? 'Pozitif denge' : 'Negatif denge'}</div>
-                        </div>
-                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 20px; border-radius: 12px; color: white;">
-                            <div style="font-size: 12px; opacity: 0.9; margin-bottom: 8px;">Sosyal Medya Takip</div>
-                            <div style="font-size: 32px; font-weight: 700;">${sosyalMedya.toplam}%</div>
-                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Genel takip oranı</div>
+                            <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">
+                                ${denge >= 0 ? `Personeller belediye desteğini doğal iş stresine karşılık +${denge}'te görüyor` : `Personeller ${Math.abs(denge)} puan destek eksikliği hissediyor`}
+                            </div>
                         </div>
                     </div>
                 `;
