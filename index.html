@@ -2681,7 +2681,6 @@
                 dashboardManager.renderStrongWeakAreas();
                 dashboardManager.renderMudurlukBarChart();
                 dashboardManager.renderTopBottomMudurlukler();
-                dashboardManager.renderTemaBarChart();
                 dashboardManager.renderSosyalMedya();
                 dashboardManager.renderCriticalFindings();
                 dashboardManager.renderAcikUcluSummary();
@@ -3035,69 +3034,6 @@
                         <div style="font-size: 24px; font-weight: 700; color: #ef4444;">${m.genelMemnuniyet}%</div>
                     </div>
                 `).join('');
-            },
-            
-            renderTemaBarChart: () => {
-                const canvas = document.getElementById('temaRadarChart');
-                if (!canvas) return;
-                
-                if (state.charts.temaRadar) {
-                    state.charts.temaRadar.destroy();
-                }
-                
-                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
-                const temaArray = Object.entries(genelTemalar).map(([key, value]) => ({
-                    label: THEME_INFO[key]?.title || key,
-                    value: parseFloat(value)
-                }));
-                
-                temaArray.sort((a, b) => b.value - a.value);
-                
-                const temaLabels = temaArray.map(t => t.label);
-                const temaData = temaArray.map(t => t.value);
-                
-                const ctx = canvas.getContext('2d');
-                state.charts.temaRadar = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: temaLabels,
-                        datasets: [{
-                            label: 'Memnuniyet Skoru (%)',
-                            data: temaData,
-                            backgroundColor: temaData.map(val => {
-                                if (val >= 70) return '#10b981';
-                                if (val >= 50) return '#f59e0b';
-                                return '#ef4444';
-                            }),
-                            borderRadius: 6
-                        }]
-                    },
-                    options: {
-                        indexAxis: 'y',
-                        responsive: true,
-                        maintainAspectRatio: true,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    label: (context) => `${context.parsed.x}%`
-                                }
-                            }
-                        },
-                        scales: {
-                            x: {
-                                beginAtZero: true,
-                                max: 100,
-                                title: { display: true, text: 'Memnuniyet Skoru (%)' }
-                            },
-                            y: {
-                                ticks: {
-                                    autoSkip: false
-                                }
-                            }
-                        }
-                    }
-                });
             },
             
             renderSosyalMedya: () => {
@@ -3599,22 +3535,6 @@
                                     📉 En Az Memnun 5 Müdürlük
                                 </h3>
                                 <div id="bottomMudurlukler"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- TEMA BAR GRAFİĞİ -->
-                        <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
-                            <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
-                                🎯 10 Tema Performans Haritası
-                            </h2>
-                            <div style="max-width: 900px; margin: 0 auto;">
-                                <canvas id="temaRadarChart"></canvas>
-                            </div>
-                            <div style="text-align: center; margin-top: 15px;">
-                                <button class="btn" onclick="pageManager.showPage('konular')" style="background: #667eea;">
-                                    <span class="material-icons">analytics</span>
-                                    Detaylı Tema Analizini Gör
-                                </button>
                             </div>
                         </div>
                         
