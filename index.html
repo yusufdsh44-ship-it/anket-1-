@@ -3111,44 +3111,54 @@
                 const keywords = utils.analyzeKeywords(allValidSurveys);
                 const totalResponses = allValidSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
                 
-                const wordSizes = keywords.map(k => Math.min(40, 14 + k.count * 2));
+                const top5 = keywords.slice(0, 5);
+                const next5 = keywords.slice(5, 10);
                 
                 container.innerHTML = `
                     <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                         <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
-                            💬 Açık Uçlu Cevaplar Özeti
+                            💬 Açık Uçlu Cevaplar - En Sık Geçen Kelimeler
                         </h2>
-                        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
-                            <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Toplam Cevap Sayısı</div>
-                            <div style="font-size: 36px; font-weight: 700; color: #667eea;">${totalResponses}</div>
-                        </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div>
-                                <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #374151;">Kelime Bulutu</h3>
-                                <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%); border-radius: 8px; min-height: 200px; display: flex; align-items: center; justify-content: center; flex-wrap: wrap;">
-                                    ${keywords.map((k, i) => `
-                                        <span style="display: inline-block; margin: 6px; padding: 6px 12px; background: white; border-radius: 20px; font-size: ${Math.min(28, 12 + k.count * 1.5)}px; font-weight: 600; color: #667eea; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                            ${k.name} (${k.count})
-                                        </span>
-                                    `).join('')}
+                        <div style="background: #f9fafb; padding: 15px; border-radius: 8px; max-width: 600px; margin: 0 auto;">
+                            ${top5.map((k, i) => `
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #667eea;">
+                                    <div>
+                                        <span style="font-weight: 700; color: #667eea; margin-right: 8px;">${i + 1}.</span>
+                                        <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">${k.name}</span>
+                                    </div>
+                                    <div style="background: #667eea; color: white; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">
+                                        ${k.count} kez
+                                    </div>
                                 </div>
-                            </div>
-                            <div>
-                                <h3 style="font-size: 15px; font-weight: 600; margin-bottom: 12px; color: #374151;">En Sık Geçen 10 Kelime</h3>
-                                <div style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                                    ${keywords.slice(0, 10).map((k, i) => `
-                                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid ${i < 3 ? '#667eea' : '#9ca3af'};">
-                                            <div>
-                                                <span style="font-weight: 700; color: ${i < 3 ? '#667eea' : '#6b7280'}; margin-right: 8px;">${i + 1}.</span>
-                                                <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">${k.name}</span>
-                                            </div>
-                                            <div style="background: ${i < 3 ? '#667eea' : '#e5e7eb'}; color: ${i < 3 ? 'white' : '#374151'}; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">
-                                                ${k.count} kez
-                                            </div>
+                            `).join('')}
+                            <div id="moreKeywords" style="display: none;">
+                                ${next5.map((k, i) => `
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: white; border-radius: 6px; margin-bottom: 8px; border-left: 3px solid #9ca3af;">
+                                        <div>
+                                            <span style="font-weight: 700; color: #6b7280; margin-right: 8px;">${i + 6}.</span>
+                                            <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">${k.name}</span>
                                         </div>
-                                    `).join('')}
-                                </div>
+                                        <div style="background: #e5e7eb; color: #374151; padding: 4px 12px; border-radius: 12px; font-size: 13px; font-weight: 600;">
+                                            ${k.count} kez
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
+                            ${keywords.length > 5 ? `
+                                <button onclick="
+                                    const el = document.getElementById('moreKeywords');
+                                    const btn = event.target;
+                                    if (el.style.display === 'none') {
+                                        el.style.display = 'block';
+                                        btn.textContent = 'Daha Az Göster';
+                                    } else {
+                                        el.style.display = 'none';
+                                        btn.textContent = '•••';
+                                    }
+                                " style="width: 100%; margin-top: 10px; padding: 8px; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600;">
+                                    •••
+                                </button>
+                            ` : ''}
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="btn" onclick="pageManager.showPage('acik-uclu')" style="background: #667eea;">
