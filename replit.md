@@ -12,13 +12,6 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 **Current State:** Fully functional dashboard-focused web application with data visualization running on Python HTTP server
 
 ## Recent Changes
-- 2025-10-14: İş-Yaşam Dengesi (Work-Life Balance) card redesigned with interactive balance scale visualization
-  - **Terazi Görseli:** Visual balance scale showing İş Yükü (workload - orange/red) vs. Belediye Desteği (support - green)
-  - **Dinamik Eğim:** Scales tilt based on balance value with capped rotation (±15°) and smooth animations
-  - **Açık Skorlar:** Both workload and support percentages displayed in their respective scale pans
-  - **Belirgin Sonuç:** Balance result (+10.4%) prominently shown at top center
-  - **Responsive:** Optimized for desktop/tablet with smooth transitions
-
 - 2025-10-12: Dashboard UI/UX improvements for better visual hierarchy and clarity
   - **Enhanced Metric Cards:** Increased font size to 56px with 900 weight, added box-shadow effects, created pill-style theme boxes showing individual scores
   - **Removed Department Codes:** All "#116", "#101" style codes removed from dashboard for cleaner presentation, now showing only department names
