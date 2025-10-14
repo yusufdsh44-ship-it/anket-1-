@@ -2733,11 +2733,47 @@
                                 ${temaBoxes}
                             </div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 16px; color: white; box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);">
-                            <div style="font-size: 13px; font-weight: 600; opacity: 0.95; margin-bottom: 12px; letter-spacing: 0.3px;">ALGILANAN BELEDİYE DESTEĞİNİN HİSSEDİLEN İŞ STRESİ İLE DENGESİ</div>
-                            <div style="font-size: 56px; font-weight: 900; line-height: 1; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">${denge >= 0 ? '+' : ''}${denge}%</div>
-                            <div style="font-size: 13px; opacity: 0.95; line-height: 1.5; font-weight: 500;">
-                                ${denge >= 0 ? `Personeller <strong style="font-size: 16px;">+${denge} puan</strong> destek görüyor` : `<strong style="font-size: 16px;">${Math.abs(denge)} puan</strong> destek eksikliği`}
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 16px; color: white; box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4); position: relative; overflow: hidden;">
+                            <div style="font-size: 13px; font-weight: 600; opacity: 0.95; margin-bottom: 15px; letter-spacing: 0.3px; text-align: center;">İŞ-YAŞAM DENGESİ</div>
+                            
+                            <!-- Terazi SVG -->
+                            <div style="position: relative; height: 180px; display: flex; align-items: center; justify-content: center;">
+                                <!-- Sol Kefe - İş Yoğunluğu -->
+                                <div style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%) rotate(${Math.min(Math.max(denge * 0.3, -15), 15)}deg); transform-origin: 80% 50%; transition: transform 0.5s ease;">
+                                    <div style="width: 100px; height: 70px; background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); border-radius: 12px 12px 50px 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4); border: 3px solid rgba(255,255,255,0.8);">
+                                        <div style="font-size: 10px; opacity: 0.9; font-weight: 600; margin-bottom: 2px;">İŞ YÜKÜ</div>
+                                        <div style="font-size: 24px; font-weight: 900; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">${workload}%</div>
+                                    </div>
+                                    <div style="width: 2px; height: 25px; background: rgba(255,255,255,0.8); margin: 0 auto;"></div>
+                                </div>
+                                
+                                <!-- Terazi Merkezi -->
+                                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center;">
+                                    <!-- Üst Çubuk -->
+                                    <div style="width: 200px; height: 4px; background: rgba(255,255,255,0.9); border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: transform 0.5s ease;"></div>
+                                    <!-- Orta Dikey -->
+                                    <div style="width: 4px; height: 60px; background: rgba(255,255,255,0.9); border-radius: 2px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                                    <!-- Taban -->
+                                    <div style="width: 40px; height: 8px; background: rgba(255,255,255,0.9); border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                                </div>
+                                
+                                <!-- Sağ Kefe - Belediye Desteği -->
+                                <div style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%) rotate(${Math.min(Math.max(-denge * 0.3, -15), 15)}deg); transform-origin: 20% 50%; transition: transform 0.5s ease;">
+                                    <div style="width: 100px; height: 70px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px 12px 50px 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4); border: 3px solid rgba(255,255,255,0.8);">
+                                        <div style="font-size: 10px; opacity: 0.9; font-weight: 600; margin-bottom: 2px;">DESTEK</div>
+                                        <div style="font-size: 24px; font-weight: 900; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">${support}%</div>
+                                    </div>
+                                    <div style="width: 2px; height: 25px; background: rgba(255,255,255,0.8); margin: 0 auto;"></div>
+                                </div>
+                                
+                                <!-- Sonuç Değeri -->
+                                <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: rgba(255,255,255,0.25); padding: 8px 20px; border-radius: 20px; backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.4);">
+                                    <div style="font-size: 32px; font-weight: 900; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">${denge >= 0 ? '+' : ''}${denge}%</div>
+                                </div>
+                            </div>
+                            
+                            <div style="font-size: 12px; opacity: 0.95; text-align: center; margin-top: 5px; font-weight: 500;">
+                                ${denge >= 0 ? `✅ Destek ${Math.abs(denge)} puan fazla` : `⚠️ İş yükü ${Math.abs(denge)} puan fazla`}
                             </div>
                         </div>
                     </div>
