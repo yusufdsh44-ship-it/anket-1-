@@ -12,6 +12,16 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 **Current State:** Fully functional dashboard-focused web application with data visualization running on Python HTTP server
 
 ## Recent Changes
+- 2025-10-16: **Unified Priority List System** implemented (3-layer analysis)
+  - **Question-Level Scoring:** All 49 questions individually scored and compared to municipality average
+  - **AI Insights Integration:** Open-ended responses analyzed via external AI (ChatGPT), then manually entered via structured form
+  - **Priority Calculation:** (Severity + Scope + Visibility) / 3 displayed as percentage (%92 format)
+  - **Dashboard Section:** New "ÖNCELİKLİ MÜDAHALE ALANLARI" card with filter buttons (Tümü/Temalar/Sorular/Yorumlar)
+  - **Methodology:** Based on FMEA Risk Priority Number + RICE scoring (adapted for HR survey context)
+  - **AI Form:** Modal form for entering: topic, sentiment (1-10), frequency (%), mention count, top phrases, example quotes
+  - **LocalStorage:** All AI insights persisted in browser storage
+  - **Unified List:** Combines themes (10), questions (49), and AI-analyzed comments in single priority-ranked list
+
 - 2025-10-12: Dashboard UI/UX improvements for better visual hierarchy and clarity
   - **Enhanced Metric Cards:** Increased font size to 56px with 900 weight, added box-shadow effects, created pill-style theme boxes showing individual scores
   - **Removed Department Codes:** All "#116", "#101" style codes removed from dashboard for cleaner presentation, now showing only department names
