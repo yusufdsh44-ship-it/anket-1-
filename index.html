@@ -2673,11 +2673,190 @@
             }
         };
         
+        const unifiedPriorityManager = {
+            // AI Insights localStorage yönetimi
+            getAIInsights: () => {
+                const stored = localStorage.getItem('aiInsights');
+                return stored ? JSON.parse(stored) : [];
+            },
+            
+            saveAIInsight: (insight) => {
+                const insights = unifiedPriorityManager.getAIInsights();
+                insight.id = Date.now().toString();
+                insight.createdAt = new Date().toISOString();
+                insights.push(insight);
+                localStorage.setItem('aiInsights', JSON.stringify(insights));
+                return insight;
+            },
+            
+            removeAIInsight: (id) => {
+                const insights = unifiedPriorityManager.getAIInsights();
+                const filtered = insights.filter(i => i.id !== id);
+                localStorage.setItem('aiInsights', JSON.stringify(filtered));
+            },
+            
+            // Öncelik puanı hesaplama
+            calculatePriorityScore: (severity, scope, visibility) => {
+                return Math.round((severity + scope + visibility) / 3);
+            },
+            
+            // Soru bazlı öncelikler
+            getQuestionPriorities: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) return [];
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const genelSoruOrtalamalar = tableRenderer.calculateGenelBelediyeSorular();
+                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
+                
+                // Her sorunun açık uçlularda geçme frekansını hesapla
+                const commentFrequency = SORULAR.map((soru, index) => {
+                    const keywords = soru.toLowerCase().split(' ').filter(w => w.length > 3).slice(0, 3);
+                    const matchingComments = allValidSurveys.filter(s => 
+                        s.acikUclu && keywords.some(kw => s.acikUclu.toLowerCase().includes(kw))
+                    );
+                    return (matchingComments.length / allValidSurveys.length) * 100;
+                });
+                
+                return SORULAR.map((soru, index) => {
+                    const soruSkoru = parseFloat(genelSoruOrtalamalar[index]);
+                    const belediyeOrtalamasi = parseFloat(
+                        genelSoruOrtalamalar.reduce((sum, val) => sum + parseFloat(val), 0) / genelSoruOrtalamalar.length
+                    );
+                    
+                    // Ciddiyet: Skor farkı normalize edilmiş
+                    const skorFarki = belediyeOrtalamasi - soruSkoru;
+                    const severity = Math.min(100, Math.max(0, (skorFarki / 3) * 100));
+                    
+                    // Kapsam: Cevaplayan personel oranı
+                    const cevapSayisi = allValidSurveys.filter(s => s[`s${index + 1}`] !== undefined).length;
+                    const scope = Math.min(100, (cevapSayisi / totalPersonel) * 100);
+                    
+                    // Görünürlük: Açık uçlularda geçme frekansı
+                    const visibility = Math.min(100, commentFrequency[index] * 3);
+                    
+                    const priorityScore = unifiedPriorityManager.calculatePriorityScore(severity, scope, visibility);
+                    
+                    return {
+                        type: 'soru',
+                        id: `soru_${index}`,
+                        title: soru,
+                        soruNo: index + 1,
+                        score: soruSkoru,
+                        avgScore: belediyeOrtalamasi,
+                        scoreDiff: skorFarki.toFixed(1),
+                        affectedCount: cevapSayisi,
+                        commentFrequency: commentFrequency[index].toFixed(1),
+                        severity,
+                        scope,
+                        visibility,
+                        priorityScore
+                    };
+                }).filter(item => item.priorityScore > 20); // Sadece önemli olanlar
+            },
+            
+            // Tema bazlı öncelikler
+            getThemePriorities: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) return [];
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const genelTemalar = tableRenderer.calculateGenelBelediyeTemalar();
+                const temaOrtalamasi = Object.values(genelTemalar).reduce((sum, val) => sum + parseFloat(val), 0) / 10;
+                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
+                
+                return Object.entries(genelTemalar).map(([key, value]) => {
+                    const temaSkoru = parseFloat(value);
+                    const skorFarki = temaOrtalamasi - temaSkoru;
+                    
+                    // Ciddiyet
+                    const severity = Math.min(100, Math.max(0, (skorFarki / 3) * 100));
+                    
+                    // Kapsam (tüm belediye)
+                    const scope = 100;
+                    
+                    // Görünürlük (yorumlarda bahsedilme)
+                    const keywords = THEME_INFO[key]?.keywords || [];
+                    const matchingComments = allValidSurveys.filter(s => 
+                        s.acikUclu && keywords.some(kw => s.acikUclu.toLowerCase().includes(kw))
+                    );
+                    const visibility = Math.min(100, (matchingComments.length / allValidSurveys.length) * 200);
+                    
+                    const priorityScore = unifiedPriorityManager.calculatePriorityScore(severity, scope, visibility);
+                    
+                    return {
+                        type: 'tema',
+                        id: `tema_${key}`,
+                        title: THEME_INFO[key]?.title || key,
+                        description: THEME_INFO[key]?.description || '',
+                        score: temaSkoru,
+                        avgScore: temaOrtalamasi,
+                        scoreDiff: skorFarki.toFixed(1),
+                        affectedCount: totalPersonel,
+                        severity,
+                        scope,
+                        visibility,
+                        priorityScore
+                    };
+                }).filter(item => item.priorityScore > 20);
+            },
+            
+            // AI Insights öncelikleri
+            getAIInsightPriorities: () => {
+                const insights = unifiedPriorityManager.getAIInsights();
+                const totalPersonel = Object.values(MUDURLUKLER).reduce((sum, m) => sum + m.personel, 0);
+                
+                return insights.map(insight => {
+                    // Ciddiyet: Duygu skoru (1-10, düşük = kötü)
+                    const severity = Math.min(100, ((10 - insight.sentiment) / 10) * 100);
+                    
+                    // Kapsam: Bahseden kişi sayısı
+                    const scope = Math.min(100, (insight.mentionCount / totalPersonel) * 100);
+                    
+                    // Görünürlük: Frekans yüzdesi
+                    const visibility = Math.min(100, insight.frequency * 2);
+                    
+                    const priorityScore = unifiedPriorityManager.calculatePriorityScore(severity, scope, visibility);
+                    
+                    return {
+                        type: 'yorum',
+                        id: `ai_${insight.id}`,
+                        title: insight.topic,
+                        sentiment: insight.sentiment,
+                        frequency: insight.frequency,
+                        mentionCount: insight.mentionCount,
+                        topPhrases: insight.topPhrases || [],
+                        examples: insight.examples || [],
+                        severity,
+                        scope,
+                        visibility,
+                        priorityScore
+                    };
+                }).filter(item => item.priorityScore > 20);
+            },
+            
+            // Tüm öncelikleri birleştir
+            getAllPriorities: (filter = 'all') => {
+                let priorities = [];
+                
+                if (filter === 'all' || filter === 'soru') {
+                    priorities = [...priorities, ...unifiedPriorityManager.getQuestionPriorities()];
+                }
+                if (filter === 'all' || filter === 'tema') {
+                    priorities = [...priorities, ...unifiedPriorityManager.getThemePriorities()];
+                }
+                if (filter === 'all' || filter === 'yorum') {
+                    priorities = [...priorities, ...unifiedPriorityManager.getAIInsightPriorities()];
+                }
+                
+                return priorities.sort((a, b) => b.priorityScore - a.priorityScore).slice(0, 10);
+            }
+        };
+        
         const dashboardManager = {
             renderDashboard: () => {
                 if (!state.processedData || Object.keys(state.processedData).length === 0) return;
                 
                 dashboardManager.renderMetrics();
+                dashboardManager.renderUnifiedPriorities();
                 dashboardManager.renderStrongWeakAreas();
                 dashboardManager.renderMudurlukBarChart();
                 dashboardManager.renderTopBottomMudurlukler();
@@ -2742,6 +2921,230 @@
                         </div>
                     </div>
                 `;
+            },
+            
+            renderUnifiedPriorities: () => {
+                const container = document.getElementById('dashboardUnifiedPriorities');
+                if (!container) return;
+                
+                let currentFilter = 'all';
+                
+                const renderList = (filter) => {
+                    const priorities = unifiedPriorityManager.getAllPriorities(filter);
+                    
+                    const getTypeBadge = (type) => {
+                        if (type === 'soru') return '<span style="background: #3b82f6; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">SORU</span>';
+                        if (type === 'tema') return '<span style="background: #10b981; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">TEMA</span>';
+                        if (type === 'yorum') return '<span style="background: #f59e0b; color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600;">YORUM</span>';
+                    };
+                    
+                    const renderCard = (item, index) => {
+                        if (item.type === 'soru') {
+                            return `
+                                <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 2px solid #e5e7eb; border-left: 5px solid #3b82f6;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                                        <div style="flex: 1;">
+                                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                                <span style="font-size: 20px; font-weight: 700; color: #1a1a1a;">${index + 1}.</span>
+                                                ${getTypeBadge(item.type)}
+                                                <span style="font-size: 14px; font-weight: 700; color: #1a1a1a;">${item.title}</span>
+                                            </div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 32px; font-weight: 900; color: #3b82f6;">%${item.priorityScore}</div>
+                                            <div style="font-size: 11px; color: #6b7280;">Öncelik Skoru</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 15px;">
+                                        <div style="background: #eff6ff; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #3b82f6; font-weight: 600; margin-bottom: 4px;">📊 CİDDİYET</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.severity)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Skor: ${item.score}% (Ort: ${item.avgScore.toFixed(1)}%)</div>
+                                        </div>
+                                        <div style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #10b981; font-weight: 600; margin-bottom: 4px;">👥 KAPSAM</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.scope)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">${item.affectedCount} kişi etkileniyor</div>
+                                        </div>
+                                        <div style="background: #fef3c7; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #f59e0b; font-weight: 600; margin-bottom: 4px;">💬 GÖRÜNÜRLÜK</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.visibility)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Yorumlarda %${item.commentFrequency} geçiyor</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="background: #f9fafb; padding: 12px; border-radius: 8px;">
+                                        <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px;">💡 Önerilen Aksiyonlar:</div>
+                                        <div style="font-size: 12px; color: #6b7280;">
+                                            • Soru bazında departman analizi yapın<br>
+                                            • Düşük skorlu departmanlarla görüşmeler planlayın<br>
+                                            • Kısa vadeli iyileştirme planı hazırlayın
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        } else if (item.type === 'tema') {
+                            return `
+                                <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 2px solid #e5e7eb; border-left: 5px solid #10b981;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                                        <div style="flex: 1;">
+                                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                                <span style="font-size: 20px; font-weight: 700; color: #1a1a1a;">${index + 1}.</span>
+                                                ${getTypeBadge(item.type)}
+                                                <span style="font-size: 14px; font-weight: 700; color: #1a1a1a;">${item.title}</span>
+                                            </div>
+                                            <div style="font-size: 11px; color: #6b7280; font-style: italic;">${item.description}</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 32px; font-weight: 900; color: #10b981;">%${item.priorityScore}</div>
+                                            <div style="font-size: 11px; color: #6b7280;">Öncelik Skoru</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 15px;">
+                                        <div style="background: #eff6ff; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #3b82f6; font-weight: 600; margin-bottom: 4px;">📊 CİDDİYET</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.severity)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Skor: ${item.score}% (Ort: ${item.avgScore.toFixed(1)}%)</div>
+                                        </div>
+                                        <div style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #10b981; font-weight: 600; margin-bottom: 4px;">👥 KAPSAM</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.scope)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Tüm belediye (${item.affectedCount} kişi)</div>
+                                        </div>
+                                        <div style="background: #fef3c7; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #f59e0b; font-weight: 600; margin-bottom: 4px;">💬 GÖRÜNÜRLÜK</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.visibility)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Yorumlarda bahsediliyor</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="background: #f9fafb; padding: 12px; border-radius: 8px;">
+                                        <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px;">💡 Önerilen Aksiyonlar:</div>
+                                        <div style="font-size: 12px; color: #6b7280;">
+                                            • Tema alt sorularını detaylı inceleyin<br>
+                                            • Tüm departmanlara yönelik iyileştirme planı<br>
+                                            • Çalıştaylar ve eğitim programları düzenleyin
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        } else if (item.type === 'yorum') {
+                            return `
+                                <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 2px solid #e5e7eb; border-left: 5px solid #f59e0b;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                                        <div style="flex: 1;">
+                                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                                <span style="font-size: 20px; font-weight: 700; color: #1a1a1a;">${index + 1}.</span>
+                                                ${getTypeBadge(item.type)}
+                                                <span style="font-size: 14px; font-weight: 700; color: #1a1a1a;">${item.title}</span>
+                                            </div>
+                                            <div style="font-size: 11px; color: #6b7280;">⚠️ Ankette direkt soru yok ama açık uçlu yorumlarda tespit edildi</div>
+                                        </div>
+                                        <div style="text-align: right;">
+                                            <div style="font-size: 32px; font-weight: 900; color: #f59e0b;">%${item.priorityScore}</div>
+                                            <div style="font-size: 11px; color: #6b7280;">Öncelik Skoru</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 15px;">
+                                        <div style="background: #eff6ff; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #3b82f6; font-weight: 600; margin-bottom: 4px;">📊 CİDDİYET</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.severity)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">Duygu: ${item.sentiment}/10 ${item.sentiment <= 3 ? '(Çok olumsuz)' : item.sentiment <= 6 ? '(Olumsuz)' : '(Orta)'}</div>
+                                        </div>
+                                        <div style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #10b981; font-weight: 600; margin-bottom: 4px;">👥 KAPSAM</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.scope)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">${item.mentionCount} kişi bahsetmiş</div>
+                                        </div>
+                                        <div style="background: #fef3c7; padding: 12px; border-radius: 8px;">
+                                            <div style="font-size: 11px; color: #f59e0b; font-weight: 600; margin-bottom: 4px;">💬 GÖRÜNÜRLÜK</div>
+                                            <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">%${Math.round(item.visibility)}</div>
+                                            <div style="font-size: 10px; color: #6b7280; margin-top: 4px;">%${item.frequency} yorumda geçiyor</div>
+                                        </div>
+                                    </div>
+                                    
+                                    ${item.topPhrases && item.topPhrases.length > 0 ? `
+                                        <div style="background: #fef3c7; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+                                            <div style="font-size: 11px; font-weight: 600; color: #f59e0b; margin-bottom: 6px;">📝 En Sık Geçen İfadeler:</div>
+                                            ${item.topPhrases.map(phrase => `<div style="font-size: 11px; color: #6b7280;">• ${phrase}</div>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                    
+                                    ${item.examples && item.examples.length > 0 ? `
+                                        <div style="background: #f9fafb; padding: 12px; border-radius: 8px; margin-bottom: 10px;">
+                                            <div style="font-size: 11px; font-weight: 600; color: #374151; margin-bottom: 6px;">💬 Örnek Yorumlar:</div>
+                                            ${item.examples.slice(0, 2).map((ex, i) => `<div style="font-size: 11px; color: #6b7280; margin-bottom: 6px;"><strong>${i + 1}.</strong> "${ex}"</div>`).join('')}
+                                        </div>
+                                    ` : ''}
+                                    
+                                    <div style="background: #f9fafb; padding: 12px; border-radius: 8px;">
+                                        <div style="font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 6px;">💡 Önerilen Aksiyonlar:</div>
+                                        <div style="font-size: 12px; color: #6b7280;">
+                                            • Bu konuyu önümüzdeki ankete ekleyin<br>
+                                            • Personel odak grupları düzenleyin<br>
+                                            • Hızlı aksiyon planı oluşturun
+                                        </div>
+                                    </div>
+                                    
+                                    <button onclick="if(confirm('Bu AI analizini silmek istediğinize emin misiniz?')) { unifiedPriorityManager.removeAIInsight('${item.id.replace('ai_', '')}'); dashboardManager.renderUnifiedPriorities(); }" style="margin-top: 10px; padding: 6px 12px; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 11px;">
+                                        Sil
+                                    </button>
+                                </div>
+                            `;
+                        }
+                    };
+                    
+                    const html = `
+                        <div style="background: white; padding: 25px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h2 style="font-size: 20px; font-weight: 700; color: #1a1a1a; display: flex; align-items: center; gap: 10px;">
+                                    <span class="material-icons" style="font-size: 28px; color: #4A90E2;">priority_high</span>
+                                    🎯 Öncelikli Müdahale Alanları (Unified Liste)
+                                </h2>
+                                <button onclick="document.getElementById('aiInsightModal').style.display='flex';" style="padding: 10px 20px; background: #4A90E2; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                                    <span class="material-icons" style="font-size: 20px;">add_circle</span>
+                                    AI Analizi Ekle
+                                </button>
+                            </div>
+                            
+                            <p style="color: #6b7280; margin-bottom: 20px; font-size: 14px;">
+                                Tüm veri kaynaklarından (temalar, sorular, açık uçlu yorumlar) öncelik sırasına göre birleştirilmiş liste. 
+                                Her öğe Ciddiyet × Kapsam × Görünürlük formülüyle puanlanmıştır.
+                            </p>
+                            
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                                <button onclick="renderUnifiedList('all')" style="padding: 8px 16px; background: ${currentFilter === 'all' ? '#4A90E2' : '#e5e7eb'}; color: ${currentFilter === 'all' ? 'white' : '#6b7280'}; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                    Tümü
+                                </button>
+                                <button onclick="renderUnifiedList('tema')" style="padding: 8px 16px; background: ${currentFilter === 'tema' ? '#10b981' : '#e5e7eb'}; color: ${currentFilter === 'tema' ? 'white' : '#6b7280'}; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                    Temalar
+                                </button>
+                                <button onclick="renderUnifiedList('soru')" style="padding: 8px 16px; background: ${currentFilter === 'soru' ? '#3b82f6' : '#e5e7eb'}; color: ${currentFilter === 'soru' ? 'white' : '#6b7280'}; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                    Sorular
+                                </button>
+                                <button onclick="renderUnifiedList('yorum')" style="padding: 8px 16px; background: ${currentFilter === 'yorum' ? '#f59e0b' : '#e5e7eb'}; color: ${currentFilter === 'yorum' ? 'white' : '#6b7280'}; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">
+                                    Yorumlar
+                                </button>
+                            </div>
+                            
+                            <div id="unifiedPriorityList">
+                                ${priorities.length > 0 ? priorities.map((item, index) => renderCard(item, index)).join('') : '<div style="text-align: center; padding: 40px; color: #6b7280;">Henüz öncelikli alan bulunamadı. Veri girin veya AI analizi ekleyin.</div>'}
+                            </div>
+                        </div>
+                    `;
+                    
+                    container.innerHTML = html;
+                };
+                
+                window.renderUnifiedList = (filter) => {
+                    currentFilter = filter;
+                    renderList(filter);
+                };
+                
+                renderList(currentFilter);
             },
             
             renderStrongWeakAreas: () => {
@@ -3550,6 +3953,9 @@
                         <!-- KRİTİK METRİKLER -->
                         <div id="dashboardMetrics"></div>
                         
+                        <!-- ÖNCELİKLİ MÜDAHALE ALANLARI (UNIFIED) -->
+                        <div id="dashboardUnifiedPriorities"></div>
+                        
                         <!-- EN GÜÇLÜ VE GELİŞTİRİLMESİ GEREKEN ALANLAR -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
                             <div id="dashboardStrongAreas"></div>
@@ -4074,5 +4480,113 @@
             });
         });
     </script>
+    <!-- AI INSIGHT MODAL -->
+    <div id="aiInsightModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 20px; font-weight: 700; color: #1a1a1a;">📊 Açık Uçlu Yorum Analizi Ekle</h3>
+                <button onclick="document.getElementById('aiInsightModal').style.display='none';" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #6b7280;">&times;</button>
+            </div>
+            
+            <p style="font-size: 13px; color: #6b7280; margin-bottom: 20px; background: #f3f4f6; padding: 12px; border-radius: 8px;">
+                ℹ️ <strong>AI Prompt Şablonu:</strong> ChatGPT'ye veya başka bir AI'ya açık uçlu yorumları gönderin. AI'dan gelen analizi aşağıdaki forma girin.
+                <details style="margin-top: 10px;">
+                    <summary style="cursor: pointer; color: #4A90E2; font-weight: 600;">AI'ya Gönderilecek Prompt (Tıkla)</summary>
+                    <pre style="background: #1f2937; color: #10b981; padding: 12px; border-radius: 6px; font-size: 11px; margin-top: 10px; overflow-x: auto;">Aşağıdaki belediye personeli yorumlarını analiz et ve EN SIK GEÇEN 5-10 KONUYU şu formatta çıkar:
+
+KONU: [Kısa başlık]
+Kaç yorumda geçiyor: [sayı] yorum ([yüzde]%)
+Duygu: [Olumlu/Nötr/Olumsuz]
+Duygu puanı: [1-10, 1=çok olumsuz, 10=çok olumlu]
+En sık ifadeler:
+- "[ifade]" ([kaç kez] kez)
+Örnek yorumlar:
+1. "[tam yorum]"</pre>
+                </details>
+            </p>
+            
+            <form id="aiInsightForm" onsubmit="event.preventDefault(); saveAIInsight();">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">1. Konu Başlığı:</label>
+                    <input type="text" id="aiTopic" required style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 14px;" placeholder="Örn: Otopark Yetersizliği">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">2. Duygu Durumu (1-10):</label>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="range" id="aiSentiment" min="1" max="10" value="5" oninput="document.getElementById('sentimentValue').textContent=this.value" style="flex: 1;">
+                        <span id="sentimentValue" style="font-weight: 700; color: #4A90E2; min-width: 30px;">5</span>
+                    </div>
+                    <div style="font-size: 11px; color: #6b7280; margin-top: 4px;">1 = Çok olumsuz, 10 = Çok olumlu</div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div>
+                        <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">3. Kaç Yorumda Geçiyor (%):</label>
+                        <input type="number" id="aiFrequency" required min="0" max="100" style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 14px;" placeholder="Örn: 38">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">4. Kaç Kişi Bahsetmiş:</label>
+                        <input type="number" id="aiMentionCount" required min="0" style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 14px;" placeholder="Örn: 184">
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">5. En Sık Geçen İfadeler (Her satıra bir tane):</label>
+                    <textarea id="aiPhrases" rows="3" style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 13px;" placeholder='"Park yeri bulamıyorum" (72 kez)
+"Sabah stres otopark yüzünden" (48 kez)'></textarea>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 6px;">6. Örnek Yorumlar (Her satıra bir tane):</label>
+                    <textarea id="aiExamples" rows="3" style="width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 6px; font-size: 13px;" placeholder='"Sabah işe gelirken en büyük stresim otopark bulmak."
+"Park yeri yetersiz, çok geç kalıyorum."'></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" style="flex: 1; padding: 12px; background: #4A90E2; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        Kaydet ve Listeye Ekle
+                    </button>
+                    <button type="button" onclick="document.getElementById('aiInsightModal').style.display='none'; document.getElementById('aiInsightForm').reset();" style="padding: 12px 20px; background: #6b7280; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                        İptal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function saveAIInsight() {
+            const topic = document.getElementById('aiTopic').value;
+            const sentiment = parseInt(document.getElementById('aiSentiment').value);
+            const frequency = parseFloat(document.getElementById('aiFrequency').value);
+            const mentionCount = parseInt(document.getElementById('aiMentionCount').value);
+            const phrasesText = document.getElementById('aiPhrases').value;
+            const examplesText = document.getElementById('aiExamples').value;
+            
+            const topPhrases = phrasesText.split('\n').filter(p => p.trim()).map(p => p.trim());
+            const examples = examplesText.split('\n').filter(e => e.trim()).map(e => e.trim());
+            
+            const insight = {
+                topic,
+                sentiment,
+                frequency,
+                mentionCount,
+                topPhrases,
+                examples
+            };
+            
+            unifiedPriorityManager.saveAIInsight(insight);
+            
+            document.getElementById('aiInsightModal').style.display = 'none';
+            document.getElementById('aiInsightForm').reset();
+            document.getElementById('sentimentValue').textContent = '5';
+            
+            dashboardManager.renderUnifiedPriorities();
+            
+            alert('✅ AI analizi başarıyla eklendi!');
+        }
+    </script>
+
 </body>
 </html>
