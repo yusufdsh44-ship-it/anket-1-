@@ -1164,11 +1164,11 @@
                 const q44 = survey.cevaplar[43];
                 const q45 = survey.cevaplar[44];
                 
-                if (q45 !== 3) return false;
+                if (q45 === null || q45 !== 3) return false;
                 
-                if (q25 !== null && q44 !== null) {
-                    if (Math.abs(q25 - q44) >= CONFIG.CONSISTENCY_THRESHOLD) return false;
-                }
+                if (q25 === null || q44 === null) return false;
+                
+                if (Math.abs(q25 - q44) >= CONFIG.CONSISTENCY_THRESHOLD) return false;
                 
                 return true;
             },
