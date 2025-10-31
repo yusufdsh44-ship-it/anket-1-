@@ -1700,17 +1700,19 @@
 
                 tbody.innerHTML = '';
 
-                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
-                const genelKeywords = utils.analyzeKeywords(allValidSurveys);
-                const genelCount = allValidSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                const allSurveys = Object.values(state.processedData).flatMap(md => [...md.gecerliAnketler, ...md.gecersizAnketler]);
+                const genelKeywords = utils.analyzeKeywords(allSurveys);
+                const genelCount = allSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
                 
                 tbody.innerHTML += tableRenderer.createAcikUcluRow('GENEL BELEDİYE', genelKeywords, genelCount, 'genel', true);
 
                 Object.values(state.processedData).forEach(md => {
-                    const count = md.gecerliAnketler.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                    const allMdSurveys = [...md.gecerliAnketler, ...md.gecersizAnketler];
+                    const count = allMdSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                    const keywords = utils.analyzeKeywords(allMdSurveys);
                     tbody.innerHTML += tableRenderer.createAcikUcluRow(
                         `<span class="code-label">#${md.kod}</span> ${md.ad}`,
-                        md.acikUcluKeywords,
+                        keywords,
                         count,
                         md.kod,
                         false
@@ -1900,12 +1902,12 @@
                 let surveys, title;
 
                 if (mudurlukKod === 'genel') {
-                    surveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                    surveys = Object.values(state.processedData).flatMap(md => [...md.gecerliAnketler, ...md.gecersizAnketler]);
                     title = 'GENEL BELEDİYE';
                 } else {
                     const md = state.processedData[mudurlukKod];
                     if (!md) return;
-                    surveys = md.gecerliAnketler;
+                    surveys = [...md.gecerliAnketler, ...md.gecersizAnketler];
                     title = `#${md.kod} - ${md.ad}`;
                 }
 
@@ -3588,9 +3590,9 @@
                 const container = document.getElementById('dashboardAcikUclu');
                 if (!container) return;
                 
-                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
-                const keywords = utils.analyzeKeywords(allValidSurveys);
-                const totalResponses = allValidSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                const allSurveys = Object.values(state.processedData).flatMap(md => [...md.gecerliAnketler, ...md.gecersizAnketler]);
+                const keywords = utils.analyzeKeywords(allSurveys);
+                const totalResponses = allSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
                 
                 const top5 = keywords.slice(0, 5);
                 const next5 = keywords.slice(5, 10);
