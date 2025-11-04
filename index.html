@@ -2222,9 +2222,12 @@
                 state.processedData = dataProcessor.analyzeAllData(state.allSurveys);
                 tableRenderer.renderAllTables();
                 
+                databaseAPI.saveData();
+                
                 let message = `✅ ${yeniAnketSayisi} yeni anket başarıyla işlendi!`;
                 if (gecersizFormat > 0) message += `<br>⚠️ ${gecersizFormat} satır atlandı.`;
                 message += `<br>📊 Toplam sistemdeki anket: ${state.allSurveys.length}`;
+                message += `<br>💾 Veriler otomatik olarak kaydedildi.`;
                 utils.showMessage(message, 'success');
                 
                 dataInput.clearTableData();
@@ -4443,7 +4446,64 @@
             }
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
+        // Database API Helper
+        const databaseAPI = {
+            async loadData() {
+                try {
+                    const response = await fetch('/api/survey-data');
+                    const result = await response.json();
+                    
+                    if (result.success && result.data) {
+                        state.allSurveys = result.data.allSurveys || [];
+                        
+                        const aiInsights = result.data.aiInsights;
+                        if (aiInsights) {
+                            localStorage.setItem('aiInsights', JSON.stringify(aiInsights));
+                        }
+                        
+                        if (state.allSurveys.length > 0) {
+                            state.processedData = dataProcessor.analyzeAllData(state.allSurveys);
+                            console.log(`✅ Veritabanından ${state.allSurveys.length} anket yüklendi`);
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ Veritabanından veri yüklenemedi:', error);
+                    utils.showMessage('⚠️ Veriler yükleniyor...', 'warning');
+                }
+            },
+            
+            async saveData() {
+                try {
+                    const aiInsights = unifiedPriorityManager.getAIInsights();
+                    
+                    const response = await fetch('/api/survey-data', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            allSurveys: state.allSurveys,
+                            aiInsights: aiInsights
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('✅ Veriler veritabanına kaydedildi');
+                        return true;
+                    } else {
+                        console.error('❌ Kayıt hatası:', result.error);
+                        return false;
+                    }
+                } catch (error) {
+                    console.error('❌ Veritabanına kaydetme hatası:', error);
+                    return false;
+                }
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', async () => {
             window.dataInput = dataInput;
             window.surveyManager = surveyManager;
             window.tableSorter = tableSorter;
@@ -4455,6 +4515,9 @@
             window.dashboardManager = dashboardManager;
             window.comparisonManager = comparisonManager;
             window.pageManager = pageManager;
+            window.databaseAPI = databaseAPI;
+            
+            await databaseAPI.loadData();
             
             pageManager.initMenu();
             
