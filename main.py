@@ -23,8 +23,24 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
 
 db.init_app(app)
 
+
+class SurveyData(db.Model):
+    """Stores all survey data as JSON"""
+    __tablename__ = 'survey_data'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.JSON, nullable=False)
+    updated_at = db.Column(db.DateTime, default=db.func.now(), onupdate=db.func.now())
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'data': self.data,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None
+        }
+
+
 with app.app_context():
-    import models
     db.create_all()
 
 
@@ -37,8 +53,6 @@ def index():
 @app.route('/api/survey-data', methods=['GET'])
 def get_survey_data():
     """Get all survey data from database"""
-    from models import SurveyData
-    
     survey_record = SurveyData.query.first()
     
     if survey_record:
@@ -56,8 +70,6 @@ def get_survey_data():
 @app.route('/api/survey-data', methods=['POST'])
 def save_survey_data():
     """Save survey data to database"""
-    from models import SurveyData
-    
     data = request.get_json()
     
     if not data:

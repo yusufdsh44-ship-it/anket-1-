@@ -12,6 +12,12 @@ This is a comprehensive survey evaluation system for Arnavutköy Municipality's 
 **Current State:** Fully functional dashboard-focused web application with data visualization running on Python HTTP server
 
 ## Recent Changes
+- 2025-11-04: **Database Architecture Fixed** - Flask app context issue resolved
+  - **Unified Model Structure:** Moved SurveyData model from separate models.py into main.py to fix circular import
+  - **Fixed 500 Error:** Resolved "Flask app is not registered with SQLAlchemy instance" runtime error
+  - **Simplified Codebase:** Removed models.py file, all database models now in main.py
+  - **Status:** Application fully operational, API endpoints (GET/POST /api/survey-data) working correctly
+
 - 2025-10-16: **Unified Priority List System** implemented (3-layer analysis)
   - **Question-Level Scoring:** All 49 questions individually scored and compared to municipality average
   - **AI Insights Integration:** Open-ended responses analyzed via external AI (ChatGPT), then manually entered via structured form
