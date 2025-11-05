@@ -3945,13 +3945,193 @@
                     </div>
                     
                     ${!state.processedData || Object.keys(state.processedData).length === 0 ? `
-                        <div style="text-align: center; padding: 60px 20px;">
-                            <span class="material-icons" style="font-size: 80px; color: #d1d5db;">analytics</span>
-                            <h2 style="margin: 20px 0; color: #6b7280;">Henüz Veri Girilmemiş</h2>
-                            <p style="color: #9ca3af; margin-bottom: 30px;">Dashboard'u görüntülemek için önce "Veri Girişi" bölümünden anket verilerini girin.</p>
-                            <button class="btn" onclick="pageManager.showPage('veri-girisi')">
-                                <span class="material-icons">input</span> Veri Girişine Git
-                            </button>
+                        <div style="max-width: 1200px; margin: 0 auto;">
+                            <!-- BAŞLIK -->
+                            <div style="text-align: center; margin-bottom: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                                <h1 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Arnavutköy Belediyesi Kurumsal Raporu</h1>
+                                <p style="font-size: 18px; opacity: 0.95;">Metodoloji ve Analiz Bulguları</p>
+                            </div>
+
+                            <!-- METODOLOJİ -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #4A90E2;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">📋 Metodoloji ve Kapsam</h2>
+                                <p style="line-height: 1.8; color: #374151; margin-bottom: 15px;">
+                                    Bu rapor, belediyemizin <strong>2125 personelini</strong> kapsayan bir kurumsal teşhis çalışmasıdır. 
+                                    Çalışmamız, <strong>1470 personelimizin (%68.7 katılım)</strong> sağladığı sayısal veriler ile 
+                                    bu kişilerin <strong>456'sının</strong> bizzat yazdığı detaylı yorumların <strong>entegre bir analizine</strong> dayanmaktadır.
+                                </p>
+                                <div style="background: #f3f4f6; padding: 15px; border-radius: 8px;">
+                                    <p style="margin: 5px 0; color: #1f2937;">✓ <strong>45 soruluk</strong> kurumsal dinamikler soru seti</p>
+                                    <p style="margin: 5px 0; color: #1f2937;">✓ <strong>4 soruluk</strong> Psikolojik Sağlık Taraması</p>
+                                    <p style="margin: 5px 0; color: #1f2937;">✓ <strong>1 adet</strong> Kurumsal Sağlık Göstergesi (Sigara Kullanımı)</p>
+                                    <p style="margin: 5px 0; color: #1f2937;">✓ <strong>1 adet</strong> Kurumsal İletişim Göstergesi (Sosyal Medya)</p>
+                                    <p style="margin: 5px 0; color: #1f2937;">✓ <strong>1 adet</strong> Açık Uçlu Yorum Bölümü</p>
+                                </div>
+                                <p style="margin-top: 15px; font-size: 14px; color: #6b7280;">
+                                    <em>Alınan 1470 sayısal yanıtın tamamı titiz bir kalite kontrol sürecinden geçirilmiş, 
+                                    219 adet anket analiz dışında tutulmuştur.</em>
+                                </p>
+                            </div>
+
+                            <!-- ANA METRIKLER -->
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                                <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
+                                    <div style="font-size: 48px; font-weight: 900; margin-bottom: 5px;">3.63</div>
+                                    <div style="font-size: 14px; opacity: 0.9;">/ 4.00</div>
+                                    <div style="margin-top: 10px; font-size: 13px; font-weight: 600;">Genel Memnuniyet</div>
+                                </div>
+                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
+                                    <div style="font-size: 48px; font-weight: 900; margin-bottom: 5px;">%68.7</div>
+                                    <div style="font-size: 14px; opacity: 0.9;">1470 / 2125 personel</div>
+                                    <div style="margin-top: 10px; font-size: 13px; font-weight: 600;">Katılım Oranı</div>
+                                </div>
+                                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
+                                    <div style="font-size: 48px; font-weight: 900; margin-bottom: 5px;">1251</div>
+                                    <div style="font-size: 14px; opacity: 0.9;">Geçerli Yanıt</div>
+                                    <div style="margin-top: 10px; font-size: 13px; font-weight: 600;">Kalite Kontrolü Sonrası</div>
+                                </div>
+                                <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 20px; border-radius: 12px; color: white; text-align: center;">
+                                    <div style="font-size: 48px; font-weight: 900; margin-bottom: 5px;">456</div>
+                                    <div style="font-size: 14px; opacity: 0.9;">Detaylı Yorum</div>
+                                    <div style="margin-top: 10px; font-size: 13px; font-weight: 600;">Açık Uçlu Yanıtlar</div>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 1: GENEL MEMNUNİYET -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #10b981;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">📊 Bölüm 1: Genel Memnuniyet ve Kurumsal Bağlılık</h2>
+                                
+                                <div style="background: #ecfdf5; padding: 15px; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 15px;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #065f46; margin-bottom: 10px;">✅ En Güçlü Alanlar</h3>
+                                    <p style="margin: 8px 0; color: #1f2937;"><strong>3.77/4.00</strong> - İşim aracılığıyla topluma/kamuya hizmet etmekten gurur duyuyorum (%93.7 katılım)</p>
+                                    <p style="margin: 8px 0; color: #1f2937;"><strong>3.73/4.00</strong> - Yaptığım işin toplum için anlamlı ve faydalı olduğunu düşünüyorum</p>
+                                    <p style="margin: 8px 0; color: #1f2937;"><strong>3.69/4.00</strong> - İş arkadaşlarımla uyum içinde çalışırım</p>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 2: ÖNCELİKLİ ALAN 1 -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">🍽️ Bölüm 2: Yemekhane, Servis ve Ücret Algıları</h2>
+                                
+                                <div style="background: #fef3c7; padding: 15px; border-radius: 8px; border-left: 3px solid #f59e0b; margin-bottom: 15px;">
+                                    <p style="margin: 8px 0; color: #1f2937;"><strong>Yemekhane:</strong> 2.29/4.00 (En düşük puan - %56.3 memnuniyetsiz)</p>
+                                    <p style="margin: 8px 0; color: #6b7280; font-size: 14px;">
+                                        Ana Sorunlar: Fiyat farklılığı (145 yorum), Kalite/lezzet (73 yorum), Hijyen (25 yorum)
+                                    </p>
+                                </div>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div style="padding: 12px; background: #f3f4f6; border-radius: 8px;">
+                                        <strong>Servis:</strong> 2.71/4.00
+                                    </div>
+                                    <div style="padding: 12px; background: #f3f4f6; border-radius: 8px;">
+                                        <strong>Ücret Algısı:</strong> 2.76/4.00
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 3: İŞ YÜKÜ -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ef4444;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">💼 Bölüm 3: Operasyonel Zorluklar (İş Yükü)</h2>
+                                
+                                <div style="background: #fee2e2; padding: 15px; border-radius: 8px; border-left: 3px solid #ef4444; margin-bottom: 15px;">
+                                    <p style="margin: 8px 0; color: #1f2937;">
+                                        <strong>İş Yükü Teması:</strong> 2.23/4.00 (Belediye genelinde %57.5 olumsuz değerlendirme)
+                                    </p>
+                                </div>
+                                
+                                <h3 style="font-size: 16px; font-weight: 600; color: #991b1b; margin: 15px 0 10px 0;">🚨 Kırmızı Alarm Veren Müdürlükler</h3>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                                    <div style="padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #dc2626;">
+                                        <div style="font-weight: 700; color: #991b1b;">İmar ve Şehircilik</div>
+                                        <div style="font-size: 24px; font-weight: 900; color: #dc2626;">1.66</div>
+                                        <div style="font-size: 12px; color: #6b7280;">%88.1 olumsuz</div>
+                                    </div>
+                                    <div style="padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #dc2626;">
+                                        <div style="font-weight: 700; color: #991b1b;">Veteriner İşleri</div>
+                                        <div style="font-size: 24px; font-weight: 900; color: #dc2626;">1.71</div>
+                                        <div style="font-size: 12px; color: #6b7280;">%87.5 olumsuz</div>
+                                    </div>
+                                    <div style="padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #dc2626;">
+                                        <div style="font-weight: 700; color: #991b1b;">Fen İşleri</div>
+                                        <div style="font-size: 24px; font-weight: 900; color: #dc2626;">1.79</div>
+                                        <div style="font-size: 12px; color: #6b7280;">%76.3 olumsuz</div>
+                                    </div>
+                                    <div style="padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #dc2626;">
+                                        <div style="font-weight: 700; color: #991b1b;">Zabıta</div>
+                                        <div style="font-size: 24px; font-weight: 900; color: #dc2626;">1.94</div>
+                                        <div style="font-size: 12px; color: #6b7280;">%78.9 olumsuz</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 4: FİZİKSEL KOŞULLAR -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #8b5cf6;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">🏢 Bölüm 4: Fiziksel Koşullar (Ortak Alanlar)</h2>
+                                
+                                <div style="background: #f5f3ff; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                                    <p style="margin: 8px 0; color: #1f2937;">
+                                        <strong>Ortak Alanlar:</strong> 2.81/4.00 (%36.4 yetersiz buldu - 453 kişi)
+                                    </p>
+                                    <p style="margin: 8px 0; color: #6b7280; font-size: 14px;">
+                                        En kritik: <strong>Temizlik İşleri (1.88/4.00)</strong> - %71.8 memnuniyetsizlik
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 5: SPESİFİK MÜDÜRLÜKLER -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ec4899;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">🔍 Bölüm 5: Spesifik Müdürlük Analizleri</h2>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div style="padding: 15px; background: #fef2f2; border-radius: 8px;">
+                                        <h3 style="font-size: 14px; font-weight: 600; color: #991b1b; margin-bottom: 8px;">Temizlik İşleri (126)</h3>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• En düşük katılım: %30.6</p>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• Ortak alanlar: 1.88/4.00</p>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• 102 sözel yorum (%22.3)</p>
+                                    </div>
+                                    <div style="padding: 15px; background: #fef2f2; border-radius: 8px;">
+                                        <h3 style="font-size: 14px; font-weight: 600; color: #991b1b; margin-bottom: 8px;">Zabıta (130)</h3>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• Katılım: %70.4 (yüksek)</p>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• Memnuniyet: 3.32/4.00</p>
+                                        <p style="font-size: 13px; color: #4b5563; margin: 5px 0;">• İş yükü: 1.94/4.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BÖLÜM 6-8: SAĞLIK VE İLETİŞİM -->
+                            <div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #14b8a6;">
+                                <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px; color: #1a237e;">🧠 Bölüm 6-8: Sağlık ve İletişim Göstergeleri</h2>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                                    <div style="padding: 15px; background: #f0fdfa; border-radius: 8px; border-left: 3px solid #14b8a6;">
+                                        <div style="font-size: 14px; font-weight: 600; color: #115e59; margin-bottom: 5px;">Psikolojik Sağlık</div>
+                                        <div style="font-size: 28px; font-weight: 900; color: #14b8a6;">2.09/4.00</div>
+                                        <div style="font-size: 12px; color: #6b7280;">Orta-düşük risk seviyesi</div>
+                                    </div>
+                                    <div style="padding: 15px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                        <div style="font-size: 14px; font-weight: 600; color: #991b1b; margin-bottom: 5px;">Sigara Kullanımı</div>
+                                        <div style="font-size: 28px; font-weight: 900; color: #ef4444;">%45.7</div>
+                                        <div style="font-size: 12px; color: #6b7280;">572 / 1251 kişi</div>
+                                    </div>
+                                    <div style="padding: 15px; background: #eff6ff; border-radius: 8px; border-left: 3px solid #3b82f6;">
+                                        <div style="font-size: 14px; font-weight: 600; color: #1e40af; margin-bottom: 5px;">Sosyal Medya Takibi</div>
+                                        <div style="font-size: 28px; font-weight: 900; color: #3b82f6;">%83.6</div>
+                                        <div style="font-size: 12px; color: #6b7280;">Ortalama takip oranı</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- VERİ GİRİŞİ BUTONU -->
+                            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;">
+                                <h3 style="color: white; font-size: 18px; margin-bottom: 15px;">📥 Yeni Anket Verileri Girişi</h3>
+                                <p style="color: white; opacity: 0.9; margin-bottom: 20px; font-size: 14px;">
+                                    Yukarıdaki rapor varsayılan örnek verilerdir. Kendi anket verilerinizi girmek için aşağıdaki butona tıklayın.
+                                </p>
+                                <button class="btn" onclick="pageManager.showPage('veri-girisi')" style="background: white; color: #667eea; font-size: 16px; padding: 14px 28px;">
+                                    <span class="material-icons">input</span> Veri Girişine Git
+                                </button>
+                            </div>
                         </div>
                     ` : `
                         <!-- KRİTİK METRİKLER -->
