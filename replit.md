@@ -1,17 +1,11 @@
 # Arnavutköy Belediyesi - JD-R Anket Değerlendirme Sistemi
 
 ## Overview
-This is a comprehensive institutional analysis report for Arnavutköy Municipality's JD-R (Job Demands-Resources) survey. The application serves a static HTML report presenting detailed analysis findings from employee satisfaction surveys.
+This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard for Arnavutköy Municipality analyzing employee satisfaction across departments through 49 questions covering 10 themes, with PostgreSQL database persistence for multi-user access.
 
-**Current State:** Static HTML report page serving as main dashboard with detailed methodology and analysis findings
+**Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
-- 2025-11-04: **Dashboard Replaced with Static Report**
-  - **New Main Page:** Replaced interactive dashboard with static HTML report (Kurumsal Raporu - Metodoloji ve Analiz Bulguları)
-  - **Report Structure:** Comprehensive 8-section analysis including methodology, satisfaction scores, priority areas, and departmental breakdowns
-  - **Backup Created:** Original interactive dashboard saved as index_old_backup.html for archival purposes
-  - **Database Backend:** Flask API (PostgreSQL) remains functional for potential future data integration needs
-
 - 2025-11-04: **Database Architecture Fixed** - Flask app context issue resolved
   - **Unified Model Structure:** Moved SurveyData model from separate models.py into main.py to fix circular import
   - **Fixed 500 Error:** Resolved "Flask app is not registered with SQLAlchemy instance" runtime error
@@ -21,73 +15,49 @@ This is a comprehensive institutional analysis report for Arnavutköy Municipali
 ## Project Architecture
 
 ### Technology Stack
-- **Frontend:** Static HTML report with embedded CSS
-- **Backend:** Flask with PostgreSQL (currently inactive, available for future integration)
+- **Frontend:** HTML, CSS, JavaScript with Chart.js for data visualization
+- **Backend:** Flask with PostgreSQL (Neon-backed)
 - **Server:** Python 3.11 Flask server on port 5000
-- **Deployment:** Static report hosting via Flask
+- **Database:** PostgreSQL for persistent data storage
+- **Deployment:** Flask application with database integration
 
 ### File Structure
 ```
 .
-├── index.html                      # Main static report page
-├── index_old_backup.html          # Archived interactive dashboard
+├── index.html                      # Main interactive dashboard
 ├── main.py                        # Flask server with PostgreSQL integration
-├── attached_assets/               # Report assets
+├── attached_assets/               # Application assets
 ├── .replit                        # Replit configuration
 └── replit.md                      # This documentation file
 ```
 
-### Report Content (8 Sections)
+### Key Features
+1. **Interactive Dashboard:** Management control center with comprehensive analytics
+   - Data visualization with charts and graphs
+   - Department performance comparison
+   - Theme analysis
+   - Social media tracking
+   - Mental health screening
+   - Open-ended response analysis
 
-The static HTML report presents a comprehensive institutional analysis:
+2. **Data Management:**
+   - Excel-like data entry interface (1600-row capacity)
+   - PostgreSQL database persistence
+   - Multi-user access via URL
+   - Data validation and consistency checks
 
-1. **Methodology and Scope**
-   - Survey coverage: 2125 personnel, 1470 responses (68.7% participation)
-   - Data validation: 219 invalid responses excluded
-   - Multi-dimensional analysis combining quantitative scores and qualitative comments
+3. **Analysis Capabilities:**
+   - Statistical analysis on survey responses
+   - Department comparisons
+   - Priority area identification
+   - Keyword extraction from open-ended responses
 
-2. **General Satisfaction & Engagement (Section 1)**
-   - Overall satisfaction metrics (3.63/4.00)
-   - Institutional belonging and sense of purpose
-   - Team collaboration and horizontal relationships
-
-3. **Priority Area 1: Cafeteria, Transportation & Salary (Section 2)**
-   - Cafeteria services analysis (2.29/4.00)
-   - Transportation services evaluation (2.71/4.00)
-   - Salary perception analysis (2.76/4.00)
-
-4. **Priority Area 2: Operational Workload (Section 3)**
-   - Workload theme analysis (2.23/4.00)
-   - Department-specific stress indicators
-   - Critical departments with highest workload
-
-5. **Priority Area 3: Physical Conditions (Section 4)**
-   - Common areas adequacy assessment (2.81/4.00)
-   - Specific facility issues by department
-   - Critical focus: Cleaning Services Department facilities
-
-6. **Specific Departmental Analyses (Section 5)**
-   - Cleaning Services Department (Code 126) detailed profile
-   - Traffic Enforcement Department (Code 130) detailed profile
-   - Correlation between workload, stress, and engagement
-
-7. **Mental Health Screening (Section 6)**
-   - PHQ-2 and GAD-2 adapted screening results
-   - Correlation between workload and psychological wellbeing
-   - High-risk departments identification
-
-8. **Health & Communication Indicators (Sections 7-8)**
-   - Smoking usage rates (45.7%) and departmental variations
-   - Social media engagement tracking
-   - Communication gap analysis by department
-
-### Backend Status (Inactive)
-
-The Flask/PostgreSQL backend exists but is currently unused:
-- **Database:** PostgreSQL (Neon-backed) configured and accessible
-- **API Endpoints:** GET/POST `/api/survey-data` functional
-- **Status:** Available for future dynamic features or data collection
-- **Configuration:** Environment variables (DATABASE_URL, etc.) properly set
+### Database Configuration
+- **Database:** PostgreSQL (Neon-backed) via DATABASE_URL
+- **API Endpoints:** 
+  - GET `/api/survey-data` - Retrieve survey data
+  - POST `/api/survey-data` - Save survey data
+- **Model:** SurveyData (stores JSON survey data with timestamps)
 
 ### Configuration
 - **Port:** 5000 (Flask server)
@@ -95,16 +65,29 @@ The Flask/PostgreSQL backend exists but is currently unused:
 - **Python Version:** 3.11
 - **Database:** PostgreSQL via DATABASE_URL environment variable
 
+### Survey Details
+- 49 questions per survey across 10 themes
+- Likert scale (1-4) for quantitative questions
+- Mental health screening (4 questions)
+- Smoking status tracking
+- Social media engagement tracking
+- Open-ended feedback field
+- Validation rules:
+  - Q25 and Q44 must be filled and differ by less than 2
+  - Q45 must equal 3
+  - Invalid surveys excluded from scoring but open-ended responses included
+
 ## Development Notes
-- Current implementation is a **static report** - no interactive features
-- Flask server only serves the static HTML file
-- PostgreSQL database backend available but not actively used
-- Previous interactive dashboard archived in `index_old_backup.html`
-- Report contains pre-analyzed data and findings (not dynamically generated)
+- Application uses PostgreSQL for permanent data persistence
+- Accessible via URL from multiple computers
+- Data input via 1600-row table supporting Excel paste operations
+- Flask backend handles API requests and database operations
+- Frontend provides interactive visualizations and analytics
 
 ## User Preferences
-- Report-first approach (comprehensive analysis presentation)
-- Focus on institutional diagnostics and priority areas
-- Emphasis on data synthesis combining quantitative and qualitative findings
-- Professional report formatting suitable for executive review
+- Dashboard-first approach with visual analytics
+- Large eye-catching numbers (56px/900 weight)
+- No department codes on homepage - only names
+- Focus on scientifically sound analysis
+- Priority system combining themes, questions, and AI-analyzed responses
 - Turkish language throughout
