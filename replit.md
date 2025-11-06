@@ -6,13 +6,6 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
-- 2025-11-05: **Default Report Data Added to Dashboard**
-  - **Default Content:** Ana dashboard'da veri yokken "Arnavutköy Belediyesi Kurumsal Raporu" default olarak gösteriliyor
-  - **8 Bölüm:** Metodoloji, Genel Memnuniyet (3.63/4.00), Yemekhane/Servis/Ücret, İş Yükü (2.23/4.00), Fiziksel Koşullar, Spesifik Müdürlükler, Psikolojik Sağlık (2.09/4.00), Sağlık/İletişim Göstergeleri
-  - **Ana Metrikler:** 2125 personel, %68.7 katılım (1470), 1251 geçerli yanıt, 456 detaylı yorum
-  - **Veri Girişi:** Kullanıcı veri girerse default rapor yerine gerçek veriler gösterilir
-  - **Interactive Features:** Tüm etkileşimli özellikler aynen korundu
-
 - 2025-11-04: **Database Architecture Fixed** - Flask app context issue resolved
   - **Unified Model Structure:** Moved SurveyData model from separate models.py into main.py to fix circular import
   - **Fixed 500 Error:** Resolved "Flask app is not registered with SQLAlchemy instance" runtime error
