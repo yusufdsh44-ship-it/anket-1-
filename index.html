@@ -3940,80 +3940,121 @@
         const pageManager = {
             pages: {
                 'dashboard': () => `
-                    <div class="info-box" style="margin-bottom: 20px;">
-                        <strong>📊 Hoş Geldiniz!</strong> Bu sayfa tüm anket sonuçlarının özet görünümünü sunar. Detaylı analizler için sol menüden ilgili bölümü seçebilirsiniz.
-                    </div>
-                    
-                    ${!state.processedData || Object.keys(state.processedData).length === 0 ? `
-                        <div style="text-align: center; padding: 60px 20px;">
-                            <span class="material-icons" style="font-size: 80px; color: #d1d5db;">analytics</span>
-                            <h2 style="margin: 20px 0; color: #6b7280;">Henüz Veri Girilmemiş</h2>
-                            <p style="color: #9ca3af; margin-bottom: 30px;">Dashboard'u görüntülemek için önce "Veri Girişi" bölümünden anket verilerini girin.</p>
-                            <button class="btn" onclick="pageManager.showPage('veri-girisi')">
-                                <span class="material-icons">input</span> Veri Girişine Git
-                            </button>
-                        </div>
-                    ` : `
-                        <!-- KRİTİK METRİKLER -->
-                        <div id="dashboardMetrics"></div>
+                    <div style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+                        <h1 style="font-size: 28px; font-weight: bold; margin-bottom: 20px; color: #1a1a1a;">
+                            Arnavutköy Belediyesi Çalışan Memnuniyeti ve İyi Oluş Anketi Değerlendirmesi
+                        </h1>
+                        <p style="color: #6b7280; margin-bottom: 30px;">Kapsamlı Analiz Raporu</p>
                         
-                        <!-- ÖNCELİKLİ MÜDAHALE ALANLARI (UNIFIED) -->
-                        <div id="dashboardUnifiedPriorities"></div>
-                        
-                        <!-- EN GÜÇLÜ VE GELİŞTİRİLMESİ GEREKEN ALANLAR -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
-                            <div id="dashboardStrongAreas"></div>
-                            <div id="dashboardWeakAreas"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb;">
+                            <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 15px;">Giriş ve Genel Çerçeve</h2>
+                            <p style="color: #6b7280; line-height: 1.6; margin-bottom: 15px;">
+                                Bu rapor, Arnavutköy Belediyesi'nin en değerli varlığı olan çalışanlarının görüş, beklenti ve deneyimlerini anlamak üzere gerçekleştirilen kapsamlı "Çalışan Memnuniyeti ve İyi Oluş Anketi"nin temel bulgularını ve stratejik önerilerini sunmaktadır.
+                            </p>
+                            <p style="color: #6b7280; line-height: 1.6;">
+                                Bu çalışma, basit bir memnuniyet ölçümünün ötesinde, bilimsel yöntemlerle kurumun tüm dinamiklerini anlamaya yönelik derinlemesine bir teşhis çalışması olarak tasarlanmıştır.
+                            </p>
                         </div>
                         
-                        <!-- MÜDÜRLÜK PERFORMANS GRAFİĞİ -->
-                        <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
-                            <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
-                                📊 Müdürlüklerin Memnuniyet Oranları
-                            </h2>
-                            <canvas id="mudurlukBarChart" style="max-height: 400px;"></canvas>
-                            <div style="text-align: center; margin-top: 15px;">
-                                <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: #667eea;">
-                                    <span class="material-icons">table_chart</span>
-                                    Detaylı Müdürlük Skorlarını Gör
-                                </button>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                            <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                                <p style="color: #6b7280; font-size: 14px; margin-bottom: 5px;">Toplam Katılımcı</p>
+                                <p style="font-size: 32px; font-weight: bold; color: #1a1a1a;">1470</p>
+                                <p style="color: #6b7280; font-size: 12px;">2125 personelden</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #10b981;">
+                                <p style="color: #6b7280; font-size: 14px; margin-bottom: 5px;">Katılım Oranı</p>
+                                <p style="font-size: 32px; font-weight: bold; color: #1a1a1a;">%68.7</p>
+                                <p style="color: #6b7280; font-size: 12px;">Yüksek temsil gücü</p>
+                            </div>
+                            <div style="background: white; padding: 20px; border-radius: 12px; border-left: 4px solid #10b981;">
+                                <p style="color: #6b7280; font-size: 14px; margin-bottom: 5px;">Genel Memnuniyet</p>
+                                <p style="font-size: 32px; font-weight: bold; color: #1a1a1a;">3.63/4.00</p>
+                                <p style="color: #6b7280; font-size: 12px;">Güçlü seviye</p>
                             </div>
                         </div>
                         
-                        <!-- EN İYİ VE EN KÖTÜ MÜDÜRLÜKLER -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
-                                    ✅ En Memnun 5 Müdürlük
-                                </h3>
-                                <div id="topMudurlukler"></div>
-                            </div>
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
-                                    📉 En Az Memnun 5 Müdürlük
-                                </h3>
-                                <div id="bottomMudurlukler"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">📊 1. Metodoloji ve Kapsam</h3>
+                            <p style="color: #6b7280; line-height: 1.6; margin-bottom: 10px;">
+                                Anket 2125 personele ulaştırılmış, <strong>%68.7 katılım oranıyla 1470 personel</strong> katılmıştır. 219 anket kalite kontrol nedeniyle analiz dışı bırakılmıştır.
+                            </p>
+                            <p style="color: #6b7280; line-height: 1.6;">
+                                <strong>45 soru</strong> + 4 soruluk Psikolojik Sağlık Taraması (WHO-5) + Sosyal Medya Takibi ile kapsamlı analiz yapılmıştır.
+                            </p>
+                        </div>
+                        
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb; border-left: 4px solid #10b981;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #10b981;">✅ 2. Güçlü Yönlerimiz</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                                <div style="text-align: center; padding: 15px; background: #f0fdf4; border-radius: 8px;">
+                                    <p style="font-size: 24px; font-weight: bold; color: #10b981;">3.77/4.00</p>
+                                    <p style="font-size: 13px; color: #6b7280;">Kamu hizmet bilinci</p>
+                                </div>
+                                <div style="text-align: center; padding: 15px; background: #f0fdf4; border-radius: 8px;">
+                                    <p style="font-size: 24px; font-weight: bold; color: #10b981;">3.69/4.00</p>
+                                    <p style="font-size: 13px; color: #6b7280;">Ekip çalışması uyumu</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- SOSYAL MEDYA ÖZETİ -->
-                        <div id="dashboardSosyalMedya"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb; border-left: 4px solid #ef4444;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">⚠️ 3. Öncelikli Gelişim Alanları</h3>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 8px 0; border-bottom: 1px solid #f3f4f6;"><strong>1. Yemekhane:</strong> 2.29/4.00 - %56.3 memnuniyetsiz (634 kişi)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #f3f4f6;"><strong>2. Servis:</strong> 2.71/4.00 - Keskin kutuplaşma (ilçe dışı servis sorunu)</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #f3f4f6;"><strong>3. İş Yükü:</strong> 2.23/4.00 - Zabıta, İmar, Fen İşleri kritik</li>
+                                <li style="padding: 8px 0;"><strong>4. Fiziksel Koşullar:</strong> Temizlik İşleri için acil durum</li>
+                            </ul>
+                        </div>
                         
-                        <!-- AÇIK UÇLU ÖZET -->
-                        <div id="dashboardAcikUclu"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">🚨 4. Kritik Müdürlükler</h3>
+                            <div style="background: #fef2f2; padding: 15px; border-radius: 8px; margin-bottom: 10px; border-left: 3px solid #ef4444;">
+                                <p style="font-weight: 600; margin-bottom: 5px;">Temizlik İşleri - Acil Müdahale Gerekli</p>
+                                <p style="font-size: 13px; color: #6b7280;">116 çalışandan sadece 2'si memnun. İş yükü: 1.84, Fiziksel koşullar: 2.15, Stres: 1.88</p>
+                            </div>
+                            <div style="background: #fffbeb; padding: 15px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                                <p style="font-weight: 600; margin-bottom: 5px;">Zabıta - Çalışma Saatleri Sorunu</p>
+                                <p style="font-size: 13px; color: #6b7280;">İş yükü 1.94, %78.9 memnuniyetsizlik (40/48 saat, nöbet sistemi)</p>
+                            </div>
+                        </div>
                         
-                        <!-- RUH SAĞLIĞI ÖZET -->
-                        <div id="dashboardRuhSagligi"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb; border-left: 4px solid #f59e0b;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #f59e0b;">💚 5. Ruh Sağlığı (WHO-5)</h3>
+                            <div style="text-align: center; padding: 20px; background: #fffbeb; border-radius: 8px;">
+                                <p style="font-size: 36px; font-weight: bold; color: #f59e0b; margin-bottom: 10px;">%35.7</p>
+                                <p style="color: #6b7280; margin-bottom: 5px;">Risk altında olabilecek çalışan oranı</p>
+                                <p style="font-size: 13px; color: #6b7280;">(447 kişi / 1251 katılımcıdan)</p>
+                            </div>
+                            <p style="color: #6b7280; margin-top: 15px; font-size: 14px;">
+                                <strong>En yüksek risk:</strong> Temizlik İşleri (%52.6), Veteriner İşleri, İmar ve Şehircilik
+                            </p>
+                        </div>
                         
-                        <!-- SİGARA KULLANIMI ANALİZİ -->
-                        <div id="dashboardSigara"></div>
+                        <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb;">
+                            <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">📱 6. Sosyal Medya Takibi</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 15px;">
+                                <div style="text-align: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                                    <p style="font-size: 20px; font-weight: bold; color: #E4405F;">%97.0</p>
+                                    <p style="font-size: 12px; color: #6b7280;">Instagram</p>
+                                </div>
+                                <div style="text-align: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                                    <p style="font-size: 20px; font-weight: bold; color: #1DA1F2;">%33.0</p>
+                                    <p style="font-size: 12px; color: #6b7280;">Twitter</p>
+                                </div>
+                                <div style="text-align: center; padding: 12px; background: #f9fafb; border-radius: 8px;">
+                                    <p style="font-size: 20px; font-weight: bold; color: #1877F2;">%26.7</p>
+                                    <p style="font-size: 12px; color: #6b7280;">Facebook</p>
+                                </div>
+                            </div>
+                            <p style="color: #6b7280; font-size: 14px;">
+                                Belediye hesaplarını takip: %76.5 (958 kişi) | Başkan hesaplarını takip: %69.1 (865 kişi)
+                            </p>
+                        </div>
                         
-                        <!-- AKSİYON ÖNCELİK MATRİSİ -->
-                        <div id="dashboardActionPriority"></div>
-                        
-                        <!-- HIZLI ERİŞİM -->
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin: 20px 0; text-align: center;">
-                            <h3 style="color: white; font-size: 18px; margin-bottom: 20px;">Detaylı Analizler</h3>
+                        <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white;">
+                            <h3 style="margin-bottom: 20px;">Detaylı Analizlere Erişim</h3>
                             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
                                 <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: white; color: #667eea;">
                                     <span class="material-icons">dashboard</span> Genel Skorlar
@@ -4021,15 +4062,15 @@
                                 <button class="btn" onclick="pageManager.showPage('temalar')" style="background: white; color: #667eea;">
                                     <span class="material-icons">insights</span> Tema Detayları
                                 </button>
-                                <button class="btn" onclick="pageManager.showPage('mudurluk-karsilastir')" style="background: white; color: #667eea;">
-                                    <span class="material-icons">compare_arrows</span> Müdürlük Karşılaştır
+                                <button class="btn" onclick="pageManager.showPage('sosyal-medya')" style="background: white; color: #667eea;">
+                                    <span class="material-icons">share</span> Sosyal Medya
                                 </button>
-                                <button class="btn" onclick="dashboardManager.exportPDF()" style="background: white; color: #667eea;">
-                                    <span class="material-icons">picture_as_pdf</span> PDF Rapor İndir
+                                <button class="btn" onclick="pageManager.showPage('ruh-sagligi')" style="background: white; color: #667eea;">
+                                    <span class="material-icons">favorite</span> Ruh Sağlığı
                                 </button>
                             </div>
                         </div>
-                    `}
+                    </div>
                 `,
                 
                 'veri-girisi': () => `
