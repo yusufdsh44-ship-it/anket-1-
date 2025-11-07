@@ -5,9 +5,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Users, TrendingUp, FileText, CheckCircle2, AlertTriangle, Building2, Heart, Share2, Instagram, Facebook, Clock, Printer } from "lucide-react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 // ===== INLINE COMPONENTS =====
 
