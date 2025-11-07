@@ -6,24 +6,9 @@
     <title>Arnavutköy Belediyesi - JD-R Anket</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4A90E2',
-                        success: '#10b981',
-                        warning: '#f59e0b',
-                        danger: '#ef4444'
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -677,7 +662,7 @@
     <!-- MAIN CONTENT -->
     <div class="main-content">
         <div class="content-header">
-            <h2 id="pageTitle">Ana Dashboard</h2>
+            <h2 id="pageTitle">Veri Girişi</h2>
         </div>
         <div class="content-body" id="contentBody"></div>
     </div>
@@ -4046,7 +4031,6 @@
                         </div>
                     `}
                 `,
-
                 
                 'veri-girisi': () => `
                     <div style="margin: 15px 0;">
@@ -4480,7 +4464,6 @@
                         if (state.allSurveys.length > 0) {
                             state.processedData = dataProcessor.analyzeAllData(state.allSurveys);
                             console.log(`✅ Veritabanından ${state.allSurveys.length} anket yüklendi`);
-                            console.log('ProcessedData keys:', Object.keys(state.processedData || {}).length);
                         }
                     }
                 } catch (error) {
