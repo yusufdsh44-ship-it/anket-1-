@@ -6,6 +6,12 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-11-07: **Ana Dashboard Removed** - Simplified UI by removing main dashboard
+  - **Menu Updated:** Removed "Ana Dashboard" menu item from navigation
+  - **Default Page:** Application now opens directly to "Veri Girişi" (Data Entry) page
+  - **Code Cleanup:** Removed dashboard template and rendering logic
+  - **User Preference:** Focus on direct data entry workflow
+
 - 2025-11-04: **Database Architecture Fixed** - Flask app context issue resolved
   - **Unified Model Structure:** Moved SurveyData model from separate models.py into main.py to fix circular import
   - **Fixed 500 Error:** Resolved "Flask app is not registered with SQLAlchemy instance" runtime error
