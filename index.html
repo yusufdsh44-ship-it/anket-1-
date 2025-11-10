@@ -1033,6 +1033,69 @@
                 }, {});
             },
 
+            parseTsvRow: (line) => {
+                const cells = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    const nextChar = line[i + 1];
+                    
+                    if (char === '"') {
+                        if (inQuotes && nextChar === '"') {
+                            current += '"';
+                            i++;
+                        } else {
+                            inQuotes = !inQuotes;
+                        }
+                    } else if (char === '\t' && !inQuotes) {
+                        cells.push(current);
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                
+                cells.push(current);
+                return cells;
+            },
+
+            parseClipboardTsv: (text) => {
+                const rows = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < text.length; i++) {
+                    const char = text[i];
+                    const nextChar = text[i + 1];
+                    
+                    if (char === '"') {
+                        if (inQuotes && nextChar === '"') {
+                            current += '"';
+                            i++;
+                        } else {
+                            inQuotes = !inQuotes;
+                        }
+                    } else if (char === '\n' && !inQuotes) {
+                        if (current.trim()) {
+                            rows.push(utils.parseTsvRow(current));
+                        }
+                        current = '';
+                    } else if (char === '\r') {
+                        continue;
+                    } else {
+                        current += char;
+                    }
+                }
+                
+                if (current.trim()) {
+                    rows.push(utils.parseTsvRow(current));
+                }
+                
+                return rows;
+            },
+
             stemWord: (word) => {
                 const suffixes = ['lik', 'lük', 'lık', 'luk', 'ler', 'lar', 'im', 'ım', 'um', 'üm', 
                                  'ye', 'ya', 'den', 'dan', 'ten', 'tan', 'in', 'ın', 'un', 'ün'];
@@ -2137,7 +2200,7 @@
                     const targetRowIndex = Array.from(targetRow.parentElement.children).indexOf(targetRow);
                     const targetCellIndex = Array.from(targetRow.children).indexOf(targetCell);
                     
-                    const rows = pastedData.split('\n').filter(r => r.trim());
+                    const rows = utils.parseClipboardTsv(pastedData);
                     const tbody = document.getElementById('dataTableBody');
                     
                     const neededRows = targetRowIndex + rows.length;
@@ -2146,8 +2209,7 @@
                         dataInput.addTableRows(neededRows - currentRows);
                     }
                     
-                    rows.forEach((rowData, i) => {
-                        const cells = rowData.split('\t');
+                    rows.forEach((cells, i) => {
                         const tableRow = tbody.children[targetRowIndex + i];
                         
                         cells.forEach((cellData, j) => {

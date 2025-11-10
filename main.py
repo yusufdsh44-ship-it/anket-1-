@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.orm import DeclarativeBase
@@ -46,8 +46,16 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    """Serve the main HTML file"""
-    return send_from_directory('.', 'index.html')
+    """Serve the main HTML file with no caching"""
+    with open('index.html', 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    response = make_response(content)
+    response.headers['Content-Type'] = 'text/html; charset=utf-8'
+    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
 
 
 @app.route('/api/survey-data', methods=['GET'])
