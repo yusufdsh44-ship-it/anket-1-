@@ -898,9 +898,6 @@
         };
 
         const MENU_ITEMS = [
-            { category: '', items: [
-                { id: 'dashboard', icon: 'home', title: 'Ana Dashboard', highlight: true }
-            ]},
             { category: 'DETAYLI ANALİZLER', items: [
                 { id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları' },
                 { id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz' },
@@ -3939,103 +3936,7 @@
 
         const pageManager = {
             pages: {
-                'dashboard': () => `
-                    <div class="info-box" style="margin-bottom: 20px;">
-                        <strong>📊 Hoş Geldiniz!</strong> Bu sayfa tüm anket sonuçlarının özet görünümünü sunar. Detaylı analizler için sol menüden ilgili bölümü seçebilirsiniz.
-                    </div>
-                    
-                    ${!state.processedData || Object.keys(state.processedData).length === 0 ? `
-                        <div style="text-align: center; padding: 60px 20px;">
-                            <span class="material-icons" style="font-size: 80px; color: #d1d5db;">analytics</span>
-                            <h2 style="margin: 20px 0; color: #6b7280;">Henüz Veri Girilmemiş</h2>
-                            <p style="color: #9ca3af; margin-bottom: 30px;">Dashboard'u görüntülemek için önce "Veri Girişi" bölümünden anket verilerini girin.</p>
-                            <button class="btn" onclick="pageManager.showPage('veri-girisi')">
-                                <span class="material-icons">input</span> Veri Girişine Git
-                            </button>
-                        </div>
-                    ` : `
-                        <!-- KRİTİK METRİKLER -->
-                        <div id="dashboardMetrics"></div>
-                        
-                        <!-- ÖNCELİKLİ MÜDAHALE ALANLARI (UNIFIED) -->
-                        <div id="dashboardUnifiedPriorities"></div>
-                        
-                        <!-- EN GÜÇLÜ VE GELİŞTİRİLMESİ GEREKEN ALANLAR -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
-                            <div id="dashboardStrongAreas"></div>
-                            <div id="dashboardWeakAreas"></div>
-                        </div>
-                        
-                        <!-- MÜDÜRLÜK PERFORMANS GRAFİĞİ -->
-                        <div style="background: white; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
-                            <h2 style="font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #1a1a1a;">
-                                📊 Müdürlüklerin Memnuniyet Oranları
-                            </h2>
-                            <canvas id="mudurlukBarChart" style="max-height: 400px;"></canvas>
-                            <div style="text-align: center; margin-top: 15px;">
-                                <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: #667eea;">
-                                    <span class="material-icons">table_chart</span>
-                                    Detaylı Müdürlük Skorlarını Gör
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- EN İYİ VE EN KÖTÜ MÜDÜRLÜKLER -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #10b981;">
-                                    ✅ En Memnun 5 Müdürlük
-                                </h3>
-                                <div id="topMudurlukler"></div>
-                            </div>
-                            <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;">
-                                <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444;">
-                                    📉 En Az Memnun 5 Müdürlük
-                                </h3>
-                                <div id="bottomMudurlukler"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- SOSYAL MEDYA ÖZETİ -->
-                        <div id="dashboardSosyalMedya"></div>
-                        
-                        <!-- AÇIK UÇLU ÖZET -->
-                        <div id="dashboardAcikUclu"></div>
-                        
-                        <!-- RUH SAĞLIĞI ÖZET -->
-                        <div id="dashboardRuhSagligi"></div>
-                        
-                        <!-- SİGARA KULLANIMI ANALİZİ -->
-                        <div id="dashboardSigara"></div>
-                        
-                        <!-- AKSİYON ÖNCELİK MATRİSİ -->
-                        <div id="dashboardActionPriority"></div>
-                        
-                        <!-- HIZLI ERİŞİM -->
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; margin: 20px 0; text-align: center;">
-                            <h3 style="color: white; font-size: 18px; margin-bottom: 20px;">Detaylı Analizler</h3>
-                            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                                <button class="btn" onclick="pageManager.showPage('genel-skorlar')" style="background: white; color: #667eea;">
-                                    <span class="material-icons">dashboard</span> Genel Skorlar
-                                </button>
-                                <button class="btn" onclick="pageManager.showPage('temalar')" style="background: white; color: #667eea;">
-                                    <span class="material-icons">insights</span> Tema Detayları
-                                </button>
-                                <button class="btn" onclick="pageManager.showPage('mudurluk-karsilastir')" style="background: white; color: #667eea;">
-                                    <span class="material-icons">compare_arrows</span> Müdürlük Karşılaştır
-                                </button>
-                                <button class="btn" onclick="dashboardManager.exportPDF()" style="background: white; color: #667eea;">
-                                    <span class="material-icons">picture_as_pdf</span> PDF Rapor İndir
-                                </button>
-                            </div>
-                        </div>
-                    `}
-                `,
-                
                 'veri-girisi': () => `
-                    <div style="background: #ff0000; color: white; padding: 30px; font-size: 24px; font-weight: bold;">
-                        ✅ VERİ GİRİŞİ SAYFASI YÜKLEND İ
-                    </div>
                     <div style="margin: 15px 0;">
                         <button class="btn" onclick="dataInput.addTableRows(10)">
                             <span class="material-icons">add</span> 10 Satır Ekle
@@ -4378,7 +4279,6 @@
             },
 
             showPage: (pageId) => {
-                console.log('📄 showPage called with pageId:', pageId);
                 const contentBody = document.getElementById('contentBody');
                 const pageTitle = document.getElementById('pageTitle');
                 
@@ -4388,53 +4288,27 @@
                     if (found) menuItem = found;
                 });
                 
-                console.log('Found menu item:', menuItem);
+                if (menuItem) {
+                    pageTitle.textContent = menuItem.title;
+                }
                 
-                try {
-                    if (menuItem) {
-                        console.log('Setting page title...');
-                        pageTitle.textContent = menuItem.title;
-                        console.log('Page title set');
-                    }
-                    
-                    console.log('Removing active classes from menu items...');
-                    document.querySelectorAll('.menu-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-                    console.log('Active classes removed');
-                    
-                    console.log('Finding active menu item...');
-                    const activeMenuItem = document.querySelector(`.menu-item[data-page="${pageId}"]`);
-                    console.log('Active menu item:', activeMenuItem);
-                    if (activeMenuItem) {
-                        activeMenuItem.classList.add('active');
-                        console.log('Active class added');
-                    }
-                    
-                    console.log('Checking if page exists...');
-                    console.log('pageManager.pages[pageId]:', pageManager.pages[pageId]);
-                    if (pageManager.pages[pageId]) {
-                        console.log('Generating page content...');
-                        const pageContent = pageManager.pages[pageId]();
-                        console.log('Page content generated, length:', pageContent.length);
-                        console.log('Setting innerHTML...');
-                        contentBody.innerHTML = `<div class="page-content active">${pageContent}</div>`;
-                        console.log('innerHTML set successfully!');
-                        console.log('contentBody display:', window.getComputedStyle(contentBody).display);
-                        console.log('contentBody height:', window.getComputedStyle(contentBody).height);
-                        console.log('contentBody overflow:', window.getComputedStyle(contentBody).overflow);
-                        console.log('contentBody children count:', contentBody.children.length);
-                        if (contentBody.children.length > 0) {
-                            console.log('First child display:', window.getComputedStyle(contentBody.children[0]).display);
-                            console.log('First child height:', window.getComputedStyle(contentBody.children[0]).height);
-                        }
+                document.querySelectorAll('.menu-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                const activeMenuItem = document.querySelector(`.menu-item[data-page="${pageId}"]`);
+                if (activeMenuItem) {
+                    activeMenuItem.classList.add('active');
+                }
+                
+                if (pageManager.pages[pageId]) {
+                    contentBody.innerHTML = `<div class="page-content active">${pageManager.pages[pageId]()}</div>`;
                     
                     if (pageId === 'veri-girisi') {
-                        setTimeout(() => {
-                            dataInput.addTableRows(CONFIG.MAX_TABLE_ROWS_INITIAL);
-                            dataInput.setupPasteHandler();
-                        }, 100);
+                        dataInput.addTableRows(CONFIG.MAX_TABLE_ROWS_INITIAL);
+                        setTimeout(() => dataInput.setupPasteHandler(), 100);
                     }
+                    
                     
                     if (pageId === 'mudurluk-karsilastir') {
                         setTimeout(() => {
@@ -4443,15 +4317,11 @@
                         }, 100);
                     }
                     
-                        setTimeout(() => tableRenderer.renderAllTables(), 100);
-                    }
-                } catch (error) {
-                    console.error('❌ showPage error:', error);
+                    setTimeout(() => tableRenderer.renderAllTables(), 100);
                 }
             },
 
             initMenu: () => {
-                console.log('🔧 initMenu called');
                 const menu = document.getElementById('sidebarMenu');
                 
                 MENU_ITEMS.forEach(category => {
@@ -4473,11 +4343,7 @@
                     });
                 });
                 
-                console.log('🚀 About to call showPage(veri-girisi)');
-                setTimeout(() => {
-                    console.log('⏰ Timeout fired, calling showPage');
-                    pageManager.showPage('veri-girisi');
-                }, 50);
+                pageManager.showPage('veri-girisi');
             }
         };
 

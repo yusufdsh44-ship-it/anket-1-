@@ -47,11 +47,7 @@ with app.app_context():
 @app.route('/')
 def index():
     """Serve the main HTML file"""
-    response = send_from_directory('.', 'index.html')
-    response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
-    response.headers['Pragma'] = 'no-cache'
-    response.headers['Expires'] = '0'
-    return response
+    return send_from_directory('.', 'index.html')
 
 
 @app.route('/api/survey-data', methods=['GET'])
