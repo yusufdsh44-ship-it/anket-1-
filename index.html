@@ -4033,6 +4033,9 @@
                 `,
                 
                 'veri-girisi': () => `
+                    <div style="background: #ff0000; color: white; padding: 30px; font-size: 24px; font-weight: bold;">
+                        ✅ VERİ GİRİŞİ SAYFASI YÜKLEND İ
+                    </div>
                     <div style="margin: 15px 0;">
                         <button class="btn" onclick="dataInput.addTableRows(10)">
                             <span class="material-icons">add</span> 10 Satır Ekle
@@ -4375,6 +4378,7 @@
             },
 
             showPage: (pageId) => {
+                console.log('📄 showPage called with pageId:', pageId);
                 const contentBody = document.getElementById('contentBody');
                 const pageTitle = document.getElementById('pageTitle');
                 
@@ -4384,28 +4388,46 @@
                     if (found) menuItem = found;
                 });
                 
-                if (menuItem) {
-                    pageTitle.textContent = menuItem.title;
-                }
+                console.log('Found menu item:', menuItem);
                 
-                document.querySelectorAll('.menu-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                const activeMenuItem = document.querySelector(`.menu-item[data-page="${pageId}"]`);
-                if (activeMenuItem) {
-                    activeMenuItem.classList.add('active');
-                }
-                
-                if (pageManager.pages[pageId]) {
-                    const pageContent = pageManager.pages[pageId]();
-                    contentBody.innerHTML = `<div class="page-content active">${pageContent}</div>`;
+                try {
+                    if (menuItem) {
+                        console.log('Setting page title...');
+                        pageTitle.textContent = menuItem.title;
+                        console.log('Page title set');
+                    }
                     
-                    console.log('DOM after setting innerHTML:');
-                    console.log('contentBody children:', contentBody.children.length);
-                    console.log('First child:', contentBody.children[0]);
-                    console.log('First child classList:', contentBody.children[0] ? contentBody.children[0].classList.toString() : 'none');
-                    console.log('First child display:', contentBody.children[0] ? window.getComputedStyle(contentBody.children[0]).display : 'none');
+                    console.log('Removing active classes from menu items...');
+                    document.querySelectorAll('.menu-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    console.log('Active classes removed');
+                    
+                    console.log('Finding active menu item...');
+                    const activeMenuItem = document.querySelector(`.menu-item[data-page="${pageId}"]`);
+                    console.log('Active menu item:', activeMenuItem);
+                    if (activeMenuItem) {
+                        activeMenuItem.classList.add('active');
+                        console.log('Active class added');
+                    }
+                    
+                    console.log('Checking if page exists...');
+                    console.log('pageManager.pages[pageId]:', pageManager.pages[pageId]);
+                    if (pageManager.pages[pageId]) {
+                        console.log('Generating page content...');
+                        const pageContent = pageManager.pages[pageId]();
+                        console.log('Page content generated, length:', pageContent.length);
+                        console.log('Setting innerHTML...');
+                        contentBody.innerHTML = `<div class="page-content active">${pageContent}</div>`;
+                        console.log('innerHTML set successfully!');
+                        console.log('contentBody display:', window.getComputedStyle(contentBody).display);
+                        console.log('contentBody height:', window.getComputedStyle(contentBody).height);
+                        console.log('contentBody overflow:', window.getComputedStyle(contentBody).overflow);
+                        console.log('contentBody children count:', contentBody.children.length);
+                        if (contentBody.children.length > 0) {
+                            console.log('First child display:', window.getComputedStyle(contentBody.children[0]).display);
+                            console.log('First child height:', window.getComputedStyle(contentBody.children[0]).height);
+                        }
                     
                     if (pageId === 'veri-girisi') {
                         setTimeout(() => {
@@ -4421,11 +4443,15 @@
                         }, 100);
                     }
                     
-                    setTimeout(() => tableRenderer.renderAllTables(), 100);
+                        setTimeout(() => tableRenderer.renderAllTables(), 100);
+                    }
+                } catch (error) {
+                    console.error('❌ showPage error:', error);
                 }
             },
 
             initMenu: () => {
+                console.log('🔧 initMenu called');
                 const menu = document.getElementById('sidebarMenu');
                 
                 MENU_ITEMS.forEach(category => {
@@ -4447,7 +4473,11 @@
                     });
                 });
                 
-                setTimeout(() => pageManager.showPage('veri-girisi'), 50);
+                console.log('🚀 About to call showPage(veri-girisi)');
+                setTimeout(() => {
+                    console.log('⏰ Timeout fired, calling showPage');
+                    pageManager.showPage('veri-girisi');
+                }, 50);
             }
         };
 
