@@ -6,11 +6,15 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-11-10: **Default Landing Page Changed to Analytics** - Application now opens on analysis view
+  - **New Default Page:** Application opens directly to "Genel Memnuniyet Oranları" (General Satisfaction Rates)
+  - **Table Sorting Added:** Departments automatically sorted by highest satisfaction scores (descending)
+  - **User Preference:** Analytics-first approach for immediate insights
+  - **TSV Parsing Fixed:** Excel/Sheets copy-paste now correctly handles quoted fields with tabs and newlines
+
 - 2025-11-07: **Ana Dashboard Removed** - Simplified UI by removing main dashboard
   - **Menu Updated:** Removed "Ana Dashboard" menu item from navigation
-  - **Default Page:** Application now opens directly to "Veri Girişi" (Data Entry) page
   - **Code Cleanup:** Removed dashboard template and rendering logic
-  - **User Preference:** Focus on direct data entry workflow
 
 - 2025-11-04: **Database Architecture Fixed** - Flask app context issue resolved
   - **Unified Model Structure:** Moved SurveyData model from separate models.py into main.py to fix circular import

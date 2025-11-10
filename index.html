@@ -1363,7 +1363,10 @@
                 const genelBelediye = tableRenderer.calculateGenelBelediye();
                 tbody.innerHTML += tableRenderer.createGenelSkorRow('GENEL BELEDİYE', genelBelediye, true);
                 
-                Object.values(state.processedData).forEach(md => {
+                const sortedMudurlukler = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.genelMemnuniyet || 0) - parseFloat(a.genelMemnuniyet || 0));
+                
+                sortedMudurlukler.forEach(md => {
                     tbody.innerHTML += tableRenderer.createGenelSkorRow(
                         `<span class="code-label">#${md.kod}</span> ${md.ad}`,
                         md,
@@ -4405,7 +4408,7 @@
                     });
                 });
                 
-                pageManager.showPage('veri-girisi');
+                pageManager.showPage('genel-skorlar');
             }
         };
 
