@@ -645,6 +645,98 @@
             display: flex;
             gap: 10px;
         }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 15mm;
+            }
+            
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+            
+            .sidebar,
+            .content-header,
+            .no-print {
+                display: none !important;
+            }
+            
+            .main-content {
+                margin-left: 0 !important;
+                width: 100% !important;
+                padding: 0 !important;
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+            
+            .content-body {
+                padding: 0 !important;
+                display: block !important;
+                height: auto !important;
+                overflow: visible !important;
+            }
+            
+            #raporIcerik {
+                background: white !important;
+            }
+            
+            .rapor-header {
+                page-break-after: avoid !important;
+            }
+            
+            .rapor-section h2 {
+                page-break-after: avoid !important;
+            }
+            
+            .rapor-section {
+                page-break-inside: auto;
+            }
+            
+            .rapor-footer {
+                page-break-inside: avoid !important;
+            }
+            
+            table {
+                border-collapse: collapse !important;
+                width: 100% !important;
+                font-size: 9px !important;
+            }
+            
+            table th,
+            table td {
+                border: 1px solid #d1d5db !important;
+                padding: 6px 8px !important;
+            }
+            
+            .highlight {
+                background-color: #fef3c7 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .positive {
+                color: #059669 !important;
+                font-weight: 700 !important;
+            }
+            
+            .negative {
+                color: #dc2626 !important;
+                font-weight: 700 !important;
+            }
+            
+            .code-label {
+                background-color: #dbeafe !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
     </style>
 </head>
 <body>
@@ -898,6 +990,9 @@
         };
 
         const MENU_ITEMS = [
+            { category: 'RAPOR', items: [
+                { id: 'tam-rapor', icon: 'description', title: 'Tam Rapor (PDF İndir)', highlight: true }
+            ]},
             { category: 'DETAYLI ANALİZLER', items: [
                 { id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları' },
                 { id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz' },
@@ -3999,6 +4094,190 @@
             }
         };
 
+        const raporRenderer = {
+            renderAll: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) return;
+                
+                raporRenderer.renderGenelBakis();
+                raporRenderer.renderGenelSkorlar();
+                raporRenderer.renderTemalar();
+                raporRenderer.renderSosyalMedya();
+                raporRenderer.renderRuhSagligi();
+                raporRenderer.renderSorular();
+                raporRenderer.renderAcikUclu();
+            },
+
+            renderGenelBakis: () => {
+                const container = document.getElementById('raporGenelBakis');
+                if (!container) return;
+                
+                const genelBelediye = tableRenderer.calculateGenelBelediye();
+                container.innerHTML = `
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 24px; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">Toplam Personel</div>
+                            <div style="font-size: 42px; font-weight: 900;">${genelBelediye.toplamPersonel}</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 24px; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">Geçerli Anket</div>
+                            <div style="font-size: 42px; font-weight: 900;">${genelBelediye.gecerliAnketler.length}</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 24px; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">Katılım Oranı</div>
+                            <div style="font-size: 42px; font-weight: 900;">${genelBelediye.katilimOrani}%</div>
+                        </div>
+                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 24px; border-radius: 12px; color: white; text-align: center;">
+                            <div style="font-size: 14px; opacity: 0.9; margin-bottom: 8px;">Genel Memnuniyet</div>
+                            <div style="font-size: 42px; font-weight: 900;">${genelBelediye.genelMemnuniyet}%</div>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderGenelSkorlar: () => {
+                const tbody = document.getElementById('raporGenelSkorlarBody');
+                if (!tbody) return;
+                
+                tbody.innerHTML = '';
+                const genelBelediye = tableRenderer.calculateGenelBelediye();
+                tbody.innerHTML += tableRenderer.createGenelSkorRow('GENEL BELEDİYE', genelBelediye, true);
+                
+                const sortedMudurlukler = Object.values(state.processedData)
+                    .sort((a, b) => parseFloat(b.genelMemnuniyet || 0) - parseFloat(a.genelMemnuniyet || 0));
+                
+                sortedMudurlukler.forEach(md => {
+                    tbody.innerHTML += tableRenderer.createGenelSkorRow(
+                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        md,
+                        false
+                    );
+                });
+            },
+
+            renderTemalar: () => {
+                const tbody = document.getElementById('raporTemalarBody');
+                if (!tbody) return;
+                
+                tbody.innerHTML = '';
+                const genelBelediye = tableRenderer.calculateGenelBelediyeTemalar();
+                tbody.innerHTML += tableRenderer.createTemalarRow('GENEL BELEDİYE', genelBelediye, true);
+                
+                Object.values(state.processedData).forEach(md => {
+                    tbody.innerHTML += tableRenderer.createTemalarRow(
+                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        md.temalar,
+                        false
+                    );
+                });
+            },
+
+            renderSosyalMedya: () => {
+                const tbody = document.getElementById('raporSosyalMedyaBody');
+                if (!tbody) return;
+                
+                tbody.innerHTML = '';
+                const genelBelediye = tableRenderer.calculateGenelBelediyeAggregate('sosyalMedya');
+                if (genelBelediye) {
+                    tbody.innerHTML += tableRenderer.createSosyalMedyaRow('GENEL BELEDİYE', genelBelediye, true);
+                }
+                
+                Object.values(state.processedData).forEach(md => {
+                    tbody.innerHTML += tableRenderer.createSosyalMedyaRow(
+                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        md.sosyalMedya,
+                        false
+                    );
+                });
+            },
+
+            renderRuhSagligi: () => {
+                const tbody = document.getElementById('raporRuhSagligiBody');
+                if (!tbody) return;
+                
+                tbody.innerHTML = '';
+                const genelBelediye = tableRenderer.calculateGenelBelediyeAggregate('ruhSagligi');
+                
+                const allValidSurveys = Object.values(state.processedData).flatMap(md => md.gecerliAnketler);
+                const genelRuhSagligi = {
+                    genel: utils.calculateAverage(allValidSurveys, [45, 46, 47, 48]),
+                    sigara: utils.formatPercentage((allValidSurveys.filter(s => s.sigara === 'Evet').length / allValidSurveys.length) * 100),
+                    s46: utils.calculateAverage(allValidSurveys, [45]),
+                    s47: utils.calculateAverage(allValidSurveys, [46]),
+                    s48: utils.calculateAverage(allValidSurveys, [47]),
+                    s49: utils.calculateAverage(allValidSurveys, [48])
+                };
+                tbody.innerHTML += tableRenderer.createRuhSagligiRow('GENEL BELEDİYE', genelRuhSagligi, true);
+                
+                Object.values(state.processedData).forEach(md => {
+                    tbody.innerHTML += tableRenderer.createRuhSagligiRow(
+                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        md.ruhSagligi,
+                        false
+                    );
+                });
+            },
+
+            renderSorular: () => {
+                const thead = document.getElementById('raporSorularHead');
+                const tbody = document.getElementById('raporSorularBody');
+                if (!thead || !tbody) return;
+                
+                let headerHTML = '<tr>';
+                headerHTML += '<th style="min-width:300px;">Soru</th>';
+                headerHTML += '<th style="min-width:100px;"><strong>GENEL<br>BELEDİYE</strong></th>';
+                
+                Object.values(state.processedData).forEach(md => {
+                    const mdName = md.ad.length > 20 ? md.ad.substring(0, 17) + '...' : md.ad;
+                    headerHTML += `<th style="min-width:90px;"><span class="code-label" style="display:block;">#${md.kod}</span>${mdName}</th>`;
+                });
+                headerHTML += '</tr>';
+                thead.innerHTML = headerHTML;
+                
+                const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
+                tbody.innerHTML = SORULAR.map((soru, i) => {
+                    let rowHTML = `<tr><td><strong>S${i+1}.</strong> ${soru}</td>`;
+                    rowHTML += `<td class="highlight"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
+                    
+                    Object.values(state.processedData).forEach(md => {
+                        rowHTML += `<td>${md.soruOrtalamalar[i]}%</td>`;
+                    });
+                    
+                    return rowHTML + '</tr>';
+                }).join('');
+            },
+
+            renderAcikUclu: () => {
+                const tbody = document.getElementById('raporAcikUcluBody');
+                if (!tbody) return;
+                
+                tbody.innerHTML = '';
+                const allSurveys = Object.values(state.processedData).flatMap(md => [...md.gecerliAnketler, ...md.gecersizAnketler]);
+                const genelKeywords = utils.analyzeKeywords(allSurveys);
+                const genelCount = allSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                
+                tbody.innerHTML += `
+                    <tr class="highlight">
+                        <td><strong>GENEL BELEDİYE</strong></td>
+                        <td>${genelKeywords.map(kw => `<span style="background: #e0e7ff; padding: 4px 8px; border-radius: 4px; margin: 2px; display: inline-block; font-size: 10px;"><strong>${kw.word}</strong> (${kw.count})</span>`).join(' ')}</td>
+                        <td><strong>${genelCount}</strong></td>
+                    </tr>
+                `;
+                
+                Object.values(state.processedData).forEach(md => {
+                    const allMdSurveys = [...md.gecerliAnketler, ...md.gecersizAnketler];
+                    const count = allMdSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                    const keywords = utils.analyzeKeywords(allMdSurveys);
+                    tbody.innerHTML += `
+                        <tr>
+                            <td><span class="code-label">#${md.kod}</span> ${md.ad}</td>
+                            <td>${keywords.map(kw => `<span style="background: #f3f4f6; padding: 4px 8px; border-radius: 4px; margin: 2px; display: inline-block; font-size: 10px;"><strong>${kw.word}</strong> (${kw.count})</span>`).join(' ')}</td>
+                            <td>${count}</td>
+                        </tr>
+                    `;
+                });
+            }
+        };
+
         const pageManager = {
             pages: {
                 'veri-girisi': () => `
@@ -4267,6 +4546,166 @@
                     </div>
                 `,
 
+                'tam-rapor': () => `
+                    <div class="no-print" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h2 style="font-size: 24px; font-weight: 700; margin: 0 0 8px 0; color: white;">📄 Kapsamlı Analiz Raporu</h2>
+                                <p style="margin: 0; opacity: 0.9; font-size: 14px;">Tüm anket verilerinin detaylı analiz sonuçları</p>
+                            </div>
+                            <button onclick="window.print()" class="btn" style="background: white; color: #667eea; font-weight: 600; padding: 12px 24px; font-size: 15px;">
+                                <span class="material-icons" style="vertical-align: middle;">print</span> PDF İndir / Yazdır
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="raporIcerik">
+                        <div class="rapor-header" style="text-align: center; margin-bottom: 40px; page-break-after: avoid;">
+                            <h1 style="font-size: 32px; font-weight: 700; color: #1a1a1a; margin: 0 0 12px 0;">Arnavutköy Belediyesi</h1>
+                            <h2 style="font-size: 24px; font-weight: 600; color: #4A90E2; margin: 0 0 8px 0;">JD-R Anket Değerlendirme Raporu</h2>
+                            <p style="color: #6b7280; font-size: 14px; margin: 0;">Rapor Tarihi: ${new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                        </div>
+
+                        <div id="raporGenelBakis" style="margin-bottom: 40px;"></div>
+
+                        <div class="rapor-section" style="page-break-inside: avoid; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                📊 1. Genel Memnuniyet Oranları
+                            </h2>
+                            <div class="table-container">
+                                <table id="raporGenelSkorlar" style="font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Müdürlükler</th>
+                                            <th>Toplam Personel</th>
+                                            <th>Toplam Katılan</th>
+                                            <th>Geçerli Anket</th>
+                                            <th>Geçersiz Anket</th>
+                                            <th>Katılım Oranı (%)</th>
+                                            <th>Genel Memnuniyet (%)</th>
+                                            <th>İş Yükü/Stresi (%)</th>
+                                            <th>Kurum Desteği (%)</th>
+                                            <th>İş Yükü-Destek Dengesi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="raporGenelSkorlarBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-section" style="page-break-before: always; page-break-inside: avoid; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                🎯 2. Konular Üzerinden Analiz (10 Tema)
+                            </h2>
+                            <div class="table-container">
+                                <table id="raporTemalar" style="font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Müdürlükler</th>
+                                            <th>İş-Kişi Uyumu</th>
+                                            <th>Görev-Rol Netliği</th>
+                                            <th>Talep Yoğunluğu</th>
+                                            <th>Yöneticilerle İlişkiler</th>
+                                            <th>Çalışma Arkadaşları</th>
+                                            <th>Kurum İçi İletişim</th>
+                                            <th>Çalışma Koşulları</th>
+                                            <th>Kamu Hizmeti Motivasyonu</th>
+                                            <th>Yetkinlik & Performans</th>
+                                            <th>Eğitim & Gelişim</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="raporTemalarBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-section" style="page-break-before: always; page-break-inside: avoid; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                📱 3. Sosyal Medya Takip Oranları
+                            </h2>
+                            <div class="table-container">
+                                <table id="raporSosyalMedya" style="font-size: 10px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Müdürlükler</th>
+                                            <th>IG Belediye</th>
+                                            <th>IG Başkan</th>
+                                            <th>TW Belediye</th>
+                                            <th>TW Başkan</th>
+                                            <th>FB Belediye</th>
+                                            <th>FB Başkan</th>
+                                            <th>NX Belediye</th>
+                                            <th>NX Başkan</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="raporSosyalMedyaBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-section" style="page-break-before: always; page-break-inside: avoid; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                🧠 4. Ruh Sağlığı Taraması
+                            </h2>
+                            <div class="warning-box" style="margin-bottom: 20px;">
+                                <strong>⚠️ Önemli:</strong> Ruh sağlığı taraması skorlarında yüksek değerler olumsuz durumu gösterir.
+                            </div>
+                            <div class="table-container">
+                                <table id="raporRuhSagligi" style="font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Müdürlükler</th>
+                                            <th>Ruh Sağlığı Genel (%)</th>
+                                            <th>Sigara Kullanımı (%)</th>
+                                            <th>S46: Keyif Alamama</th>
+                                            <th>S47: Üzgün/Çökkün</th>
+                                            <th>S48: Gergin/Kaygılı</th>
+                                            <th>S49: Endişe Kontrolü</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="raporRuhSagligiBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-section" style="page-break-before: always; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                📋 5. Sorular Üzerinden Detaylı Analiz (49 Soru)
+                            </h2>
+                            <p style="color: #6b7280; font-size: 13px; margin-bottom: 20px;">Her sorunun tüm müdürlüklerdeki performans yüzdeleri</p>
+                            <div class="table-container">
+                                <table id="raporSorular" style="font-size: 9px;">
+                                    <thead id="raporSorularHead"></thead>
+                                    <tbody id="raporSorularBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-section" style="page-break-before: always; page-break-inside: avoid; margin-bottom: 50px;">
+                            <h2 style="font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 20px 0; padding-bottom: 12px; border-bottom: 3px solid #4A90E2;">
+                                💬 6. Açık Uçlu Cevaplar - Anahtar Kelimeler
+                            </h2>
+                            <div class="table-container">
+                                <table id="raporAcikUclu" style="font-size: 11px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="min-width: 250px;">Müdürlük</th>
+                                            <th style="min-width: 400px;">En Çok Geçen Kelimeler (Top 5)</th>
+                                            <th style="min-width: 120px;">Toplam Cevap</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="raporAcikUcluBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="rapor-footer" style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid #e5e7eb; color: #6b7280; font-size: 12px; page-break-inside: avoid;">
+                            <p style="margin: 0;"><strong>Arnavutköy Belediyesi - JD-R Anket Değerlendirme Sistemi</strong></p>
+                            <p style="margin: 8px 0 0 0;">© ${new Date().getFullYear()} | Rapor Oluşturulma: ${new Date().toLocaleString('tr-TR')}</p>
+                        </div>
+                    </div>
+                `,
+
                 'acik-uclu': () => `
                     <div class="info-box">
                         <strong>ℹ️ Açıklama:</strong> Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. 
@@ -4380,6 +4819,10 @@
                             comparisonManager.populateSelects();
                             comparisonManager.updateComparison();
                         }, 100);
+                    }
+                    
+                    if (pageId === 'tam-rapor') {
+                        setTimeout(() => raporRenderer.renderAll(), 100);
                     }
                     
                     setTimeout(() => tableRenderer.renderAllTables(), 100);
