@@ -1443,14 +1443,14 @@
                 const dengeSymbol = denge >= 0 ? '+' : '';
                 
                 const fields = [
-                    { value: data.toplamPersonel || 0, skipColor: true },
-                    { value: data.anketler?.length || 0, skipColor: true },
-                    { value: data.gecerliAnketler?.length || 0, skipColor: true },
-                    { value: data.gecersizAnketler?.length || 0, skipColor: true },
-                    { value: data.katilimOrani || 0, key: 'katilimOrani', percent: true },
-                    { value: data.genelMemnuniyet || 0, key: 'genelMemnuniyet', percent: true, bold: true },
-                    { value: data.isYuku || 0, key: 'isYuku', percent: true },
-                    { value: data.kurumDestegi || 0, key: 'kurumDestegi', percent: true }
+                    { value: data.toplamPersonel || 0 },
+                    { value: data.anketler?.length || 0 },
+                    { value: data.gecerliAnketler?.length || 0 },
+                    { value: data.gecersizAnketler?.length || 0 },
+                    { value: data.katilimOrani || 0, percent: true },
+                    { value: data.genelMemnuniyet || 0, percent: true, bold: true },
+                    { value: data.isYuku || 0, percent: true },
+                    { value: data.kurumDestegi || 0, percent: true }
                 ];
                 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
@@ -1458,13 +1458,7 @@
                 fields.forEach(field => {
                     const displayValue = field.percent ? `${field.value}%` : field.value;
                     const content = field.bold ? `<strong>${displayValue}</strong>` : displayValue;
-                    
-                    if (isGenel || !baseline || field.skipColor) {
-                        rowHTML += `<td>${content}</td>`;
-                    } else {
-                        const colorStyle = utils.getGradientColor(field.value, baseline[field.key]);
-                        rowHTML += `<td style="${colorStyle}">${content}</td>`;
-                    }
+                    rowHTML += `<td>${content}</td>`;
                 });
                 
                 rowHTML += `<td class="${dengeClass}"><strong>${dengeSymbol}${data.denge || 0}%</strong></td>`;
@@ -1622,12 +1616,7 @@
                 
                 platforms.forEach(platform => {
                     const value = sm.detay?.[platform] || 0;
-                    if (isGenel || !baseline) {
-                        rowHTML += `<td>${value}%</td>`;
-                    } else {
-                        const colorStyle = utils.getGradientColor(value, baseline.detay?.[platform]);
-                        rowHTML += `<td style="${colorStyle}">${value}%</td>`;
-                    }
+                    rowHTML += `<td>${value}%</td>`;
                 });
                 
                 return rowHTML + '</tr>';
@@ -1669,13 +1658,7 @@
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
                 
                 fields.forEach(field => {
-                    if (isGenel || !baseline) {
-                        rowHTML += `<td>${field.value}%</td>`;
-                    } else {
-                        const baseValue = field.detay ? baseline.ruhSagligiDetay?.[field.key] : baseline[field.key];
-                        const colorStyle = utils.getGradientColor(field.value, baseValue);
-                        rowHTML += `<td style="${colorStyle}">${field.value}%</td>`;
-                    }
+                    rowHTML += `<td>${field.value}%</td>`;
                 });
                 
                 return rowHTML + '</tr>';
@@ -1731,12 +1714,7 @@
                 
                 temaKeys.forEach(key => {
                     const value = temalar[key] || 0;
-                    if (isGenel || !baseline) {
-                        rowHTML += `<td>${value}%</td>`;
-                    } else {
-                        const colorStyle = utils.getGradientColor(value, baseline[key]);
-                        rowHTML += `<td style="${colorStyle}">${value}%</td>`;
-                    }
+                    rowHTML += `<td>${value}%</td>`;
                 });
                 
                 return rowHTML + '</tr>';
