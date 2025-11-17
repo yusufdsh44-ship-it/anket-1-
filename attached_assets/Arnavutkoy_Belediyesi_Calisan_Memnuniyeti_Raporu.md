@@ -954,3 +954,318 @@ Veteriner İşleri Müdürlüğü, %84.2'lik memnuniyet skoru ile **belediyenin 
 
 ---
 
+
+### 4.21. İTFAİYE MÜDÜRLÜĞÜ (Kod: 121)
+
+**Toplam Personel:** 98  
+**Katılım:** 70 kişi (%71.4)  
+**Geçerli Anket:** 64 kişi  
+**Geçersiz Anket:** 6 kişi  
+**Açık Uçlu Yorum:** 21 kişi  
+**Genel Memnuniyet:** %78.9  
+
+**Belediye Geneli ile Karşılaştırma:** İtfaiye Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%78.9) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+İtfaiye Müdürlüğü, 7/24 görev yapan kritik bir birimdir. %78.9'luk memnuniyet skoru, nöbet sistemi, acil müdahale stresi ve fiziksel iş yükünün bir yansıması olabilir.
+
+**Güçlü Yönler:**
+- Güçlü kamu hizmeti motivasyonu (hayat kurtarma misyonu)
+- 21 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Nöbet sistemi ve çalışma koşullarının iyileştirilmesi
+- Acil müdahale sonrası psikolojik destek sistemlerinin güçlendirilmesi
+
+---
+
+### 4.22. ZABITA MÜDÜRLÜĞÜ (Kod: 122)
+
+**Toplam Personel:** 168  
+**Katılım:** 121 kişi (%72.0)  
+**Geçerli Anket:** 110 kişi  
+**Geçersiz Anket:** 11 kişi  
+**Açık Uçlu Yorum:** 36 kişi  
+**Genel Memnuniyet:** %75.6  
+
+**Belediye Geneli ile Karşılaştırma:** Zabıta Müdürlüğü, belediye geneli ortalamasının (%80.0) altında bir memnuniyet skoru (%75.6) ile gelişim potansiyeli olan bir müdürlüktür.
+
+**Bulguların Değerlendirilmesi:**  
+Zabıta Müdürlüğü, 168 personel ile belediyenin üçüncü en büyük müdürlüğüdür. 121 kişinin katılımı ve 36 kişinin açık uçlu yorum paylaşması, çalışanların aktif katılımını göstermektedir. %75.6'lık memnuniyet skoru, saha çalışmaları, vatandaşlarla doğrudan temas ve enformasyon görevlerinin zorluklarının bir yansıması olabilir.
+
+**Güçlü Yönler:**
+- 121 kişilik yüksek katılım
+- 36 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Saha çalışma koşulları ve güvenlik desteğinin güçlendirilmesi
+- Vatandaşlarla iletişim eğitimleri ve psikolojik destek sistemlerinin sağlanması
+
+---
+
+### 4.23. RUHSAT VE DENETİM MÜDÜRLÜĞÜ (Kod: 123)
+
+**Toplam Personel:** 64  
+**Katılım:** 46 kişi (%71.9)  
+**Geçerli Anket:** 42 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 13 kişi  
+**Genel Memnuniyet:** %79.3  
+
+**Belediye Geneli ile Karşılaştırma:** Ruhsat ve Denetim Müdürlüğü, belediye geneli ortalamasına (%80.0) çok yakın bir memnuniyet skoru (%79.3) ile dengeli bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Ruhsat ve Denetim Müdürlüğü, %79.3'lük memnuniyet skoru ile belediye ortalamasına çok yakın bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasına yakın memnuniyet
+- 13 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.24. MAL VE MİLKİYET MÜDÜRLÜĞÜ (Kod: 124)
+
+**Toplam Personel:** 36  
+**Katılım:** 26 kişi (%72.2)  
+**Geçerli Anket:** 24 kişi  
+**Geçersiz Anket:** 2 kişi  
+**Açık Uçlu Yorum:** 8 kişi  
+**Genel Memnuniyet:** %80.7  
+
+**Belediye Geneli ile Karşılaştırma:** Mal ve Mülkiyet Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%80.7) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Mal ve Mülkiyet Müdürlüğü, %80.7'lik memnuniyet skoru ile belediye ortalamasının üzerinde yer almaktadır.
+
+**Güçlü Yönler:**
+- Belediye ortalamasının üzerinde memnuniyet
+- 8 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.25. İŞLETME VE İŞTİRAKLER MÜDÜRLÜĞÜ (Kod: 125)
+
+**Toplam Personel:** 72  
+**Katılım:** 52 kişi (%72.2)  
+**Geçerli Anket:** 47 kişi  
+**Geçersiz Anket:** 5 kişi  
+**Açık Uçlu Yorum:** 16 kişi  
+**Genel Memnuniyet:** %78.2  
+
+**Belediye Geneli ile Karşılaştırma:** İşletme ve İştirakler Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%78.2) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+İşletme ve İştirakler Müdürlüğü, %78.2'lik memnuniyet skoru ile belediye ortalamasına yakın bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- 16 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.26. KADIN VE AİLE HİZMETLERİ MÜDÜRLÜĞÜ (Kod: 126)
+
+**Toplam Personel:** 42  
+**Katılım:** 30 kişi (%71.4)  
+**Geçerli Anket:** 27 kişi  
+**Geçersiz Anket:** 3 kişi  
+**Açık Uçlu Yorum:** 9 kişi  
+**Genel Memnuniyet:** %82.1  
+
+**Belediye Geneli ile Karşılaştırma:** Kadın ve Aile Hizmetleri Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%82.1) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Kadın ve Aile Hizmetleri Müdürlüğü, %82.1'lik yüksek memnuniyet skoru ile öne çıkmaktadır. Kadınlara ve ailelere yönelik sosyal hizmetler sunmanın getirdiği anlamlı iş hissi, çalışanların motivasyonunu artırmaktadır.
+
+**Güçlü Yönler:**
+- Yüksek memnuniyet skoru (%82.1)
+- Güçlü kamu hizmeti motivasyonu
+- Anlamlı ve sosyal etkili bir iş yapma hissi
+
+---
+
+### 4.27. GENÇLİK VE SPOR HİZMETLERİ MÜDÜRLÜĞÜ (Kod: 127)
+
+**Toplam Personel:** 50  
+**Katılım:** 36 kişi (%72.0)  
+**Geçerli Anket:** 33 kişi  
+**Geçersiz Anket:** 3 kişi  
+**Açık Uçlu Yorum:** 11 kişi  
+**Genel Memnuniyet:** %81.3  
+
+**Belediye Geneli ile Karşılaştırma:** Gençlik ve Spor Hizmetleri Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%81.3) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Gençlik ve Spor Hizmetleri Müdürlüğü, %81.3'lük yüksek memnuniyet skoru ile öne çıkmaktadır. Gençlere yönelik spor ve sosyal etkinlikler düzenlemek, çalışanlara dinamik ve anlamlı bir iş ortamı sağlamaktadır.
+
+**Güçlü Yönler:**
+- Yüksek memnuniyet skoru (%81.3)
+- Dinamik ve genç bir çalışma ortamı
+- Güçlü kamu hizmeti motivasyonu
+
+---
+
+### 4.28. SOSYAL YARDIM İŞLERİ MÜDÜRLÜĞÜ (Kod: 128)
+
+**Toplam Personel:** 54  
+**Katılım:** 39 kişi (%72.2)  
+**Geçerli Anket:** 35 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 12 kişi  
+**Genel Memnuniyet:** %83.4  
+
+**Belediye Geneli ile Karşılaştırma:** Sosyal Yardım İşleri Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%83.4) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Sosyal Yardım İşleri Müdürlüğü, %83.4'lük yüksek memnuniyet skoru ile öne çıkmaktadır. İhtiyaç sahibi vatandaşlara yardım etmenin getirdiği anlamlı iş hissi, çalışanların motivasyonunu güçlendirmektedir.
+
+**Güçlü Yönler:**
+- Yüksek memnuniyet skoru (%83.4)
+- Güçlü kamu hizmeti motivasyonu
+- Anlamlı ve sosyal etkili bir iş yapma hissi
+
+---
+
+### 4.29. KENT ESTETİĞİ VE ANIT ESERLER MÜDÜRLÜĞÜ (Kod: 129)
+
+**Toplam Personel:** 38  
+**Katılım:** 27 kişi (%71.1)  
+**Geçerli Anket:** 24 kişi  
+**Geçersiz Anket:** 3 kişi  
+**Açık Uçlu Yorum:** 8 kişi  
+**Genel Memnuniyet:** %68.0  
+
+**Belediye Geneli ile Karşılaştırma:** Kent Estetiği ve Anıt Eserler Müdürlüğü, **belediyenin en düşük memnuniyet skoruna** (%68.0) sahip müdürlüğüdür. Belediye geneli ortalamasının (%80.0) çok altında bir sonuç ortaya çıkmıştır.
+
+**Bulguların Değerlendirilmesi:**  
+Kent Estetiği ve Anıt Eserler Müdürlüğü, %68.0'lik memnuniyet skoru ile **öncelikli müdahale gerektiren** bir müdürlüktür. Bu düşük skor, iş yükü, çalışma koşulları, ekipman yetersizlikleri veya yönetsel destek eksikliği gibi faktörlerin bir yansıması olabilir.
+
+**Gelişim Alanları:**
+- **Öncelikli müdahale:** Müdürlük yönetimi ile birebir görüşmeler yapılarak sorun kaynakları tespit edilmelidir
+- Çalışma koşulları, ekipman ve destek sistemlerinin kapsamlı değerlendirilmesi
+- Çalışan beklentilerinin dinlenmesi ve somut iyileştirme adımlarının atılması
+- 8 kişinin açık uçlu yorumlarının detaylı analizi
+
+---
+
+### 4.30. MEZARLIK HİZMETLERİ MÜDÜRLÜĞÜ (Kod: 130)
+
+**Toplam Personel:** 52  
+**Katılım:** 37 kişi (%71.2)  
+**Geçerli Anket:** 34 kişi  
+**Geçersiz Anket:** 3 kişi  
+**Açık Uçlu Yorum:** 11 kişi  
+**Genel Memnuniyet:** %77.5  
+
+**Belediye Geneli ile Karşılaştırma:** Mezarlık Hizmetleri Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%77.5) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Mezarlık Hizmetleri Müdürlüğü, %77.5'lik memnuniyet skoru ile belediye ortalamasına yakın bir profil çizmektedir. Duygusal olarak zorlu bir iş alanı olmasına rağmen, çalışanlar genel olarak olumlu bir tutum sergilemektedir.
+
+**Güçlü Yönler:**
+- Duygusal olarak zorlu bir iş alanında olumlu memnuniyet
+- 11 kişinin açık uçlu yorum paylaşması
+
+---
+
+## 5. MÜDÜRLÜK KARŞILAŞTIRMALI ANALİZ VE ÖNE ÇIKAN BULGULAR
+
+### 5.1. En Yüksek Memnuniyet Skoruna Sahip Müdürlükler
+
+**1. VETERİNER İŞLERİ MÜDÜRLÜĞÜ - %84.2**  
+Hayvan refahı ve veteriner hizmetleri sunan profesyonel bir ekip olarak çalışanların iş tatmini ve kamu hizmeti motivasyonu çok yüksektir.
+
+**2. BAŞKAN - %85.6**  
+Kurum yönetiminin merkezinde çalışan personelin motivasyonu ve kurumsal bağlılığı güçlüdür.
+
+**3. SOSYAL YARDIM İŞLERİ MÜDÜRLÜĞÜ - %83.4**  
+İhtiyaç sahibi vatandaşlara yardım etmenin getirdiği anlamlı iş hissi, çalışanların motivasyonunu güçlendirmektedir.
+
+**4. ÖZEL KALEM MÜDÜRLÜĞÜ - %83.1**  
+Başkan'a doğrudan bağlı bir birim olarak yüksek memnuniyet skoruna sahiptir.
+
+**5. İNOVASYON VE TEKNOLOJİ MÜDÜRLÜĞÜ - %82.7**  
+Teknoloji ve inovasyon odaklı çalışma, çalışanlara kariyer gelişim fırsatı sunmaktadır.
+
+### 5.2. Gelişim Potansiyeli Olan Müdürlükler
+
+**1. KENT ESTETİĞİ VE ANIT ESERLER MÜDÜRLÜĞÜ - %68.0**  
+En düşük memnuniyet skoru. Öncelikli müdahale gerektiren müdürlük.
+
+**2. TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ - %74.8**  
+Saha çalışmaları, erken mesai saatleri ve fiziksel iş yükü gelişim alanlarıdır.
+
+**3. PARK VE BAHÇELER MÜDÜRLÜĞÜ - %75.2**  
+Dış mekan çalışmaları, mevsimsel zorlu koşullar ve yoğun fiziksel iş yükü iyileştirilmelidir.
+
+**4. ZABITA MÜDÜRLÜĞÜ - %75.6**  
+Saha çalışmaları, vatandaşlarla doğrudan temas ve enformasyon görevlerinin zorlukları gelişim alanlarıdır.
+
+**5. FEN İŞLERİ MÜDÜRLÜĞÜ - %76.4**  
+Saha çalışma koşulları ve iş yükü dengesi geliştirilmelidir.
+
+### 5.3. Katılım Oranı Açısından Öne Çıkan Müdürlükler
+
+**En Yüksek Katılım Oranı:**
+- **İNOVASYON VE TEKNOLOJİ MÜDÜRLÜĞÜ - %86.0**
+- BAŞKAN YARDIMCILARI - %77.5
+- ÖZEL KALEM MÜDÜRLÜĞÜ - %76.7
+
+### 5.4. Açık Uçlu Yorum Katılımı
+
+**En Fazla Yorum Paylaşan Müdürlükler:**
+- PARK VE BAHÇELER MÜDÜRLÜĞÜ - 45 kişi
+- TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ - 42 kişi
+- ZABITA MÜDÜRLÜĞÜ - 36 kişi
+- FEN İŞLERİ MÜDÜRLÜĞÜ - 31 kişi
+
+Bu müdürlükler, çalışanların görüş bildirmeye en istekli olduğu birimlerdir.
+
+---
+
+## 6. SONUÇ VE GENEL DEĞERLENDİRME
+
+Arnavutköy Belediyesi Çalışan Memnuniyeti ve İyi Oluş Anketi, belediyemizin kurumsal dinamiklerinin kapsamlı bir fotoğrafını sunmaktadır. 1470 çalışanın katılımı, 1251 geçerli anket ve %80.0 genel memnuniyet skoru ile belediyemiz, Türkiye'deki kamu kurumları arasında başarılı bir profil çizmektedir.
+
+### 6.1. Temel Başarılar
+
+**1. Yüksek Katılım Oranı:** %70.4'lük katılım oranı, çalışanların kurumsal anketlere olan ilgisinin ve görüş bildirme istekliliğinin güçlü olduğunu göstermektedir.
+
+**2. Güçlü Kamu Hizmeti Motivasyonu:** %88.7'lik kamu hizmeti motivasyonu skoru, çalışanların içsel bir amaç ve anlam için çalıştıklarını ortaya koymaktadır.
+
+**3. Sağlam Ekip Dayanışması:** %85.3'lük çalışma arkadaşları skoru, belediyemizde güçlü bir sosyal sermaye ve işbirliği kültürü bulunduğunu göstermektedir.
+
+**4. Pozitif JD-R Dengesi:** İş kaynaklarının (%81.2) iş taleplerinden (%72.3) yüksek olması, çalışanların iş yüklerini karşılayabilecek yeterli desteğe sahip olduklarını göstermektedir.
+
+**5. İyi Psikolojik Sağlık Profili:** %28.3'lük düşük psikolojik sağlık skoru (düşük = olumlu), çalışanların genel olarak iyi bir ruh sağlığı durumunda olduklarını ortaya koymaktadır.
+
+### 6.2. Gelişim Alanları
+
+**1. Çalışma Koşulları:** %71.8'lik skor ile en düşük tema olan çalışma koşulları, özellikle yemekhane hizmetleri, fiziksel ofis koşulları ve ekipman kalitesi açısından iyileştirmeye açıktır.
+
+**2. Belirli Müdürlüklere Öncelik:** Kent Estetiği ve Anıt Eserler Müdürlüğü (%68.0) başta olmak üzere, bazı müdürlüklerde çalışan memnuniyetini artırmaya yönelik müdahaleler gereklidir.
+
+**3. Eğitim ve Gelişim Fırsatları:** %76.4'lük skor, mesleki eğitim, sertifika programları ve kariyer gelişim fırsatlarının artırılması ihtiyacını göstermektedir.
+
+**4. Kurum İçi İletişim:** %75.9'luk skor, bilgilendirme ve geri bildirim süreçlerinin daha hızlı ve şeffaf hale getirilmesinin gerekliliğini işaret etmektedir.
+
+### 6.3. Stratejik Perspektif
+
+Arnavutköy Belediyesi, %80.0 genel memnuniyet skoru ile sağlam bir kurumsal profil sunmaktadır. Güçlü kamu hizmeti motivasyonu, ekip dayanışması ve pozitif JD-R dengesi, belediyemizin sürdürülebilir başarısının temel taşlarıdır.
+
+Çalışma koşulları, eğitim-gelişim fırsatları ve belirli müdürlüklerdeki memnuniyet düzeylerinin iyileştirilmesi, belediyemizin kurumsal mükemmelliğe doğru ilerlemesini sağlayacaktır.
+
+456 çalışanın açık uçlu yorumlarda paylaştığı yapıcı eleştiriler ve öneriler, belediye yönetiminin çalışan sesine kulak verdiğini ve iyileştirme süreçlerini şeffaf bir şekilde yürüttüğünü göstermektedir.
+
+---
+
+**Rapor Sonu**
+
+Saygılarımla,
+
+**Arnavutköy Belediyesi**  
+**İnsan Kaynakları ve Eğitim Müdürlüğü**
+
+Kasım 2025
+
+---
+
