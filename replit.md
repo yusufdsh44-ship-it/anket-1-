@@ -6,6 +6,24 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-11-17: **Comprehensive PDF Report Export Added** - Full report generation and PDF download functionality
+  - **New Menu Category:** "RAPOR" menu category added with highlighted "Tam Rapor (PDF İndir)" option
+  - **Tam Rapor Page:** Comprehensive report page consolidating all analyses:
+    * Genel Memnuniyet Oranları (General Satisfaction Rates)
+    * Konular/Temalar Analizi (Themes Analysis)
+    * Sosyal Medya Takip Oranları (Social Media Tracking)
+    * Ruh Sağlığı Taraması (Mental Health Screening)
+    * 49 Sorunun Detaylı Analizi (Detailed Question Analysis)
+    * Açık Uçlu Cevaplar - Anahtar Kelimeler (Open-ended Responses - Keywords)
+  - **PDF Export:** One-click PDF download via "PDF İndir" button using browser print function
+  - **Print-Optimized CSS:** Multi-page PDF rendering with proper page breaks
+    * A4 landscape format
+    * Flexbox layout constraints removed for print mode
+    * Tables optimized for print (100% width, collapsed borders, smaller fonts)
+    * Strategic page-break rules (headers avoid breaks, sections flow naturally)
+    * Sidebar and header hidden in print mode
+  - **raporRenderer Manager:** Centralized rendering system for all report tables
+
 - 2025-11-10: **Default Landing Page Changed to Analytics** - Application now opens on analysis view
   - **New Default Page:** Application opens directly to "Genel Memnuniyet Oranları" (General Satisfaction Rates)
   - **Table Sorting Added:** Departments automatically sorted by highest satisfaction scores (descending)
