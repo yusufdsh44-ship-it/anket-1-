@@ -4639,11 +4639,32 @@
                 }
 
                 const mudurlukler = Object.values(state.processedData);
+                const genelBelediye = tableRenderer.calculateGenelBelediye();
+                
+                if (!genelBelediye) {
+                    utils.showMessage('⚠️ Genel veriler hesaplanamadı!', 'error');
+                    return;
+                }
+                
                 let csvContent = '\uFEFF';
                 
                 const headers = ['Müdürlükler', 'Toplam Personel', 'Toplam Katılan', 'Geçerli Anket', 'Geçersiz Anket', 
                                 'Katılım Oranı (%)', 'Genel Memnuniyet (%)', 'İş Yükü/Stresi (%)', 'Kurum Desteği (%)', 'İş Yükü-Destek Dengesi'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                const genelRow = [
+                    '"GENEL BELEDİYE"',
+                    genelBelediye.toplamPersonel,
+                    genelBelediye.anketler.length,
+                    genelBelediye.gecerliAnketler.length,
+                    genelBelediye.gecersizAnketler.length,
+                    genelBelediye.katilimOrani,
+                    genelBelediye.genelMemnuniyet,
+                    genelBelediye.isYuku,
+                    genelBelediye.kurumDestegi,
+                    genelBelediye.denge
+                ];
+                csvContent += genelRow.join(',') + '\n';
                 
                 mudurlukler.forEach(md => {
                     const row = [
@@ -4681,11 +4702,31 @@
                 }
 
                 const mudurlukler = Object.values(state.processedData);
+                const genelBelediye = tableRenderer.calculateGenelBelediyeAggregate('sosyalMedya');
+                
+                if (!genelBelediye || !genelBelediye.detay) {
+                    utils.showMessage('⚠️ Sosyal medya verileri hesaplanamadı!', 'error');
+                    return;
+                }
+                
                 let csvContent = '\uFEFF';
                 
                 const headers = ['Müdürlükler', 'Instagram Belediye', 'Instagram Başkan', 'Twitter Belediye', 
                                 'Twitter Başkan', 'Facebook Belediye', 'Facebook Başkan', 'NextSosyal Belediye', 'NextSosyal Başkan'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                const genelRow = [
+                    '"GENEL BELEDİYE"',
+                    `${genelBelediye.detay.instagram_belediye}%`,
+                    `${genelBelediye.detay.instagram_baskan}%`,
+                    `${genelBelediye.detay.twitter_belediye}%`,
+                    `${genelBelediye.detay.twitter_baskan}%`,
+                    `${genelBelediye.detay.facebook_belediye}%`,
+                    `${genelBelediye.detay.facebook_baskan}%`,
+                    `${genelBelediye.detay.nextsosyal_belediye}%`,
+                    `${genelBelediye.detay.nextsosyal_baskan}%`
+                ];
+                csvContent += genelRow.join(',') + '\n';
                 
                 mudurlukler.forEach(md => {
                     const sm = md.sosyalMedya.detay;
@@ -4723,11 +4764,29 @@
                 }
 
                 const mudurlukler = Object.values(state.processedData);
+                const genelBelediye = tableRenderer.calculateGenelBelediyeRuhSagligi();
+                
+                if (!genelBelediye || !genelBelediye.ruhSagligiDetay) {
+                    utils.showMessage('⚠️ Ruh sağlığı verileri hesaplanamadı!', 'error');
+                    return;
+                }
+                
                 let csvContent = '\uFEFF';
                 
                 const headers = ['Müdürlükler', 'Ruh Sağlığı Genel (%)', 'Sigara Kullanımı (%)', 
                                 'S46: Keyif Alamama', 'S47: Üzgün/Çökkün', 'S48: Gergin/Kaygılı', 'S49: Endişe Kontrolü'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                const genelRow = [
+                    '"GENEL BELEDİYE"',
+                    `${genelBelediye.ruhSagligi}%`,
+                    `${genelBelediye.sigaraOrani}%`,
+                    `${genelBelediye.ruhSagligiDetay.keyifAlamama}%`,
+                    `${genelBelediye.ruhSagligiDetay.uzgunCokkun}%`,
+                    `${genelBelediye.ruhSagligiDetay.gerginKaygili}%`,
+                    `${genelBelediye.ruhSagligiDetay.endiseKontrol}%`
+                ];
+                csvContent += genelRow.join(',') + '\n';
                 
                 mudurlukler.forEach(md => {
                     const row = [
@@ -4762,12 +4821,34 @@
                 }
 
                 const mudurlukler = Object.values(state.processedData);
+                const genelBelediye = tableRenderer.calculateGenelBelediyeTemalar();
+                
+                if (!genelBelediye) {
+                    utils.showMessage('⚠️ Tema verileri hesaplanamadı!', 'error');
+                    return;
+                }
+                
                 let csvContent = '\uFEFF';
                 
                 const headers = ['Müdürlükler', 'İş-Kişi Uyumu', 'Görev-Rol Netliği', 'Talep Yoğunluğu', 
                                 'Yöneticilerle İlişkiler', 'Çalışma Arkadaşları', 'Kurum İçi İletişim', 
                                 'Çalışma Koşulları', 'Kamu Hizmeti Motivasyonu', 'Yetkinlik & Performans', 'Eğitim & Gelişim'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                const genelRow = [
+                    '"GENEL BELEDİYE"',
+                    `${genelBelediye.isKisiUyumu}%`,
+                    `${genelBelediye.gorevRolNetligi}%`,
+                    `${genelBelediye.hizmetTalepYogunlugu}%`,
+                    `${genelBelediye.yoneticilerleIliskiler}%`,
+                    `${genelBelediye.calismaArkadaslari}%`,
+                    `${genelBelediye.kurumIciIletisim}%`,
+                    `${genelBelediye.calismaKosullari}%`,
+                    `${genelBelediye.kamuHizmetiMotivasyonu}%`,
+                    `${genelBelediye.yetkinlikPerformans}%`,
+                    `${genelBelediye.egitimGelisim}%`
+                ];
+                csvContent += genelRow.join(',') + '\n';
                 
                 mudurlukler.forEach(md => {
                     const t = md.temalar;
