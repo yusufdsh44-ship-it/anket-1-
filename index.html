@@ -4732,12 +4732,12 @@
                 mudurlukler.forEach(md => {
                     const row = [
                         `"#${md.kod} - ${md.ad}"`,
-                        `${md.ruhSagligiGenel}%`,
-                        `${md.sigaraKullanimi}%`,
-                        md.ruhSagligiSorular[0],
-                        md.ruhSagligiSorular[1],
-                        md.ruhSagligiSorular[2],
-                        md.ruhSagligiSorular[3]
+                        `${md.ruhSagligi || 0}%`,
+                        `${md.sigaraOrani || 0}%`,
+                        `${md.ruhSagligiDetay?.keyifAlamama || 0}%`,
+                        `${md.ruhSagligiDetay?.uzgunCokkun || 0}%`,
+                        `${md.ruhSagligiDetay?.gerginKaygili || 0}%`,
+                        `${md.ruhSagligiDetay?.endiseKontrol || 0}%`
                     ];
                     csvContent += row.join(',') + '\n';
                 });
