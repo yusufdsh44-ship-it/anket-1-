@@ -405,6 +405,11 @@
             z-index: 25;
         }
         
+        #sorularTable th,
+        #sorularTable td {
+            min-width: 180px;
+        }
+        
         #sorularTable tr:hover td:first-child,
         #sorularTable tr:hover td:nth-child(2) {
             background: #f9fafb;
@@ -1774,11 +1779,11 @@
                 let headerHTML = '<tr>';
                 
                 // Soru sütunu
-                headerHTML += '<th style="min-width:400px;" data-col="0">Soru</th>';
+                headerHTML += '<th data-col="0">Soru</th>';
                 
                 // Genel Belediye sütunu
                 headerHTML += `
-                    <th class="sortable-header" data-mudurluk="genel" data-col="1" style="min-width:180px;" onclick="tableSorter.sort('sorularTable', 1)">
+                    <th class="sortable-header" data-mudurluk="genel" data-col="1" onclick="tableSorter.sort('sorularTable', 1)">
                         <strong>GENEL<br>BELEDİYE</strong><span class="sort-icon"></span>
                     </th>
                 `;
@@ -1788,7 +1793,7 @@
                     const mdName = md.ad.length > 25 ? md.ad.substring(0, 22) + '...' : md.ad;
                     const colIndex = index + 2;
                     headerHTML += `
-                        <th class="sortable-header" data-mudurluk="md_${md.kod}" data-col="${colIndex}" style="min-width:180px;" onclick="tableSorter.sort('sorularTable', ${colIndex})">
+                        <th class="sortable-header" data-mudurluk="md_${md.kod}" data-col="${colIndex}" onclick="tableSorter.sort('sorularTable', ${colIndex})">
                             <span class="code-label" style="display:block; margin-bottom:4px;">#${md.kod}</span>${mdName}<span class="sort-icon"></span>
                         </th>
                     `;
@@ -1800,12 +1805,12 @@
                 const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
                 
                 tbody.innerHTML = SORULAR.map((soru, i) => {
-                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0" style="min-width:400px;"><strong>S${i+1}.</strong> ${soru}</td>`;
-                    rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1" style="min-width:180px;"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
+                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0"><strong>S${i+1}.</strong> ${soru}</td>`;
+                    rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
                     
                     Object.values(state.processedData).forEach((md, index) => {
                         const colorStyle = utils.getGradientColor(md.soruOrtalamalar[i], genelBelediyeSorular[i]);
-                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" style="min-width:180px; ${colorStyle}">${md.soruOrtalamalar[i]}%</td>`;
+                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" style="${colorStyle}">${md.soruOrtalamalar[i]}%</td>`;
                     });
                     
                     return rowHTML + '</tr>';
