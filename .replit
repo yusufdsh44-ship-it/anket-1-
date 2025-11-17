@@ -1,4 +1,4 @@
-modules = ["web", "python-3.11"]
+modules = ["web", "python-3.11", "postgresql-16"]
 [agent]
 expertMode = true
 integrations = ["python_database:1.0.0"]
@@ -49,10 +49,6 @@ externalPort = 3000
 [[ports]]
 localPort = 38211
 externalPort = 3001
-
-[[ports]]
-localPort = 40609
-externalPort = 5000
 
 [[ports]]
 localPort = 42157
