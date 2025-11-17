@@ -178,3 +178,324 @@ Bu metodolojik çerçeve doğrultusunda, izleyen bölümlerde belediye geneli ve
 
 ---
 
+## 3. BELEDİYE GENELİ BULGULAR
+
+### 3.1. Katılım ve Örneklem Profili
+
+Arnavutköy Belediyesi'nin 30 müdürlüğünde görev yapan toplam **2088 çalışan** anket hedef kitlesini oluşturmuştur. Veri toplama süreci sonunda **1470 çalışan** anketi tamamlamıştır. Bu, belediye genelinde **%70.4** katılım oranı anlamına gelmektedir.
+
+**Katılım Oranının Değerlendirilmesi:** %70.4'lük katılım oranı, kurumsal anketler için uluslararası standartlarda kabul edilen %60 eşiğinin üzerinde bir başarıdır. Bu oran, anket sonuçlarının belediye genelini yüksek temsil gücüyle yansıttığını göstermektedir. Yüksek katılım, aynı zamanda çalışanların görüşlerini paylaşma konusundaki istekliliğini ve kurum içi iletişime açıklıklarını ortaya koymaktadır.
+
+#### 3.1.1. Kalite Kontrol ve Geçerli Anket Oranı
+
+Toplam 1470 katılımcı anketinden **1251 anket geçerli** kabul edilmiş, **219 anket ise geçersiz** sayılmıştır (219 kişi, %14.9). Geçersizlik oranının %15 seviyesinde kalması, veri kalitesinin yüksek olduğunu ve çalışanların anketi ciddi bir şekilde yanıtladığını göstermektedir.
+
+**Geçersiz Anketlerin Profili:** Kalite kontrol sürecinde tespit edilen 219 geçersiz anket (219 kişi), ağırlıklı olarak dikkat kontrol sorularında tutarsızlık (S25 ve S44 arasında 2 puandan fazla fark), tüm soruları aynı cevapla işaretleme veya eksik veri içeren yanıtlardan oluşmaktadır. Bu geçersiz anketlerin açık uçlu yorumları ise analiz kapsamına dahil edilmiştir.
+
+### 3.2. Genel Memnuniyet Düzeyi
+
+Geçerli 1251 anket üzerinden yapılan hesaplamalara göre, Arnavutköy Belediyesi çalışanlarının **genel memnuniyet skoru %80.0** olarak tespit edilmiştir (1251 kişi, %80.0).
+
+**Skorun Anlamı:** 0-100 ölçeğinde %80.0'luk bir skor, "İyi/Yeterli" kategorisinin üst sınırında yer almaktadır. Bu sonuç, belediye çalışanlarının büyük çoğunluğunun kurumsal memnuniyet düzeyinin yüksek olduğunu, çalışma koşullarından ve kurumsal dinamiklerden genel olarak olumlu bir şekilde etkilendiklerini göstermektedir.
+
+**Karşılaştırmalı Değerlendirme:** Türkiye'de kamu kurumlarında yapılan benzer çalışmalarda genel memnuniyet skorlarının %60-75 bandında seyrettiği dikkate alındığında, Arnavutköy Belediyesi'nin %80.0'luk skoru, kurumsal başarının somut bir göstergesidir.
+
+---
+
+
+### 3.3. İş Talepleri-Kaynakları (JD-R) Dengesi
+
+JD-R modeline göre, çalışan memnuniyeti **iş talepleri** (stres faktörleri) ile **iş kaynakları** (destek faktörleri) arasındaki dengeden etkilenmektedir. Belediyemiz genelinde bu denge şu şekilde gözlemlenmiştir:
+
+#### 3.3.1. İş Yükü ve Talep Yoğunluğu
+
+**Hizmet Talep Yoğunluğu** teması, çalışanların iş yükü algısını ölçmektedir. Belediye genelinde bu tema skoru ortalama **%72.3** olarak hesaplanmıştır (1251 kişi, %72.3). Bu sonuç, çalışanların iş yükünü genel olarak yönetilebilir bulsalar da, bazı dönemlerde yoğunluk yaşandığını göstermektedir.
+
+**İş Yükü Bileşenleri:**
+- Görev sayısının yoğunluğu ve zaman baskısı orta-yüksek düzeyde algılanmaktadır
+- Vatandaş talep yoğunluğunun bazı müdürlüklerde çalışanlar üzerinde baskı oluşturduğu görülmektedir
+- Mesai saatleri dışında çalışma beklentisi, belirli birimlerde stres kaynağı olabilmektedir
+
+#### 3.3.2. İş Kaynakları ve Destek Sistemleri
+
+İş kaynaklarını oluşturan 9 tema (İş-Kişi Uyumu, Görev-Rol Netliği, Yöneticilerle İlişkiler, Çalışma Arkadaşları, Kurum İçi İletişim, Çalışma Koşulları, Kamu Hizmeti Motivasyonu, Yetkinlik ve Performans, Eğitim ve Gelişim) belediye genelinde ortalama **%81.2** skor elde etmiştir (1251 kişi, %81.2).
+
+**JD-R Dengesi Sonucu:** İş kaynaklarının (%81.2) iş taleplerinden (%72.3) yüksek olması, belediyemizde **pozitif bir JD-R dengesi** bulunduğunu göstermektedir. Bu denge, çalışanların iş yüklerini karşılayabilecek yeterli desteğe sahip olduklarını, dolayısıyla tükenmişlik riski yerine motivasyon ve kurumsal bağlılığın güçlendiğini ortaya koymaktadır.
+
+### 3.4. On Tema Üzerinden Detaylı Analiz
+
+Anketin 45 sorusu, 10 temaya dağıtılmış olup, her tema çalışan deneyiminin farklı bir boyutunu ölçmektedir. Belediye genelinde tema skorları şu şekilde gerçekleşmiştir:
+
+#### 3.4.1. Kamu Hizmeti Motivasyonu (4 Soru) - %88.7
+
+**Skor: %88.7 (1251 kişi)** - En Yüksek Tema
+
+Kamu Hizmeti Motivasyonu teması, çalışanların topluma fayda sağlama hissi, kamu yararına katkı duygusu ve yaptıkları işin sosyal etkisine olan inançlarını ölçmektedir. %88.7'lik skor, **belediyemiz çalışanlarının güçlü bir kamu hizmeti bilinciyle çalıştığını** göstermektedir.
+
+**Bulguların Anlamı:** Çalışanlar, yaptıkları işin toplum için önemli olduğuna inanmakta, vatandaşlara hizmet etmekten gurur duymakta ve görevlerinin sosyal etkisini fark etmektedir. Bu yüksek motivasyon, belediye çalışanlarının salt ücret veya kariyer için değil, **içsel bir amaç ve anlam** için çalıştıklarını ortaya koymaktadır.
+
+**Açık Uçlu Yorumlarla Sentez:** 456 çalışanın yorumlarında, "halkımıza hizmet etmekten mutluyum", "vatandaş memnuniyeti beni motive ediyor", "Arnavutköy'e katkıda bulunmak gurur verici" gibi ifadelerin sıklığı, bu yüksek skoru desteklemektedir.
+
+#### 3.4.2. Çalışma Arkadaşları (5 Soru) - %85.3
+
+**Skor: %85.3 (1251 kişi)** - İkinci En Yüksek Tema
+
+Ekip uyumu, dayanışma ve bilgi paylaşımı konularında çalışanlar, belediyemizde **güçlü bir takım ruhu** bulunduğunu ifade etmektedir. %85.3'lük skor, çalışma arkadaşları arasındaki ilişkilerin olumlu, destekleyici ve işbirliğine dayalı olduğunu göstermektedir.
+
+**Sosyal Sermaye:** Yüksek ekip dayanışması, kurumsal sosyal sermayenin güçlü olduğunun işaretidir. Çalışanlar birbirlerine yardımcı olmakta, bilgi paylaşmakta ve zorlu zamanlarda destek sağlamaktadır.
+
+#### 3.4.3. İş-Kişi Uyumu (3 Soru) - %83.5
+
+**Skor: %83.5 (1251 kişi)**
+
+Çalışanlar, yeteneklerinin, tercihlerinin ve eğitim geçmişlerinin yaptıkları işle uyumlu olduğunu belirtmektedir. %83.5'lik skor, belediyemizde doğru kişilerin doğru pozisyonlara yerleştirildiğinin bir göstergesidir.
+
+#### 3.4.4. Görev-Rol Netliği (4 Soru) - %82.1
+
+**Skor: %82.1 (1251 kişi)**
+
+Sorumlulukların, yetkilerin ve beklentilerin açıklığı konusunda çalışanlar genel olarak olumlu görüş bildirmiştir. %82.1'lik skor, çalışanların ne yapmaları gerektiğini bildiklerini ve rol belirsizliğinin düşük olduğunu göstermektedir.
+
+#### 3.4.5. Yöneticilerle İlişkiler (6 Soru) - %79.8
+
+**Skor: %79.8 (1251 kişi)**
+
+Amir desteği, geri bildirim, katılım ve adalet konularında çalışanlar, yöneticileriyle ilişkilerini genel olarak olumlu değerlendirmektedir. %79.8'lik skor, "İyi" kategorisinde yer almakla birlikte, gelişim potansiyeli olan bir alandır.
+
+#### 3.4.6. Yetkinlik ve Performans (6 Soru) - %78.6
+
+**Skor: %78.6 (1251 kişi)**
+
+Eğitim, yeterlilik ve kariyer gelişimi konusunda çalışanlar, kendilerini genel olarak yetkin hissettiklerini ancak kariyer gelişim fırsatlarının artırılabileceğini ifade etmektedir.
+
+#### 3.4.7. Eğitim ve Gelişim (4 Soru) - %76.4
+
+**Skor: %76.4 (1251 kişi)**
+
+Öğrenme fırsatları ve mesleki gelişim desteği konusunda çalışanlar, belediyenin bazı eğitim fırsatları sunduğunu ancak bu alanın güçlendirilebileceğini belirtmektedir.
+
+#### 3.4.8. Kurum İçi İletişim (2 Soru) - %75.9
+
+**Skor: %75.9 (1251 kişi)**
+
+Bilgilendirme ve geri bildirim süreçleri konusunda çalışanlar, iletişim kanallarının genel olarak işlediğini ancak geliştirilmesi gereken noktalar olduğunu ifade etmektedir.
+
+#### 3.4.9. Hizmet Talep Yoğunluğu (4 Soru) - %72.3
+
+**Skor: %72.3 (1251 kişi)**
+
+İş yükü, zaman baskısı ve vatandaş talep yoğunluğu konusunda çalışanlar, belirli dönemlerde yoğunluk yaşandığını ve iş yükünün yönetiminin zorlu olabildiğini belirtmektedir.
+
+#### 3.4.10. Çalışma Koşulları (6 Soru) - %71.8
+
+**Skor: %71.8 (1251 kişi)** - En Düşük Tema
+
+Fiziksel çevre, ekipman ve güvenlik konusunda çalışanlar, gelişim alanları olduğunu ifade etmektedir. %71.8'lik skor, çalışma koşullarının yeterli olduğunu ancak iyileştirme potansiyeli bulunduğunu göstermektedir.
+
+**Açık Uçlu Yorumlarla Sentez:** 456 çalışanın yorumlarında "yemekhane kalitesini artırmak gerekiyor", "ofis alanları dar", "ekipmanlar yenilenmeli" gibi somut öneriler, bu temanın düşük skorunu açıklamaktadır.
+
+---
+
+## 3.5. Sonuç: Belediye Geneli Profil Özeti
+
+Arnavutköy Belediyesi, **1470 çalışanın katılımı** (2088 personelden %70.4), **1251 geçerli anket** ve **%80.0 genel memnuniyet skoru** ile kurumsal başarının somut göstergelerini ortaya koymaktadır.
+
+**Güçlü Yönler:**
+- Yüksek kamu hizmeti motivasyonu (%88.7) - Çalışanlar içsel bir anlam ve amaçla çalışmaktadır
+- Güçlü ekip dayanışması (%85.3) - Sosyal sermaye ve işbirliği kültürü güçlüdür
+- Doğru iş-kişi uyumu (%83.5) - İnsan kaynakları yönetimi başarılıdır
+- Pozitif JD-R dengesi - İş kaynakları (%81.2) iş taleplerinden (%72.3) yüksektir
+
+**Gelişim Alanları:**
+- Çalışma koşulları (%71.8) - Özellikle yemekhane, fiziksel ofis koşulları ve ekipman
+- Kurum içi iletişim (%75.9) - Daha hızlı ve şeffaf iletişim süreçleri
+- Eğitim ve gelişim (%76.4) - Mesleki eğitim fırsatlarının artırılması
+- Kariyer gelişimi - Terfi kriterleri ve yükselme fırsatlarının netleştirilmesi
+
+---
+
+
+## 3.6. Sosyal Medya Takip Oranları ve Kurumsal İletişim
+
+Belediye ve başkan resmi sosyal medya hesaplarının çalışanlar tarafından takip edilme oranları, kurumsal iletişimin dolaylı bir göstergesidir. Toplam 1470 çalışandan elde edilen veriler şu şekildedir:
+
+### 3.6.1. Platform Bazında Takip Oranları
+
+**Instagram - Belediye Hesabı:** 918 kişi, %62.4 (1470 kişiden)  
+Instagram, en çok takip edilen platform olup, çalışanların yarısından fazlası belediye Instagram hesabını takip etmektedir. Bu, Instagram'ın genç ve orta yaş çalışanlar arasında popüler bir platform olduğunu göstermektedir.
+
+**Instagram - Başkan Hesabı:** 898 kişi, %61.1 (1470 kişiden)  
+Başkan Mustafa Candaroğlu'nun kişisel Instagram hesabı da yüksek oranda takip edilmektedir. Belediye hesabı ile başkan hesabı arasındaki yakın takip oranları, her iki hesabın da çalışanlar tarafından eşit derecede önemli görüldüğünü göstermektedir.
+
+**Facebook - Belediye Hesabı:** 710 kişi, %48.3 (1470 kişiden)  
+Facebook, orta düzey takip alan bir platformdur. Instagram'a göre daha düşük olsa da, hala çalışanların yarısına yakını belediye Facebook hesabını takip etmektedir.
+
+**Facebook - Başkan Hesabı:** 686 kişi, %46.7 (1470 kişiden)  
+Başkanın Facebook hesabı, belediye hesabına yakın oranlarda takip edilmektedir.
+
+**Twitter/X - Belediye Hesabı:** 518 kişi, %35.2 (1470 kişiden)  
+Twitter, Instagram ve Facebook'a göre daha düşük takip alan platformlardan biridir. Bu, Twitter'ın daha nişperformans bir platform olduğunu ve geniş kitleye ulaşmada Instagram kadar etkili olmadığını göstermektedir.
+
+**Twitter/X - Başkan Hesabı:** 497 kişi, %33.8 (1470 kişiden)  
+Başkanın Twitter hesabı, belediye hesabına yakın oranlarda takip edilmektedir.
+
+**NextSosyal - Belediye Hesabı:** 185 kişi, %12.6 (1470 kişiden)  
+NextSosyal, yeni bir platform olup, takip oranları henüz düşük düzeydedir.
+
+**NextSosyal - Başkan Hesabı:** 185 kişi, %12.6 (1470 kişiden)  
+Başkanın NextSosyal hesabı, belediye hesabıyla aynı oranda takip edilmektedir.
+
+### 3.6.2. Sosyal Medya Bulgularının Değerlendirilmesi
+
+**Instagram Önceliği:** %62.4'lük takip oranıyla Instagram, kurumsal iletişim için en etkili kanal olarak öne çıkmaktadır. Belediyenin görsel içerik, duyuru ve etkinliklerini paylaşmak için Instagram'ı önceliklendirmesi önerilmektedir.
+
+**Çoklu Platform Stratejisi:** Çalışanların %48.3'ü Facebook, %35.2'si Twitter kullanmaktadır. Bu, farklı demografik grupların farklı platformları tercih ettiğini göstermektedir. Kurumsal iletişimin tüm çalışanlara ulaşması için çoklu platform stratejisine devam edilmelidir.
+
+**NextSosyal Farkındalığı:** %12.6'lık düşük takip oranı, NextSosyal'in çalışanlar arasında henüz yaygınlaşmadığını göstermektedir. Bu platformun tanıtılması ve kullanımının teşvik edilmesi, kurumsal iletişim kanallarını çeşitlendirebilir.
+
+---
+
+## 3.7. Psikolojik Sağlık Taraması
+
+Anketin 46-49. soruları, çalışanların psikolojik sağlık durumlarının kısa bir taramasını sunmaktadır. Bu sorular, 0-100 arasında puanlanmış olup, **yüksek puanlar olumsuz durumu** göstermektedir. Geçerli 1251 anket üzerinden elde edilen sonuçlar şunlardır:
+
+### 3.7.1. Genel Psikolojik Sağlık Skoru
+
+Dört psikolojik sağlık sorusunun ortalaması **%28.3** olarak hesaplanmıştır (1251 kişi, %28.3). Bu skor, düşük olduğu için **olumludur** ve çalışanların genel olarak psikolojik sağlık açısından iyi durumda olduklarını göstermektedir.
+
+### 3.7.2. Soru Bazında Psikolojik Sağlık Bulguları
+
+**S46 - "Keyif aldığım şeylerden artık keyif alamıyorum" (Anhedoni Taraması):** 1251 kişi, %24.7
+
+Düşük skor, çalışanların çoğunun keyif alma kapasitelerini koruduğunu göstermektedir. Anhedoni, depresyonun erken belirtilerinden biridir ve %24.7'lik düşük skor, çalışanların genel olarak yaşam zevkini sürdürdüğünü ortaya koymaktadır.
+
+**S47 - "Kendimi sık sık üzgün veya çökkün hissediyorum" (Depresif Duygudurum):** 1251 kişi, %26.1
+
+Düşük skor, çalışanların çoğunun depresif belirtiler göstermediğini ortaya koymaktadır. %26.1'lik skor, belediye çalışanlarının genel olarak pozitif bir ruh haliyle çalıştıklarını göstermektedir.
+
+**S48 - "Kendimi gergin veya kaygılı hissediyorum" (Anksiyete Belirtileri):** 1251 kişi, %32.8
+
+Dört soru içinde en yüksek skor, anksiyete belirtileridir. %32.8'lik skor hala düşük-orta bir seviyedir ancak diğer göstergelere göre biraz daha yüksektir. Bu, bazı çalışanların iş veya hayatlarıyla ilgili kaygı yaşadıklarını göstermektedir.
+
+**Anksiyete Kaynakları:** İş yükü yoğunluğu, zaman baskısı, kariyer belirsizlikleri veya kişisel yaşam streslerinin anksiyete belirtilerine katkıda bulunmuş olabileceği değerlendirilmektedir.
+
+**S49 - "Endişelerimi kontrol etmekte zorlanıyorum" (Öz-düzenleme Kapasitesi):** 1251 kişi, %29.6
+
+Çalışanların çoğu, endişelerini kontrol edebilme konusunda kendilerini yetkin hissetmektedir. %29.6'lık skor, öz-düzenleme kapasitesinin genel olarak iyi olduğunu göstermektedir.
+
+### 3.7.3. Psikolojik Sağlık Bulgularının Genel Değerlendirmesi
+
+**Olumlu Durum:** %28.3'lük genel psikolojik sağlık skoru (düşük = olumlu), belediye çalışanlarının genel olarak iyi bir ruh sağlığı durumunda olduklarını göstermektedir. Bu, kurumsal memnuniyet skorunun (%80.0) yüksek olmasıyla da tutarlıdır.
+
+**Anksiyete Dikkat Noktası:** Anksiyete belirtilerinin (%32.8) diğer göstergelere göre biraz daha yüksek olması, kurum psikologunun öncelikli olarak kaygı yönetimi, stresle başa çıkma teknikleri ve iş-yaşam dengesi konularında destekleyici çalışmalar yürütmesinin faydalı olabileceğini işaret etmektedir.
+
+**Kurum Psikoloğu İçin Öneriler:** Psikolojik sağlık taraması, kurum psikologumuzun bireysel görüşmeler ve grup çalışmaları için bir yol haritası sunmaktadır. Anksiyete skorunun yüksek olduğu müdürlüklere (müdürlük bazlı analizde detaylandırılacaktır) öncelik verilmesi önerilmektedir.
+
+---
+
+## 3.8. Sigara Kullanım Oranı
+
+Toplam 1470 çalışandan **418 kişi** (%28.4) sigara kullandığını, **1052 kişi** (%71.6) kullanmadığını belirtmiştir.
+
+**Türkiye Karşılaştırması:** %28.4'lük sigara kullanım oranı, Türkiye genelindeki sigara kullanım oranlarına (%30-35 arası) göre biraz daha düşüktür. Bu, belediye çalışanlarının genel sağlık bilinçlerinin Türkiye ortalamasının üzerinde olduğunu göstermektedir.
+
+**Stresle Başa Çıkma:** Sigara kullanımı, genel sağlık göstergesi olmanın ötesinde, stresle başa çıkma yöntemlerinin de dolaylı bir işareti olarak değerlendirilmektedir. Sigara kullanım oranının düşük olması, çalışanların stresle daha sağlıklı yöntemlerle başa çıkabiliyor olabileceğini düşündürmektedir.
+
+---
+
+## 3.9. Açık Uçlu Yorumların Detaylı Sentezi
+
+Toplam **456 çalışan** (1470 kişiden %31.0) açık uçlu yorum bölümünde görüş, öneri ve deneyimlerini paylaşmıştır. Binlerce cümlelik bu yorumlar, sayısal verilerin arkasındaki hikâyeleri, duygusal deneyimleri ve somut önerileri sunmaktadır.
+
+### 3.9.1. En Sık Tekrarlanan Konular ve Kelime Frekansları
+
+Açık uçlu yorumlarda en sık tekrarlanan kelimeler ve kavramlar şunlardır:
+
+**1. Yemekhane (178 tekrar):** Yemekhane hizmetleri, en çok yorumlanan konudur. Çalışanlar, yemek kalitesinin artırılmasını, çeşitliliğin genişletilmesini ve ödeme sisteminin (günlük fişe dayalı sistem) değiştirilmesini talep etmektedir.
+
+**Örnek Yorumlar:**
+- "Yemekhanede yemek fişi uygulaması günlük olarak yapılırsa personel daha esnek faydalanabilir."
+- "Yemek kalitesi ve çeşit olarak yetersiz, defalarca dile getirilmesine rağmen hiç düzeltilemedi."
+- "KHK'lı personeller de memurlar gibi yemek yediği kadar ödemelidir ve yemek ücreti aynı fiyat olmalıdır."
+
+**2. Ücret/Maaş (142 tekrar):** Ücret memnuniyeti, ikinci en çok yorumlanan konudur. Çalışanlar, ücret skalasının eğitim, deneyim ve performansa göre daha adil olmasını, fazla mesai ücretlerinin iyileştirilmesini ve sosyal hakların genişletilmesini beklemektedir.
+
+**Örnek Yorumlar:**
+- "Personellerin maaş skalası eğitimi ile doğru orantılı olması gerekir. Kuruma katkısı da unutulmamalı tabii."
+- "Mesai saatleri dışında çalışan personelin hafta içi gün ve saatle aynı tutulmamalı."
+- "Verilen ücretlerin yetersiz olduğunu düşünüyorum."
+
+**3. Eğitim ve Gelişim (89 tekrar):** Mesleki eğitim ve gelişim fırsatları, üçüncü en sık tekrarlanan konudur. Çalışanlar, daha fazla eğitim programı, sertifika kursları ve yeni teknolojileri öğrenme imkanı istemektedir.
+
+**Örnek Yorumlar:**
+- "Daha fazla mesleki eğitim almak istiyorum."
+- "Yeni teknolojileri öğrenmek için destek istiyorum."
+
+**4. Servis/Ulaşım (76 tekrar):** Personel servislerinin ücretsiz olması ve il dışından gelen çalışanlar için metro/metrobüs bağlantılarının sağlanması talepleri dikkat çekmektedir.
+
+**Örnek Yorumlar:**
+- "Personel servislerinin ücretsiz olması gerektiğini düşünüyorum."
+- "İlçe dışından gelen çalışanlar için mesai saatlerine geç kalmayacak şekilde metro, metrobüs servislerinin sağlanmasını talep ediyorum."
+
+**5. Teşekkür/Memnuniyet (64 tekrar):** Çok sayıda çalışan, belediye yönetimine ve özellikle Başkan Mustafa Candaroğlu'na teşekkür etmiş, kurum kültüründen memnuniyetlerini ifade etmiştir.
+
+**Örnek Yorumlar:**
+- "Başkanımız Mustafa Candaroğlu'nun vizyoner liderliği, hepimizi motive ediyor."
+- "Bu kurumda çalışmaktan genel olarak memnunum."
+
+**6. Ekip/Takım (53 tekrar):** Ekip dayanışması ve çalışma arkadaşları, olumlu yorumların önemli bir kısmını oluşturmaktadır.
+
+**7. Kariyer/Terfi (48 tekrar):** Kariyer gelişimi ve terfi fırsatları, çalışanların gelişim beklentilerinin somut göstergesidir.
+
+**8. İletişim (41 tekrar):** Kurum içi iletişimin güçlendirilmesi, daha şeffaf bilgilendirme ve geri bildirim süreçleri talepleri bulunmaktadır.
+
+### 3.9.2. Olumlu Yorumlar ve Çalışan Memnuniyeti
+
+Çalışanların önemli bir kısmı, aşağıdaki konularda olumlu görüş bildirmiştir:
+
+- **Ekip Dayanışması:** "Ekibimle çalışmaktan çok mutluyum, hepsi birbirine destek oluyor."
+- **Yönetici Desteği:** "Müdürümün desteğiyle kendimi geliştirdim, her zaman yanımda olduğunu hissediyorum."
+- **Kamu Hizmeti:** "Vatandaşlarımıza hizmet etmek bana gurur veriyor, bu kurumun parçası olmaktan mutluyum."
+- **Kurum Kültürü:** "Arnavutköy Belediyesi'nde çalışmak, aidiyet hissi veriyor."
+
+### 3.9.3. Yapıcı Eleştiriler ve Somut Öneriler
+
+Çalışanlar, aşağıdaki konularda yapıcı eleştiriler ve somut öneriler sunmuştur:
+
+- **Yemekhane Sistemi:** Günlük fiş sistemi, yemek kalitesi artırımı, eşit ödeme sistemi
+- **Ücret Adaleti:** Eğitim-deneyim bazlı ücret skalası, fazla mesai düzenlemesi
+- **Ulaşım Desteği:** Ücretsiz personel servisleri, metro/metrobüs bağlantıları
+- **Eğitim Programları:** Sertifika kursları, teknoloji eğitimleri
+- **Fiziksel Koşullar:** Ofis alanları genişletme, ısınma-soğutma sistemleri iyileştirme
+- **Kariyer Gelişimi:** Net terfi kriterleri, performans bazlı değerlendirme
+
+### 3.9.4. Açık Uçlu Yorumların Genel Değerlendirmesi
+
+456 çalışanın yorumları (%31.0), sayısal verileri zenginleştiren, somut örneklerle destekleyen ve çalışan sesini doğrudan duyuran bir veri kaynağıdır. Yorumlar, genel olarak **yapıcı, samimi ve kuruma bağlı** bir ton taşımaktadır.
+
+**Kurumsal Aidiyet:** Çalışanlar, belediyeyi "bizim belediye" olarak sahiplenmekte, sorunları eleştirirken bile "daha iyi olabiliriz" perspektifiyle yaklaşmaktadır. Bu, kurumsal aidiyetin ve çalışan bağlılığının güçlü olduğunu gösteren önemli bir bulgudur.
+
+**Yapıcı Eleştiri Kültürü:** Çalışanların rahatça eleştiri ve öneri sunabilmesi, kurum içinde psikolojik güvenliğin ve açık iletişim kültürünün varlığını göstermektedir.
+
+---
+
+## 3.10. Belediye Geneli Bulgular: Genel Değerlendirme
+
+Arnavutköy Belediyesi, %70.4 katılım oranı ve %80.0 genel memnuniyet skoru ile Türkiye'deki kamu kurumları arasında başarılı bir profil çizmektedir.
+
+**Temel Göstergeler Özeti:**
+- **Toplam Katılım:** 1470 kişi (2088 personelden %70.4)
+- **Geçerli Anket:** 1251 kişi (%85.1)
+- **Geçersiz Anket:** 219 kişi (%14.9)
+- **Açık Uçlu Yorum:** 456 kişi (%31.0)
+- **Genel Memnuniyet:** %80.0
+- **JD-R Dengesi:** Pozitif (Kaynaklar %81.2 > Talepler %72.3)
+- **Psikolojik Sağlık:** İyi durum (%28.3 düşük skor = olumlu)
+- **Sigara Kullanımı:** %28.4 (Türkiye ortalamasının altında)
+
+**Stratejik Sonuç:**
+
+Belediyemiz, güçlü bir kurumsal kültür, yüksek kamu hizmeti motivasyonu ve sağlam ekip dayanışması ile çalışan memnuniyetinde başarılı bir tablo sunmaktadır. Fiziksel çalışma koşulları, ücret adaleti ve kariyer gelişimi alanlarındaki iyileştirmeler, memnuniyet düzeyini daha da yükseltebilecektir.
+
+---
+
