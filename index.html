@@ -372,6 +372,11 @@
         }
         
         /* STICKY COLUMNS - ONLY FOR SORULAR TABLE */
+        #sorularTable {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
         #sorularTable th:first-child,
         #sorularTable td:first-child {
             position: sticky;
@@ -4341,7 +4346,7 @@
                         <table id="sorularTable">
                             <thead id="sorularTableHead">
                                 <tr>
-                                    <th style="min-width:400px;">Soru</th>
+                                    <th>Soru</th>
                                 </tr>
                             </thead>
                             <tbody id="sorularBody">
