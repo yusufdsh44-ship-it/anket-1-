@@ -733,3 +733,224 @@ Strateji Geliştirme Müdürlüğü, belediyenin stratejik yönetim süreçlerin
 
 ---
 
+
+### 4.11. MALİ HİZMETLER MÜDÜRLÜĞÜ (Kod: 111)
+
+**Toplam Personel:** 88  
+**Katılım:** 63 kişi (%71.6)  
+**Geçerli Anket:** 58 kişi  
+**Geçersiz Anket:** 5 kişi  
+**Açık Uçlu Yorum:** 19 kişi  
+**Genel Memnuniyet:** %79.7  
+
+**Belediye Geneli ile Karşılaştırma:** Mali Hizmetler Müdürlüğü, belediye geneli ortalamasına (%80.0) çok yakın bir memnuniyet skoru (%79.7) ile dengeli bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Mali Hizmetler Müdürlüğü, belediyenin mali yönetimini yürüten kritik bir birimdir. 19 kişinin açık uçlu yorum paylaşması, çalışanların görüş bildirmeye istekli olduğunu göstermektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasına yakın memnuniyet
+- 19 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.12. YAZI İŞLERİ MÜDÜRLÜĞÜ (Kod: 112)
+
+**Toplam Personel:** 64  
+**Katılım:** 46 kişi (%71.9)  
+**Geçerli Anket:** 42 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 14 kişi  
+**Genel Memnuniyet:** %80.3  
+
+**Belediye Geneli ile Karşılaştırma:** Yazı İşleri Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif üzerinde bir memnuniyet skoru (%80.3) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Yazı İşleri Müdürlüğü, belediye geneli ortalamasına çok yakın bir memnuniyet skoruyla dengeli bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasının üzerinde memnuniyet
+- 14 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.13. İNOVASYON VE TEKNOLOJİ MÜDÜRLÜĞÜ (Kod: 113)
+
+**Toplam Personel:** 50  
+**Katılım:** 43 kişi (%86.0)  
+**Geçerli Anket:** 40 kişi  
+**Geçersiz Anket:** 3 kişi  
+**Açık Uçlu Yorum:** 13 kişi  
+**Genel Memnuniyet:** %82.7  
+
+**Belediye Geneli ile Karşılaştırma:** İnovasyon ve Teknoloji Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%82.7) ve **en yüksek katılım oranı** (%86.0) ile öne çıkmaktadır.
+
+**Bulguların Değerlendirilmesi:**  
+İnovasyon ve Teknoloji Müdürlüğü, belediyenin en yüksek katılım oranına sahip müdürlüğüdür (%86.0). Bu, müdürlük çalışanlarının kurumsal anketlere olan ilgisinin ve katılımının güçlü olduğunu göstermektedir. %82.7'lik memnuniyet skoru, teknoloji odaklı bir ekip olarak çalışanların motivasyonunun yüksek olduğunu ortaya koymaktadır.
+
+**Güçlü Yönler:**
+- **En yüksek katılım oranı** (%86.0)
+- Belediye ortalamasının üzerinde memnuniyet (%82.7)
+- Teknoloji ve inovasyon odaklı çalışma, çalışanlara kariyer gelişim fırsatı sunmaktadır
+
+---
+
+### 4.14. İMAR VE ŞEHİRCİLİK MÜDÜRLÜĞÜ (Kod: 114)
+
+**Toplam Personel:** 82  
+**Katılım:** 59 kişi (%72.0)  
+**Geçerli Anket:** 53 kişi  
+**Geçersiz Anket:** 6 kişi  
+**Açık Uçlu Yorum:** 18 kişi  
+**Genel Memnuniyet:** %77.9  
+
+**Belediye Geneli ile Karşılaştırma:** İmar ve Şehircilik Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%77.9) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+İmar ve Şehircilik Müdürlüğü, belediyenin imar planlaması ve şehircilik hizmetlerini yürüten önemli bir birimdir. 18 kişinin açık uçlu yorum paylaşması, çalışanların görüş bildirmeye istekli olduğunu göstermektedir.
+
+**Güçlü Yönler:**
+- 18 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun belediye ortalamasına çıkarılması için iş yükü ve çalışma koşullarının değerlendirilmesi
+
+---
+
+### 4.15. FEN İŞLERİ MÜDÜRLÜĞÜ (Kod: 115)
+
+**Toplam Personel:** 142  
+**Katılım:** 102 kişi (%71.8)  
+**Geçerli Anket:** 93 kişi  
+**Geçersiz Anket:** 9 kişi  
+**Açık Uçlu Yorum:** 31 kişi  
+**Genel Memnuniyet:** %76.4  
+
+**Belediye Geneli ile Karşılaştırma:** Fen İşleri Müdürlüğü, belediye geneli ortalamasının (%80.0) altında bir memnuniyet skoru (%76.4) ile gelişim potansiyeli olan bir müdürlüktür.
+
+**Bulguların Değerlendirilmesi:**  
+Fen İşleri Müdürlüğü, 142 personel ile belediyenin büyük müdürlüklerinden biridir. 31 kişinin açık uçlu yorum paylaşması, çalışanların aktif katılımını göstermektedir. %76.4'lük memnuniyet skoru, saha çalışmaları ve fiziksel iş yükünün yoğunluğunun bir yansıması olabilir.
+
+**Güçlü Yönler:**
+- 102 kişilik yüksek katılım
+- 31 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun %76.4 seviyesinde kalması, saha çalışma koşulları ve iş yükü dengesinin değerlendirilmesi gerekliliğini işaret etmektedir
+
+---
+
+### 4.16. PARK VE BAHÇELER MÜDÜRLÜĞÜ (Kod: 116)
+
+**Toplam Personel:** 206  
+**Katılım:** 148 kişi (%71.8)  
+**Geçerli Anket:** 134 kişi  
+**Geçersiz Anket:** 14 kişi  
+**Açık Uçlu Yorum:** 45 kişi  
+**Genel Memnuniyet:** %75.2  
+
+**Belediye Geneli ile Karşılaştırma:** Park ve Bahçeler Müdürlüğü, belediye geneli ortalamasının (%80.0) altında bir memnuniyet skoru (%75.2) ile gelişim potansiyeli olan bir müdürlüktür.
+
+**Bulguların Değerlendirilmesi:**  
+Park ve Bahçeler Müdürlüğü, **belediyenin en büyük müdürlüğüdür** (206 personel). 148 kişinin katılımı ve 45 kişinin açık uçlu yorum paylaşması, çalışanların aktif katılımını göstermektedir. %75.2'lik memnuniyet skoru, dış mekan çalışmaları, mevsimsel zorlu koşullar ve yoğun fiziksel iş yükünün bir yansıması olabilir.
+
+**Güçlü Yönler:**
+- 148 kişilik en yüksek katılım sayısı
+- 45 kişinin açık uçlu yorum paylaşması (en yüksek yorum sayısı)
+
+**Gelişim Alanları:**
+- Saha çalışma koşulları, ekipman kalitesi ve iş yükü dengesinin iyileştirilmesi
+- Mevsimsel zorlu koşullar için destek sistemlerinin güçlendirilmesi
+
+---
+
+### 4.17. TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ (Kod: 117)
+
+**Toplam Personel:** 194  
+**Katılım:** 139 kişi (%71.6)  
+**Geçerli Anket:** 126 kişi  
+**Geçersiz Anket:** 13 kişi  
+**Açık Uçlu Yorum:** 42 kişi  
+**Genel Memnuniyet:** %74.8  
+
+**Belediye Geneli ile Karşılaştırma:** Temizlik İşleri Müdürlüğü, belediye geneli ortalamasının (%80.0) altında bir memnuniyet skoru (%74.8) ile gelişim potansiyeli olan bir müdürlüktür.
+
+**Bulguların Değerlendirilmesi:**  
+Temizlik İşleri Müdürlüğü, 194 personel ile belediyenin ikinci en büyük müdürlüğüdür. 139 kişinin katılımı ve 42 kişinin açık uçlu yorum paylaşması, çalışanların aktif katılımını göstermektedir. %74.8'lik memnuniyet skoru, saha çalışmaları, erken mesai saatleri ve fiziksel iş yükünün bir yansıması olabilir.
+
+**Güçlü Yönler:**
+- 139 kişilik yüksek katılım
+- 42 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Saha çalışma koşulları, erken mesai düzenlemeleri ve fiziksel iş yükü dengesinin iyileştirilmesi
+
+---
+
+### 4.18. ULAŞIM HİZMETLERİ MÜDÜRLÜĞÜ (Kod: 118)
+
+**Toplam Personel:** 58  
+**Katılım:** 42 kişi (%72.4)  
+**Geçerli Anket:** 38 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 12 kişi  
+**Genel Memnuniyet:** %78.5  
+
+**Belediye Geneli ile Karşılaştırma:** Ulaşım Hizmetleri Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%78.5) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Ulaşım Hizmetleri Müdürlüğü, %78.5'lik memnuniyet skoru ile belediye ortalamasına yakın bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasına yakın memnuniyet
+- 12 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.19. ÇEVRE KORUMA VE KONTROL MÜDÜRLÜĞÜ (Kod: 119)
+
+**Toplam Personel:** 74  
+**Katılım:** 53 kişi (%71.6)  
+**Geçerli Anket:** 48 kişi  
+**Geçersiz Anket:** 5 kişi  
+**Açık Uçlu Yorum:** 16 kişi  
+**Genel Memnuniyet:** %79.1  
+
+**Belediye Geneli ile Karşılaştırma:** Çevre Koruma ve Kontrol Müdürlüğü, belediye geneli ortalamasına (%80.0) çok yakın bir memnuniyet skoru (%79.1) ile dengeli bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Çevre Koruma ve Kontrol Müdürlüğü, %79.1'lik memnuniyet skoru ile belediye ortalamasına çok yakın bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasına yakın memnuniyet
+- 16 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.20. VETERİNER İŞLERİ MÜDÜRLÜĞÜ (Kod: 120)
+
+**Toplam Personel:** 70  
+**Katılım:** 50 kişi (%71.4)  
+**Geçerli Anket:** 46 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 15 kişi  
+**Genel Memnuniyet:** %84.2  
+
+**Belediye Geneli ile Karşılaştırma:** Veteriner İşleri Müdürlüğü, **belediyenin en yüksek memnuniyet skoruna** (%84.2) sahip müdürlüğüdür. Belediye geneli ortalamasının (%80.0) çok üzerinde bir başarı göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Veteriner İşleri Müdürlüğü, %84.2'lik memnuniyet skoru ile **belediyenin en başarılı müdürlüğüdür**. Hayvan refahı ve veteriner hizmetleri sunan profesyonel bir ekip olarak çalışanların iş tatmini ve kamu hizmeti motivasyonu çok yüksektir.
+
+**Güçlü Yönler:**
+- **En yüksek memnuniyet skoru** (%84.2)
+- Güçlü kamu hizmeti motivasyonu
+- Profesyonel bir ekip olarak hayvan refahına katkı
+- 15 kişinin açık uçlu yorum paylaşması
+
+**Başarı Faktörleri:**
+- Hayvan sevgisi ve veteriner hizmetlerinin anlamlı bir iş olarak görülmesi
+- Ekip dayanışması ve mesleki tatmin
+- Yönetici desteğinin güçlü olması
+
+---
+
