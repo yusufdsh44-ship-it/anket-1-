@@ -4190,7 +4190,12 @@
                         <strong>ℹ️ Açıklama:</strong> Tüm müdürlüklerin genel performans skorları ve JD-R dengesi. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
                     </div>
                     
-                    ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
+                        ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
+                        <button onclick="csvExporter.exportGenelSkorlar()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
+                            📊 CSV İndir
+                        </button>
+                    </div>
                     
                     <div class="table-container">
                         <table id="genelSkorlarTable">
@@ -4224,7 +4229,12 @@
                         <strong>ℹ️ Açıklama:</strong> Müdürlüklerin belediye ve başkan sosyal medya hesaplarını takip oranları. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
                     </div>
                     
-                    ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
+                        ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
+                        <button onclick="csvExporter.exportSosyalMedya()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
+                            📊 CSV İndir
+                        </button>
+                    </div>
                     
                     <div class="table-container">
                         <table id="sosyalMedyaTable">
@@ -4253,7 +4263,12 @@
                         <strong>⚠️ Önemli:</strong> Ruh sağlığı taraması skorlarında yüksek değerler olumsuz durumu gösterir. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
                     </div>
                     
-                    ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
+                        ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
+                        <button onclick="csvExporter.exportRuhSagligi()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
+                            📊 CSV İndir
+                        </button>
+                    </div>
                     
                     <div class="table-container">
                         <table id="ruhSagligiTable">
@@ -4282,7 +4297,12 @@
                         <strong>ℹ️ Açıklama:</strong> Her temanın müdürlük bazında detaylı analizi. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
                     </div>
                     
-                    ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
+                        ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
+                        <button onclick="csvExporter.exportTemalar()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
+                            📊 CSV İndir
+                        </button>
+                    </div>
                     
                     <div class="table-container">
                         <table id="temalarTable">
@@ -4360,9 +4380,14 @@
                 `,
 
                 'acik-uclu': () => `
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. 
-                        <strong>Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</strong>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <div class="info-box" style="flex: 1; margin: 0;">
+                            <strong>ℹ️ Açıklama:</strong> Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. 
+                            <strong>Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</strong>
+                        </div>
+                        <button onclick="csvExporter.exportAcikUclu()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
+                            📊 CSV İndir
+                        </button>
                     </div>
                     
                     <div class="table-container">
@@ -4604,6 +4629,213 @@
                 link.click();
                 document.body.removeChild(link);
                 
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            },
+
+            exportGenelSkorlar: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const mudurlukler = Object.values(state.processedData);
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Müdürlükler', 'Toplam Personel', 'Toplam Katılan', 'Geçerli Anket', 'Geçersiz Anket', 
+                                'Katılım Oranı (%)', 'Genel Memnuniyet (%)', 'İş Yükü/Stresi (%)', 'Kurum Desteği (%)', 'İş Yükü-Destek Dengesi'];
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                mudurlukler.forEach(md => {
+                    const row = [
+                        `"#${md.kod} - ${md.ad}"`,
+                        md.toplamPersonel,
+                        md.toplamKatilan,
+                        md.gecerliAnketSayisi,
+                        md.gecersizAnketSayisi,
+                        md.katilimOrani,
+                        md.genelMemnuniyet,
+                        md.isYuku,
+                        md.kurumDestegi,
+                        md.jdrDengesi
+                    ];
+                    csvContent += row.join(',') + '\n';
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `genel_skorlar_${today}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            },
+
+            exportSosyalMedya: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const mudurlukler = Object.values(state.processedData);
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Müdürlükler', 'Instagram Belediye', 'Instagram Başkan', 'Twitter Belediye', 
+                                'Twitter Başkan', 'Facebook Belediye', 'Facebook Başkan', 'NextSosyal Belediye', 'NextSosyal Başkan'];
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                mudurlukler.forEach(md => {
+                    const sm = md.sosyalMedya.detay;
+                    const row = [
+                        `"#${md.kod} - ${md.ad}"`,
+                        `${sm.instagram_belediye}%`,
+                        `${sm.instagram_baskan}%`,
+                        `${sm.twitter_belediye}%`,
+                        `${sm.twitter_baskan}%`,
+                        `${sm.facebook_belediye}%`,
+                        `${sm.facebook_baskan}%`,
+                        `${sm.nextsosyal_belediye}%`,
+                        `${sm.nextsosyal_baskan}%`
+                    ];
+                    csvContent += row.join(',') + '\n';
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `sosyal_medya_${today}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            },
+
+            exportRuhSagligi: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const mudurlukler = Object.values(state.processedData);
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Müdürlükler', 'Ruh Sağlığı Genel (%)', 'Sigara Kullanımı (%)', 
+                                'S46: Keyif Alamama', 'S47: Üzgün/Çökkün', 'S48: Gergin/Kaygılı', 'S49: Endişe Kontrolü'];
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                mudurlukler.forEach(md => {
+                    const row = [
+                        `"#${md.kod} - ${md.ad}"`,
+                        `${md.ruhSagligiGenel}%`,
+                        `${md.sigaraKullanimi}%`,
+                        md.ruhSagligiSorular[0],
+                        md.ruhSagligiSorular[1],
+                        md.ruhSagligiSorular[2],
+                        md.ruhSagligiSorular[3]
+                    ];
+                    csvContent += row.join(',') + '\n';
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `ruh_sagligi_${today}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            },
+
+            exportTemalar: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const mudurlukler = Object.values(state.processedData);
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Müdürlükler', 'İş-Kişi Uyumu', 'Görev-Rol Netliği', 'Talep Yoğunluğu', 
+                                'Yöneticilerle İlişkiler', 'Çalışma Arkadaşları', 'Kurum İçi İletişim', 
+                                'Çalışma Koşulları', 'Kamu Hizmeti Motivasyonu', 'Yetkinlik & Performans', 'Eğitim & Gelişim'];
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                mudurlukler.forEach(md => {
+                    const t = md.temalar;
+                    const row = [
+                        `"#${md.kod} - ${md.ad}"`,
+                        `${t.isKisiUyumu}%`,
+                        `${t.gorevRolNetligi}%`,
+                        `${t.hizmetTalepYogunlugu}%`,
+                        `${t.yoneticilerleIliskiler}%`,
+                        `${t.calismaArkadaslari}%`,
+                        `${t.kurumIciIletisim}%`,
+                        `${t.calismaKosullari}%`,
+                        `${t.kamuHizmetiMotivasyonu}%`,
+                        `${t.yetkinlikPerformans}%`,
+                        `${t.egitimGelisim}%`
+                    ];
+                    csvContent += row.join(',') + '\n';
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `temalar_${today}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            },
+
+            exportAcikUclu: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const mudurlukler = Object.values(state.processedData);
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Müdürlük', 'En Çok Geçen Kelimeler (Top 5)', 'Toplam Cevap'];
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                const allSurveys = mudurlukler.flatMap(md => [...md.gecerliAnketler, ...md.gecersizAnketler]);
+                const genelKeywords = utils.analyzeKeywords(allSurveys);
+                const genelCount = allSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                const genelKeywordsStr = genelKeywords.slice(0, 5).map(k => `${k.word} (${k.count})`).join(', ');
+                csvContent += `"GENEL BELEDİYE","${genelKeywordsStr}",${genelCount}\n`;
+                
+                mudurlukler.forEach(md => {
+                    const allMdSurveys = [...md.gecerliAnketler, ...md.gecersizAnketler];
+                    const count = allMdSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
+                    const keywords = utils.analyzeKeywords(allMdSurveys);
+                    const keywordsStr = keywords.slice(0, 5).map(k => `${k.word} (${k.count})`).join(', ');
+                    csvContent += `"#${md.kod} - ${md.ad}","${keywordsStr}",${count}\n`;
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `acik_uclu_${today}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 utils.showMessage('✅ CSV dosyası indirildi!', 'success');
             }
         };
