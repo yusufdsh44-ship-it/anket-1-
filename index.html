@@ -4320,7 +4320,7 @@
                         <strong>ℹ️ Açıklama:</strong> Her sorunun tüm müdürlüklerdeki performansı. <em>Soru seçerek mercek altına alabilir, başlıklara tıklayarak sıralayabilirsiniz.</em>
                     </div>
                     
-                    <div style="display: flex; gap: 15px; margin: 15px 0;">
+                    <div style="display: flex; gap: 15px; margin: 15px 0; align-items: center;">
                         <div style="flex: 1;">
                             <div style="background: #ffffff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
                                 <label for="mudurlukSoruSelect" style="font-size: 13px; font-weight: 600; color: #374151; margin-right: 10px;">🏢 Müdürlük Seç:</label>
@@ -4340,6 +4340,9 @@
                                 </select>
                             </div>
                         </div>
+                        <button onclick="csvExporter.exportSorular()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px;">
+                            📊 CSV İndir
+                        </button>
                     </div>
                     
                     <div class="table-container">
@@ -4558,6 +4561,53 @@
             }
         };
 
+        const csvExporter = {
+            exportSorular: () => {
+                if (!state.processedData || Object.keys(state.processedData).length === 0) {
+                    utils.showMessage('⚠️ CSV indirmek için önce veri girişi yapın!', 'warning');
+                    return;
+                }
+
+                const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
+                const mudurlukler = Object.values(state.processedData);
+                
+                let csvContent = '\uFEFF';
+                
+                const headers = ['Soru', 'GENEL BELEDİYE'];
+                mudurlukler.forEach(md => {
+                    headers.push(`#${md.kod} - ${md.ad}`);
+                });
+                csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
+                
+                SORULAR.forEach((soru, i) => {
+                    const row = [];
+                    row.push(`"S${i+1}. ${soru.replace(/"/g, '""')}"`);
+                    row.push(`${genelBelediyeSorular[i]}%`);
+                    
+                    mudurlukler.forEach(md => {
+                        row.push(`${md.soruOrtalamalar[i]}%`);
+                    });
+                    
+                    csvContent += row.join(',') + '\n';
+                });
+                
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                
+                const today = new Date().toISOString().split('T')[0];
+                link.setAttribute('href', url);
+                link.setAttribute('download', `sorular_analiz_${today}.csv`);
+                link.style.visibility = 'hidden';
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                utils.showMessage('✅ CSV dosyası indirildi!', 'success');
+            }
+        };
+
         document.addEventListener('DOMContentLoaded', async () => {
             window.dataInput = dataInput;
             window.surveyManager = surveyManager;
@@ -4571,6 +4621,7 @@
             window.comparisonManager = comparisonManager;
             window.pageManager = pageManager;
             window.databaseAPI = databaseAPI;
+            window.csvExporter = csvExporter;
             
             await databaseAPI.loadData();
             
