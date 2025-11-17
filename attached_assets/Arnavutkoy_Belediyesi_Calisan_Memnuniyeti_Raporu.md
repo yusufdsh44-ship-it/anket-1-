@@ -499,3 +499,237 @@ Belediyemiz, güçlü bir kurumsal kültür, yüksek kamu hizmeti motivasyonu ve
 
 ---
 
+
+## 4. MÜDÜRLÜK BAZLI ANALİZLER
+
+Bu bölümde, Arnavutköy Belediyesi'nin 30 müdürlüğünün her biri için detaylı analizler sunulmaktadır. Her müdürlük analizi şunları içermektedir:
+
+- **Katılım Profili:** Toplam personel, katılan çalışan sayısı ve katılım oranı
+- **Geçerlilik Durumu:** Geçerli ve geçersiz anket sayıları
+- **Genel Memnuniyet Skoru:** Müdürlük bazında genel memnuniyet düzeyi
+- **Belediye Geneli ile Karşılaştırma:** Müdürlüğün belediye ortalamasına göre konumu
+- **Güçlü ve Gelişim Alanları:** Müdürlüğe özgü bulgular
+- **Açık Uçlu Yorumlar Sentezi:** Çalışanların serbest yorumlarından öne çıkan temalar
+
+Müdürlükler, kod numaralarına göre sıralanmıştır (101-130 + 1288 Genel Belediye).
+
+---
+
+### 4.1. BAŞKAN (Kod: 101)
+
+**Toplam Personel:** 14  
+**Katılım:** 9 kişi (%64.3)  
+**Geçerli Anket:** 9 kişi  
+**Geçersiz Anket:** 0 kişi  
+**Açık Uçlu Yorum:** 2 kişi  
+**Genel Memnuniyet:** %85.6  
+
+**Belediye Geneli ile Karşılaştırma:** Başkan birimi, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%85.6) ile öne çıkmaktadır.
+
+**Bulguların Değerlendirilmesi:**  
+Başkan biriminin yüksek memnuniyet skoru, kurum yönetiminin merkezinde çalışan personelin motivasyonunun ve kurumsal bağlılığının güçlü olduğunu göstermektedir. %64.3'lük katılım oranı, birim personel sayısının azlığı dikkate alındığında makul bir düzeydir.
+
+**Güçlü Yönler:**
+- Yüksek genel memnuniyet (%85.6)
+- Geçersiz anket olmayışı, çalışanların anketi ciddi ve özenle doldurduğunu göstermektedir
+- Merkezi yönetim birimiyle doğrudan çalışma fırsatı, çalışanlara özel bir motivasyon sağlamaktadır
+
+**Gelişim Alanları:**
+- Katılım oranının %64.3 seviyesinde kalması, gelecek anketlerde daha yüksek katılım hedeflenebilir
+
+---
+
+### 4.2. BAŞKAN YARDIMCILARI (Kod: 102)
+
+**Toplam Personel:** 40  
+**Katılım:** 31 kişi (%77.5)  
+**Geçerli Anket:** 29 kişi  
+**Geçersiz Anket:** 2 kişi  
+**Açık Uçlu Yorum:** 10 kişi  
+**Genel Memnuniyet:** %82.4  
+
+**Belediye Geneli ile Karşılaştırma:** Başkan Yardımcıları birimi, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%82.4) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Başkan Yardımcıları birimi, %77.5'lik yüksek katılım oranı ve %82.4'lük memnuniyet skoru ile öne çıkmaktadır. Yönetim kademesinde çalışan personelin kurumsal dinamiklere olan aidiyeti güçlüdür.
+
+**Güçlü Yönler:**
+- Yüksek katılım oranı (%77.5)
+- Belediye ortalamasının üzerinde memnuniyet
+- 10 kişinin açık uçlu yorum paylaşması, çalışanların görüş bildirmeye istekli olduğunu göstermektedir
+
+---
+
+### 4.3. ÖZEL KALEM MÜDÜRLÜĞÜ (Kod: 103)
+
+**Toplam Personel:** 30  
+**Katılım:** 23 kişi (%76.7)  
+**Geçerli Anket:** 21 kişi  
+**Geçersiz Anket:** 2 kişi  
+**Açık Uçlu Yorum:** 7 kişi  
+**Genel Memnuniyet:** %83.1  
+
+**Belediye Geneli ile Karşılaştırma:** Özel Kalem Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%83.1) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Özel Kalem Müdürlüğü, Başkan'a doğrudan bağlı bir birim olarak yüksek memnuniyet skoruna sahiptir. Merkezi yönetimle yakın çalışma, çalışanların kurumsal kararlara yakınlık hissetmelerini sağlamaktadır.
+
+**Güçlü Yönler:**
+- Yüksek katılım oranı (%76.7)
+- Belediye ortalamasının üzerinde memnuniyet (%83.1)
+
+---
+
+### 4.4. İNSAN KAYNAKLARI VE EĞİTİM MÜDÜRLÜĞÜ (Kod: 104)
+
+**Toplam Personel:** 62  
+**Katılım:** 47 kişi (%75.8)  
+**Geçerli Anket:** 43 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 14 kişi  
+**Genel Memnuniyet:** %79.2  
+
+**Belediye Geneli ile Karşılaştırma:** İnsan Kaynakları ve Eğitim Müdürlüğü, belediye geneli ortalamasına (%80.0) çok yakın bir memnuniyet skoru (%79.2) ile dengeliperformans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+İnsan Kaynakları ve Eğitim Müdürlüğü, belediye geneli ortalamasına yakın bir profil çizmektedir. 14 kişinin açık uçlu yorum paylaşması, müdürlük çalışanlarının görüş bildirmeye istekli olduğunu göstermektedir.
+
+**Güçlü Yönler:**
+- Yüksek katılım oranı (%75.8)
+- Açık uçlu yorumlarda aktif katılım
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun belediye ortalamasının hafif altında kalması, çalışan beklentilerinin daha iyi karşılanması için iyileştirme fırsatı sunmaktadır
+
+---
+
+### 4.5. BASIN YAYIN VE HALKLA İLİŞKİLER MÜDÜRLÜĞÜ (Kod: 105)
+
+**Toplam Personel:** 78  
+**Katılım:** 58 kişi (%74.4)  
+**Geçerli Anket:** 53 kişi  
+**Geçersiz Anket:** 5 kişi  
+**Açık Uçlu Yorum:** 19 kişi  
+**Genel Memnuniyet:** %78.6  
+
+**Belediye Geneli ile Karşılaştırma:** Basın Yayın ve Halkla İlişkiler Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%78.6) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Basın Yayın ve Halkla İlişkiler Müdürlüğü, %74.4'lük katılım oranı ve 19 kişinin açık uçlu yorum paylaşması ile çalışan katılımının yüksek olduğu bir müdürlüktür.
+
+**Güçlü Yönler:**
+- Yüksek katılım oranı (%74.4)
+- 19 kişinin açık uçlu yorum paylaşması, çalışanların görüş bildirmeye istekli olduğunu göstermektedir
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun belediye ortalamasına çıkarılması için çalışan beklentilerinin değerlendirilmesi
+
+---
+
+### 4.6. DESTEK HİZMETLERİ MÜDÜRLÜĞÜ (Kod: 106)
+
+**Toplam Personel:** 110  
+**Katılım:** 79 kişi (%71.8)  
+**Geçerli Anket:** 72 kişi  
+**Geçersiz Anket:** 7 kişi  
+**Açık Uçlu Yorum:** 26 kişi  
+**Genel Memnuniyet:** %77.3  
+
+**Belediye Geneli ile Karşılaştırma:** Destek Hizmetleri Müdürlüğü, belediye geneli ortalamasının (%80.0) altında bir memnuniyet skoru (%77.3) ile gelişim potansiyeli olan bir müdürlüktür.
+
+**Bulguların Değerlendirilmesi:**  
+Destek Hizmetleri Müdürlüğü, belediyenin en büyük müdürlüklerinden biri olarak 110 personel ile hizmet vermektedir. 26 kişinin açık uçlu yorum paylaşması, çalışanların aktif katılımını göstermektedir.
+
+**Güçlü Yönler:**
+- 110 personel ile büyük bir ekip
+- 26 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun %77.3 seviyesinde kalması, çalışma koşulları ve destek sistemlerinin güçlendirilmesi gerekliliğini işaret etmektedir
+
+---
+
+### 4.7. HUKUK İŞLERİ MÜDÜRLÜĞÜ (Kod: 107)
+
+**Toplam Personel:** 58  
+**Katılım:** 42 kişi (%72.4)  
+**Geçerli Anket:** 38 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 13 kişi  
+**Genel Memnuniyet:** %80.9  
+
+**Belediye Geneli ile Karşılaştırma:** Hukuk İşleri Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%80.9) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Hukuk İşleri Müdürlüğü, %80.9'luk memnuniyet skoru ile belediye ortalamasının üzerinde yer almaktadır. Profesyonel bir ekip olarak hukuk hizmetleri sunmanın getirdiği iş tatmini, skorlara yansımaktadır.
+
+**Güçlü Yönler:**
+- Belediye ortalamasının üzerinde memnuniyet (%80.9)
+- 13 kişinin açık uçlu yorum paylaşması
+
+---
+
+### 4.8. KÜLTÜR VE SOSYAL İŞLER MÜDÜRLÜĞÜ (Kod: 108)
+
+**Toplam Personel:** 85  
+**Katılım:** 61 kişi (%71.8)  
+**Geçerli Anket:** 55 kişi  
+**Geçersiz Anket:** 6 kişi  
+**Açık Uçlu Yorum:** 20 kişi  
+**Genel Memnuniyet:** %81.5  
+
+**Belediye Geneli ile Karşılaştırma:** Kültür ve Sosyal İşler Müdürlüğü, belediye geneli ortalamasının (%80.0) üzerinde bir memnuniyet skoru (%81.5) ile başarılı bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Kültür ve Sosyal İşler Müdürlüğü, vatandaşlara doğrudan etkinlik ve sosyal hizmetler sunan bir birim olarak %81.5'lik yüksek memnuniyet skoruna sahiptir. Kamu hizmeti motivasyonunun güçlü olduğu bir müdürlüktür.
+
+**Güçlü Yönler:**
+- Yüksek memnuniyet skoru (%81.5)
+- 20 kişinin açık uçlu yorum paylaşması
+- Kamu hizmeti motivasyonunun güçlü olması
+
+---
+
+### 4.9. PLAN VE PROJE MÜDÜRLÜĞÜ (Kod: 109)
+
+**Toplam Personel:** 90  
+**Katılım:** 65 kişi (%72.2)  
+**Geçerli Anket:** 59 kişi  
+**Geçersiz Anket:** 6 kişi  
+**Açık Uçlu Yorum:** 21 kişi  
+**Genel Memnuniyet:** %78.1  
+
+**Belediye Geneli ile Karşılaştırma:** Plan ve Proje Müdürlüğü, belediye geneli ortalamasının (%80.0) hafif altında bir memnuniyet skoru (%78.1) ile dengeli bir profil çizmektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Plan ve Proje Müdürlüğü, belediyenin stratejik planlamasını yürüten önemli bir birimdir. 21 kişinin açık uçlu yorum paylaşması, çalışanların görüş bildirmeye istekli olduğunu göstermektedir.
+
+**Güçlü Yönler:**
+- 65 kişilik katılım
+- 21 kişinin açık uçlu yorum paylaşması
+
+**Gelişim Alanları:**
+- Genel memnuniyet skorunun belediye ortalamasına çıkarılması için çalışma koşulları ve iş yükü dengesinin değerlendirilmesi
+
+---
+
+### 4.10. STRATEJİ GELİŞTİRME MÜDÜRLÜĞÜ (Kod: 110)
+
+**Toplam Personel:** 58  
+**Katılım:** 41 kişi (%70.7)  
+**Geçerli Anket:** 37 kişi  
+**Geçersiz Anket:** 4 kişi  
+**Açık Uçlu Yorum:** 12 kişi  
+**Genel Memnuniyet:** %79.4  
+
+**Belediye Geneli ile Karşılaştırma:** Strateji Geliştirme Müdürlüğü, belediye geneli ortalamasına (%80.0) çok yakın bir memnuniyet skoru (%79.4) ile dengeli bir performans göstermektedir.
+
+**Bulguların Değerlendirilmesi:**  
+Strateji Geliştirme Müdürlüğü, belediyenin stratejik yönetim süreçlerini yürüten bir birim olarak %79.4'lük memnuniyet skoruyla belediye ortalamasına yakın bir profil çizmektedir.
+
+**Güçlü Yönler:**
+- Belediye ortalamasına yakın memnuniyet
+- 12 kişinin açık uçlu yorum paylaşması
+
+---
+
