@@ -371,6 +371,92 @@
             border-radius: 12px;
         }
         
+        /* STICKY COLUMNS */
+        #sorularTable th:first-child,
+        #sorularTable td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 20;
+            background: white;
+            border-right: 2px solid #e5e7eb;
+            width: 400px;
+            min-width: 400px;
+            max-width: 400px;
+        }
+        
+        #genelSkorlarTable th:first-child,
+        #genelSkorlarTable td:first-child,
+        #temalarTable th:first-child,
+        #temalarTable td:first-child,
+        #sosyalMedyaTable th:first-child,
+        #sosyalMedyaTable td:first-child,
+        #ruhSagligiTable th:first-child,
+        #ruhSagligiTable td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 20;
+            background: white;
+            border-right: 2px solid #e5e7eb;
+            width: 250px;
+            min-width: 250px;
+            max-width: 250px;
+        }
+        
+        #sorularTable th:first-child,
+        #genelSkorlarTable th:first-child,
+        #temalarTable th:first-child,
+        #sosyalMedyaTable th:first-child,
+        #ruhSagligiTable th:first-child {
+            background: #f9fafb;
+            z-index: 30;
+        }
+        
+        #sorularTable th:nth-child(2),
+        #sorularTable td:nth-child(2) {
+            position: sticky;
+            left: 400px;
+            z-index: 15;
+            background: white;
+            border-right: 2px solid #e5e7eb;
+            width: 180px;
+            min-width: 180px;
+        }
+        
+        #sorularTable th:nth-child(2) {
+            background: #f9fafb;
+            z-index: 25;
+        }
+        
+        #genelSkorlarTable th:nth-child(2),
+        #genelSkorlarTable td:nth-child(2),
+        #temalarTable th:nth-child(2),
+        #temalarTable td:nth-child(2),
+        #sosyalMedyaTable th:nth-child(2),
+        #sosyalMedyaTable td:nth-child(2),
+        #ruhSagligiTable th:nth-child(2),
+        #ruhSagligiTable td:nth-child(2) {
+            position: sticky;
+            left: 250px;
+            z-index: 15;
+            background: white;
+            border-right: 2px solid #e5e7eb;
+            width: 180px;
+            min-width: 180px;
+        }
+        
+        #genelSkorlarTable th:nth-child(2),
+        #temalarTable th:nth-child(2),
+        #sosyalMedyaTable th:nth-child(2),
+        #ruhSagligiTable th:nth-child(2) {
+            background: #f9fafb;
+            z-index: 25;
+        }
+        
+        table tr:hover td:first-child,
+        table tr:hover td:nth-child(2) {
+            background: #f9fafb;
+        }
+        
         /* EXCEL TABLE */
         .excel-table { font-size: 12px; }
         
@@ -1214,6 +1300,28 @@
                     neutral: 100 - posPercent - negPercent,
                     mentionCount: total
                 };
+            },
+
+            getGradientColor: (value, baseline) => {
+                const val = parseFloat(value) || 0;
+                const base = parseFloat(baseline) || 0;
+                const diff = val - base;
+                
+                if (Math.abs(diff) < 0.5) {
+                    return 'background: white;';
+                }
+                
+                if (diff > 0) {
+                    const intensity = Math.min(Math.abs(diff) / 15, 1);
+                    const green = Math.floor(220 - (intensity * 100));
+                    const opacity = 0.3 + (intensity * 0.5);
+                    return `background: rgba(34, ${green}, 34, ${opacity});`;
+                } else {
+                    const intensity = Math.min(Math.abs(diff) / 15, 1);
+                    const red = Math.floor(220 - (intensity * 60));
+                    const opacity = 0.2 + (intensity * 0.5);
+                    return `background: rgba(${red}, 100, 100, ${opacity});`;
+                }
             }
         };
 
@@ -1361,7 +1469,7 @@
                 tbody.innerHTML = '';
                 
                 const genelBelediye = tableRenderer.calculateGenelBelediye();
-                tbody.innerHTML += tableRenderer.createGenelSkorRow('GENEL BELEDİYE', genelBelediye, true);
+                tbody.innerHTML += tableRenderer.createGenelSkorRow('GENEL BELEDİYE', genelBelediye, true, null);
                 
                 const sortedMudurlukler = Object.values(state.processedData)
                     .sort((a, b) => parseFloat(b.genelMemnuniyet || 0) - parseFloat(a.genelMemnuniyet || 0));
@@ -1370,30 +1478,44 @@
                     tbody.innerHTML += tableRenderer.createGenelSkorRow(
                         `<span class="code-label">#${md.kod}</span> ${md.ad}`,
                         md,
-                        false
+                        false,
+                        genelBelediye
                     );
                 });
             },
 
-            createGenelSkorRow: (name, data, isGenel) => {
+            createGenelSkorRow: (name, data, isGenel, baseline) => {
                 const denge = parseFloat(data.denge) || 0;
                 const dengeClass = denge >= 0 ? 'positive' : 'negative';
                 const dengeSymbol = denge >= 0 ? '+' : '';
                 
-                return `
-                    <tr class="${isGenel ? 'highlight' : ''}">
-                        <td><strong>${name}</strong></td>
-                        <td>${data.toplamPersonel || 0}</td>
-                        <td>${data.anketler?.length || 0}</td>
-                        <td>${data.gecerliAnketler?.length || 0}</td>
-                        <td>${data.gecersizAnketler?.length || 0}</td>
-                        <td>${data.katilimOrani || 0}%</td>
-                        <td><strong>${data.genelMemnuniyet || 0}%</strong></td>
-                        <td>${data.isYuku || 0}%</td>
-                        <td>${data.kurumDestegi || 0}%</td>
-                        <td class="${dengeClass}"><strong>${dengeSymbol}${data.denge || 0}%</strong></td>
-                    </tr>
-                `;
+                const fields = [
+                    { value: data.toplamPersonel || 0, skipColor: true },
+                    { value: data.anketler?.length || 0, skipColor: true },
+                    { value: data.gecerliAnketler?.length || 0, skipColor: true },
+                    { value: data.gecersizAnketler?.length || 0, skipColor: true },
+                    { value: data.katilimOrani || 0, key: 'katilimOrani', percent: true },
+                    { value: data.genelMemnuniyet || 0, key: 'genelMemnuniyet', percent: true, bold: true },
+                    { value: data.isYuku || 0, key: 'isYuku', percent: true },
+                    { value: data.kurumDestegi || 0, key: 'kurumDestegi', percent: true }
+                ];
+                
+                let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
+                
+                fields.forEach(field => {
+                    const displayValue = field.percent ? `${field.value}%` : field.value;
+                    const content = field.bold ? `<strong>${displayValue}</strong>` : displayValue;
+                    
+                    if (isGenel || !baseline || field.skipColor) {
+                        rowHTML += `<td>${content}</td>`;
+                    } else {
+                        const colorStyle = utils.getGradientColor(field.value, baseline[field.key]);
+                        rowHTML += `<td style="${colorStyle}">${content}</td>`;
+                    }
+                });
+                
+                rowHTML += `<td class="${dengeClass}"><strong>${dengeSymbol}${data.denge || 0}%</strong></td>`;
+                return rowHTML + '</tr>';
             },
 
             calculateGenelBelediye: () => {
@@ -1525,32 +1647,38 @@
                 tbody.innerHTML = '';
                 
                 const genelBelediye = tableRenderer.calculateGenelBelediyeAggregate('sosyalMedya');
-                tbody.innerHTML += tableRenderer.createSosyalMedyaRow('GENEL BELEDİYE', genelBelediye, true);
+                tbody.innerHTML += tableRenderer.createSosyalMedyaRow('GENEL BELEDİYE', genelBelediye, true, null);
                 
                 Object.values(state.processedData).forEach(md => {
                     if (md.sosyalMedya) {
                         tbody.innerHTML += tableRenderer.createSosyalMedyaRow(
                             `<span class="code-label">#${md.kod}</span> ${md.ad}`,
                             md.sosyalMedya,
-                            false
+                            false,
+                            genelBelediye
                         );
                     }
                 });
             },
 
-            createSosyalMedyaRow: (name, sm, isGenel) => `
-                <tr class="${isGenel ? 'highlight' : ''}">
-                    <td><strong>${name}</strong></td>
-                    <td>${sm.detay?.instagram_belediye || 0}%</td>
-                    <td>${sm.detay?.instagram_baskan || 0}%</td>
-                    <td>${sm.detay?.twitter_belediye || 0}%</td>
-                    <td>${sm.detay?.twitter_baskan || 0}%</td>
-                    <td>${sm.detay?.facebook_belediye || 0}%</td>
-                    <td>${sm.detay?.facebook_baskan || 0}%</td>
-                    <td>${sm.detay?.nextsosyal_belediye || 0}%</td>
-                    <td>${sm.detay?.nextsosyal_baskan || 0}%</td>
-                </tr>
-            `,
+            createSosyalMedyaRow: (name, sm, isGenel, baseline) => {
+                const platforms = ['instagram_belediye', 'instagram_baskan', 'twitter_belediye', 'twitter_baskan', 
+                                   'facebook_belediye', 'facebook_baskan', 'nextsosyal_belediye', 'nextsosyal_baskan'];
+                
+                let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
+                
+                platforms.forEach(platform => {
+                    const value = sm.detay?.[platform] || 0;
+                    if (isGenel || !baseline) {
+                        rowHTML += `<td>${value}%</td>`;
+                    } else {
+                        const colorStyle = utils.getGradientColor(value, baseline.detay?.[platform]);
+                        rowHTML += `<td style="${colorStyle}">${value}%</td>`;
+                    }
+                });
+                
+                return rowHTML + '</tr>';
+            },
 
             renderRuhSagligi: () => {
                 const tbody = document.getElementById('ruhSagligiBody');
@@ -1559,7 +1687,7 @@
                 tbody.innerHTML = '';
                 
                 const genelBelediye = tableRenderer.calculateGenelBelediyeRuhSagligi();
-                tbody.innerHTML += tableRenderer.createRuhSagligiRow('GENEL BELEDİYE', genelBelediye, true);
+                tbody.innerHTML += tableRenderer.createRuhSagligiRow('GENEL BELEDİYE', genelBelediye, true, null);
                 
                 Object.values(state.processedData).forEach(md => {
                     tbody.innerHTML += tableRenderer.createRuhSagligiRow(
@@ -1569,22 +1697,36 @@
                             sigaraOrani: md.sigaraOrani,
                             ruhSagligiDetay: md.ruhSagligiDetay
                         },
-                        false
+                        false,
+                        genelBelediye
                     );
                 });
             },
 
-            createRuhSagligiRow: (name, data, isGenel) => `
-                <tr class="${isGenel ? 'highlight' : ''}">
-                    <td><strong>${name}</strong></td>
-                    <td>${data.ruhSagligi || 0}%</td>
-                    <td>${data.sigaraOrani || 0}%</td>
-                    <td>${data.ruhSagligiDetay?.keyifAlamama || 0}%</td>
-                    <td>${data.ruhSagligiDetay?.uzgunCokkun || 0}%</td>
-                    <td>${data.ruhSagligiDetay?.gerginKaygili || 0}%</td>
-                    <td>${data.ruhSagligiDetay?.endiseKontrol || 0}%</td>
-                </tr>
-            `,
+            createRuhSagligiRow: (name, data, isGenel, baseline) => {
+                const fields = [
+                    { key: 'ruhSagligi', value: data.ruhSagligi || 0 },
+                    { key: 'sigaraOrani', value: data.sigaraOrani || 0 },
+                    { key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detay: true },
+                    { key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detay: true },
+                    { key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detay: true },
+                    { key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detay: true }
+                ];
+                
+                let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
+                
+                fields.forEach(field => {
+                    if (isGenel || !baseline) {
+                        rowHTML += `<td>${field.value}%</td>`;
+                    } else {
+                        const baseValue = field.detay ? baseline.ruhSagligiDetay?.[field.key] : baseline[field.key];
+                        const colorStyle = utils.getGradientColor(field.value, baseValue);
+                        rowHTML += `<td style="${colorStyle}">${field.value}%</td>`;
+                    }
+                });
+                
+                return rowHTML + '</tr>';
+            },
 
             calculateGenelBelediyeRuhSagligi: () => {
                 const allValidSurveys = Object.values(state.processedData)
@@ -1615,32 +1757,37 @@
                 tbody.innerHTML = '';
                 
                 const genelBelediye = tableRenderer.calculateGenelBelediyeTemalar();
-                tbody.innerHTML += tableRenderer.createTemalarRow('GENEL BELEDİYE', genelBelediye, true);
+                tbody.innerHTML += tableRenderer.createTemalarRow('GENEL BELEDİYE', genelBelediye, true, null);
                 
                 Object.values(state.processedData).forEach(md => {
                     tbody.innerHTML += tableRenderer.createTemalarRow(
                         `<span class="code-label">#${md.kod}</span> ${md.ad}`,
                         md.temalar,
-                        false
+                        false,
+                        genelBelediye
                     );
                 });
             },
 
-            createTemalarRow: (name, temalar, isGenel) => `
-                <tr class="${isGenel ? 'highlight' : ''}">
-                    <td><strong>${name}</strong></td>
-                    <td>${temalar.isKisiUyumu || 0}%</td>
-                    <td>${temalar.gorevRolNetligi || 0}%</td>
-                    <td>${temalar.hizmetTalepYogunlugu || 0}%</td>
-                    <td>${temalar.yoneticilerleIliskiler || 0}%</td>
-                    <td>${temalar.calismaArkadaslari || 0}%</td>
-                    <td>${temalar.kurumIciIletisim || 0}%</td>
-                    <td>${temalar.calismaKosullari || 0}%</td>
-                    <td>${temalar.kamuHizmetiMotivasyonu || 0}%</td>
-                    <td>${temalar.yetkinlikPerformans || 0}%</td>
-                    <td>${temalar.egitimGelisim || 0}%</td>
-                </tr>
-            `,
+            createTemalarRow: (name, temalar, isGenel, baseline) => {
+                const temaKeys = ['isKisiUyumu', 'gorevRolNetligi', 'hizmetTalepYogunlugu', 'yoneticilerleIliskiler', 
+                                  'calismaArkadaslari', 'kurumIciIletisim', 'calismaKosullari', 'kamuHizmetiMotivasyonu', 
+                                  'yetkinlikPerformans', 'egitimGelisim'];
+                
+                let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
+                
+                temaKeys.forEach(key => {
+                    const value = temalar[key] || 0;
+                    if (isGenel || !baseline) {
+                        rowHTML += `<td>${value}%</td>`;
+                    } else {
+                        const colorStyle = utils.getGradientColor(value, baseline[key]);
+                        rowHTML += `<td style="${colorStyle}">${value}%</td>`;
+                    }
+                });
+                
+                return rowHTML + '</tr>';
+            },
 
             calculateGenelBelediyeTemalar: () => {
                 const allValidSurveys = Object.values(state.processedData)
@@ -1722,11 +1869,12 @@
                 const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
                 
                 tbody.innerHTML = SORULAR.map((soru, i) => {
-                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0"><strong>S${i+1}.</strong> ${soru}</td>`;
-                    rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
+                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0" style="min-width:400px;"><strong>S${i+1}.</strong> ${soru}</td>`;
+                    rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1" style="min-width:180px;"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
                     
                     Object.values(state.processedData).forEach((md, index) => {
-                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}">${md.soruOrtalamalar[i]}%</td>`;
+                        const colorStyle = utils.getGradientColor(md.soruOrtalamalar[i], genelBelediyeSorular[i]);
+                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" style="min-width:180px; ${colorStyle}">${md.soruOrtalamalar[i]}%</td>`;
                     });
                     
                     return rowHTML + '</tr>';
