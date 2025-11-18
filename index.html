@@ -2068,7 +2068,7 @@
                 const responsesHTML = responsesWithText.length > 0
                     ? responsesWithText.map(survey => `
                         <div class="response-balloon">
-                            <div class="response-header">💬 ${survey.kod}</div>
+                            <div class="response-header">💬 ${MUDURLUKLER[survey.mudurlukKod]?.name || survey.kod}</div>
                             <div class="response-text">${survey.acikUclu}</div>
                         </div>
                     `).join('')
