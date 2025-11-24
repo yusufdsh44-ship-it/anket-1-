@@ -6,6 +6,17 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-11-24: **Report Section Added** - New comprehensive report view with department analysis
+  - **New Menu Category:** "RAPORLAR" (Reports) section added to navigation
+  - **Report Page:** "Müdürlük Raporları" displays introduction and department-specific detailed reports
+  - **Filtering:** Dropdown menu to filter by specific department
+  - **Search:** Text search across all report content
+  - **Structure:** Introduction section from official report included, ready for 29 department reports
+
+- 2025-11-18: **Open-Ended Comments Display Enhancement** - Department names instead of codes
+  - **User-Friendly Display:** Open-ended comments now show full department names (e.g., "BAŞKAN") instead of codes (e.g., "101_2")
+  - **Improved Readability:** Users can immediately identify which department provided each comment
+
 - 2025-11-10: **Default Landing Page Changed to Analytics** - Application now opens on analysis view
   - **New Default Page:** Application opens directly to "Genel Memnuniyet Oranları" (General Satisfaction Rates)
   - **Table Sorting Added:** Departments automatically sorted by highest satisfaction scores (descending)
