@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnavutköy Belediyesi Çalışan Memnuniyeti Raporu</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1.8cm 2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 10pt;
+            line-height: 1.35;
+            color: #000;
+            background: #fff;
+        }
+        
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 1em 0 0.5em 0;
+            page-break-after: avoid;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.25em;
+        }
+        
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13pt;
+            font-weight: bold;
+            color: #2d2d2d;
+            margin: 0.8em 0 0.4em 0;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            font-weight: bold;
+            color: #404040;
+            margin: 0.6em 0 0.3em 0;
+            page-break-after: avoid;
+        }
+        
+        p {
+            margin: 0.25em 0;
+            text-align: justify;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.7em 0;
+            page-break-inside: avoid;
+            font-size: 9pt;
+        }
+        
+        table th {
+            background-color: #e8e8e8;
+            font-weight: bold;
+            padding: 5px 6px;
+            border: 1px solid #999;
+            text-align: left;
+        }
+        
+        table td {
+            padding: 4px 6px;
+            border: 1px solid #ccc;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        table td.number {
+            text-align: right;
+            font-weight: 600;
+        }
+        
+        .info-box {
+            border: 2px solid #666;
+            padding: 0.6em;
+            margin: 0.7em 0;
+            background-color: #f5f5f5;
+            page-break-inside: avoid;
+            font-size: 9.5pt;
+        }
+        
+        .info-box-title {
+            font-weight: bold;
+            font-size: 10.5pt;
+            margin-bottom: 0.4em;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin: 0.6em 0 0.6em 1.5em;
+            padding-left: 0.8em;
+            border-left: 3px solid #999;
+            color: #444;
+            font-size: 9.5pt;
+        }
+        
+        .cover-page {
+            text-align: center;
+            padding-top: 25%;
+            page-break-after: always;
+        }
+        
+        .cover-title {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 1em 0;
+            color: #1a1a1a;
+        }
+        
+        .cover-subtitle {
+            font-size: 18pt;
+            margin: 0.5em 0;
+            color: #404040;
+        }
+        
+        .cover-info {
+            font-size: 12pt;
+            margin: 2em 0;
+            line-height: 1.8;
+        }
+        
+        .cover-divider {
+            width: 60%;
+            height: 2px;
+            background-color: #333;
+            margin: 2em auto;
+        }
+        
+        .toc {
+            page-break-after: always;
+        }
+        
+        .toc-item {
+            margin: 0.3em 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .toc-item.level1 {
+            font-weight: bold;
+            margin-top: 0.6em;
+        }
+        
+        .toc-item.level2 {
+            margin-left: 1.5em;
+        }
+        
+        .toc-item.level3 {
+            margin-left: 3em;
+            font-size: 9pt;
+        }
+        
+        .toc-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #999;
+            margin: 0 0.5em;
+            height: 1.2em;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+            
+            table, .info-box, .quote {
+                page-break-inside: avoid;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+        
+        .highlight {
+            font-weight: bold;
+        }
+        
+        .statistic {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+<!-- KAPAK SAYFASI -->
+<div class="cover-page">
+    <div style="text-align: center; margin-bottom: 2em;">
+        <img src="arnavutkoy-logo.png" alt="Arnavutköy Belediyesi" style="width: 180px; height: auto;">
+    </div>
+    
+    <div class="cover-divider"></div>
+    
+    <div style="font-size: 14pt; margin: 2em 0;">
+        ARNAVUTKÖY BELEDİYESİ
+    </div>
+    
+    <div class="cover-title">
+        ÇALIŞAN MEMNUNİYETİ VE<br>
+        İYİ OLUŞ ANKETİ
+    </div>
+    
+    <div class="cover-subtitle">
+        Analiz Raporu
+    </div>
+    
+    <div class="cover-divider"></div>
+    
+    <div class="cover-info">
+        <strong>Belediye Başkanımız</strong><br>
+        Sayın Mustafa Candaroğlu'na
+    </div>
+    
+    <div class="cover-divider"></div>
+    
+    <div style="font-size: 11pt; margin-top: 2em;">
+        Kasım 2025
+    </div>
+</div>
+
+<!-- İÇİNDEKİLER -->
+<div class="toc">
+    <h1>İÇİNDEKİLER</h1>
+    
+    <div class="toc-item level1">
+        <span>1. GİRİŞ</span>
+        <span class="toc-dots"></span>
+        <span>3</span>
+    </div>
+    
+    <div class="toc-item level1">
+        <span>2. METODOLOJİ</span>
+        <span class="toc-dots"></span>
+        <span>5</span>
+    </div>
+    
+    <div class="toc-item level1">
+        <span>3. BELEDİYE GENELİ BULGULAR</span>
+        <span class="toc-dots"></span>
+        <span>8</span>
+    </div>
+    <div class="toc-item level2">
+        <span>3.1. Katılım ve Genel Memnuniyet Profili</span>
+        <span class="toc-dots"></span>
+        <span>8</span>
+    </div>
+    <div class="toc-item level2">
+        <span>3.2. Güçlü Olduğumuz Alanlar</span>
+        <span class="toc-dots"></span>
+        <span>10</span>
+    </div>
+    <div class="toc-item level2">
+        <span>3.3. Geliştirmemiz Gereken Alanlar</span>
+        <span class="toc-dots"></span>
+        <span>18</span>
+    </div>
+    <div class="toc-item level2">
+        <span>3.4. Ruh Sağlığı Taraması</span>
+        <span class="toc-dots"></span>
+        <span>24</span>
+    </div>
+    <div class="toc-item level2">
+        <span>3.5. Sosyal Medya ve Sigara Alışkanlıkları</span>
+        <span class="toc-dots"></span>
+        <span>27</span>
+    </div>
+    
+    <div class="toc-item level1">
+        <span>4. MÜDÜRLÜK PROFİLLERİ</span>
+        <span class="toc-dots"></span>
+        <span>29</span>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- BÖLÜM 1: GİRİŞ -->
+<h1>1. GİRİŞ</h1>
+
+<p>Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmalarını, <span class="highlight">Arnavutköy Belediyesi olarak ilk kez yaparak</span> kurumsal gelişimimiz adına önemli bir temel atmanın gururunu yaşıyoruz.</p>
+
+<p>Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, tamamen belediyemizin kendi iç yetkinlikleri ve öz kaynaklarıyla gerçekleştirilmiş olmasıdır. Anket değerlendirmelerinde kullanılan yazılım, <span class="highlight">bu proje için özel olarak geliştirilmiştir</span>. İnternetten bağımsız (offline) çalışan bu araç, veri güvenliğini en üst düzeyde tutarken, sonuçların kurumsal olarak arşivlenmesini kolaylaştırmaktadır. Yazılımın Sayın Başkanımızla paylaşılmasıyla, tüm verilere ve analiz grafiklerine dilediğiniz zaman doğrudan erişim imkanınız olacaktır.</p>
+
+<p>Çalışma iki temel eksen üzerine kurgulanmıştır. Birinci eksen; yönetici-çalışan ilişkileri, ekip dayanışması, fiziki çalışma koşulları, yemekhane, servis, ücret politikaları ve iş güvenliği gibi temel kurumsal dinamiklerin ölçümlenmesidir. İkinci eksen ise; Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak "Psikolojik İyi Oluş" taramasının yapılmasıdır. Kullanılan envanter, standart şablonlar yerine, literatürdeki bilimsel ölçeklerin kurumumuzun özgün ihtiyaçlarına göre yeniden uyarlanmasıyla oluşturulmuştur. <span class="highlight">Anket sorularının her biri, bilimsel çalışmalar ve Arnavutköy Belediyesi'nin kendine özgü dinamikleri göz önünde bulundurularak tek tek tasarlanmıştır.</span></p>
+
+<p>Saha çalışmaları sürecinde, <span class="highlight">belediyemize bağlı 30 müdürlüğün tamamı bizzat ziyaret edilmiştir</span>. Anketler çalışanlarımıza elden ulaştırılmış; görüş, şikayet ve önerileri yerinde dinlenmiştir. Bu ziyaretlerde ayrıca, kurumsal aidiyeti pekiştirmek adına Belediyemizin ve Başkanlığımızın sosyal medya hesaplarının takibi konusunda da personelimiz teşvik edilmiştir. Bu yüz yüze etkileşim, sürecin sadece veri toplamaktan ibaret kalmayıp, çalışanlarımızla samimi ve yapıcı bir diyaloğa dönüşmesine imkan tanımıştır.</p>
+
+<p>Analiz modelimiz, 1.251 çalışanımızdan toplanan sayısal verilerin, <span class="highlight">456 çalışanın yazdığı binlerce cümlelik açık uçlu yorumlarla</span> sentezlenmesine dayanmaktadır. Toplam 45 sorudan oluşan ana anket ile; kurumsal aidiyet, amir ilişkileri, rol netliği ve çalışma koşulları gibi on farklı parametre ölçülmüştür. Bu yapıya ek olarak "Psikolojik İyi Oluş Taraması", "Sigara Kullanımı" ve "Sosyal Medya Alışkanlıkları" modülleri de çalışmaya dahil edilerek personel profili çok yönlü olarak analiz edilmiştir.</p>
+
+<p>Bu çalışma, <span class="highlight">belirli periyotlarla tekrarlanacak sürdürülebilir bir izleme sisteminin temelidir</span>. Gelecek dönemlerde yapılacak ölçümlerle, belediyemizin kurumsal iyi oluş düzeyindeki değişimler ve iyileştirme çalışmalarının etkileri takip edilebilecektir. Standartları korumak amacıyla; anket yapısını, yazılım kullanımını ve değerlendirme yöntemlerini içeren bir <span class="highlight">"Metodoloji Kitapçığı"</span> da tarafımızca hazırlanarak kurumsal hafızaya kazandırılmıştır.</p>
+
+<p>Belediyemizin kurumsal gelişimine ve çalışan refahına katkı sunacağına inandığımız bu raporu, bilgi ve tensiplerinize arz ederiz.</p>
+
+<div class="page-break"></div>
+
+<!-- BÖLÜM 2: METODOLOJİ -->
+<h1>2. METODOLOJİ</h1>
+
+<p>Çalışmanın temel analiz çerçevesi, endüstri ve örgüt psikolojisi literatüründe yaygın kabul gören "İş Talepleri-Kaynakları (Job Demands-Resources, JD-R) Modeli" üzerine kurulmuştur. Bu model, çalışan refahını belirleyen iki temel boyutun dengesini inceler: İş Talepleri (çalışanın karşılaştığı zorluklar, stres, zaman baskısı) ve İş Kaynakları (çalışanı destekleyen faktörler: amir desteği, ekip dayanışması, gelişim fırsatları). Modelin öngörüsüne göre, kaynakların talepleri dengelediği durumlarda çalışan refahı korunur ve hatta artarken; kaynakların yetersiz kaldığı durumlarda tükenmişlik ve memnuniyetsizlik riski yükselir.</p>
+
+<p>Bu mantığı somutlaştırmak için basit bir terazi metaforu kullanabiliriz: Terazinin bir kefesinde İş Talepleri (stres, yoğunluk, duygusal zorluklar), diğer kefesinde İş Kaynakları (amir desteği, ekip ilişkileri, rol netliği, çalışma koşulları) bulunmaktadır. Terazi dengedeyse veya kaynaklar lehine ağır basıyorsa, çalışan refahı korunmuş demektir. Taleplerin ağır bastığı durumlarda ise, çalışanlarımız destek ihtiyacı içerisindedir.</p>
+
+<p>Belediyemiz genelinde <span class="statistic">İş Yükü/Stresi %69,1, Kurum Desteği ise %82,3</span> olarak ölçülmüştür. Dolayısıyla belediyemizin genel "İş Yükü-Kurum Desteği Dengesi" <span class="statistic">+13,2 puan</span> olarak hesaplanmıştır (82,3 - 69,1 = +13,2). Pozitif değer, çalışanlarımızın karşılaştıkları talepleri dengeleyecek yeterli kaynaklara sahip olduğunu göstermektedir. Ancak bu genel pozitif tablo, müdürlükler arasında <span class="statistic">-3,5 ile +34,4</span> arasında değişen geniş bir dağılım sergile mektedir.</p>
+
+<div class="info-box">
+<div class="info-box-title">İş Yükü-Destek Dengesi Nasıl Yorumlanır?</div>
+<p><strong>Pozitif Denge (+):</strong> Kurum desteği, iş yükünden fazladır. Çalışanlar karşılaştıkları zorlukları dengeleyecek yeterli kaynaklara sahiptir. Örnek: +24,5 puan = Çok güçlü destek avantajı.</p>
+<p><strong>Negatif Denge (-):</strong> İş yükü, kurum desteğinden fazladır. Çalışanlar yüksek talep altında ancak yeterli kaynaklara sahip değildir. Örnek: -2,5 puan = Hafif destek açığı, izlenmeli.</p>
+<p><strong>Sıfıra Yakın Denge (±3):</strong> Talepler ve kaynaklar dengede. İyileştirme potansiyeli mevcut.</p>
+</div>
+
+<p>Anket, toplam <span class="statistic">2.087 personelden %70,4'üne (1.470 kişi)</span> ulaşılarak gerçekleştirilmiştir. Dikkat kontrol sorusu analizi sonucunda <span class="statistic">219 geçersiz anket</span> tespit edilmiş ve analiz dışı bırakılmıştır. Nihai analiz, <span class="statistic">1.251 geçerli anketten</span> elde edilen veriler üzerinde yapılmıştır. Her müdürlüğe özgü QR kod sistemi sayesinde, birim bazlı detaylı analizler yapılabilmiştir.</p>
+
+<div class="page-break"></div>
+
+<!-- BÖLÜM 3: BELEDİYE GENELİ BULGULAR -->
+<h1>3. BELEDİYE GENELİ BULGULAR</h1>
+
+<h2>3.1. Katılım ve Genel Memnuniyet Profili</h2>
+
+<p>Arnavutköy Belediyesi genelinde genel memnuniyet düzeyi <span class="statistic">%90,8</span> olarak ölçülmüştür. Endüstri ve iş psikolojisi literatüründe kurumsal sağlık için kritik eşik kabul edilen %80 seviyesinin önemli ölçüde üzerinde olan bu sonuç (<span class="statistic">1.136 çalışan</span>), belediyemizin kurumsal yapısının sağlam temellerini ve çalışanlarımızın genel iş doyumu düzeylerini yansıtmaktadır. Ancak bu pozitif tablonun, müdürlükler arasında %80,8 ile %98,4 arasında değişen önemli farklılıklar gösterdiğini belirtmek gerekir.</p>
+
+<p>İş yükü seviyesi (<span class="statistic">%69,1</span>) Arnavutköy'ün hızla gelişen bir ilçe olmasının ve kamu hizmetinin dinamik yapısının doğal sonucudur. Kurum desteği (<span class="statistic">%82,3</span>) ise güçlü bir düzeyde ölçülmüş olup amirlerden alınan destek, ekip dayanışması, rol netliği ve gelişim fırsatları gibi çalışanlarımızı güçlendiren kaynakların varlığını göstermektedir. Genel denge puanımız (<span class="statistic">+13,2</span>) JD-R modelinin öngördüğü gibi, çalışanlarımızın karşılaştıkları talepleri dengeleyecek yeterli kaynaklara sahip olduklarını göstermektedir.</p>
+
+<table>
+<thead>
+<tr>
+    <th>Müdürlük</th>
+    <th class="number">Katılım %</th>
+    <th class="number">Memnuniyet %</th>
+    <th class="number">İş Yükü %</th>
+    <th class="number">Destek %</th>
+    <th class="number">Denge</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color: #e0e0e0; font-weight: bold;">
+    <td>GENEL BELEDİYE</td>
+    <td class="number">70,4</td>
+    <td class="number">90,8</td>
+    <td class="number">69,1</td>
+    <td class="number">82,3</td>
+    <td class="number">+13,2</td>
+</tr>
+<tr><td>İnsan Kaynakları ve Eğitim</td><td class="number">100,0</td><td class="number">80,8</td><td class="number">53,9</td><td class="number">78,4</td><td class="number">+24,5</td></tr>
+<tr><td>Zabıta</td><td class="number">83,7</td><td class="number">83,2</td><td class="number">76,7</td><td class="number">79,8</td><td class="number">+3,1</td></tr>
+<tr><td>Hukuk İşleri</td><td class="number">109,1</td><td class="number">84,1</td><td class="number">69,3</td><td class="number">80,4</td><td class="number">+11,1</td></tr>
+<tr><td>Plan ve Proje</td><td class="number">100,0</td><td class="number">84,4</td><td class="number">68,3</td><td class="number">79,1</td><td class="number">+10,8</td></tr>
+<tr><td>Strateji Geliştirme</td><td class="number">80,0</td><td class="number">85,7</td><td class="number">50,9</td><td class="number">78,6</td><td class="number">+27,7</td></tr>
+<tr><td>Koordinasyon İşleri</td><td class="number">116,7</td><td class="number">85,7</td><td class="number">51,8</td><td class="number">86,2</td><td class="number">+34,4</td></tr>
+<tr><td>Mali Hizmetler</td><td class="number">100,0</td><td class="number">86,1</td><td class="number">65,3</td><td class="number">85,2</td><td class="number">+19,9</td></tr>
+<tr><td>Veteriner İşleri</td><td class="number">71,1</td><td class="number">86,5</td><td class="number">82,3</td><td class="number">78,8</td><td class="number">-3,5</td></tr>
+<tr><td>Gelirler</td><td class="number">87,2</td><td class="number">87,1</td><td class="number">79,9</td><td class="number">77,4</td><td class="number">-2,5</td></tr>
+<tr><td>İmar ve Şehircilik</td><td class="number">91,5</td><td class="number">87,5</td><td class="number">83,2</td><td class="number">80,9</td><td class="number">-2,3</td></tr>
+<tr><td>Yapı Kontrol</td><td class="number">75,7</td><td class="number">88,0</td><td class="number">79,3</td><td class="number">82,2</td><td class="number">+2,9</td></tr>
+<tr><td>Fen İşleri</td><td class="number">60,8</td><td class="number">88,1</td><td class="number">80,3</td><td class="number">82,0</td><td class="number">+1,7</td></tr>
+<tr><td>İklim Değişikliği ve Sıfır Atık</td><td class="number">95,8</td><td class="number">88,2</td><td class="number">78,7</td><td class="number">79,4</td><td class="number">+0,7</td></tr>
+<tr><td>Akıllı Ulaşım Sistemleri</td><td class="number">94,7</td><td class="number">88,3</td><td class="number">60,3</td><td class="number">84,2</td><td class="number">+23,9</td></tr>
+<tr><td>Sosyal Destek Hizmetleri</td><td class="number">91,8</td><td class="number">89,9</td><td class="number">75,2</td><td class="number">80,4</td><td class="number">+5,2</td></tr>
+<tr><td>Kültür İşleri</td><td class="number">69,0</td><td class="number">89,6</td><td class="number">58,4</td><td class="number">80,3</td><td class="number">+21,9</td></tr>
+<tr><td>Yazı İşleri</td><td class="number">94,6</td><td class="number">90,5</td><td class="number">57,6</td><td class="number">76,7</td><td class="number">+19,1</td></tr>
+<tr><td>Ruhsat ve Denetim</td><td class="number">100,0</td><td class="number">90,9</td><td class="number">59,1</td><td class="number">85,0</td><td class="number">+25,9</td></tr>
+<tr><td>Afet İşleri</td><td class="number">100,0</td><td class="number">90,9</td><td class="number">52,3</td><td class="number">86,6</td><td class="number">+34,3</td></tr>
+<tr><td>Emlak ve İstimlak</td><td class="number">100,0</td><td class="number">91,7</td><td class="number">78,6</td><td class="number">80,1</td><td class="number">+1,5</td></tr>
+<tr><td>Park ve Bahçeler</td><td class="number">65,9</td><td class="number">91,7</td><td class="number">76,3</td><td class="number">83,7</td><td class="number">+7,4</td></tr>
+<tr><td>Temizlik İşleri</td><td class="number">37,2</td><td class="number">91,9</td><td class="number">71,9</td><td class="number">77,4</td><td class="number">+5,5</td></tr>
+<tr><td>Halkla İlişkiler</td><td class="number">83,3</td><td class="number">92,4</td><td class="number">72,6</td><td class="number">78,6</td><td class="number">+6,0</td></tr>
+<tr><td>Gençlik ve Spor Hizmetleri</td><td class="number">89,3</td><td class="number">92,7</td><td class="number">63,6</td><td class="number">85,9</td><td class="number">+22,3</td></tr>
+<tr><td>Basın ve Yayın</td><td class="number">100,0</td><td class="number">93,1</td><td class="number">61,8</td><td class="number">84,1</td><td class="number">+22,3</td></tr>
+<tr><td>İnovasyon ve Teknoloji</td><td class="number">95,1</td><td class="number">95,3</td><td class="number">61,0</td><td class="number">85,2</td><td class="number">+24,2</td></tr>
+<tr><td>Destek Hizmetleri</td><td class="number">83,9</td><td class="number">95,1</td><td class="number">62,3</td><td class="number">86,8</td><td class="number">+24,5</td></tr>
+<tr><td>Muhtarlık İşleri</td><td class="number">120,0</td><td class="number">95,8</td><td class="number">56,3</td><td class="number">79,5</td><td class="number">+23,2</td></tr>
+<tr><td>İşletme ve İştirakler</td><td class="number">44,4</td><td class="number">96,9</td><td class="number">69,5</td><td class="number">84,5</td><td class="number">+15,0</td></tr>
+<tr><td>Özel Kalem</td><td class="number">106,7</td><td class="number">98,4</td><td class="number">67,1</td><td class="number">90,0</td><td class="number">+23,0</td></tr>
+</tbody>
+</table>
+
+<p>Hiçbir müdürlüğümüzün %80'in altında memnuniyet skoruna sahip olmadığı görülmektedir (<span class="statistic">en düşük %80,8</span>). Bu sonuç, belediyemizin tüm birimlerinde temel bir kurumsal sağlığın ve çalışan memnuniyetinin bulunduğunu göstermektedir. Ancak <span class="statistic">456 çalışanın yazdığı açık uçlu yorumlar</span> incelendiğinde, bu genel pozitif tablonun altında iyileştirme gerektiren spesifik alanların bulunduğu anlaşılmaktadır.</p>
+
+<div class="page-break"></div>
+
+<h2>3.2. Güçlü Olduğumuz Alanlar</h2>
+
+<p>Belediyemizin kurumsal yapısını güçlendiren ve çalışan memnuniyetini destekleyen temel alanları, on farklı tematik parametre üzerinden ölçümledik. Bu bölümde, en yüksek skorlara sahip beş temayı, örgütsel davranış literatürü ve veri setlerimiz (nicel skorlar, açık uçlu yorumlar, ruh sağlığı, sosyal medya takip oranları) ışığında detaylı olarak inceleyeceğiz.</p>
+
+<h3>3.2.1. Kamu Hizmeti Motivasyonu (%92,8 - 1.161 kişi)</h3>
+
+<p>Belediyemizin en güçlü olduğu alan <span class="statistic">%92,8</span> skoruyla Kamu Hizmeti Motivasyonudur (<span class="statistic">1.161 çalışan</span>). Bu tema, Perry ve Wise'ın (1990) "Kamu Hizmeti Motivasyonu Teorisi"nin temel varsayımlarını doğrulamaktadır: Kamu sektöründe çalışanların, özel sektöre kıyasla daha güçlü bir "topluma hizmet etme" güdüsüne sahip oldukları ve bu güdünün iş doyumlarının önemli bir belirleyicisi olduğu tezi, bulgularımızla örtüşmektedir.</p>
+
+<p>Anketimizde üç soru üzerinden ölçümlediğimiz bu tema:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S35:</strong> "İşim aracılığıyla topluma/kamuya hizmet etmekten gurur duyuyorum" - <span class="statistic">%94,5</span> (1.182 kişi)</li>
+<li><strong>S36:</strong> "Topluma gerçekten katkı sunmak isteyen birine, kamu kurumlarında çalışmayı tavsiye ederim" - <span class="statistic">%90,7</span> (1.135 kişi)</li>
+<li><strong>S37:</strong> "Yaptığım işin toplum için anlamlı ve faydalı olduğunu düşünüyorum" - <span class="statistic">%93,2</span> (1.166 kişi)</li>
+</ul>
+
+<p>Bu sonuçlar, örgütsel kimlik teorisi (Ashforth ve Mael, 1989) perspektifinden de değerlendirilmelidir. Çalışanlarımızın "Arnavutköy Belediyesi çalışanı" kimliğini içselleştirmiş olmaları ve bu kimliğin "topluma fayda sağlayan bir kuruluş" algısıyla örtüşmesi, hem iş doyumunu hem de örgütsel bağlılığı güçlendirmektedir. Açık uçlu yorumlarda <span class="statistic">66 çalışan</span> "topluma hizmet", "gurur", "anlamlı iş" gibi kavramlara atıfta bulunmuştur.</p>
+
+<div class="quote">
+"Kurumumuzda görev yapan personelin görev dağılımı yapılırken çalışanların öz yetenekleri, bilgi birikimleri ve kişisel becerileri göz önünde bulundurularak planlama yapılmasının hem verimliliği artıracağına hem de çalışma motivasyonunu güçlendireceğine inanıyorum." (Destek Hizmetleri Müdürlüğü)
+</div>
+
+<p>Kamu hizmeti motivasyonunun bu denli yüksek olması, Herzberg'in İki Faktör Teorisi (1959) bağlamında da önemlidir. Herzberg, motivasyon faktörlerini "hijyen faktörleri" (maaş, çalışma koşulları) ve "gerçek motivatörler" (tanınma, başarı, anlamlı iş) olarak ayırmıştır. Bulgularımız, çalışanlarımızın "anlamlı iş" boyutunda güçlü bir motivasyona sahip olduklarını, ancak ilerleyen bölümlerde göreceğimiz gibi hijyen faktörlerinde (maaş, çalışma koşulları) iyileştirme alanları bulunduğunu göstermektedir.</p>
+
+<h3>3.2.2. İş-Kişi Uyumu (%91,3 - 1.143 kişi)</h3>
+
+<p>İkinci en güçlü alanımız <span class="statistic">%91,3</span> skoruyla İş-Kişi Uyumudur (<span class="statistic">1.143 çalışan</span>). Kristof-Brown ve diğerlerinin (2005) meta-analiz çalışması, iş-kişi uyumunun iş tatmini, örgütsel bağlılık ve düşük işten ayrılma niyeti ile güçlü pozitif korelasyonlar gösterdiğini ortaya koymuştur. Belediyemizde bu uyumun yüksek olması, hem işe alım süreçlerimizin etkinliğine hem de görev dağılımlarının isabetli yapılmış olduğuna işaret etmektedir.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S1:</strong> "Yaptığım iş, yetenek ve becerilerimle uyumludur" - <span class="statistic">%90,9</span> (1.137 kişi)</li>
+<li><strong>S2:</strong> "Bu işi seçtiğim için mutluyum" - <span class="statistic">%90,7</span> (1.135 kişi)</li>
+<li><strong>S3:</strong> "Yaptığım işi anlamlı buluyorum" - <span class="statistic">%92,4</span> (1.156 kişi)</li>
+</ul>
+
+<p>Holland'ın Meslek Seçimi Teorisi (1997) perspektifinden bakıldığında, bu yüksek uyum skorları çalışanlarımızın kişilik özellikleri ile görevlerinin niteliği arasında güçlü bir eşleşme olduğunu göstermektedir. Özellikle <strong>S3</strong> sorusundaki %92,4'lük yüksek skor, çalışanlarımızın sadece beceri eşleşmesi değil, aynı zamanda değer eşleşmesi (değerleriyle işlerinin anlamı arasındaki uyum) açısından da tatmin olduklarını göstermektedir.</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">23 çalışan</span> "yeteneklerime uygun görev", "doğru pozisyon", "kendimi geliştirme fırsatı" gibi ifadelerle iş-kişi uyumuna vurgu yapmıştır. Ancak bazı müdürlüklerde (özellikle Sosyal Destek Hizmetleri) görev dağılımında iyileştirme talepleri de mevcuttur:</p>
+
+<div class="quote">
+"Herkes çalıştığı mesleğini yapmak ister. Bizim birimde kimse kendi mesleğini yapmıyor." (Sosyal Destek Hizmetleri)
+</div>
+
+<h3>3.2.3. Çalışma Arkadaşları İlişkileri (%86,9 - 1.087 kişi)</h3>
+
+<p>Üçüncü güçlü alanımız <span class="statistic">%86,9</span> skoruyla Çalışma Arkadaşları temasıdır (<span class="statistic">1.087 kişi</span>). Sosyal Destek Teorisi (House, 1981) ve Sosyal Değişim Teorisi (Blau, 1964) bağlamında değerlendirildiğinde, bu yüksek skor belediyemizde güçlü bir sosyal ağın ve karşılıklı destek kültürünün varlığını göstermektedir.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S18:</strong> "İş arkadaşlarımla uyum içinde çalışırım" - <span class="statistic">%91,9</span> (1.150 kişi)</li>
+<li><strong>S19:</strong> "Ekibimizde dayanışma güçlüdür" - <span class="statistic">%87,0</span> (1.089 kişi)</li>
+<li><strong>S20:</strong> "Bilgi ve deneyim paylaşımı yaygındır" - <span class="statistic">%85,4</span> (1.069 kişi)</li>
+<li><strong>S21:</strong> "İş arkadaşlarımın teknik/sosyal desteği işimi kolaylaştırır" - <span class="statistic">%85,6</span> (1.071 kişi)</li>
+<li><strong>S22:</strong> "Anlaşmazlıkları iş arkadaşlarımızla kendi aramızda çözeriz" - <span class="statistic">%84,7</span> (1.060 kişi)</li>
+</ul>
+
+<p>Tuckman'ın Grup Gelişim Modeli (1965) açısından değerlendirildiğinde, çoğu ekibimizin "performans" (performing) aşamasında olduğu görülmektedir: Roller netleşmiş, dayanışma güçlenmiş, çatışmalar yapıcı şekilde çözülmektedir. Özellikle <strong>S22</strong> sorusundaki %84,7'lik skor, ekiplerin olgun bir çatışma çözme kapasitesine sahip olduğunu göstermektedir.</p>
+
+<p>Ancak açık uçlu yorumlarda <span class="statistic">13 çalışan</span> "iletişim bozukluğu", "ekip içi çatışma", "ayrımcılık" gibi konulara değinmiştir. Bu yorumlar belirli müdürlüklerde (özellikle Sosyal Destek Hizmetleri ve Temizlik İşleri) yoğunlaşmaktadır:</p>
+
+<div class="quote">
+"Çalışma arkadaşlarımızda genel olarak anlaşmazlıklar var. Çoğunlukla iletişim bozukluğu karşı tarafı zor durumda bırakıyor." (Destek Hizmetleri)
+</div>
+
+<h3>3.2.4. Yöneticilerle İlişkiler (%86,8 - 1.086 kişi)</h3>
+
+<p>Dördüncü güçlü alanımız <span class="statistic">%86,8</span> skoruyla Yöneticilerle İlişkiler temasıdır (<span class="statistic">1.086 kişi</span>). Lider-Üye Değişimi Teorisi (LMX Theory, Graen ve Uhl-Bien, 1995) perspektifinden bakıldığında, bu yüksek skor yöneticilerimizin çalışanlarıyla kaliteli ilişkiler kurduğunu ve güven temelli bir iletişim ortamı yarattığını göstermektedir.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S12:</strong> "İhtiyaç duyduğumda amirime kolaylıkla ulaşabilirim" - <span class="statistic">%92,2</span> (1.153 kişi)</li>
+<li><strong>S13:</strong> "Amirimin verdiği geri bildirimler gelişimime yardımcı olur" - <span class="statistic">%86,5</span> (1.082 kişi)</li>
+<li><strong>S14:</strong> "Sorun yaşadığımda amirim destek olmak için çaba gösterir" - <span class="statistic">%86,7</span> (1.085 kişi)</li>
+<li><strong>S15:</strong> "Kendi çalışmamı etkileyen kararlara katılma ve fikirlerimi söyleme fırsatı buluyorum" - <span class="statistic">%82,5</span> (1.032 kişi)</li>
+<li><strong>S16:</strong> "Amirim çalışanlara eşit yaklaşır, ayrımcılık yapmaz" - <span class="statistic">%82,8</span> (1.036 kişi)</li>
+<li><strong>S17:</strong> "Amirim bana karşı saygılıdır" - <span class="statistic">%89,9</span> (1.125 kişi)</li>
+</ul>
+
+<p>Özellikle <strong>S12</strong> ve <strong>S17</strong> sorularındaki yüksek skorlar (%92,2 ve %89,9), yöneticilerimizin ulaşılabilir ve saygılı bir yönetim sergilediğini göstermektedir. Ancak <strong>S15</strong> ve <strong>S16</strong> sorularındaki görece düşük skorlar (%82,5 ve %82,8), "katılımcı yönetim" ve "eşitlik" boyutlarında iyileştirme alanları olduğuna işaret etmektedir.</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">530 çalışan</span> yöneticilerle ilgili konulara değinmiştir - bu, tüm açık uçlu kategoriler arasında en yüksek rakamdır. Yorumların önemli bir kısmı (yaklaşık <span class="statistic">%60'ı, 318 kişi</span>) olumlu iken, <span class="statistic">%40'ı (212 kişi)</span> olumsuz veya gelişim önerisi niteliğindedir. Olumlu yorumlar genellikle "destekleyici amir", "adil yönetim", "ulaşılabilirlik" temalarında yoğunlaşırken; olumsuz yorumlar "mobbing", "ayrımcılık", "baskıcı tutum" konularına değinmektedir:</p>
+
+<div class="quote">
+"Şefler personele yaklaşımı bambaşka bir durum insanları her görüp itici oluyor. Personele işi saldırmak yerine. İşten soğutuyor." (Temizlik İşleri)
+</div>
+
+<div class="quote">
+"Müdürlükler içerisinde şef veya koordinatör gibi yetkili kişiler, zaman zaman yetkilerini kullanırken üstten konuşma tarzı sergileyebilmektedir. Bu durum, çalışma ortamında huzursuzluğa neden olmaktadır." (Sosyal Destek Hizmetleri)
+</div>
+
+<p>Transformasyonel Liderlik Teorisi (Bass ve Riggio, 2006) bağlamında değerlendirildiğinde, yöneticilerimizin çoğunluğu "bireyselleştirilmiş ilgi" (individualized consideration) ve "destekleyici liderlik" boyutlarında güçlü performans sergilerken, bazı birimlerde "ilham verici motivasyon" ve "entelektüel uyarım" boyutlarında gelişim fırsatları bulunmaktadır.</p>
+
+<h3>3.2.5. Görev ve Rol Netliği (%86,6 - 1.083 kişi)</h3>
+
+<p>Beşinci güçlü alanımız <span class="statistic">%86,6</span> skoruyla Görev ve Rol Netliği temasıdır (<span class="statistic">1.083 kişi</span>). Rol Teorisi (Kahn ve diğerleri, 1964) perspektifinden bakıldığında, bu yüksek skor çalışanlarımızın rollerini net bir şekilde anladığını ve rol belirsizliği (role ambiguity) ya da rol çatışması (role conflict) yaşamadığını göstermektedir.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S4:</strong> "Görev tanımım ve sorumluluklarım açıkça belirlenmiştir" - <span class="statistic">%88,4</span> (1.106 kişi)</li>
+<li><strong>S5:</strong> "Birimimde hangi işlerin kimin sorumluluğunda olduğu nettir" - <span class="statistic">%86,6</span> (1.084 kişi)</li>
+<li><strong>S6:</strong> "Yetki ve karar sınırlarım konusunda belirsizlik yaşamam" - <span class="statistic">%87,0</span> (1.089 kişi)</li>
+<li><strong>S7:</strong> "Görev ve talimatlar birbiriyle uyumludur" - <span class="statistic">%84,5</span> (1.057 kişi)</li>
+</ul>
+
+<p>Rizzo ve diğerlerinin (1970) klasik Rol Belirsizliği ve Rol Çatışması ölçeğinin bulgularıyla karşılaştırıldığında, belediyemizin skorları yüksek seviyededir. Ancak <strong>S7</strong> sorusundaki görece düşük skor (%84,5), bazı durumlarda çelişkili talimatlar veya uyumsuz görev atamaları olabileceğine işaret etmektedir.</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">18 çalışan</span> "rol netliği", "görev dağılımı", "yetki sınırları" konularına değinmiştir. Özellikle Gençlik ve Spor Hizmetleri Müdürlüğü'nden gelen yorumlar dikkat çekicidir:</p>
+
+<div class="quote">
+"Personellerin iş tanımı net bir şekilde belirlenmeli." (Gençlik ve Spor Hizmetleri)
+</div>
+
+<div class="quote">
+"Dönüşümlü çalışılan tesislerde işlerin iş bölümüne uyum sağlamadığı ve buda bizi olumsuz etkilemektedir çözüm odaklı sonuçlar alamıyoruz." (Gençlik ve Spor Hizmetleri)
+</div>
+
+<p>Sonuç olarak, belediyemizin bu beş güçlü alanı (Kamu Hizmeti Motivasyonu, İş-Kişi Uyumu, Çalışma Arkadaşları, Yöneticilerle İlişkiler, Rol Netliği) kurumsal sağlığımızın temelini oluşturmaktadır. JD-R modelinin öngördüğü gibi, bu alanlar "iş kaynakları" olarak çalışanlarımızı desteklemekte ve genel memnuniyet düzeyimizi %90,8 gibi yüksek bir seviyede tutmaktadır.</p>
+
+<div class="page-break"></div>
+
+<h2>3.3. Geliştirmemiz Gereken Alanlar</h2>
+
+<p>Bu bölümde, belediyemizin görece düşük skorlara sahip beş temasını, iyileştirme fırsatları açısından değerlendireceğiz. Bu temaların "düşük" olarak nitelendirilmesi görecelidir - hepsi %70'in üzerinde skorlara sahiptir. Ancak diğer temalarla kıyaslandığında ve açık uçlu yorumların yoğunluğu göz önüne alındığında, bu alanlara öncelikli dikkat gösterilmesi gerekmektedir.</p>
+
+<h3>3.3.1. Talep Yoğunluğu (İş Yükü) (%69,1 - 865 kişi)</h3>
+
+<p>Belediyemizin en düşük skora sahip teması <span class="statistic">%69,1</span> ile Talep Yoğunluğudur (<span class="statistic">865 kişi yüksek iş yükü bildirmiş</span>). Bu skor, JD-R modelinin "iş talepleri" boyutunu temsil etmektedir ve Arnavutköy'ün hızla gelişen bir ilçe olmasının doğal sonucudur. Ancak sürdürülebilir bir iş ortamı için, bu yüksek talebin dengede tutulması kritik önem taşımaktadır.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S8:</strong> "İşim gereği duygusal olarak zorlayıcı durumlarla oldukça sık karşılaşırım" - <span class="statistic">%70,8</span> (886 kişi)</li>
+<li><strong>S9:</strong> "Gün içinde yetiştirmem gereken görevler çoğu zaman fazla olur" - <span class="statistic">%70,4</span> (881 kişi)</li>
+<li><strong>S10:</strong> "Vatandaş/başvuru talep yoğunluğu işim gereği fazladır" - <span class="statistic">%70,6</span> (883 kişi)</li>
+<li><strong>S11:</strong> "İşimi tamamlamak için sık sık zaman sıkışıklığı yaşarım" - <span class="statistic">%64,7</strong> (810 kişi)</li>
+</ul>
+
+<p>Karasek'in İş Talep-Kontrol Modeli (1979) ve Demerouti ve diğerlerinin JD-R modeli (2001) çerçevesinde değerlendirildiğinde, bu yüksek talep düzeyi tek başına sorun teşkil etmez - ancak yeterli kaynaklar (destek, otonomi, ödül) ile dengelenmediğinde tükenmişlik riskini artırır. Belediyemizin genel destek skoru %82,3 olduğu için, şu anda bu denge pozitif yöndedir (+13,2). Ancak bazı müdürlüklerde (İmar ve Şehircilik: -2,3, Gelirler: -2,5, Veteriner: -3,5) negatif denge puanları görülmektedir.</p>
+
+<p>Açık uçlu yorumlarda sadece <span class="statistic">10 çalışan</span> doğrudan "iş yükü" veya "personel eksikliği" konularına değinmiştir - bu sayı, tema skorunun düşüklüğüne kıyasla şaşırtıcı derecede azdır. Bu durum iki şekilde yorumlanabilir: (1) Çalışanlarımız iş yükünü "işin doğası" olarak kabul etmekte ve şikayet konusu yapmamaktadır, veya (2) İş yükü stresi, doğrudan "iş yükü" kelimesiyle değil, dolaylı olarak diğer kategorilerde (yemek, servis, maaş gibi) yansıtılmaktadır.</p>
+
+<div class="quote">
+"Ruhsat başvurularında yaşanan yoğunluktan dolayı neredeyse bir günde bir evraktan çıkışıyoruz. Bunun maddi ve manevi karşılığının talep ediyoruz." (İmar ve Şehircilik)
+</div>
+
+<div class="quote">
+"Günde ortalama 160–200 çağrı, 3 ila 4 saat arası konuşma süreleri ofis içi gerginliğe performansa sebep olmaktadır." (Halkla İlişkiler)
+</div>
+
+<p>Özellikle bazı müdürlüklerde (İmar ve Şehircilik: %83,2, Veteriner: %82,3, Fen İşleri: %80,3, Gelirler: %79,9) iş yükü skorları oldukça yüksektir. Bu müdürlüklerde personel sayısının artırılması veya iş süreçlerinin optimize edilmesi değerlendirilmelidir.</p>
+
+<p>Ruh sağlığı verilerimiz de bu konuya ışık tutmaktadır: İş yükü en yüksek müdürlükler (Fen İşleri: %63,7, İmar: %58,5, Veteriner: %58,5) aynı zamanda ruh sağlığı risklerinin de yüksek olduğu müdürlüklerdir. Bu ilişki, iş talepleri ile psikolojik iyilik hali arasındaki güçlü bağlantıyı doğrulamaktadır.</p>
+
+<h3>3.3.2. Çalışma Koşulları (%72,2 - 904 kişi)</h3>
+
+<p>İkinci geliştirme alanımız <span class="statistic">%72,2</span> skoruyla Çalışma Koşullarıdır (<span class="statistic">904 kişi memnun</span>). Bu tema, fiziki çalışma ortamı, yemekhane, servis, teknoloji altyapısı gibi "hijyen faktörlerini" (Herzberg, 1959) kapsamaktadır. Herzberg'in teorisine göre, hijyen faktörlerinin yetersizliği memnuniyetsizliğe yol açarken, varlığı sadece memnuniyetsizliği önler, gerçek motivasyonu artırmaz. Dolayısıyla, bu alandaki iyileştirmeler doğrudan motivasyonu artırmasa da, memnuniyetsizliği azaltacak ve çalışan refahını koruyacaktır.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S26:</strong> "Çalışma alanlarımın temizliği yeterlidir" - <span class="statistic">%79,4</span> (994 kişi)</li>
+<li><strong>S27:</strong> "Isıtma/soğutma (iklimlendirme) sistemleri yeterlidir" - <span class="statistic">%74,1</span> (927 kişi)</li>
+<li><strong>S28:</strong> "Bireysel çalışma alanım (masa, sandalye, priz vb.) işimi rahat yapmama elverişlidir" - <span class="statistic">%79,2</span> (991 kişi)</li>
+<li><strong>S29:</strong> "Ortak alanlar (çay ocağı, dinlenme alanı, tuvaletler vb.) yeterlidir" - <span class="statistic">%70,4</span> (881 kişi)</li>
+<li><strong>S30:</strong> "Yemekhane/yemek hizmeti kalitesinden memnunum" - <span class="statistic">%57,2</span> (716 kişi)</li>
+<li><strong>S31:</strong> "İş sağlığı ve güvenliği (İSG) uygulamaları düzenli ve yeterlidir" - <span class="statistic">%76,3</span> (954 kişi)</li>
+<li><strong>S32:</strong> "Servis (ulaşım) hizmeti kalitesi yeterlidir" - <span class="statistic">%67,7</span> (847 kişi)</li>
+<li><strong>S33:</strong> "Sağlanan teknoloji altyapısı yeterlidir" - <span class="statistic">%75,2</span> (941 kişi)</li>
+<li><strong>S34:</strong> "Piyasa koşullarıyla kıyaslandığında verilen ücretler makuldür" - <span class="statistic">%69,0</span> (863 kişi)</li>
+</ul>
+
+<p>Bu tema içerisinde en düşük skorlar <strong>S30 (Yemekhane: %57,2)</strong> ve <strong>S32 (Servis: %67,7)</strong> sorularında görülmektedir. Açık uçlu yorumlar bu bulguları güçlü bir şekilde desteklemektedir:</p>
+
+<p><strong>Yemekhane:</strong> <span class="statistic">232 çalışan</span> yemek kalitesi, fiyat, hijyen konularında yorum yapmıştır - bu, tüm açık uçlu kategoriler arasında ikinci en yüksek rakamdır. Yorumların neredeyse tamamı olumsuz veya iyileştirme önerisi niteliğindedir:</p>
+
+<div class="quote">
+"Yemekhane yemeklerinde kalite bulunmuyor. Yemek kalitesinde iyileştirme yapılmalı." (Fen İşleri)
+</div>
+
+<div class="quote">
+"Yemekhane hizmetlerinden pek memnun değiliz. Şirket personelleri yediği kadar ücret ödemesi gerektiğini düşünmekteyim" (İnovasyon ve Teknoloji)
+</div>
+
+<div class="quote">
+"Yemekhanedeki yemeklerin düzeltilmesini istiyorum. Her anket, şikayet talebinde bulunuyoruz ama değişen bir şey yok." (İnovasyon ve Teknoloji)
+</div>
+
+<p><strong>Servis/Ulaşım:</strong> <span class="statistic">95 çalışan</span> servis güzergahları, ilçe dışı ulaşım, servis ücretleri konularında yorum yapmıştır:</p>
+
+<div class="quote">
+"Servislerin iyileştirilmesi hususunda çalışma yapılabilir. Belediyemizde ilçe dışında çalışan birçok personel mevcut. Ulaşım konusunda zorluklar çekiliyor. Servislerin eski haline gelmesini öneriyorum." (Koordinasyon İşleri)
+</div>
+
+<div class="quote">
+"Servislerin eskisi gibi olması." (Gelirler)
+</div>
+
+<p><strong>Çalışma Alanı/Donanım:</strong> <span class="statistic">146 çalışan</span> tuvalet, lavabo, soyunma odası, dolap, ısıtma, temizlik gibi fiziki koşullarla ilgili yorum yapmıştır. Özellikle Temizlik İşleri Müdürlüğü'nde (<span class="statistic">yaklaşık 80 yorum</span>) bu konular yoğunlaşmaktadır:</p>
+
+<div class="quote">
+"Şantiyede tuvalet, çay ocağı ve mescit yetersiz." (Temizlik İşleri)
+</div>
+
+<div class="quote">
+"500 küsür insana 3 tuvalet yetersiz. Genel olarak oturma alanımız yetersiz. Çay ocağı, tuvalet, soyunma dolabı ve duş alanımız hiçbir şekilde yeterli değil." (Temizlik İşleri)
+</div>
+
+<p><strong>Maaş/Ücret:</strong> <strong>S34</strong> sorusundaki %69,0'lık skor ve açık uçlu yorumlarda <span class="statistic">163 çalışanın</span> maaş iyileştirme talebi, bu konunun önemini göstermektedir. Ancak bu konu, belediyenin doğrudan kontrol edemeyeceği makro ekonomik ve bütçe politikaları ile ilişkili olduğu için, kısa vadede iyileştirme imkanı sınırlıdır. Bunun yerine, "dolaylı ekonomik faydalar" (sosyal tesis indirimleri, ev sahibi yapma programları, kreş desteği vb.) değerlendirilebilir:</p>
+
+<div class="quote">
+"Sosyal konut projelerinde personellere öncelik verilmesini talep ediyorum. Personellere verilen maaşta ve ikramiyelerde iyileştirme talep ediyorum." (Zabıta)
+</div>
+
+<div class="quote">
+"Belediye çalışanı olarak Servisimizin ücretsiz olmasını talep ediyorum. maaştan kesilerek ev sahibi olmak isterim. moral ve motivasyon gezileri talep ediyorum" (Sosyal Destek Hizmetleri)
+</div>
+
+<h3>3.3.3. Eğitim ve Gelişim (%75,8 - 949 kişi)</h3>
+
+<p>Üçüncü geliştirme alanımız <span class="statistic">%75,8</span> skoruyla Eğitim ve Gelişim temasıdır (<span class="statistic">949 kişi memnun</span>). Öğrenen Organizasyon Teorisi (Senge, 1990) ve Beşeri Sermaye Teorisi (Becker, 1964) perspektifinden bakıldığında, çalışan eğitimi ve gelişimi hem bireysel performansı hem de örgütsel yenilik kapasitesini artırır.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S42:</strong> "Kurumda yapılan eğitim faaliyetlerini yeterli buluyorum" - <span class="statistic">%74,8</span> (936 kişi)</li>
+<li><strong>S43:</strong> "Yapılan eğitimlerin kişisel ve mesleki gelişimime katkısı olduğunu düşünüyorum" - <span class="statistic">%76,8</span> (961 kişi)</li>
+</ul>
+
+<p>Açık uçlu yorumlarda sadece <span class="statistic">23 çalışan</span> eğitim konusuna değinmiştir - bu düşük rakam, eğitim konusunun "acil" bir ihtiyaç olarak algılanmadığını göstermektedir. Ancak yorumların niteliği, spesifik eğitim ihtiyaçlarına işaret etmektedir:</p>
+
+<div class="quote">
+"Mesleki eğitim programları düzenlenebilir. Bu daha iyi bir hizmetide beraberinde getirebilir." (Kültür İşleri)
+</div>
+
+<div class="quote">
+"Kurumda yapılan eğitim faaliyetlerini yeterli buluyorum fakat en çok olarak Çevre Mühendisliği adına kurslar stajlar ve benzeri bu tarzlarda eksikler gördüğümüm için teknik gezilerin arttırılmasını talep ediyorum." (İmar ve Şehircilik)
+</div>
+
+<p>Bazı müdürlüklerde (özellikle Güvenlik - Destek Hizmetleri) eğitim talebi daha yoğundur:</p>
+
+<div class="quote">
+"İşimiz gereği verilen eğitimlerin daha çok ve sıklıkla yapılmasını isteriz." (Destek Hizmetleri - Güvenlik)
+</div>
+
+<h3>3.3.4. Yetkinlik ve Performans Yönetimi (%77,2 - 966 kişi)</h3>
+
+<p>Dördüncü geliştirme alanımız <span class="statistic">%77,2</span> skoruyla Yetkinlik ve Performans Yönetimi temasıdır (<span class="statistic">966 kişi memnun</span>). Bu tema, Performans Yönetimi Teorisi (Aguinis, 2009) çerçevesinde değerlendirildiğinde, performans değerlendirme sistemlerinin "adalet algısı" ve "gelişim odaklılığı" boyutlarında iyileştirme fırsatları olduğunu göstermektedir.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S38:</strong> "Yetkinlik Bazlı Performans değerlendirme kriterleri nettir" - <span class="statistic">%80,6</span> (1.009 kişi)</li>
+<li><strong>S39:</strong> "Yetkinlik Bazlı Performans değerlendirme kriterleri adildir" - <span class="statistic">%77,2</span> (966 kişi)</li>
+<li><strong>S40:</strong> "Performansım düzenli aralıklarla değerlendirilir" - <span class="statistic">%77,0</span> (963 kişi)</li>
+<li><strong>S41:</strong> "Değerlendirme sonrasında yapıcı geri bildirim alırım" - <span class="statistic">%74,2</span> (928 kişi)</li>
+</ul>
+
+<p>Özellikle <strong>S39</strong> ve <strong>S41</strong> sorularındaki düşük skorlar (%77,2 ve %74,2), performans değerlendirme sürecinde "adalet algısı" ve "geri bildirim kalitesi" konularında çalışanların tereddütleri olduğunu göstermektedir. Örgütsel Adalet Teorisi (Greenberg, 1987) açısından bakıldığında, adil olmayan performans değerlendirmeleri örgütsel güveni zedeler ve motivasyonu düşürür.</p>
+
+<p>Açık uçlu yorumlarda performans yönetimi doğrudan bahsedilmemekle birlikte, "liyakat", "adam kayırma", "ayrımcılık" gibi konulara değinen <span class="statistic">yaklaşık 40 yorum</span> dolaylı olarak bu temayı ilgilendirmektedir:</p>
+
+<div class="quote">
+"Çalıştığım kurumdan genel anlamda memnunum. Ancak çalışanlar arası eşit iş dağılımı ve ekip çalışmasına daha fazla önem verilmesi ve bununla ilgili ciddi yaptırımlar uygulanması gerektiğini düşünüyorum." (Plan ve Proje)
+</div>
+
+<div class="quote">
+"Liyakat noksanlığı olan ve personele destekten ziyade yük olan amirler yerine donanımlı amirlerin istihdam edilmesini talep ediyorum." (Zabıta)
+</div>
+
+<h3>3.3.5. Kurum İçi İletişim (%79,8 - 999 kişi)</h3>
+
+<p>Beşinci geliştirme alanımız <span class="statistic">%79,8</span> skoruyla Kurum İçi İletişim temasıdır (<span class="statistic">999 kişi memnun</span>). Örgütsel İletişim Teorisi (Goldhaber, 1993) perspektifinden değerlendirildiğinde, etkili iletişim "bilgi akışı", "geri bildirim mekanizmaları" ve "şeffaflık" boyutlarından oluşur.</p>
+
+<p>Temayı oluşturan sorular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S23:</strong> "Yaptığımız öneri ve geri bildirimlerin sonuçları hakkında bilgilendiriliriz" - <span class="statistic">%79,2</span> (991 kişi)</li>
+<li><strong>S24:</strong> "Belediyede alınan karar ve gelişmelerden iletişim kanalları üzerinden haberdar edilirim" - <span class="statistic">%80,4</span> (1.006 kişi)</li>
+</ul>
+
+<p>Açık uçlu yorumlarda <span class="statistic">13 çalışan</span> iletişim ve koordinasyon konularına değinmiştir:</p>
+
+<div class="quote">
+"Belediye genelinde iletişim kopukluğu tarafımca mevcut. bunun giderilmesi için girişimlerde bulunulmasını talep ediyorum. örneğin ilçe geneli ilgilendiren bir çalışma,uygulama,saha uygulaması ve benzeri gibi konuların hangi aşamada olduğunu birimler birbiriyle konuşup aktarmalı" (Plan ve Proje)
+</div>
+
+<div class="quote">
+"Müdürlüğümüzün daha ileriye gidebilmesi için sunabileceğimiz tavsiyeler var" (Halkla İlişkiler)
+</div>
+
+<p>Sonuç olarak, bu beş geliştirme alanı (Talep Yoğunluğu, Çalışma Koşulları, Eğitim, Performans Yönetimi, İletişim) belediyemizin iyileştirme önceliklerini belirlemektedir. JD-R modelinin öngördüğü gibi, bu alanlardaki iyileştirmeler "iş kaynaklarını" güçlendirecek ve çalışan refahını artıracaktır.</p>
+
+<div class="page-break"></div>
+
+<h2>3.4. Ruh Sağlığı Taraması (Psikolojik İyi Oluş)</h2>
+
+<p>Dünya Sağlık Örgütü (WHO, 2022), ruh sağlığını "bireyin kendi potansiyelini gerçekleştirebilmesi, yaşamın normal stresleriyle başa çıkabilmesi, üretken ve verimli çalışabilmesi ve toplumuna katkıda bulunabilmesi durumu" olarak tanımlamaktadır. Bu tanım, ruh sağlığının sadece hastalık yokluğu değil, aynı zamanda işlevsellik ve refah hali olduğunu vurgulamaktadır.</p>
+
+<p>Anketimizde, Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak bir "Psikolojik İyi Oluş Taraması" gerçekleştirilmiştir. Patient Health Questionnaire-2 (PHQ-2) ve Generalized Anxiety Disorder-2 (GAD-2) gibi yaygın kullanılan tarama araçlarından uyarlanan dört soru ile, çalışanlarımızın depresyon ve anksiyete belirtileri açısından risk profili ölçülmüştür.</p>
+
+<div class="info-box">
+<div class="info-box-title">Önemli Not: Ruh Sağlığı Skorlarının Yorumlanması</div>
+<p>Bu bölümdeki skorlar <strong>TERS KODLU</strong>dur - yüksek skor OLUMSUZ durumu gösterir:</p>
+<p><strong>%52,2 Ruh Sağlığı Skoru =</strong> Çalışanların %52,2'si son 2 hafta içinde psikolojik sıkıntı belirtileri göstermiştir.</p>
+<p>Bu, bir "hastalık teşhisi" değil, "dikkat gerektiren durumlar" taramasıdır. Yüksek skorlu kişiler mutlaka profesyonel destek almalıdır.</p>
+</div>
+
+<p>Kullanılan sorular (son 2 hafta içinde):</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>S46:</strong> "Zevk aldığım şeylere karşı keyif alamadığım günler çok oldu" - <span class="statistic">%56,1</span> (702 kişi)</li>
+<li><strong>S47:</strong> "Kendimi sık sık üzgün, çökkün veya umutsuz hissettim" - <span class="statistic">%50,9</span> (637 kişi)</li>
+<li><strong>S48:</strong> "Sık sık gergin veya kaygılı hissettim" - <span class="statistic">%50,8</span> (635 kişi)</li>
+<li><strong>S49:</strong> "Endişelerimi kontrol etmekte zorlandığım günler çok oldu" - <span class="statistic">%50,9</span> (637 kişi)</li>
+</ul>
+
+<p>Belediye genelinde <span class="statistic">Ruh Sağlığı Genel Skoru %52,2</span> olarak hesaplanmıştır (<span class="statistic">653 kişi risk göstergesi</span>). Bu skor, çalışanlarımızın yaklaşık yarısının son iki hafta içinde depresyon ve/veya anksiyete belirtileri yaşadığını göstermektedir. Bu oran, COVID-19 sonrası küresel ruh sağlığı krizi (WHO, 2022) ve Türkiye'deki genel popülasyondaki anksiyete oranları (%30-40, Bilge ve Bilge, 2020) göz önüne alındığında, dikkat çekici derecede yüksektir.</p>
+
+<p>Özellikle <strong>S46</strong> sorusundaki %56,1'lik yüksek oran (%56,1 = 702 kişi), "anhedoni" (keyif alamama) belirtisinin yaygınlığını göstermektedir. Anhedoni, depresyonun temel belirtilerinden biridir ve iş performansını, sosyal ilişkileri ve genel yaşam kalitesini olumsuz etkilemektedir (American Psychiatric Association, 2013).</p>
+
+<table>
+<thead>
+<tr>
+    <th>Müdürlük</th>
+    <th class="number">Ruh Sağlığı Riski %</th>
+    <th class="number">Sigara %</th>
+    <th class="number">İş Yükü %</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Fen İşleri</td><td class="number">63,7</td><td class="number">62,7</td><td class="number">80,3</td></tr>
+<tr><td>Park ve Bahçeler</td><td class="number">58,1</td><td class="number">39,6</td><td class="number">76,3</td></tr>
+<tr><td>Veteriner İşleri</td><td class="number">58,5</td><td class="number">62,5</td><td class="number">82,3</td></tr>
+<tr><td>İmar ve Şehircilik</td><td class="number">58,5</td><td class="number">28,6</td><td class="number">83,2</td></tr>
+<tr><td>Temizlik İşleri</td><td class="number">56,7</td><td class="number">51,2</td><td class="number">71,9</td></tr>
+<tr><td>Emlak ve İstimlak</td><td class="number">56,7</td><td class="number">14,3</td><td class="number">78,6</td></tr>
+<tr><td>Sosyal Destek Hizmetleri</td><td class="number">55,6</td><td class="number">36,4</td><td class="number">75,2</td></tr>
+<tr><td>Hukuk İşleri</td><td class="number">55,0</td><td class="number">54,5</td><td class="number">69,3</td></tr>
+<tr><td>İşletme ve İştirakler</td><td class="number">54,8</td><td class="number">50,0</td><td class="number">69,5</td></tr>
+<tr><td>Muhtarlık İşleri</td><td class="number">54,5</td><td class="number">33,3</td><td class="number">56,3</td></tr>
+<tr><td>Yazı İşleri</td><td class="number">54,1</td><td class="number">34,5</td><td class="number">57,6</td></tr>
+<tr><td>Mali Hizmetler</td><td class="number">54,2</td><td class="number">22,2</td><td class="number">65,3</td></tr>
+<tr><td>Gelirler</td><td class="number">53,7</td><td class="number">54,8</td><td class="number">79,9</td></tr>
+<tr><td>Halkla İlişkiler</td><td class="number">52,9</td><td class="number">60,9</td><td class="number">72,6</td></tr>
+<tr><td>Zabıta</td><td class="number">52,2</td><td class="number">46,3</td><td class="number">76,7</td></tr>
+<tr style="background-color: #e0e0e0; font-weight: bold;"><td>GENEL BELEDİYE</td><td class="number">52,2</td><td class="number">44,9</td><td class="number">69,1</td></tr>
+<tr><td>Strateji Geliştirme</td><td class="number">50,9</td><td class="number">42,9</td><td class="number">50,9</td></tr>
+<tr><td>Yapı Kontrol</td><td class="number">50,2</td><td class="number">60,0</td><td class="number">79,3</td></tr>
+<tr><td>Plan ve Proje</td><td class="number">60,0</td><td class="number">25,0</td><td class="number">68,3</td></tr>
+<tr><td>Kültür İşleri</td><td class="number">48,9</td><td class="number">29,3</td><td class="number">58,4</td></tr>
+<tr><td>İnsan Kaynakları ve Eğitim</td><td class="number">48,1</td><td class="number">30,8</td><td class="number">53,9</td></tr>
+<tr><td>İklim Değişikliği ve Sıfır Atık</td><td class="number">48,0</td><td class="number">70,6</td><td class="number">78,7</td></tr>
+<tr><td>Gençlik ve Spor Hizmetleri</td><td class="number">48,0</td><td class="number">43,6</td><td class="number">63,6</td></tr>
+<tr><td>Destek Hizmetleri</td><td class="number">47,9</td><td class="number">46,0</td><td class="number">62,3</td></tr>
+<tr><td>Basın ve Yayın</td><td class="number">47,6</td><td class="number">38,9</td><td class="number">61,8</td></tr>
+<tr><td>Afet İşleri</td><td class="number">46,6</td><td class="number">27,3</td><td class="number">52,3</td></tr>
+<tr><td>Koordinasyon İşleri</td><td class="number">46,2</td><td class="number">71,4</td><td class="number">51,8</td></tr>
+<tr><td>İnovasyon ve Teknoloji</td><td class="number">46,4</td><td class="number">46,9</td><td class="number">61,0</td></tr>
+<tr><td>Akıllı Ulaşım Sistemleri</td><td class="number">44,5</td><td class="number">26,7</td><td class="number">60,3</td></tr>
+<tr><td>Özel Kalem</td><td class="number">39,2</td><td class="number">43,8</td><td class="number">67,1</td></tr>
+<tr><td>Ruhsat ve Denetim</td><td class="number">38,4</td><td class="number">36,4</td><td class="number">59,1</td></tr>
+</tbody>
+</table>
+
+<p>Tabloda görüldüğü gibi, ruh sağlığı riski en yüksek müdürlükler genellikle yüksek iş yüküne sahip müdürlüklerdir (Fen İşleri: %80,3, İmar: %83,2, Veteriner: %82,3). Bu ilişki, JD-R modelinin temel varsayımını doğrulamaktadır: Yüksek iş talepleri ve yetersiz kaynaklar, psikolojik stresin artmasına yol açar.</p>
+
+<p>İlginç bir bulgu da sigara kullanımı ile ruh sağlığı riski arasındaki ilişkidir. Literatür, sigara kullanımının stres ve anksiyete ile pozitif korelasyon gösterdiğini ortaya koymaktadır (Fluharty ve diğerleri, 2017). Tablomuzda da bu ilişki görülmektedir: İklim Değişikliği ve Sıfır Atık Müdürlüğü'nde hem sigara kullanımı (%70,6) hem de iş yükü (%78,7) yüksektir, ancak ruh sağlığı riski ortalamanın altındadır (%48,0). Bu durum, sigara kullanımının "başa çıkma mekanizması" olarak kullanıldığını düşündürmektedir.</p>
+
+<div class="info-box">
+<div class="info-box-title">Kurum Psikoloğu İçin Öncelikli Müdürlükler</div>
+<p><strong>Yüksek Risk (>%58):</strong> Fen İşleri, Veteriner, İmar ve Şehircilik, Park ve Bahçeler</p>
+<p><strong>Orta-Yüksek Risk (%54-58):</strong> Temizlik, Emlak ve İstimlak, Sosyal Destek, Hukuk, İşletme</p>
+<p><strong>Öneri:</strong> Bu müdürlüklerde hedefli psikolojik destek programları, stres yönetimi eğitimleri ve bireysel danışmanlık hizmetleri planlanmalıdır.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>3.5. Sosyal Medya Takip Oranları ve Sigara Alışkanlığı</h2>
+
+<p>Anketimizin son modülü, çalışanlarımızın belediyemizin ve başkanımızın sosyal medya hesaplarını takip etme oranlarını ve sigara kullanım alışkanlıklarını ölçmüştür. Bu veriler, kurumsal iletişim stratejilerimiz ve sağlık programlarımız için önemli girdiler sağlamaktadır.</p>
+
+<h3>3.5.1. Sosyal Medya Takip Oranları</h3>
+
+<p>Dijital çağda, kurumsal iletişimin önemli bir ayağı sosyal medya platformlarıdır. Çalışanlarımızın kurumumuzun sosyal medya hesaplarını takip etmeleri, hem kurumsal aidiyetin bir göstergesi hem de bilgilenme kanalının bir parçasıdır.</p>
+
+<table>
+<thead>
+<tr>
+    <th>Platform</th>
+    <th class="number">Belediye Hesabı %</th>
+    <th class="number">Başkan Hesabı %</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Instagram</td><td class="number">81,0 (1.014 kişi)</td><td class="number">76,9 (962 kişi)</td></tr>
+<tr><td>Twitter/X</td><td class="number">31,1 (389 kişi)</td><td class="number">29,3 (367 kişi)</td></tr>
+<tr><td>Facebook</td><td class="number">42,8 (535 kişi)</td><td class="number">39,6 (496 kişi)</td></tr>
+<tr><td>NextSosyal</td><td class="number">17,8 (223 kişi)</td><td class="number">17,6 (220 kişi)</td></tr>
+</tbody>
+</table>
+
+<p><strong>Instagram</strong> açık ara en yüksek takip oranına sahiptir (<span class="statistic">Belediye: %81,0, Başkan: %76,9</span>). Bu sonuç, Instagram'ın Türkiye'deki yüksek kullanım oranı (%54,6, Datareportal 2023) ve görsel ağırlıklı içeriğin çekiciliği ile örtüşmektedir. Saha çalışmalarımız sırasında yaptığımız teşvik faaliyetlerinin de bu yüksek orana katkısı olmuştur.</p>
+
+<p><strong>Twitter/X</strong> ve <strong>Facebook</strong> takip oranları düşüktür (sırasıyla %31,1 ve %42,8). Twitter'ın Türkiye'deki kullanımının sınırlı olması ve platformun daha çok "haber ve gündem" odaklı olması, düşük takip oranını açıklayabilir. Facebook ise yaş gruplarına göre farklılık göstermektedir - genç çalışanlar arasında Facebook kullanımı azalırken, orta ve üst yaş gruplarında hala yaygındır.</p>
+
+<p><strong>NextSosyal</strong> en düşük takip oranına sahiptir (%17,8). Bu platform, Türkiye'de Twitter'a alternatif olarak geliştirilmiş yerli bir sosyal medya ağıdır, ancak henüz yaygın kabul görmemiştir.</p>
+
+<div class="info-box">
+<div class="info-box-title">Kurumsal İletişim İçin Öneriler</div>
+<p><strong>1.</strong> Instagram'a öncelik verin: En yüksek etkileşim burada.</p>
+<p><strong>2.</strong> Twitter ve Facebook'ta içerik çeşitliliği artırın: Görsel ağırlıklı, etkileşimli içerikler paylaşın.</p>
+<p><strong>3.</strong> Çalışan katılımını teşvik edin: Beğeni, yorum, paylaşım yapan çalışanları takdir edin.</p>
+<p><strong>4.</strong> İç iletişim için özel WhatsApp/Telegram grupları değerlendirin.</p>
+</div>
+
+<h3>3.5.2. Sigara Kullanımı</h3>
+
+<p>Belediye genelinde sigara kullanım oranı <span class="statistic">%44,9</span> olarak ölçülmüştür (<span class="statistic">562 kişi</span>). Bu oran, Türkiye'deki genel popülasyondaki sigara kullanım oranından (%31,6, Küresel Yetişkin Tütün Araştırması 2023) önemli ölçüde yüksektir. Çalışma ortamlarında stresin yüksek olması, sigara kullanımının artışını açıklayabilir.</p>
+
+<p>Müdürlükler bazında incelendiğinde, en yüksek sigara kullanım oranları:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li>Koordinasyon İşleri: <span class="statistic">%71,4</span></li>
+<li>İklim Değişikliği ve Sıfır Atık: <span class="statistic">%70,6</span></li>
+<li>Veteriner İşleri: <span class="statistic">%62,5</span></li>
+<li>Fen İşleri: <span class="statistic">%62,7</span></li>
+<li>Halkla İlişkiler: <span class="statistic">%60,9</span></li>
+<li>Yapı Kontrol: <span class="statistic">%60,0</span></li>
+</ul>
+
+<p>İlginç bir şekilde, yüksek sigara kullanımı ile yüksek iş yükü arasında güçlü bir ilişki görülmektedir. Bu müdürlüklerin çoğunda (Fen İşleri: %80,3, Veteriner: %82,3, İklim: %78,7, Yapı Kontrol: %79,3) iş yükü skorları da yüksektir. Bu ilişki, sigara kullanımının "stresle başa çıkma mekanizması" olarak kullanıldığını göstermektedir.</p>
+
+<p>Dünya Sağlık Örgütü (WHO, 2021), işyerlerinde sigara bırakma programlarının etkinliğini vurgulamaktadır. Belediyemizde de Kurum Psikoloğu koordinasyonunda, özellikle yüksek sigara kullanım oranına sahip müdürlüklerde hedefli sigara bırakma programları düzenlenebilir.</p>
+
+<div class="page-break"></div>
+
+<!-- BÖLÜM 4: MÜDÜRLÜK PROFİLLERİ -->
+<h1>4. MÜDÜRLÜK PROFİLLERİ</h1>
+
+<p>Bu bölümde, belediyemizin 30 müdürlüğünün her birinin detaylı profili sunulmaktadır. Müdürlükler, genel memnuniyet skorlarına göre en düşükten en yükseğe doğru sıralanmıştır. Her müdürlük için:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li>Genel Memnuniyet, İş Yükü, Destek ve Denge puanları</li>
+<li>Güçlü ve geliştirilmesi gereken temalar</li>
+<li>Ruh sağlığı ve sigara kullanım oranları</li>
+<li>Açık uçlu yorumlardan öne çıkan konular</li>
+</ul>
+
+<p>Bu detaylı profiller, her müdürlüğün kendine özgü dinamiklerini anlamaya ve özelleştirilmiş iyileştirme planları geliştirmeye imkan tanımaktadır.</p>
+
+<div class="info-box">
+<div class="info-box-title">Müdürlük Profilleri Okuma Kılavuzu</div>
+<p><strong>Genel Memnuniyet:</strong> %80 üzeri = Sağlıklı, %70-80 = İzlenmeli, %70 altı = Müdahale gerekli</p>
+<p><strong>İş Yükü-Destek Dengesi:</strong> Pozitif (+) = Dengede, Negatif (-) = Destek eksikliği</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %60 üzeri = Yüksek risk, %50-60 = Orta risk, %50 altı = Düşük risk</p>
+</div>
+
+<h2>4.1. İnsan Kaynakları ve Eğitim Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%80,8</span> (13 kişi katıldı, %100 katılım) | <strong>İş Yükü:</strong> %53,9 | <strong>Destek:</strong> %78,4 | <strong>Denge:</strong> +24,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %48,1 | <strong>Sigara:</strong> %30,8</p>
+
+<p>İnsan Kaynakları ve Eğitim Müdürlüğü, belediyemizin en düşük memnuniyet skoruna sahip müdürlüğüdür (%80,8). Ancak bu skor, literatürde "sağlıklı" kabul edilen %80 eşiğinin hemen üzerindedir. Müdürlüğün küçük personel sayısı (13 kişi) nedeniyle, bireysel farklılıkların etkisi daha belirgindir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> İş-Kişi Uyumu (%79,5), Kamu Hizmeti Motivasyonu (%83,3)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim ve Gelişim (%71,2), Yetkinlik ve Performans (%71,6), İletişim (%75,0)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">3 çalışan</span> maaş eşitsizliği ve kadro konularına değinmiştir:</p>
+
+<div class="quote">
+"Kurum içinde adil bir ücret düzeni olabilir. Yeni mezun personellerin (KHK) eski memur personelden fazla ücret alması hiç adil değil." (İnsan Kaynakları)
+</div>
+
+<p><strong>Öneri:</strong> Ücret politikalarında "deneyim-eğitim dengesi" konusunda şeffaf bir açıklama yapılması, çalışanların adalet algısını güçlendirebilir.</p>
+
+<h2>4.2. Zabıta Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%83,2</span> (135 kişiden 113 katıldı, %83,7 katılım) | <strong>İş Yükü:</strong> %76,7 | <strong>Destek:</strong> %79,8 | <strong>Denge:</strong> +3,1</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %52,2 | <strong>Sigara:</strong> %46,3</p>
+
+<p>Zabıta Müdürlüğü, yüksek iş yükü (%76,7) ve görece düşük denge puanı (+3,1) ile dikkat çekmektedir. Zabıta mesleğinin doğası gereği, çatışma yönetimi, fiziksel risk ve düzensiz çalışma saatleri içermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Çalışma Arkadaşları (%89,2), Kamu Hizmeti Motivasyonu (%92,5), İş-Kişi Uyumu (%90,6)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%68,5), Eğitim (%71,9), Yetkinlik (%71,8), İletişim (%74,7)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">51 çalışan</span> yorum yapmıştır. En sık bahsedilen konular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>Çalışma saatleri (24 yorum):</strong> "Çalışma saatlerinin 40 saate düşmesi", "Hafta sonu izinlerinin yıllık izinden sayılmaması"</li>
+<li><strong>Maaş ve sosyal haklar (18 yorum):</strong> "Diğer belediyelere göre maaşımız düşük", "SDS iyileştirmesi", "Maktu mesai"</li>
+<li><strong>Sosyal tesisler (8 yorum):</strong> "Spor salonu ücretsiz olmalı", "Sosyal tesis indirimleri yetersiz"</li>
+</ul>
+
+<div class="quote">
+"Çalışma saatlerimizin haftada 40 saat olmasını talep ediyorum. Spor salonlarının ücretsiz olmasını talep ediyorum." (Zabıta)
+</div>
+
+<div class="quote">
+"İstanbul'un diğer ilçe belediyeleriyle aynı sosyal ve maddi imkânlara sahip olmak istiyorum." (Zabıta)
+</div>
+
+<p><strong>Öneri:</strong> Zabıta yönetmeliğinde belirtilen çalışma saatleri ve sosyal haklar konusunda, diğer İstanbul belediyeleriyle karşılaştırmalı bir analiz yapılması ve iyileştirme planı geliştirilmesi önerilmektedir.</p>
+
+<h2>4.3. Veteriner İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%86,5</span> (38 kişiden 27 katıldı, %71,1 katılım) | <strong>İş Yükü:</strong> %82,3 | <strong>Destek:</strong> %78,8 | <strong>Denge:</strong> -3,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %58,5 (En yüksek 3. sırada) | <strong>Sigara:</strong> %62,5</p>
+
+<p>Veteriner İşleri Müdürlüğü, belediyemizin en yüksek iş yüküne (%82,3) ve tek negatif denge puanına (-3,5) sahip müdürlüklerinden biridir. Hayvan bakım evlerinin uzak konumu, su sıkıntısı, duygusal olarak zorlayıcı iş koşulları (hasta/yaralı hayvanlarla çalışma) ve personel eksikliği, yüksek stres düzeyini açıklamaktadır.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti Motivasyonu (%93,4), Çalışma Arkadaşları (%80,0)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Rol Netliği (%78,9), Çalışma Koşulları (%71,3), Yetkinlik (%73,7), Eğitim (%75,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">10 çalışan</span> yorum yapmıştır. Tüm yorumlar maaş iyileştirme ve altyapı sorunlarına odaklanmaktadır:</p>
+
+<div class="quote">
+"Maaşların artırılmasını istiyoruz. barınakta su sıkıntısı, olduğu için yeterli temizlik koşulları oluşmaz. Yaptığımız isten dolayı Psikolojik sıkıntılar yaşıyoruz merkeze uzak olduğumuz için herşeyden mahrumuz." (Veteriner)
+</div>
+
+<div class="quote">
+"Çalışmış olduğum birimde personel eksikliği var. En kısa zamanda personel alımı talep ediyorum." (Veteriner)
+</div>
+
+<p><strong>Öneri:</strong> (1) Yassıören hayvan bakım evinde su sorununun acil çözülmesi, (2) Personel sayısının artırılması veya vardiya sisteminin yeniden düzenlenmesi, (3) Duygusal destek programları (hayvan ölümleriyle başa çıkma, stres yönetimi) geliştirilmesi önerilmektedir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.4. Afet İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%90,9</span> (12 kişi, %100 katılım) | <strong>İş Yükü:</strong> %52,3 | <strong>Destek:</strong> %86,6 | <strong>Denge:</strong> +34,3</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %46,6 | <strong>Sigara:</strong> %27,3</p>
+
+<p>Afet İşleri Müdürlüğü, belediyemizin en yüksek iş yükü-destek dengesine (+34,3) sahip müdürlüğüdür. Düşük iş yükü (%52,3) ve yüksek destek (%86,6) kombinasyonu, ideal çalışma koşullarına işaret etmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> İş-Kişi Uyumu (%98,5), Görev-Rol Netliği (%97,7), Yöneticilerle İlişkiler (%96,6)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%68,2), Eğitim (%79,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">1 çalışan</span> psikolojik destek ve diyetisyen hizmetinden memnuniyetini ifade etmiştir.</p>
+
+<p><strong>Öneri:</strong> Afet İşleri Müdürlüğü'nün yüksek performans modeli, diğer müdürlükler için "iyi uygulama örneği" olarak incelenebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.5. Akıllı Ulaşım Sistemleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%94,7</span> (19 kişiden 15 katıldı) | <strong>İş Yükü:</strong> %60,3 | <strong>Destek:</strong> %84,2 | <strong>Denge:</strong> +23,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %44,5 | <strong>Sigara:</strong> %26,7</p>
+
+<p>En yüksek genel memnuniyet skorlarından birine (%94,7) sahiptir. Güçlü denge puanı (+23,9) ve düşük ruh sağlığı riski sağlıklı çalışma ortamını göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti Motivasyonu (%94,4), Yöneticilerle İlişkiler (%94,1)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%66,7), Çalışma Koşulları (%72,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">2 çalışan</span> maaş ve personel iletişimine değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Teknik personel için sektörel gelişim eğitimleri ve sosyal etkinlikler planlanabilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.6. Basın ve Yayın Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%93,1</span> (21 kişi, %100 katılım) | <strong>İş Yükü:</strong> %61,8 | <strong>Destek:</strong> %84,1 | <strong>Denge:</strong> +22,3</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %47,6 | <strong>Sigara:</strong> %38,9</p>
+
+<p>Tam katılım ve yüksek memnuniyet ile dikkat çekmektedir. Kamu Hizmeti Motivasyonu'nda %97,2 ile öne çıkmaktadır.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti Motivasyonu (%97,2), İş-Kişi Uyumu (%97,1)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%69,1), Eğitim (%74,3)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">14 çalışan</span> maaş (7 kişi), temizlik (5 kişi) ve sosyal alanlara (2 kişi) değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Çalışma alanlarının hijyen standartları gözden geçirilmeli, personel için dinlenme alanı tahsis edilebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.7. Destek Hizmetleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%95,1</span> (366 kişiden 307 katıldı) | <strong>İş Yükü:</strong> %62,3 | <strong>Destek:</strong> %86,8 | <strong>Denge:</strong> +24,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %47,9 | <strong>Sigara:</strong> %46,0</p>
+
+<p>Belediyemizin en büyük müdürlüklerinden biri olarak %95,1 gibi çok yüksek memnuniyete ulaşmıştır. Bu, büyük ekiplerde kalite yönetiminin başarılı örneğidir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti Motivasyonu (%94,4), İş-Kişi Uyumu (%93,4)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%82,6), Yetkinlik (%82,7)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">33 çalışan</span> servis/yemek (8 kişi), güvenlik (7 kişi), maaş (5 kişi), yönetici davranışları (4 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Güvenlik personeli için devriye araçları temin edilmeli, vardiyalı çalışanlar için özel düzenleme yapılmalıdır.</p>
+
+<div class="page-break"></div>
+
+<h2>4.8. Emlak ve İstimlak Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%91,7</span> (26 kişi, %100 katılım) | <strong>İş Yükü:</strong> %78,6 | <strong>Destek:</strong> %80,1 | <strong>Denge:</strong> +1,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %56,7 | <strong>Sigara:</strong> %14,3</p>
+
+<p>Yüksek iş yükü (%78,6) ve düşük denge (+1,5) ile dikkat çekmektedir. Eğitim alanındaki düşük skor (%58,6) iyileştirme gerektirmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Çalışma Arkadaşları (%94,8), Kamu Hizmeti (%94,8)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%58,6), Çalışma Koşulları (%63,4)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">17 çalışan</span> yemek kalitesi (8 kişi), servis (5 kişi), tekniker-mühendis maaş farkı (4 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Tekniker-mühendis ücret dengesinin şeffaf kriterlere dayalı gözden geçirilmesi ve teknik personel için mesleki eğitimler planlanması önerilmektedir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.9. Fen İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%88,1</span> (120 kişiden 73 katıldı, %60,8 katılım) | <strong>İş Yükü:</strong> %80,3 | <strong>Destek:</strong> %82,0 | <strong>Denge:</strong> +1,7</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %63,7 | <strong>Sigara:</strong> %62,7</p>
+
+<p>En düşük katılım oranı (%60,8) ve en yüksek ruh sağlığı riski (%63,7) ile dikkat çekmektedir. Yüksek iş yükü ve çok düşük denge, çalışanların stres altında olduğunu göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%90,9), İş-Kişi Uyumu (%90,8)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%72,6), Eğitim (%73,9)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">10 çalışan</span> saha araçlarının eski ve arızalı olması (4 kişi), yemek kalitesi (3 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Saha personelinin araç filosunun acilen yenilenmesi, yüksek ruh sağlığı riski nedeniyle psikolojik destek programlarına öncelikli erişim sağlanması, katılımı artırmak için güven ortamının güçlendirilmesi önceliklidir.</p>
+
+<div class="page-break"></div>
+
+<p><em>(Kalan 21 müdürlüğün detaylı analizleri devam etmektedir...)</em></p>
+
+<div class="page-break"></div>
+
+<h2>4.10. Gelirler Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%87,1</span> (39 kişiden 34 katıldı, %87,2 katılım) | <strong>İş Yükü:</strong> %79,9 | <strong>Destek:</strong> %77,4 | <strong>Denge:</strong> -2,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %53,7 | <strong>Sigara:</strong> %54,8</p>
+
+<p>Gelirler Müdürlüğü, negatif denge puanına (-2,5) sahip müdürlüklerden biridir. Yüksek iş yükü (%79,9) ve düşük destek (%77,4) kombinasyonu, çalışanların stres riski altında olduğunu göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti Motivasyonu (%92,1), İş-Kişi Uyumu (%85,7)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%62,1), Eğitim (%71,3), Yetkinlik (%72,9)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">14 çalışan</span> yemek (5 kişi), liyakat sistemi (3 kişi), servis (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Personel sayısı artırılmalı veya iş süreçleri optimize edilmelidir. Liyakat kriterlerinin şeffaflaştırılması önerilmektedir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.11. Gençlik ve Spor Hizmetleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%92,7</span> (131 kişiden 117 katıldı, %89,3 katılım) | <strong>İş Yükü:</strong> %63,6 | <strong>Destek:</strong> %85,9 | <strong>Denge:</strong> +22,3</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %48,0 | <strong>Sigara:</strong> %43,6</p>
+
+<p>Yüksek memnuniyet (%92,7) ve güçlü denge puanı (+22,3) ile sağlıklı bir çalışma ortamına sahiptir. 117 katılımcı ile geniş bir ekip başarıyla yönetilmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%94,5), İş-Kişi Uyumu (%91,9), Yönetici İlişkileri (%90,9)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%76,8), Eğitim (%80,6)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">22 çalışan</span> yemek hizmeti eşitliği (4 kişi), düğün salonu personel indirimi (3 kişi), tesislere yatırım (3 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Tesis bakım ve yenileme programları oluşturulmalı, personel için sosyal haklar genişletilebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.12. Halkla İlişkiler Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%92,4</span> (30 kişiden 25 katıldı, %83,3 katılım) | <strong>İş Yükü:</strong> %72,6 | <strong>Destek:</strong> %78,6 | <strong>Denge:</strong> +6,0</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %52,9 | <strong>Sigara:</strong> %60,9</p>
+
+<p>Yüksek memnuniyet skoruna rağmen, orta düzey iş yükü ve sigara kullanım oranının yüksekliği dikkat çekmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%95,3), Yöneticilerle İlişkiler (%89,9)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%64,4), İletişim (%74,5), Eğitim (%72,3)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">6 çalışan</span> çağrı yoğunluğu/stres (2 kişi), servis yetersizliği (1 kişi), Wi-Fi ihtiyacı (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Çağrı merkezi için psikolojik destek ve mola süreleri gözden geçirilmelidir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.13. Hukuk İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%84,1</span> (11 kişi, %109,1 katılım) | <strong>İş Yükü:</strong> %69,3 | <strong>Destek:</strong> %80,4 | <strong>Denge:</strong> +11,1</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %55,0 | <strong>Sigara:</strong> %54,5</p>
+
+<p>Küçük bir müdürlük olarak ortalama memnuniyet göstermektedir. Katılım %109,1 (personel değişimi sırasında yanıt verenler olabilir).</p>
+
+<p><strong>Güçlü Alanlar:</strong> Çalışma Arkadaşları (%93,2), Kamu Hizmeti (%87,1)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%64,8), Eğitim (%68,2)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">4 çalışan</span> yemek ücretleri (2 kişi), servis (1 kişi), dinlenme alanı (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Mesleki gelişim programları ve hukuk literatürü erişimi sağlanabilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.14. İklim Değişikliği ve Sıfır Atık Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%88,2</span> (24 kişiden 23 katıldı, %95,8 katılım) | <strong>İş Yükü:</strong> %78,7 | <strong>Destek:</strong> %79,4 | <strong>Denge:</strong> +0,7</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %48,0 | <strong>Sigara:</strong> %70,6</p>
+
+<p>Yüksek iş yükü ve çok düşük denge (+0,7) ile dengede olan bir müdürlük. Sigara kullanımı (%70,6) en yüksek oranlardan biridir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%91,2), İş-Kişi Uyumu (%90,7)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%65,9), Eğitim (%71,3)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">4 çalışan</span> araç/personel ihtiyacı (2 kişi), dolap/tuvalet yetersizliği (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Saha çalışmaları için araç temin edilmeli, fiziki koşullar iyileştirilmelidir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.15. İmar ve Şehircilik Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%87,5</span> (47 kişiden 43 katıldı, %91,5 katılım) | <strong>İş Yükü:</strong> %83,2 | <strong>Destek:</strong> %80,9 | <strong>Denge:</strong> -2,3</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %58,5 | <strong>Sigara:</strong> %28,6</p>
+
+<p>Belediyemizin en yüksek iş yüküne (%83,2) sahip müdürlüklerinden biri olup negatif denge (-2,3) göstermektedir. Ruhsat yoğunluğu ve vatandaş baskısı yüksek stres yaratmaktadır.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%89,0), Yöneticilerle İlişkiler (%88,6)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%66,3), Eğitim (%74,7)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">21 çalışan</span> iş yoğunluğu/maaş dengesizliği (7 kişi), yemek (5 kişi), servis (3 kişi), ofis gürültüsü (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Ruhsat süreçlerinin dijitalleşmesi, personel sayısının artırılması veya iş süreçlerinin optimizasyonu acil ihtiyaçtır.</p>
+
+<div class="page-break"></div>
+
+<div class="page-break"></div>
+
+<h2>4.16. İnovasyon ve Teknoloji Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%95,3</span> (41 kişiden 39 katıldı, %95,1 katılım) | <strong>İş Yükü:</strong> %61,0 | <strong>Destek:</strong> %85,2 | <strong>Denge:</strong> +24,2</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %46,4 | <strong>Sigara:</strong> %46,9</p>
+
+<p>En yüksek memnuniyet skorlarından birine (%95,3) sahiptir. Teknoloji ekibinin güçlü denge puanı (+24,2) ve düşük ruh sağlığı riski ideal çalışma ortamını göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> İş-Kişi Uyumu (%97,6), Kamu Hizmeti (%96,6), Görev-Rol Netliği (%92,0)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%70,6), Çalışma Koşulları (%74,0)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">16 çalışan</span> yemek sistemi/fiyatı (12 kişi), servis (2 kişi), maaş (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Yemek fiş sistemi günlüğe çevrilebilir. Teknoloji sektörü eğitimleri ve sertifika programları desteklenebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.17. İşletme ve İştirakler Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%96,9</span> (18 kişiden 8 katıldı, %44,4 katılım) | <strong>İş Yükü:</strong> %69,5 | <strong>Destek:</strong> %84,5 | <strong>Denge:</strong> +15,0</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %54,8 | <strong>Sigara:</strong> %50,0</p>
+
+<p>Çok yüksek memnuniyete (%96,9) rağmen düşük katılım oranı (%44,4) dikkat çekmektedir. Katılan 8 kişinin çok memnun olması olumludur.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%96,9), Görev-Rol Netliği (%88,3)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%74,0), Eğitim (%73,4)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">2 çalışan</span> ofis alanı yetersizliği ve dinlenme alanı ihtiyacına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Katılım oranını artırmak için çalışanlarla birebir görüşmeler yapılabilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.18. Koordinasyon İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%85,7</span> (6 kişiden 7 katıldı, %116,7 katılım) | <strong>İş Yükü:</strong> %51,8 | <strong>Destek:</strong> %86,2 | <strong>Denge:</strong> +34,4</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %46,2 | <strong>Sigara:</strong> %71,4</p>
+
+<p>En yüksek denge puanına (+34,4) sahip müdürlüklerden biri. Düşük iş yükü ve yüksek destek kombinasyonu idealdir. Ancak sigara oranı (%71,4) çok yüksektir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Yöneticilerle İlişkiler (%98,2), Çalışma Arkadaşları (%97,9)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%69,0), Eğitim (%75,0)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">4 çalışan</span> servis iyileştirme (2 kişi), çay servisi (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Sigara bırakma programları öncelikle bu müdürlüğe sunulabilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.19. Kültür İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%89,6</span> (87 kişiden 60 katıldı, %69,0 katılım) | <strong>İş Yükü:</strong> %58,4 | <strong>Destek:</strong> %80,3 | <strong>Denge:</strong> +21,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %48,9 | <strong>Sigara:</strong> %29,3</p>
+
+<p>Düşük katılım oranı (%69) iyileştirme gerektirir. Güçlü denge ve makul memnuniyet skoru olumludur.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%93,0), İş-Kişi Uyumu (%88,8)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%68,8), Eğitim (%68,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">10 çalışan</span> tuvalet yetersizliği (4 kişi), maaş (2 kişi), personel otopark (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Kültür merkezlerindeki tuvalet ve personel alanları genişletilmeli, otopark sorunu çözülmelidir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.20. Mali Hizmetler Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%86,1</span> (9 kişi, %100 katılım) | <strong>İş Yükü:</strong> %65,3 | <strong>Destek:</strong> %85,2 | <strong>Denge:</strong> +19,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %54,2 | <strong>Sigara:</strong> %22,2</p>
+
+<p>Tam katılım ve güçlü denge puanı olumlu göstergelerdir. Küçük ekip olarak verimli çalışmaktadır.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%95,4), İş-Kişi Uyumu (%94,2), Çalışma Arkadaşları (%93,9)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%72,7), Eğitim (%77,8)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">3 çalışan</span> çocuk bakım alanı (2 kişi), diyetisyen hizmeti (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Çalışan çocukları için etüt/etkinlik alanı değerlendirilebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.21. Muhtarlık İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%95,8</span> (5 kişiden 6 katıldı, %120 katılım) | <strong>İş Yükü:</strong> %56,3 | <strong>Destek:</strong> %79,5 | <strong>Denge:</strong> +23,2</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %54,5 | <strong>Sigara:</strong> %33,3</p>
+
+<p>Çok küçük bir müdürlük olarak yüksek memnuniyet ve güçlü denge puanı göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%90,3), İş-Kişi Uyumu (%91,7)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%63,3), Eğitim (%64,6), Yetkinlik (%68,8)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">2 çalışan</span> tuvalet ayrımı ve yemek yeme alanı ihtiyacına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Personel ve vatandaş alanlarının ayrılması değerlendirilebilir.</p>
+
+<div class="page-break"></div>
+
+<div class="page-break"></div>
+
+<h2>4.22. Özel Kalem Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%98,4</span> (15 kişiden 16 katıldı, %106,7 katılım) | <strong>İş Yükü:</strong> %67,1 | <strong>Destek:</strong> %90,0 | <strong>Denge:</strong> +22,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %39,2 | <strong>Sigara:</strong> %43,8</p>
+
+<p>Belediyemizin EN YÜKSEK memnuniyet skoruna (%98,4) sahip müdürlüğüdür. Çok güçlü yönetici desteği (%90,0) ve en düşük ruh sağlığı riski (%39,2) dikkat çekmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> İş-Kişi Uyumu (%98,4), Kamu Hizmeti (%95,8), Görev-Rol Netliği (%95,7)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%83,5), Eğitim (%81,3)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">2 çalışan</span> yemek lezzeti ve maaş-eğitim artışına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Bu müdürlüğün yüksek performans ve memnuniyet modeli, başkan yardımcılığı ve üst yönetim desteğinin örnek uygulaması olarak diğer birimlere aktarılabilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.23. Park ve Bahçeler Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%91,7</span> (85 kişiden 56 katıldı, %65,9 katılım) | <strong>İş Yükü:</strong> %76,3 | <strong>Destek:</strong> %83,7 | <strong>Denge:</strong> +7,4</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %58,1 | <strong>Sigara:</strong> %39,6</p>
+
+<p>Düşük katılım oranı (%65,9) ve yüksek ruh sağlığı riski (%58,1) iyileştirme gerektirir. Saha çalışmasının zorluğu hissedilmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%87,2), Görev-Rol Netliği (%87,4)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%79,4), Çalışma Koşulları (%80,0)</p>
+
+<p>Açık uçlu yorumlar tespit edilmemiştir.</p>
+
+<p><strong>Öneri:</strong> Saha çalışanları için dinlenme noktaları ve ekipman kalitesi artırılabilir. Katılım oranını yükseltmek için müdürlük içi iletişim güçlendirilmelidir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.24. Plan ve Proje Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%84,4</span> (17 kişi, %100 katılım) | <strong>İş Yükü:</strong> %68,3 | <strong>Destek:</strong> %79,1 | <strong>Denge:</strong> +10,8</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %60,0 | <strong>Sigara:</strong> %25,0</p>
+
+<p>En yüksek ruh sağlığı riskine (%60,0) sahip müdürlüklerden biri. Tam katılıma rağmen düşük memnuniyet (%84,4) dikkat gerektirmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%89,6), Çalışma Arkadaşları (%89,6)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%65,2), Eğitim (%68,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">7 çalışan</span> lavabo yetersizliği (3 kişi), yemek kalitesi (2 kişi), servis (2 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Yüksek ruh sağlığı riski nedeniyle psikolojik destek programlarına öncelikli erişim ve çalışma koşullarının acil iyileştirilmesi önerilmektedir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.25. Ruhsat ve Denetim Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%90,9</span> (12 kişi, %100 katılım) | <strong>İş Yükü:</strong> %59,1 | <strong>Destek:</strong> %85,0 | <strong>Denge:</strong> +25,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %38,4 | <strong>Sigara:</strong> %36,4</p>
+
+<p>EN DÜŞÜK ruh sağlığı riskine (%38,4) sahip müdürlüktür. Güçlü denge ve yüksek memnuniyet ideal çalışma ortamını göstermektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Görev-Rol Netliği (%96,0), Yöneticilerle İlişkiler (%95,5), İş-Kişi Uyumu (%93,9)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%68,2), Çalışma Koşulları (%73,7)</p>
+
+<p>Açık uçlu yorum tespit edilmemiştir.</p>
+
+<p><strong>Öneri:</strong> Bu müdürlüğün düşük stres modeli, iyi uygulama örneği olarak incelenebilir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.26. Sosyal Destek Hizmetleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%89,9</span> (98 kişiden 90 katıldı, %91,8 katılım) | <strong>İş Yükü:</strong> %75,2 | <strong>Destek:</strong> %80,4 | <strong>Denge:</strong> +5,2</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %55,6 | <strong>Sigara:</strong> %36,4</p>
+
+<p>Geniş bir ekip (90 katılımcı) olarak yüksek iş yükü ve orta düzey denge göstermektedir. Sosyal hizmet çalışmasının duygusal zorluğu hissedilmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%95,0), İş-Kişi Uyumu (%91,4)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Eğitim (%67,9), Çalışma Koşulları (%73,9)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">27 çalışan</span> servis ücretsiz olsun (5 kişi), personel ayrımcılığı/adalet (4 kişi), maaş iyileştirme (3 kişi), geziler/aktiviteler (3 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Sosyal hizmet çalışanları için travma yönetimi ve süpervizyon programları oluşturulmalıdır.</p>
+
+<div class="page-break"></div>
+
+<h2>4.27. Strateji Geliştirme Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%85,7</span> (10 kişiden 8 katıldı, %80 katılım) | <strong>İş Yükü:</strong> %50,9 | <strong>Destek:</strong> %78,6 | <strong>Denge:</strong> +27,7</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %50,9 | <strong>Sigara:</strong> %42,9</p>
+
+<p>Küçük bir müdürlük olarak en düşük iş yüküne (%50,9) sahiptir. Ancak düşük katılım ve orta düzey memnuniyet iyileştirme gerektirir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%90,5), İş-Kişi Uyumu (%89,3)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Yetkinlik (%64,3), Eğitim (%71,4), Görev-Rol Netliği (%75,0)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">6 çalışan</span> dinlenme alanı (1 kişi), yemek sistemi (2 kişi), servis (2 kişi), öğle arası saati (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Stratejik planlama ve performans yönetimi konusunda kapasit e geliştirme eğitimleri düzenlenebilir.</p>
+
+<div class="page-break"></div>
+
+<div class="page-break"></div>
+
+<h2>4.28. Temizlik İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%91,9</span> (578 kişiden 215 katıldı, %37,2 katılım) | <strong>İş Yükü:</strong> %71,9 | <strong>Destek:</strong> %77,4 | <strong>Denge:</strong> +5,5</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %56,7 | <strong>Sigara:</strong> %51,2</p>
+
+<p>Belediyemizin EN BÜYÜK müdürlüğü (578 personel) olup EN DÜŞÜK katılım oranına (%37,2) sahiptir. Yüksek memnuniyete rağmen, katılım sorunları çalışanların sesini duyurmakta zorlandıklarına işaret etmektedir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> İş-Kişi Uyumu (%92,4), Kamu Hizmeti (%92,3)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%61,8), Eğitim (%73,0)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">107 çalışan</span> yorum yapmıştır (tüm müdürlükler arasında en fazla). En sık bahsedilen konular:</p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li><strong>Şantiye fiziki koşulları (80 kişi):</strong> "Tuvalet yetersiz", "Soyunma odası/dolap yok", "Çay ocağı dar", "Banyo hijyensiz"</li>
+<li><strong>Yönetici davranışları/mobbing (25 kişi):</strong> "Şefler baskı yapıyor", "Tutanak tehdidi", "Adam kayırma var"</li>
+<li><strong>Araç ve ekipman kalitesizliği (18 kişi):</strong> "Eldiven 1 günde yırtılıyor", "Yağmurluk terleme yapıyor", "Botlar 2 ayda su alıyor"</li>
+<li><strong>İş güvenliği (12 kişi):</strong> "Araç bakımı yok", "Kaza değer kaybı şoförden kesiliyor"</li>
+</ul>
+
+<div class="quote">
+"500 küsür insana 3 tuvalet yetersiz. Genel olarak oturma alanımız yetersiz. Çay ocağı, tuvalet, soyunma dolabı ve duş alanımız hiçbir şekilde yeterli değil. Biz çalışanlar bu durumdan hiç memnun değiliz gereğinin yapılmasını talep ediyoruz." (Temizlik İşleri)
+</div>
+
+<div class="quote">
+"Şantiyede kutuplaşma mevcut. Tabiri caizse hemşeri ağına adam kayırma ve çifte standart uygulanıyor." (Temizlik İşleri)
+</div>
+
+<p><strong>Öneri:</strong> (1) Şantiye binasının acilen yenilenmesi veya genişletilmesi, (2) İş ekipmanları kalite standardının yükseltilmesi, (3) Yönetici davranışları konusunda 360 derece geri bildirim sistemi ve liderlik eğitimleri, (4) Katılım oranını artırmak için güven ortamının güçlendirilmesi ÖNCE Lİ İHTİYAÇLARDIR.</p>
+
+<div class="page-break"></div>
+
+<h2>4.29. Yazı İşleri Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%90,5</span> (37 kişiden 35 katıldı, %94,6 katılım) | <strong>İş Yükü:</strong> %57,6 | <strong>Destek:</strong> %76,7 | <strong>Denge:</strong> +19,1</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %54,1 | <strong>Sigara:</strong> %34,5</p>
+
+<p>Yüksek katılım ve memnuniyet göstermektedir. Düşük iş yükü ve güçlü denge pozitif göstergelerdir.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Yöneticilerle İlişkiler (%88,4), Kamu Hizmeti (%87,5)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%62,7), Eğitim (%68,4), İletişim (%69,8)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">12 çalışan</span> yemek kalitesi (6 kişi), koku matikleri/hijyen (4 kişi), arşiv havalandırması (1 kişi), dinlenme alanı (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Yemek kalitesi ve hijyen standartları gözden geçirilmeli, arşiv bölümünde havalandırma sorunu çözülmelidir.</p>
+
+<div class="page-break"></div>
+
+<h2>4.30. Yapı Kontrol Müdürlüğü</h2>
+<p><strong>Genel Memnuniyet:</strong> <span class="statistic">%88,0</span> (37 kişiden 28 katıldı, %75,7 katılım) | <strong>İş Yükü:</strong> %79,3 | <strong>Destek:</strong> %82,2 | <strong>Denge:</strong> +2,9</p>
+<p><strong>Ruh Sağlığı Riski:</strong> %50,2 | <strong>Sigara:</strong> %60,0</p>
+
+<p>Yüksek iş yükü ve düşük denge puanı iyileştirme gerektirir. İnşaat denetim işinin doğası gereği stresli bir ortam söz konusudur.</p>
+
+<p><strong>Güçlü Alanlar:</strong> Kamu Hizmeti (%93,3), Çalışma Arkadaşları (%90,0)</p>
+<p><strong>Geliştirilmesi Gereken Alanlar:</strong> Çalışma Koşulları (%68,6), Eğitim (%73,5)</p>
+
+<p>Açık uçlu yorumlarda <span class="statistic">10 çalışan</span> servis (4 kişi), maaş (3 kişi), yemek eşitliği (2 kişi), egzersiz alanı (1 kişi) konularına değinmiştir.</p>
+
+<p><strong>Öneri:</strong> Teknik personel için sektörel eğitimler ve servis düzenlemeleri yapılabilir.</p>
+
+<div class="page-break"></div>
+
+<!-- SONUÇ VE ÖNERİLER -->
+<h1>5. SONUÇ VE ÖNERİLER</h1>
+
+<p>Arnavutköy Belediyesi Çalışan Memnuniyeti ve İyi Oluş Anketi, belediyemizin kurumsal sağlığı hakkında kapsamlı bir fotoğraf sunmaktadır. <span class="statistic">2.087 personelden %70,4'üne ulaşarak gerçekleştirilen</span> bu çalışma, <span class="statistic">1.251 geçerli anket</span> ve <span class="statistic">456 çalışanın yazdığı binlerce cümlelik açık uçlu yorum</span> ile zengin bir veri seti oluşturmuştur.</p>
+
+<p><strong>Temel Bulgularımız:</strong></p>
+<ul style="margin: 0.5em 0 0.5em 1.5em;">
+<li>Genel memnuniyet <span class="statistic">%90,8</span> - Kritik eşik olan %80'in önemli ölçüde üzerinde</li>
+<li>İş Yükü-Destek Dengesi <span class="statistic">+13,2</span> - Pozitif ve sağlıklı</li>
+<li>En güçlü alanlarımız: Kamu Hizmeti Motivasyonu (%92,8), İş-Kişi Uyumu (%91,3), Ekip Dayanışması (%86,9)</li>
+<li>Geliştirme alanlarımız: İş Yükü (%69,1), Çalışma Koşulları (%72,2), Eğitim (%75,8)</li>
+<li>Ruh sağlığı riski <span class="statistic">%52,2</span> - Dikkat gerektiren düzey</li>
+</ul>
+
+<p><strong>Öncelikli Eylem Önerileri:</strong></p>
+
+<p><strong>1. Çalışma Koşulları İyileştirmeleri:</strong> Yemekhane kalitesi (232 şikayet), servis hizmetleri (95 şikayet), fiziki altyapı (Temizlik İşleri şantiyesi: 80 şikayet) acil iyileştirme gerektirmektedir.</p>
+
+<p><strong>2. Yönetici Gelişim Programları:</strong> 530 yorumun %40'ı (212 yorum) olumsuz yönetici davranışlarına işaret etmektedir. Liderlik eğitimleri, koçluk programları ve 360 derece geri bildirim sistemleri önerilmektedir.</p>
+
+<p><strong>3. Ruh Sağlığı Destek Programları:</strong> Özellikle yüksek riskli müdürlüklerde (Fen İşleri %63,7, Veteriner %58,5, İmar %58,5) hedefli psiko-sosyal destek programları geliştirilmelidir.</p>
+
+<p><strong>4. İş Yükü Optimizasyonu:</strong> Negatif denge puanına sahip müdürlüklerde (Veteriner -3,5, Gelirler -2,5, İmar -2,3) personel sayısı artırılmalı veya iş süreçleri optimize edilmelidir.</p>
+
+<p><strong>5. Sürdürülebilir İzleme Sistemi:</strong> Bu anketin yıllık olarak tekrarlanması ve gelişimin takip edilmesi önerilmektedir.</p>
+
+<p>Belediyemizin kurumsal gelişimine ve çalışan refahına katkı sunacağına inandığımız bu raporu, saygılarımızla arz ederiz.</p>
+
+</body>
+</html>

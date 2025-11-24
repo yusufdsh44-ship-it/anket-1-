@@ -957,6 +957,9 @@
                 { id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi' },
                 { id: 'acik-uclu', icon: 'rule', title: 'Açık Uçlu Cevaplar' }
             ]},
+            { category: 'RAPORLAR', items: [
+                { id: 'mudurluk-raporlari', icon: 'description', title: 'Müdürlük Raporları' }
+            ]},
             { category: 'VERİ PANELİ', items: [
                 { id: 'veri-girisi', icon: 'input', title: 'Veri Girişi' },
                 { id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler' }
@@ -4088,6 +4091,86 @@
             }
         };
 
+        const reportManager = {
+            selectedMudurluk: null,
+            
+            mudurlukReports: {},
+            
+            girisHTML: `
+                <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #333;">1. GİRİŞ</h1>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmalarını, <strong>Arnavutköy Belediyesi olarak ilk kez yaparak</strong> kurumsal gelişimimiz adına önemli bir temel atmanın gururunu yaşıyoruz.</p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, tamamen belediyemizin kendi iç yetkinlikleri ve öz kaynaklarıyla gerçekleştirilmiş olmasıdır. Anket değerlendirmelerinde kullanılan yazılım, <strong>bu proje için özel olarak geliştirilmiştir</strong>. İnternetten bağımsız (offline) çalışan bu araç, veri güvenliğini en üst düzeyde tutarken, sonuçların kurumsal olarak arşivlenmesini kolaylaştırmaktadır. Yazılımın Sayın Başkanımızla paylaşılmasıyla, tüm verilere ve analiz grafiklerine dilediğiniz zaman doğrudan erişim imkanınız olacaktır.</p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Çalışma iki temel eksen üzerine kurgulanmıştır. Birinci eksen; yönetici-çalışan ilişkileri, ekip dayanışması, fiziki çalışma koşulları, yemekhane, servis, ücret politikaları ve iş güvenliği gibi temel kurumsal dinamiklerin ölçümlenmesidir. İkinci eksen ise; Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak "Psikolojik İyi Oluş" taramasının yapılmasıdır. Kullanılan envanter, standart şablonlar yerine, literatürdeki bilimsel ölçeklerin kurumumuzun özgün ihtiyaçlarına göre yeniden uyarlanmasıyla oluşturulmuştur. <strong>Anket sorularının her biri, bilimsel çalışmalar ve Arnavutköy Belediyesi'nin kendine özgü dinamikleri göz önünde bulundurularak tek tek tasarlanmıştır.</strong></p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Saha çalışmaları sürecinde, <strong>belediyemize bağlı 30 müdürlüğün tamamı bizzat ziyaret edilmiştir</strong>. Anketler çalışanlarımıza elden ulaştırılmış; görüş, şikayet ve önerileri yerinde dinlenmiştir. Bu ziyaretlerde ayrıca, kurumsal aidiyeti pekiştirmek adına Belediyemizin ve Başkanlığımızın sosyal medya hesaplarının takibi konusunda da personelimiz teşvik edilmiştir. Bu yüz yüze etkileşim, sürecin sadece veri toplamaktan ibaret kalmayıp, çalışanlarımızla samimi ve yapıcı bir diyaloğa dönüşmesine imkan tanımıştır.</p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Analiz modelimiz, 1.251 çalışanımızdan toplanan sayısal verilerin, <strong>456 çalışanın yazdığı binlerce cümlelik açık uçlu yorumlarla</strong> sentezlenmesine dayanmaktadır. Toplam 45 sorudan oluşan ana anket ile; kurumsal aidiyet, amir ilişkileri, rol netliği ve çalışma koşulları gibi on farklı parametre ölçülmüştür. Bu yapıya ek olarak "Psikolojik İyi Oluş Taraması", "Sigara Kullanımı" ve "Sosyal Medya Alışkanlıkları" modülleri de çalışmaya dahil edilerek personel profili çok yönlü olarak analiz edilmiştir.</p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Bu çalışma, <strong>belirli periyotlarla tekrarlanacak sürdürülebilir bir izleme sisteminin temelidir</strong>. Gelecek dönemlerde yapılacak ölçümlerle, belediyemizin kurumsal iyi oluş düzeyindeki değişimler ve iyileştirme çalışmalarının etkileri takip edilebilecektir. Standartları korumak amacıyla; anket yapısını, yazılım kullanımını ve değerlendirme yöntemlerini içeren bir <strong>"Metodoloji Kitapçığı"</strong> da tarafımızca hazırlanarak kurumsal hafızaya kazandırılmıştır.</p>
+
+                <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Belediyemizin kurumsal gelişimine ve çalışan refahına katkı sunacağına inandığımız bu raporu, bilgi ve tensiplerinize arz ederiz.</p>
+            `,
+            
+            renderReportPage: () => {
+                return `
+                    <div style="background: white; padding: 25px; border-radius: 8px;">
+                        <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #e5e7eb;">
+                            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                                <label for="mudurlukFilter" style="font-weight: 600; color: #374151;">Müdürlük Filtrele:</label>
+                                <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-width: 300px;">
+                                    <option value="">Tüm Müdürlükler</option>
+                                    ${Object.keys(MUDURLUKLER).filter(kod => kod != 1288).sort((a, b) => {
+                                        return MUDURLUKLER[a].name.localeCompare(MUDURLUKLER[b].name, 'tr');
+                                    }).map(kod => `<option value="${kod}">${MUDURLUKLER[kod].name}</option>`).join('')}
+                                </select>
+                                <input type="text" id="raporArama" placeholder="Raporda ara..." onkeyup="reportManager.searchReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; flex: 1;">
+                            </div>
+                        </div>
+                        
+                        <div id="reportContent" style="font-family: Georgia, 'Times New Roman', serif; color: #000; line-height: 1.6;">
+                            ${reportManager.girisHTML}
+                            
+                            <div style="margin-top: 40px; padding: 20px; background: #f3f4f6; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                                <h2 style="font-size: 20px; font-weight: bold; color: #1f2937; margin-bottom: 10px;">📋 Müdürlük Raporları</h2>
+                                <p style="color: #6b7280; margin: 0;">29 müdürlüğün detaylı analiz raporları aşağıda sıralanmıştır. Müdürlük raporları henüz eklenmedi...</p>
+                            </div>
+                            
+                            <div id="mudurlukRaporlari" style="margin-top: 30px;">
+                                <!-- Müdürlük raporları buraya eklenecek -->
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+            
+            filterReports: (mudurlukKod) => {
+                reportManager.selectedMudurluk = mudurlukKod;
+                const sections = document.querySelectorAll('.mudurluk-rapor-section');
+                
+                sections.forEach(section => {
+                    if (!mudurlukKod || section.getAttribute('data-mudurluk') === mudurlukKod) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            },
+            
+            searchReports: (query) => {
+                const searchTerm = query.toLowerCase().trim();
+                const sections = document.querySelectorAll('.mudurluk-rapor-section');
+                
+                sections.forEach(section => {
+                    const content = section.textContent.toLowerCase();
+                    const shouldShow = !searchTerm || content.includes(searchTerm);
+                    section.style.display = shouldShow ? 'block' : 'none';
+                });
+            }
+        };
+
         const pageManager = {
             pages: {
                 'veri-girisi': () => `
@@ -4457,7 +4540,9 @@
                             </tbody>
                         </table>
                     </div>
-                `
+                `,
+
+                'mudurluk-raporlari': () => reportManager.renderReportPage()
             },
 
             showPage: (pageId) => {
