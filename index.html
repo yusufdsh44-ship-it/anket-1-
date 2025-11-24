@@ -4097,7 +4097,7 @@
             mudurlukReports: {},
             
             girisHTML: `
-                <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #333;">1. GİRİŞ</h1>
+                <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #333;">GİRİŞ</h1>
 
                 <p style="margin: 10px 0; text-align: justify; line-height: 1.6;">Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmalarını, <strong>Arnavutköy Belediyesi olarak ilk kez yaparak</strong> kurumsal gelişimimiz adına önemli bir temel atmanın gururunu yaşıyoruz.</p>
 
@@ -4117,23 +4117,23 @@
             renderReportPage: () => {
                 return `
                     <div style="background: white; padding: 25px; border-radius: 8px;">
-                        <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 2px solid #e5e7eb;">
-                            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
-                                <label for="mudurlukFilter" style="font-weight: 600; color: #374151;">Müdürlük Filtrele:</label>
-                                <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-width: 300px;">
-                                    <option value="">Tüm Müdürlükler</option>
-                                    ${Object.keys(MUDURLUKLER).filter(kod => kod != 1288).sort((a, b) => {
-                                        return MUDURLUKLER[a].name.localeCompare(MUDURLUKLER[b].name, 'tr');
-                                    }).map(kod => `<option value="${kod}">${MUDURLUKLER[kod].name}</option>`).join('')}
-                                </select>
-                                <input type="text" id="raporArama" placeholder="Raporda ara..." onkeyup="reportManager.searchReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; flex: 1;">
-                            </div>
-                        </div>
-                        
                         <div id="reportContent" style="font-family: Georgia, 'Times New Roman', serif; color: #000; line-height: 1.6;">
                             ${reportManager.girisHTML}
                             
-                            <div style="margin-top: 40px; padding: 20px; background: #f3f4f6; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                            <div style="margin: 30px 0 25px 0; padding: 20px; background: #f9fafb; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                <div style="display: flex; gap: 15px; align-items: center;">
+                                    <label for="mudurlukFilter" style="font-weight: 600; color: #374151; white-space: nowrap;">Müdürlük Filtrele:</label>
+                                    <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-width: 300px;">
+                                        <option value="">Tüm Müdürlükler</option>
+                                        ${Object.keys(MUDURLUKLER).filter(kod => kod != 1288).sort((a, b) => {
+                                            return MUDURLUKLER[a].name.localeCompare(MUDURLUKLER[b].name, 'tr');
+                                        }).map(kod => `<option value="${kod}">${MUDURLUKLER[kod].name}</option>`).join('')}
+                                    </select>
+                                    <input type="text" id="raporArama" placeholder="Raporda ara..." onkeyup="reportManager.searchReports(this.value)" style="padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; flex: 1;">
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 20px; padding: 20px; background: #f3f4f6; border-radius: 8px; border-left: 4px solid #3b82f6;">
                                 <h2 style="font-size: 20px; font-weight: bold; color: #1f2937; margin-bottom: 10px;">📋 Müdürlük Raporları</h2>
                                 <p style="color: #6b7280; margin: 0;">29 müdürlüğün detaylı analiz raporları aşağıda sıralanmıştır. Müdürlük raporları henüz eklenmedi...</p>
                             </div>
