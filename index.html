@@ -695,6 +695,209 @@
             display: flex;
             gap: 10px;
         }
+        
+        /* BELEDIYE GENELI RAPOR STILLERI */
+        #belediyeGeneliRapor {
+            font-family: 'Poppins', Georgia, 'Times New Roman', serif;
+        }
+        
+        #belediyeGeneliRapor h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1e3a5f;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            margin: -25px -25px 30px -25px;
+        }
+        
+        #belediyeGeneliRapor h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e3a5f;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4A90E2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #belediyeGeneliRapor h2::before {
+            content: '';
+            width: 5px;
+            height: 24px;
+            background: linear-gradient(180deg, #4A90E2 0%, #1e3a5f 100%);
+            border-radius: 3px;
+        }
+        
+        #belediyeGeneliRapor h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #374151;
+            margin: 25px 0 15px 0;
+        }
+        
+        #belediyeGeneliRapor .indicators-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        #belediyeGeneliRapor .indicators-table thead tr {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        }
+        
+        #belediyeGeneliRapor .indicators-table th {
+            color: white;
+            padding: 16px 20px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+        }
+        
+        #belediyeGeneliRapor .indicators-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 14px;
+        }
+        
+        #belediyeGeneliRapor .indicators-table td.label {
+            background: #f8fafc;
+        }
+        
+        #belediyeGeneliRapor .indicators-table td.value {
+            font-weight: 600;
+            color: #1e3a5f;
+            font-size: 15px;
+        }
+        
+        #belediyeGeneliRapor .indicators-table .highlight-row {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+        }
+        
+        #belediyeGeneliRapor .indicators-table .highlight-row td {
+            border-bottom: 2px solid #10b981;
+        }
+        
+        #belediyeGeneliRapor .indicators-table .highlight-row td.value {
+            color: #059669;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        #belediyeGeneliRapor .indicators-table .label-desc {
+            display: block;
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+        
+        #belediyeGeneliRapor .indicators-table tbody tr:hover {
+            background: #f1f5f9;
+        }
+        
+        #belediyeGeneliRapor .indicators-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        #belediyeGeneliRapor .summary-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-left: 5px solid #0284c7;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
+        }
+        
+        #belediyeGeneliRapor .summary-box h3 {
+            color: #0369a1;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        
+        #belediyeGeneliRapor .summary-box p {
+            margin: 12px 0;
+            line-height: 1.7;
+            color: #334155;
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) thead tr {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) th {
+            color: white;
+            padding: 14px 12px;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: left;
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        #belediyeGeneliRapor table:not(.indicators-table) tbody tr:hover {
+            background: #f1f5f9;
+        }
+        
+        #belediyeGeneliRapor ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        #belediyeGeneliRapor ul li {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #374151;
+        }
+        
+        #belediyeGeneliRapor p {
+            margin: 12px 0;
+            line-height: 1.7;
+            color: #374151;
+        }
+        
+        #belediyeGeneliRapor hr {
+            margin: 40px 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #cbd5e1 50%, transparent 100%);
+        }
+        
+        #belediyeGeneliRapor strong {
+            color: #1e3a5f;
+        }
     </style>
 </head>
 <body>
