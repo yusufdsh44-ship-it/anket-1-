@@ -6,12 +6,20 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-11-27: **Report System Complete & UI Improvements**
+  - **Menu Reorganization:** "RAPOR" category with "Rapor" menu item, "Detaylı Tablolar (tüm müdürlükler)" for analytics
+  - **Default Page:** Application opens to Report page (previously analytics)
+  - **Belediye Geneli Design:** Enhanced visual design with modern CSS styling
+    - Gradient headers and professional table styling
+    - Color-coded indicator rows (green highlights for key metrics)
+    - Summary boxes with accent borders
+    - Hover effects and proper spacing
+  - **Content:** Municipality-wide analysis (1470 participants, 30 directorates) + 30 individual directorate reports
+  - **rapor_verileri.js:** 564KB JavaScript file with all report HTML content
+
 - 2025-11-24: **Report Section Added** - New comprehensive report view with department analysis
-  - **New Menu Category:** "RAPORLAR" (Reports) section added to navigation
-  - **Report Page:** "Müdürlük Raporları" displays introduction and department-specific detailed reports
   - **Filtering:** Dropdown menu to filter by specific department
   - **Search:** Text search across all report content
-  - **Structure:** Introduction section from official report included, ready for 29 department reports
 
 - 2025-11-18: **Open-Ended Comments Display Enhancement** - Department names instead of codes
   - **User-Friendly Display:** Open-ended comments now show full department names (e.g., "BAŞKAN") instead of codes (e.g., "101_2")
