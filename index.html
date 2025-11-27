@@ -948,10 +948,10 @@
         };
 
         const MENU_ITEMS = [
-            { category: 'DETAYLI RAPOR', items: [
-                { id: 'mudurluk-raporlari', icon: 'description', title: 'Müdürlük Raporları' }
+            { category: 'RAPOR', items: [
+                { id: 'mudurluk-raporlari', icon: 'description', title: 'Rapor' }
             ]},
-            { category: 'DETAYLI ANALİZLER', items: [
+            { category: 'Detaylı Tablolar (tüm müdürlükler)', items: [
                 { id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları' },
                 { id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz' },
                 { id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları' },
@@ -4650,7 +4650,7 @@
                     });
                 });
                 
-                pageManager.showPage('genel-skorlar');
+                pageManager.showPage('mudurluk-raporlari');
             }
         };
 
