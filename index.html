@@ -4965,11 +4965,24 @@
             }
         };
 
+        // Auth token helper
+        function getAuthToken() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('token') || localStorage.getItem('authToken') || '';
+        }
+
+        function getAuthHeaders() {
+            const token = getAuthToken();
+            return token ? { 'X-Auth-Token': token } : {};
+        }
+
         // Database API Helper
         const databaseAPI = {
             async loadData() {
                 try {
-                    const response = await fetch('/api/survey-data');
+                    const response = await fetch('/api/survey-data', {
+                        headers: getAuthHeaders()
+                    });
                     const result = await response.json();
 
                     if (result.success && result.data) {
@@ -4999,6 +5012,7 @@
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
+                            ...getAuthHeaders()
                         },
                         body: JSON.stringify({
                             allSurveys: state.allSurveys,

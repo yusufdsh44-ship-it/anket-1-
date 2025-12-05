@@ -1,6 +1,6 @@
 import os
-from functools import wraps
-from flask import Flask, request, jsonify, send_from_directory, make_response, session, redirect, url_for
+import hashlib
+from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.orm import DeclarativeBase
@@ -21,29 +21,13 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "pool_recycle": 300,
     "pool_pre_ping": True,
 }
-app.config['SESSION_COOKIE_SECURE'] = False
-app.config['SESSION_COOKIE_HTTPONLY'] = True
 
 APP_PASSWORD = os.environ.get("APP_PASSWORD", "")
 
 db.init_app(app)
 
 
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if not APP_PASSWORD:
-            return f(*args, **kwargs)
-        if not session.get('authenticated'):
-            if request.is_json:
-                return jsonify({'success': False, 'error': 'Unauthorized'}), 401
-            return redirect(url_for('login_page'))
-        return f(*args, **kwargs)
-    return decorated_function
-
-
 class SurveyData(db.Model):
-    """Stores all survey data as JSON"""
     __tablename__ = 'survey_data'
     
     id = db.Column(db.Integer, primary_key=True)
@@ -62,8 +46,20 @@ with app.app_context():
     db.create_all()
 
 
-LOGIN_PAGE = '''
-<!DOCTYPE html>
+def generate_token(password):
+    return hashlib.sha256((password + app.secret_key).encode()).hexdigest()[:32]
+
+
+def check_auth(req):
+    if not APP_PASSWORD:
+        return True
+    token = req.headers.get('X-Auth-Token') or req.args.get('token')
+    if token and token == generate_token(APP_PASSWORD):
+        return True
+    return False
+
+
+LOGIN_PAGE = '''<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -145,6 +141,7 @@ LOGIN_PAGE = '''
             margin-bottom: 20px;
             text-align: center;
             font-size: 14px;
+            display: none;
         }
     </style>
 </head>
@@ -154,8 +151,8 @@ LOGIN_PAGE = '''
             <h1>ARNAVUTKÖY BELEDİYESİ</h1>
             <p>JD-R Anket Değerlendirme Sistemi</p>
         </div>
-        <!-- ERROR_PLACEHOLDER -->
-        <form method="POST" action="/login">
+        <div class="error" id="error">Yanlış şifre. Lütfen tekrar deneyin.</div>
+        <form id="loginForm">
             <div class="form-group">
                 <label for="password">Şifre</label>
                 <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required autofocus>
@@ -163,37 +160,53 @@ LOGIN_PAGE = '''
             <button type="submit" class="btn">Giriş Yap</button>
         </form>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password })
+                });
+                const data = await response.json();
+                if (data.success) {
+                    localStorage.setItem('authToken', data.token);
+                    window.location.href = '/app?token=' + data.token;
+                } else {
+                    document.getElementById('error').style.display = 'block';
+                }
+            } catch (err) {
+                document.getElementById('error').style.display = 'block';
+            }
+        });
+        
+        // Check if already logged in
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            window.location.href = '/app?token=' + token;
+        }
+    </script>
 </body>
-</html>
-'''
-
-
-@app.route('/login', methods=['GET'])
-def login_page():
-    if APP_PASSWORD and session.get('authenticated'):
-        return redirect(url_for('index'))
-    return LOGIN_PAGE.replace('<!-- ERROR_PLACEHOLDER -->', '')
-
-
-@app.route('/login', methods=['POST'])
-def login():
-    password = request.form.get('password', '')
-    if password == APP_PASSWORD:
-        session['authenticated'] = True
-        return redirect(url_for('index'))
-    return LOGIN_PAGE.replace('<!-- ERROR_PLACEHOLDER -->', '<div class="error">Yanlış şifre. Lütfen tekrar deneyin.</div>')
-
-
-@app.route('/logout')
-def logout():
-    session.pop('authenticated', None)
-    return redirect(url_for('login_page'))
+</html>'''
 
 
 @app.route('/')
-@login_required
-def index():
-    """Serve the main HTML file with no caching"""
+def home():
+    if not APP_PASSWORD:
+        return serve_app()
+    token = request.args.get('token')
+    if token and token == generate_token(APP_PASSWORD):
+        return serve_app()
+    return LOGIN_PAGE
+
+
+@app.route('/app')
+def serve_app():
+    if APP_PASSWORD and not check_auth(request):
+        return LOGIN_PAGE
+    
     with open('index.html', 'r', encoding='utf-8') as f:
         content = f.read()
     
@@ -205,10 +218,29 @@ def index():
     return response
 
 
+@app.route('/api/login', methods=['POST'])
+def api_login():
+    data = request.get_json()
+    password = data.get('password', '') if data else ''
+    
+    if password == APP_PASSWORD:
+        token = generate_token(APP_PASSWORD)
+        return jsonify({'success': True, 'token': token})
+    return jsonify({'success': False, 'error': 'Invalid password'}), 401
+
+
+@app.route('/api/check-auth')
+def check_auth_status():
+    if not APP_PASSWORD:
+        return jsonify({'authenticated': True, 'required': False})
+    return jsonify({'authenticated': check_auth(request), 'required': True})
+
+
 @app.route('/api/survey-data', methods=['GET'])
-@login_required
 def get_survey_data():
-    """Get all survey data from database"""
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
     survey_record = SurveyData.query.first()
     
     if survey_record:
@@ -224,9 +256,10 @@ def get_survey_data():
 
 
 @app.route('/api/survey-data', methods=['POST'])
-@login_required
 def save_survey_data():
-    """Save survey data to database"""
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
     data = request.get_json()
     
     if not data:
@@ -249,9 +282,10 @@ def save_survey_data():
 
 
 @app.route('/rapor_verileri.js')
-@login_required
 def serve_rapor_verileri():
-    """Serve rapor_verileri.js with authentication"""
+    if APP_PASSWORD and not check_auth(request):
+        return 'Unauthorized', 401
+    
     with open('rapor_verileri.js', 'r', encoding='utf-8') as f:
         content = f.read()
     response = make_response(content)
