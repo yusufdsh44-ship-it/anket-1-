@@ -1775,11 +1775,11 @@
 
             createFilterBar: (inputId, tableId) => `
                 <div class="filter-bar">
-                    <span class="material-icons" style="color: #6b7280;">search</span>
+                    <span class="material-icons-outlined" style="color: #6b7280;">search</span>
                     <input type="text" id="${inputId}" placeholder="Müdürlük adı yazın..." 
                            onkeyup="tableFilter.filter('${tableId}', '${inputId}', 0)">
                     <button class="btn btn-reset" onclick="tableFilter.reset('${tableId}', '${inputId}')">
-                        <span class="material-icons" style="font-size: 16px;">refresh</span> Sıfırla
+                        <span class="material-icons-outlined" style="font-size: 16px;">refresh</span> Sıfırla
                     </button>
                 </div>
             `,
@@ -1942,7 +1942,7 @@
                             <td>${createTags(anketler.gecerli)}${createTags(anketler.gecersiz, true)}</td>
                             <td>
                                 <button class="btn btn-small btn-danger btn-remove-mudurluk" data-mudurluk="${kod}">
-                                    <span class="material-icons" style="font-size: 16px;">delete</span> Tümünü Sil
+                                    <span class="material-icons-outlined" style="font-size: 16px;">delete</span> Tümünü Sil
                                 </button>
                             </td>
                         </tr>
@@ -2373,7 +2373,7 @@
                                     </div>
                                     ${hasMore ? `
                                     <button class="btn btn-small" onclick="themeManager.showAllResponses('${themeKey}', ${JSON.stringify(exampleResponses.map(s => s.acikUclu)).replace(/"/g, '&quot;')})" style="margin-top: 8px; margin-left: 0;">
-                                        <span class="material-icons" style="font-size: 14px;">visibility</span> 
+                                        <span class="material-icons-outlined" style="font-size: 14px;">visibility</span> 
                                         Tümünü Gör (${exampleResponses.length} yorum)
                                     </button>
                                     ` : ''}
@@ -2438,13 +2438,13 @@
                         <div class="responses-title">📋 ${title} - Açık Uçlu Cevaplar (${responsesWithText.length} adet)</div>
                         <div class="responses-actions">
                             <button class="btn btn-small" onclick="openEndedManager.exportResponses()">
-                                <span class="material-icons" style="font-size: 16px;">download</span> Excel'e Aktar
+                                <span class="material-icons-outlined" style="font-size: 16px;">download</span> Excel'e Aktar
                             </button>
                             <button class="btn btn-small" onclick="openEndedManager.copyResponses()">
-                                <span class="material-icons" style="font-size: 16px;">content_copy</span> Kopyala
+                                <span class="material-icons-outlined" style="font-size: 16px;">content_copy</span> Kopyala
                             </button>
                             <button class="btn btn-small btn-danger" onclick="openEndedManager.closeResponses()">
-                                <span class="material-icons" style="font-size: 16px;">close</span> Kapat
+                                <span class="material-icons-outlined" style="font-size: 16px;">close</span> Kapat
                             </button>
                         </div>
                     </div>
@@ -3112,7 +3112,7 @@
 
                     return `
                                 <div style="background: #FDFCFA; padding: 16px; border-radius: 10px; display: flex; align-items: center; gap: 14px;">
-                                    <span class="material-icons" style="font-size: 40px; color: ${color};">${icon}</span>
+                                    <span class="material-icons-outlined" style="font-size: 40px; color: ${color};">${icon}</span>
                                     <div style="flex: 1;">
                                         <h3 style="font-size: 14px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px;">${md.ad}</h3>
                                         ${scoreText}
@@ -3615,11 +3615,11 @@
                         <div style="background: white; padding: 25px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                                 <h2 style="font-size: 20px; font-weight: 700; color: #1a1a1a; display: flex; align-items: center; gap: 10px;">
-                                    <span class="material-icons" style="font-size: 28px; color: #C86A3C;">priority_high</span>
+                                    <span class="material-icons-outlined" style="font-size: 28px; color: #C86A3C;">priority_high</span>
                                     🎯 Öncelikli Müdahale Alanları (Unified Liste)
                                 </h2>
                                 <button onclick="document.getElementById('aiInsightModal').style.display='flex';" style="padding: 10px 20px; background: #C86A3C; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-icons" style="font-size: 20px;">add_circle</span>
+                                    <span class="material-icons-outlined" style="font-size: 20px;">add_circle</span>
                                     AI Analizi Ekle
                                 </button>
                             </div>
@@ -3708,7 +3708,7 @@
                 strongContainer.innerHTML = `
                     <div style="background: white; padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
                         <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #10b981; display: flex; align-items: center; gap: 8px;">
-                            <span class="material-icons" style="font-size: 20px;">trending_up</span>
+                            <span class="material-icons-outlined" style="font-size: 20px;">trending_up</span>
                             ✅ En Güçlü 5 Alan
                         </h3>
                         ${strongAreas.map((area, i) => {
@@ -3736,7 +3736,7 @@
                                         </div>
                                         <div style="display: flex; align-items: center; gap: 8px;">
                                             <div style="font-size: 18px; font-weight: 700; color: #10b981;">${area.score}%</div>
-                                            <span class="material-icons" id="${strongId}_icon" style="font-size: 20px; color: #10b981;">expand_more</span>
+                                            <span class="material-icons-outlined" id="${strongId}_icon" style="font-size: 20px; color: #10b981;">expand_more</span>
                                         </div>
                                     </div>
                                     
@@ -3797,7 +3797,7 @@
                 weakContainer.innerHTML = `
                     <div style="background: white; padding: 15px; border-radius: 8px; border: 2px solid #ef4444;">
                         <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
-                            <span class="material-icons" style="font-size: 20px;">trending_down</span>
+                            <span class="material-icons-outlined" style="font-size: 20px;">trending_down</span>
                             ⚠️ Geliştirilmesi Gereken 5 Alan
                         </h3>
                         ${weakAreas.map((area, i) => {
@@ -3825,7 +3825,7 @@
                                         </div>
                                         <div style="display: flex; align-items: center; gap: 8px;">
                                             <div style="font-size: 18px; font-weight: 700; color: #ef4444;">${area.score}%</div>
-                                            <span class="material-icons" id="${weakId}_icon" style="font-size: 20px; color: #ef4444;">expand_more</span>
+                                            <span class="material-icons-outlined" id="${weakId}_icon" style="font-size: 20px; color: #ef4444;">expand_more</span>
                                         </div>
                                     </div>
                                     
@@ -4068,7 +4068,7 @@
                         
                         <div style="background: #fef2f2; padding: 20px; border-radius: 12px; margin-top: 20px; border: 1px solid #fecaca;">
                             <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
-                                <span class="material-icons" style="font-size: 20px;">trending_down</span>
+                                <span class="material-icons-outlined" style="font-size: 20px;">trending_down</span>
                                 En Az Takip Eden 5 Müdürlük
                             </h3>
                             <div style="display: grid; gap: 10px;">
@@ -4090,7 +4090,7 @@
                         
                         <div style="text-align: center; margin-top: 20px;">
                             <button class="btn" onclick="pageManager.showPage('sosyal-medya')" style="background: #3b82f6;">
-                                <span class="material-icons">analytics</span>
+                                <span class="material-icons-outlined">analytics</span>
                                 Detaylı Sosyal Medya Analizini Gör
                             </button>
                         </div>
@@ -4157,7 +4157,7 @@
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="btn" onclick="pageManager.showPage('acik-uclu')" style="background: #667eea;">
-                                <span class="material-icons">feedback</span>
+                                <span class="material-icons-outlined">feedback</span>
                                 Tüm Açık Uçlu Cevapları Gör
                             </button>
                         </div>
@@ -4201,7 +4201,7 @@
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="btn" onclick="pageManager.showPage('ruh-sagligi')" style="background: #ec4899;">
-                                <span class="material-icons">psychology</span>
+                                <span class="material-icons-outlined">psychology</span>
                                 Detaylı Ruh Sağlığı Analizini Gör
                             </button>
                         </div>
@@ -4254,7 +4254,7 @@
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="btn" onclick="pageManager.showPage('ruh-sagligi')" style="background: #f59e0b;">
-                                <span class="material-icons">analytics</span>
+                                <span class="material-icons-outlined">analytics</span>
                                 Detaylı Ruh Sağlığı ve Sigara Analizini Gör
                             </button>
                         </div>
@@ -4287,7 +4287,7 @@
                 container.innerHTML = `
                     <div style="background: white; padding: 25px; border-radius: 12px; margin: 20px 0; border: 1px solid #e5e7eb;">
                         <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #1a1a1a; display: flex; align-items: center; gap: 10px;">
-                            <span class="material-icons" style="font-size: 28px; color: #ef4444;">priority_high</span>
+                            <span class="material-icons-outlined" style="font-size: 28px; color: #ef4444;">priority_high</span>
                             Aksiyon Öncelik Matrisi
                         </h2>
                         <p style="color: #6b7280; margin-bottom: 20px; font-size: 14px;">
@@ -4297,7 +4297,7 @@
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div>
                                 <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #ef4444; display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-icons">error</span>
+                                    <span class="material-icons-outlined">error</span>
                                     Yüksek Öncelik (${highPriority.length} Müdürlük)
                                 </h3>
                                 ${highPriority.length > 0 ? highPriority.map((d, i) => `
@@ -4318,7 +4318,7 @@
                             
                             <div>
                                 <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 15px; color: #f59e0b; display: flex; align-items: center; gap: 8px;">
-                                    <span class="material-icons">warning</span>
+                                    <span class="material-icons-outlined">warning</span>
                                     Orta Öncelik (${mediumPriority.length} Müdürlük)
                                 </h3>
                                 ${mediumPriority.length > 0 ? mediumPriority.slice(0, 5).map((d, i) => `
@@ -4344,7 +4344,7 @@
                         </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <button class="btn" onclick="pageManager.showPage('mudurluk-detay')" style="background: #ef4444;">
-                                <span class="material-icons">business</span>
+                                <span class="material-icons-outlined">business</span>
                                 Müdürlük Detay Analizine Git
                             </button>
                         </div>
@@ -4590,16 +4590,16 @@
                 'veri-girisi': () => `
                     <div style="margin: 15px 0;">
                         <button class="btn" onclick="dataInput.addTableRows(10)">
-                            <span class="material-icons">add</span> 10 Satır Ekle
+                            <span class="material-icons-outlined">add</span> 10 Satır Ekle
                         </button>
                         <button class="btn" onclick="dataInput.addTableRows(20)">
-                            <span class="material-icons">add</span> 20 Satır Ekle
+                            <span class="material-icons-outlined">add</span> 20 Satır Ekle
                         </button>
                         <button class="btn btn-danger" onclick="dataInput.clearTableData()">
-                            <span class="material-icons">delete_sweep</span> Tabloyu Temizle
+                            <span class="material-icons-outlined">delete_sweep</span> Tabloyu Temizle
                         </button>
                         <button class="btn btn-success" onclick="dataInput.processTableData()">
-                            <span class="material-icons">check_circle</span> Tablodan Verileri İşle
+                            <span class="material-icons-outlined">check_circle</span> Tablodan Verileri İşle
                         </button>
                     </div>
                     
@@ -4674,7 +4674,7 @@
                             <h2 style="font-size: 20px; font-weight: 700;">En Memnun Müdürlükler</h2>
                             <button class="btn btn-small" onclick="surveyManager.toggleAllDepts()" style="margin: 0;">
                                 <span id="toggleDeptText">Tümünü Gör</span>
-                                <span class="material-icons" style="font-size: 16px;">arrow_forward</span>
+                                <span class="material-icons-outlined" style="font-size: 16px;">arrow_forward</span>
                             </button>
                         </div>
                         <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px;">
@@ -4845,7 +4845,7 @@
                                     <option value="">-- Tüm Müdürlükler --</option>
                                 </select>
                                 <button class="btn btn-reset" onclick="sorularManager.resetFilters()" style="margin-left: 10px;">
-                                    <span class="material-icons" style="font-size: 16px;">refresh</span> Sıfırla
+                                    <span class="material-icons-outlined" style="font-size: 16px;">refresh</span> Sıfırla
                                 </button>
                             </div>
                         </div>
