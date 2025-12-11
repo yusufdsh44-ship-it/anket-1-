@@ -6,6 +6,17 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-12-11: **Major UI Redesign with Warm Minimal Aesthetic**
+  - **New Design System:** Tailwind CSS + custom CSS with cream/terracotta color palette
+    - Background: #FBF7EF (warm cream)
+    - Accent: #C86A3C (terracotta)
+    - Text: #211A16 (dark brown), #7B746A (muted text)
+    - Borders: #E2D9CA (warm gray)
+  - **Typography:** Playfair Display (serif) for headings, Inter for body text
+  - **Login Page:** Completely redesigned with new aesthetic
+  - **Sidebar:** Updated with new color scheme and user profile section
+  - **Password Protection:** Token-based authentication system with APP_PASSWORD secret
+
 - 2025-11-27: **Report System Complete & UI Improvements**
   - **Menu Reorganization:** "RAPOR" category with "Rapor" menu item, "Detaylı Tablolar (tüm müdürlükler)" for analytics
   - **Default Page:** Application opens to Report page (previously analytics)
