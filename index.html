@@ -341,6 +341,47 @@
             background: #FBF7EF;
         }
 
+        /* RAPOR TABLOLARI - Inline stilleri koru */
+        #mudurlukRaporlari table,
+        #mudurlukRaporlari th,
+        #mudurlukRaporlari td,
+        #mudurlukRaporlari tr,
+        .rapor-content table,
+        .rapor-content th,
+        .rapor-content td,
+        .rapor-content tr {
+            all: revert;
+        }
+        
+        #mudurlukRaporlari table,
+        .rapor-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 11pt;
+        }
+        
+        #mudurlukRaporlari th,
+        #mudurlukRaporlari td,
+        .rapor-content th,
+        .rapor-content td {
+            padding: 8px 10px;
+            text-align: left;
+            border: 1px solid #ccc;
+        }
+        
+        #mudurlukRaporlari tr[style*="background:#444"] th,
+        #mudurlukRaporlari tr[style*="background:#444"] td,
+        #mudurlukRaporlari tr[style*="background:#1a252f"] th,
+        #mudurlukRaporlari tr[style*="background:#1a252f"] td,
+        .rapor-content tr[style*="background:#444"] th,
+        .rapor-content tr[style*="background:#444"] td,
+        .rapor-content tr[style*="background:#1a252f"] th,
+        .rapor-content tr[style*="background:#1a252f"] td {
+            color: white !important;
+            background: inherit;
+        }
+
         .highlight {
             background: #fef3c7 !important;
             font-weight: 600;
