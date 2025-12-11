@@ -341,45 +341,44 @@
             background: #FBF7EF;
         }
 
-        /* RAPOR TABLOLARI - Inline stilleri koru */
-        #mudurlukRaporlari table,
-        #mudurlukRaporlari th,
-        #mudurlukRaporlari td,
-        #mudurlukRaporlari tr,
-        .rapor-content table,
-        .rapor-content th,
-        .rapor-content td,
-        .rapor-content tr {
-            all: revert;
-        }
-        
-        #mudurlukRaporlari table,
-        .rapor-content table {
+        /* RAPOR TABLOLARI */
+        #mudurlukRaporlari table {
             width: 100%;
             border-collapse: collapse;
             margin: 15px 0;
             font-size: 11pt;
+            background: white;
+            border: 1px solid #E2D9CA;
+            border-radius: 12px;
+            overflow: hidden;
         }
         
-        #mudurlukRaporlari th,
-        #mudurlukRaporlari td,
-        .rapor-content th,
-        .rapor-content td {
-            padding: 8px 10px;
+        #mudurlukRaporlari th {
+            padding: 10px 12px;
             text-align: left;
-            border: 1px solid #ccc;
+            border: 1px solid #E2D9CA;
+            background: #C86A3C !important;
+            color: white !important;
+            font-weight: 600;
         }
         
-        #mudurlukRaporlari tr[style*="background:#444"] th,
-        #mudurlukRaporlari tr[style*="background:#444"] td,
-        #mudurlukRaporlari tr[style*="background:#1a252f"] th,
-        #mudurlukRaporlari tr[style*="background:#1a252f"] td,
-        .rapor-content tr[style*="background:#444"] th,
-        .rapor-content tr[style*="background:#444"] td,
-        .rapor-content tr[style*="background:#1a252f"] th,
-        .rapor-content tr[style*="background:#1a252f"] td {
-            color: white !important;
-            background: inherit;
+        #mudurlukRaporlari td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid #E2D9CA;
+            color: #211A16;
+        }
+        
+        #mudurlukRaporlari thead tr {
+            background: #C86A3C !important;
+        }
+        
+        #mudurlukRaporlari tbody tr:nth-child(even) {
+            background: #FDFCFA;
+        }
+        
+        #mudurlukRaporlari tbody tr:hover {
+            background: #FBF7EF;
         }
 
         .highlight {
