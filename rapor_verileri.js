@@ -134,7 +134,7 @@ const RAPOR_VERILERI = {
 <tr>
 <td style="width:48%; vertical-align:top; padding-right:2%;">
 <table style="width:100%; border:1px solid #333; border-collapse:collapse;">
-<tr style="background:#444; color:white;">
+<tr style="background:#C86A3C; color:white;">
 <td colspan="2" style="padding:8px; font-weight:bold; text-align:center; border-bottom:1px solid #333;">İŞ STRESİ / YÜKÜ</td>
 </tr>
 <tr style="border-bottom:1px solid #ddd;">
@@ -161,7 +161,7 @@ const RAPOR_VERILERI = {
 </td>
 <td style="width:48%; vertical-align:top; padding-left:2%;">
 <table style="width:100%; border:1px solid #333; border-collapse:collapse;">
-<tr style="background:#444; color:white;">
+<tr style="background:#C86A3C; color:white;">
 <td colspan="2" style="padding:8px; font-weight:bold; text-align:center; border-bottom:1px solid #333;">KURUMSAL DESTEK</td>
 </tr>
 <tr style="border-bottom:1px solid #ddd;">
@@ -240,7 +240,7 @@ const RAPOR_VERILERI = {
 
 <table style="margin:1em 0; width:100%; font-size:9pt;">
 <thead>
-<tr style="background:#1a252f; color:white;">
+<tr style="background:#C86A3C; color:white;">
 <th style="text-align:left; padding:8px; width:18%;">Müdürlük</th>
 <th style="text-align:center; padding:8px; width:7%;">Memn.</th>
 <th style="text-align:center; padding:8px; width:7%;">Denge</th>
@@ -794,7 +794,7 @@ const RAPOR_VERILERI = {
 
 <table style="width:100%; border-collapse:collapse; font-size:9.5pt; margin:1em 0;">
 <thead>
-<tr style="background:#444; color:white;">
+<tr style="background:#C86A3C; color:white;">
 <th style="padding:8px; text-align:left; border:1px solid #333;">Platform</th>
 <th style="padding:8px; text-align:center; border:1px solid #333;">Belediye Hesabı</th>
 <th style="padding:8px; text-align:center; border:1px solid #333;">Başkan Hesabı</th>
