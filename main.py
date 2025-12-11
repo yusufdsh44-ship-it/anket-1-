@@ -65,11 +65,12 @@ LOGIN_PAGE = '''<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giriş - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -77,79 +78,91 @@ LOGIN_PAGE = '''<!DOCTYPE html>
         }
         .login-container {
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px -2px rgba(226, 217, 202, 0.5);
+            border: 1px solid #E2D9CA;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
         }
         .logo {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .logo h1 {
-            color: #1a5276;
-            font-size: 24px;
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #211A16;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.2;
         }
         .logo p {
-            color: #666;
-            font-size: 14px;
-            margin-top: 5px;
+            color: #7B746A;
+            font-size: 11px;
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 500;
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
+            color: #2F2A24;
             font-weight: 500;
+            font-size: 14px;
         }
         .form-group input {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
+            padding: 14px 18px;
+            border: 2px solid #E2D9CA;
+            border-radius: 12px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: all 0.2s;
+            background: #FDFCFA;
         }
         .form-group input:focus {
             outline: none;
-            border-color: #2980b9;
+            border-color: #C86A3C;
+            background: white;
         }
         .btn {
             width: 100%;
-            padding: 14px;
-            background: #1a5276;
-            color: white;
+            padding: 16px;
+            background: #C86A3C;
+            color: #FFF9F3;
             border: none;
-            border-radius: 8px;
+            border-radius: 999px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.2s;
         }
         .btn:hover {
-            background: #2980b9;
+            background: #B55D33;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(200, 106, 60, 0.3);
         }
         .error {
-            background: #fee;
-            color: #c00;
-            padding: 12px;
-            border-radius: 8px;
+            background: rgba(199, 80, 80, 0.1);
+            color: #C75050;
+            padding: 14px;
+            border-radius: 12px;
             margin-bottom: 20px;
             text-align: center;
             font-size: 14px;
             display: none;
+            border: 1px solid rgba(199, 80, 80, 0.2);
         }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="logo">
-            <h1>ARNAVUTKÖY BELEDİYESİ</h1>
-            <p>JD-R Anket Değerlendirme Sistemi</p>
+            <h1>Arnavutköy<br>Belediyesi</h1>
+            <p>Anket Değerlendirme Sistemi</p>
         </div>
         <div class="error" id="error">Yanlış şifre. Lütfen tekrar deneyin.</div>
         <form id="loginForm">
