@@ -303,41 +303,42 @@
             border-collapse: collapse;
             background: white;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             margin: 15px 0;
             font-size: 13px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #E2D9CA;
         }
 
         th {
-            background: #FDFCFA;
-            color: #374151;
-            padding: 12px 8px;
+            background: #FBF7EF;
+            color: #211A16;
+            padding: 12px 10px;
             text-align: left;
             font-weight: 600;
             position: sticky;
             top: 0;
             z-index: 10;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #E2D9CA;
+            font-size: 13px;
         }
 
         td {
-            padding: 10px 8px;
-            border-bottom: 1px solid #f3f4f6;
-            color: #1f2937;
+            padding: 10px;
+            border-bottom: 1px solid #F3EDE3;
+            color: #211A16;
         }
 
         tr:hover {
-            background: #FDFCFA;
+            background: #FBF7EF;
         }
 
         tr:nth-child(even) {
-            background: #fafafa;
+            background: #FDFCFA;
         }
 
         tr:hover:nth-child(even) {
-            background: #FDFCFA;
+            background: #FBF7EF;
         }
 
         .highlight {
@@ -358,23 +359,23 @@
         /* INFO BOXES */
         .info-box,
         .warning-box {
-            padding: 14px 16px;
+            padding: 16px 20px;
             margin: 15px 0;
-            border-radius: 10px;
-            border-left: 3px solid;
-            font-size: 13px;
+            border-radius: 12px;
+            border-left: 4px solid;
+            font-size: 14px;
         }
 
         .info-box {
-            background: #eff6ff;
+            background: #FBF7EF;
             border-color: #C86A3C;
-            color: #1e40af;
+            color: #211A16;
         }
 
         .warning-box {
-            background: #fef3c7;
-            border-color: #f59e0b;
-            color: #92400e;
+            background: #FEF3C7;
+            border-color: #F59E0B;
+            color: #92400E;
         }
 
         .success-message {
@@ -401,12 +402,13 @@
 
         /* STATS CARDS */
         .stats-card {
-            background: linear-gradient(135deg, #C86A3C 0%, #B55D33 100%);
-            color: white;
+            background: #FFFFFF;
+            border: 1px solid #E2D9CA;
+            color: #211A16;
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 16px;
             margin: 10px 10px 10px 0;
-            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             display: inline-block;
             min-width: 150px;
         }
@@ -414,13 +416,14 @@
         .stats-card h3 {
             font-size: 13px;
             margin-bottom: 8px;
-            opacity: 0.9;
+            color: #7B746A;
             font-weight: 500;
         }
 
         .stats-card p {
             font-size: 28px;
             font-weight: 700;
+            color: #211A16;
         }
 
         /* FORM ELEMENTS */
@@ -438,7 +441,7 @@
         select:focus {
             outline: none;
             border-color: #C86A3C;
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+            box-shadow: 0 0 0 3px rgba(200, 106, 60, 0.1);
         }
 
         .filter-bar {
@@ -447,9 +450,9 @@
             gap: 10px;
             margin: 15px 0;
             padding: 12px 16px;
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
+            background: #FBF7EF;
+            border-radius: 12px;
+            border: 1px solid #E2D9CA;
         }
 
         .filter-bar input {
@@ -472,8 +475,8 @@
             overflow-x: auto;
             max-height: 70vh;
             background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
+            border: 1px solid #E2D9CA;
+            border-radius: 16px;
         }
 
         /* STICKY COLUMNS - ONLY FOR SORULAR TABLE */
@@ -4588,20 +4591,26 @@
         const pageManager = {
             pages: {
                 'veri-girisi': () => `
-                    <div style="margin: 15px 0;">
-                        <button class="btn" onclick="dataInput.addTableRows(10)">
-                            <span class="material-icons-outlined">add</span> 10 Satır Ekle
-                        </button>
-                        <button class="btn" onclick="dataInput.addTableRows(20)">
-                            <span class="material-icons-outlined">add</span> 20 Satır Ekle
-                        </button>
-                        <button class="btn btn-danger" onclick="dataInput.clearTableData()">
-                            <span class="material-icons-outlined">delete_sweep</span> Tabloyu Temizle
-                        </button>
-                        <button class="btn btn-success" onclick="dataInput.processTableData()">
-                            <span class="material-icons-outlined">check_circle</span> Tablodan Verileri İşle
-                        </button>
-                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light mb-6">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Veri Girişi</h2>
+                            <p class="text-sm text-text-meta mb-6">Excel veya Sheets'ten kopyalayarak veri yapıştırabilirsiniz.</p>
+                            
+                            <div class="flex flex-wrap gap-3 mb-4">
+                                <button class="px-4 py-2 bg-page-bg text-text-sidebar border border-border-light rounded-lg text-sm font-medium hover:bg-white transition-all flex items-center gap-2" onclick="dataInput.addTableRows(10)">
+                                    <span class="material-icons-outlined text-base">add</span> 10 Satır Ekle
+                                </button>
+                                <button class="px-4 py-2 bg-page-bg text-text-sidebar border border-border-light rounded-lg text-sm font-medium hover:bg-white transition-all flex items-center gap-2" onclick="dataInput.addTableRows(20)">
+                                    <span class="material-icons-outlined text-base">add</span> 20 Satır Ekle
+                                </button>
+                                <button class="px-4 py-2 bg-red-50 text-red-600 border border-red-200 rounded-lg text-sm font-medium hover:bg-red-100 transition-all flex items-center gap-2" onclick="dataInput.clearTableData()">
+                                    <span class="material-icons-outlined text-base">delete_sweep</span> Tabloyu Temizle
+                                </button>
+                                <button class="px-4 py-2 bg-sidebar-active text-white rounded-lg text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2" onclick="dataInput.processTableData()">
+                                    <span class="material-icons-outlined text-base">check_circle</span> Tablodan Verileri İşle
+                                </button>
+                            </div>
+                        </div>
                     
                     <div class="table-container" style="max-height: 60vh;">
                         <table id="dataTable" class="excel-table">
@@ -4624,26 +4633,29 @@
                 `,
 
                 'girilen-anketler': () => `
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Sisteme girilen tüm anketleri müdürlük bazında görüntüleyin ve yönetin.
-                    </div>
-                    
-                    <div class="stats-card" style="margin-right: 20px;">
-                        <h3>📊 Toplam Anket</h3>
-                        <p id="toplamAnketSayisi">0</p>
-                    </div>
-                    <div class="stats-card" style="margin-right: 20px;">
-                        <h3>✅ Geçerli Anket</h3>
-                        <p id="gecerliAnketSayisi">0</p>
-                    </div>
-                    <div class="stats-card">
-                        <h3>❌ Geçersiz Anket</h3>
-                        <p id="gecersizAnketSayisi">0</p>
-                    </div>
-                    
-                    <div class="table-container" style="margin-top: 30px;">
-                        <table>
-                            <thead>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light mb-6">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Girilen Anketler</h2>
+                            <p class="text-sm text-text-meta mb-6">Sisteme girilen tüm anketleri müdürlük bazında görüntüleyin ve yönetin.</p>
+                            
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="bg-page-bg p-5 rounded-xl border border-border-light text-center">
+                                    <p class="text-sm text-text-meta mb-1">Toplam Anket</p>
+                                    <p id="toplamAnketSayisi" class="text-3xl font-bold text-title-brown">0</p>
+                                </div>
+                                <div class="bg-green-50 p-5 rounded-xl border border-green-200 text-center">
+                                    <p class="text-sm text-green-600 mb-1">Geçerli Anket</p>
+                                    <p id="gecerliAnketSayisi" class="text-3xl font-bold text-green-700">0</p>
+                                </div>
+                                <div class="bg-red-50 p-5 rounded-xl border border-red-200 text-center">
+                                    <p class="text-sm text-red-600 mb-1">Geçersiz Anket</p>
+                                    <p id="gecersizAnketSayisi" class="text-3xl font-bold text-red-700">0</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overflow-x-auto rounded-xl border border-border-light">
+                                <table class="w-full">
+                                    <thead class="bg-page-bg">
                                 <tr>
                                     <th>Müdürlük</th>
                                     <th>Toplam Anket</th>
@@ -4661,77 +4673,83 @@
                 `,
 
                 'genel-skorlar': () => `
-                    <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-                        <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Genel Bakış</h2>
-                        <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px;">
-                            Arnavutköy Belediyesi genelindeki katılım ve memnuniyet düzeylerini gösteren bu bölüm.
-                        </p>
-                        <div id="genelBakisCards"></div>
-                    </div>
-                    
-                    <div style="background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                            <h2 style="font-size: 20px; font-weight: 700;">En Memnun Müdürlükler</h2>
-                            <button class="btn btn-small" onclick="surveyManager.toggleAllDepts()" style="margin: 0;">
-                                <span id="toggleDeptText">Tümünü Gör</span>
-                                <span class="material-icons-outlined" style="font-size: 16px;">arrow_forward</span>
-                            </button>
+                    <div class="max-w-7xl mx-auto space-y-6">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-2">Genel Bakış</h2>
+                            <p class="text-text-meta text-sm mb-6">
+                                Arnavutköy Belediyesi genelindeki katılım ve memnuniyet düzeylerini gösteren bu bölüm.
+                            </p>
+                            <div id="genelBakisCards"></div>
                         </div>
-                        <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px;">
-                            Çalışan memnuniyetinin en yüksek olduğu müdürlükleri keşfedin. Bu müdürlüklerin başarılı uygulamaları diğerlerine örnek olabilir.
-                        </p>
-                        <div id="enMemnunMudurlukler"></div>
-                    </div>
-                    
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Tüm müdürlüklerin genel performans skorları ve JD-R dengesi. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
-                        ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
-                        <button onclick="csvExporter.exportGenelSkorlar()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
-                    
-                    <div class="table-container">
-                        <table id="genelSkorlarTable">
-                            <thead>
-                                <tr>
-                                    ${tableRenderer.createSortableHeader('Müdürlükler', 'genelSkorlarTable', 0)}
-                                    ${tableRenderer.createSortableHeader('Toplam Personel', 'genelSkorlarTable', 1)}
-                                    ${tableRenderer.createSortableHeader('Toplam Katılan', 'genelSkorlarTable', 2)}
-                                    ${tableRenderer.createSortableHeader('Geçerli Anket', 'genelSkorlarTable', 3)}
-                                    ${tableRenderer.createSortableHeader('Geçersiz Anket', 'genelSkorlarTable', 4)}
-                                    ${tableRenderer.createSortableHeader('Katılım Oranı (%)', 'genelSkorlarTable', 5)}
-                                    ${tableRenderer.createSortableHeader('Genel Memnuniyet (%)', 'genelSkorlarTable', 6)}
-                                    ${tableRenderer.createSortableHeader('İş Yükü/Stresi (%)', 'genelSkorlarTable', 7)}
-                                    ${tableRenderer.createSortableHeader('Kurum Desteği (%)', 'genelSkorlarTable', 8)}
-                                    ${tableRenderer.createSortableHeader('İş Yükü-Destek Dengesi', 'genelSkorlarTable', 9)}
-                                </tr>
-                            </thead>
-                            <tbody id="genelSkorlarBody">
-                                <tr><td colspan="10" style="text-align:center; padding:30px;">Lütfen veri girişi yapınız...</td></tr>
-                            </tbody>
-                        </table>
+                        
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="font-serif text-2xl font-semibold text-title-brown">En Memnun Müdürlükler</h2>
+                                <button class="px-4 py-2 bg-page-bg text-text-sidebar border border-border-light rounded-full text-sm font-medium hover:bg-white transition-all flex items-center gap-2" onclick="surveyManager.toggleAllDepts()">
+                                    <span id="toggleDeptText">Tümünü Gör</span>
+                                    <span class="material-icons-outlined text-base">arrow_forward</span>
+                                </button>
+                            </div>
+                            <p class="text-text-meta text-sm mb-6">
+                                Çalışan memnuniyetinin en yüksek olduğu müdürlükleri keşfedin. Bu müdürlüklerin başarılı uygulamaları diğerlerine örnek olabilir.
+                            </p>
+                            <div id="enMemnunMudurlukler"></div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Tüm müdürlüklerin genel performans skorları ve JD-R dengesi. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-4 gap-4">
+                                ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
+                                <button onclick="csvExporter.exportGenelSkorlar()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+                                    CSV İndir
+                                </button>
+                            </div>
+                            
+                            <div class="overflow-x-auto rounded-xl border border-border-light">
+                                <table id="genelSkorlarTable" class="w-full">
+                                    <thead class="bg-page-bg">
+                                        <tr>
+                                            ${tableRenderer.createSortableHeader('Müdürlükler', 'genelSkorlarTable', 0)}
+                                            ${tableRenderer.createSortableHeader('Toplam Personel', 'genelSkorlarTable', 1)}
+                                            ${tableRenderer.createSortableHeader('Toplam Katılan', 'genelSkorlarTable', 2)}
+                                            ${tableRenderer.createSortableHeader('Geçerli Anket', 'genelSkorlarTable', 3)}
+                                            ${tableRenderer.createSortableHeader('Geçersiz Anket', 'genelSkorlarTable', 4)}
+                                            ${tableRenderer.createSortableHeader('Katılım Oranı (%)', 'genelSkorlarTable', 5)}
+                                            ${tableRenderer.createSortableHeader('Genel Memnuniyet (%)', 'genelSkorlarTable', 6)}
+                                            ${tableRenderer.createSortableHeader('İş Yükü/Stresi (%)', 'genelSkorlarTable', 7)}
+                                            ${tableRenderer.createSortableHeader('Kurum Desteği (%)', 'genelSkorlarTable', 8)}
+                                            ${tableRenderer.createSortableHeader('İş Yükü-Destek Dengesi', 'genelSkorlarTable', 9)}
+                                        </tr>
+                                    </thead>
+                                    <tbody id="genelSkorlarBody">
+                                        <tr><td colspan="10" class="text-center py-8 text-text-meta">Lütfen veri girişi yapınız...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 `,
 
                 'sosyal-medya': () => `
-                    <div id="sosyalMedyaDashboard"></div>
-                    
-                    <h3 style="font-size: 18px; font-weight: 600; margin: 30px 0 15px 0; color: #1a1a1a;">Detaylı Platform Analizi</h3>
-                    
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Müdürlüklerin belediye ve başkan sosyal medya hesaplarını takip oranları. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
-                        ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
-                        <button onclick="csvExporter.exportSosyalMedya()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
+                    <div class="max-w-7xl mx-auto space-y-6">
+                        <div id="sosyalMedyaDashboard"></div>
+                        
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h3 class="font-serif text-2xl font-semibold text-title-brown mb-4">Detaylı Platform Analizi</h3>
+                            
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Müdürlüklerin belediye ve başkan sosyal medya hesaplarını takip oranları. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-4 gap-4">
+                                ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
+                                <button onclick="csvExporter.exportSosyalMedya()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+                                    CSV İndir
+                                </button>
+                            </div>
                     
                     <div class="table-container">
                         <table id="sosyalMedyaTable">
@@ -4756,16 +4774,20 @@
                 `,
 
                 'ruh-sagligi': () => `
-                    <div class="warning-box">
-                        <strong>⚠️ Önemli:</strong> Ruh sağlığı taraması skorlarında yüksek değerler olumsuz durumu gösterir. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
-                        ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
-                        <button onclick="csvExporter.exportRuhSagligi()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Ruh Sağlığı Taraması</h2>
+                            
+                            <div class="mb-6 p-4 bg-amber-50 rounded-lg border-l-4 border-amber-500">
+                                <p class="text-sm text-amber-800"><strong class="font-semibold">Önemli:</strong> Ruh sağlığı taraması skorlarında yüksek değerler olumsuz durumu gösterir. <em>Başlıklara tıklayarak sıralayın</em></p>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-4 gap-4">
+                                ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
+                                <button onclick="csvExporter.exportRuhSagligi()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+                                    CSV İndir
+                                </button>
+                            </div>
                     
                     <div class="table-container">
                         <table id="ruhSagligiTable">
@@ -4788,18 +4810,20 @@
                 `,
 
                 'temalar': () => `
-                    <h2 style="font-size: 20px; font-weight: 700; margin: 30px 0 15px 0; color: #1a1a1a;">📋 Detaylı Müdürlük Karşılaştırması</h2>
-                    
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Her temanın müdürlük bazında detaylı analizi. <em>Başlıklara tıklayarak sıralayın (⇅ → ▲ → ▼ → ⇅)</em>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 15px 0;">
-                        ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
-                        <button onclick="csvExporter.exportTemalar()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Konular Üzerinden Analiz</h2>
+                            
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Her temanın müdürlük bazında detaylı analizi. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-4 gap-4">
+                                ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
+                                <button onclick="csvExporter.exportTemalar()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+                                    CSV İndir
+                                </button>
+                            </div>
                     
                     <div class="table-container">
                         <table id="temalarTable">
@@ -4833,21 +4857,25 @@
                 `,
 
                 'sorular': () => `
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Her sorunun tüm müdürlüklerdeki performansı. <em>Soru seçerek mercek altına alabilir, başlıklara tıklayarak sıralayabilirsiniz.</em>
-                    </div>
-                    
-                    <div style="display: flex; gap: 15px; margin: 15px 0; align-items: center;">
-                        <div style="flex: 1;">
-                            <div style="background: #ffffff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                                <label for="mudurlukSoruSelect" style="font-size: 13px; font-weight: 600; color: #374151; margin-right: 10px;">🏢 Müdürlük Seç:</label>
-                                <select id="mudurlukSoruSelect" onchange="sorularManager.selectMudurluk()" style="min-width: 350px;">
-                                    <option value="">-- Tüm Müdürlükler --</option>
-                                </select>
-                                <button class="btn btn-reset" onclick="sorularManager.resetFilters()" style="margin-left: 10px;">
-                                    <span class="material-icons-outlined" style="font-size: 16px;">refresh</span> Sıfırla
-                                </button>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Sorular Üzerinden Analiz</h2>
+                            
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Her sorunun tüm müdürlüklerdeki performansı. <em class="text-text-meta">Soru seçerek mercek altına alabilir, başlıklara tıklayarak sıralayabilirsiniz.</em></p>
                             </div>
+                            
+                            <div class="flex gap-4 mb-4 items-center">
+                                <div class="flex-1">
+                                    <div class="bg-page-bg p-4 rounded-xl border border-border-light flex items-center gap-3 flex-wrap">
+                                        <label for="mudurlukSoruSelect" class="text-sm font-semibold text-text-body whitespace-nowrap">Müdürlük Seç:</label>
+                                        <select id="mudurlukSoruSelect" onchange="sorularManager.selectMudurluk()" class="min-w-[350px] px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                            <option value="">-- Tüm Müdürlükler --</option>
+                                        </select>
+                                        <button class="px-4 py-2 bg-white text-text-sidebar border border-border-light rounded-lg text-sm font-medium hover:bg-page-bg transition-all flex items-center gap-2" onclick="sorularManager.resetFilters()">
+                                            <span class="material-icons-outlined text-base">refresh</span> Sıfırla
+                                        </button>
+                                    </div>
                         </div>
                         <div style="min-width: 400px;">
                             <div style="background: #ffffff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
@@ -4877,15 +4905,17 @@
                 `,
 
                 'acik-uclu': () => `
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                        <div class="info-box" style="flex: 1; margin: 0;">
-                            <strong>ℹ️ Açıklama:</strong> Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. 
-                            <strong>Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</strong>
-                        </div>
-                        <button onclick="csvExporter.exportAcikUclu()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px; margin-left: 15px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-2">Açık Uçlu Cevaplar</h2>
+                                    <p class="text-sm text-text-meta">Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</p>
+                                </div>
+                                <button onclick="csvExporter.exportAcikUclu()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+                                    CSV İndir
+                                </button>
+                            </div>
                     
                     <div class="table-container">
                         <table>
@@ -4906,21 +4936,25 @@
                 `,
 
                 'mudurluk-karsilastir': () => `
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> İki müdürlüğü yan yana karşılaştırarak güçlü ve zayıf yönlerini analiz edin.
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
-                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                            <label style="font-weight: 600; color: #374151; margin-bottom: 8px; display: block;">1. Müdürlük Seçin:</label>
-                            <select id="karsilastir1" onchange="comparisonManager.updateComparison()" style="width: 100%;">
-                                <option value="">-- Müdürlük Seçiniz --</option>
-                            </select>
-                        </div>
-                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                            <label style="font-weight: 600; color: #374151; margin-bottom: 8px; display: block;">2. Müdürlük Seçin:</label>
-                            <select id="karsilastir2" onchange="comparisonManager.updateComparison()" style="width: 100%;">
-                                <option value="">-- Müdürlük Seçiniz --</option>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Müdürlük Karşılaştırma</h2>
+                            
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> İki müdürlüğü yan yana karşılaştırarak güçlü ve zayıf yönlerini analiz edin.</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-6 mb-6">
+                                <div class="bg-page-bg p-5 rounded-xl border border-border-light">
+                                    <label class="font-semibold text-text-body mb-2 block text-sm">1. Müdürlük Seçin:</label>
+                                    <select id="karsilastir1" onchange="comparisonManager.updateComparison()" class="w-full px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                        <option value="">-- Müdürlük Seçiniz --</option>
+                                    </select>
+                                </div>
+                                <div class="bg-page-bg p-5 rounded-xl border border-border-light">
+                                    <label class="font-semibold text-text-body mb-2 block text-sm">2. Müdürlük Seçin:</label>
+                                    <select id="karsilastir2" onchange="comparisonManager.updateComparison()" class="w-full px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                        <option value="">-- Müdürlük Seçiniz --</option>
                             </select>
                         </div>
                     </div>
@@ -4929,15 +4963,20 @@
                 `,
 
                 'mudurluk-sec': () => `
-                    <div class="info-box">
-                        <strong>ℹ️ Açıklama:</strong> Seçili müdürlüğü genel belediye ortalamasıyla karşılaştırın.
-                    </div>
-                    <div style="margin: 20px 0;">
-                        <label for="mudurlukSelect" style="margin-right: 10px;"><strong>Müdürlük Seçin:</strong></label>
-                        <select id="mudurlukSelect" onchange="surveyManager.updateMudurlukAnalysis()">
-                            <option value="">-- Müdürlük Seçiniz --</option>
-                        </select>
-                    </div>
+                    <div class="max-w-7xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Müdürlük Detay Analizi</h2>
+                            
+                            <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Seçili müdürlüğü genel belediye ortalamasıyla karşılaştırın.</p>
+                            </div>
+                            
+                            <div class="mb-6 flex items-center gap-4">
+                                <label for="mudurlukSelect" class="font-semibold text-text-body text-sm">Müdürlük Seçin:</label>
+                                <select id="mudurlukSelect" onchange="surveyManager.updateMudurlukAnalysis()" class="min-w-[300px] px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                    <option value="">-- Müdürlük Seçiniz --</option>
+                                </select>
+                            </div>
                     <div class="table-container">
                         <table id="mudurlukSecTable">
                             <thead>
