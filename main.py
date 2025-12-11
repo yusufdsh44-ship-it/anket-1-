@@ -296,9 +296,6 @@ def save_survey_data():
 
 @app.route('/rapor_verileri.js')
 def serve_rapor_verileri():
-    if APP_PASSWORD and not check_auth(request):
-        return 'Unauthorized', 401
-    
     with open('rapor_verileri.js', 'r', encoding='utf-8') as f:
         content = f.read()
     response = make_response(content)
