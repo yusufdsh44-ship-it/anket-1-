@@ -70,7 +70,7 @@
             overflow: hidden;
         }
 
-        /* SIDEBAR TOGGLE */
+        /* SIDEBAR TOGGLE - Mobile only */
         .sidebar-overlay {
             display: none;
             position: fixed;
@@ -90,6 +90,7 @@
         }
 
         .hamburger-btn {
+            display: none;
             position: fixed;
             top: 20px;
             left: 20px;
@@ -99,7 +100,6 @@
             border-radius: 12px;
             background: #F8F4EC;
             border: 1px solid #E2D9CA;
-            display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
@@ -117,7 +117,7 @@
             color: #7B746A;
         }
 
-        /* SIDEBAR */
+        /* SIDEBAR - Desktop: always visible, Mobile: toggle */
         .sidebar {
             width: 320px;
             background: #F8F4EC;
@@ -125,18 +125,37 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            position: fixed;
-            left: 0;
-            top: 0;
+            position: relative;
             height: 100vh;
             z-index: 50;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
         }
 
-        .sidebar.open {
-            transform: translateX(0);
+        .sidebar .close-btn {
+            display: none;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .hamburger-btn {
+                display: flex;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar .close-btn {
+                display: block;
+            }
         }
 
         .sidebar-header {
@@ -1157,7 +1176,7 @@
                     Anket Değerlendirme Sistemi
                 </p>
             </div>
-            <button onclick="toggleSidebar()" style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='none'">
+            <button class="close-btn" onclick="toggleSidebar()" style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='none'">
                 <span class="material-icons-outlined" style="font-size: 24px; color: #7B746A;">close</span>
             </button>
         </div>
@@ -4600,16 +4619,16 @@
                 return `
                     <div class="max-w-[1100px] mx-auto">
                         <div class="bg-white rounded-[20px] shadow-soft p-12 md:p-20 border border-white relative overflow-hidden">
+                            <div class="mb-6 flex justify-end">
+                                <select id="quickMudurlukSelect" onchange="reportManager.quickNavigate(this.value)" class="px-3 py-1.5 bg-page-bg border border-border-light rounded-full text-xs font-sans text-text-muted-light focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer" style="max-width: 180px;">
+                                    <option value="">Müdürlük Seç...</option>
+                                    <option value="belediye-geneli">Belediye Geneli</option>
+                                    ${reportManager.getMudurlukOptions()}
+                                </select>
+                            </div>
                             <div class="mb-16 pb-8 border-b border-gray-100 flex justify-between items-end">
                                 <h3 class="font-serif text-5xl font-medium text-title-brown tracking-tight">Giriş</h3>
-                                <div class="flex items-center gap-4">
-                                    <select id="quickMudurlukSelect" onchange="reportManager.quickNavigate(this.value)" class="px-3 py-1.5 bg-page-bg border border-border-light rounded-full text-xs font-sans text-text-muted-light focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer" style="max-width: 160px;">
-                                        <option value="">Müdürlük Seç...</option>
-                                        <option value="belediye-geneli">Belediye Geneli</option>
-                                        ${reportManager.getMudurlukOptions()}
-                                    </select>
-                                    <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">24.10.2023</span>
-                                </div>
+                                <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">15.12.2025</span>
                             </div>
                             <article id="reportContent" class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
                                 ${reportManager.girisHTML}
@@ -5224,7 +5243,6 @@
                         mudurlukNavContainer.id = 'mudurlukQuickNav';
                         mudurlukNavContainer.style.cssText = 'padding: 8px 16px; margin-top: 8px;';
                         mudurlukNavContainer.innerHTML = `
-                            <div style="font-size: 9px; color: #7B746A; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; opacity: 0.6;">Hızlı Erişim</div>
                             <div id="mudurlukQuickList" style="display: flex; flex-direction: column; gap: 2px;"></div>
                             <button id="showAllMudurlukler" onclick="pageManager.toggleAllMudurlukler()" style="display: none; margin-top: 8px; padding: 6px 12px; background: rgba(200,106,60,0.1); border: none; border-radius: 8px; color: #C86A3C; font-size: 12px; cursor: pointer; width: 100%; text-align: center; transition: all 0.2s;">
                                 <span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">more_horiz</span> Tümünü Göster
@@ -5265,7 +5283,7 @@
 
                 let html = `
                     <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('belediye-geneli')" style="padding: 8px 12px; cursor: pointer; border-radius: 8px; font-size: 13px; color: #7B746A; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
-                        <span class="material-icons-outlined" style="font-size: 16px; color: #C86A3C;">apartment</span>
+                        <span class="material-icons-outlined" style="font-size: 16px; opacity: 0.6;">chevron_right</span>
                         Belediye Geneli
                     </div>
                 `;
