@@ -137,7 +137,7 @@
         /* Mobile styles */
         @media (max-width: 768px) {
             .hamburger-btn {
-                display: flex;
+                display: flex !important;
             }
 
             .sidebar {
@@ -155,6 +155,10 @@
 
             .sidebar .close-btn {
                 display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
             }
         }
 
@@ -1200,6 +1204,16 @@
             const overlay = document.getElementById('sidebarOverlay');
             sidebar.classList.toggle('open');
             overlay.classList.toggle('active');
+        }
+
+        // Close sidebar only (for mobile navigation)
+        function closeSidebarIfMobile() {
+            if (window.innerWidth <= 768) {
+                const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('sidebarOverlay');
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            }
         }
 
         const CONFIG = {
@@ -5232,7 +5246,7 @@
                         `;
                         menuItem.onclick = () => {
                             pageManager.showPage(item.id);
-                            toggleSidebar();
+                            closeSidebarIfMobile();
                         };
                         menu.appendChild(menuItem);
                     });
@@ -5316,7 +5330,7 @@
 
             goToMudurlukRapor: (mudurlukKey) => {
                 pageManager.showPage('mudurluk-raporlari');
-                toggleSidebar();
+                closeSidebarIfMobile();
                 
                 setTimeout(() => {
                     if (mudurlukKey === 'belediye-geneli') {
