@@ -89,11 +89,35 @@
             opacity: 1;
         }
 
+        /* Hamburger button inside sidebar */
         .hamburger-btn {
             display: flex;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: transparent;
+            border: 1px solid #E2D9CA;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(255,255,255,0.6);
+        }
+
+        .hamburger-btn span {
+            font-size: 22px;
+            color: #7B746A;
+        }
+
+        /* Floating hamburger when sidebar hidden */
+        .hamburger-floating {
+            display: none;
             position: fixed;
             top: 20px;
-            left: 340px;
+            left: 20px;
             z-index: 60;
             width: 44px;
             height: 44px;
@@ -107,21 +131,21 @@
             transition: all 0.2s;
         }
 
-        .hamburger-btn.sidebar-closed {
-            left: 20px;
+        .hamburger-floating.visible {
+            display: flex;
         }
 
-        .hamburger-btn:hover {
+        .hamburger-floating:hover {
             background: #FFFFFF;
             transform: scale(1.05);
         }
 
-        .hamburger-btn span {
+        .hamburger-floating span {
             font-size: 24px;
             color: #7B746A;
         }
 
-        /* SIDEBAR - Desktop: always visible, Mobile: toggle */
+        /* SIDEBAR */
         .sidebar {
             width: 320px;
             background: #F8F4EC;
@@ -132,27 +156,25 @@
             position: relative;
             height: 100vh;
             z-index: 50;
-        }
-
-        .sidebar .close-btn {
-            display: none;
+            transition: width 0.3s ease, transform 0.3s ease;
         }
 
         .sidebar.desktop-hidden {
-            transform: translateX(-100%);
+            width: 0;
+            overflow: hidden;
         }
 
         /* Mobile styles */
         @media (max-width: 768px) {
-            .hamburger-btn {
+            .hamburger-floating {
                 display: flex !important;
-                left: 20px !important;
             }
 
             .sidebar {
                 position: fixed;
                 left: 0;
                 top: 0;
+                width: 320px;
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
                 box-shadow: 4px 0 20px rgba(0,0,0,0.1);
@@ -162,8 +184,8 @@
                 transform: translateX(0);
             }
 
-            .sidebar .close-btn {
-                display: block;
+            .sidebar.desktop-hidden {
+                width: 320px;
             }
 
             .main-content {
@@ -1170,8 +1192,8 @@
 </head>
 
 <body>
-    <!-- HAMBURGER BUTTON -->
-    <button class="hamburger-btn" onclick="toggleSidebar()" id="hamburgerBtn">
+    <!-- FLOATING HAMBURGER (visible when sidebar hidden) -->
+    <button class="hamburger-floating" onclick="toggleSidebar()" id="hamburgerFloating">
         <span class="material-icons-outlined">menu</span>
     </button>
 
@@ -1189,8 +1211,8 @@
                     Anket Değerlendirme Sistemi
                 </p>
             </div>
-            <button class="close-btn" onclick="toggleSidebar()" style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='none'">
-                <span class="material-icons-outlined" style="font-size: 24px; color: #7B746A;">close</span>
+            <button class="hamburger-btn" onclick="toggleSidebar()" id="hamburgerBtn">
+                <span class="material-icons-outlined">menu</span>
             </button>
         </div>
         <div class="sidebar-menu" id="sidebarMenu"></div>
@@ -1211,7 +1233,7 @@
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const floatingBtn = document.getElementById('hamburgerFloating');
             const isMobile = window.innerWidth <= 768;
 
             if (isMobile) {
@@ -1219,7 +1241,7 @@
                 overlay.classList.toggle('active');
             } else {
                 sidebar.classList.toggle('desktop-hidden');
-                hamburgerBtn.classList.toggle('sidebar-closed');
+                floatingBtn.classList.toggle('visible');
             }
         }
 
