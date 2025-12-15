@@ -90,10 +90,10 @@
         }
 
         .hamburger-btn {
-            display: none;
+            display: flex;
             position: fixed;
             top: 20px;
-            left: 20px;
+            left: 340px;
             z-index: 60;
             width: 44px;
             height: 44px;
@@ -105,6 +105,10 @@
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.2s;
+        }
+
+        .hamburger-btn.sidebar-closed {
+            left: 20px;
         }
 
         .hamburger-btn:hover {
@@ -134,10 +138,15 @@
             display: none;
         }
 
+        .sidebar.desktop-hidden {
+            transform: translateX(-100%);
+        }
+
         /* Mobile styles */
         @media (max-width: 768px) {
             .hamburger-btn {
                 display: flex !important;
+                left: 20px !important;
             }
 
             .sidebar {
@@ -1202,8 +1211,16 @@
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebarOverlay');
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('active');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('active');
+            } else {
+                sidebar.classList.toggle('desktop-hidden');
+                hamburgerBtn.classList.toggle('sidebar-closed');
+            }
         }
 
         // Close sidebar only (for mobile navigation)
