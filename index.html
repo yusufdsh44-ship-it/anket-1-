@@ -70,6 +70,53 @@
             overflow: hidden;
         }
 
+        /* SIDEBAR TOGGLE */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 40;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .hamburger-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 60;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: #F8F4EC;
+            border: 1px solid #E2D9CA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+        }
+
+        .hamburger-btn:hover {
+            background: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        .hamburger-btn span {
+            font-size: 24px;
+            color: #7B746A;
+        }
+
         /* SIDEBAR */
         .sidebar {
             width: 320px;
@@ -78,6 +125,18 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            z-index: 50;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
         }
 
         .sidebar-header {
@@ -1079,9 +1138,17 @@
 </head>
 
 <body>
+    <!-- HAMBURGER BUTTON -->
+    <button class="hamburger-btn" onclick="toggleSidebar()" id="hamburgerBtn">
+        <span class="material-icons-outlined">menu</span>
+    </button>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
     <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-header">
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header" style="display: flex; align-items: flex-start; justify-content: space-between;">
             <div class="sidebar-header-text">
                 <h1 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #211A16; line-height: 1.1; letter-spacing: -0.02em;">
                     Arnavutköy<br/>Belediyesi
@@ -1090,15 +1157,11 @@
                     Anket Değerlendirme Sistemi
                 </p>
             </div>
+            <button onclick="toggleSidebar()" style="background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; transition: background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.05)'" onmouseout="this.style.background='none'">
+                <span class="material-icons-outlined" style="font-size: 24px; color: #7B746A;">close</span>
+            </button>
         </div>
         <div class="sidebar-menu" id="sidebarMenu"></div>
-        <div style="padding: 24px; border-top: 1px solid #E2D9CA; display: flex; align-items: center; gap: 12px;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(245, 165, 141, 0.2); color: #C86A3C; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px;">Y</div>
-            <div style="flex: 1; min-width: 0;">
-                <p style="font-size: 14px; font-weight: 600; color: #7B746A; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Yönetici Paneli</p>
-                <p style="font-size: 12px; color: #7B746A; opacity: 0.8; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">admin@arnavutkoy.bel.tr</p>
-            </div>
-        </div>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -1111,6 +1174,14 @@
 
     <script>
         'use strict';
+
+        // Sidebar Toggle Function
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
 
         const CONFIG = {
             QUESTIONS_PER_SURVEY: 49,
@@ -4531,7 +4602,14 @@
                         <div class="bg-white rounded-[20px] shadow-soft p-12 md:p-20 border border-white relative overflow-hidden">
                             <div class="mb-16 pb-8 border-b border-gray-100 flex justify-between items-end">
                                 <h3 class="font-serif text-5xl font-medium text-title-brown tracking-tight">Giriş</h3>
-                                <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">Tarih: 24.10.2023</span>
+                                <div class="flex items-center gap-4">
+                                    <select id="quickMudurlukSelect" onchange="reportManager.quickNavigate(this.value)" class="px-3 py-1.5 bg-page-bg border border-border-light rounded-full text-xs font-sans text-text-muted-light focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer" style="max-width: 160px;">
+                                        <option value="">Müdürlük Seç...</option>
+                                        <option value="belediye-geneli">Belediye Geneli</option>
+                                        ${reportManager.getMudurlukOptions()}
+                                    </select>
+                                    <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">24.10.2023</span>
+                                </div>
                             </div>
                             <article id="reportContent" class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
                                 ${reportManager.girisHTML}
@@ -4628,6 +4706,38 @@
                     const shouldShow = !searchTerm || content.includes(searchTerm);
                     section.style.display = shouldShow ? 'block' : 'none';
                 });
+            },
+
+            quickNavigate: (value) => {
+                if (!value) return;
+                
+                if (value === 'belediye-geneli') {
+                    const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
+                    if (belediyeGeneli) {
+                        // Filtreyi sıfırla
+                        const filter = document.getElementById('mudurlukFilter');
+                        if (filter) filter.value = '';
+                        reportManager.filterReports('');
+                        belediyeGeneli.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                } else {
+                    // Filtreyi ayarla ve scroll
+                    const filter = document.getElementById('mudurlukFilter');
+                    if (filter) {
+                        filter.value = value;
+                        reportManager.filterReports(value);
+                    }
+                    setTimeout(() => {
+                        const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${value}"]`);
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 100);
+                }
+                
+                // Dropdown'ı sıfırla
+                const quickSelect = document.getElementById('quickMudurlukSelect');
+                if (quickSelect) quickSelect.value = '';
             }
         };
 
@@ -5101,12 +5211,118 @@
                             <span class="material-icons-outlined menu-item-icon">${item.icon}</span>
                             <span>${item.title}</span>
                         `;
-                        menuItem.onclick = () => pageManager.showPage(item.id);
+                        menuItem.onclick = () => {
+                            pageManager.showPage(item.id);
+                            toggleSidebar();
+                        };
                         menu.appendChild(menuItem);
                     });
+
+                    // Rapor kategorisi altına müdürlük hızlı navigasyonu ekle
+                    if (category.category === 'RAPOR') {
+                        const mudurlukNavContainer = document.createElement('div');
+                        mudurlukNavContainer.id = 'mudurlukQuickNav';
+                        mudurlukNavContainer.style.cssText = 'padding: 8px 16px; margin-top: 8px;';
+                        mudurlukNavContainer.innerHTML = `
+                            <div style="font-size: 9px; color: #7B746A; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; opacity: 0.6;">Hızlı Erişim</div>
+                            <div id="mudurlukQuickList" style="display: flex; flex-direction: column; gap: 2px;"></div>
+                            <button id="showAllMudurlukler" onclick="pageManager.toggleAllMudurlukler()" style="display: none; margin-top: 8px; padding: 6px 12px; background: rgba(200,106,60,0.1); border: none; border-radius: 8px; color: #C86A3C; font-size: 12px; cursor: pointer; width: 100%; text-align: center; transition: all 0.2s;">
+                                <span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">more_horiz</span> Tümünü Göster
+                            </button>
+                        `;
+                        menu.appendChild(mudurlukNavContainer);
+                    }
                 });
 
                 pageManager.showPage('mudurluk-raporlari');
+                
+                // Müdürlük listesini doldur
+                setTimeout(() => pageManager.populateMudurlukQuickNav(), 500);
+            },
+
+            mudurlukNavExpanded: false,
+
+            toggleAllMudurlukler: () => {
+                pageManager.mudurlukNavExpanded = !pageManager.mudurlukNavExpanded;
+                pageManager.populateMudurlukQuickNav();
+            },
+
+            populateMudurlukQuickNav: () => {
+                const quickList = document.getElementById('mudurlukQuickList');
+                const showAllBtn = document.getElementById('showAllMudurlukler');
+                if (!quickList) return;
+
+                // RAPOR_VERILERI varsa müdürlükleri al
+                let mudurlukler = [];
+                if (typeof RAPOR_VERILERI !== 'undefined' && RAPOR_VERILERI.mudurlukler) {
+                    mudurlukler = Object.entries(RAPOR_VERILERI.mudurlukler)
+                        .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'));
+                }
+
+                // Belediye Geneli + ilk 5 müdürlük (veya tümü expanded ise)
+                const displayCount = pageManager.mudurlukNavExpanded ? mudurlukler.length : 5;
+                const visibleMudurlukler = mudurlukler.slice(0, displayCount);
+
+                let html = `
+                    <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('belediye-geneli')" style="padding: 8px 12px; cursor: pointer; border-radius: 8px; font-size: 13px; color: #7B746A; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
+                        <span class="material-icons-outlined" style="font-size: 16px; color: #C86A3C;">apartment</span>
+                        Belediye Geneli
+                    </div>
+                `;
+
+                visibleMudurlukler.forEach(([key, data]) => {
+                    html += `
+                        <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('${key}')" style="padding: 8px 12px; cursor: pointer; border-radius: 8px; font-size: 13px; color: #7B746A; display: flex; align-items: center; gap: 8px; transition: all 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <span class="material-icons-outlined" style="font-size: 16px; opacity: 0.6;">chevron_right</span>
+                            <span style="overflow: hidden; text-overflow: ellipsis;">${data.name}</span>
+                        </div>
+                    `;
+                });
+
+                quickList.innerHTML = html;
+
+                // Hover effect ekle
+                quickList.querySelectorAll('.mudurluk-quick-item').forEach(item => {
+                    item.onmouseover = () => { item.style.background = 'rgba(200,106,60,0.1)'; item.style.color = '#C86A3C'; };
+                    item.onmouseout = () => { item.style.background = 'none'; item.style.color = '#7B746A'; };
+                });
+
+                // Show all button
+                if (showAllBtn && mudurlukler.length > 5) {
+                    showAllBtn.style.display = 'block';
+                    showAllBtn.innerHTML = pageManager.mudurlukNavExpanded 
+                        ? '<span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">expand_less</span> Daralt'
+                        : `<span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">more_horiz</span> Tümünü Göster (${mudurlukler.length})`;
+                }
+            },
+
+            goToMudurlukRapor: (mudurlukKey) => {
+                pageManager.showPage('mudurluk-raporlari');
+                toggleSidebar();
+                
+                setTimeout(() => {
+                    if (mudurlukKey === 'belediye-geneli') {
+                        const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
+                        if (belediyeGeneli) {
+                            belediyeGeneli.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        // Filtreyi sıfırla
+                        const filter = document.getElementById('mudurlukFilter');
+                        if (filter) filter.value = '';
+                        reportManager.filterReports('');
+                    } else {
+                        // Filtreyi ayarla ve scroll
+                        const filter = document.getElementById('mudurlukFilter');
+                        if (filter) {
+                            filter.value = mudurlukKey;
+                            reportManager.filterReports(mudurlukKey);
+                        }
+                        const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${mudurlukKey}"]`);
+                        if (section) {
+                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                }, 300);
             }
         };
 
