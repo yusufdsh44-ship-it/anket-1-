@@ -6,6 +6,14 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-12-15: **Mobile Responsive Design Update**
+  - **Mobile Header**: Fixed 56px header with hamburger + title left, report badge + avatar right
+  - **3-Column Stats Grid**: Compact stats cards forced into 3-column layout on mobile
+  - **Table Improvements**: Removed sticky columns, compact typography for mobile readability
+  - **Card Layout**: White backgrounds with 16px border-radius and soft shadows
+  - **Report Section**: Mobile-friendly typography for all report content
+  - **CSS Strategy**: Used !important overrides to handle JavaScript inline styles
+
 - 2025-12-11: **Major UI Redesign with Warm Minimal Aesthetic**
   - **New Design System:** Tailwind CSS + custom CSS with cream/terracotta color palette
     - Background: #FBF7EF (warm cream)
