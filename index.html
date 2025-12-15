@@ -164,35 +164,42 @@
             overflow: hidden;
         }
 
-        /* Mobile styles */
+        /* ========================================
+           STITCH MOBILE DESIGN - EXACT MATCH
+           ======================================== */
         @media (max-width: 768px) {
-            /* Hide floating hamburger - use mobile header instead */
+            /* Hide desktop elements */
             .hamburger-floating {
                 display: none !important;
             }
+            
+            .footer-signature {
+                display: none !important;
+            }
 
-            /* Mobile header bar */
+            /* ===== MOBILE HEADER - Stitch Style ===== */
             .mobile-header {
                 display: flex !important;
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
-                z-index: 30;
+                z-index: 100;
                 height: 56px;
-                padding: 0 12px;
+                padding: 0 16px;
                 align-items: center;
                 justify-content: space-between;
-                background: rgba(247, 244, 239, 0.95);
-                backdrop-filter: blur(8px);
-                border-bottom: 1px solid rgba(226, 217, 202, 0.5);
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+                background: rgba(247, 244, 239, 0.97);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(200, 195, 185, 0.4);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
             }
 
             .mobile-header-left {
                 display: flex;
                 align-items: center;
-                gap: 8px;
+                gap: 10px;
             }
 
             .mobile-header-left .hamburger-mobile {
@@ -203,9 +210,14 @@
                 justify-content: center;
                 border-radius: 8px;
                 background: #F0EBE3;
-                border: 1px solid #E2D9CA;
-                color: #7B746A;
+                border: 1px solid #D8D3C8;
+                color: #5C5850;
                 cursor: pointer;
+                transition: all 0.15s ease;
+            }
+
+            .mobile-header-left .hamburger-mobile:active {
+                transform: scale(0.95);
             }
 
             .mobile-header-left .hamburger-mobile span {
@@ -215,61 +227,67 @@
             .mobile-header-left .header-title {
                 display: flex;
                 flex-direction: column;
+                gap: 1px;
             }
 
             .mobile-header-left .header-title .title-main {
-                font-size: 10px;
+                font-size: 11px;
                 font-weight: 700;
                 text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: #2F2A24;
+                letter-spacing: 0.15em;
+                color: #2C2C2C;
             }
 
             .mobile-header-left .header-title .title-sub {
                 font-size: 9px;
-                color: #7B746A;
+                color: #8E8E93;
+                letter-spacing: 0.02em;
             }
 
             .mobile-header-right {
                 display: flex;
                 align-items: center;
-                gap: 8px;
+                gap: 10px;
             }
 
             .mobile-header-right .report-badge {
                 font-size: 10px;
-                font-family: monospace;
+                font-family: 'SF Mono', ui-monospace, monospace;
                 font-weight: 500;
-                color: #7B746A;
+                color: #8E8E93;
                 background: white;
-                padding: 4px 8px;
+                padding: 5px 10px;
                 border-radius: 4px;
-                border: 1px solid #E2D9CA;
+                border: 1px solid #E5E5E5;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.04);
             }
 
             .mobile-header-right .user-avatar {
                 width: 28px;
                 height: 28px;
                 border-radius: 50%;
-                background: #C86A3C;
+                background: #2C2C2C;
                 color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 11px;
+                font-size: 10px;
                 font-family: 'Playfair Display', serif;
                 font-weight: 700;
             }
 
+            /* ===== SIDEBAR MOBILE ===== */
             .sidebar {
                 position: fixed;
                 left: 0;
                 top: 0;
                 width: 85vw;
                 max-width: 320px;
+                height: 100vh;
                 transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+                z-index: 200;
             }
 
             .sidebar.open {
@@ -283,8 +301,6 @@
 
             .sidebar-header {
                 padding: 20px 16px 12px 16px;
-                flex-direction: column;
-                gap: 12px;
             }
 
             .sidebar-header .hamburger-btn {
@@ -301,355 +317,334 @@
                 font-size: 9px !important;
             }
 
+            /* ===== MAIN CONTENT AREA ===== */
             .main-content {
                 margin-left: 0;
                 padding-top: 56px;
-            }
-
-            .content-header {
-                display: none;
-            }
-
-            .content-body {
-                padding: 12px;
+                min-height: 100vh;
                 background: #F7F4EF;
             }
 
-            .footer-signature {
-                display: none;
+            .content-header {
+                display: none !important;
             }
 
-            /* Mobile card container */
-            .mobile-card {
+            .content-body {
+                padding: 16px 12px 80px 12px !important;
+                background: #F7F4EF;
+            }
+
+            /* ===== MAIN CARD WRAPPER ===== */
+            .page-content {
                 background: white;
-                border-radius: 16px;
-                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-                border: 1px solid #E8E4DC;
-                overflow: hidden;
-                margin-bottom: 12px;
-            }
-
-            .mobile-card-header {
-                padding: 12px 16px;
-                border-bottom: 1px solid #E8E4DC;
-            }
-
-            .mobile-card-body {
-                padding: 16px;
-            }
-
-            /* 3-column stats grid */
-            .mobile-stats-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
-                margin-bottom: 16px;
-            }
-
-            .mobile-stat-card {
-                background: #F9F7F5;
-                padding: 10px;
-                border-radius: 8px;
-                border: 1px solid #E8E4DC;
-            }
-
-            .mobile-stat-card .stat-label {
-                font-size: 9px;
-                font-weight: 700;
-                text-transform: uppercase;
-                color: #7B746A;
-                margin-bottom: 4px;
-                letter-spacing: 0.05em;
-            }
-
-            .mobile-stat-card .stat-value {
-                font-size: 18px;
-                font-weight: 700;
-                color: #2F2A24;
-                line-height: 1;
-            }
-
-            .mobile-stat-card .stat-change {
-                font-size: 9px;
-                margin-top: 4px;
-            }
-
-            .mobile-stat-card .stat-change.positive {
-                color: #22C55E;
-            }
-
-            .mobile-stat-card .stat-change.negative {
-                color: #EF4444;
-            }
-
-            /* Mobile section titles */
-            .mobile-section-title {
-                font-family: 'Playfair Display', serif;
-                font-style: italic;
-                font-weight: 600;
-                font-size: 14px;
-                color: #2F2A24;
-                margin-bottom: 8px;
-                padding-left: 8px;
-                border-left: 2px solid #BCAAA4;
-            }
-
-            .mobile-subsection-title {
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: #7B746A;
-                margin-bottom: 12px;
-            }
-
-            /* Mobile text content */
-            .mobile-text-content {
-                font-size: 12px;
-                line-height: 1.6;
-                color: #4A4A4A;
-                text-align: justify;
-            }
-
-            /* Mobile tables */
-            .mobile-table-container {
-                border: 1px solid #E2D9CA;
-                border-radius: 8px;
+                border-radius: 20px;
+                box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(200, 195, 185, 0.3);
                 overflow: hidden;
                 margin-bottom: 16px;
             }
 
-            .mobile-table-header {
-                background: #F9F7F5;
-                padding: 8px 12px;
-                border-bottom: 1px solid #E2D9CA;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+            .page-content > div:first-child {
+                padding: 16px 16px 12px 16px;
+                border-bottom: 1px solid #F0EDE8;
             }
 
-            .mobile-table-header h3 {
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: #4A4A4A;
-            }
-
-            /* Override desktop table styles for mobile */
-            table {
-                font-size: 11px;
-                border-radius: 8px;
-                margin: 8px 0;
-            }
-
-            th {
-                font-size: 10px;
-                padding: 8px 6px;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-            }
-
-            td {
-                padding: 6px;
-                font-size: 11px;
-            }
-
-            /* Fix sorular table on mobile */
-            #sorularTable th:first-child,
-            #sorularTable td:first-child {
-                position: static;
-                width: auto;
-                min-width: 150px;
-                max-width: none;
-                border-right: 1px solid #e5e7eb;
-            }
-
-            #sorularTable th:nth-child(2),
-            #sorularTable td:nth-child(2) {
-                position: static;
-                width: auto;
-                min-width: 100px;
-                border-right: 1px solid #e5e7eb;
-            }
-
-            #sorularTable th,
-            #sorularTable td {
-                min-width: 80px;
-                padding: 6px 4px;
-                font-size: 10px;
-            }
-
-            .table-container {
-                max-height: 60vh;
-                border-radius: 8px;
-            }
-
-            /* Stats cards on mobile */
-            .stats-card {
-                padding: 10px;
-                border-radius: 8px;
-                min-width: auto;
-                margin: 4px;
-            }
-
-            .stats-card h3 {
-                font-size: 9px;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-            }
-
-            .stats-card p {
-                font-size: 18px;
-            }
-
-            /* Info boxes on mobile */
-            .info-box,
-            .warning-box {
-                padding: 12px;
-                font-size: 12px;
-                border-radius: 8px;
-            }
-
-            /* Filter bar on mobile */
-            .filter-bar {
-                flex-wrap: wrap;
-                padding: 8px;
-                gap: 6px;
-            }
-
-            .filter-bar select {
-                min-width: 100%;
-                font-size: 12px;
-                padding: 8px 10px;
-            }
-
-            .filter-bar input {
-                max-width: 100%;
-                font-size: 12px;
-            }
-
-            /* Buttons on mobile */
-            .btn {
-                padding: 10px 16px;
-                font-size: 12px;
-            }
-
-            /* Note box style */
-            .mobile-note {
-                background: #FDFBF7;
-                padding: 12px;
-                border-radius: 8px;
-                border: 1px solid #E8E4DC;
-                margin-top: 16px;
-            }
-
-            .mobile-note p {
-                font-size: 11px;
-                color: #7B746A;
-                font-style: italic;
-                line-height: 1.5;
-            }
-
-            .mobile-note .note-label {
-                font-weight: 700;
-                color: #4A4A4A;
-                font-style: normal;
-            }
-
-            /* Override inline grid styles for mobile - force 3 columns */
-            #genelBakisCards > div,
-            #enMemnunMudurlukler > div {
+            /* ===== 3-COLUMN STATS GRID - Stitch Style ===== */
+            #genelBakisCards > div {
+                display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
-                gap: 8px !important;
+                gap: 10px !important;
+                margin-bottom: 20px;
             }
 
-            /* Compact stat cards within grids */
-            #genelBakisCards > div > div,
-            #enMemnunMudurlukler > div > div {
-                padding: 10px !important;
-                border-radius: 8px !important;
+            #genelBakisCards > div > div {
+                background: #F9F7F5 !important;
+                padding: 12px 10px !important;
+                border-radius: 10px !important;
+                border: 1px solid #E8E4DC !important;
+                text-align: left !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                min-height: 75px !important;
             }
 
-            #genelBakisCards > div > div p:first-child,
-            #enMemnunMudurlukler > div > div h3 {
+            #genelBakisCards > div > div p:first-child {
                 font-size: 9px !important;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.05em !important;
+                color: #8E8E93 !important;
+                margin-bottom: 6px !important;
             }
 
             #genelBakisCards > div > div p:last-child {
-                font-size: 16px !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                color: #2C2C2C !important;
+                line-height: 1 !important;
+            }
+
+            /* ===== DEPARTMENT CARDS GRID ===== */
+            #enMemnunMudurlukler > div {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
             }
 
             #enMemnunMudurlukler > div > div {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 6px !important;
+                background: #F9F7F5 !important;
+                padding: 12px !important;
+                border-radius: 10px !important;
+                border: 1px solid #E8E4DC !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 10px !important;
             }
 
             #enMemnunMudurlukler > div > div span.material-icons-outlined {
-                font-size: 24px !important;
+                font-size: 28px !important;
             }
 
             #enMemnunMudurlukler > div > div h3 {
-                font-size: 11px !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
                 margin-bottom: 2px !important;
             }
 
             #enMemnunMudurlukler > div > div p {
                 font-size: 14px !important;
-            }
-
-            /* Content body card styling */
-            .content-body {
-                padding: 12px !important;
-            }
-
-            .content-body > div {
-                background: white;
-                border-radius: 16px;
-                padding: 16px;
-                margin-bottom: 12px;
-                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-                border: 1px solid #E8E4DC;
-            }
-
-            /* Page content titles */
-            .page-content h2 {
-                font-family: 'Playfair Display', serif !important;
-                font-style: italic;
-                font-size: 18px !important;
-                font-weight: 600 !important;
-                margin-bottom: 12px !important;
-                padding-left: 10px;
-                border-left: 3px solid #BCAAA4;
-            }
-
-            /* Report section styling */
-            #mudurlukRaporlari {
-                background: white;
-                border-radius: 16px;
-                padding: 12px;
-                border: 1px solid #E8E4DC;
-            }
-
-            #mudurlukRaporlari h1 {
-                font-size: 20px !important;
                 font-weight: 700 !important;
             }
 
+            /* ===== SECTION TITLES - Stitch Style ===== */
+            .page-content h2,
+            #belediyeGeneliRapor h2,
             #mudurlukRaporlari h2 {
+                font-family: 'Playfair Display', serif !important;
+                font-style: italic !important;
+                font-weight: 600 !important;
                 font-size: 16px !important;
+                color: #2C2C2C !important;
+                margin: 20px 0 12px 0 !important;
+                padding-left: 10px !important;
+                border-left: 2px solid #BCAAA4 !important;
             }
 
-            #mudurlukRaporlari h3 {
+            /* ===== TABLES - Stitch Style ===== */
+            table {
+                font-size: 11px !important;
+                border-radius: 10px !important;
+                margin: 12px 0 !important;
+                border: 1px solid #E8E4DC !important;
+                overflow: hidden;
+            }
+
+            th {
+                font-size: 10px !important;
+                font-weight: 600 !important;
+                padding: 10px 8px !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.08em !important;
+                color: #8E8E93 !important;
+                background: white !important;
+                border-bottom: 1px solid #E8E4DC !important;
+            }
+
+            td {
+                padding: 10px 8px !important;
+                font-size: 11px !important;
+                color: #2C2C2C !important;
+                border-bottom: 1px solid #F0EDE8 !important;
+            }
+
+            tr:last-child td {
+                border-bottom: none !important;
+            }
+
+            /* Remove sticky columns on mobile */
+            #sorularTable th:first-child,
+            #sorularTable td:first-child,
+            #sorularTable th:nth-child(2),
+            #sorularTable td:nth-child(2) {
+                position: static !important;
+                width: auto !important;
+                min-width: auto !important;
+                max-width: none !important;
+                border-right: none !important;
+            }
+
+            #sorularTable th,
+            #sorularTable td {
+                min-width: 70px !important;
+                padding: 8px 6px !important;
+                font-size: 10px !important;
+            }
+
+            .table-container {
+                max-height: 50vh;
+                border-radius: 10px;
+                border: 1px solid #E8E4DC;
+                overflow: auto;
+            }
+
+            /* ===== REPORT SECTION - Stitch Style ===== */
+            #mudurlukRaporlari,
+            #belediyeGeneliRapor {
+                background: white !important;
+                border-radius: 20px !important;
+                padding: 20px 16px !important;
+                margin: 0 !important;
+                border: 1px solid rgba(200, 195, 185, 0.3) !important;
+                box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08) !important;
+            }
+
+            #mudurlukRaporlari h1,
+            #belediyeGeneliRapor h1 {
+                font-family: 'Playfair Display', serif !important;
+                font-size: 28px !important;
+                font-weight: 400 !important;
+                color: #2C2C2C !important;
+                margin-bottom: 4px !important;
+            }
+
+            #mudurlukRaporlari h3,
+            #belediyeGeneliRapor h3 {
+                font-family: 'Playfair Display', serif !important;
+                font-style: italic !important;
+                font-weight: 600 !important;
+                font-size: 16px !important;
+                color: #2C2C2C !important;
+                margin: 24px 0 12px 0 !important;
+            }
+
+            #mudurlukRaporlari p,
+            #belediyeGeneliRapor p {
                 font-size: 14px !important;
+                line-height: 1.7 !important;
+                color: #4A4A4A !important;
+                text-align: justify !important;
             }
 
-            #mudurlukRaporlari p {
-                font-size: 12px !important;
+            #mudurlukRaporlari ul,
+            #belediyeGeneliRapor ul {
+                padding-left: 20px !important;
+                margin: 12px 0 !important;
+            }
+
+            #mudurlukRaporlari li,
+            #belediyeGeneliRapor li {
+                font-size: 13px !important;
                 line-height: 1.6 !important;
+                color: #4A4A4A !important;
+                margin: 8px 0 !important;
+            }
+
+            /* ===== FILTER DROPDOWN - Stitch Style ===== */
+            .filter-bar {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 0 16px 0 !important;
+                margin: 0 !important;
+                display: flex;
+                justify-content: center;
+            }
+
+            .filter-bar select {
+                min-width: auto !important;
+                width: auto !important;
+                max-width: 200px !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                padding: 10px 32px 10px 16px !important;
+                border: 1px solid #D8D3C8 !important;
+                border-radius: 20px !important;
+                background: #F9F7F5 !important;
+                color: #2C2C2C !important;
+                text-align: center;
+                appearance: none;
+                -webkit-appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238E8E93' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 12px center;
+            }
+
+            .filter-bar input {
+                display: none !important;
+            }
+
+            /* ===== INFO/WARNING BOXES ===== */
+            .info-box,
+            .warning-box {
+                padding: 14px 16px !important;
+                font-size: 12px !important;
+                border-radius: 10px !important;
+                margin: 16px 0 !important;
+                line-height: 1.5 !important;
+            }
+
+            /* ===== BUTTONS ===== */
+            .btn {
+                padding: 12px 20px !important;
+                font-size: 13px !important;
+                border-radius: 10px !important;
+            }
+
+            /* ===== MOBILE FOOTER STATUS ===== */
+            .mobile-footer-status {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 0;
+                margin-top: 20px;
+                border-top: 1px dashed #E8E4DC;
+                opacity: 0.6;
+            }
+
+            .mobile-footer-status .status-indicator {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .mobile-footer-status .status-dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #34C759;
+            }
+
+            .mobile-footer-status .status-text {
+                font-size: 9px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #8E8E93;
+            }
+
+            .mobile-footer-status .status-id {
+                font-size: 9px;
+                font-family: 'SF Mono', ui-monospace, monospace;
+                color: #8E8E93;
+            }
+
+            /* ===== STATS CARDS (existing) ===== */
+            .stats-card {
+                padding: 12px !important;
+                border-radius: 10px !important;
+                min-width: auto !important;
+                margin: 4px !important;
+            }
+
+            .stats-card h3 {
+                font-size: 9px !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.05em !important;
+            }
+
+            .stats-card p {
+                font-size: 20px !important;
             }
         }
 
