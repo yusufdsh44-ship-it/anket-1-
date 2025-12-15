@@ -166,8 +166,99 @@
 
         /* Mobile styles */
         @media (max-width: 768px) {
+            /* Hide floating hamburger - use mobile header instead */
             .hamburger-floating {
+                display: none !important;
+            }
+
+            /* Mobile header bar */
+            .mobile-header {
                 display: flex !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 30;
+                height: 56px;
+                padding: 0 12px;
+                align-items: center;
+                justify-content: space-between;
+                background: rgba(247, 244, 239, 0.95);
+                backdrop-filter: blur(8px);
+                border-bottom: 1px solid rgba(226, 217, 202, 0.5);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+
+            .mobile-header-left {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .mobile-header-left .hamburger-mobile {
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+                background: #F0EBE3;
+                border: 1px solid #E2D9CA;
+                color: #7B746A;
+                cursor: pointer;
+            }
+
+            .mobile-header-left .hamburger-mobile span {
+                font-size: 18px;
+            }
+
+            .mobile-header-left .header-title {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .mobile-header-left .header-title .title-main {
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #2F2A24;
+            }
+
+            .mobile-header-left .header-title .title-sub {
+                font-size: 9px;
+                color: #7B746A;
+            }
+
+            .mobile-header-right {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .mobile-header-right .report-badge {
+                font-size: 10px;
+                font-family: monospace;
+                font-weight: 500;
+                color: #7B746A;
+                background: white;
+                padding: 4px 8px;
+                border-radius: 4px;
+                border: 1px solid #E2D9CA;
+            }
+
+            .mobile-header-right .user-avatar {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background: #C86A3C;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 700;
             }
 
             .sidebar {
@@ -212,24 +303,359 @@
 
             .main-content {
                 margin-left: 0;
+                padding-top: 56px;
             }
 
             .content-header {
-                padding: 16px 12px;
-            }
-
-            .content-header h2 {
-                font-size: 11px;
-                padding-left: 50px;
+                display: none;
             }
 
             .content-body {
-                padding: 0 12px 40px 12px;
+                padding: 12px;
+                background: #F7F4EF;
             }
 
             .footer-signature {
                 display: none;
             }
+
+            /* Mobile card container */
+            .mobile-card {
+                background: white;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+                border: 1px solid #E8E4DC;
+                overflow: hidden;
+                margin-bottom: 12px;
+            }
+
+            .mobile-card-header {
+                padding: 12px 16px;
+                border-bottom: 1px solid #E8E4DC;
+            }
+
+            .mobile-card-body {
+                padding: 16px;
+            }
+
+            /* 3-column stats grid */
+            .mobile-stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                margin-bottom: 16px;
+            }
+
+            .mobile-stat-card {
+                background: #F9F7F5;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #E8E4DC;
+            }
+
+            .mobile-stat-card .stat-label {
+                font-size: 9px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #7B746A;
+                margin-bottom: 4px;
+                letter-spacing: 0.05em;
+            }
+
+            .mobile-stat-card .stat-value {
+                font-size: 18px;
+                font-weight: 700;
+                color: #2F2A24;
+                line-height: 1;
+            }
+
+            .mobile-stat-card .stat-change {
+                font-size: 9px;
+                margin-top: 4px;
+            }
+
+            .mobile-stat-card .stat-change.positive {
+                color: #22C55E;
+            }
+
+            .mobile-stat-card .stat-change.negative {
+                color: #EF4444;
+            }
+
+            /* Mobile section titles */
+            .mobile-section-title {
+                font-family: 'Playfair Display', serif;
+                font-style: italic;
+                font-weight: 600;
+                font-size: 14px;
+                color: #2F2A24;
+                margin-bottom: 8px;
+                padding-left: 8px;
+                border-left: 2px solid #BCAAA4;
+            }
+
+            .mobile-subsection-title {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #7B746A;
+                margin-bottom: 12px;
+            }
+
+            /* Mobile text content */
+            .mobile-text-content {
+                font-size: 12px;
+                line-height: 1.6;
+                color: #4A4A4A;
+                text-align: justify;
+            }
+
+            /* Mobile tables */
+            .mobile-table-container {
+                border: 1px solid #E2D9CA;
+                border-radius: 8px;
+                overflow: hidden;
+                margin-bottom: 16px;
+            }
+
+            .mobile-table-header {
+                background: #F9F7F5;
+                padding: 8px 12px;
+                border-bottom: 1px solid #E2D9CA;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile-table-header h3 {
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #4A4A4A;
+            }
+
+            /* Override desktop table styles for mobile */
+            table {
+                font-size: 11px;
+                border-radius: 8px;
+                margin: 8px 0;
+            }
+
+            th {
+                font-size: 10px;
+                padding: 8px 6px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            td {
+                padding: 6px;
+                font-size: 11px;
+            }
+
+            /* Fix sorular table on mobile */
+            #sorularTable th:first-child,
+            #sorularTable td:first-child {
+                position: static;
+                width: auto;
+                min-width: 150px;
+                max-width: none;
+                border-right: 1px solid #e5e7eb;
+            }
+
+            #sorularTable th:nth-child(2),
+            #sorularTable td:nth-child(2) {
+                position: static;
+                width: auto;
+                min-width: 100px;
+                border-right: 1px solid #e5e7eb;
+            }
+
+            #sorularTable th,
+            #sorularTable td {
+                min-width: 80px;
+                padding: 6px 4px;
+                font-size: 10px;
+            }
+
+            .table-container {
+                max-height: 60vh;
+                border-radius: 8px;
+            }
+
+            /* Stats cards on mobile */
+            .stats-card {
+                padding: 10px;
+                border-radius: 8px;
+                min-width: auto;
+                margin: 4px;
+            }
+
+            .stats-card h3 {
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .stats-card p {
+                font-size: 18px;
+            }
+
+            /* Info boxes on mobile */
+            .info-box,
+            .warning-box {
+                padding: 12px;
+                font-size: 12px;
+                border-radius: 8px;
+            }
+
+            /* Filter bar on mobile */
+            .filter-bar {
+                flex-wrap: wrap;
+                padding: 8px;
+                gap: 6px;
+            }
+
+            .filter-bar select {
+                min-width: 100%;
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+
+            .filter-bar input {
+                max-width: 100%;
+                font-size: 12px;
+            }
+
+            /* Buttons on mobile */
+            .btn {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+
+            /* Note box style */
+            .mobile-note {
+                background: #FDFBF7;
+                padding: 12px;
+                border-radius: 8px;
+                border: 1px solid #E8E4DC;
+                margin-top: 16px;
+            }
+
+            .mobile-note p {
+                font-size: 11px;
+                color: #7B746A;
+                font-style: italic;
+                line-height: 1.5;
+            }
+
+            .mobile-note .note-label {
+                font-weight: 700;
+                color: #4A4A4A;
+                font-style: normal;
+            }
+
+            /* Override inline grid styles for mobile - force 3 columns */
+            #genelBakisCards > div,
+            #enMemnunMudurlukler > div {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 8px !important;
+            }
+
+            /* Compact stat cards within grids */
+            #genelBakisCards > div > div,
+            #enMemnunMudurlukler > div > div {
+                padding: 10px !important;
+                border-radius: 8px !important;
+            }
+
+            #genelBakisCards > div > div p:first-child,
+            #enMemnunMudurlukler > div > div h3 {
+                font-size: 9px !important;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            #genelBakisCards > div > div p:last-child {
+                font-size: 16px !important;
+            }
+
+            #enMemnunMudurlukler > div > div {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 6px !important;
+            }
+
+            #enMemnunMudurlukler > div > div span.material-icons-outlined {
+                font-size: 24px !important;
+            }
+
+            #enMemnunMudurlukler > div > div h3 {
+                font-size: 11px !important;
+                margin-bottom: 2px !important;
+            }
+
+            #enMemnunMudurlukler > div > div p {
+                font-size: 14px !important;
+            }
+
+            /* Content body card styling */
+            .content-body {
+                padding: 12px !important;
+            }
+
+            .content-body > div {
+                background: white;
+                border-radius: 16px;
+                padding: 16px;
+                margin-bottom: 12px;
+                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+                border: 1px solid #E8E4DC;
+            }
+
+            /* Page content titles */
+            .page-content h2 {
+                font-family: 'Playfair Display', serif !important;
+                font-style: italic;
+                font-size: 18px !important;
+                font-weight: 600 !important;
+                margin-bottom: 12px !important;
+                padding-left: 10px;
+                border-left: 3px solid #BCAAA4;
+            }
+
+            /* Report section styling */
+            #mudurlukRaporlari {
+                background: white;
+                border-radius: 16px;
+                padding: 12px;
+                border: 1px solid #E8E4DC;
+            }
+
+            #mudurlukRaporlari h1 {
+                font-size: 20px !important;
+                font-weight: 700 !important;
+            }
+
+            #mudurlukRaporlari h2 {
+                font-size: 16px !important;
+            }
+
+            #mudurlukRaporlari h3 {
+                font-size: 14px !important;
+            }
+
+            #mudurlukRaporlari p {
+                font-size: 12px !important;
+                line-height: 1.6 !important;
+            }
+        }
+
+        /* Desktop: Hide mobile header */
+        .mobile-header {
+            display: none;
         }
 
         .sidebar-header {
@@ -1228,21 +1654,72 @@
             color: #211A16;
         }
 
-        /* Mobile Responsive for Reports */
+        /* Mobile Responsive - New Design */
         @media (max-width: 768px) {
+            body {
+                background: #F7F4EF;
+            }
+
+            .main-content {
+                background: #F7F4EF;
+            }
+
+            .content-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 30;
+                background: rgba(247, 244, 239, 0.95);
+                backdrop-filter: blur(8px);
+                padding: 8px 12px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            }
+
+            .content-header h2 {
+                font-size: 10px;
+                padding-left: 48px;
+                letter-spacing: 0.15em;
+            }
+
+            .content-body {
+                padding: 64px 12px 24px 12px;
+                background: #F7F4EF;
+            }
+
             #belediyeGeneliRapor {
-                padding: 16px 8px;
+                padding: 0;
                 max-width: 100%;
+                background: white;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+                border: 1px solid rgba(0,0,0,0.04);
+                overflow: hidden;
             }
 
             #belediyeGeneliRapor h1 {
-                font-size: 24px;
-                margin-bottom: 16px;
+                font-size: 20px;
+                margin-bottom: 8px;
+                padding: 16px 16px 0;
+                font-weight: 700;
+                letter-spacing: -0.02em;
             }
 
             #belediyeGeneliRapor h2 {
-                font-size: 18px;
-                padding-left: 0;
+                font-size: 14px;
+                padding: 0 16px;
+                margin: 16px 0 8px;
+                font-style: italic;
+                font-weight: 600;
+                border-left: 2px solid #BCAAA4;
+                padding-left: 10px;
+                margin-left: 16px;
+                color: #333;
             }
 
             #belediyeGeneliRapor h2::before {
@@ -1250,20 +1727,54 @@
             }
 
             #belediyeGeneliRapor h3 {
-                font-size: 15px;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: #666;
+                padding: 0 16px;
+                margin: 16px 0 12px;
+            }
+
+            #belediyeGeneliRapor p {
+                font-size: 12px;
+                line-height: 1.6;
+                color: #555;
+                padding: 0 16px;
+                margin: 8px 0;
+                text-align: justify;
             }
 
             #belediyeGeneliRapor .summary-box {
-                padding: 16px;
+                padding: 12px;
+                margin: 12px;
+                background: #FDFBF7;
+                border: 1px solid rgba(0,0,0,0.05);
+                border-radius: 8px;
             }
 
             #belediyeGeneliRapor table {
                 font-size: 11px;
+                margin: 8px 12px;
+                width: calc(100% - 24px);
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid #e5e5e5;
             }
 
-            #belediyeGeneliRapor th,
+            #belediyeGeneliRapor th {
+                padding: 10px 8px;
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                background: #f8f8f8;
+                color: #888;
+                font-weight: 600;
+            }
+
             #belediyeGeneliRapor td {
-                padding: 8px 6px;
+                padding: 8px;
+                font-size: 11px;
             }
 
             #mudurlukRaporlari {
@@ -1272,35 +1783,57 @@
 
             #mudurlukRaporlari table {
                 font-size: 10px;
+                margin: 8px 0;
+                border-radius: 8px;
+                overflow: hidden;
             }
 
-            #mudurlukRaporlari th,
+            #mudurlukRaporlari th {
+                padding: 8px 6px;
+                font-size: 9px;
+                text-transform: uppercase;
+            }
+
             #mudurlukRaporlari td {
-                padding: 6px 4px;
+                padding: 6px;
             }
 
             .table-container {
                 max-height: none;
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .stats-card {
-                min-width: 120px;
-                padding: 14px;
-                margin: 6px 6px 6px 0;
+                min-width: auto;
+                padding: 10px;
+                margin: 4px;
+                border-radius: 8px;
+                background: #f9f7f5;
+                border: 1px solid rgba(0,0,0,0.05);
             }
 
             .stats-card h3 {
-                font-size: 11px;
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: #888;
+                font-weight: 700;
             }
 
             .stats-card p {
-                font-size: 22px;
+                font-size: 18px;
+                font-weight: 700;
+                color: #2C2C2C;
+                margin-top: 4px;
             }
 
             .filter-bar {
                 flex-wrap: wrap;
-                padding: 10px;
+                padding: 8px;
+                background: transparent;
+                border: none;
+                gap: 8px;
             }
 
             .filter-bar select,
@@ -1308,18 +1841,64 @@
                 min-width: auto;
                 width: 100%;
                 max-width: none;
+                font-size: 12px;
+                padding: 8px 10px;
+                border-radius: 6px;
+                border: 1px solid #e0e0e0;
+                background: #f9f7f5;
             }
 
             select {
                 min-width: auto;
                 width: 100%;
+                font-size: 12px;
+                padding: 8px 10px;
+                border-radius: 6px;
+            }
+
+            .footer-signature {
+                display: none;
+            }
+
+            #belediyeGeneliRapor ul {
+                padding: 0 16px 0 32px;
+                margin: 8px 0;
+            }
+
+            #belediyeGeneliRapor ul li {
+                font-size: 12px;
+                line-height: 1.5;
+                margin: 6px 0;
+            }
+
+            #belediyeGeneliRapor hr {
+                margin: 20px 16px;
+                height: 1px;
+                background: #e5e5e5;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- FLOATING HAMBURGER (visible when sidebar hidden) -->
+    <!-- MOBILE HEADER (visible only on mobile) -->
+    <div class="mobile-header" id="mobileHeader">
+        <div class="mobile-header-left">
+            <button class="hamburger-mobile" onclick="toggleSidebar()">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+            <div class="header-title">
+                <span class="title-main">Yönetici Paneli</span>
+                <span class="title-sub">Arnavutköy Belediyesi</span>
+            </div>
+        </div>
+        <div class="mobile-header-right">
+            <span class="report-badge">JD-R Anket</span>
+            <div class="user-avatar">AB</div>
+        </div>
+    </div>
+
+    <!-- FLOATING HAMBURGER (visible when sidebar hidden on desktop) -->
     <button class="hamburger-floating" onclick="toggleSidebar()" id="hamburgerFloating">
         <span class="material-icons-outlined">menu</span>
     </button>
