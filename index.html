@@ -164,130 +164,21 @@
             overflow: hidden;
         }
 
-        /* ========================================
-           STITCH MOBILE DESIGN - EXACT MATCH
-           ======================================== */
+        /* Mobile styles */
         @media (max-width: 768px) {
-            /* Hide desktop elements */
             .hamburger-floating {
-                display: none !important;
-            }
-            
-            .footer-signature {
-                display: none !important;
-            }
-
-            /* ===== MOBILE HEADER - Stitch Style ===== */
-            .mobile-header {
                 display: flex !important;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 100;
-                height: 56px;
-                padding: 0 16px;
-                align-items: center;
-                justify-content: space-between;
-                background: rgba(247, 244, 239, 0.97);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                border-bottom: 1px solid rgba(200, 195, 185, 0.4);
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
             }
 
-            .mobile-header-left {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .mobile-header-left .hamburger-mobile {
-                width: 32px;
-                height: 32px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 8px;
-                background: #F0EBE3;
-                border: 1px solid #D8D3C8;
-                color: #5C5850;
-                cursor: pointer;
-                transition: all 0.15s ease;
-            }
-
-            .mobile-header-left .hamburger-mobile:active {
-                transform: scale(0.95);
-            }
-
-            .mobile-header-left .hamburger-mobile span {
-                font-size: 18px;
-            }
-
-            .mobile-header-left .header-title {
-                display: flex;
-                flex-direction: column;
-                gap: 1px;
-            }
-
-            .mobile-header-left .header-title .title-main {
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.15em;
-                color: #2C2C2C;
-            }
-
-            .mobile-header-left .header-title .title-sub {
-                font-size: 9px;
-                color: #8E8E93;
-                letter-spacing: 0.02em;
-            }
-
-            .mobile-header-right {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .mobile-header-right .report-badge {
-                font-size: 10px;
-                font-family: 'SF Mono', ui-monospace, monospace;
-                font-weight: 500;
-                color: #8E8E93;
-                background: white;
-                padding: 5px 10px;
-                border-radius: 4px;
-                border: 1px solid #E5E5E5;
-                box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-            }
-
-            .mobile-header-right .user-avatar {
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: #2C2C2C;
-                color: white;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 10px;
-                font-family: 'Playfair Display', serif;
-                font-weight: 700;
-            }
-
-            /* ===== SIDEBAR MOBILE ===== */
             .sidebar {
                 position: fixed;
                 left: 0;
                 top: 0;
                 width: 85vw;
                 max-width: 320px;
-                height: 100vh;
                 transform: translateX(-100%);
-                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: 4px 0 24px rgba(0,0,0,0.12);
-                z-index: 200;
+                transition: transform 0.3s ease;
+                box-shadow: 4px 0 20px rgba(0,0,0,0.1);
             }
 
             .sidebar.open {
@@ -301,6 +192,8 @@
 
             .sidebar-header {
                 padding: 20px 16px 12px 16px;
+                flex-direction: column;
+                gap: 12px;
             }
 
             .sidebar-header .hamburger-btn {
@@ -317,384 +210,26 @@
                 font-size: 9px !important;
             }
 
-            /* ===== MAIN CONTENT AREA ===== */
             .main-content {
                 margin-left: 0;
-                padding-top: 56px;
-                min-height: 100vh;
-                background: #F7F4EF;
             }
 
             .content-header {
-                display: none !important;
+                padding: 16px 12px;
+            }
+
+            .content-header h2 {
+                font-size: 11px;
+                padding-left: 50px;
             }
 
             .content-body {
-                padding: 8px 6px 60px 6px !important;
-                background: #F7F4EF;
+                padding: 0 12px 40px 12px;
             }
 
-            /* ===== MAIN CARD WRAPPER ===== */
-            .page-content {
-                background: white;
-                border-radius: 16px;
-                box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.06);
-                border: 1px solid rgba(200, 195, 185, 0.3);
-                overflow: hidden;
-                margin-bottom: 10px;
+            .footer-signature {
+                display: none;
             }
-
-            .page-content > div:first-child {
-                padding: 12px 12px 10px 12px;
-                border-bottom: 1px solid #F0EDE8;
-            }
-
-            /* ===== 3-COLUMN STATS GRID - Compact Style ===== */
-            #genelBakisCards > div {
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 6px !important;
-                margin-bottom: 12px;
-            }
-
-            #genelBakisCards > div > div {
-                background: #F9F7F5 !important;
-                padding: 8px 6px !important;
-                border-radius: 8px !important;
-                border: 1px solid #E8E4DC !important;
-                text-align: left !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: space-between !important;
-                min-height: 60px !important;
-            }
-
-            #genelBakisCards > div > div p:first-child {
-                font-size: 8px !important;
-                font-weight: 700 !important;
-                text-transform: uppercase !important;
-                letter-spacing: 0.03em !important;
-                color: #8E8E93 !important;
-                margin-bottom: 4px !important;
-            }
-
-            #genelBakisCards > div > div p:last-child {
-                font-size: 16px !important;
-                font-weight: 700 !important;
-                color: #2C2C2C !important;
-                line-height: 1 !important;
-            }
-
-            /* ===== DEPARTMENT CARDS GRID ===== */
-            #enMemnunMudurlukler > div {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 6px !important;
-            }
-
-            #enMemnunMudurlukler > div > div {
-                background: #F9F7F5 !important;
-                padding: 8px !important;
-                border-radius: 8px !important;
-                border: 1px solid #E8E4DC !important;
-                display: flex !important;
-                flex-direction: row !important;
-                align-items: center !important;
-                gap: 6px !important;
-            }
-
-            #enMemnunMudurlukler > div > div span.material-icons-outlined {
-                font-size: 20px !important;
-            }
-
-            #enMemnunMudurlukler > div > div h3 {
-                font-size: 10px !important;
-                font-weight: 600 !important;
-                margin-bottom: 1px !important;
-            }
-
-            #enMemnunMudurlukler > div > div p {
-                font-size: 12px !important;
-                font-weight: 700 !important;
-            }
-
-            /* ===== SECTION TITLES - Compact Style ===== */
-            .page-content h2,
-            #belediyeGeneliRapor h2,
-            #mudurlukRaporlari h2 {
-                font-family: 'Playfair Display', serif !important;
-                font-style: italic !important;
-                font-weight: 600 !important;
-                font-size: 14px !important;
-                color: #2C2C2C !important;
-                margin: 12px 0 8px 0 !important;
-                padding-left: 8px !important;
-                border-left: 2px solid #BCAAA4 !important;
-            }
-
-            /* ===== TABLES - Compact Mobile Style ===== */
-            table {
-                font-size: 10px !important;
-                border-radius: 8px !important;
-                margin: 8px 0 !important;
-                border: 1px solid #E8E4DC !important;
-                overflow: hidden;
-                width: 100% !important;
-            }
-
-            th {
-                font-size: 9px !important;
-                font-weight: 600 !important;
-                padding: 6px 4px !important;
-                text-transform: uppercase !important;
-                letter-spacing: 0.04em !important;
-                color: #8E8E93 !important;
-                background: #FAFAFA !important;
-                border-bottom: 1px solid #E8E4DC !important;
-                white-space: nowrap !important;
-            }
-
-            td {
-                padding: 6px 4px !important;
-                font-size: 10px !important;
-                color: #2C2C2C !important;
-                border-bottom: 1px solid #F0EDE8 !important;
-            }
-
-            tr:last-child td {
-                border-bottom: none !important;
-            }
-
-            /* Remove sticky columns on mobile */
-            #sorularTable th:first-child,
-            #sorularTable td:first-child,
-            #sorularTable th:nth-child(2),
-            #sorularTable td:nth-child(2) {
-                position: static !important;
-                width: auto !important;
-                min-width: auto !important;
-                max-width: none !important;
-                border-right: none !important;
-            }
-
-            #sorularTable th,
-            #sorularTable td {
-                min-width: 55px !important;
-                padding: 5px 3px !important;
-                font-size: 9px !important;
-            }
-
-            .table-container {
-                max-height: 60vh;
-                border-radius: 8px;
-                border: 1px solid #E8E4DC;
-                overflow: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-            
-            /* Horizontal scroll indicator */
-            .table-wrapper {
-                overflow-x: auto !important;
-                -webkit-overflow-scrolling: touch;
-                margin: 0 -6px;
-                padding: 0 6px;
-            }
-
-            /* ===== REPORT SECTION - Compact Mobile Style ===== */
-            #mudurlukRaporlari,
-            #belediyeGeneliRapor {
-                background: white !important;
-                border-radius: 12px !important;
-                padding: 14px 12px !important;
-                margin: 0 !important;
-                border: 1px solid rgba(200, 195, 185, 0.3) !important;
-                box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.06) !important;
-            }
-
-            #mudurlukRaporlari h1,
-            #belediyeGeneliRapor h1 {
-                font-family: 'Playfair Display', serif !important;
-                font-size: 22px !important;
-                font-weight: 400 !important;
-                color: #2C2C2C !important;
-                margin-bottom: 4px !important;
-                line-height: 1.3 !important;
-            }
-
-            #mudurlukRaporlari h2,
-            #belediyeGeneliRapor h2 {
-                font-family: 'Playfair Display', serif !important;
-                font-style: italic !important;
-                font-size: 14px !important;
-                font-weight: 600 !important;
-                color: #2C2C2C !important;
-                margin: 14px 0 8px 0 !important;
-                padding-left: 8px !important;
-                border-left: 2px solid #BCAAA4 !important;
-            }
-
-            #mudurlukRaporlari h3,
-            #belediyeGeneliRapor h3 {
-                font-family: 'Playfair Display', serif !important;
-                font-style: italic !important;
-                font-weight: 600 !important;
-                font-size: 13px !important;
-                color: #2C2C2C !important;
-                margin: 12px 0 6px 0 !important;
-            }
-
-            #mudurlukRaporlari p,
-            #belediyeGeneliRapor p {
-                font-size: 12px !important;
-                line-height: 1.6 !important;
-                color: #4A4A4A !important;
-                text-align: left !important;
-                margin-bottom: 8px !important;
-            }
-
-            #mudurlukRaporlari ul,
-            #belediyeGeneliRapor ul {
-                padding-left: 16px !important;
-                margin: 8px 0 !important;
-            }
-
-            #mudurlukRaporlari li,
-            #belediyeGeneliRapor li {
-                font-size: 11px !important;
-                line-height: 1.5 !important;
-                color: #4A4A4A !important;
-                margin: 4px 0 !important;
-            }
-            
-            /* Report tables - extra compact */
-            #mudurlukRaporlari table,
-            #belediyeGeneliRapor table {
-                font-size: 9px !important;
-                margin: 6px 0 !important;
-            }
-            
-            #mudurlukRaporlari th,
-            #belediyeGeneliRapor th {
-                padding: 5px 3px !important;
-                font-size: 8px !important;
-            }
-            
-            #mudurlukRaporlari td,
-            #belediyeGeneliRapor td {
-                padding: 4px 3px !important;
-                font-size: 9px !important;
-            }
-
-            /* ===== FILTER DROPDOWN - Compact Style ===== */
-            .filter-bar {
-                background: transparent !important;
-                border: none !important;
-                padding: 0 0 10px 0 !important;
-                margin: 0 !important;
-                display: flex;
-                justify-content: center;
-            }
-
-            .filter-bar select {
-                min-width: auto !important;
-                width: auto !important;
-                max-width: 180px !important;
-                font-size: 11px !important;
-                font-weight: 600 !important;
-                padding: 8px 28px 8px 12px !important;
-                border: 1px solid #D8D3C8 !important;
-                border-radius: 16px !important;
-                background: #F9F7F5 !important;
-                color: #2C2C2C !important;
-                text-align: center;
-                appearance: none;
-                -webkit-appearance: none;
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%238E8E93' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-                background-repeat: no-repeat;
-                background-position: right 10px center;
-            }
-
-            .filter-bar input {
-                display: none !important;
-            }
-
-            /* ===== INFO/WARNING BOXES ===== */
-            .info-box,
-            .warning-box {
-                padding: 10px 12px !important;
-                font-size: 11px !important;
-                border-radius: 8px !important;
-                margin: 10px 0 !important;
-                line-height: 1.4 !important;
-            }
-
-            /* ===== BUTTONS ===== */
-            .btn {
-                padding: 10px 16px !important;
-                font-size: 12px !important;
-                border-radius: 8px !important;
-            }
-
-            /* ===== MOBILE FOOTER STATUS ===== */
-            .mobile-footer-status {
-                display: flex !important;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-                margin-top: 12px;
-                border-top: 1px dashed #E8E4DC;
-                opacity: 0.6;
-            }
-
-            .mobile-footer-status .status-indicator {
-                display: flex;
-                align-items: center;
-                gap: 4px;
-            }
-
-            .mobile-footer-status .status-dot {
-                width: 5px;
-                height: 5px;
-                border-radius: 50%;
-                background: #34C759;
-            }
-
-            .mobile-footer-status .status-text {
-                font-size: 8px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
-                color: #8E8E93;
-            }
-
-            .mobile-footer-status .status-id {
-                font-size: 8px;
-                font-family: 'SF Mono', ui-monospace, monospace;
-                color: #8E8E93;
-            }
-
-            /* ===== STATS CARDS (existing) ===== */
-            .stats-card {
-                padding: 8px !important;
-                border-radius: 8px !important;
-                min-width: auto !important;
-                margin: 3px !important;
-            }
-
-            .stats-card h3 {
-                font-size: 8px !important;
-                text-transform: uppercase !important;
-                letter-spacing: 0.04em !important;
-            }
-
-            .stats-card p {
-                font-size: 16px !important;
-            }
-        }
-
-        /* Desktop: Hide mobile header */
-        .mobile-header {
-            display: none;
         }
 
         .sidebar-header {
@@ -1693,72 +1228,21 @@
             color: #211A16;
         }
 
-        /* Mobile Responsive - New Design */
+        /* Mobile Responsive for Reports */
         @media (max-width: 768px) {
-            body {
-                background: #F7F4EF;
-            }
-
-            .main-content {
-                background: #F7F4EF;
-            }
-
-            .content-header {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 30;
-                background: rgba(247, 244, 239, 0.95);
-                backdrop-filter: blur(8px);
-                padding: 8px 12px;
-                height: 56px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-                box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-            }
-
-            .content-header h2 {
-                font-size: 10px;
-                padding-left: 48px;
-                letter-spacing: 0.15em;
-            }
-
-            .content-body {
-                padding: 64px 12px 24px 12px;
-                background: #F7F4EF;
-            }
-
             #belediyeGeneliRapor {
-                padding: 0;
+                padding: 16px 8px;
                 max-width: 100%;
-                background: white;
-                border-radius: 16px;
-                box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
-                border: 1px solid rgba(0,0,0,0.04);
-                overflow: hidden;
             }
 
             #belediyeGeneliRapor h1 {
-                font-size: 20px;
-                margin-bottom: 8px;
-                padding: 16px 16px 0;
-                font-weight: 700;
-                letter-spacing: -0.02em;
+                font-size: 24px;
+                margin-bottom: 16px;
             }
 
             #belediyeGeneliRapor h2 {
-                font-size: 14px;
-                padding: 0 16px;
-                margin: 16px 0 8px;
-                font-style: italic;
-                font-weight: 600;
-                border-left: 2px solid #BCAAA4;
-                padding-left: 10px;
-                margin-left: 16px;
-                color: #333;
+                font-size: 18px;
+                padding-left: 0;
             }
 
             #belediyeGeneliRapor h2::before {
@@ -1766,54 +1250,20 @@
             }
 
             #belediyeGeneliRapor h3 {
-                font-size: 11px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                color: #666;
-                padding: 0 16px;
-                margin: 16px 0 12px;
-            }
-
-            #belediyeGeneliRapor p {
-                font-size: 12px;
-                line-height: 1.6;
-                color: #555;
-                padding: 0 16px;
-                margin: 8px 0;
-                text-align: justify;
+                font-size: 15px;
             }
 
             #belediyeGeneliRapor .summary-box {
-                padding: 12px;
-                margin: 12px;
-                background: #FDFBF7;
-                border: 1px solid rgba(0,0,0,0.05);
-                border-radius: 8px;
+                padding: 16px;
             }
 
             #belediyeGeneliRapor table {
                 font-size: 11px;
-                margin: 8px 12px;
-                width: calc(100% - 24px);
-                border-radius: 8px;
-                overflow: hidden;
-                border: 1px solid #e5e5e5;
             }
 
-            #belediyeGeneliRapor th {
-                padding: 10px 8px;
-                font-size: 10px;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                background: #f8f8f8;
-                color: #888;
-                font-weight: 600;
-            }
-
+            #belediyeGeneliRapor th,
             #belediyeGeneliRapor td {
-                padding: 8px;
-                font-size: 11px;
+                padding: 8px 6px;
             }
 
             #mudurlukRaporlari {
@@ -1822,57 +1272,35 @@
 
             #mudurlukRaporlari table {
                 font-size: 10px;
-                margin: 8px 0;
-                border-radius: 8px;
-                overflow: hidden;
             }
 
-            #mudurlukRaporlari th {
-                padding: 8px 6px;
-                font-size: 9px;
-                text-transform: uppercase;
-            }
-
+            #mudurlukRaporlari th,
             #mudurlukRaporlari td {
-                padding: 6px;
+                padding: 6px 4px;
             }
 
             .table-container {
                 max-height: none;
                 overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
             }
 
             .stats-card {
-                min-width: auto;
-                padding: 10px;
-                margin: 4px;
-                border-radius: 8px;
-                background: #f9f7f5;
-                border: 1px solid rgba(0,0,0,0.05);
+                min-width: 120px;
+                padding: 14px;
+                margin: 6px 6px 6px 0;
             }
 
             .stats-card h3 {
-                font-size: 9px;
-                text-transform: uppercase;
-                letter-spacing: 0.05em;
-                color: #888;
-                font-weight: 700;
+                font-size: 11px;
             }
 
             .stats-card p {
-                font-size: 18px;
-                font-weight: 700;
-                color: #2C2C2C;
-                margin-top: 4px;
+                font-size: 22px;
             }
 
             .filter-bar {
                 flex-wrap: wrap;
-                padding: 8px;
-                background: transparent;
-                border: none;
-                gap: 8px;
+                padding: 10px;
             }
 
             .filter-bar select,
@@ -1880,64 +1308,18 @@
                 min-width: auto;
                 width: 100%;
                 max-width: none;
-                font-size: 12px;
-                padding: 8px 10px;
-                border-radius: 6px;
-                border: 1px solid #e0e0e0;
-                background: #f9f7f5;
             }
 
             select {
                 min-width: auto;
                 width: 100%;
-                font-size: 12px;
-                padding: 8px 10px;
-                border-radius: 6px;
-            }
-
-            .footer-signature {
-                display: none;
-            }
-
-            #belediyeGeneliRapor ul {
-                padding: 0 16px 0 32px;
-                margin: 8px 0;
-            }
-
-            #belediyeGeneliRapor ul li {
-                font-size: 12px;
-                line-height: 1.5;
-                margin: 6px 0;
-            }
-
-            #belediyeGeneliRapor hr {
-                margin: 20px 16px;
-                height: 1px;
-                background: #e5e5e5;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- MOBILE HEADER (visible only on mobile) -->
-    <div class="mobile-header" id="mobileHeader">
-        <div class="mobile-header-left">
-            <button class="hamburger-mobile" onclick="toggleSidebar()">
-                <span class="material-icons-outlined">menu</span>
-            </button>
-            <div class="header-title">
-                <span class="title-main">Yönetici Paneli</span>
-                <span class="title-sub">Arnavutköy Belediyesi</span>
-            </div>
-        </div>
-        <div class="mobile-header-right">
-            <span class="report-badge">JD-R Anket</span>
-            <div class="user-avatar">AB</div>
-        </div>
-    </div>
-
-    <!-- FLOATING HAMBURGER (visible when sidebar hidden on desktop) -->
+    <!-- FLOATING HAMBURGER (visible when sidebar hidden) -->
     <button class="hamburger-floating" onclick="toggleSidebar()" id="hamburgerFloating">
         <span class="material-icons-outlined">menu</span>
     </button>
