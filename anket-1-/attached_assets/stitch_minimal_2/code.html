@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Arnavutköy Belediyesi Rapor - Minimal Style</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C86A3C", // Adjusted to match the button color in reference
+                        "page-bg": "#F8F4EC", // Warmer, soft cream background
+                        "sidebar-bg": "#F8F4EC", // Matching sidebar to page bg for seamless look
+                        "sidebar-active": "#C86A3C", 
+                        "sidebar-active-text": "#FFF9F3", 
+                        "text-sidebar": "#7B746A", 
+                        "text-body": "#44403C", // Softer dark grey/brown for body
+                        "text-meta": "#9A8F80", 
+                        "background-dark": "#1C1917", 
+                        "surface-light": "#FFFFFF", 
+                        "surface-dark": "#292524", 
+                        "text-main-light": "#2F2A24", 
+                        "text-main-dark": "#E7E5E4", 
+                        "text-muted-light": "#7B746A", 
+                        "text-muted-dark": "#A8A29E", 
+                        "border-light": "#EBE5DA", // Very subtle border
+                        "border-dark": "#44403C", 
+                        "label-subtle": "#9A8F80",
+                        "title-brown": "#1F1A16", // Deep brown for titles
+                        "logo-charcoal": "#1F1A16", 
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.05)', // Very subtle shadow
+                        'soft-dark': '0 4px 20px -2px rgba(0, 0, 0, 0.3)',
+                    },
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                color: theme('colors.text-body'),
+                                fontFamily: theme('fontFamily.serif'),
+                                fontSize: '1.05rem',
+                                lineHeight: '1.7',
+                                p: {
+                                    marginBottom: '1.5em',
+                                }, 
+                                strong: {
+                                    color: theme('colors.title-brown'),
+                                    fontWeight: '600',
+                                },
+                            },
+                        },
+                    }),
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-page-bg dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-300 font-sans antialiased flex h-screen overflow-hidden selection:bg-primary selection:text-white">
+<aside class="w-80 flex-shrink-0 flex flex-col h-full bg-sidebar-bg dark:bg-background-dark border-r border-transparent overflow-y-auto custom-scrollbar">
+<div class="px-8 pt-10 pb-6">
+<h1 class="font-serif text-3xl font-semibold text-logo-charcoal dark:text-text-main-dark leading-[0.9] tracking-tight mb-2">
+            Arnavutköy<br/>Belediyesi
+        </h1>
+<p class="text-[10px] text-text-sidebar dark:text-text-muted-dark font-medium uppercase tracking-[0.15em]">
+            Anket Değerlendirme Sistemi
+        </p>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-8">
+<div>
+<p class="px-4 text-[10px] font-bold tracking-[0.2em] text-text-meta dark:text-text-muted-dark uppercase mb-3 opacity-60">Rapor</p>
+<a class="flex items-center px-4 py-3 bg-sidebar-active text-sidebar-active-text rounded-xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 group" href="#">
+<span class="material-icons-outlined text-[22px] mr-3">description</span>
+<span class="font-medium text-[15px]">Rapor</span>
+</a>
+</div>
+<div>
+<p class="px-4 text-[10px] font-bold tracking-[0.2em] text-text-meta dark:text-text-muted-dark uppercase mb-3 opacity-60 leading-relaxed">
+                Detaylı Tablolar (Tüm<br/>Müdürlükler)
+            </p>
+<div class="space-y-0.5">
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[14px] font-medium">Genel Memnuniyet Oranları</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">analytics</span>
+<span class="text-[14px] font-medium">Konular Üzerinden Analiz</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">groups</span>
+<span class="text-[14px] font-medium">Sosyal Medya Takip Oranları</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">health_and_safety</span>
+<span class="text-[14px] font-medium">Ruh Sağlığı Taraması</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">quiz</span>
+<span class="text-[14px] font-medium">Sorular Üzerinden Analiz</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">compare_arrows</span>
+<span class="text-[14px] font-medium">Müdürlük Karşılaştırma</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">check_circle</span>
+<span class="text-[14px] font-medium">Müdürlük Detay Analizi</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">format_quote</span>
+<span class="text-[14px] font-medium">Açık Uçlu Cevaplar</span>
+</a>
+</div>
+</div>
+<div>
+<p class="px-4 text-[10px] font-bold tracking-[0.2em] text-text-meta dark:text-text-muted-dark uppercase mb-3 opacity-60">Veri Paneli</p>
+<div class="space-y-0.5">
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">input</span>
+<span class="text-[14px] font-medium">Veri Girişi</span>
+</a>
+<a class="flex items-center px-4 py-2.5 text-text-sidebar dark:text-text-main-dark hover:bg-black/5 dark:hover:bg-surface-dark/60 rounded-lg transition-all group" href="#">
+<span class="material-icons-outlined text-[20px] mr-3 text-text-sidebar dark:text-text-muted-dark group-hover:text-primary transition-colors">table_chart</span>
+<span class="text-[14px] font-medium">Girilen Anketler</span>
+</a>
+</div>
+</div>
+</nav>
+<div class="p-6 border-t border-border-light dark:border-border-dark flex items-center space-x-3 mt-auto">
+<div class="h-10 w-10 rounded-full bg-[#EADDD5] dark:bg-primary/20 text-[#A85D36] dark:text-primary flex items-center justify-center font-serif font-bold text-lg">
+            Y
+        </div>
+<div class="flex-1 min-w-0">
+<p class="text-[13px] font-bold text-text-sidebar dark:text-text-main-dark truncate text-[#59534E]">Yönetici Paneli</p>
+<p class="text-[11px] text-text-sidebar dark:text-text-muted-dark truncate opacity-70">admin@arnavutkoy.bel.tr</p>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto relative h-full bg-page-bg dark:bg-background-dark">
+<header class="sticky top-0 z-20 bg-page-bg/95 dark:bg-background-dark/95 backdrop-blur-sm px-10 py-6 flex justify-between items-center">
+<h2 class="text-[12px] font-sans font-bold text-label-subtle dark:text-text-muted-dark tracking-[0.2em] uppercase opacity-70">Rapor</h2>
+<div class="flex items-center space-x-6">
+<div class="relative group">
+<input class="pl-10 pr-4 py-2 w-64 bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-full text-sm focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary/30 text-text-main-light dark:text-text-main-dark placeholder-text-muted-light dark:placeholder-text-muted-dark shadow-sm transition-all" placeholder="Ara..." type="text"/>
+<span class="material-icons-outlined absolute left-3 top-2 text-text-muted-light dark:text-text-muted-dark text-[20px] group-hover:text-primary transition-colors">search</span>
+</div>
+<button class="p-2 text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors rounded-full hover:bg-white dark:hover:bg-surface-dark">
+<span class="material-icons-outlined text-[24px]">notifications</span>
+</button>
+</div>
+</header>
+<div class="px-10 pb-12 max-w-[1100px] mx-auto">
+<div class="bg-surface-light dark:bg-surface-dark rounded-[20px] shadow-soft dark:shadow-soft-dark p-12 md:p-20 border border-white dark:border-border-dark relative overflow-hidden">
+<div class="mb-16 pb-8 border-b border-gray-100 dark:border-border-dark flex justify-between items-end">
+<h3 class="font-serif text-5xl font-medium text-title-brown dark:text-text-main-dark tracking-tight">Giriş</h3>
+<span class="text-xs font-mono text-text-meta dark:text-text-muted-dark tracking-widest uppercase opacity-70">Tarih: 24.10.2023</span>
+</div>
+<article class="prose prose-lg dark:prose-invert max-w-none font-serif text-[#44403C] dark:text-[#E7E5E4] leading-[1.8]">
+<p class="font-serif italic text-2xl text-[#1F1A16] dark:text-[#E7E5E4] mb-10 mt-0">Sayın Başkanım,</p>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmalarını, Arnavutköy Belediyesi olarak ilk kez yaparak kurumsal gelişimimiz adına önemli bir temel atmanın gururunu yaşıyoruz.
+                </p>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, tamamen İnsan Kaynakları Müdürlüğümüz tarafından gerçekleştirilmiş olmasıdır.
+                </p>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Çalışma iki temel eksen üzerine kurgulanmıştır. Birinci eksen; yönetici-çalışan ilişkileri, ekip dayanışması, fiziki çalışma koşulları, yemekhane, servis, ücret politikaları ve iş güvenliği gibi temel kurumsal dinamiklerin ölçümlenmesidir. İkinci eksen ise; Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak "Psikolojik İyi Oluş" taramasının yapılmasıdır. Kullanılan envanter, standart şablonlar yerine, literatürdeki bilimsel ölçeklerin kurumumuzun özgün ihtiyaçlarına göre yeniden uyarlanmasıyla oluşturulmuştur. <strong class="font-bold text-title-brown dark:text-[#E7E5E4]">Anket sorularının her biri, bilimsel çalışmalar ve Arnavutköy Belediyesi'nin kendine özgü dinamikleri göz önünde bulundurularak tek tek tasarlanmıştır.</strong>
+</p>
+<div class="my-12 p-10 bg-page-bg dark:bg-background-dark rounded-xl border-none">
+<p class="m-0 italic text-xl text-[#57534E] dark:text-text-muted-dark leading-[1.6]">
+                        "Saha çalışmaları sürecinde, <strong class="text-title-brown dark:text-[#E7E5E4] font-bold not-italic">belediyemize bağlı 30 müdürlüğün tamamı bizzat ziyaret edilmiştir.</strong>"
+                    </p>
+</div>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Anketler çalışanlarımıza elden ulaştırılmış; görüş, şikayet ve önerileri yerinde dinlenmiştir. Bu ziyaretlerde ayrıca, kurumsal aidiyeti pekiştirmek adına Belediyemizin ve Başkanlığımızın sosyal medya hesaplarının takibi konusunda da personelimiz teşvik edilmiştir. Bu yüz yüze etkileşim, sürecin sadece veri toplamaktan ibaret kalmayıp, çalışanlarımızla samimi ve yapıcı bir diyaloğa dönüşmesine imkan tanımıştır.
+                </p>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Ankete katılım oranı %70.4'tür. Analiz modelimiz toplanan sayısal verilerin binlerce cümlelik açık uçlu yorumlarla sentezlenmesine dayanmaktadır. Anket tamamen anonim olmasına rağmen her müdürlüğe özel oluşturulan QR kod sistemi sayesinde, birim bazlı detaylı analizler yapılabilmiştir. Toplam 45 sorudan oluşan ana anket ile; kurumsal aidiyet, amir ilişkileri, rol netliği ve çalışma koşulları gibi on farklı parametre (tema) ölçülmüştür. Bu yapıya ek olarak "Psikolojik İyi Oluş Taraması", "Sigara Kullanımı" ve "Sosyal Medya Alışkanlıkları" modülleri de çalışmaya dahil edilerek personel profili çok yönlü olarak analiz edilmiştir.
+                </p>
+<p class="mb-8 font-light text-[1.1rem]">
+                    Bu çalışma, <strong class="text-title-brown dark:text-[#E7E5E4] font-bold">belirli periyotlarla tekrarlanacak sürdürülebilir bir izleme sisteminin temelidir.</strong> Gelecek dönemlerde yapılacak ölçümlerle, kurumsal gelişimimiz izlenebilecek ve karşılaştırmalı analizler yapma imkanı doğacaktır.
+                </p>
+</article>
+<div class="mt-20 pt-10 border-t border-gray-100 dark:border-border-dark flex flex-col md:flex-row items-center justify-between text-[11px] text-text-meta dark:text-text-muted-dark uppercase tracking-[0.2em] font-medium">
+<span class="mb-2 md:mb-0">Arnavutköy Belediyesi © 2024</span>
+<div class="flex items-center space-x-4 opacity-80">
+<div class="flex items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
+<span>Gizli</span>
+</div>
+<span class="opacity-30">/</span>
+<span>Hizmete Özel</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>
