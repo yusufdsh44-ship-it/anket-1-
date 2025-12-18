@@ -1,1200 +1,833 @@
 // Rapor verileri - otomatik oluşturuldu
 const RAPOR_VERILERI = {
-    belediyeGeneli: `<body>
-
-    <!-- KAPAK SAYFASI -->
-    <div class="cover-page">
-        <div class="cover-content">
-            <!-- Üst Başlık -->
-            <div
-                style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 700; color: #2B1E16; letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 1px solid #D5CCC3; padding-bottom: 18px;">
-                ARNAVUTKÖY BELEDİYESİ
-            </div>
-
-            <!-- Ana Başlık -->
-            <div style="margin-top: 35px;">
-                <h1
-                    style="font-family: 'Playfair Display', serif; font-size: 3.75rem; font-weight: 500; color: #3E2723; line-height: 1.25; letter-spacing: -0.025em; text-align: center; margin: 0; border-bottom: none; padding-bottom: 0;">
-                    Çalışan Memnuniyeti ve<br />
-                    <span style="font-style: italic; color: #C26D45; position: relative; display: inline-block;">
-                        İyi Oluş Anketi
-                        <svg style="position: absolute; width: 100%; height: 0.75rem; bottom: -0.25rem; left: 0; color: rgba(194, 109, 69, 0.2);"
-                            fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2.00025 6.99997C2.00025 6.99997 122.5 5.99999 212.5 2.00002" stroke="currentColor"
-                                stroke-linecap="round" stroke-width="3"></path>
-                        </svg>
-                    </span>
-                </h1>
-                <div
-                    style="font-family: 'Inter', sans-serif; font-size: 10pt; color: #795548; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 15px; text-align: center;">
-                    Analiz Raporu
-                </div>
-            </div>
-
-            <!-- Belediye Başkanı -->
-            <div style="margin-top: 35px;">
-                <div
-                    style="font-family: 'Playfair Display', serif; font-size: 16pt; font-style: italic; color: #6B655F;">
-                    Belediye Başkanımız
-                </div>
-                <div
-                    style="font-family: 'Playfair Display', serif; font-size: 18pt; font-weight: 700; color: #2B1E16; margin-top: 8px;">
-                    Sayın Mustafa Candaroğlu'na
-                </div>
-            </div>
-
-            <!-- Çizgi -->
-            <div style="width: 50px; height: 2px; background: #A89080; margin: 40px auto 35px auto;"></div>
-
-            <!-- Footer -->
-            <div style="margin-top: 0;">
-                <div
-                    style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #4A4641; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;">
-                    İnsan Kaynakları ve Eğitim Müdürlüğü
-                </div>
-                <div
-                    style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #2B1E16; font-weight: 700; margin-top: 6px;">
-                    2025
-                </div>
-            </div>
-
-            <!-- QR Kodlar -->
-            <div style="display: inline-block; margin-top: 35px;">
-                <table style="margin: 0 auto;">
-                    <tr>
-                        <td style="padding: 0 30px; text-align: center; vertical-align: top;">
-                            <div
-                                style="border: 1px solid #E5DDD5; border-radius: 8px; padding: 10px; display: inline-block;">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAFIAQAAAAAab1qeAAACV0lEQVR4nO1a7Y7bMAwjh7z/K3M/RNnugB3cYVdbB7lFmzgEbAmSqY9Q2By/doGNbOR/Qz4A40oUAAKKXyr+/LSMRMf1CQEAMTyfgkhRsnoBnt5nFeQDYGpNVN4JALU8rSLRNcjwbFIgKFDMo+ATq/9QJH1iMq3zo6vXRz4A8uQkCIEKt1fqVjfsswoSSivUXz4JqyLRWeTi1C/sQy2E/22r/zwkBSrU58jTgafVirhix597g6sx5mlJCEPN8tMqEp3XpxMjUZTzI2HaqEP9KhJdwUeSEN/5IJQZk2o+egvJwUbWXhBTZJzsfHMbGZ6t4fPz8AyKchja5+c+khIRyWWwPGGbzACKfX6+hUwalw2VQfR5ngpsf98dGjlQXkxeMlUFKVWR6Lw+/TfV+sLynmp9bo2Rb5rfk56QpfkM58tIdBxJksnmgBndJWVX6HnDPksgM1mHCWn0j9Z+UvP7NtL1EF/ClRHF9IhHO/58E0nQYVIoUfAtES2QS/Z5PXL4u919lOpXeur60jbyyfOSq98PdQ42Or3PQkiCjj5DjWKkn5G3C1THS+8ghcjfRYEvPWKCc+b4PusgHbKLGSLZ+6UojHb+vo18soBkM3Q6ZCMdk8f3WQW59jcxO0bRhY+Y3pAqEt1gn8B4rQ4vMf6i8CoSHdfnbLplfETABjqzzzISnddnJu0ZMjlzz+r8N67+85DPvNTgJUVbjllVpprf/w0ZERMEgvZ++eeqfd6NlDJbl4vHM/UM1d6xzwLI9f0630Z6qSwpB6L7HXvjj5dmP7x6Ixv59fgNTqFDV84LeuoAAAAASUVORK5CYII="
-                                    style="width: 55px; height: 55px;" alt="Video QR">
-                            </div>
-                            <div style="margin-top: 10px;">
-                                <div
-                                    style="font-family: 'Playfair Display', serif; font-size: 9pt; font-weight: 700; color: #2B1E16;">
-                                    Raporun Sunum Videosu</div>
-                                <div
-                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
-                                    QR kodu okutarak izleyebilirsiniz</div>
-                            </div>
-                        </td>
-                        <td style="padding: 0 30px; text-align: center; vertical-align: top;">
-                            <div
-                                style="border: 1px solid #E5DDD5; border-radius: 8px; padding: 10px; display: inline-block;">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiCAIAAADS3EjhAAAFDklEQVR4nO3dwW0kNxBA0dXCgTgAx7DBOwYH4EzaV58ILEofJHveu8+opZkPHlQofj3P8wMo/dz9APB+MoOczCAnM8jJDHIyg5zMICczyMkMcjKDnMwgJzPIyQxyMoOczCAnM8jJDHIyg5zMIPfH5MW//vrzmx7jFH//82/0zuu/1frnvu+1N5p8N5xmkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpAbTYGsdRMVE5PphMlUxMSu2ZTO+74ba04zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8iFUyBr3X/cz5zGmLx2Mn1y48aOG78ba04zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8htmwK50ZnTCd2GkjM3dtzIaQY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGOVMgv2GyV6ObxpjMpuz6jT6N0wxyMoOczCAnM8jJDHIyg5zMICczyMkMctumQG6cIeh2gdz4zp0bvxtrTjPIyQxyMoOczCAnM8jJDHIyg5zMICczyIVTIDfOH0x0ezXOfO3Ep303nGaQkxnkZAY5mUFOZpCTGeRkBjmZQU5mkPt6nmf3M7xEN9nwvt0Yn8ZpBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAa50S6QMzc67NpvsdY91eS1k/mSMzeUdK+dcJpBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQW40BdLNEEzs+k//2q6bWc78jCZu3IziNIOczCAnM8jJDHIyg5zMICczyMkMcjKDXLgLZPLf+l2bM87cJNG9c/cb3Tjl072z0wxyMoOczCAnM8jJDHIyg5zMICczyMkMcl/P80RvfeN/69/3c2+cetnFFAhcTGaQkxnkZAY5mUFOZpCTGeRkBjmZQW60C2Rt1y0n3RaKT7u35cxPcNenP+E0g5zMICczyMkMcjKDnMwgJzPIyQxyMoNceCPMmkmO73rnG3eufNp2E6cZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeRGN8K8b2fDxJn7PHYx5fN/TjPIyQxyMoOczCAnM8jJDHIyg5zMICczyIU3wqztmpm4cVaj21GxazfGxOSpds2mOM0gJzPIyQxyMoOczCAnM8jJDHIyg5zMILdtCmSXXbecdLqfe+OGksnn60YYuJjMICczyMkMcjKDnMwgJzPIyQxyMoPc6EaYT9PdgNO9dm3XVpW1M59qwmkGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBrnRLpAbd0WsnbkLpLvHpHvnbnJl160uk2d2mkFOZpCTGeRkBjmZQU5mkJMZ5GQGOZlBLrwR5sytDDfumegmKjq7NoXs2qqy5jSDnMwgJzPIyQxyMoOczCAnM8jJDHIyg1w4BbJ25s6GtTMnSHZtZNn1c2/cX+I0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPctimQ9+m2UJy532LXTTQ33kPkNIOczCAnM8jJDHIyg5zMICczyMkMcjKDnCmQb9PdVDKx66km0ye7nqr7FJxmkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpDbNgXS7ajYpfuNJu+8a6/GmffF7OI0g5zMICczyMkMcjKDnMwgJzPIyQxyMoNcOAVy480dZ3KbzAnvPOE0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPc1/M8u58BXs5pBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGOZlBTmaQ+w/xU45m04H+FgAAAABJRU5ErkJggg=="
-                                    style="width: 55px; height: 55px;" alt="Dijital Sistem QR">
-                            </div>
-                            <div style="margin-top: 10px;">
-                                <div
-                                    style="font-family: 'Playfair Display', serif; font-size: 9pt; font-weight: 700; color: #2B1E16;">
-                                    Anket Değerlendirme Sistemi</div>
-                                <div
-                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
-                                    web adresi: arnv-anket.info</div>
-                                <div
-                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
-                                    password: arnbel34</div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- İÇİNDEKİLER -->
-    <div
-        class="toc-section bg-white rounded-xl shadow-sm border border-border-color p-8 md:p-12 lg:p-16 relative overflow-hidden mb-8">
-        <div
-            class="absolute top-0 right-0 w-[500px] h-[500px] bg-cream-dark/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
-        </div>
-        <div class="relative z-10">
-            <div class="flex items-baseline justify-between mb-12 border-b border-border-color pb-6">
-                <h2 class="text-3xl font-serif font-bold text-text-dark">İçindekiler</h2>
-            </div>
-
-            <!-- 1.0 Takdim -->
-            <div class="mb-10 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">1.0</span> Takdim
-                    </h3>
-                </a>
-                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.1</span>
-                        <span class="text-sm md:text-base">Raporumuzun Amacı ve Stratejik Önemi</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.2</span>
-                        <span class="text-sm md:text-base">Kurumsal Kapasitemiz</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.3</span>
-                        <span class="text-sm md:text-base">Çalışmamızın Kapsamı ve Gelecek Vizyonu</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 2.0 Anket Metodolojisi -->
-            <div class="mb-10 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">2.0</span> Anket Metodolojisi ve
-                        Uygulama Süreci
-                    </h3>
-                </a>
-                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">2.1</span>
-                        <span class="text-sm md:text-base">Anketin Yapısı ve Analitik Çerçevesi</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">2.2</span>
-                        <span class="text-sm md:text-base">Saha Çalışması ve Katılım Düzeyi</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 3.0 Genel Değerlendirme -->
-            <div class="mb-10 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">3.0</span> Genel Değerlendirme: Temel
-                        Göstergeler ve Ana Bulgular
-                    </h3>
-                </a>
-                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.1</span>
-                        <span class="text-sm md:text-base">Kurumsal Karnemiz</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.2</span>
-                        <span class="text-sm md:text-base">Belediyemizin Güçlü Yönleri</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.3</span>
-                        <span class="text-sm md:text-base">Gelişim Alanlarımız</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.4</span>
-                        <span class="text-sm md:text-base">Kurum Desteği ve İş Stresi Dengesi</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.5</span>
-                        <span class="text-sm md:text-base">Müdürlüklerimizin Özet Bulguları</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 4.0 Çalışan İyi Oluşu -->
-            <div class="mb-10 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">4.0</span> Çalışan İyi Oluşu: Ruh
-                        Sağlığı Bulguları
-                    </h3>
-                </a>
-                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">4.1</span>
-                        <span class="text-sm md:text-base">Temel Ruh Sağlığı Göstergeleri</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">4.2</span>
-                        <span class="text-sm md:text-base">İş Stresi, Kurum Desteği ve Ruh Sağlığı İlişkisi</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 5.0 Sonuç ve Stratejik Öneriler -->
-            <div class="mb-10 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">5.0</span> Sonuç ve Stratejik Öneriler
-                    </h3>
-                </a>
-                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">5.1</span>
-                        <span class="text-sm md:text-base">Temel Çıkarımlarımız</span>
-                    </li>
-                    <li
-                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
-                        <span
-                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">5.2</span>
-                        <span class="text-sm md:text-base">Belediye Geneli Stratejik Öneriler</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 6.0 Müdürlük Bazlı Detaylı Analizler -->
-            <div class="mb-6 group">
-                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
-                    href="#">
-                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
-                        <span class="text-secondary/70 mr-3 font-normal text-lg">6.0</span> Müdürlük Bazlı Detaylı
-                        Analizler
-                    </h3>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- BÖLÜM 1: TAKDİM -->
-    <div class="card section-page">
-        <h1>1.0 Takdim</h1>
-
-        <h2>1.1 Raporumuzun Amacı ve Stratejik Önemi</h2>
-
-        <p>Sayın Başkanım,</p>
-
-        <p>Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve
-            çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel
-            kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmaları, <span
-                class="highlight">Arnavutköy Belediyesi olarak ilk kez gerçekleştirilmekte</span> ve kurumsal
-            gelişimimiz adına önemli bir temel atmaktadır. Bu çalışma, önümüzdeki dönemde atılacak stratejik adımları
-            doğrudan şekillendirecek somut bir yol haritası sunmaktadır.</p>
-
-        <h2>1.2 Kurumsal Kapasitemiz</h2>
-
-        <p>Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme
-            süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, <span class="highlight">tamamen İnsan
-                Kaynakları ve Eğitim Müdürlüğümüz tarafından gerçekleştirilmiş</span> olmasıdır. Bu durum,
-            Müdürlüğümüzün ileri düzeydeki analitik yetkinliğini ve kurumsal kapasiteyi geliştirme konusundaki
-            kararlılığını göstermektedir.</p>
-
-        <h2>1.3 Çalışmamızın Kapsamı ve Gelecek Vizyonu</h2>
-
-        <p>Rapor, iki temel eksen üzerine kurgulanmıştır: temel kurumsal dinamiklerin ölçümlenmesi ve Kurum Psikoloğu
-            biriminin çalışmalarına zemin oluşturacak bir "Psikolojik İyi Oluş" taraması. Bu çalışma, belirli
-            periyotlarla tekrarlanarak kurumsal değişimlerin ve iyileştirme çalışmalarının etkilerinin takip edileceği
-            sürdürülebilir bir izleme sisteminin temel taşıdır. Standartları korumak ve bu birikimi kurumsal hafızaya
-            kazandırmak amacıyla, tüm süreçleri detaylandıran bir "Metodoloji Kitapçığı" da hazırlanmıştır.</p>
-    </div>
-
-    <!-- BÖLÜM 2: METODOLOJİ -->
-    <div class="card section-page">
-        <h1>2.0 Anket Metodolojisi ve Uygulama Süreci</h1>
-
-        <h2>2.1 Anketin Yapısı ve Analitik Çerçevesi</h2>
-
-        <p class="section-intro">Bu raporda sunulan bulguların gücü, titizlikle tasarlanmış metodolojik altyapısından
-            gelmektedir. Sonuçların şeffaflığını ve güvenilirliğini sağlamak amacıyla, bu bölümde anketin yapısı, veri
-            toplama süreci ve kullanılan analitik model detaylandırılmaktadır.</p>
-
-        <p><strong>Çift Eksenli Kurgu:</strong> Anket, iki ana hedef doğrultusunda tasarlanmıştır:</p>
-        <ul>
-            <li><strong>Kurumsal Dinamiklerin Ölçümü:</strong> Yönetici-çalışan ilişkileri, ekip dayanışması, fiziki
-                çalışma koşulları, yemek/servis hizmetleri, ücret politikaları ve iş güvenliği gibi temel operasyonel ve
-                sosyal unsurlar değerlendirilmiştir.</li>
-            <li><strong>Psikolojik İyi Oluş Taraması:</strong> Kurum Psikoloğu biriminin proaktif müdahalelerine
-                bilimsel bir zemin oluşturmak amacıyla personelin ruh sağlığı durumu taranmıştır.</li>
-        </ul>
-
-        <p><strong>Özgün Envanter Tasarımı:</strong> Standart şablonlar yerine, literatürdeki bilimsel ölçekler
-            kurumumuzun özgün ihtiyaçlarına ve dinamiklerine göre yeniden uyarlanarak benzersiz bir ölçüm aracı
-            oluşturulmuştur.</p>
-
-        <p><strong>Çok Yönlü Personel Profili:</strong> Çalışma, çok modüllü bir yapıya sahiptir. 45 soruluk ana anket
-            ile kurumsal aidiyet, amir ilişkileri, rol netliği ve çalışma koşulları gibi on farklı tema ölçülmüştür.
-            Buna ek olarak "Psikolojik İyi Oluş Taraması", "Sigara Kullanımı" ve "Sosyal Medya Alışkanlıkları" modülleri
-            ile personel profili çok yönlü olarak analiz edilmiştir.</p>
-
-        <p><strong>Birim Bazlı Analiz Yeteneği:</strong> Anket, çalışan gizliliğini korumak amacıyla tamamen anonim
-            olarak uygulanmıştır. Bununla birlikte, her müdürlüğe özel oluşturulan QR kod sistemi sayesinde, veriler
-            birim bazında detaylı analizlere olanak tanıyacak şekilde toplanabilmiştir.</p>
-
-        <h2>2.2 Saha Çalışması ve Katılım Düzeyi</h2>
-
-        <p>Saha çalışmaları sürecinde, belediyemize bağlı <strong>30 müdürlüğün tamamı</strong> bizzat ziyaret
-            edilmiştir. Anketler çalışanlarımıza elden ulaştırılmış; görüş, şikayet ve önerileri doğrudan yerinde
-            dinlenmiştir. Bu ziyaretler aynı zamanda, kurumsal aidiyeti pekiştirmek amacıyla Belediyemizin ve
-            Başkanlığımızın sosyal medya hesaplarının takibi konusunda personelimizi teşvik etmek için bir fırsat olarak
-            kullanılmıştır.</p>
-
-        <div class="summary-box">
-            <table class="small-table" style="margin:0; border:none;">
-                <tr>
-                    <td style="width:50%; border:none; padding:10px;"><strong>Toplam Personel:</strong></td>
-                    <td style="border:none; padding:10px;">2.089 kişi</td>
-                </tr>
-                <tr>
-                    <td style="border:none; padding:10px;"><strong>Ankete Katılan:</strong></td>
-                    <td style="border:none; padding:10px;">1.470 kişi (<span class="highlight">%70,4</span>)</td>
-                </tr>
-                <tr>
-                    <td style="border:none; padding:10px;"><strong>Açık Uçlu Yorum Yapan:</strong></td>
-                    <td style="border:none; padding:10px;">456 kişi (%31,0)</td>
-                </tr>
-            </table>
-        </div>
-
-        <p>Katılımcıların %31,0'u (456 kişi) sayısal verilere ek olarak açık uçlu yorumlar da sunarak analizin
-            niteliksel derinliğini artırmıştır. Bu titiz ve katılımcı yaklaşım, takip eden genel değerlendirme için
-            sağlam bir zemin oluşturmaktadır.</p>
-    </div>
-
-    <!-- BÖLÜM 3: GENEL DEĞERLENDİRME -->
-    <div class="card section-page">
-        <h1>3.0 Genel Değerlendirme: Temel Göstergeler ve Ana Bulgular</h1>
-
-        <!-- Bir Bakışta Özet -->
-        <div class="exec-summary" style="margin-bottom: 1.5em;">
-            <h2 style="text-align: center; border-bottom: none; margin-bottom: 1em; font-size: 14pt;">Bir Bakışta</h2>
-
-            <div class="exec-grid">
-                <div class="exec-metric">
-                    <div class="exec-metric-value positive">%90,8</div>
-                    <div class="exec-metric-label">Genel Memnuniyet</div>
-                </div>
-                <div class="exec-metric">
-                    <div class="exec-metric-value" style="color: #5C4033;">%70,4</div>
-                    <div class="exec-metric-label">Katılım Oranı</div>
-                </div>
-                <div class="exec-metric">
-                    <div class="exec-metric-value critical">%52,2</div>
-                    <div class="exec-metric-label">Ruh Sağlığı Riski</div>
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em; margin-top: 1.2em;">
-                <div class="finding-item" style="margin: 0;">
-                    <div class="finding-icon positive">✓</div>
-                    <div style="font-size: 9.5pt;">
-                        <strong>Güçlü Yönler:</strong> Topluma hizmet gururu (%94,5), işin anlamlı bulunması (%92,4),
-                        yönetici iletişimi (%92,2)
-                    </div>
-                </div>
-                <div class="finding-item" style="margin: 0;">
-                    <div class="finding-icon critical">!</div>
-                    <div style="font-size: 9.5pt;">
-                        <strong>Gelişim Alanları:</strong> Yemek hizmeti (%57,2), servis güzergahları (%67,7), ücret
-                        politikaları (%69,0)
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2>3.1 Kurumsal Karnemiz</h2>
-
-        <p>Anket verileri, bir yanda işini sahiplenen ve topluma hizmet etmekten gurur duyan, olağanüstü yüksek
-            memnuniyete sahip bir çalışan profili olduğunu, diğer yanda ise bu motivasyonu doğrudan etkileyen temel
-            operasyonel alanlarda önemli zorluklar bulunduğunu ortaya koymaktadır.</p>
-
-        <table class="karne-table">
-            <thead>
-                <tr>
-                    <th style="width:70%;">Gösterge</th>
-                    <th style="width:30%;">Değer</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="highlight-row">
-                    <td class="label"><strong>Genel Memnuniyet</strong><br><span
-                            style="font-size:8.5pt; font-weight:normal; color:#6B5344;">("Bu kurumda çalışmaktan genel
-                            olarak memnunum" sorusuna verilen yanıtların skoru)</span></td>
-                    <td class="value" style="font-size:14pt; color:#2E5A3A;">%90,8</td>
-                </tr>
-                <tr>
-                    <td class="label"><strong>İş Stresi/Yükü</strong><br><span
-                            style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(iş yoğunluğu/yükü, görevin
-                            zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar)</span></td>
-                    <td class="value">%69,1</td>
-                </tr>
-                <tr>
-                    <td class="label"><strong>Kurum Desteği</strong><br><span
-                            style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(yönetici ilişkileri, çalışma
-                            arkadaşları desteği, çalışma koşulları vb.)</span></td>
-                    <td class="value">%82,3</td>
-                </tr>
-                <tr class="highlight-row">
-                    <td class="label"><strong>Denge (Kurum Desteği - İş Stresi/Yükü)</strong><br><span
-                            style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(pozitif değer çalışanların iş
-                            stresi/yükünü karşılayacak düzeyde destek aldığını gösterir)</span></td>
-                    <td class="value" style="color:#2E5A3A;">+13,2</td>
-                </tr>
-                <tr>
-                    <td class="label"><strong>Ruh Sağlığı Riski</strong><br><span
-                            style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(keyif alamama, üzgün/çökkün
-                            hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span></td>
-                    <td class="value" style="color:#8B3A3A;">%52,2</td>
-                </tr>
-                <tr>
-                    <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
-                    <td class="value">456 kişi (%31,0)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>3.2 Belediyemizin Güçlü Yönleri</h2>
-
-        <p>%90,8 gibi dikkat çekici bir genel memnuniyet skorunun ardında, çalışanlarımızın işlerine ve kuruma duyduğu
-            derin bağlılık yatmaktadır. Anket sonuçları, personelin motivasyonunun temelinde ücret ve fiziksel
-            koşullardan ziyade işin anlamlılığı, topluma hizmet duygusu ve ekip dayanışması gibi içsel değerlerin yer
-            aldığını göstermektedir:</p>
-
-        <ul>
-            <li><strong>Topluma Hizmet Gururu:</strong> Çalışanlar, topluma hizmet etmekten büyük bir gurur duymaktadır
-                (<span class="highlight-positive">%94,5</span>).</li>
-            <li><strong>İşin Anlamlı Bulunması:</strong> Personel, yaptığı işin anlamlı ve toplum için faydalı olduğuna
-                inanmaktadır (<span class="highlight-positive">%92,4</span>).</li>
-            <li><strong>Amirlerle Olumlu İletişim:</strong> Yöneticilerle kurulan iletişim ve onlara ulaşılabilirlik
-                yüksek düzeydedir (<span class="highlight-positive">%92,2</span>).</li>
-            <li><strong>Yüksek Ekip Uyumu:</strong> İş arkadaşları arasındaki dayanışma ve uyum, kurumun en güçlü sosyal
-                dinamiklerinden biridir (<span class="highlight-positive">%86,9</span>).</li>
-        </ul>
-
-        <p>Bu veriler, kurumu operasyonel zorluklara karşı dirençli kılan temel dayanağın <strong>içsel
-                motivasyon</strong> ve <strong>güçlü sosyal bağlar</strong> olduğunu kanıtlamaktadır.</p>
-
-        <h2>3.3 Gelişim Alanlarımız</h2>
-
-        <p>Hem sayısal anket skorlarının hem de 456 kişinin açık uçlu yorumlarının analizi, belediye genelinde beş temel
-            gelişim alanını net bir şekilde işaret etmektedir. JD-R (İş Talepleri-Kaynakları) Modeli çerçevesinde
-            değerlendirildiğinde, bu alanlar iş stresini/yükünü artıran ve çalışan tükenmişliğini tetikleyebilecek
-            potansiyel risk faktörleridir.</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Gelişim Alanı</th>
-                    <th style="text-align:center;">Skor</th>
-                    <th style="text-align:center;">Yorum Sayısı</th>
-                    <th>Temel Sorun</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Yemek Hizmeti</strong></td>
-                    <td style="text-align:center;"><span class="highlight-critical">%57,2</span></td>
-                    <td style="text-align:center;">83 kişi</td>
-                    <td>Kalite, çeşitlilik, memur-şirket personeli fiyat farkı</td>
-                </tr>
-                <tr>
-                    <td><strong>Servis Güzergahları</strong></td>
-                    <td style="text-align:center;">%67,7</td>
-                    <td style="text-align:center;">32 kişi</td>
-                    <td>İlçe dışı servislerin kaldırılması, kapasite yetersizliği</td>
-                </tr>
-                <tr>
-                    <td><strong>Ücret/Maaş Politikaları</strong></td>
-                    <td style="text-align:center;">%69,0</td>
-                    <td style="text-align:center;"><strong>116 kişi</strong></td>
-                    <td>Diğer belediyelerle karşılaştırma, SDS/maktu mesai</td>
-                </tr>
-                <tr>
-                    <td><strong>Ortak Alanlar</strong></td>
-                    <td style="text-align:center;">%70,4</td>
-                    <td style="text-align:center;">81 kişi</td>
-                    <td>Tuvalet yetersizliği, soyunma odası/dolap eksikliği</td>
-                </tr>
-                <tr>
-                    <td><strong>Yönetici İlişkileri</strong></td>
-                    <td style="text-align:center;">%86,8</td>
-                    <td style="text-align:center;">37 kişi</td>
-                    <td>Birim bazlı farklılıklar (Veteriner %69,8 en düşük)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Yemek Hizmeti (%57,2):</strong> Belediye genelinde memnuniyetin en düşük olduğu alandır. Açık uçlu
-            yorumlarda yemeklerin kalitesi, çeşitliliği ve hijyen koşullarına yönelik yaygın bir iyileştirme beklentisi
-            öne çıkmaktadır. Özellikle büro birimlerindeki personel, fiyat-kalite dengesini sorgulamakta; memurlar ve
-            şirket personeli arasındaki fiyat farkının giderilmesini talep etmektedir. Ayrıca mevcut sabit kesinti
-            yerine kart bastıkça (yemek yedikçe) ödeme sistemi talebi de sıklıkla dile getirilmektedir.</p>
-
-        <p><strong>Servis Güzergahları (%67,7):</strong> Tasarruf tedbirleri kapsamında ilçe dışı servislerin
-            kaldırılmasının, personelin motivasyonunu olumsuz etkilediği bildirilmektedir. Mevcut güzergahların uzun ve
-            dolambaçlı olduğu, bazı hatlarda ise kapasitenin üzerinde yolcu taşınması nedeniyle ayakta yolculuk
-            yapıldığı belirtilmektedir.</p>
-
-        <p><strong>Ücret ve Maaş Politikaları (%69,0):</strong> En fazla sayıda açık uçlu yorumun yapıldığı (116 kişi)
-            bu konu, çalışanlar için en hassas başlıklardan biridir. Yorumlarda sıklıkla İstanbul'daki diğer
-            belediyelerle maaş karşılaştırmaları yapılmaktadır. Özellikle saha personeli; maktu mesai, Sosyal Denge
-            Sözleşmesi (SDS) ve fazla mesai ödemelerinde iyileştirme talep etmektedir.</p>
-
-        <p><strong>Ortak Alanlar ve Fiziksel Koşullar (%70,4):</strong> Özellikle saha birimlerinden gelen geri
-            bildirimler, altyapı eksikliklerine odaklanmaktadır. Tuvalet sayısının yetersizliği (Temizlik İşleri'nde 66
-            kişi şikayet), soyunma odaları ve kişisel dolapların bulunmaması en sık dile getirilen şikayetlerdir.</p>
-
-        <p style="margin-top: 1.5em; padding: 12px; background-color: #f5f0e6; border-left: 4px solid #8B7355;">
-            <strong>📌 Bu alanlara yönelik detaylı stratejik öneriler Bölüm 5'te yer almaktadır.</strong>
-        </p>
-
-        <h2>3.4 Kurum Desteği ve İş Stresi Dengesi</h2>
-
-        <p class="section-intro">"Denge" puanı, kurumun çalışanlarına sağladığı desteğin, onların yaşadığı iş stresi ve
-            yükünü ne ölçüde karşılayabildiğini ölçen temel bir performans göstergesidir. JD-R Modeli'ne göre, kurumsal
-            desteğin iş stresini/yükünü karşılayamadığı durumlarda tükenmişlik riski artmaktadır.</p>
-
-        <div class="summary-box" style="text-align:center;">
-            <p style="font-size:12pt; margin-bottom:0.5em;"><strong>Denge Puanı = %82,3 (Destek) - %69,1 (Stres) = <span
-                        style="font-size:16pt; color:#2E5A3A;">+13,2 puan</span></strong></p>
-        </div>
-
-        <h3>Saha ve Büro Birimleri Arasındaki Kritik Fark</h3>
-
-        <p>Genel tablonun olumlu olmasına karşın, saha ve büro birimleri arasında ortaya çıkan <strong>14 puanlık
-                fark</strong>, analizin en kritik bulgularından biridir.</p>
-
-        <table class="small-table">
-            <thead>
-                <tr>
-                    <th>Birim Tipi</th>
-                    <th style="text-align:center;">Denge Puanı</th>
-                    <th>Değerlendirme</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Saha Birimleri</strong></td>
-                    <td style="text-align:center;" class="highlight-critical">+2,8</td>
-                    <td>Düşük Seviye - Müdahale Gerekli</td>
-                </tr>
-                <tr>
-                    <td><strong>Büro Birimleri</strong></td>
-                    <td style="text-align:center;" class="highlight-positive">+16,8</td>
-                    <td>Sağlıklı Seviye</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="warning-box">
-            <p><strong>Stratejik Öneri:</strong> Bu 14 puanlık fark, saha personelinin fiziksel çalışma koşulları,
-                araç-ekipman kalitesi ve sosyal imkânlar açısından öncelikli olarak desteklenmesi gerektiğini
-                göstermektedir.</p>
-        </div>
-
-        <h3>Denge Riski Taşıyan Müdürlükler</h3>
-
-        <p><strong>Negatif Dengeye Sahip Birimler</strong> (İş yükü, algılanan desteği aşmıştır):</p>
-
-        <div class="critical-box">
-            <ul style="margin: 0;">
-                <li><strong>Veteriner İşleri</strong> (<span class="highlight-critical">-3,5</span>) — Belediyenin en
-                    yüksek iş stresi (%82,3) ve en düşük amir eşitliği algısı (%69,8). Yassıören barınağında tuzlu su ve
-                    altyapı sorunu. Ruh sağlığı riski %58,5.</li>
-                <li><strong>Gelirler</strong> (<span class="highlight-critical">-2,5</span>) — İş stresi %79,9, çalışma
-                    koşulları %62,1 (belediye en düşüğü). "Ofiste camlar açılmıyor, hava alınmıyor." Memur-şirket
-                    personeli yemek fiyat farkı şikayeti yoğun.</li>
-                <li><strong>İmar ve Şehircilik</strong> (<span class="highlight-critical">-2,3</span>) — Vatandaş
-                    yoğunluğu %90,2 ile belediye rekoru. "Ruhsat başvurularındaki yoğunluktan günde bir evraktan
-                    çıkıyoruz." Ruh sağlığı riski %58,5, yemekhane %40,2.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- MÜDÜRLÜK TABLOSU -->
-    <div class="card">
-        <h2>3.5 Müdürlüklerimizin Özet Bulguları</h2>
-
-        <p>Bu tablo, tüm müdürlüklerin temel göstergelerini karşılaştırmalı olarak sunmaktadır.</p>
-
-        <table class="mudurluk-table">
-            <thead>
-                <tr>
-                    <th style="text-align:left; width:16%;">Müdürlük</th>
-                    <th style="text-align:center; width:7%;">Memn.</th>
-                    <th style="text-align:center; width:7%;">Denge</th>
-                    <th style="text-align:left; width:70%;">Dikkat Çekici Bulgular (Özet)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="belediye-geneli">
-                    <td>BELEDİYE GENELİ</td>
-                    <td style="text-align:center;">%90,8</td>
-                    <td style="text-align:center;">+13,2</td>
-                    <td>2.089 personelden 1.470'i ankete katılmıştır (%70,4). 456 kişi açık uçlu yorum yazmıştır. Güçlü
-                        yönler: kamu hizmeti motivasyonu (%92,8), iş-kişi uyumu (%91,3), topluma hizmet gururu (%94,5).
-                        Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek
-                        (%57,2), servis (%67,7), ücret (%69,0). 3 müdürlükte negatif denge tespit edilmiştir.</td>
-                </tr>
-                <tr class="critical">
-                    <td>VETERİNER İŞLERİ</td>
-                    <td style="text-align:center;">%86,5</td>
-                    <td style="text-align:center; color:#8B3A3A;"><strong>-3,5</strong></td>
-                    <td><strong>EN DÜŞÜK DENGE.</strong> Amir eşitliği algısı en düşük düzeyde. "Diğer ilçe belediyeleri
-                        ile kıyaslarsak maaşlarımız çok düşük." Yassıören barınağı altyapısı yetersiz.</td>
-                </tr>
-                <tr class="critical">
-                    <td>GELİRLER</td>
-                    <td style="text-align:center;">%87,1</td>
-                    <td style="text-align:center; color:#8B3A3A;"><strong>-2,5</strong></td>
-                    <td><strong>NEGATİF DENGE.</strong> Fiziksel koşullar şikayeti yoğun: "Ofiste camlar açılmıyor, hava
-                        alınmıyor." Yemekhane eşitsizliği "büyük haksızlık" olarak nitelendiriliyor.</td>
-                </tr>
-                <tr class="critical">
-                    <td>İMAR VE ŞEHİRCİLİK</td>
-                    <td style="text-align:center;">%87,5</td>
-                    <td style="text-align:center; color:#8B3A3A;"><strong>-2,3</strong></td>
-                    <td><strong>NEGATİF DENGE.</strong> En yoğun vatandaş yoğunluğu ve en yüksek iş stresi/yükü. "Ruhsat
-                        başvurularındaki yoğunluktan neredeyse günde bir evraktan çıkıyoruz." Personel takviyesi
-                        gerekli.</td>
-                </tr>
-                <tr class="warning">
-                    <td>İKLİM DEĞİŞİKLİĞİ</td>
-                    <td style="text-align:center;">%88,2</td>
-                    <td style="text-align:center; color:#B8860B;">+0,7</td>
-                    <td><strong>En düşük pozitif denge.</strong> Personel ihtiyacı acil: "Birimde yeni personele
-                        ihtiyacımız var acil." Fiziksel koşullar yetersiz.</td>
-                </tr>
-                <tr class="warning">
-                    <td>EMLAK VE İSTİMLAK</td>
-                    <td style="text-align:center;">%91,7</td>
-                    <td style="text-align:center; color:#B8860B;">+1,5</td>
-                    <td><strong>En düşük eğitim-gelişim skoru.</strong> Yemek şikayeti yoğun: "Vejetaryen biri olarak
-                        yemek yiyemiyorum." Ekip uyumu en yüksek düzeyde.</td>
-                </tr>
-                <tr class="critical">
-                    <td>FEN İŞLERİ</td>
-                    <td style="text-align:center;">%88,1</td>
-                    <td style="text-align:center; color:#B8860B;">+1,7</td>
-                    <td><strong>En yüksek ruh sağlığı riski.</strong> Saha araçları sorunu: "Araçlar çok kötü, aşırı
-                        sarsıntılar bizi çok yoruyor". Yemek kalitesi şikayeti mevcuttur.</td>
-                </tr>
-                <tr class="warning">
-                    <td>YAPI KONTROL</td>
-                    <td style="text-align:center;">%88,0</td>
-                    <td style="text-align:center; color:#B8860B;">+2,9</td>
-                    <td>Ekip uyumu ve yönetici ilişkileri güçlü. Ücret şikayeti yaygın: "Diğer belediyelerde aynı
-                        pozisyonda çalışanlarla aramızdaki maaş farkı iyileştirilmeli."</td>
-                </tr>
-                <tr class="warning">
-                    <td>ZABITA</td>
-                    <td style="text-align:center; color:#8B3A3A;">%83,2</td>
-                    <td style="text-align:center; color:#B8860B;">+3,1</td>
-                    <td>En yüksek açık uçlu yorum oranı - %55,4. <strong>28 kişi ücret/SDS şikayeti:</strong>
-                        İstanbul'daki diğer belediyelerle eşit haklar talep edilmektedir. Ortak alan koşulları en düşük
-                        skorlarda.</td>
-                </tr>
-                <tr class="warning">
-                    <td>SOSYAL DESTEK</td>
-                    <td style="text-align:center;">%89,9</td>
-                    <td style="text-align:center;">+5,2</td>
-                    <td>En yüksek kamu hizmeti motivasyonlarından biri. Görev tanımları belirsiz, eğitim imkanları
-                        yetersiz. 7 kişi yönetici ilişkileri şikayeti bildirmiştir.</td>
-                </tr>
-                <tr class="critical">
-                    <td>TEMİZLİK İŞLERİ</td>
-                    <td style="text-align:center;">%91,9</td>
-                    <td style="text-align:center;">+5,5</td>
-                    <td>En kalabalık birim, en düşük katılım oranı (%37,2). <strong>66 kişi şantiye altyapısından
-                            şikayetçi:</strong> "500 küsür insana 3 tuvalet yetersiz". Soyunma odası, dolap ve çay ocağı
-                        bulunmamaktadır.</td>
-                </tr>
-                <tr>
-                    <td>HALKLA İLİŞKİLER</td>
-                    <td style="text-align:center;">%92,4</td>
-                    <td style="text-align:center;">+6,0</td>
-                    <td>Çağrı merkezi yoğun iş yükü: "Günde 160-200 çağrı, 3-4 saat konuşma süresi iş içi gerginliğe
-                        sebep olmaktadır."</td>
-                </tr>
-                <tr>
-                    <td>PARK VE BAHÇELER</td>
-                    <td style="text-align:center;">%91,7</td>
-                    <td style="text-align:center;">+7,4</td>
-                    <td>Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerinde. Ruh sağlığı riski yüksek
-                        düzeyde.</td>
-                </tr>
-                <tr class="warning">
-                    <td>PLAN VE PROJE</td>
-                    <td style="text-align:center; color:#8B3A3A;">%84,4</td>
-                    <td style="text-align:center;">+10,8</td>
-                    <td>Çalışma koşulları (servis, yemek, tuvalet) en düşük skorlar arasında. Servis şikayeti en çok
-                        dile getirilen konu.</td>
-                </tr>
-                <tr class="warning">
-                    <td>HUKUK İŞLERİ</td>
-                    <td style="text-align:center; color:#8B3A3A;">%84,1</td>
-                    <td style="text-align:center;">+11,1</td>
-                    <td>Yemekte memur-işçi-KHK fiyat farkı adaletsiz bulunmaktadır. Servis hizmetinin ilçe içine
-                        alınması olumsuz etkilemiştir.</td>
-                </tr>
-                <tr>
-                    <td>İŞLETME</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>%96,9</strong></td>
-                    <td style="text-align:center;">+15,0</td>
-                    <td>İkinci en yüksek memnuniyet. Düşük katılım oranı nedeniyle sonuçlar temkinle değerlendirilmeli.
-                    </td>
-                </tr>
-                <tr>
-                    <td>YAZI İŞLERİ</td>
-                    <td style="text-align:center;">%90,5</td>
-                    <td style="text-align:center;">+19,1</td>
-                    <td>En yüksek anket katılım oranlarından biri. 12 kişi yemek şikayeti: yemeklerin ilgisiz ve özensiz
-                        yapıldığı ifade ediliyor.</td>
-                </tr>
-                <tr>
-                    <td>MALİ HİZMETLER</td>
-                    <td style="text-align:center;">%86,1</td>
-                    <td style="text-align:center;">+19,9</td>
-                    <td>Amir saygısı ve topluma hizmet gururu %100. Çalışan ebeveynler çocuk etüt merkezi talep
-                        etmektedir.</td>
-                </tr>
-                <tr class="positive">
-                    <td>KÜLTÜR İŞLERİ</td>
-                    <td style="text-align:center;">%89,6</td>
-                    <td style="text-align:center;">+21,9</td>
-                    <td>Düşük stresli ve dengeli çalışma ortamı. En düşük sigara kullanım oranlarından biri.</td>
-                </tr>
-                <tr class="positive">
-                    <td>GENÇLİK VE SPOR</td>
-                    <td style="text-align:center;">%92,7</td>
-                    <td style="text-align:center;">+22,3</td>
-                    <td>10 temanın tamamında belediye ortalaması üzerinde skor. Ekip uyumu ve yönetici ilişkileri
-                        güçlüdür.</td>
-                </tr>
-                <tr class="positive">
-                    <td>BASIN VE YAYIN</td>
-                    <td style="text-align:center;">%93,1</td>
-                    <td style="text-align:center;">+22,3</td>
-                    <td>En yüksek kamu hizmeti motivasyonu. Ofis temizliği ve ısıtma/soğutma yetersiz bulunmaktadır.
-                    </td>
-                </tr>
-                <tr class="positive">
-                    <td>ÖZEL KALEM</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>%98,4</strong></td>
-                    <td style="text-align:center;">+22,9</td>
-                    <td><strong>EN YÜKSEK MEMNUNİYET.</strong> Genel memnuniyet sorusunda %100 tam puan. En düşük ruh
-                        sağlığı risklerinden biri.</td>
-                </tr>
-                <tr class="positive">
-                    <td>MUHTARLIK</td>
-                    <td style="text-align:center; color:#2E5A3A;">%95,8</td>
-                    <td style="text-align:center;">+23,2</td>
-                    <td>Üçüncü en yüksek memnuniyet. Düşük iş stresi/yükü ve güçlü ekip uyumu. Personel tuvaletinin
-                        vatandaştan ayrılması talep ediliyor.</td>
-                </tr>
-                <tr class="positive">
-                    <td>AKILLI ULAŞIM</td>
-                    <td style="text-align:center;">%88,3</td>
-                    <td style="text-align:center;">+23,9</td>
-                    <td>Yönetici ilişkileri ve ekip uyumu güçlü. Ücret memnuniyeti düşük, eğitim imkanları yetersiz.
-                    </td>
-                </tr>
-                <tr class="positive">
-                    <td>İNOVASYON</td>
-                    <td style="text-align:center; color:#2E5A3A;">%95,3</td>
-                    <td style="text-align:center;">+24,2</td>
-                    <td>En yüksek iş-kişi uyumu. 9 temada ortalama üzeri skor. 11 kişi yemek şikayeti bildirmiştir.</td>
-                </tr>
-                <tr class="positive">
-                    <td>DESTEK HİZMETLERİ</td>
-                    <td style="text-align:center; color:#2E5A3A;">%95,1</td>
-                    <td style="text-align:center;">+24,5</td>
-                    <td>En yüksek eğitim-gelişim skoru. Saha personeli araç ve ekipman takviyesi talep etmektedir.</td>
-                </tr>
-                <tr class="warning">
-                    <td>İNSAN KAYNAKLARI</td>
-                    <td style="text-align:center; color:#8B3A3A;"><strong>%80,8</strong></td>
-                    <td style="text-align:center;">+24,5</td>
-                    <td>Düşük iş stresi/yükü ve güçlü denge. İş-kişi uyumu (%79,5) en düşük düzeyde - izlenmesi gereken
-                        alan.</td>
-                </tr>
-                <tr class="positive">
-                    <td>RUHSAT VE DENETİM</td>
-                    <td style="text-align:center;">%90,9</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>+25,9</strong></td>
-                    <td><strong>En düşük ruh sağlığı riski.</strong> Görev netliği ikinci en yüksek düzeyde. Açık uçlu
-                        yorum yazılmamıştır.</td>
-                </tr>
-                <tr class="positive">
-                    <td>STRATEJİ GELİŞTİRME</td>
-                    <td style="text-align:center;">%85,7</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>+27,7</strong></td>
-                    <td>En düşük iş stresi/yükü. Personelin %75'i açık uçlu yorum yazmıştır. Yemekhane ücretleri yüksek
-                        bulunmaktadır.</td>
-                </tr>
-                <tr class="positive">
-                    <td>AFET İŞLERİ</td>
-                    <td style="text-align:center;">%90,9</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>+34,3</strong></td>
-                    <td>İkinci en yüksek denge. En yüksek görev netliği. Yönetici ilişkileri oldukça güçlü.</td>
-                </tr>
-                <tr class="positive">
-                    <td>KOORDİNASYON</td>
-                    <td style="text-align:center;">%85,7</td>
-                    <td style="text-align:center; color:#2E5A3A;"><strong>+34,4</strong></td>
-                    <td><strong>EN YÜKSEK DENGE.</strong> Yönetici ilişkileri ve ekip uyumu en yüksek düzeyde. %100
-                        katılım. Sigara kullanımı da en yüksek.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="summary-box">
-            <p><strong>Özet İstatistikler:</strong></p>
-            <ul style="margin-top:0.5em; font-size:9.5pt;">
-                <li><strong>3 müdürlükte negatif denge:</strong> Veteriner (-3,5), Gelirler (-2,5), İmar (-2,3)</li>
-                <li><strong>5 müdürlükte düşük pozitif denge</strong> (0-5 arası): İklim (+0,7), Emlak (+1,5), Fen
-                    (+1,7), Yapı Kontrol (+2,9), Zabıta (+3,1)</li>
-                <li><strong>En yüksek memnuniyet:</strong> Özel Kalem %98,4, İşletme %96,9, Muhtarlık %95,8</li>
-                <li><strong>En düşük memnuniyet:</strong> İnsan Kaynakları %80,8, Zabıta %83,2, Hukuk %84,1</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- BÖLÜM 4: RUH SAĞLIĞI -->
-    <div class="card section-page">
-        <h1>4.0 Çalışan İyi Oluşu: Ruh Sağlığı Bulguları</h1>
-
-        <h2>4.1 Temel Ruh Sağlığı Göstergeleri</h2>
-
-        <p class="section-intro">Anketin temel hedeflerinden biri de çalışanlarımızın psikolojik iyi oluş durumunu
-            taramaktı. Bulgular, personelin yaklaşık yarısının son iki hafta içinde ruh sağlığını olumsuz etkileyen
-            belirtiler yaşadığını göstermektedir. Bu durum, proaktif destek mekanizmalarının önemini ortaya koymaktadır.
-        </p>
-
-        <table class="small-table">
-            <thead>
-                <tr>
-                    <th>Gösterge</th>
-                    <th style="text-align:center;">Oran</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Gerginlik/Kaygı Hissi</td>
-                    <td style="text-align:center;">%50,8</td>
-                </tr>
-                <tr>
-                    <td>Üzgünlük/Çökkünlük Hissi</td>
-                    <td style="text-align:center;">%50,9</td>
-                </tr>
-                <tr>
-                    <td>Endişeleri Kontrol Edememe</td>
-                    <td style="text-align:center;">%50,9</td>
-                </tr>
-                <tr>
-                    <td>Keyif Alamama</td>
-                    <td style="text-align:center;">%56,1</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>4.2 İş Stresi, Kurum Desteği ve Ruh Sağlığı İlişkisi</h2>
-
-        <p>Korelasyon analizi, iş yeri dinamikleri ile ruh sağlığı arasında güçlü bir bağ olduğunu net bir şekilde
-            ortaya koymaktadır. Bu bulgu, JD-R Modeli'nin temel varsayımını desteklemektedir: <strong>İş stresi/yükü
-                kurumsal desteği aştığında, tükenmişlik ve psikolojik sorunlar ortaya çıkmaktadır.</strong></p>
-
-        <table class="small-table">
-            <thead>
-                <tr>
-                    <th>İlişki</th>
-                    <th style="text-align:center;">Korelasyon</th>
-                    <th>Yorum</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Denge → Ruh Sağlığı Riski</strong></td>
-                    <td style="text-align:center; color:#8B3A3A; font-weight:bold;">-0,64</td>
-                    <td>Güçlü ilişki: Denge düştükçe risk artıyor</td>
-                </tr>
-                <tr>
-                    <td><strong>İş Stresi → Ruh Sağlığı Riski</strong></td>
-                    <td style="text-align:center; color:#8B3A3A; font-weight:bold;">+0,57</td>
-                    <td>Güçlü ilişki: Stres arttıkça risk artıyor</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>Bu analiz, 3. bölümde detaylandırılan yemek, servis ve fiziksel koşullar gibi operasyonel sorunların yalnızca
-            birer memnuniyetsizlik kaynağı olmadığını, aynı zamanda <strong>doğrudan ruh sağlığını etkileyen stratejik
-                birer risk faktörü</strong> olduğunu bilimsel olarak kanıtlamaktadır.</p>
-
-        <div class="summary-box">
-            <p>Bu bulgu, kurumsal destek mekanizmalarının güçlendirilmesinin (fiziksel çalışma koşullarının
-                iyileştirilmesi, yönetici ilişkilerinin geliştirilmesi, ekip uyumunun desteklenmesi ve iş yükü
-                dengesinin sağlanması) ruh sağlığı riskini azaltmada ne denli önemli bir rol oynadığını kanıtlamaktadır.
-            </p>
-            <p>Kurumsal iyileştirmelere ek olarak, <strong>Kurum Psikoloğumuz</strong> tarafından hem belediye genelinde
-                hem de müdürlük bazında özel psikolojik destek aksiyon planları hazırlanacaktır. Kurumsal iyileştirmeler
-                ve psikolojik destek programlarının birlikte yürütülmesiyle, bir sonraki anket döneminde daha olumlu
-                sonuçlar alınması hedeflenmektedir.</p>
-        </div>
-    </div>
-
-    <!-- BÖLÜM 5: SONUÇ VE ÖNERİLER -->
-    <div class="card section-page">
-        <h1>5.0 Sonuç ve Stratejik Öneriler</h1>
-
-        <p>Bu kapsamlı analiz, Arnavutköy Belediyesi'nin çalışan memnuniyeti ve iyi oluş durumuna ilişkin önemli
-            içgörüler sunmaktadır. %90,8 genel memnuniyet skoru, kurumun güçlü bir içsel motivasyon ve sosyal bağ
-            temeline sahip olduğunu göstermektedir. Ancak 456 kişinin açık uçlu yorumları, operasyonel hizmetler ve
-            fiziksel çalışma koşullarında somut iyileştirme beklentileri olduğunu ortaya koymaktadır.</p>
-
-        <h2>5.1 Temel Çıkarımlarımız</h2>
-
-        <ul>
-            <li><strong>Güçlü kurumsal bağlılık:</strong> Topluma hizmet gururu (%94,5), kamu hizmeti motivasyonu
-                (%92,8) ve iş-kişi uyumu (%91,3) belediyenin en güçlü yönleridir. Mali Hizmetler'de topluma hizmet
-                gururu %100, Özel Kalem'de genel memnuniyet sorusunda %100 tam puan alınmıştır. İnovasyon (%97,6) ve
-                Basın Yayın (%97,1) en yüksek iş-kişi uyumuna sahiptir.</li>
-            <li><strong>Negatif ve kritik dengeli müdürlükler:</strong> Veteriner (-3,5), Gelirler (-2,5) ve İmar (-2,3)
-                müdürlüklerinde iş yükü desteği aşmıştır. İklim Değişikliği (+0,7), Emlak (+1,5) ve Fen İşleri (+1,7) de
-                kritik düzeyde düşük denge sergilemektedir.</li>
-            <li><strong>Ruh sağlığı uç değerleri:</strong> Fen İşleri %63,7 ile belediyenin en yüksek ruh sağlığı
-                riskine sahiptir (keyif alamama %68,6). Plan Proje %60,0 (gerginlik %65,0), Park Bahçeler %58,1,
-                Veteriner ve İmar (ikisi de %58,5) yüksek risk grubundadır. Ruhsat ve Denetim %38,4 ile belediye rekoru
-                kırmıştır.</li>
-            <li><strong>İş-kişi uyumu farklılıkları:</strong> Bazı müdürlüklerde personelin yaptığı işle bağ kurma
-                düzeyi ortalamanın altındadır. Halkla İlişkiler'de kamu motivasyonu %95,3 iken iş-kişi uyumu %80,5 -
-                personel topluma hizmet etmekten gurur duyuyor ancak yaptığı işi yeteneğiyle uyumlu bulmuyor. Yazı
-                İşleri %84,7, Gelirler %85,7, Plan Proje ve İşletme %87,5 düzeyindedir. Bu durum, iş yükünden bağımsız
-                olarak anlam duygusu ve motivasyonun güçlendirilmesi gerektiğini göstermektedir.</li>
-            <li><strong>Operasyonel hizmetlerde en düşük skorlar:</strong> Plan Proje'de yemekhane %35,0 ve servis %44,6
-                (belediye en düşüğü). Servislerin kaldırılması "psikolojimi en çok düşüren etken" olarak ifade
-                edilmiştir. İmar'da yemekhane %40,2, İnovasyon'da %41,4.</li>
-            <li><strong>Yüksek iş yükü birimleri:</strong> İmar'da vatandaş yoğunluğu %90,2 (belediye rekoru), "günde
-                bir evraktan çıkıyoruz." Halkla İlişkiler çağrı merkezinde "günde 160-200 çağrı." İklim Değişikliği'nde
-                "acil personel ihtiyacı."</li>
-            <li><strong>Saha altyapı sorunları:</strong> Temizlik İşleri'nde "500 küsür insana 3 tuvalet yetersiz."
-                Veteriner'de Yassıören barınağı tuzlu su sorunu. Fen İşleri'nde "araçlar çok kötü, aşırı sarsıntılar
-                bizi yoruyor."</li>
-            <li><strong>Model birimler:</strong> Özel Kalem (%98,4 memnuniyet), Afet İşleri (%97,7 görev netliği),
-                Koordinasyon (%98,2 yönetici ilişkileri), İnovasyon (%97,6 iş-kişi uyumu) ve Gençlik Spor (10 temada
-                ortalama üzeri) diğer birimler için örnek teşkil etmektedir.</li>
-        </ul>
-
-        <h2>5.2 Belediye Geneli Stratejik Öneriler (9 Ana Başlık)</h2>
-
-        <p class="section-intro">Aşağıdaki öneriler belediye genelini kapsamaktadır. Ancak her müdürlüğün kendine özgü
-            dinamikleri bulunmaktadır. Bu nedenle, müdürlük bazında alınması gereken aksiyonlar için ekteki 30 müdürlük
-            raporunun ayrı ayrı incelenmesi önem taşımaktadır.</p>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">1. Yemekhane Hizmetinin İyileştirilmesi</span>
-                <span class="rec-score low">%57,2</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Belediye genelinde en düşük memnuniyet skoru. Plan ve Proje'de %35,0 ile
-                belediyenin en düşük yemekhane skoru. İmar %40,2, İnovasyon %41,4, Gelirler %43,8, Kültür %46,6. Hukuk
-                İşleri'nde "memur ve şirket personeli arasındaki yemek ücreti farkı" en sık şikayet. Gelirler'de "şirket
-                personelinin yemekhaneden memurlar gibi faydalanamaması büyük haksızlık." İnovasyon'da "her anket
-                şikayet ediyoruz ama değişen bir şey yok." Ayrıca personelden "kart bastıkça (yedikçe) ödeme" sistemi
-                talebi gelmektedir.</div>
-            <div class="rec-action">💡 Öneri: Yemekhane hizmetinin kalite, çeşitlilik ve hijyen standartlarının gözden
-                geçirilmesi; memur ve şirket personeli arasındaki fiyat farklılığının değerlendirilmesi; kart bazlı
-                (kullandıkça ödeme) sistemin araştırılması.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">2. Saha Birimi Fiziksel Koşullarının İyileştirilmesi</span>
-                <span class="rec-score low">14 puan fark</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Saha ve büro birimleri arasında 14 puanlık denge farkı bulunmaktadır.
-                Temizlik İşleri'nde "500 küsür insana 3 tuvalet yetersiz", soyunma odası/dolap/çay ocağı yok, ekipman
-                (eldiven, yağmurluk, ayakkabı) kalitesiz. Fen İşleri'nde "araçlar çok kötü, aşırı sarsıntılar bizi çok
-                yoruyor." Veteriner'de Yassıören barınağı tuzlu su ve altyapı sorunu. İklim Değişikliği'nde "dolap yok,
-                tuvalet kilitleri yok, üstümüzü değiştirecek yerimiz yok."</div>
-            <div class="rec-action">💡 Öneri: Şantiye alanlarında tuvalet sayısının artırılması; soyunma odası, kişisel
-                dolap ve dinlenme alanı tahsisi; Temizlik İşleri ekipman kalitesinin gözden geçirilmesi; saha
-                araçlarının bakım ve yenileme programı; Veteriner Yassıören altyapısının iyileştirilmesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">3. Büro Fiziksel Koşullarının Gözden Geçirilmesi</span>
-                <span class="rec-score low">Çoklu şikayet</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Muhtarlık İşleri'nde ortak alanlar %50,0 (-20,4 puan), ısıtma/soğutma
-                %58,3, teknoloji altyapısı %58,3. Yazı İşleri'nde çalışma alanı temizliği %56,9 (-22,5) ve arşiv birimi
-                havalandırma sorunu. Gelirler'de "camlar açılmıyor, hava alınmıyor." İşletme'de "ofis küçük geliyor."
-                Plan Proje'de tuvalet kilitleri yok, üst değiştirme alanı yok. Kültür'de "personel tuvaletleri ayrı
-                olmalı" talebi. Basın Yayın'da temizlik %68,1, ısıtma %65,3.</div>
-            <div class="rec-action">💡 Öneri: Şikayet bildirilen birimlerde (Muhtarlık, Yazı İşleri, Gelirler, Plan
-                Proje, Kültür) fiziksel koşulların yerinde incelenmesi; havalandırma, temizlik ve iklimlendirme
-                sorunlarının giderilmesi; ortak alan ve tuvalet koşullarının iyileştirilmesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">4. Yoğun İş Yükü Altındaki Birimlerin Desteklenmesi</span>
-                <span class="rec-score low">6 kritik müdürlük</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Üç müdürlükte negatif denge: Veteriner (-3,5), Gelirler (-2,5), İmar
-                (-2,3). Üç müdürlükte kritik düşük denge: İklim Değişikliği (+0,7), Emlak (+1,5), Fen İşleri (+1,7).
-                İmar'da vatandaş yoğunluğu %90,2 (belediye rekoru), "günde bir evraktan çıkıyoruz." İklim
-                Değişikliği'nde "acil personel ihtiyacı var." Halkla İlişkiler çağrı merkezinde "günde 160-200 çağrı,
-                3-4 saat konuşma süresi iş içi gerginliğe sebep olmakta." Veteriner'de amir eşitliği %69,8 (en düşük).
-            </div>
-            <div class="rec-action">💡 Öneri: Negatif ve kritik dengeli müdürlüklerde iş süreçlerinin ve personel
-                ihtiyacının değerlendirilmesi; İklim Değişikliği'ne acil personel takviyesi; İmar'da iş akışı
-                optimizasyonu; Veteriner'de Yassıören altyapısı ve yönetim adaleti; Halkla İlişkiler çağrı merkezinde iş
-                yükü dengelemesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">5. Çalışan Psikolojik İyi Oluşunun Desteklenmesi</span>
-                <span class="rec-score medium">%52,2 risk</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Personelin yarısı (%52,2) son iki haftada kaygı, çökkünlük veya keyif
-                alamama belirtisi bildirmiştir. Fen İşleri %63,7 ile belediyenin en yüksek ruh sağlığı riskine sahiptir
-                (keyif alamama %68,6, endişe kontrolü %64,8). Plan Proje %60,0 (gerginlik %65,0 - belediye rekoru),
-                Veteriner %58,5, İmar %58,5, Park Bahçeler %58,1 yüksek risk grubundadır. Buna karşın Ruhsat ve Denetim
-                %38,4 (belediye rekoru - en düşük) ve Özel Kalem %39,2 ile düşük risk profiline sahiptir.</div>
-            <div class="rec-action">💡 Öneri: Kurum Psikoloğu koordinasyonunda öncelikli olarak Fen İşleri, Plan Proje
-                ve Park Bahçeler gibi yüksek riskli birimlere yönelik destek programlarının planlanması; belediye
-                genelinde psikolojik iyi oluş farkındalık çalışmalarının yürütülmesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">6. Eğitim ve Gelişim İmkanlarının Güçlendirilmesi</span>
-                <span class="rec-score medium">%75,8</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Emlak ve İstimlak %58,6 ile belediyenin en düşük eğitim-gelişim skoruna
-                sahiptir (-17,2 puan). Akıllı Ulaşım %66,7 (-9,1), Sosyal Destek %67,8 (-8,0), Ruhsat ve Denetim'de
-                eğitim faaliyetleri yeterliliği %61,4. Hukuk İşleri %68,2 (-7,6). Afet İşleri'nde İSG uygulamaları %70,5
-                ile belediye ortalamasının 5,8 puan altındadır - afet birimi için kritik. Strateji Geliştirme'de
-                performans değerlendirme kriterleri netliği %64,3 (-16,3) ve adaleti %60,7 (-16,5) belediyenin en düşük
-                skorları.</div>
-            <div class="rec-action">💡 Öneri: Emlak ve İstimlak, Akıllı Ulaşım ve Sosyal Destek başta olmak üzere eğitim
-                ihtiyaç analizlerinin yapılması; Afet İşleri'nde İSG eğitimlerinin önceliklendirilmesi; Strateji
-                Geliştirme'de performans değerlendirme sisteminin gözden geçirilmesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">7. İş-Kişi Uyumu ve Anlam Duygusunun Güçlendirilmesi</span>
-                <span class="rec-score medium">Çoklu müdürlük</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Bazı müdürlüklerde personelin yaptığı işle bağ kurma düzeyi ortalamanın
-                altındadır. Halkla İlişkiler'de kamu motivasyonu %95,3 iken iş-kişi uyumu %80,5 (-10,8) - personel
-                topluma hizmet etmekten gurur duyuyor ancak yaptığı işi yeteneğiyle uyumlu bulmuyor. Yazı İşleri'nde
-                %84,7 (-6,6), Gelirler'de %85,7 (-5,6), Plan Proje ve İşletme'de %87,5 (-3,8), Yapı Kontrol ve Park
-                Bahçeler'de %88,3 (-3,0) düzeyindedir. Bu durum iş yükünden bağımsız olarak anlam duygusu ve
-                motivasyonun güçlendirilmesi gerektiğini göstermektedir.</div>
-            <div class="rec-action">💡 Öneri: Personelin yaptığı işin topluma katkısını somut olarak görmesini
-                sağlayacak geri bildirim mekanizmalarının geliştirilmesi; başarı hikayelerinin kurum içi iletişimde
-                paylaşılması; Halkla İlişkiler'de görev-yetenek eşleştirmesinin değerlendirilmesi.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">8. Servis Hizmeti ve İş-Yaşam Dengesi</span>
-                <span class="rec-score low">%67,7</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Plan Proje'de servis %44,6 (belediye en düşüğü) - "psikolojimi,
-                motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır." Koordinasyon %53,6, Yapı
-                Kontrol %54,2, Muhtarlık %56,3 ile kritik düşük. Halkla İlişkiler'de "Boğazköy servisi yetersiz, ayakta
-                gidiyoruz." Yapı Kontrol'de "bazı personel kısa mesafe için güzergah değiştirtiyor, diğerleri uzun
-                mesafe yürüyor" adaletsizlik algısı. Mali Hizmetler'de çocuk etüt/dinlenme alanı talebi iş-yaşam dengesi
-                ihtiyacına işaret.</div>
-            <div class="rec-action">💡 Öneri: Servis güzergahlarının ve kapasitelerinin yeniden değerlendirilmesi;
-                özellikle Plan Proje ve Koordinasyon gibi düşük skorlu birimlerde çözüm aranması; çalışan ebeveynler
-                için çocuk bakım/etüt hizmeti imkanının araştırılması.</div>
-        </div>
-
-        <div class="recommendation-card">
-            <div class="rec-header">
-                <span class="rec-title">9. Zabıta Müdürlüğü Özel Durumu</span>
-                <span class="rec-score low">%83,2 memnuniyet</span>
-            </div>
-            <div class="rec-impact">📊 Bulgu: Zabıta belediyenin en düşük memnuniyetli büyük birimlerinden biridir (-7,6
-                puan). 62 kişi açık uçlu yorum yazmıştır - en yoğun şikayetler: haftalık 40 saate indirilme talebi,
-                hafta sonu mesailerinin kaldırılması, SDS/maktu mesai yetersizliği, diğer İstanbul belediyeleriyle maaş
-                karşılaştırması. Zabıta yönetmeliğinde yer alan ücretsiz spor salonu hakkının kullandırılması talep
-                edilmiştir. İş stresi %76,7 (+7,6), vatandaş yoğunluğu %84,0 (+13,4).</div>
-            <div class="rec-action">💡 Öneri: Zabıta personelinin çalışma saatleri ve mesai düzeninin gözden
-                geçirilmesi; zabıta yönetmeliğindeki hakların (spor salonu vb.) değerlendirilmesi; servis
-                güzergahlarının genişletilmesi.</div>
-        </div>
-
-        <div class="warning-box" style="background: #FFF8E7; border-left-color: #E6A817;">
-            <p><strong>Sigara Kullanımı Uyarısı:</strong> Koordinasyon İşleri (%71,4), İklim Değişikliği (%70,6),
-                Veteriner (%62,5), Fen İşleri (%62,7), Halkla İlişkiler (%60,9) ve Yapı Kontrol (%60,0) müdürlüklerinde
-                sigara kullanım oranı belediye ortalamasının (%44,9) çok üzerindedir. Buna karşın Emlak (%14,3), Mali
-                Hizmetler (%22,2), Plan Proje (%25,0) ve Akıllı Ulaşım (%26,7) ile en düşük orana sahiptir. Bu uç
-                değerler, özellikle yüksek stresli saha birimlerinde sağlık farkındalık çalışmalarının planlanmasını
-                gerektirebilir.</p>
-        </div>
-
-        <div class="warning-box">
-            <p><strong>Ücret ve Maaş Konusu:</strong> 116 kişi ile en fazla açık uçlu yorumun yapıldığı bu konu, birçok
-                müdürlükte tekrarlanan bir şikayettir. Zabıta'da 28 kişi SDS/maktu mesai ve diğer belediyelerle maaş
-                karşılaştırması yapmıştır. Akıllı Ulaşım'da ücret memnuniyeti %53,3 (-15,7), Yapı Kontrol'de %54,0
-                (-15,0), Emlak'ta %51,2 (-17,8), Koordinasyon'da %53,6 (-15,4) düzeyindedir. Emlak'ta "tekniker-mühendis
-                maaş adaletsizliği" şikayeti mevcuttur. Bu konu, mali politikalar ve yasal çerçeve dahilinde
-                değerlendirilmesi gereken stratejik bir başlıktır.</p>
-        </div>
-
-        <p style="margin-top: 1.5em;">Bu çalışma, belirli periyotlarla tekrarlanarak kurumsal gelişimin izlenmesi ve
-            iyileştirme çalışmalarının etkisinin ölçülmesi için temel bir referans noktası oluşturacaktır.</p>
-    </div>
-
-    <!-- BÖLÜM 6: MÜDÜRLÜK ANALİZLERİ -->
-    <div class="card section-page">
-        <h1>6.0 Müdürlük Bazlı Detaylı Analizler</h1>
-
-        <p>Bu genel raporun yanı sıra, belediyemize bağlı <strong>30 müdürlüğün her biri için ayrı ayrı detaylı analiz
-                raporları</strong> titizlikle hazırlanmıştır. Her müdürlük raporu şu unsurları içermektedir:</p>
-
-        <ul style="margin: 1em 0 1em 1.5em;">
-            <li>Müdürlüğe özel temel göstergeler ve belediye ortalaması ile karşılaştırma</li>
-            <li>10 tema bazında detaylı performans analizi</li>
-            <li>Soru bazlı en yüksek ve en düşük skorların değerlendirmesi</li>
-            <li>Kurum Desteği - İş Stresi/Yükü denge analizi</li>
-            <li>Ruh sağlığı taraması bulguları</li>
-            <li>Açık uçlu yorumların tematik analizi ve doğrudan alıntılar</li>
-            <li>Müdürlüğe özel güçlü yönler ve gelişim alanları</li>
-        </ul>
-
-        <div class="warning-box">
-            <p><strong>Önemli Not:</strong> Yukarıda sunulan stratejik öneriler belediye genelini kapsamaktadır. Ancak
-                her müdürlüğün kendine özgü güçlü yönleri ve gelişim alanları bulunmaktadır. Müdürlük bazında alınması
-                gereken spesifik aksiyonların belirlenmesi için ilgili müdürlük raporlarının ayrı ayrı incelenmesi
-                gerekmektedir.</p>
-        </div>
-
-        <p>Bu detaylı raporlar, her müdürün kendi biriminin dinamiklerini derinlemesine anlamasını ve birime özel
-            iyileştirme stratejileri geliştirmesini sağlayacak kapsamlı bir kaynak niteliğindedir.</p>
-
-        <p style="text-align: center; margin-top: 2em; font-style: italic; color: #6B5344;">Müdürlük bazlı detaylı
-            raporlar bu dokümanın ekinde yer almaktadır.</p>
-
-        <div style="text-align: right; margin-top: 3em; padding-top: 1.5em; border-top: 1px solid #E5DDD5;">
-            <p style="margin: 0;"><strong>Saygılarımızla,</strong></p>
-            <p style="margin: 0.5em 0 0 0; font-family: 'Playfair Display', serif; font-weight: 600; color: #2C1810;">
-                <strong>İnsan Kaynakları ve Eğitim Müdürlüğü</strong>
-            </p>
-        </div>
-    </div>`,
+    belediyeGeneli: `<h1>Arnavutköy Belediyesi - Çalışan Memnuniyeti Analizi</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:55%;">Gösterge</th>
+            <th style="width:45%;">Değer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Kapsam</strong></td>
+            <td class="value">30 müdürlük, 2.089 personel</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Ankete Katılım</strong></td>
+            <td class="value">1.470 kişi (%70,4)</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%90,8</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar)</span>
+            </td>
+            <td class="value">%69,1</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları vb.)</span>
+            </td>
+            <td class="value">%82,3</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+13,2</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%52,2</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">456 kişi (%31,0)</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h3 style="margin-top:0;">Genel Değerlendirme ve Sonuç</h3>
+
+<p>Bu çalışan memnuniyeti anketi, belediyemizin 30 müdürlüğünde görev yapan <strong>2.089 personelden 1.470'ine</strong> (%70,4) ulaşmış, bunların 456'sı (%31,0) açık uçlu yorum da yazmıştır. <strong>Genel memnuniyet %90,8</strong> ile yüksek düzeydedir.</p>
+
+<p><strong>🌟 Belediyemizin Güçlü Yönleri</strong></p>
+<p>Personelimiz topluma hizmet etmekten gurur duymaktadır (%94,5). İşlerini anlamlı bulmakta (%92,4), amirleriyle iletişimlerini olumlu değerlendirmekte (%92,2) ve ekip uyumu yüksek seviyede seyretmektedir (%86,9). Bu güçlü motivasyon ve dayanışma, çalışma koşullarına rağmen memnuniyetin yüksek kalmasının temel nedenidir.</p>
+
+<p><strong>⚠️ İyileştirilmesi Gereken Alanlar</strong></p>
+<p>Anket sonuçları ve açık uçlu yorumlar birlikte değerlendirildiğinde, belediye genelinde beş temel sorun alanı öne çıkmaktadır:</p>
+
+<table style="margin:1em 0; width:100%;">
+<thead>
+<tr style="background:#f0f0f0;">
+<th style="text-align:left; padding:8px;">Sorun Alanı</th>
+<th style="text-align:center; padding:8px;">Anket Skoru</th>
+<th style="text-align:center; padding:8px;">Açık Uçlu Yorum</th>
+<th style="text-align:left; padding:8px;">En Çok Şikayet Eden Birimler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:8px;"><strong>Yemek Hizmeti</strong></td>
+<td style="text-align:center; padding:8px; color:#c0392b;"><strong>%57,2</strong> (en düşük)</td>
+<td style="text-align:center; padding:8px;">83 yorum</td>
+<td style="padding:8px;">Emlak (12), Yazı İşleri (12), İnovasyon (11)</td>
+</tr>
+<tr style="background:#fafafa;">
+<td style="padding:8px;"><strong>Servis Güzergahları</strong></td>
+<td style="text-align:center; padding:8px; color:#c0392b;">%67,7</td>
+<td style="text-align:center; padding:8px;">32 yorum</td>
+<td style="padding:8px;">Zabıta (8), Emlak (5), Plan Proje (3)</td>
+</tr>
+<tr>
+<td style="padding:8px;"><strong>Ücret/Maaş</strong></td>
+<td style="text-align:center; padding:8px;">%69,0</td>
+<td style="text-align:center; padding:8px;"><strong>116 yorum</strong> (en çok)</td>
+<td style="padding:8px;">Zabıta (28), Emlak (10), Sosyal Destek (9)</td>
+</tr>
+<tr style="background:#fafafa;">
+<td style="padding:8px;"><strong>Ortak Alanlar</strong></td>
+<td style="text-align:center; padding:8px;">%70,4</td>
+<td style="text-align:center; padding:8px;">81 yorum</td>
+<td style="padding:8px;">Temizlik İşleri (66), Kültür (3), Plan Proje (3)</td>
+</tr>
+<tr>
+<td style="padding:8px;"><strong>Yönetici İlişkileri</strong></td>
+<td style="text-align:center; padding:8px;">%86,8 (genel iyi)</td>
+<td style="text-align:center; padding:8px;">37 yorum</td>
+<td style="padding:8px;">Temizlik (12), Sosyal Destek (7), Zabıta (5)</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-size:10pt; margin-top:1em;"><strong>Analiz:</strong></p>
+
+<p style="font-size:10pt; margin-top:0.5em;"><strong>Yemek Hizmeti (%57,2):</strong> Belediye genelinde en düşük memnuniyet alanı olarak tespit edilmiştir. Açık uçlu yorumlarda yemek kalitesi, çeşitliliği ve hijyen koşulları konusunda iyileştirme beklentisi ifade edilmektedir. Büro birimlerinden gelen yorumlarda fiyat-kalite dengesi sorgulanmaktadır. Memur-işçi arasındaki fiyat farkının giderilmesi ve şirket çalışanlarının yedikleri kadar ödeme yapabilecekleri esnek bir sistem talep edilmektedir.</p>
+
+<p style="font-size:10pt; margin-top:0.5em;"><strong>Servis Güzergahları (%67,7):</strong> Tasarruf tedbirleri kapsamında ilçe dışı servislerin kaldırılmasının motivasyonu olumsuz etkilediği bildirilmektedir. Mevcut güzergahların uzun ve dolambaçlı olduğu, bazı hatlarda ayakta yolculuk yapıldığı ifade edilmektedir. Güzergah değişikliklerinde eşitlik beklentisi ön plana çıkmaktadır.</p>
+
+<p style="font-size:10pt; margin-top:0.5em;"><strong>Ücret/Maaş (%69,0):</strong> En fazla açık uçlu yorum alan konu olarak dikkat çekmektedir. Yorumlarda İstanbul'daki diğer belediyelerle maaş karşılaştırması yapılmaktadır. Özellikle saha çalışanları arasında maktu mesai, SDS ve fazla mesai ödemelerinin iyileştirilmesi talep edilmektedir. Farklı statüdeki personel arasındaki ücret farklarının dengelenmesi beklentisi mevcuttur.</p>
+
+<p style="font-size:10pt; margin-top:0.5em;"><strong>Ortak Alanlar (%70,4):</strong> Saha birimlerinde altyapı eksiklikleri bildirilmektedir. Tuvalet sayısının yetersizliği, soyunma odası ve kişisel dolap bulunmaması, çay ocağı ve dinlenme alanlarının kısıtlılığı dile getirilmektedir. Özellikle kalabalık saha birimlerinde fiziksel çalışma koşullarının iyileştirilmesi beklentisi mevcuttur.</p>
+
+<p style="font-size:10pt; margin-top:0.5em;"><strong>Yönetici İlişkileri (%86,8):</strong> Genel olarak güçlü düzeyde seyretmekle birlikte, bazı birimlerde iletişim konusunda iyileştirme beklentisi tespit edilmiştir. Saha birimlerinden şef/amir iletişimine yönelik, büro birimlerinden ise geri bildirim ve takdir konusunda görüşler bildirilmektedir. Eşit ve adil muamele beklentisi ön plana çıkmaktadır.</p>
+
+<p><strong>Kurum Desteği - İş Stresi/Yükü Dengesi</strong></p>
+
+<table style="width:100%; border-collapse:collapse; font-size:9.5pt; margin:1em 0;">
+<tr>
+<td style="width:48%; vertical-align:top; padding-right:2%;">
+<table style="width:100%; border:1px solid #333; border-collapse:collapse;">
+<tr style="background:#C86A3C; color:white;">
+<td colspan="2" style="padding:8px; font-weight:bold; text-align:center; border-bottom:1px solid #333;">İŞ STRESİ / YÜKÜ</td>
+</tr>
+<tr style="border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Görev yükü</td>
+<td style="padding:6px 8px; text-align:right;">%70,4</td>
+</tr>
+<tr style="background:#f5f5f5; border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Vatandaş/başvuru yoğunluğu</td>
+<td style="padding:6px 8px; text-align:right;">%70,6</td>
+</tr>
+<tr style="border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Duygusal zorlayıcılık</td>
+<td style="padding:6px 8px; text-align:right;">%70,8</td>
+</tr>
+<tr style="background:#f5f5f5; border-bottom:1px solid #999;">
+<td style="padding:6px 8px;">Zaman sıkışıklığı</td>
+<td style="padding:6px 8px; text-align:right;">%64,7</td>
+</tr>
+<tr style="background:#ddd; font-weight:bold;">
+<td style="padding:8px;">ORTALAMA</td>
+<td style="padding:8px; text-align:right;">%69,1</td>
+</tr>
+</table>
+</td>
+<td style="width:48%; vertical-align:top; padding-left:2%;">
+<table style="width:100%; border:1px solid #333; border-collapse:collapse;">
+<tr style="background:#C86A3C; color:white;">
+<td colspan="2" style="padding:8px; font-weight:bold; text-align:center; border-bottom:1px solid #333;">KURUMSAL DESTEK</td>
+</tr>
+<tr style="border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Yönetici ilişkileri</td>
+<td style="padding:6px 8px; text-align:right;">%86,8</td>
+</tr>
+<tr style="background:#f5f5f5; border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Ekip uyumu</td>
+<td style="padding:6px 8px; text-align:right;">%86,9</td>
+</tr>
+<tr style="border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Görev-rol netliği</td>
+<td style="padding:6px 8px; text-align:right;">%86,6</td>
+</tr>
+<tr style="background:#f5f5f5; border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Kurumsal iletişim</td>
+<td style="padding:6px 8px; text-align:right;">%79,8</td>
+</tr>
+<tr style="border-bottom:1px solid #ddd;">
+<td style="padding:6px 8px;">Eğitim ve gelişim</td>
+<td style="padding:6px 8px; text-align:right;">%75,8</td>
+</tr>
+<tr style="background:#f5f5f5; border-bottom:1px solid #999;">
+<td style="padding:6px 8px;">Çalışma koşulları</td>
+<td style="padding:6px 8px; text-align:right;">%72,2</td>
+</tr>
+<tr style="background:#ddd; font-weight:bold;">
+<td style="padding:8px;">ORTALAMA</td>
+<td style="padding:8px; text-align:right;">%82,3</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p style="text-align:center; margin:0.8em 0; padding:10px; background:#f0f0f0; border:1px solid #999; font-size:10pt;">
+<strong>DENGE</strong> = Kurumsal Destek (%82,3) − İş Stresi/Yükü (%69,1) = <strong>+13,2 puan</strong>
+</p>
+
+<p style="font-size:9.5pt;">Bu ankette memnuniyet oranının yanı sıra, endüstriyel psikoloji alanında yaygın olarak kullanılan <strong>JD-R Modeli</strong> ile Kurum Desteği - İş Stresi/Yükü Dengesi de ölçülmüştür. Memnuniyet skoru anketin sonucunu, Kurum Desteği - İş Stresi/Yükü Dengesi ise bu sonucun nedenini göstermektedir. Bu sayede memnuniyetin sürdürülebilir olup olmadığı ve hangi birimlerde önleyici müdahale gerektiği tespit edilebilmektedir.</p>
+
+<p>Belediye geneli denge <strong>+13,2 puan</strong> ile pozitiftir. Ancak birimler arasında önemli farklılıklar bulunmaktadır:</p>
+<ul style="margin-top:0.5em;">
+<li><strong>3 müdürlükte denge negatiftir</strong> (öncelikli olarak ele alınmalıdır): Veteriner İşleri (-3,5), Gelirler (-2,5), İmar ve Şehircilik (-2,3)</li>
+<li><strong>Saha-büro farkı dikkat çekicidir:</strong> Saha birimleri ortalama +2,8 denge ile düşük seviyede, büro birimleri ise +16,8 ile sağlıklı seviyededir. Bu 14 puanlık fark, saha personelinin daha fazla desteğe ihtiyaç duyduğunu göstermektedir.</li>
+</ul>
+
+<p><strong>🧠 Ruh Sağlığı Bulguları</strong></p>
+<p>Personelin yaklaşık <strong>yarısı</strong> son 2 haftada psikolojik belirtiler yaşadığını bildirmiştir: gerginlik/kaygı (%50,8), üzgünlük/çökkünlük (%50,9), endişeleri kontrol edememe (%50,9). Analizler göstermektedir ki iş stresi/yükü arttıkça ruh sağlığı riski artmakta, ancak <strong>kurum desteği güçlü olan birimlerde bu risk belirgin şekilde düşmektedir</strong>.</p>
+<p>Bu doğrultuda fiziksel çalışma koşulları, yönetici ilişkileri, ekip uyumu ve iş yükü dengesi gibi kurumsal destek mekanizmalarının güçlendirilmesi ruh sağlığı riskini azaltmada önemli rol oynamaktadır. Buna ek olarak, personelin ruh sağlığı yalnızca iş yaşamından ibaret olmadığından, kurum psikoloğu tarafından hem belediye genelinde hem de müdürlük bazında psikolojik destek aksiyon planları hazırlanacaktır. Kurumsal iyileştirmeler ve psikolojik destek programlarının birlikte yürütülmesiyle bir sonraki ankette daha olumlu sonuçlar alınması beklenmektedir.</p>
+
+<p><strong>📱 Sosyal Medya Takip Oranları</strong></p>
+<p>Personelin kurumsal sosyal medya hesaplarını takip oranları:</p>
+<ul style="margin-top:0.5em; columns:2;">
+<li>Instagram Belediye: %81,0</li>
+<li>Instagram Başkan: %76,9</li>
+<li>Facebook Belediye: %42,8</li>
+<li>Facebook Başkan: %39,6</li>
+<li>Twitter/X Belediye: %31,1</li>
+<li>Twitter/X Başkan: %29,3</li>
+<li>NextSosyal Belediye: %17,8</li>
+<li>NextSosyal Başkan: %17,6</li>
+</ul>
+<p><em>Instagram açık ara en çok takip edilen platform olup, personelin büyük çoğunluğu belediye hesabını takip etmektedir.</em></p>
+
+<p><strong>🚬 Sigara Kullanımı:</strong> Belediye genelinde %44,9. En yüksek: Koordinasyon (%71,4), İklim Değişikliği (%70,6), Fen İşleri (%62,7).</p>
+
+<hr style="margin:1.5em 0; border:none; border-top:1px solid #ccc;">
+
+<p><strong>📊 Müdürlük Bazlı Özet Bulgular</strong></p>
+<p style="font-size:10pt; color:#555; margin-bottom:0.3em;"><em>Aşağıdaki tablo özet bilgi içermektedir. Her müdürlüğün detaylı analizi için ilgili müdürlük raporuna bakınız.</em></p>
+<p style="font-size:9pt; color:#666; margin-bottom:0.2em;"><strong>Denge:</strong> Kurum Desteği - İş Stresi/Yükü farkıdır. Pozitif değer yeterli destek, negatif değer yetersiz destek anlamına gelmektedir.</p>
+<p style="font-size:9pt; color:#666; margin-bottom:0.5em;"><strong>Memn.:</strong> Genel memnuniyet oranı.</p>
+
+<p><em>Belediye Geneli ve 30 Müdürlük Karşılaştırmalı Analizi</em></p>
+
+<table style="margin:1em 0; width:100%; font-size:9pt;">
+<thead>
+<tr style="background:#C86A3C; color:white;">
+<th style="text-align:left; padding:8px; width:18%;">Müdürlük</th>
+<th style="text-align:center; padding:8px; width:7%;">Memn.</th>
+<th style="text-align:center; padding:8px; width:7%;">Denge</th>
+<th style="text-align:left; padding:8px; width:68%;">Dikkat Çekici Bulgular (Özet)</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:#ecf0f1; font-weight:bold;">
+<td style="padding:6px;">BELEDİYE GENELİ</td>
+<td style="text-align:center; padding:6px;">%90,8</td>
+<td style="text-align:center; padding:6px;">+13,2</td>
+<td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır (%70,4). 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu (%92,8), iş-kişi uyumu (%91,3), topluma hizmet gururu (%94,5). Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis (%67,7), ücret (%69,0), ortak alanlar (%70,4). Saha-büro birimleri arasında 14 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
+</tr>
+<tr style="background:#ffebee;">
+<td style="padding:6px;">TEMİZLİK İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%91,9</td>
+<td style="text-align:center; padding:6px;">+5,5</td>
+<td style="padding:6px;">Belediyenin en kalabalık birimi olmakla birlikte en düşük katılım oranı (%37,2) dikkat çekmektedir - 578 personelden yalnızca 215'ine ulaşılabilmiştir. <strong>66 kişi şantiye altyapısından şikayetçidir:</strong> "500 küsür insana 3 tuvalet yetersiz", soyunma odası, dolap ve çay ocağı bulunmadığı, tuvaletlerin hijyenik olmadığı ifade edilmektedir. Amirlerden "köle gibi aşağılayıcı tavır" şikayeti mevcuttur. Şoförler kaza değer kaybı kesintisinden şikayetçidir. Topluma hizmet motivasyonu yüksek olmakla birlikte fiziksel koşullar ve yönetici iletişimi iyileştirilmelidir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">DESTEK HİZMETLERİ</td>
+<td style="text-align:center; padding:6px; color:#27ae60;">%95,1</td>
+<td style="text-align:center; padding:6px;">+24,5</td>
+<td style="padding:6px;">Belediyenin en yüksek eğitim-gelişim skoruna sahip birimidir. Mesai dışı sosyal medya paylaşımı istendiği şikayeti mevcuttur. Saha personeli araç ve ekipman takviyesi talep etmektedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">ZABITA</td>
+<td style="text-align:center; padding:6px; color:#c0392b;">%83,2</td>
+<td style="text-align:center; padding:6px; color:#e67e22;">+3,1</td>
+<td style="padding:6px;">Belediyenin en yüksek açık uçlu yorum oranına sahip birimlerinden biridir - 62 kişi (%55,4) görüş bildirmiştir. Ortak alan koşulları belediyenin en düşük skorlarındandır: çay ocağı, dinlenme alanı, soyunma odaları yetersiz bulunmaktadır. <strong>28 kişi ücret/SDS şikayeti bildirmiştir:</strong> İstanbul'daki diğer belediye zabıtalarıyla eşit haklar talep edilmektedir. Haftalık 40 saat çalışma ve yönetmelikte geçen ücretsiz spor salonu hakkı istenmektedir. Servis güzergahı yetersiz bulunmaktadır. Topluma hizmet motivasyonu ve ekip dayanışması güçlü düzeydedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">GENÇLİK VE SPOR</td>
+<td style="text-align:center; padding:6px;">%92,7</td>
+<td style="text-align:center; padding:6px;">+22,3</td>
+<td style="padding:6px;">10 temanın tamamında belediye ortalaması üzerinde skor almıştır. Ekip uyumu ve yönetici ilişkileri güçlüdür. Personel düğün salonu indirimli/ücretsiz kullanım talep etmektedir.</td>
+</tr>
+<tr style="background:#ffebee;">
+<td style="padding:6px;">FEN İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%88,1</td>
+<td style="text-align:center; padding:6px; color:#e67e22;">+1,7</td>
+<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski bu birimde tespit edilmiştir.</strong> Saha araçları sorunu öne çıkmaktadır: "Araçlar çok kötü, aşırı sarsıntılar bizi çok yoruyor", "Saha araçları çok eski ve sık arıza yapıyor", "Direksiyon ve debriyaj kullanışsız" ifadeleri yer almaktadır. Yemek kalitesi şikayeti mevcuttur: "Yemekhanede yemek yedikten sonra sürekli rahatsızlık hissediyorum" denilmektedir. Amir eşitliği algısı düşük düzeyde kalmaktadır. Sigara kullanımı belediye ortalamasının üzerindedir. Kamu hizmeti motivasyonu güçlü olmakla birlikte fiziksel koşullar yetersizdir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">SOSYAL DESTEK</td>
+<td style="text-align:center; padding:6px;">%89,9</td>
+<td style="text-align:center; padding:6px;">+5,2</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından birine sahiptir. Ancak görev tanımları belirsiz, eğitim imkanları yetersiz değerlendirilmektedir. 7 kişi yönetici ilişkileri şikayeti bildirmiştir. "Kurum içi etkinlikler, kişisel gelişim kursları, geziler arttırılmalı" talebi mevcuttur. İş ortamının daha keyifli hale getirilmesi istenmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">KÜLTÜR İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%89,6</td>
+<td style="text-align:center; padding:6px;">+21,9</td>
+<td style="padding:6px;">Düşük stresli ve dengeli çalışma ortamı dikkat çekmektedir. Belediyenin en düşük sigara kullanım oranlarından biridir. Personel tuvaletlerinin vatandaştan ayrılması ve yardımcı personel eksikliği şikayeti mevcuttur.</td>
+</tr>
+<tr>
+<td style="padding:6px;">PARK VE BAHÇELER</td>
+<td style="text-align:center; padding:6px;">%91,7</td>
+<td style="text-align:center; padding:6px;">+7,4</td>
+<td style="padding:6px;">Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerindedir. Ancak ruh sağlığı riski yüksek düzeyde seyretmektedir. Kamu hizmeti motivasyonu oldukça güçlüdür. Hiç açık uçlu yorum yazılmamış olması dikkat çekicidir.</td>
+</tr>
+<tr style="background:#ffcdd2;">
+<td style="padding:6px;">İMAR VE ŞEHİRCİLİK</td>
+<td style="text-align:center; padding:6px;">%87,5</td>
+<td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,3</strong></td>
+<td style="padding:6px;"><strong>NEGATİF DENGE.</strong> Belediyenin en yoğun vatandaş talebiyle karşılaşan ve en yüksek iş stresi/yükü taşıyan birimidir. "Ruhsat başvurularındaki yoğunluktan neredeyse günde bir evraktan çıkıyoruz, bunun maddi ve manevi karşılığı yok" ifadesi dikkat çekmektedir. Vatandaş iletişimi sorunu mevcuttur: "Vatandaş çok asabi, küfür yiyoruz, saygısızlık çok oluyor" denilmektedir. Yemekhane pahalı ve lezzetsiz bulunmaktadır: "Dışarıya göre uygun yanı yok, lezzetleri de iyi değil." Servis yetersiz değerlendirilmektedir. Yönetici ilişkileri güçlü olmasına rağmen iş yükü karşılanamamaktadır. Personel takviyesi gerekli görünmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">İNOVASYON</td>
+<td style="text-align:center; padding:6px; color:#27ae60;">%95,3</td>
+<td style="text-align:center; padding:6px;">+24,2</td>
+<td style="padding:6px;">Belediyenin en yüksek iş-kişi uyumuna sahip birimidir. 9 temada ortalama üzeri skor elde edilmiştir. 11 kişi yemek şikayeti bildirmiştir: "Her ankette şikayet ediyoruz ama değişen bir şey yok" ifadesi mevcuttur.</td>
+</tr>
+<tr style="background:#ffcdd2;">
+<td style="padding:6px;">GELİRLER</td>
+<td style="text-align:center; padding:6px;">%87,1</td>
+<td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,5</strong></td>
+<td style="padding:6px;"><strong>NEGATİF DENGE.</strong> Fiziksel koşullar şikayeti yoğundur: "Ofiste camlar açılmıyor, hava alınmıyor", "Emlak tahakkukta çalışıyorum, üşüyorum, merkezi sistem ısıtmıyor" ifadeleri yer almaktadır. "İş yükümüz diğer birimlere göre fazla" denilmektedir. Şirket personelinin yemekhaneden memurlar gibi yararlanamaması "büyük eşitsizlik ve haksızlık" olarak nitelendirilmektedir. Temizlik ve çay hizmeti yetersiz bulunmaktadır. Liyakat bazlı kariyer gelişimi ve "Ayın personeli ödülü" uygulaması talep edilmektedir. Personelin yarısı açık uçlu yorum yazmıştır - görüş bildirme motivasyonu yüksektir.</td>
+</tr>
+<tr style="background:#ffcdd2;">
+<td style="padding:6px;">VETERİNER İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%86,5</td>
+<td style="text-align:center; padding:6px; color:#c0392b;"><strong>-3,5</strong></td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ.</strong> Amir eşitliği algısı belediyenin en düşük düzeyindedir - yönetim adaleti sorgulanmaktadır. "Yapılan iş hem stresli hem tehlikeli, maddi açıdan tatmin edici olmasını temenni ediyorum" ifadesi dikkat çekmektedir. "Diğer ilçe belediyeleri ile kıyaslama yaparsak maaşlarımız çok düşük" denilmektedir. Yassıören barınağı altyapısı yetersiz bulunmaktadır. Banka hizmetlerinden (Vakıfbank) memnuniyetsizlik bildirilmektedir. Kamu hizmeti motivasyonu güçlü olmakla birlikte kurumsal destek yetersiz kalmaktadır. Psikolojik destek sunulması önerilmektedir.</td>
+</tr>
+<tr>
+<td style="padding:6px;">YAZI İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%90,5</td>
+<td style="text-align:center; padding:6px;">+19,1</td>
+<td style="padding:6px;">Belediyenin en yüksek anket katılım oranlarından biridir. 12 kişi yemek şikayeti bildirmiştir: yemeklerin ilgisiz ve özensiz yapıldığı, çatal-kaşıkların kirli olduğu ifade edilmektedir. Bina koku makinelerinin kaldırılması ve arşiv havalandırmasının iyileştirilmesi talep edilmektedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">YAPI KONTROL</td>
+<td style="text-align:center; padding:6px;">%88,0</td>
+<td style="text-align:center; padding:6px; color:#e67e22;">+2,9</td>
+<td style="padding:6px;">Ekip uyumu ve yönetici ilişkileri güçlü düzeydedir - yüksek iş stresi/yükünün etkilerini azaltan koruyucu faktörler olarak öne çıkmaktadır. Ücret şikayeti yaygındır: "Diğer belediyelerde aynı pozisyonda çalışan meslektaşlarımızla aramızdaki maaş farkının iyileştirilmesini istiyorum", "Maaşlar piyasa şartlarına göre çok düşük" ifadeleri mevcuttur. Servis adaleti sorgulanmaktadır: "Bazı personeller 100-200 metre yürümemek için güzergahı değiştirtiyor" denilmektedir. Yemekte memur-işçi eşitliği talep edilmektedir. Masa başı çalışanlar için egzersiz alanı ve sigara bağımlılığıyla mücadele önerilmektedir.</td>
+</tr>
+<tr>
+<td style="padding:6px;">HALKLA İLİŞKİLER</td>
+<td style="text-align:center; padding:6px;">%92,4</td>
+<td style="text-align:center; padding:6px;">+6,0</td>
+<td style="padding:6px;">Çağrı merkezi personeli yoğun iş yükü bildirmektedir: "Günde ortalama 160-200 çağrı, 3-4 saat konuşma süresi iş içi gerginliğe sebep olmaktadır" ifadesi dikkat çekmektedir. İş-kişi uyumu düşük düzeyde kalmaktadır - personelin yetenek-görev uyumu sorgulanmaktadır. Boğazköy servisi yetersiz bulunmakta, "ayakta gidiyoruz" denilmektedir. Personel Wi-Fi ağı, bina içi yönlendirme tabelalarının güncellenmesi ve mola süresinin uzatılması talep edilmektedir. Kamu hizmeti motivasyonu güçlü görünmektedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">EMLAK VE İSTİMLAK</td>
+<td style="text-align:center; padding:6px;">%91,7</td>
+<td style="text-align:center; padding:6px; color:#e67e22;">+1,5</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru bu birimdedir</strong> - personel kendini geliştirme imkanı bulamamaktadır. İş stresi/yükü yüksek, çalışma koşulları yetersiz değerlendirilmektedir. Yemek şikayeti yoğundur: "Yemek kalitesi yıllardır iyileşmedi", "Belediyenin yemekleri çok ağır, rahatsız edici", "Vejetaryen biri olarak yemek yiyemiyorum" ifadeleri mevcuttur. Servis ağının genişletilmesi ve Taşoluk metro istasyonundan ücretsiz ring seferi talep edilmektedir. Tekniker-mühendis ücret dengesi sorgulanmaktadır: "Sorumluluk çok daha fazla ama fark az" denilmektedir. Ekip uyumu belediyenin en yüksek düzeylerindedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
+<td style="text-align:center; padding:6px;">%88,2</td>
+<td style="text-align:center; padding:6px; color:#e67e22;">+0,7</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesidir.</strong> Personel ihtiyacı acil düzeyde bildirilmektedir: "Birimde yeni personele ihtiyacımız var acil", "Acil araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz" ifadeleri yer almaktadır. Fiziksel koşullar yetersizdir: "Yeterli dolap yok, tuvalet kapılarının kilitleri yok, oturacak oda yok" denilmektedir. "Çalışma alanlarımız diğer birimlerle eşit değil, hijyenik değil" şikayeti mevcuttur. Sigara kullanımı ikinci en yüksek düzeydedir. Sosyal hakların geliştirilmesi ve moral motivasyon artışı için gezi talep edilmektedir.</td>
+</tr>
+<tr>
+<td style="padding:6px;">BASIN VE YAYIN</td>
+<td style="text-align:center; padding:6px;">%93,1</td>
+<td style="text-align:center; padding:6px;">+22,3</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonuna sahip birimidir. Ofis temizliği ve ısıtma/soğutma yetersiz bulunmaktadır. Ücret iyileştirme talebi yaygındır: "Maaşlarımızın piyasa koşullarına göre güncellenmesi hepimizi mutlu edecektir" ifadesi mevcuttur.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">AKILLI ULAŞIM</td>
+<td style="text-align:center; padding:6px;">%88,3</td>
+<td style="text-align:center; padding:6px;">+23,9</td>
+<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu güçlü düzeydedir. Ücret memnuniyeti düşük, eğitim imkanları yetersiz değerlendirilmektedir: "Ücretlerin iyileştirilmesi gerektiğini düşünüyorum" ifadesi mevcuttur. Personel bilgilendirme sistemi talep edilmektedir: "Doğum günü, cenaze, evlilik ya da çocuğu olduğunda mail gruplarına bilgilendirme atılması" istenmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">İŞLETME</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>%96,9</strong></td>
+<td style="text-align:center; padding:6px;">+15,0</td>
+<td style="padding:6px;">İkinci en yüksek memnuniyet düzeyindedir. Ancak düşük katılım oranı nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar bulunmaktadır. Sabah ikram (poğaça, simit) ve dinlenme alanı talep edilmektedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">PLAN VE PROJE</td>
+<td style="text-align:center; padding:6px; color:#c0392b;">%84,4</td>
+<td style="text-align:center; padding:6px;">+10,8</td>
+<td style="padding:6px;">Çalışma koşulları (servis, yemek, tuvalet) belediyenin en düşük skorları arasındadır. Servis şikayeti en çok dile getirilen konudur: "Psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır", "Servis hizmetinin eskisi gibi geri gelmesi", "Servislere KYK ve memurlar ücretsiz binebilmeli" ifadeleri yer almaktadır. Tuvalet koşulları yetersiz bulunmaktadır: "Lavabolar yetersiz ve temiz değil", "Peçeteler yetersiz" denilmektedir. Ücret memnuniyeti düşük düzeydedir. Belediyenin en düşük sigara kullanımı bu birimdedir. Ekip uyumu güçlü görünmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">ÖZEL KALEM</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>%98,4</strong></td>
+<td style="text-align:center; padding:6px;">+22,9</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK MEMNUNİYETİNE SAHİPTİR.</strong> Genel memnuniyet sorusunda %100 tam puan alınmıştır. Belediyenin en düşük ruh sağlığı risklerinden biridir. Yemek şikayeti mevcuttur: "Yediğimiz yemeklerden tat tuz şeker alamıyoruz" ifadesi yer almaktadır. Maaş iyileştirme ve kurum içi eğitim talebi bildirilmektedir.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">İNSAN KAYNAKLARI</td>
+<td style="text-align:center; padding:6px; color:#c0392b;"><strong>%80,8</strong></td>
+<td style="text-align:center; padding:6px;">+24,5</td>
+<td style="padding:6px;">Düşük iş stresi/yükü ve güçlü stres-destek dengesine sahiptir. Yönetici ilişkileri güçlü düzeydedir. İş-kişi uyumu (%79,5) belediyenin en düşük düzeyinde kalmaktadır - personelin yaptığı işle bağ kurma konusu izlenmesi gereken bir alandır. Yemek kalitesinin iyileştirilmesi talep edilmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">AFET İŞLERİ</td>
+<td style="text-align:center; padding:6px;">%90,9</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>+34,3</strong></td>
+<td style="padding:6px;">İkinci en yüksek denge düzeyindedir. Belediyenin en yüksek görev netliğine sahiptir. Yönetici ilişkileri oldukça güçlüdür. Psikolojik destek hizmetinden memnuniyet bildirilmektedir. Isıtma/soğutma ve yemek koşulları iyileştirilebilir bulunmaktadır.</td>
+</tr>
+<tr style="background:#fff3e0;">
+<td style="padding:6px;">HUKUK İŞLERİ</td>
+<td style="text-align:center; padding:6px; color:#c0392b;">%84,1</td>
+<td style="text-align:center; padding:6px;">+11,1</td>
+<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu güçlü olmakla birlikte memnuniyet düşük düzeydedir. <strong>Yemekte memur-işçi-KHK fiyat farkı adaletsiz bulunmaktadır:</strong> "Şirket personeli ile memur personel arası fark daha uygun olmalı" ifadesi mevcuttur. Servis hizmetinin tasarruf tedbirleri kapsamında ilçe içine alınmasının ilçe dışından gelenleri olumsuz etkilediği bildirilmektedir. Dinlenme ve etkinlik odası yetersiz bulunmaktadır. Çay ocağı görevlilerinin personele saygılı iletişimde bulunması talep edilmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">RUHSAT VE DENETİM</td>
+<td style="text-align:center; padding:6px;">%90,9</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>+25,9</strong></td>
+<td style="padding:6px;">Belediyenin en düşük ruh sağlığı riskine sahip birimidir. Görev netliği ikinci en yüksek düzeydedir - küçük ve uzmanlaşmış ekip avantajı dikkat çekmektedir. Yönetici ilişkileri ve ekip uyumu oldukça güçlüdür. Eğitim faaliyetlerinin artırılması ve performans değerlendirme adaletinin güçlendirilmesi beklenmektedir. Açık uçlu yorum yazılmamıştır.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">STRATEJİ GELİŞTİRME</td>
+<td style="text-align:center; padding:6px;">%85,7</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>+27,7</strong></td>
+<td style="padding:6px;">Belediyenin en düşük iş stresi/yükü ve en düşük vatandaş yoğunluğuna sahip birimidir. Fiziksel çalışma koşulları (ısıtma/soğutma, bireysel çalışma alanı) belediye ortalamasının üzerindedir. Personelin %75'i açık uçlu yorum yazmıştır. Yemekhane ücretleri yüksek bulunmaktadır: "Kart bastığım kadar yemek yiyebilmem daha uygun olur" denilmektedir. Servis güzergahları uzun ve dolambaçlı olarak değerlendirilmektedir. Performans değerlendirme sistemi yetersiz bulunmaktadır. Kapalı ofislerde sigara kullanımından şikayet edilmektedir.</td>
+</tr>
+<tr>
+<td style="padding:6px;">MALİ HİZMETLER</td>
+<td style="text-align:center; padding:6px;">%86,1</td>
+<td style="text-align:center; padding:6px;">+19,9</td>
+<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu oldukça güçlüdür - amir saygısı %100 düzeyindedir. Topluma hizmet gururu %100 tam puan almıştır. <strong>Çalışan ebeveynler çocuk etüt merkezi talep etmektedir:</strong> "İlkokul çağındaki çocuklarımız için okul sonrası etüt alanı, etkinlik alanı tahsis edilsin" ifadesi iki kişi tarafından vurgulanmıştır. Taşoluk merkez binada diyetisyen hizmeti talep edilmektedir. Yemekhane ve servis skorları belediye ortalamasının altındadır.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">KOORDİNASYON</td>
+<td style="text-align:center; padding:6px;">%85,7</td>
+<td style="text-align:center; padding:6px; color:#27ae60;"><strong>+34,4</strong></td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK DENGESİNE SAHİPTİR.</strong> Yönetici ilişkileri ve ekip uyumu belediyenin en yüksek düzeyindedir. %100 katılım sağlanmıştır. Ancak sigara kullanımı da en yüksek düzeydedir. Servis güzergahı yetersiz bulunmaktadır. Ücret memnuniyeti düşüktür. Çay-kahve ikramı talep edilmektedir.</td>
+</tr>
+<tr style="background:#e8f5e9;">
+<td style="padding:6px;">MUHTARLIK</td>
+<td style="text-align:center; padding:6px; color:#27ae60;">%95,8</td>
+<td style="text-align:center; padding:6px;">+23,2</td>
+<td style="padding:6px;">Üçüncü en yüksek memnuniyet düzeyindedir. 6 kişilik katılım sağlanmıştır. Düşük iş stresi/yükü ve güçlü ekip uyumu dikkat çekmektedir. Ortak alan koşulları belediyenin en düşük skorları arasındadır. Personel tuvaletinin vatandaştan ayrılması talep edilmektedir: "Personel ve vatandaşın kullanacağı ayrı tuvaletler olması" istenmektedir. Yemekhane kullanmayanlar için yemek alanı talep edilmektedir.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<p><strong>Özet İstatistikler:</strong></p>
+<ul style="margin-top:0.5em; font-size:10pt;">
+<li><strong>3 müdürlükte negatif denge:</strong> Veteriner (-3,5), Gelirler (-2,5), İmar (-2,3)</li>
+<li><strong>5 müdürlükte düşük pozitif denge</strong> (0-5 arası): İklim (+0,7), Emlak (+1,5), Fen (+1,7), Yapı Kontrol (+2,9), Zabıta (+3,1)</li>
+<li><strong>En yüksek memnuniyet:</strong> Özel Kalem %98,4, İşletme %96,9, Muhtarlık %95,8</li>
+<li><strong>En düşük memnuniyet:</strong> İnsan Kaynakları %80,8, Zabıta %83,2, Hukuk %84,1</li>
+</ul>
+<p style="margin-top:1.5em; padding:1em; background:#e8f5e9; border-left:4px solid #4caf50;"><strong>Sonuç:</strong> Arnavutköy Belediyesi %90,8 genel memnuniyet ve %92,8 kamu hizmeti motivasyonu ile güçlü bir çalışan bağlılığına sahiptir. Personelimiz işini seviyor ve topluma hizmet etmekten gurur duyuyor. Yukarıda belirlenen sorun alanlarına (özellikle negatif dengeli 3 müdürlük ve kritik dengeli 5 müdürlük) odaklanılması, bu yüksek motivasyonun sürdürülmesine katkı sağlayacaktır.</p>
+</div>
+
+<h2 style="margin-top:2em; border-bottom:2px solid #333; padding-bottom:0.3em;">Belediye Geneli Detaylı Bakış</h2>
+
+<h3>1. Tema Bazlı Performans</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th style="width:70%;">Tema</th>
+            <th style="width:30%;">Skor (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Kamu Hizmeti Motivasyonu</strong> ⭐</td>
+            <td class="stat-value">92,8</td>
+        </tr>
+        <tr>
+            <td><strong>İş-Kişi Uyumu</strong> ⭐</td>
+            <td class="stat-value">91,3</td>
+        </tr>
+        <tr>
+            <td><strong>Ekip Uyumu</strong></td>
+            <td class="stat-value">86,9</td>
+        </tr>
+        <tr>
+            <td><strong>Yönetici İlişkileri</strong></td>
+            <td class="stat-value">86,8</td>
+        </tr>
+        <tr>
+            <td><strong>Görev-Rol Netliği</strong></td>
+            <td class="stat-value">86,6</td>
+        </tr>
+        <tr>
+            <td><strong>Kurumsal İletişim</strong></td>
+            <td class="stat-value">79,8</td>
+        </tr>
+        <tr>
+            <td><strong>Yetkinlik & Performans</strong></td>
+            <td class="stat-value">77,2</td>
+        </tr>
+        <tr>
+            <td><strong>Eğitim & Gelişim</strong></td>
+            <td class="stat-value">75,8</td>
+        </tr>
+        <tr>
+            <td><strong>Çalışma Koşulları</strong> ⚠️</td>
+            <td class="stat-value" style="color:#c0392b;">72,2</td>
+        </tr>
+        <tr>
+            <td><strong>İş Stresi/Yükü</strong> ⚠️</td>
+            <td class="stat-value" style="color:#c0392b;">69,1</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Kamu hizmeti motivasyonu (%92,8) ve iş-kişi uyumu (%91,3) belediyenin en güçlü alanlarıdır. Ekip uyumu (%86,9), yönetici ilişkileri (%86,8) ve görev-rol netliği (%86,6) de %85 üzerinde seyretmektedir. Bu güçlü sosyal destek yapısı, iş stresi/yükünün olumsuz etkilerini dengeleyen kritik bir kaynaktır. Ancak çalışma koşulları (%72,2) ve iş stresi/yükü (%69,1) belediyenin en zayıf alanları olup, özellikle saha birimlerinde iyileştirme gerektirmektedir.</p>
+
+<h2>2. Kritik Soru Analizi</h2>
+
+<h3>2.1. En Düşük Skorlu Sorular</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Soru</th>
+            <th>Skor (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>S48.</strong> Gerginlik/kaygı hissettim (son 2 hafta)</td>
+            <td class="stat-value" style="color:#c0392b;">50,8</td>
+        </tr>
+        <tr>
+            <td><strong>S47.</strong> Üzgün/çökkün hissettim (son 2 hafta)</td>
+            <td class="stat-value" style="color:#c0392b;">50,9</td>
+        </tr>
+        <tr>
+            <td><strong>S49.</strong> Endişelerimi kontrol edemedim (son 2 hafta)</td>
+            <td class="stat-value" style="color:#c0392b;">50,9</td>
+        </tr>
+        <tr>
+            <td><strong>S46.</strong> Keyif alamadım (son 2 hafta)</td>
+            <td class="stat-value" style="color:#c0392b;">56,1</td>
+        </tr>
+        <tr>
+            <td><strong>S30.</strong> Yemek hizmetinden memnunum</td>
+            <td class="stat-value" style="color:#c0392b;">57,2</td>
+        </tr>
+        <tr>
+            <td><strong>S32.</strong> Servis hizmeti yeterlidir</td>
+            <td class="stat-value">67,7</td>
+        </tr>
+        <tr>
+            <td><strong>S34.</strong> Ücretler makuldür</td>
+            <td class="stat-value">69,0</td>
+        </tr>
+        <tr>
+            <td><strong>S29.</strong> Ortak alanlar yeterlidir</td>
+            <td class="stat-value">70,4</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>2.2. En Yüksek Skorlu Sorular</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Soru</th>
+            <th>Skor (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>S35.</strong> Topluma hizmet etmekten gurur duyuyorum</td>
+            <td class="stat-value" style="color:#27ae60;">94,5</td>
+        </tr>
+        <tr>
+            <td><strong>S37.</strong> İşimin toplum için faydalı olduğunu düşünüyorum</td>
+            <td class="stat-value" style="color:#27ae60;">93,2</td>
+        </tr>
+        <tr>
+            <td><strong>S3.</strong> Yaptığım işi anlamlı buluyorum</td>
+            <td class="stat-value" style="color:#27ae60;">92,4</td>
+        </tr>
+        <tr>
+            <td><strong>S12.</strong> Amirime kolaylıkla ulaşabilirim</td>
+            <td class="stat-value" style="color:#27ae60;">92,2</td>
+        </tr>
+        <tr>
+            <td><strong>S18.</strong> İş arkadaşlarımla uyum içinde çalışırım</td>
+            <td class="stat-value" style="color:#27ae60;">91,9</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Belediyenin en düşük skorları ruh sağlığı göstergelerinde yoğunlaşmaktadır: gerginlik/kaygı (S48: %50,8), üzgün/çökkün hissetme (S47: %50,9), endişe kontrolü (S49: %50,9) ve keyif alamama (S46: %56,1). Bu veriler, personelin yaklaşık yarısının son 2 haftada psikolojik sıkıntı belirtileri yaşadığını ortaya koymaktadır. Çalışma koşulları içinde yemek hizmeti (S30: %57,2) en kritik alan olup, servis (S32: %67,7) ve ücret memnuniyeti (S34: %69,0) de %70 altında kalan sorunlu alanlardır.</p>
+
+<p>Öte yandan kamu hizmeti motivasyonu (S35: %94,5) ve işin toplumsal faydasına inanç (S37: %93,2) belediyenin en güçlü alanlarıdır. İşi anlamlı bulma (S3: %92,4), amire ulaşabilirlik (S12: %92,2) ve ekip uyumu (S18: %91,9) skorları da %90 üzerindedir. Bu güçlü motivasyon ve sosyal destek, çalışma koşullarına rağmen genel memnuniyetin (%90,8) yüksek kalmasını sağlayan temel faktörlerdir.</p>
+
+<h2>3. Saha-Büro Karşılaştırması</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Gösterge</th>
+            <th>Saha Birimleri (5)</th>
+            <th>Büro Birimleri (25)</th>
+            <th>Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>İş Stresi/Yükü</strong></td>
+            <td class="stat-value" style="color:#c0392b;">%77,5</td>
+            <td class="stat-value">%65,5</td>
+            <td class="highlight-critical">+12,0</td>
+        </tr>
+        <tr>
+            <td><strong>Denge (Kurum Desteği - İş Stresi/Yükü)</strong></td>
+            <td class="stat-value" style="color:#c0392b;">+2,8</td>
+            <td class="stat-value">+16,8</td>
+            <td class="highlight-critical">-14,0</td>
+        </tr>
+        <tr>
+            <td><strong>Genel Memnuniyet</strong></td>
+            <td class="stat-value">%88,3</td>
+            <td class="stat-value">%90,0</td>
+            <td class="">-1,7</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Saha-Büro Analizi:</strong> Saha birimleri (Temizlik, Zabıta, Fen İşleri, Park Bahçeler, Veteriner) büro birimlerine kıyasla <strong>12 puan daha yüksek iş stresi/yükü</strong> ve <strong>14 puan daha düşük denge</strong> yaşamaktadır. Saha birimlerinde +2,8 denge düşük düzeydedir (pozitif ama sınırda). Bu grupta Veteriner İşleri (-3,5) negatif dengeli iken, Temizlik (+5,5), Zabıta (+3,1), Fen İşleri (+1,7) ve Park Bahçeler (+7,4) düşük pozitif denge ile takip edilmelidir.</p>
+
+<h2>4. Denge (Kurum Desteği - İş Stresi/Yükü) (En Düşük Dengeli Birimler)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Müdürlük</th>
+            <th>Denge</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Veteriner İşleri</strong></td>
+            <td class="highlight-critical">-3,5 ⚠️</td>
+        </tr>
+        <tr>
+            <td><strong>Gelirler</strong></td>
+            <td class="highlight-critical">-2,5 ⚠️</td>
+        </tr>
+        <tr>
+            <td><strong>İmar ve Şehircilik</strong></td>
+            <td class="highlight-critical">-2,3 ⚠️</td>
+        </tr>
+        <tr>
+            <td><strong>İklim Değişikliği</strong></td>
+            <td class="">+0,7</td>
+        </tr>
+        <tr>
+            <td><strong>Emlak ve İstimlak</strong></td>
+            <td class="">+1,5</td>
+        </tr>
+        <tr>
+            <td><strong>Fen İşleri</strong></td>
+            <td class="">+1,7</td>
+        </tr>
+        <tr>
+            <td><strong>Yapı Kontrol</strong></td>
+            <td class="">+2,9</td>
+        </tr>
+        <tr>
+            <td><strong>Zabıta</strong></td>
+            <td class="">+3,1</td>
+        </tr>
+        <tr>
+            <td><strong>Sosyal Destek</strong></td>
+            <td class="">+5,2</td>
+        </tr>
+        <tr>
+            <td><strong>Temizlik İşleri</strong></td>
+            <td class="">+5,5</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Denge Analizi:</strong> Belediyede <strong>3 müdürlük negatif dengeli</strong>dir: Veteriner İşleri (-3,5), Gelirler (-2,5) ve İmar ve Şehircilik (-2,3). Bu birimlerde iş stresi/yükü, kurumdan alınan desteği aşmıştır ve iş yükü baskısı bulunmaktadır. Ayrıca İklim Değişikliği (+0,7), Emlak (+1,5), Fen İşleri (+1,7), Yapı Kontrol (+2,9), Zabıta (+3,1) gibi düşük pozitif dengeli birimler de yakın izlem gerektirmektedir.</p>
+
+<h2>5. Değişkenler Arası İlişkiler (Ne Neyi Etkiliyor?)</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>İlişki</th>
+            <th>İlişki Gücü</th>
+            <th>Yorum</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Denge → Ruh Sağlığı Riski</strong></td>
+            <td class="stat-value" style="color:#c0392b;">-0,64</td>
+            <td><strong>Güçlü ilişki:</strong> Denge düştükçe ruh sağlığı riski artıyor</td>
+        </tr>
+        <tr>
+            <td><strong>İş Stresi/Yükü → Ruh Sağlığı Riski</strong></td>
+            <td class="stat-value" style="color:#c0392b;">+0,57</td>
+            <td><strong>Güçlü ilişki:</strong> İş stresi arttıkça ruh sağlığı riski artıyor</td>
+        </tr>
+        <tr>
+            <td><strong>Ücret → Memnuniyet</strong></td>
+            <td class="stat-value">+0,41</td>
+            <td><strong>Orta düzeyde ilişki:</strong> Ücret memnuniyeti arttıkça genel memnuniyet artıyor</td>
+        </tr>
+        <tr>
+            <td><strong>İş Stresi/Yükü → Memnuniyet</strong></td>
+            <td class="stat-value">-0,08</td>
+            <td><strong>Zayıf ilişki:</strong> Stres tek başına memnuniyeti düşürmüyor</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Bu Tablo Ne Söylüyor?</strong> En önemli bulgu şudur: <strong>İş stresi tek başına memnuniyeti düşürmemektedir</strong>. Ancak personel yeterli kurumsal destek alamadığında (denge düştüğünde), ruh sağlığı riski belirgin şekilde artmaktadır. Bu demektir ki: <strong>Stresli işlerde çalışan personeli korumak için stresi azaltmaya çalışmak kadar, kurumsal desteği (yönetici ilişkileri, ekip uyumu, çalışma koşulları) güçlendirmek de etkili bir yöntemdir.</strong></p>
+
+<h2>6. Açık Uçlu Yorumlardan Öne Çıkan Talepler</h2>
+
+<p><em>456 açık uçlu yorumun içerik analizi sonuçları (bir yorum birden fazla konuya değinebilir):</em></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Konu</th>
+            <th>Yorum Sayısı</th>
+            <th>Öne Çıkan Birimler</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Ücret/Maaş/SDS</strong></td>
+            <td class="stat-value">116</td>
+            <td>Zabıta (28), Emlak İstimlak (10), Sosyal Destek (9)</td>
+        </tr>
+        <tr>
+            <td><strong>Yemek Hizmeti</strong></td>
+            <td class="stat-value">83</td>
+            <td>Emlak İstimlak (12), Yazı İşleri (12), İnovasyon (11)</td>
+        </tr>
+        <tr>
+            <td><strong>Fiziksel Koşullar</strong></td>
+            <td class="stat-value">81</td>
+            <td>Temizlik İşleri (66), Kültür İşleri (3), Plan Proje (3)</td>
+        </tr>
+        <tr>
+            <td><strong>Yönetici İlişkileri</strong></td>
+            <td class="stat-value">37</td>
+            <td>Temizlik İşleri (12), Sosyal Destek (7), Zabıta (5)</td>
+        </tr>
+        <tr>
+            <td><strong>Servis Güzergahları</strong></td>
+            <td class="stat-value">32</td>
+            <td>Zabıta (8), Emlak İstimlak (5), Plan Proje (3)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>7. Ruh Sağlığı Taraması</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Gösterge</th>
+            <th>Skor (%)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>S46.</strong> Keyif alamama</td>
+            <td class="stat-value">56,1</td>
+        </tr>
+        <tr>
+            <td><strong>S47.</strong> Üzgün/çökkün hissetme</td>
+            <td class="stat-value">50,9</td>
+        </tr>
+        <tr>
+            <td><strong>S48.</strong> Gerginlik/kaygı</td>
+            <td class="stat-value">50,8</td>
+        </tr>
+        <tr>
+            <td><strong>S49.</strong> Endişeleri kontrol edememe</td>
+            <td class="stat-value">50,9</td>
+        </tr>
+        <tr>
+            <td><strong>Sigara Kullanımı</strong></td>
+            <td class="stat-value">44,9</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Personelin yaklaşık yarısı son 2 haftada psikolojik sıkıntı belirtileri (gerginlik, kaygı, üzgünlük) yaşadığını bildirmiştir. Veriler açıkça göstermektedir ki <strong>iş stresi/yükü-kurum desteği dengesi düşük olan birimlerde ruh sağlığı riski daha yüksektir</strong>. Bu nedenle Veteriner İşleri, İmar, Gelirler ve Fen İşleri gibi düşük dengeli birimlerde ruh sağlığı desteği önceliklendirilmelidir.</p>
+
+<h2>8. Sosyal Medya Takip Oranları</h2>
+
+<table style="width:100%; border-collapse:collapse; font-size:9.5pt; margin:1em 0;">
+<thead>
+<tr style="background:#C86A3C; color:white;">
+<th style="padding:8px; text-align:left; border:1px solid #333;">Platform</th>
+<th style="padding:8px; text-align:center; border:1px solid #333;">Belediye Hesabı</th>
+<th style="padding:8px; text-align:center; border:1px solid #333;">Başkan Hesabı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:6px 8px; border:1px solid #ccc;"><strong>Instagram</strong></td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%81,0</td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%76,9</td>
+</tr>
+<tr style="background:#f5f5f5;">
+<td style="padding:6px 8px; border:1px solid #ccc;"><strong>Facebook</strong></td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%42,8</td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%39,6</td>
+</tr>
+<tr>
+<td style="padding:6px 8px; border:1px solid #ccc;"><strong>Twitter/X</strong></td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%31,1</td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%29,3</td>
+</tr>
+<tr style="background:#f5f5f5;">
+<td style="padding:6px 8px; border:1px solid #ccc;"><strong>NextSosyal</strong></td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%17,8</td>
+<td style="padding:6px 8px; text-align:center; border:1px solid #ccc;">%17,6</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Değerlendirme:</strong> Instagram açık ara en çok takip edilen platform olup, personelin büyük çoğunluğu (%81) belediye hesabını takip etmektedir. Facebook ve Twitter/X orta düzeyde takip edilirken, NextSosyal henüz yaygınlaşmamıştır. Kurumsal iletişim ve duyurular için Instagram öncelikli kanal olarak değerlendirilebilir.</p>
+
+<hr style="margin: 3em 0; border: none; border-top: 2px solid #333;">`,
+
     mudurlukler: {
         "temizlik_isleri": {
             name: "Temizlik İşleri Müdürlüğü",
