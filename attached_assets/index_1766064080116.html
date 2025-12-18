@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnavutköy Belediyesi - JD-R Anket</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -104,7 +106,7 @@
         }
 
         .hamburger-btn:hover {
-            background: rgba(255,255,255,0.6);
+            background: rgba(255, 255, 255, 0.6);
         }
 
         .hamburger-btn span {
@@ -127,7 +129,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             transition: all 0.2s;
         }
 
@@ -188,7 +190,7 @@
                 width: 300px;
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
-                box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+                box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
             }
 
             .sidebar.open {
@@ -197,26 +199,6 @@
 
             .sidebar.desktop-hidden {
                 width: 300px;
-            }
-
-            .sidebar-header {
-                padding: 20px 16px 12px 16px;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .sidebar-header .hamburger-btn {
-                position: absolute;
-                top: 16px;
-                right: 16px;
-            }
-
-            .sidebar-header-text h1 {
-                font-size: 20px !important;
-            }
-
-            .sidebar-header-text p {
-                font-size: 9px !important;
             }
 
             .main-content {
@@ -238,7 +220,6 @@
             .content-header h2 {
                 font-size: 10px !important;
                 letter-spacing: 0.1em;
-                padding-left: 40px;
             }
 
             /* === CONTENT BODY - Kompakt Padding === */
@@ -280,8 +261,9 @@
                 margin: 0 !important;
             }
 
-            /* Stats grid wrapper - only for dashboard stat cards */
-            .stats-wrapper {
+            /* Stats grid wrapper */
+            .stats-wrapper,
+            [style*="display: flex"][style*="flex-wrap"] {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 8px !important;
@@ -410,7 +392,6 @@
                 padding: 6px 12px;
                 background: rgba(255, 255, 255, 0.95);
                 backdrop-filter: blur(8px);
-                display: none;
             }
 
             /* === PROGRESS BAR STİLLERİ === */
@@ -445,7 +426,7 @@
                 transition: width 0.3s ease;
             }
 
-            /* === SECTION BAŞLIKLARI === */
+            /* === SECTION BAŞLIKLARI (Sadece Header) === */
             .content-header h2,
             .content-header h3 {
                 font-size: 11px !important;
@@ -766,7 +747,7 @@
             border-radius: 12px;
             overflow: hidden;
         }
-        
+
         #mudurlukRaporlari th {
             padding: 10px 12px;
             text-align: left;
@@ -775,22 +756,22 @@
             color: white !important;
             font-weight: 600;
         }
-        
+
         #mudurlukRaporlari td {
             padding: 8px 12px;
             text-align: left;
             border: 1px solid #E2D9CA;
             color: #211A16;
         }
-        
+
         #mudurlukRaporlari thead tr {
             background: #C86A3C !important;
         }
-        
+
         #mudurlukRaporlari tbody tr:nth-child(even) {
             background: #FDFCFA;
         }
-        
+
         #mudurlukRaporlari tbody tr:hover {
             background: #FBF7EF;
         }
@@ -1490,91 +1471,476 @@
             color: #211A16;
         }
 
-        /* Mobile Responsive for Reports */
+        /* ============================================
+           MOBILE RESPONSIVENESS - 768px ve altı
+           Premium Kompakt Tasarım (Referans Görsel)
+           ============================================ */
         @media (max-width: 768px) {
-            #belediyeGeneliRapor {
-                padding: 16px 8px;
-                max-width: 100%;
+
+            /* === ANA LAYOUT === */
+            body {
+                font-size: 12px;
+                background: #F7F4EF !important;
             }
 
-            #belediyeGeneliRapor h1 {
-                font-size: 24px;
-                margin-bottom: 16px;
+            .main-content {
+                background: #F7F4EF !important;
             }
 
-            #belediyeGeneliRapor h2 {
-                font-size: 18px;
-                padding-left: 0;
+            .content-body {
+                padding: 12px 12px 80px 12px !important;
+                background: #F7F4EF !important;
             }
 
-            #belediyeGeneliRapor h2::before {
-                display: none;
+            .content-header {
+                padding: 8px 12px !important;
+                background: rgba(247, 244, 239, 0.95) !important;
+                backdrop-filter: blur(8px);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
 
-            #belediyeGeneliRapor h3 {
-                font-size: 15px;
+            .content-header h2 {
+                font-size: 10px !important;
+                color: #6B7280 !important;
+                letter-spacing: 0.1em;
             }
 
-            #belediyeGeneliRapor .summary-box {
-                padding: 16px;
+            /* === FOOTER === */
+            .footer-signature {
+                font-size: 9px;
+                padding: 6px 12px;
+                right: 12px;
+                bottom: 8px;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(8px);
             }
 
-            #belediyeGeneliRapor table {
-                font-size: 11px;
-            }
-
-            #belediyeGeneliRapor th,
-            #belediyeGeneliRapor td {
-                padding: 8px 6px;
-            }
-
-            #mudurlukRaporlari {
-                padding: 0;
-            }
-
-            #mudurlukRaporlari table {
-                font-size: 10px;
-            }
-
-            #mudurlukRaporlari th,
-            #mudurlukRaporlari td {
-                padding: 6px 4px;
-            }
-
-            .table-container {
-                max-height: none;
-                overflow-x: auto;
-            }
-
+            /* === STAT KARTLARI === */
             .stats-card {
-                min-width: 120px;
-                padding: 14px;
-                margin: 6px 6px 6px 0;
+                display: flex !important;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 10px !important;
+                margin: 0 !important;
+                min-width: unset !important;
+                max-width: unset !important;
+                height: 80px !important;
+                border-radius: 8px !important;
+                background: #F9F7F5 !important;
+                border: 1px solid #E8E4DE !important;
+                box-shadow: none !important;
             }
 
             .stats-card h3 {
-                font-size: 11px;
+                font-size: 9px !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                color: #9CA3AF !important;
+                letter-spacing: 0.03em;
+                margin-bottom: 0 !important;
             }
 
             .stats-card p {
-                font-size: 22px;
+                font-size: 18px !important;
+                font-weight: 700 !important;
+                color: #2C2C2C !important;
+                line-height: 1 !important;
+                margin: 0 !important;
+            }
+
+            /* === TABLOLAR === */
+            table {
+                font-size: 11px !important;
+                margin: 12px 0 !important;
+                border-radius: 8px !important;
+                overflow: hidden !important;
+                border: 1px solid #E2D9CA !important;
+                box-shadow: none !important;
+            }
+
+            th {
+                padding: 8px 12px !important;
+                font-size: 10px !important;
+                font-weight: 600 !important;
+                text-transform: uppercase !important;
+                background: #FAFAFA !important;
+                color: #9CA3AF !important;
+                border-bottom: 1px solid #E8E4DE !important;
+            }
+
+            td {
+                padding: 8px 12px !important;
+                font-size: 11px !important;
+                color: #374151 !important;
+                border-bottom: 1px solid #F3F4F6 !important;
+            }
+
+            tr:last-child td {
+                border-bottom: none !important;
+            }
+
+            /* === TABLE CONTAINER === */
+            .table-container {
+                max-height: none;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 8px !important;
+                border: 1px solid #E2D9CA !important;
+                margin: 0 !important;
+            }
+
+            /* === SORULAR TABLOSU === */
+            #sorularTable th:first-child,
+            #sorularTable td:first-child {
+                position: relative !important;
+                left: auto !important;
+                width: auto !important;
+                min-width: 150px !important;
+                max-width: none !important;
+            }
+
+            #sorularTable th:nth-child(2),
+            #sorularTable td:nth-child(2) {
+                position: relative !important;
+                left: auto !important;
+                width: auto !important;
+                min-width: 70px !important;
+            }
+
+            #sorularTable th,
+            #sorularTable td {
+                min-width: 60px !important;
+            }
+
+            /* === MÜDÜRLÜK RAPORLARI === */
+            #mudurlukRaporlari table {
+                font-size: 11px !important;
+            }
+
+            #mudurlukRaporlari th {
+                padding: 8px 10px !important;
+                font-size: 10px !important;
+            }
+
+            #mudurlukRaporlari td {
+                padding: 8px 10px !important;
+                font-size: 11px !important;
+            }
+
+            /* === BELEDİYE RAPORU === */
+            #belediyeGeneliRapor {
+                background: #FFFFFF;
+            }
+
+            #belediyeGeneliRapor h1 {
+                font-size: 20px !important;
+                padding: 16px 12px !important;
+                margin: 0 -12px 20px -12px !important;
+                background: #FAFAFA !important;
+                border-bottom: 1px solid #E8E4DE;
+                border-radius: 0 !important;
+            }
+
+            #belediyeGeneliRapor h2 {
+                font-size: 14px !important;
+                margin: 20px 0 12px 0 !important;
+                padding-bottom: 8px !important;
+                font-weight: 600 !important;
+                font-style: italic;
+                border-left: 2px solid #BCAAA4;
+                padding-left: 8px !important;
+                border-bottom: none !important;
+            }
+
+            #belediyeGeneliRapor h3 {
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.05em !important;
+                color: #374151 !important;
+            }
+
+            #belediyeGeneliRapor p {
+                font-size: 12px !important;
+                line-height: 1.6 !important;
+                color: #4B5563 !important;
+                text-align: justify;
+            }
+
+            #belediyeGeneliRapor ul li {
+                font-size: 12px !important;
+                margin: 8px 0 !important;
+                line-height: 1.5 !important;
+            }
+
+            #belediyeGeneliRapor .indicators-table th,
+            #belediyeGeneliRapor .indicators-table td {
+                padding: 8px 10px !important;
+                font-size: 11px !important;
+            }
+
+            #belediyeGeneliRapor .summary-box {
+                padding: 12px !important;
+                margin: 16px 0 !important;
+                border-radius: 8px !important;
+                background: #FDFBF7 !important;
+                border: 1px solid #E8E4DE !important;
+            }
+
+            #belediyeGeneliRapor hr {
+                margin: 20px 0 !important;
+            }
+
+            /* === INFO/WARNING BOXES === */
+            .info-box,
+            .warning-box {
+                padding: 12px !important;
+                margin: 12px 0 !important;
+                font-size: 11px !important;
+                border-radius: 8px !important;
+                line-height: 1.5 !important;
+                background: #FDFBF7 !important;
+                border: 1px solid #E8E4DE !important;
+            }
+
+            /* === BUTTONS === */
+            .btn {
+                padding: 8px 14px !important;
+                font-size: 11px !important;
+                margin: 4px !important;
+                border-radius: 6px !important;
+            }
+
+            .btn-small {
+                padding: 6px 10px !important;
+                font-size: 10px !important;
+            }
+
+            /* === FORM ELEMENTS === */
+            select {
+                min-width: 100% !important;
+                padding: 6px 24px 6px 8px !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                border-radius: 6px !important;
+                border: 1px solid #E2D9CA !important;
+                background: #F9F7F5 !important;
             }
 
             .filter-bar {
-                flex-wrap: wrap;
-                padding: 10px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+                padding: 8px !important;
+                background: #F9F7F5 !important;
+                border-radius: 8px !important;
+                border: 1px solid #E8E4DE !important;
             }
 
-            .filter-bar select,
             .filter-bar input {
-                min-width: auto;
-                width: 100%;
-                max-width: none;
+                max-width: 100% !important;
+                padding: 8px 10px !important;
+                border-radius: 6px !important;
             }
 
-            select {
-                min-width: auto;
+            /* === RESPONSES === */
+            .responses-container {
+                padding: 12px !important;
+                border-radius: 8px !important;
+            }
+
+            .responses-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .responses-title {
+                font-size: 11px !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+            }
+
+            .responses-actions {
+                flex-wrap: wrap;
+            }
+
+            .response-balloon {
+                padding: 10px 12px !important;
+                border-radius: 8px !important;
+            }
+
+            /* === CODE LABELS === */
+            .code-label {
+                font-size: 9px !important;
+                padding: 3px 6px !important;
+            }
+
+            /* === KEYWORD ITEMS === */
+            .keyword-item {
+                font-size: 11px !important;
+            }
+
+            /* === PROGRESS BAR === */
+            .mobile-progress-bar {
+                height: 6px;
+                background: #E5E7EB;
+                border-radius: 999px;
+                overflow: hidden;
+                margin-top: 4px;
+            }
+
+            .mobile-progress-fill {
+                height: 100%;
+                border-radius: 999px;
+                transition: width 0.3s ease;
+            }
+        }
+
+        /* ============================================
+           KÜÇÜK MOBİL - 480px ve altı
+           ============================================ */
+        @media (max-width: 480px) {
+            .content-body {
+                padding: 0 8px 50px 8px !important;
+            }
+
+            .content-header {
+                padding: 12px 8px !important;
+            }
+
+            /* Tablolar daha da kompakt */
+            table {
+                font-size: 9px !important;
+            }
+
+            th,
+            td {
+                padding: 4px 3px !important;
+                font-size: 9px !important;
+            }
+
+            #sorularTable th:first-child,
+            #sorularTable td:first-child {
+                min-width: 150px !important;
+            }
+
+            /* Belediye Raporu - Küçük mobil */
+            #belediyeGeneliRapor h1 {
+                font-size: 16px !important;
+            }
+
+            #belediyeGeneliRapor h2 {
+                font-size: 14px !important;
+            }
+
+            #belediyeGeneliRapor p,
+            #belediyeGeneliRapor ul li {
+                font-size: 11px !important;
+            }
+
+            /* Stats Cards - Minimum */
+            .stats-card {
+                padding: 10px !important;
+                min-width: 100px !important;
+            }
+
+            .stats-card p {
+                font-size: 18px !important;
+            }
+
+            /* Buttons - Tam genişlik */
+            .btn {
                 width: 100%;
+                text-align: center;
+            }
+
+            /* Sidebar Header */
+            .sidebar-header {
+                padding: 20px 16px 12px 16px !important;
+            }
+
+            .sidebar-header h1 {
+                font-size: 20px !important;
+            }
+        }
+
+        /* ============================================
+           INLINE STYLE OVERRIDES - Grid Layouts
+           ============================================ */
+        @media (max-width: 768px) {
+
+            /* Grid column overrides for inline styles */
+            [style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            [style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            [style*="minmax(350px"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            [style*="minmax(300px"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Dashboard Cards - Büyük sayılar küçült */
+            [style*="font-size: 56px"] {
+                font-size: 36px !important;
+            }
+
+            [style*="font-size: 32px"] {
+                font-size: 24px !important;
+            }
+
+            [style*="font-size: 28px"] {
+                font-size: 20px !important;
+            }
+
+            [style*="font-size: 24px"] {
+                font-size: 18px !important;
+            }
+
+            /* Padding azaltma */
+            [style*="padding: 25px"] {
+                padding: 15px !important;
+            }
+
+            [style*="padding: 20px"] {
+                padding: 12px !important;
+            }
+
+            /* Gap azaltma */
+            [style*="gap: 20px"] {
+                gap: 12px !important;
+            }
+
+            [style*="gap: 16px"] {
+                gap: 10px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            [style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            [style*="font-size: 36px"] {
+                font-size: 28px !important;
+            }
+
+            [style*="font-size: 24px"] {
+                font-size: 16px !important;
+            }
+
+            [style*="padding: 15px"] {
+                padding: 10px !important;
             }
         }
     </style>
@@ -1591,12 +1957,14 @@
 
     <!-- SIDEBAR -->
     <div class="sidebar" id="sidebar">
-        <div class="sidebar-header" style="display: flex; align-items: flex-start; justify-content: space-between; position: relative;">
+        <div class="sidebar-header" style="display: flex; align-items: flex-start; justify-content: space-between;">
             <div class="sidebar-header-text">
-                <h1 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #211A16; line-height: 1.1; letter-spacing: -0.02em;">
-                    Arnavutköy<br/>Belediyesi
+                <h1
+                    style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #211A16; line-height: 1.1; letter-spacing: -0.02em;">
+                    Arnavutköy<br />Belediyesi
                 </h1>
-                <p style="font-size: 10px; color: #7B746A; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 8px;">
+                <p
+                    style="font-size: 10px; color: #7B746A; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 8px;">
                     Anket Değerlendirme Sistemi
                 </p>
             </div>
@@ -1711,36 +2079,36 @@
         };
 
         const MUDURLUKLER = {
-            101: {name: 'AFET İŞLERİ MÜDÜRLÜĞÜ', personel: 12},
-            102: {name: 'AKILLI ULAŞIM SİSTEMLERİ MÜDÜRLÜĞÜ', personel: 19},
-            103: {name: 'BASIN VE YAYIN MÜDÜRLÜĞÜ', personel: 21},
-            104: {name: 'DESTEK HİZMETLERİ MÜDÜRLÜĞÜ', personel: 366},
-            105: {name: 'EMLAK VE İSTİMLAK MÜDÜRLÜĞÜ', personel: 26},
-            106: {name: 'FEN İŞLERİ MÜDÜRLÜĞÜ', personel: 120},
-            107: {name: 'GELİRLER MÜDÜRLÜĞÜ', personel: 39},
-            108: {name: 'GENÇLİK VE SPOR HİZMETLERİ MÜDÜRLÜĞÜ', personel: 131},
-            109: {name: 'HALKLA İLİŞKİLER MÜDÜRLÜĞÜ', personel: 30},
-            110: {name: 'HUKUK İŞLERİ MÜDÜRLÜĞÜ', personel: 12},
-            111: {name: 'İKLİM DEĞİŞİKLİĞİ VE SIFIR ATIK MÜDÜRLÜĞÜ', personel: 24},
-            112: {name: 'İMAR VE ŞEHİRCİLİK MÜDÜRLÜĞÜ', personel: 47},
-            113: {name: 'İNOVASYON VE TEKNOLOJİ MÜDÜRLÜĞÜ', personel: 41},
-            114: {name: 'İNSAN KAYNAKLARI VE EĞİTİM MÜDÜRLÜĞÜ', personel: 13},
-            115: {name: 'İŞLETME VE İŞTİRAKLER MÜDÜRLÜĞÜ', personel: 18},
-            116: {name: 'KOORDİNASYON İŞLERİ MÜDÜRLÜĞÜ', personel: 7},
-            117: {name: 'KÜLTÜR İŞLERİ MÜDÜRLÜĞÜ', personel: 87},
-            118: {name: 'MALİ HİZMETLER MÜDÜRLÜĞÜ', personel: 9},
-            119: {name: 'MUHTARLIK İŞLERİ MÜDÜRLÜĞÜ', personel: 6},
-            120: {name: 'ÖZEL KALEM MÜDÜRLÜĞÜ', personel: 16},
-            121: {name: 'PARK VE BAHÇELER MÜDÜRLÜĞÜ', personel: 85},
-            122: {name: 'PLAN VE PROJE MÜDÜRLÜĞÜ', personel: 17},
-            123: {name: 'RUHSAT VE DENETİM MÜDÜRLÜĞÜ', personel: 12},
-            124: {name: 'SOSYAL DESTEK HİZMETLERİ MÜDÜRLÜĞÜ', personel: 97},
-            125: {name: 'STRATEJİ GELİŞTİRME MÜDÜRLÜĞÜ', personel: 10},
-            126: {name: 'TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ', personel: 578},
-            127: {name: 'VETERİNER İŞLERİ MÜDÜRLÜĞÜ', personel: 38},
-            1288: {name: 'YAPI KONTROL MÜDÜRLÜĞÜ', personel: 37},
-            129: {name: 'YAZI İŞLERİ MÜDÜRLÜĞÜ', personel: 37},
-            130: {name: 'ZABITA MÜDÜRLÜĞÜ', personel: 134}
+            101: { name: 'AFET İŞLERİ MÜDÜRLÜĞÜ', personel: 12 },
+            102: { name: 'AKILLI ULAŞIM SİSTEMLERİ MÜDÜRLÜĞÜ', personel: 19 },
+            103: { name: 'BASIN VE YAYIN MÜDÜRLÜĞÜ', personel: 21 },
+            104: { name: 'DESTEK HİZMETLERİ MÜDÜRLÜĞÜ', personel: 366 },
+            105: { name: 'EMLAK VE İSTİMLAK MÜDÜRLÜĞÜ', personel: 26 },
+            106: { name: 'FEN İŞLERİ MÜDÜRLÜĞÜ', personel: 120 },
+            107: { name: 'GELİRLER MÜDÜRLÜĞÜ', personel: 39 },
+            108: { name: 'GENÇLİK VE SPOR HİZMETLERİ MÜDÜRLÜĞÜ', personel: 131 },
+            109: { name: 'HALKLA İLİŞKİLER MÜDÜRLÜĞÜ', personel: 30 },
+            110: { name: 'HUKUK İŞLERİ MÜDÜRLÜĞÜ', personel: 12 },
+            111: { name: 'İKLİM DEĞİŞİKLİĞİ VE SIFIR ATIK MÜDÜRLÜĞÜ', personel: 24 },
+            112: { name: 'İMAR VE ŞEHİRCİLİK MÜDÜRLÜĞÜ', personel: 47 },
+            113: { name: 'İNOVASYON VE TEKNOLOJİ MÜDÜRLÜĞÜ', personel: 41 },
+            114: { name: 'İNSAN KAYNAKLARI VE EĞİTİM MÜDÜRLÜĞÜ', personel: 13 },
+            115: { name: 'İŞLETME VE İŞTİRAKLER MÜDÜRLÜĞÜ', personel: 18 },
+            116: { name: 'KOORDİNASYON İŞLERİ MÜDÜRLÜĞÜ', personel: 7 },
+            117: { name: 'KÜLTÜR İŞLERİ MÜDÜRLÜĞÜ', personel: 87 },
+            118: { name: 'MALİ HİZMETLER MÜDÜRLÜĞÜ', personel: 9 },
+            119: { name: 'MUHTARLIK İŞLERİ MÜDÜRLÜĞÜ', personel: 6 },
+            120: { name: 'ÖZEL KALEM MÜDÜRLÜĞÜ', personel: 16 },
+            121: { name: 'PARK VE BAHÇELER MÜDÜRLÜĞÜ', personel: 85 },
+            122: { name: 'PLAN VE PROJE MÜDÜRLÜĞÜ', personel: 17 },
+            123: { name: 'RUHSAT VE DENETİM MÜDÜRLÜĞÜ', personel: 12 },
+            124: { name: 'SOSYAL DESTEK HİZMETLERİ MÜDÜRLÜĞÜ', personel: 97 },
+            125: { name: 'STRATEJİ GELİŞTİRME MÜDÜRLÜĞÜ', personel: 10 },
+            126: { name: 'TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ', personel: 578 },
+            127: { name: 'VETERİNER İŞLERİ MÜDÜRLÜĞÜ', personel: 38 },
+            1288: { name: 'YAPI KONTROL MÜDÜRLÜĞÜ', personel: 37 },
+            129: { name: 'YAZI İŞLERİ MÜDÜRLÜĞÜ', personel: 37 },
+            130: { name: 'ZABITA MÜDÜRLÜĞÜ', personel: 134 }
         };
 
         const SORULAR = [
@@ -1874,25 +2242,25 @@
         const MENU_ITEMS = [
             {
                 category: 'RAPOR', items: [
-                    {id: 'mudurluk-raporlari', icon: 'description', title: 'Rapor'}
+                    { id: 'mudurluk-raporlari', icon: 'description', title: 'Rapor' }
                 ]
             },
             {
                 category: 'Detaylı Tablolar (tüm müdürlükler)', items: [
-                    {id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları'},
-                    {id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz'},
-                    {id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları'},
-                    {id: 'ruh-sagligi', icon: 'smoking_rooms', title: 'Ruh Sağlığı Taraması'},
-                    {id: 'sorular', icon: 'analytics', title: 'Sorular Üzerinden Analiz'},
-                    {id: 'mudurluk-karsilastir', icon: 'compare_arrows', title: 'Müdürlük Karşılaştırma'},
-                    {id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi'},
-                    {id: 'acik-uclu', icon: 'rule', title: 'Açık Uçlu Cevaplar'}
+                    { id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları' },
+                    { id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz' },
+                    { id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları' },
+                    { id: 'ruh-sagligi', icon: 'smoking_rooms', title: 'Ruh Sağlığı Taraması' },
+                    { id: 'sorular', icon: 'analytics', title: 'Sorular Üzerinden Analiz' },
+                    { id: 'mudurluk-karsilastir', icon: 'compare_arrows', title: 'Müdürlük Karşılaştırma' },
+                    { id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi' },
+                    { id: 'acik-uclu', icon: 'rule', title: 'Açık Uçlu Cevaplar' }
                 ]
             },
             {
                 category: 'VERİ PANELİ', items: [
-                    {id: 'veri-girisi', icon: 'input', title: 'Veri Girişi'},
-                    {id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler'}
+                    { id: 'veri-girisi', icon: 'input', title: 'Veri Girişi' },
+                    { id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler' }
                 ]
             }
         ];
@@ -1911,7 +2279,7 @@
             },
 
             calculateAverage: (surveys, questionIndices) => {
-                const {total, count} = surveys.reduce((acc, survey) => {
+                const { total, count } = surveys.reduce((acc, survey) => {
                     questionIndices.forEach(idx => {
                         const val = survey.cevaplar[idx];
                         if (val !== null && val !== undefined && !isNaN(val)) {
@@ -1920,7 +2288,7 @@
                         }
                     });
                     return acc;
-                }, {total: 0, count: 0});
+                }, { total: 0, count: 0 });
 
                 if (count === 0) return '0';
                 const average = (total / count / CONFIG.LIKERT_SCALE_MAX * 100);
@@ -1981,9 +2349,9 @@
                 if (!statusDiv) return;
 
                 const colors = {
-                    success: {bg: '#d4edda', text: '#155724', border: '#c3e6cb'},
-                    warning: {bg: '#fff3cd', text: '#856404', border: '#ffeaa7'},
-                    error: {bg: '#f8d7da', text: '#721c24', border: '#f5c6cb'}
+                    success: { bg: '#d4edda', text: '#155724', border: '#c3e6cb' },
+                    warning: { bg: '#fff3cd', text: '#856404', border: '#ffeaa7' },
+                    error: { bg: '#f8d7da', text: '#721c24', border: '#f5c6cb' }
                 };
 
                 const color = colors[type] || colors.success;
@@ -2000,17 +2368,17 @@
             parseSocialMediaFromText: (text) => {
                 const sm = text.toLowerCase();
                 const platforms = [
-                    {key: 'instagram_belediye', conditions: ['instagram', 'arnavutkoybelediyesi']},
-                    {key: 'instagram_baskan', conditions: ['instagram', 'mcandaroglutr']},
-                    {key: 'twitter_belediye', conditions: ['twitter', 'x:', 'arnavutkoy']},
-                    {key: 'twitter_baskan', conditions: ['twitter', 'x:', 'mcandaroglutr']},
-                    {key: 'facebook_belediye', conditions: ['facebook', 'arnavutkoybelediyesi']},
-                    {key: 'facebook_baskan', conditions: ['facebook', 'mcandaroglutr']},
-                    {key: 'nextsosyal_belediye', conditions: ['nextsosyal', 'arnavutkoybelediyesi']},
-                    {key: 'nextsosyal_baskan', conditions: ['nextsosyal', 'mustafa']}
+                    { key: 'instagram_belediye', conditions: ['instagram', 'arnavutkoybelediyesi'] },
+                    { key: 'instagram_baskan', conditions: ['instagram', 'mcandaroglutr'] },
+                    { key: 'twitter_belediye', conditions: ['twitter', 'x:', 'arnavutkoy'] },
+                    { key: 'twitter_baskan', conditions: ['twitter', 'x:', 'mcandaroglutr'] },
+                    { key: 'facebook_belediye', conditions: ['facebook', 'arnavutkoybelediyesi'] },
+                    { key: 'facebook_baskan', conditions: ['facebook', 'mcandaroglutr'] },
+                    { key: 'nextsosyal_belediye', conditions: ['nextsosyal', 'arnavutkoybelediyesi'] },
+                    { key: 'nextsosyal_baskan', conditions: ['nextsosyal', 'mustafa'] }
                 ];
 
-                return platforms.reduce((acc, {key, conditions}) => {
+                return platforms.reduce((acc, { key, conditions }) => {
                     acc[key] = conditions.every(cond => sm.includes(cond)) ? 1 : 0;
                     return acc;
                 }, {});
@@ -2127,12 +2495,12 @@
                     });
 
                     if (groupCount > 0) {
-                        groupFreq[groupName] = {count: groupCount, isGroup: true, details: groupDetails};
+                        groupFreq[groupName] = { count: groupCount, isGroup: true, details: groupDetails };
                     }
                 });
 
                 Object.entries(wordFreq).forEach(([word, count]) => {
-                    groupFreq[word] = {count, isGroup: false};
+                    groupFreq[word] = { count, isGroup: false };
                 });
 
                 return Object.entries(groupFreq)
@@ -2163,7 +2531,7 @@
                 return Object.entries(wordFreq)
                     .sort(([, a], [, b]) => b - a)
                     .slice(0, 5)
-                    .map(([word, count]) => ({word, count}));
+                    .map(([word, count]) => ({ word, count }));
             },
 
             calculateThemeSentiment: (surveys, themeKeywords) => {
@@ -2186,7 +2554,7 @@
                     }
                 });
 
-                if (total === 0) return {positive: 0, negative: 0, neutral: 0};
+                if (total === 0) return { positive: 0, negative: 0, neutral: 0 };
 
                 const posPercent = positive > 0 ? Math.round((positive / (positive + negative)) * 100) : 0;
                 const negPercent = negative > 0 ? Math.round((negative / (positive + negative)) * 100) : 0;
@@ -2238,7 +2606,7 @@
             },
 
             analyzeMudurluk: (mudurlukData) => {
-                const {gecerliAnketler} = mudurlukData;
+                const { gecerliAnketler } = mudurlukData;
 
                 if (gecerliAnketler.length === 0) {
                     return dataProcessor.getEmptyMudurlukData();
@@ -2286,7 +2654,7 @@
             },
 
             calculateQuestionAverages: (surveys) =>
-                Array.from({length: CONFIG.QUESTIONS_PER_SURVEY}, (_, i) =>
+                Array.from({ length: CONFIG.QUESTIONS_PER_SURVEY }, (_, i) =>
                     utils.calculateAverage(surveys, [i])
                 ),
 
@@ -2387,14 +2755,14 @@
                 const dengeSymbol = denge >= 0 ? '+' : '';
 
                 const fields = [
-                    {value: data.toplamPersonel || 0},
-                    {value: data.anketler?.length || 0},
-                    {value: data.gecerliAnketler?.length || 0},
-                    {value: data.gecersizAnketler?.length || 0},
-                    {value: data.katilimOrani || 0, percent: true},
-                    {value: data.genelMemnuniyet || 0, percent: true, bold: true},
-                    {value: data.isYuku || 0, percent: true},
-                    {value: data.kurumDestegi || 0, percent: true}
+                    { value: data.toplamPersonel || 0 },
+                    { value: data.anketler?.length || 0 },
+                    { value: data.gecerliAnketler?.length || 0 },
+                    { value: data.gecersizAnketler?.length || 0 },
+                    { value: data.katilimOrani || 0, percent: true },
+                    { value: data.genelMemnuniyet || 0, percent: true, bold: true },
+                    { value: data.isYuku || 0, percent: true },
+                    { value: data.kurumDestegi || 0, percent: true }
                 ];
 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
@@ -2418,7 +2786,7 @@
                     anketler: acc.anketler + md.anketler.length,
                     gecerli: acc.gecerli + md.gecerliAnketler.length,
                     gecersiz: acc.gecersiz + md.gecersizAnketler.length
-                }), {personel: 0, anketler: 0, gecerli: 0, gecersiz: 0});
+                }), { personel: 0, anketler: 0, gecerli: 0, gecersiz: 0 });
 
                 const workload = utils.calculateAverage(allValidSurveys, [7, 8, 9, 10]);
                 const support = utils.calculateAverage(allValidSurveys,
@@ -2427,9 +2795,9 @@
 
                 return {
                     toplamPersonel: totals.personel,
-                    anketler: {length: totals.anketler},
-                    gecerliAnketler: {length: totals.gecerli},
-                    gecersizAnketler: {length: totals.gecersiz},
+                    anketler: { length: totals.anketler },
+                    gecerliAnketler: { length: totals.gecerli },
+                    gecersizAnketler: { length: totals.gecersiz },
                     katilimOrani: totals.personel > 0
                         ? utils.formatPercentage(totals.anketler / totals.personel * 100)
                         : '0',
@@ -2475,7 +2843,7 @@
                 }
 
                 const mudurlukAnketleri = Object.fromEntries(
-                    Object.keys(MUDURLUKLER).map(kod => [kod, {gecerli: [], gecersiz: []}])
+                    Object.keys(MUDURLUKLER).map(kod => [kod, { gecerli: [], gecersiz: [] }])
                 );
 
                 let toplamGecerli = 0;
@@ -2591,12 +2959,12 @@
 
             createRuhSagligiRow: (name, data, isGenel, baseline) => {
                 const fields = [
-                    {key: 'ruhSagligi', value: data.ruhSagligi || 0},
-                    {key: 'sigaraOrani', value: data.sigaraOrani || 0},
-                    {key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detay: true},
-                    {key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detay: true},
-                    {key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detay: true},
-                    {key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detay: true}
+                    { key: 'ruhSagligi', value: data.ruhSagligi || 0 },
+                    { key: 'sigaraOrani', value: data.sigaraOrani || 0 },
+                    { key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detay: true },
+                    { key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detay: true },
+                    { key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detay: true },
+                    { key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detay: true }
                 ];
 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
@@ -2760,7 +3128,7 @@
                 const allValidSurveys = Object.values(state.processedData)
                     .flatMap(md => md.gecerliAnketler);
 
-                return Array.from({length: CONFIG.QUESTIONS_PER_SURVEY}, (_, i) =>
+                return Array.from({ length: CONFIG.QUESTIONS_PER_SURVEY }, (_, i) =>
                     utils.calculateAverage(allValidSurveys, [i])
                 );
             },
@@ -3027,7 +3395,7 @@
                 `;
 
                 container.classList.add('active');
-                container.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             },
 
             closeResponses: () => {
@@ -3061,7 +3429,7 @@
                         return `"${s.kod}","${s.mudurlukAd}","${escaped}"`;
                     }).join('\n');
 
-                const blob = new Blob(['\uFEFF' + csv], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
                 link.download = 'acik_uclu_cevaplar.csv';
@@ -3323,7 +3691,7 @@
                     kod,
                     mudurlukKod,
                     mudurlukAd: MUDURLUKLER[mudurlukKod].name,
-                    cevaplar: Array.from({length: CONFIG.QUESTIONS_PER_SURVEY}, (_, i) => {
+                    cevaplar: Array.from({ length: CONFIG.QUESTIONS_PER_SURVEY }, (_, i) => {
                         const val = values[i + 1];
                         return val === '' || val === 'null' ? null : parseInt(val);
                     }),
@@ -3410,7 +3778,7 @@
                             row.classList.add('soru-highlighted');
                             // Seçilen soruya scroll yap
                             setTimeout(() => {
-                                row.scrollIntoView({behavior: 'smooth', block: 'center'});
+                                row.scrollIntoView({ behavior: 'smooth', block: 'center' });
                             }, 100);
                         } else {
                             // Diğer soruları gizle
@@ -3491,17 +3859,17 @@
                 const totalPeople = allValidSurveys.length;
 
                 const belediyeAccounts = [
-                    {name: '@arnavutkoybelediyesi', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_belediye, color: '#E1306C'},
-                    {name: '@ArnavutkoyBel', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_belediye, color: '#1DA1F2'},
-                    {name: '@Arnavutkoybelediyesi', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_belediye, color: '#4267B2'},
-                    {name: '@arnavutkoybelediyesi', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_belediye, color: '#6B46C1'}
+                    { name: '@arnavutkoybelediyesi', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_belediye, color: '#E1306C' },
+                    { name: '@ArnavutkoyBel', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_belediye, color: '#1DA1F2' },
+                    { name: '@Arnavutkoybelediyesi', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_belediye, color: '#4267B2' },
+                    { name: '@arnavutkoybelediyesi', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_belediye, color: '#6B46C1' }
                 ];
 
                 const baskanAccounts = [
-                    {name: '@mcandaroglutr', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_baskan, color: '#E1306C'},
-                    {name: '@mcandaroglutr', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_baskan, color: '#1DA1F2'},
-                    {name: '@mcandaroglutr', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_baskan, color: '#4267B2'},
-                    {name: '@mustafa_candaroglu', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_baskan, color: '#6B46C1'}
+                    { name: '@mcandaroglutr', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_baskan, color: '#E1306C' },
+                    { name: '@mcandaroglutr', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_baskan, color: '#1DA1F2' },
+                    { name: '@mcandaroglutr', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_baskan, color: '#4267B2' },
+                    { name: '@mustafa_candaroglu', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_baskan, color: '#6B46C1' }
                 ];
 
                 const createAccountCard = (acc) => {
@@ -4496,7 +4864,7 @@
                         responsive: true,
                         maintainAspectRatio: true,
                         plugins: {
-                            legend: {display: false},
+                            legend: { display: false },
                             tooltip: {
                                 callbacks: {
                                     title: (context) => {
@@ -4510,7 +4878,7 @@
                             y: {
                                 beginAtZero: true,
                                 max: 100,
-                                title: {display: true, text: 'Memnuniyet Skoru (%)'}
+                                title: { display: true, text: 'Memnuniyet Skoru (%)' }
                             }
                         }
                     }
@@ -4560,17 +4928,17 @@
                 const totalPeople = allValidSurveys.length;
 
                 const belediyeAccounts = [
-                    {name: '@arnavutkoybelediyesi', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_belediye, color: '#E1306C'},
-                    {name: '@ArnavutkoyBel', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_belediye, color: '#1DA1F2'},
-                    {name: '@Arnavutkoybelediyesi', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_belediye, color: '#4267B2'},
-                    {name: '@arnavutkoybelediyesi', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_belediye, color: '#6B46C1'}
+                    { name: '@arnavutkoybelediyesi', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_belediye, color: '#E1306C' },
+                    { name: '@ArnavutkoyBel', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_belediye, color: '#1DA1F2' },
+                    { name: '@Arnavutkoybelediyesi', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_belediye, color: '#4267B2' },
+                    { name: '@arnavutkoybelediyesi', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_belediye, color: '#6B46C1' }
                 ];
 
                 const baskanAccounts = [
-                    {name: '@mcanaroglutr', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_baskan, color: '#E1306C'},
-                    {name: '@mcanaroglutr', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_baskan, color: '#1DA1F2'},
-                    {name: '@mcanaroglutr', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_baskan, color: '#4267B2'},
-                    {name: '@mustafa_canaroglu', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_baskan, color: '#6B46C1'}
+                    { name: '@mcanaroglutr', platform: 'Instagram', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>', percent: genelSosyalMedya.detay.instagram_baskan, color: '#E1306C' },
+                    { name: '@mcanaroglutr', platform: 'Twitter', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>', percent: genelSosyalMedya.detay.twitter_baskan, color: '#1DA1F2' },
+                    { name: '@mcanaroglutr', platform: 'Facebook', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#4267B2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>', percent: genelSosyalMedya.detay.facebook_baskan, color: '#4267B2' },
+                    { name: '@mustafa_canaroglu', platform: 'NextSosyal', icon: '<svg width="24" height="24" viewBox="0 0 24 24" fill="#6B46C1"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>', percent: genelSosyalMedya.detay.nextsosyal_baskan, color: '#6B46C1' }
                 ];
 
                 const createAccountCard = (account) => {
@@ -5056,76 +5424,14 @@
             },
 
             renderReportPage: () => {
-                const hasRaporData = typeof RAPOR_VERILERI !== 'undefined';
-
                 return `
-                    <div class="max-w-[1100px] mx-auto">
-                        <div class="bg-white rounded-[20px] shadow-soft p-12 md:p-20 border border-white relative overflow-hidden">
-                            <div class="mb-6 flex justify-end">
-                                <select id="quickMudurlukSelect" onchange="reportManager.quickNavigate(this.value)" class="px-3 py-1.5 bg-page-bg border border-border-light rounded-full text-xs font-sans text-text-muted-light focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer" style="max-width: 180px;">
-                                    <option value="">Müdürlük Seç...</option>
-                                    <option value="belediye-geneli">Belediye Geneli</option>
-                                    ${reportManager.getMudurlukOptions()}
-                                </select>
-                            </div>
-                            <div class="mb-16 pb-8 border-b border-gray-100 flex justify-between items-end">
-                                <h3 class="font-serif text-5xl font-medium text-title-brown tracking-tight">Giriş</h3>
-                                <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">15.12.2025</span>
-                            </div>
-                            <article id="reportContent" class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
-                                ${reportManager.girisHTML}
-                                
-                                ${hasRaporData ? `
-                                <hr class="my-10 border-none h-px bg-border-light">
-                                
-                                <div id="belediyeGeneliRapor">
-                                    ${RAPOR_VERILERI.belediyeGeneli}
-                                </div>
-                                
-                                <hr class="my-10 border-none h-px bg-border-light">
-                                
-                                <div class="my-10 p-6 bg-page-bg rounded-xl border-none">
-                                    <div class="flex gap-4 items-center flex-wrap">
-                                        <label for="mudurlukFilter" class="font-medium text-[#57534E] whitespace-nowrap font-sans text-sm">Müdürlük Filtrele:</label>
-                                        <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" class="px-4 py-2.5 bg-white border border-border-light rounded-full text-sm min-w-[300px] font-sans focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary/30 shadow-sm">
-                                            <option value="">Tüm Müdürlükler</option>
-                                            ${reportManager.getMudurlukOptions()}
-                                        </select>
-                                        <div class="relative flex-1 min-w-[200px]">
-                                            <input type="text" id="raporArama" placeholder="Raporda ara..." onkeyup="reportManager.searchReports(this.value)" class="pl-10 pr-4 py-2.5 w-full bg-white border border-border-light rounded-full text-sm font-sans focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary/30 shadow-sm">
-                                            <span class="material-icons-outlined absolute left-3 top-2.5 text-text-muted-light text-[20px]">search</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div id="mudurlukRaporlari" class="mt-8">
-                                    ${Object.entries(RAPOR_VERILERI.mudurlukler)
-                                .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'))
-                                .map(([key, data]) => `
-                                            <div class="mudurluk-rapor-section mb-10 pb-10 border-b border-border-light" data-mudurluk="${key}">
-                                                ${data.html}
-                                            </div>
-                                        `).join('')}
-                                </div>
-                                ` : `
-                                <div class="mt-5 p-5 bg-page-bg rounded-lg border-l-4 border-primary">
-                                    <h2 class="text-lg font-bold text-text-body mb-2">Rapor Verileri Yükleniyor...</h2>
-                                    <p class="text-text-meta m-0">Rapor verileri henüz yüklenmedi. Lütfen sayfayı yenileyin.</p>
-                                </div>
-                                `}
-                            </article>
-                            <div class="mt-20 pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between text-[11px] text-text-meta uppercase tracking-[0.2em] font-medium">
-                                <span class="mb-2 md:mb-0">Arnavutköy Belediyesi © 2024</span>
-                                <div class="flex items-center space-x-4 opacity-80">
-                                    <div class="flex items-center">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2"></span>
-                                        <span>Gizli</span>
-                                    </div>
-                                    <span class="opacity-30">/</span>
-                                    <span>Hizmete Özel</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="w-full h-full">
+                        <iframe 
+                            src="baskan_raporu_v2-6.html" 
+                            class="w-full border-0 rounded-lg shadow-soft"
+                            style="height: calc(100vh - 120px); min-height: 800px;"
+                            title="Belediye Geneli Raporu">
+                        </iframe>
                     </div>
                 `;
             },
@@ -5171,7 +5477,7 @@
 
             quickNavigate: (value) => {
                 if (!value) return;
-                
+
                 if (value === 'belediye-geneli') {
                     const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
                     if (belediyeGeneli) {
@@ -5195,7 +5501,7 @@
                         }
                     }, 100);
                 }
-                
+
                 // Dropdown'ı sıfırla
                 const quickSelect = document.getElementById('quickMudurlukSelect');
                 if (quickSelect) quickSelect.value = '';
@@ -5231,7 +5537,7 @@
                             <thead>
                                 <tr>
                                     <th style="min-width: 100px;">#</th>
-                                    ${Array.from({length: 49}, (_, i) => `<th>S${i + 1}</th>`).join('')}
+                                    ${Array.from({ length: 49 }, (_, i) => `<th>S${i + 1}</th>`).join('')}
                                     <th style="min-width: 80px;">Sigara</th>
                                     <th style="min-width: 200px;">Sosyal Medya</th>
                                     <th>IG_Bel</th><th>IG_Bşk</th><th>TW_Bel</th><th>TW_Bşk</th>
@@ -5695,7 +6001,7 @@
                 });
 
                 pageManager.showPage('mudurluk-raporlari');
-                
+
                 // Müdürlük listesini doldur
                 setTimeout(() => pageManager.populateMudurlukQuickNav(), 500);
             },
@@ -5750,7 +6056,7 @@
                 // Show all button
                 if (showAllBtn && mudurlukler.length > 5) {
                     showAllBtn.style.display = 'block';
-                    showAllBtn.innerHTML = pageManager.mudurlukNavExpanded 
+                    showAllBtn.innerHTML = pageManager.mudurlukNavExpanded
                         ? '<span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">expand_less</span> Daralt'
                         : `<span class="material-icons-outlined" style="font-size: 14px; vertical-align: middle;">more_horiz</span> Tümünü Göster (${mudurlukler.length})`;
                 }
@@ -5759,7 +6065,7 @@
             goToMudurlukRapor: (mudurlukKey) => {
                 pageManager.showPage('mudurluk-raporlari');
                 closeSidebarIfMobile();
-                
+
                 setTimeout(() => {
                     if (mudurlukKey === 'belediye-geneli') {
                         const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
@@ -5887,7 +6193,7 @@
                     csvContent += row.join(',') + '\n';
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
 
@@ -5953,7 +6259,7 @@
                     csvContent += row.join(',') + '\n';
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
                 const today = new Date().toISOString().split('T')[0];
@@ -6015,7 +6321,7 @@
                     csvContent += row.join(',') + '\n';
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
                 const today = new Date().toISOString().split('T')[0];
@@ -6072,7 +6378,7 @@
                     csvContent += row.join(',') + '\n';
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
                 const today = new Date().toISOString().split('T')[0];
@@ -6139,7 +6445,7 @@
                     csvContent += row.join(',') + '\n';
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
                 const today = new Date().toISOString().split('T')[0];
@@ -6178,7 +6484,7 @@
                     csvContent += `"#${md.kod} - ${md.ad}","${keywordsStr}",${count}\n`;
                 });
 
-                const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 const url = URL.createObjectURL(blob);
                 const today = new Date().toISOString().split('T')[0];
