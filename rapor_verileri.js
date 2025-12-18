@@ -468,9 +468,10 @@ const RAPOR_VERILERI = {
         <!-- Ana Başlık -->
         <div style="margin-top: 35px;">
             <div style="font-family: 'Playfair Display', serif; font-size: 32pt; font-weight: 500; line-height: 1.2; color: #2B1E16;">
-                Çalışan Memnuniyeti<br/>ve İyi Oluş Anketi
+                Çalışan Memnuniyeti ve<br/>
+                <span style="font-style: italic; color: #C26D45;">İyi Oluş Anketi</span>
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 10pt; color: #6B655F; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 15px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 10pt; color: #795548; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 15px;">
                 Analiz Raporu
             </div>
         </div>
