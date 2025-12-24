@@ -116,19 +116,25 @@
         .hamburger-floating {
             display: none;
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 12px;
+            left: 12px;
             z-index: 60;
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: #F8F4EC;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(248, 244, 236, 0.95);
             border: 1px solid #E2D9CA;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
             transition: all 0.2s;
+            backdrop-filter: blur(8px);
+        }
+        
+        /* When sidebar is hidden on desktop, add left padding to main content */
+        .sidebar.desktop-hidden ~ .main-content {
+            padding-left: 60px;
         }
 
         .hamburger-floating.visible {
@@ -4782,16 +4788,17 @@
                             <article id="reportContent" class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
                                 ${hasRaporData ? `
                                 
-                                <div class="mb-6 p-4 bg-page-bg rounded-lg">
-                                    <div class="flex gap-3 items-center flex-wrap">
-                                        <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" class="px-3 py-2 bg-white border border-border-light rounded-lg text-sm min-w-[220px] font-sans focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary/30 shadow-sm">
+                                <div class="mb-8 flex items-center gap-3 flex-wrap">
+                                    <div class="relative">
+                                        <select id="mudurlukFilter" onchange="reportManager.filterReports(this.value)" class="appearance-none pl-4 pr-10 py-2.5 bg-white border border-[#E5DDD5] rounded-full text-sm min-w-[200px] font-sans text-[#4A4641] focus:outline-none focus:ring-2 focus:ring-[#A89080]/20 focus:border-[#A89080] cursor-pointer transition-all hover:border-[#C5B8AA]">
                                             <option value="">Tüm Müdürlükler</option>
                                             ${reportManager.getMudurlukOptions()}
                                         </select>
-                                        <div class="relative flex-1 min-w-[180px]">
-                                            <input type="text" id="raporArama" placeholder="Raporda ara..." onkeyup="reportManager.searchReports(this.value)" class="pl-9 pr-3 py-2 w-full bg-white border border-border-light rounded-lg text-sm font-sans focus:outline-none focus:ring-1 focus:ring-primary/30 focus:border-primary/30 shadow-sm">
-                                            <span class="material-icons-outlined absolute left-2.5 top-2 text-text-muted-light text-[18px]">search</span>
-                                        </div>
+                                        <span class="material-icons-outlined absolute right-3 top-1/2 -translate-y-1/2 text-[#8C847D] text-[18px] pointer-events-none">expand_more</span>
+                                    </div>
+                                    <div class="relative flex-1 min-w-[160px] max-w-[280px]">
+                                        <input type="text" id="raporArama" placeholder="Ara..." onkeyup="reportManager.searchReports(this.value)" class="pl-10 pr-4 py-2.5 w-full bg-white border border-[#E5DDD5] rounded-full text-sm font-sans text-[#4A4641] placeholder:text-[#B0A99F] focus:outline-none focus:ring-2 focus:ring-[#A89080]/20 focus:border-[#A89080] transition-all hover:border-[#C5B8AA]">
+                                        <span class="material-icons-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#8C847D] text-[18px]">search</span>
                                     </div>
                                 </div>
                                 
