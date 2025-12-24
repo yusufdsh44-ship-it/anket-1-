@@ -5409,7 +5409,7 @@
                                 <input type="text" id="mudurlukSearchInput" placeholder="Ara..." oninput="pageManager.filterMudurlukler(this.value)" style="width: calc(100% - 4px); padding: 5px 8px 5px 26px; border: none; border-bottom: 1px solid #E2D9CA; border-radius: 0; font-size: 11px; color: #5A534A; background: transparent; outline: none; transition: all 0.2s;" onfocus="this.style.borderBottomColor='#A89080';" onblur="this.style.borderBottomColor='#E2D9CA';">
                                 <span class="material-icons-outlined" style="position: absolute; left: 4px; top: 50%; transform: translateY(-50%); font-size: 14px; color: #B0A99F; pointer-events: none;">search</span>
                             </div>
-                            <div id="mudurlukQuickList" style="display: flex; flex-direction: column; gap: 0; background: transparent; border-radius: 8px; padding: 2px 0; margin-left: 20px; max-height: 280px; overflow-y: auto;"></div>
+                            <div id="mudurlukQuickList" style="display: flex; flex-direction: column; gap: 0; background: transparent; border-radius: 8px; padding: 2px 0; margin-left: 20px;"></div>
                             <button id="showAllMudurlukler" onclick="pageManager.toggleAllMudurlukler()" style="display: none; margin: 8px 0 0 20px; padding: 8px 14px; background: transparent; border: 1px dashed #D4C9BB; border-radius: 10px; color: #8C847D; font-size: 11px; cursor: pointer; width: calc(100% - 20px); text-align: center; transition: all 0.25s; font-weight: 500; letter-spacing: 0.02em;">
                                 <span class="material-icons-outlined" style="font-size: 13px; vertical-align: middle; margin-right: 4px;">more_horiz</span>Tümünü Göster
                             </button>
@@ -5429,7 +5429,7 @@
                 setTimeout(() => pageManager.populateMudurlukQuickNav(), 500);
             },
 
-            mudurlukNavExpanded: false,
+            mudurlukNavExpanded: true,
 
             toggleAllMudurlukler: () => {
                 pageManager.mudurlukNavExpanded = !pageManager.mudurlukNavExpanded;
