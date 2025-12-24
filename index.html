@@ -5491,10 +5491,10 @@
                 
                 setTimeout(() => {
                     const iframe = document.getElementById('belediyeGeneliIframe');
-                    if (iframe) {
-                        iframe.src = '/attached_assets/baskan_raporu_v2-6_1766557449901.html#ozet-tablosu';
+                    if (iframe && iframe.contentWindow) {
+                        iframe.contentWindow.postMessage({ type: 'scrollToOzetTablosu' }, '*');
                     }
-                }, 150);
+                }, 500);
             }
         };
 

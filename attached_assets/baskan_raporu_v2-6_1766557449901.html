@@ -1866,6 +1866,15 @@
             }, '*');
         }
     }
+
+    window.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'scrollToOzetTablosu') {
+            const ozetTablosu = document.getElementById('ozet-tablosu');
+            if (ozetTablosu) {
+                ozetTablosu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
 </script>
 </body>
 
