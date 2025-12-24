@@ -11576,8 +11576,6 @@ const RAPOR_VERILERI = {
 <li><strong>Psikolojik destek farkındalığı:</strong> Açık uçlu yorumda personel psikolojik destek hizmetinden haberdar olduğunu belirtmiş ve ek olarak diyetisyen hizmeti talep etmiş. Afet işleri personelinin potansiyel stresli durumlarla karşılaşma riski düşünüldüğünde, bu farkındalık olumlu bir bulgudur.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Afet İşleri Müdürlüğü, düşük iş stresi/yükü ve güçlü kurum desteği dengesine sahip, işlevsel bir yapıda faaliyet göstermektedir. Afet İşleri Müdürlüğüne göre çalışma koşullarının (ısıtma/soğutma, yemekhane) ve İSG uygulamalarının iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
