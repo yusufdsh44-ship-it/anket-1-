@@ -6,6 +6,13 @@ This is a comprehensive JD-R (Job Demands-Resources) survey evaluation dashboard
 **Current State:** Interactive web application with data visualization and PostgreSQL database backend
 
 ## Recent Changes
+- 2025-12-24: **Clickable Department Navigation in Summary Table**
+  - **Interactive Summary Table:** All 30 department rows in Belediye Geneli report's summary table are now clickable
+  - **Hover Effects:** Rows show arrow indicator (→) and gradient highlight on hover
+  - **PostMessage Navigation:** Clicking a department row navigates to that department's detailed report
+  - **Back Button:** Each department report includes "Özet Tabloya Dön" button to return to summary table
+  - **CSS Styling:** Added cursor pointer, hover transitions, and visual feedback for clickable rows
+
 - 2025-12-11: **Major UI Redesign with Warm Minimal Aesthetic**
   - **New Design System:** Tailwind CSS + custom CSS with cream/terracotta color palette
     - Background: #FBF7EF (warm cream)
