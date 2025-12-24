@@ -22,7 +22,7 @@ app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
     "pool_pre_ping": True,
 }
 
-APP_PASSWORD = ""  # Şifre devre dışı
+APP_PASSWORD = os.environ.get("APP_PASSWORD", "")
 
 db.init_app(app)
 
