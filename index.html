@@ -1612,7 +1612,8 @@
         const MENU_ITEMS = [
             {
                 category: 'RAPOR', items: [
-                    {id: 'mudurluk-raporlari', icon: 'description', title: 'Rapor'}
+                    {id: 'belediye-geneli', icon: 'apartment', title: 'Belediye Geneli'},
+                    {id: 'mudurluk-raporlari', icon: 'description', title: 'Müdürlük Raporları'}
                 ]
             },
             {
@@ -4788,7 +4789,7 @@
                                         Çalışan Memnuniyeti ve<br>İyi Oluş Anketi
                                     </h1>
                                     <div class="mt-6 mb-12">
-                                        <span class="inline-block px-6 py-2 bg-primary/10 text-primary font-sans text-sm md:text-base font-semibold tracking-[0.3em] uppercase rounded-full">
+                                        <span class="inline-block px-6 py-2 bg-title-brown/10 text-title-brown font-sans text-sm md:text-base font-semibold tracking-[0.3em] uppercase rounded-full">
                                             Analiz Raporu
                                         </span>
                                     </div>
@@ -4807,18 +4808,18 @@
                                         <p class="font-sans text-xs tracking-[0.25em] text-text-muted-light uppercase">
                                             İnsan Kaynakları ve Eğitim Müdürlüğü
                                         </p>
-                                        <p class="font-serif text-4xl md:text-5xl font-bold text-primary mt-4">2025</p>
+                                        <p class="font-serif text-4xl md:text-5xl font-bold text-title-brown mt-4">2025</p>
                                     </div>
                                     
                                     <!-- Video ve Web Bilgileri -->
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                                         <div class="p-5 bg-page-bg rounded-xl">
                                             <p class="font-sans text-xs tracking-widest text-text-muted-light uppercase mb-2">Sunum Videosu</p>
-                                            <a href="#" id="sunumVideoLink" class="font-sans text-sm text-primary hover:underline">Video linki için tıklayın</a>
+                                            <a href="#" id="sunumVideoLink" class="font-sans text-sm text-title-brown hover:underline">Video linki için tıklayın</a>
                                         </div>
                                         <div class="p-5 bg-page-bg rounded-xl">
                                             <p class="font-sans text-xs tracking-widest text-text-muted-light uppercase mb-2">Dijital Rapor Sistemi</p>
-                                            <p class="font-sans text-sm text-text-body">Web Adresi: <span class="font-medium text-primary">arnv-anket.info</span></p>
+                                            <p class="font-sans text-sm text-text-body">Web Adresi: <span class="font-medium text-title-brown">arnv-anket.info</span></p>
                                             <p class="font-sans text-xs text-text-muted-light mt-1">Password: ARNBEL34</p>
                                         </div>
                                     </div>
@@ -5342,7 +5343,181 @@
                     </div>
                 `,
 
-                'mudurluk-raporlari': () => reportManager.renderReportPage()
+                'mudurluk-raporlari': () => reportManager.renderReportPage(),
+
+                'belediye-geneli': () => `
+                    <div class="max-w-[1100px] mx-auto">
+                        <!-- KAPAK -->
+                        <div class="bg-white rounded-[20px] shadow-soft border border-white relative overflow-hidden mb-8" style="min-height: 70vh;">
+                            <div class="flex flex-col items-center justify-between h-full p-10 md:p-16 text-center" style="min-height: 70vh;">
+                                <div class="flex-1 flex flex-col items-center justify-center">
+                                    <img src="/attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi" class="w-28 md:w-36 h-auto mb-6">
+                                    <h1 class="font-serif text-3xl md:text-4xl font-medium text-title-brown leading-tight mb-4">
+                                        Çalışan Memnuniyeti ve<br>İyi Oluş Anketi
+                                    </h1>
+                                    <span class="inline-block px-5 py-2 bg-title-brown/10 text-title-brown font-sans text-sm font-semibold tracking-[0.2em] uppercase rounded-full">
+                                        Belediye Geneli Analiz Raporu
+                                    </span>
+                                    <div class="my-8">
+                                        <p class="font-sans text-sm text-text-muted-light tracking-widest uppercase mb-2">Belediye Başkanımız</p>
+                                        <p class="font-serif text-xl md:text-2xl text-title-brown font-medium">Sayın Mustafa Candaroğlu'na</p>
+                                    </div>
+                                </div>
+                                <div class="w-full">
+                                    <p class="font-sans text-xs tracking-[0.2em] text-text-muted-light uppercase">İnsan Kaynakları ve Eğitim Müdürlüğü</p>
+                                    <p class="font-serif text-3xl font-bold text-title-brown mt-3">2025</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RAPOR İÇERİĞİ -->
+                        <div class="bg-white rounded-[20px] shadow-soft p-8 md:p-14 border border-white relative overflow-hidden">
+                            <article class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
+
+                                <!-- 1.0 TAKDİM -->
+                                <section class="mb-12">
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-6 pb-3 border-b border-border-light">1.0 Takdim</h2>
+                                    
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">1.1 Raporumuzun Amacı ve Stratejik Önemi</h3>
+                                    <p class="mb-4 italic text-lg">Sayın Başkanım,</p>
+                                    <p class="mb-4">Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmaları, Arnavutköy Belediyesi olarak ilk kez gerçekleştirilmekte ve kurumsal gelişimimiz adına önemli bir temel atmaktadır.</p>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">1.2 Kurumsal Kapasitemiz</h3>
+                                    <p class="mb-4">Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, tamamen <strong>İnsan Kaynakları ve Eğitim Müdürlüğümüz</strong> tarafından gerçekleştirilmiş olmasıdır.</p>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">1.3 Çalışmamızın Kapsamı ve Gelecek Vizyonu</h3>
+                                    <p class="mb-4">Rapor, iki temel eksen üzerine kurgulanmıştır: temel kurumsal dinamiklerin ölçümlenmesi ve Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak bir "Psikolojik İyi Oluş" taraması. Bu çalışma, belirli periyotlarla tekrarlanarak kurumsal değişimlerin ve iyileştirme çalışmalarının etkilerinin takip edileceği sürdürülebilir bir izleme sisteminin temel taşıdır.</p>
+                                </section>
+
+                                <!-- 2.0 METODOLOJİ -->
+                                <section class="mb-12">
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-6 pb-3 border-b border-border-light">2.0 Anket Metodolojisi ve Uygulama Süreci</h2>
+                                    
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">2.1 Anketin Yapısı ve Analitik Çerçevesi</h3>
+                                    <p class="mb-4"><strong>Çift Eksenli Kurgu:</strong> Anket, iki ana hedef doğrultusunda tasarlanmıştır:</p>
+                                    <ul class="list-disc pl-6 mb-4">
+                                        <li class="mb-2"><strong>Kurumsal Dinamiklerin Ölçümü:</strong> Yönetici-çalışan ilişkileri, ekip dayanışması, fiziki çalışma koşulları, yemek/servis hizmetleri, ücret politikaları ve iş güvenliği</li>
+                                        <li class="mb-2"><strong>Psikolojik İyi Oluş Taraması:</strong> Kurum Psikoloğu biriminin proaktif müdahalelerine bilimsel bir zemin oluşturmak amacıyla personelin ruh sağlığı durumu</li>
+                                    </ul>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">2.2 Saha Çalışması ve Katılım Düzeyi</h3>
+                                    <div class="bg-page-bg rounded-xl p-6 my-6">
+                                        <p class="text-center italic text-lg mb-4">"Saha çalışmaları sürecinde, belediyemize bağlı <strong class="text-title-brown">30 müdürlüğün tamamı bizzat ziyaret edilmiştir.</strong>"</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                                        <div class="bg-page-bg rounded-xl p-5 text-center">
+                                            <p class="font-serif text-3xl font-bold text-title-brown">2.089</p>
+                                            <p class="text-sm text-text-muted-light mt-1">Toplam Personel</p>
+                                        </div>
+                                        <div class="bg-page-bg rounded-xl p-5 text-center">
+                                            <p class="font-serif text-3xl font-bold text-title-brown">1.470</p>
+                                            <p class="text-sm text-text-muted-light mt-1">Ankete Katılan (%70,4)</p>
+                                        </div>
+                                        <div class="bg-page-bg rounded-xl p-5 text-center">
+                                            <p class="font-serif text-3xl font-bold text-title-brown">456</p>
+                                            <p class="text-sm text-text-muted-light mt-1">Açık Uçlu Yorum (%31,0)</p>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!-- 3.0 GENEL DEĞERLENDİRME -->
+                                <section class="mb-12">
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-6 pb-3 border-b border-border-light">3.0 Genel Değerlendirme: Temel Göstergeler ve Ana Bulgular</h2>
+                                    
+                                    <!-- Bir Bakışta -->
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                                        <div class="bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+                                            <p class="font-serif text-4xl font-bold text-green-700">%90,8</p>
+                                            <p class="text-sm text-green-600 mt-2 uppercase tracking-wider font-medium">Genel Memnuniyet</p>
+                                        </div>
+                                        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+                                            <p class="font-serif text-4xl font-bold text-blue-700">%70,4</p>
+                                            <p class="text-sm text-blue-600 mt-2 uppercase tracking-wider font-medium">Katılım Oranı</p>
+                                        </div>
+                                        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+                                            <p class="font-serif text-4xl font-bold text-amber-700">%52,2</p>
+                                            <p class="text-sm text-amber-600 mt-2 uppercase tracking-wider font-medium">Ruh Sağlığı Riski</p>
+                                        </div>
+                                    </div>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">3.1 Kurumsal Karnemiz</h3>
+                                    <div class="overflow-x-auto my-6">
+                                        <table class="w-full border-collapse">
+                                            <thead>
+                                                <tr class="bg-title-brown/10">
+                                                    <th class="text-left p-3 font-medium text-title-brown">Gösterge</th>
+                                                    <th class="text-right p-3 font-medium text-title-brown">Değer</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="border-b border-border-light"><td class="p-3">Genel Memnuniyet</td><td class="p-3 text-right font-bold text-green-700">%90,8</td></tr>
+                                                <tr class="border-b border-border-light"><td class="p-3">İş Stresi/Yükü</td><td class="p-3 text-right font-bold">%69,1</td></tr>
+                                                <tr class="border-b border-border-light"><td class="p-3">Kurum Desteği</td><td class="p-3 text-right font-bold">%82,3</td></tr>
+                                                <tr class="border-b border-border-light"><td class="p-3">Denge (Kurum Desteği - İş Stresi)</td><td class="p-3 text-right font-bold text-green-700">+13,2</td></tr>
+                                                <tr class="border-b border-border-light"><td class="p-3">Ruh Sağlığı Riski</td><td class="p-3 text-right font-bold text-amber-600">%52,2</td></tr>
+                                                <tr><td class="p-3">Açık Uçlu Yorum Yapan</td><td class="p-3 text-right font-bold">456 kişi (%31,0)</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">3.2 Belediyemizin Güçlü Yönleri</h3>
+                                    <div class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-xl my-4">
+                                        <ul class="list-none space-y-2">
+                                            <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Topluma Hizmet Gururu: <strong>%94,5</strong></li>
+                                            <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> İşin Anlamlı Bulunması: <strong>%92,4</strong></li>
+                                            <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Amirlerle Olumlu İletişim: <strong>%92,2</strong></li>
+                                            <li class="flex items-center gap-2"><span class="text-green-600 font-bold">✓</span> Yüksek Ekip Uyumu: <strong>%86,9</strong></li>
+                                        </ul>
+                                    </div>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">3.3 Gelişim Alanlarımız</h3>
+                                    <div class="bg-amber-50 border-l-4 border-amber-500 p-5 rounded-r-xl my-4">
+                                        <ul class="list-none space-y-2">
+                                            <li class="flex items-center gap-2"><span class="text-amber-600 font-bold">!</span> Yemek Hizmeti: <strong>%57,2</strong> (83 yorum)</li>
+                                            <li class="flex items-center gap-2"><span class="text-amber-600 font-bold">!</span> Servis Güzergahları: <strong>%67,7</strong></li>
+                                            <li class="flex items-center gap-2"><span class="text-amber-600 font-bold">!</span> Ücret Politikaları: <strong>%69,0</strong></li>
+                                        </ul>
+                                    </div>
+                                </section>
+
+                                <!-- 4.0 RUH SAĞLIĞI -->
+                                <section class="mb-12">
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-6 pb-3 border-b border-border-light">4.0 Çalışan İyi Oluşu: Ruh Sağlığı Bulguları</h2>
+                                    
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">4.1 Temel Ruh Sağlığı Göstergeleri</h3>
+                                    <p class="mb-4">Personelin %52,2'si ruh sağlığı taramasında risk göstergesi sergilemektedir. Bu oran, proaktif psikolojik destek programlarının önemini vurgulamaktadır.</p>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">4.2 İş Stresi, Kurum Desteği ve Ruh Sağlığı İlişkisi</h3>
+                                    <p class="mb-4">JD-R (İş Talepleri-Kaynakları) Modeli çerçevesinde, kurum desteği (%82,3) iş stresinden (%69,1) yüksek olup, <strong>+13,2 puanlık pozitif denge</strong> çalışanların iş yükünü karşılayacak kaynaklara sahip olduğunu göstermektedir.</p>
+                                </section>
+
+                                <!-- 5.0 SONUÇ -->
+                                <section class="mb-12">
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-6 pb-3 border-b border-border-light">5.0 Sonuç ve Stratejik Öneriler</h2>
+                                    
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">5.1 Temel Çıkarımlarımız</h3>
+                                    <p class="mb-4">Arnavutköy Belediyesi, %90,8 genel memnuniyet oranıyla güçlü bir kurumsal kültüre sahiptir. Çalışanların içsel motivasyonu yüksek olup, topluma hizmet gururu ve işin anlamlılığı temel motivasyon kaynaklarıdır.</p>
+
+                                    <h3 class="font-serif text-xl font-medium text-title-brown mt-8 mb-4">5.2 Belediye Geneli Stratejik Öneriler</h3>
+                                    <div class="bg-page-bg rounded-xl p-6 my-4">
+                                        <ol class="list-decimal pl-6 space-y-3">
+                                            <li><strong>Yemek Hizmeti İyileştirmesi:</strong> Kalite, çeşitlilik ve fiyat politikası gözden geçirilmeli</li>
+                                            <li><strong>Servis Güzergahları Optimizasyonu:</strong> Çalışan ihtiyaçlarına göre yeniden planlanmalı</li>
+                                            <li><strong>Ücret Politikası Şeffaflığı:</strong> Adil ve anlaşılır ücret yapısı oluşturulmalı</li>
+                                            <li><strong>Ruh Sağlığı Programları:</strong> Kurum Psikoloğu birimi ile proaktif destek mekanizmaları geliştirilmeli</li>
+                                        </ol>
+                                    </div>
+                                </section>
+
+                                <!-- Footer -->
+                                <div class="mt-16 pt-8 border-t border-border-light text-center">
+                                    <p class="text-sm text-text-muted-light">Müdürlük bazlı detaylı analizler için <a href="#" onclick="pageManager.showPage('mudurluk-raporlari'); return false;" class="text-title-brown hover:underline font-medium">Müdürlük Raporları</a> bölümüne bakınız.</p>
+                                </div>
+
+                            </article>
+                        </div>
+                    </div>
+                `
             },
 
             showPage: (pageId) => {
@@ -5427,7 +5602,7 @@
                     }
                 });
 
-                pageManager.showPage('mudurluk-raporlari');
+                pageManager.showPage('belediye-geneli');
                 
                 // Müdürlük listesini doldur
                 setTimeout(() => pageManager.populateMudurlukQuickNav(), 500);
