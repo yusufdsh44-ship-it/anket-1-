@@ -11469,6 +11469,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Afet İşleri Müdürlüğü, düşük iş stresi/yükü ve güçlü kurum desteği dengesine sahip, işlevsel bir yapıda faaliyet göstermektedir. Afet İşleri Müdürlüğüne göre çalışma koşullarının (ısıtma/soğutma, yemekhane) ve İSG uygulamalarının iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
