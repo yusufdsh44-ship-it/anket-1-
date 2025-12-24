@@ -5348,6 +5348,9 @@
 
                 if (pageId === 'belediye-geneli') {
                     contentBody.classList.add('no-padding');
+                    // Belediye Geneli'ne geçildiğinde seçili müdürlüğü temizle
+                    pageManager.selectedMudurluk = null;
+                    pageManager.highlightSelectedMudurluk();
                 } else {
                     contentBody.classList.remove('no-padding');
                 }
@@ -6052,6 +6055,9 @@
                 if (event.data && event.data.type === 'navigateToMudurluk') {
                     const mudurlukKey = event.data.mudurluk;
                     if (mudurlukKey && pageManager.goToMudurlukRapor) {
+                        // Listeyi genişlet ki seçili müdürlük görünsün
+                        pageManager.mudurlukNavExpanded = true;
+                        pageManager.populateMudurlukQuickNav();
                         pageManager.goToMudurlukRapor(mudurlukKey);
                     }
                 }
