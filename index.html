@@ -5486,27 +5486,9 @@
             },
 
             goToOzetTablosu: () => {
+                pageManager.pendingScrollToOzet = true;
                 pageManager.showPage('belediye-geneli');
                 closeSidebarIfMobile();
-                
-                const checkAndScroll = () => {
-                    const iframe = document.getElementById('belediyeGeneliIframe');
-                    if (iframe) {
-                        const sendMessage = () => {
-                            if (iframe.contentWindow) {
-                                iframe.contentWindow.postMessage({ type: 'scrollToOzetTablosu' }, '*');
-                            }
-                        };
-                        
-                        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-                            sendMessage();
-                        } else {
-                            iframe.addEventListener('load', sendMessage, { once: true });
-                        }
-                    }
-                };
-                
-                setTimeout(checkAndScroll, 100);
             }
         };
 
@@ -5962,6 +5944,16 @@
                     const mudurlukKey = event.data.mudurluk;
                     if (mudurlukKey && pageManager.goToMudurlukRapor) {
                         pageManager.goToMudurlukRapor(mudurlukKey);
+                    }
+                }
+                
+                if (event.data && event.data.type === 'belediyeGeneliReady') {
+                    if (pageManager.pendingScrollToOzet) {
+                        pageManager.pendingScrollToOzet = false;
+                        const iframe = document.getElementById('belediyeGeneliIframe');
+                        if (iframe && iframe.contentWindow) {
+                            iframe.contentWindow.postMessage({ type: 'scrollToOzetTablosu' }, '*');
+                        }
                     }
                 }
             });

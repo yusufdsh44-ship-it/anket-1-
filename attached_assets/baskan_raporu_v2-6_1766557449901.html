@@ -1875,6 +1875,12 @@
             }
         }
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'belediyeGeneliReady' }, '*');
+        }
+    });
 </script>
 </body>
 
