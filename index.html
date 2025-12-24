@@ -4763,28 +4763,6 @@
         const reportManager = {
             selectedMudurluk: null,
 
-            girisHTML: `
-                <p class="font-serif italic text-2xl text-title-brown mb-10 mt-0">Sayın Başkanım,</p>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmalarını, Arnavutköy Belediyesi olarak ilk kez yaparak kurumsal gelişimimiz adına önemli bir temel atmanın gururunu yaşıyoruz.</p>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, tamamen İnsan Kaynakları Müdürlüğümüz tarafından gerçekleştirilmiş olmasıdır.</p>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Çalışma iki temel eksen üzerine kurgulanmıştır. Birinci eksen; yönetici-çalışan ilişkileri, ekip dayanışması, fiziki çalışma koşulları, yemekhane, servis, ücret politikaları ve iş güvenliği gibi temel kurumsal dinamiklerin ölçümlenmesidir. İkinci eksen ise; Kurum Psikoloğu biriminin çalışmalarına zemin oluşturacak "Psikolojik İyi Oluş" taramasının yapılmasıdır. Kullanılan envanter, standart şablonlar yerine, literatürdeki bilimsel ölçeklerin kurumumuzun özgün ihtiyaçlarına göre yeniden uyarlanmasıyla oluşturulmuştur. <strong class="font-bold text-title-brown">Anket sorularının her biri, bilimsel çalışmalar ve Arnavutköy Belediyesi'nin kendine özgü dinamikleri göz önünde bulundurularak tek tek tasarlanmıştır.</strong></p>
-
-                <div class="my-12 p-10 bg-page-bg rounded-xl border-none">
-                    <p class="m-0 italic text-xl text-[#57534E] leading-[1.6]">
-                        "Saha çalışmaları sürecinde, <strong class="text-title-brown font-bold not-italic">belediyemize bağlı 30 müdürlüğün tamamı bizzat ziyaret edilmiştir.</strong>"
-                    </p>
-                </div>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Anketler çalışanlarımıza elden ulaştırılmış; görüş, şikayet ve önerileri yerinde dinlenmiştir. Bu ziyaretlerde ayrıca, kurumsal aidiyeti pekiştirmek adına Belediyemizin ve Başkanlığımızın sosyal medya hesaplarının takibi konusunda da personelimiz teşvik edilmiştir. Bu yüz yüze etkileşim, sürecin sadece veri toplamaktan ibaret kalmayıp, çalışanlarımızla samimi ve yapıcı bir diyaloğa dönüşmesine imkan tanımıştır.</p>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Ankete katılım oranı %70.4'tür. Analiz modelimiz toplanan sayısal verilerin binlerce cümlelik açık uçlu yorumlarla sentezlenmesine dayanmaktadır. Anket tamamen anonim olmasına rağmen her müdürlüğe özel oluşturulan QR kod sistemi sayesinde, birim bazlı detaylı analizler yapılabilmiştir. Toplam 45 sorudan oluşan ana anket ile; kurumsal aidiyet, amir ilişkileri, rol netliği ve çalışma koşulları gibi on farklı parametre (tema) ölçülmüştür. Bu yapıya ek olarak "Psikolojik İyi Oluş Taraması", "Sigara Kullanımı" ve "Sosyal Medya Alışkanlıkları" modülleri de çalışmaya dahil edilerek personel profili çok yönlü olarak analiz edilmiştir.</p>
-
-                <p class="mb-8 font-light text-[1.1rem] leading-[1.8]">Bu çalışma, <strong class="text-title-brown font-bold">belirli periyotlarla tekrarlanacak sürdürülebilir bir izleme sisteminin temelidir.</strong> Gelecek dönemlerde yapılacak ölçümlerle, kurumsal gelişimimiz izlenebilecek ve karşılaştırmalı analizler yapma imkanı doğacaktır.</p>
-            `,
-
             getMudurlukOptions: () => {
                 if (typeof RAPOR_VERILERI === 'undefined' || !RAPOR_VERILERI.mudurlukler) return '';
                 return Object.entries(RAPOR_VERILERI.mudurlukler)
@@ -4802,25 +4780,11 @@
                             <div class="mb-6 flex justify-end">
                                 <select id="quickMudurlukSelect" onchange="reportManager.quickNavigate(this.value)" class="px-3 py-1.5 bg-page-bg border border-border-light rounded-full text-xs font-sans text-text-muted-light focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer" style="max-width: 180px;">
                                     <option value="">Müdürlük Seç...</option>
-                                    <option value="belediye-geneli">Belediye Geneli</option>
                                     ${reportManager.getMudurlukOptions()}
                                 </select>
                             </div>
-                            <div class="mb-16 pb-8 border-b border-gray-100 flex justify-between items-end">
-                                <h3 class="font-serif text-5xl font-medium text-title-brown tracking-tight">Giriş</h3>
-                                <span class="text-xs font-mono text-text-meta tracking-widest uppercase opacity-70">15.12.2025</span>
-                            </div>
                             <article id="reportContent" class="prose prose-lg max-w-none font-serif text-[#44403C] leading-[1.8]">
-                                ${reportManager.girisHTML}
-                                
                                 ${hasRaporData ? `
-                                <hr class="my-10 border-none h-px bg-border-light">
-                                
-                                <div id="belediyeGeneliRapor">
-                                    ${RAPOR_VERILERI.belediyeGeneli}
-                                </div>
-                                
-                                <hr class="my-10 border-none h-px bg-border-light">
                                 
                                 <div class="my-10 p-6 bg-page-bg rounded-xl border-none">
                                     <div class="flex gap-4 items-center flex-wrap">
@@ -4871,10 +4835,8 @@
             filterReports: (mudurlukKey) => {
                 reportManager.selectedMudurluk = mudurlukKey;
                 const sections = document.querySelectorAll('.mudurluk-rapor-section');
-                const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
 
                 if (mudurlukKey) {
-                    if (belediyeGeneli) belediyeGeneli.style.display = 'none';
                     sections.forEach(section => {
                         if (section.getAttribute('data-mudurluk') === mudurlukKey) {
                             section.style.display = 'block';
@@ -4883,7 +4845,6 @@
                         }
                     });
                 } else {
-                    if (belediyeGeneli) belediyeGeneli.style.display = 'block';
                     sections.forEach(section => {
                         section.style.display = 'block';
                     });
@@ -4893,12 +4854,6 @@
             searchReports: (query) => {
                 const searchTerm = query.toLowerCase().trim();
                 const sections = document.querySelectorAll('.mudurluk-rapor-section');
-                const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
-
-                if (belediyeGeneli) {
-                    const genelContent = belediyeGeneli.textContent.toLowerCase();
-                    belediyeGeneli.style.display = (!searchTerm || genelContent.includes(searchTerm)) ? 'block' : 'none';
-                }
 
                 sections.forEach(section => {
                     const content = section.textContent.toLowerCase();
@@ -4910,29 +4865,18 @@
             quickNavigate: (value) => {
                 if (!value) return;
                 
-                if (value === 'belediye-geneli') {
-                    const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
-                    if (belediyeGeneli) {
-                        // Filtreyi sıfırla
-                        const filter = document.getElementById('mudurlukFilter');
-                        if (filter) filter.value = '';
-                        reportManager.filterReports('');
-                        belediyeGeneli.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                } else {
-                    // Filtreyi ayarla ve scroll
-                    const filter = document.getElementById('mudurlukFilter');
-                    if (filter) {
-                        filter.value = value;
-                        reportManager.filterReports(value);
-                    }
-                    setTimeout(() => {
-                        const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${value}"]`);
-                        if (section) {
-                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
+                // Filtreyi ayarla ve scroll
+                const filter = document.getElementById('mudurlukFilter');
+                if (filter) {
+                    filter.value = value;
+                    reportManager.filterReports(value);
                 }
+                setTimeout(() => {
+                    const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${value}"]`);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
                 
                 // Dropdown'ı sıfırla
                 const quickSelect = document.getElementById('quickMudurlukSelect');
@@ -5457,16 +5401,11 @@
                         .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'));
                 }
 
-                // Belediye Geneli + ilk 5 müdürlük (veya tümü expanded ise)
+                // İlk 5 müdürlük (veya tümü expanded ise)
                 const displayCount = pageManager.mudurlukNavExpanded ? mudurlukler.length : 5;
                 const visibleMudurlukler = mudurlukler.slice(0, displayCount);
 
-                let html = `
-                    <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('belediye-geneli')" style="padding: 8px 12px; cursor: pointer; border-radius: 8px; font-size: 13px; color: #7B746A; display: flex; align-items: center; gap: 8px; transition: all 0.2s;">
-                        <span class="material-icons-outlined" style="font-size: 16px; opacity: 0.6;">chevron_right</span>
-                        Belediye Geneli
-                    </div>
-                `;
+                let html = '';
 
                 visibleMudurlukler.forEach(([key, data]) => {
                     html += `
@@ -5499,26 +5438,15 @@
                 closeSidebarIfMobile();
                 
                 setTimeout(() => {
-                    if (mudurlukKey === 'belediye-geneli') {
-                        const belediyeGeneli = document.getElementById('belediyeGeneliRapor');
-                        if (belediyeGeneli) {
-                            belediyeGeneli.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                        // Filtreyi sıfırla
-                        const filter = document.getElementById('mudurlukFilter');
-                        if (filter) filter.value = '';
-                        reportManager.filterReports('');
-                    } else {
-                        // Filtreyi ayarla ve scroll
-                        const filter = document.getElementById('mudurlukFilter');
-                        if (filter) {
-                            filter.value = mudurlukKey;
-                            reportManager.filterReports(mudurlukKey);
-                        }
-                        const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${mudurlukKey}"]`);
-                        if (section) {
-                            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
+                    // Filtreyi ayarla ve scroll
+                    const filter = document.getElementById('mudurlukFilter');
+                    if (filter) {
+                        filter.value = mudurlukKey;
+                        reportManager.filterReports(mudurlukKey);
+                    }
+                    const section = document.querySelector(`.mudurluk-rapor-section[data-mudurluk="${mudurlukKey}"]`);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }, 300);
             }
