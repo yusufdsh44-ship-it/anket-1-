@@ -835,6 +835,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Temizlik İşleri Müdürlüğü personeli, zorlu saha koşullarında çalışmasına rağmen işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak şantiye altyapısının acil iyileştirilmesi, şef/amir iletişiminin güçlendirilmesi ve ekipman kalitesinin artırılması kritik öneme sahiptir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -940,8 +942,6 @@ const RAPOR_VERILERI = {
 <li><strong>Şoför değer kaybı sorunu:</strong> Kaza durumunda araç değer kaybının şoförlerden kesilmesi önemli bir şikayet konusu.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Temizlik İşleri Müdürlüğü personeli, zorlu saha koşullarında çalışmasına rağmen işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak şantiye altyapısının acil iyileştirilmesi, şef/amir iletişiminin güçlendirilmesi ve ekipman kalitesinin artırılması kritik öneme sahiptir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -1280,6 +1280,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Destek Hizmetleri Müdürlüğü, yüksek memnuniyet ve güçlü çalışma koşulları ile belediyenin en olumlu performans gösteren birimlerinden biridir. Destek Hizmetleri Müdürlüğüne göre mesai dışı çalışma taleplerinin düzenlenmesi, saha personeli için araç/ekipman desteğinin artırılması ve vardiyalı çalışanların yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -1387,8 +1389,6 @@ const RAPOR_VERILERI = {
 <li><strong>Güvenlik personeli özel talepleri:</strong> Devriye aracı, kamera sistemi iyileştirmesi, spor salonu erişimi gibi saha çalışanlarına özgü talepler var.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Destek Hizmetleri Müdürlüğü, yüksek memnuniyet ve güçlü çalışma koşulları ile belediyenin en olumlu performans gösteren birimlerinden biridir. Destek Hizmetleri Müdürlüğüne göre mesai dışı çalışma taleplerinin düzenlenmesi, saha personeli için araç/ekipman desteğinin artırılması ve vardiyalı çalışanların yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -1734,6 +1734,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Veteriner İşleri Müdürlüğü personeli işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak iş stresi/yükü kritik seviyelerdedir ve kurumsal destek yetersiz kalmaktadır. Yassıören barınağı altyapısının iyileştirilmesi, yönetim adaleti algısının güçlendirilmesi ve personele psikolojik destek sunulması acil önceliklerdir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -1839,8 +1841,6 @@ const RAPOR_VERILERI = {
 <li><strong>Zorlanma göstergesi:</strong> Yüksek stres + düşük destek + negatif denge = iş yükü baskısı göstergesi.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Veteriner İşleri Müdürlüğü personeli işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak iş stresi/yükü kritik seviyelerdedir ve kurumsal destek yetersiz kalmaktadır. Yassıören barınağı altyapısının iyileştirilmesi, yönetim adaleti algısının güçlendirilmesi ve personele psikolojik destek sunulması acil önceliklerdir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -2168,6 +2168,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Strateji Geliştirme Müdürlüğü, düşük stresli ve fiziksel koşulları iyi bir çalışma ortamına sahiptir. Ancak performans değerlendirme sisteminin iyileştirilmesi ve servis hizmetinin düzeltilmesi, memnuniyeti artırabilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -2272,8 +2274,6 @@ const RAPOR_VERILERI = {
 <li><strong>Yüksek yorum oranı (%75):</strong> 8 kişiden 6'sı yorum yapmış - personelin görüşlerini ifade etme konusunda aktif olduğunu gösteriyor.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Strateji Geliştirme Müdürlüğü, düşük stresli ve fiziksel koşulları iyi bir çalışma ortamına sahiptir. Ancak performans değerlendirme sisteminin iyileştirilmesi ve servis hizmetinin düzeltilmesi, memnuniyeti artırabilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -2603,6 +2603,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Yazı İşleri Müdürlüğüne göre yemekhane hizmetinin iyileştirilmesi (kalite, temizlik, memur-işçi fiyat eşitliği), bina içi koku makinelerinin kaldırılması veya ayarlanması, arşiv birimi havalandırma sisteminin düzeltilmesi ve ofis temizliğinin artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -2708,8 +2710,6 @@ const RAPOR_VERILERI = {
 <li><strong>Taleplere yanıt gecikmesi:</strong> 40 gündür onaylanmayan sandalye talebi örneği, idari süreçlerin yavaşlığına işaret.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Yazı İşleri Müdürlüğüne göre yemekhane hizmetinin iyileştirilmesi (kalite, temizlik, memur-işçi fiyat eşitliği), bina içi koku makinelerinin kaldırılması veya ayarlanması, arşiv birimi havalandırma sisteminin düzeltilmesi ve ofis temizliğinin artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -3034,6 +3034,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Gençlik ve Spor Hizmetleri Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Tüm tema alanlarında belediye ortalamasının üzerinde skorlar, düşük iş stresi/yükü ve güçlü kurum desteği ile sağlıklı bir çalışma ortamına sahiptir. Personelin düğün salonu ve sosyal imkan talepleri, tesis bakımı ve ekipman yenileme ihtiyaçları izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -3140,8 +3142,6 @@ const RAPOR_VERILERI = {
 <li><strong>Dönüşümlü çalışma sorunları:</strong> Farklı tesislerde dönüşümlü çalışan personel, iş bölümü uyumsuzluğundan şikayet etmiştir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Gençlik ve Spor Hizmetleri Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Tüm tema alanlarında belediye ortalamasının üzerinde skorlar, düşük iş stresi/yükü ve güçlü kurum desteği ile sağlıklı bir çalışma ortamına sahiptir. Personelin düğün salonu ve sosyal imkan talepleri, tesis bakımı ve ekipman yenileme ihtiyaçları izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -3488,6 +3488,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Sosyal Destek Hizmetleri Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, yüksek iş stresi/yükü ve belirsiz görev tanımları nedeniyle zorlu bir çalışma ortamına sahiptir. Görev-rol netliğinin artırılması, eğitim faaliyetlerinin güçlendirilmesi ve stres yönetimi desteği sağlanması önerilmektedir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -3594,8 +3596,6 @@ const RAPOR_VERILERI = {
 <li><strong>Ruh sağlığı riski:</strong> Tüm ruh sağlığı göstergeleri belediye ortalamasının üzerinde - izlenmesi gereken bir durum.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Sosyal Destek Hizmetleri Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, yüksek iş stresi/yükü ve belirsiz görev tanımları nedeniyle zorlu bir çalışma ortamına sahiptir. Görev-rol netliğinin artırılması, eğitim faaliyetlerinin güçlendirilmesi ve stres yönetimi desteği sağlanması önerilmektedir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -3944,6 +3944,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Akıllı Ulaşım Sistemleri Müdürlüğü, güçlü yönetici ilişkileri ve ekip uyumu ile işlevsel bir yapıda faaliyet göstermektedir. Akıllı Ulaşım Sistemleri Müdürlüğüne göre eğitim imkanlarının artırılması ve ücret politikasının gözden geçirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -4050,8 +4052,6 @@ const RAPOR_VERILERI = {
 <li><strong>Sosyal medya Twitter/X kullanımı:</strong> Başkan (%40,0) ve Belediye (%40,0) Twitter hesapları belediye ortalamasının üzerinde takip ediliyor. Teknik personelin dijital platform kullanımına yatkınlığı olabilir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Akıllı Ulaşım Sistemleri Müdürlüğü, güçlü yönetici ilişkileri ve ekip uyumu ile işlevsel bir yapıda faaliyet göstermektedir. Akıllı Ulaşım Sistemleri Müdürlüğüne göre eğitim imkanlarının artırılması ve ücret politikasının gözden geçirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -4380,6 +4380,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Zabıta Müdürlüğüne göre çalışma saatlerinin yeniden düzenlenmesi (haftalık 40 saat talebi), maktu mesai ve SDS ödemelerinin diğer belediyelerle eşitlenmesi, zabıta yönetmeliğindeki ücretsiz spor salonu hakkının kullandırılması ve servis güzergahlarının genişletilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır. Güçlü ekip dayanışması ve kamu hizmeti motivasyonu, çalışma koşullarına rağmen birimin ayakta kalmasını sağlayan önemli faktörlerdir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -4485,8 +4487,6 @@ const RAPOR_VERILERI = {
 <li><strong>Müdürlük binası yetersizliği:</strong> Temel ihtiyaçların karşılanmadığı, etkinlik yapılmadığı ifade edilmiş.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Zabıta Müdürlüğüne göre çalışma saatlerinin yeniden düzenlenmesi (haftalık 40 saat talebi), maktu mesai ve SDS ödemelerinin diğer belediyelerle eşitlenmesi, zabıta yönetmeliğindeki ücretsiz spor salonu hakkının kullandırılması ve servis güzergahlarının genişletilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır. Güçlü ekip dayanışması ve kamu hizmeti motivasyonu, çalışma koşullarına rağmen birimin ayakta kalmasını sağlayan önemli faktörlerdir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -4816,6 +4816,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İmar ve Şehircilik Müdürlüğü, güçlü iş-kişi uyumu ve yönetici ilişkilerine sahip olmakla birlikte, anket sonuçlarına göre personel çok yoğun vatandaş talebi ve iş yükü altında çalışmaktadır. Negatif stres-destek dengesi (-2,3) ve yüksek ruh sağlığı riski (%58,5), personel takviyesi, yemekhane hizmetinin iyileştirilmesi ve vatandaş iletişim süreçlerinin düzenlenmesi gerekliliğine işaret etmektedir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -4919,8 +4921,6 @@ const RAPOR_VERILERI = {
 <li><strong>Yüksek yorum oranı (%53,5):</strong> 43 katılımcıdan 23'ü yorum yapmış - personel görüş bildirme konusunda aktif.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">İmar ve Şehircilik Müdürlüğü, güçlü iş-kişi uyumu ve yönetici ilişkilerine sahip olmakla birlikte, anket sonuçlarına göre personel çok yoğun vatandaş talebi ve iş yükü altında çalışmaktadır. Negatif stres-destek dengesi (-2,3) ve yüksek ruh sağlığı riski (%58,5), personel takviyesi, yemekhane hizmetinin iyileştirilmesi ve vatandaş iletişim süreçlerinin düzenlenmesi gerekliliğine işaret etmektedir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -5265,6 +5265,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Emlak ve İstimlak Müdürlüğü, güçlü ekip dayanışması ve yüksek kamu hizmeti motivasyonu ile öne çıkmaktadır. Anket sonuçlarına göre personel, iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Emlak ve İstimlak Müdürlüğüne göre eğitim imkanlarının artırılması, çalışma koşullarının (yemek, servis, ortak alanlar) iyileştirilmesi, ücret politikasının (özellikle tekniker-mühendis dengesi) gözden geçirilmesi ve iş yükü dengesinin sağlanması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -5374,8 +5376,6 @@ const RAPOR_VERILERI = {
 <li><strong>JD-R (İş Talepleri-Kaynakları) modeli açısından kritik:</strong> Yüksek iş stresi/yükü (%78,6) ile düşük kurum desteği (%80,1) kombinasyonu, zorlanma göstergesi açısından izlenmesi gereken bir profil oluşturmaktadır.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Emlak ve İstimlak Müdürlüğü, güçlü ekip dayanışması ve yüksek kamu hizmeti motivasyonu ile öne çıkmaktadır. Anket sonuçlarına göre personel, iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Emlak ve İstimlak Müdürlüğüne göre eğitim imkanlarının artırılması, çalışma koşullarının (yemek, servis, ortak alanlar) iyileştirilmesi, ücret politikasının (özellikle tekniker-mühendis dengesi) gözden geçirilmesi ve iş yükü dengesinin sağlanması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -5722,6 +5722,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Basın ve Yayın Müdürlüğü, güçlü yönetici ilişkileri ve yüksek kamu hizmeti motivasyonu ile işlevsel bir yapıda faaliyet göstermektedir. Basın ve Yayın Müdürlüğüne göre çalışma koşullarının (temizlik, ısıtma, ortak alanlar) iyileştirilmesi, ücret politikasının gözden geçirilmesi ve ekip içi iletişimin güçlendirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -5828,8 +5830,6 @@ const RAPOR_VERILERI = {
 <li><strong>Güçlü yönetici - Zayıf ekip dengesi:</strong> Yönetici ilişkileri (%94,8) çok güçlü iken çalışma arkadaşları skoru (%83,6) görece düşük. Bu durum, yönetici odaklı bir çalışma kültürüne işaret edebilir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Basın ve Yayın Müdürlüğü, güçlü yönetici ilişkileri ve yüksek kamu hizmeti motivasyonu ile işlevsel bir yapıda faaliyet göstermektedir. Basın ve Yayın Müdürlüğüne göre çalışma koşullarının (temizlik, ısıtma, ortak alanlar) iyileştirilmesi, ücret politikasının gözden geçirilmesi ve ekip içi iletişimin güçlendirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -6176,6 +6176,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Gelirler Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Gelirler Müdürlüğüne göre fiziksel çalışma ortamının iyileştirilmesi (temizlik, ısıtma, havalandırma), iş yükü dengesinin gözden geçirilmesi, şirket personeli-memur eşitliğinin sağlanması ve liyakat bazlı kariyer gelişimi fırsatlarının artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -6284,8 +6286,6 @@ const RAPOR_VERILERI = {
 <li><strong>Kadın çalışan deneyimi:</strong> "Erkek çalışan sayısının fazla olması, zaman zaman sosyal yalnızlık ve dışlanmışlık hissi oluşturabilmektedir" ifadesi dikkat çekici.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Gelirler Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Gelirler Müdürlüğüne göre fiziksel çalışma ortamının iyileştirilmesi (temizlik, ısıtma, havalandırma), iş yükü dengesinin gözden geçirilmesi, şirket personeli-memur eşitliğinin sağlanması ve liyakat bazlı kariyer gelişimi fırsatlarının artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -6629,6 +6629,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnovasyon ve Teknoloji Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yüksek kamu hizmeti motivasyonu, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,2) ile JD-R modeli açısından ideal profil sergilemektedir. Yemekhane hizmetinin iyileştirilmesi tek gelişim alanı olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -6732,8 +6734,6 @@ const RAPOR_VERILERI = {
 <li><strong>Güçlü iş-kişi uyumu:</strong> S1 (%98,4), S2 (%97,7), S3 (%96,9) skorları belediyenin en yüksekleri - personel işiyle tam uyumlu.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">İnovasyon ve Teknoloji Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yüksek kamu hizmeti motivasyonu, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,2) ile JD-R modeli açısından ideal profil sergilemektedir. Yemekhane hizmetinin iyileştirilmesi tek gelişim alanı olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -7068,6 +7068,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Yapı Kontrol Müdürlüğüne göre servis güzergahlarının yeniden düzenlenmesi (adalet algısı), ücret politikasının gözden geçirilmesi ve yemek hizmetinde işçi-memur eşitliğinin sağlanması izlenmesi gereken alanlar olarak öne çıkmaktadır. Güçlü ekip uyumu ve yönetici ilişkileri, yüksek iş stresi/yükünün etkilerini azaltan önemli koruyucu faktörlerdir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -7173,8 +7175,6 @@ const RAPOR_VERILERI = {
 <li><strong>Yüksek iş yükü:</strong> S9 (%82,0, +11,6) ve S10 (%83,0, +12,4) vatandaş talebi yoğunluğu belediyenin en yüksek değerleri arasında.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Yapı Kontrol Müdürlüğüne göre servis güzergahlarının yeniden düzenlenmesi (adalet algısı), ücret politikasının gözden geçirilmesi ve yemek hizmetinde işçi-memur eşitliğinin sağlanması izlenmesi gereken alanlar olarak öne çıkmaktadır. Güçlü ekip uyumu ve yönetici ilişkileri, yüksek iş stresi/yükünün etkilerini azaltan önemli koruyucu faktörlerdir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -7492,6 +7492,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Kültür İşleri Müdürlüğü, düşük iş stresi/yükü, güçlü stres-destek dengesi ve çok düşük sigara kullanımı ile sağlıklı bir çalışma ortamı sunmaktadır. JD-R modeli açısından olumlu profil sergilemektedir. Yemekhane, servis ve özellikle tuvalet/ortak alan koşullarının iyileştirilmesi öncelikli gelişim alanlarıdır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -7596,8 +7598,6 @@ const RAPOR_VERILERI = {
 <li><strong>Maaş karşılaştırması:</strong> "Emsal belediyelere göre bir miktar altta" ifadesi karşılaştırmalı değerlendirmeye işaret.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Kültür İşleri Müdürlüğü, düşük iş stresi/yükü, güçlü stres-destek dengesi ve çok düşük sigara kullanımı ile sağlıklı bir çalışma ortamı sunmaktadır. JD-R modeli açısından olumlu profil sergilemektedir. Yemekhane, servis ve özellikle tuvalet/ortak alan koşullarının iyileştirilmesi öncelikli gelişim alanlarıdır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -7941,6 +7941,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Fen İşleri Müdürlüğü, güçlü kamu hizmeti motivasyonu ve görev netliğine sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek bulmaktadır. Fen İşleri Müdürlüğüne göre saha araçlarının yenilenmesi, iş yükü dengesinin gözden geçirilmesi, yönetici-çalışan ilişkilerinde adalet algısının güçlendirilmesi ve yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -8049,8 +8051,6 @@ const RAPOR_VERILERI = {
 <li><strong>Adaletsiz ceza sistemi:</strong> "Ceza vermek için bir gerekçe olsun ve cezalandırılan kişi neden cezalandırıldığını bilsin. Bu adalettir." ifadesi, amir eşitliği skorunun düşüklüğüyle (%75,4) tutarlı.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Fen İşleri Müdürlüğü, güçlü kamu hizmeti motivasyonu ve görev netliğine sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek bulmaktadır. Fen İşleri Müdürlüğüne göre saha araçlarının yenilenmesi, iş yükü dengesinin gözden geçirilmesi, yönetici-çalışan ilişkilerinde adalet algısının güçlendirilmesi ve yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -8387,6 +8387,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Plan ve Proje Müdürlüğü, güçlü ekip dayanışmasına rağmen <strong>ciddi çalışma koşulları sorunları</strong> (yemekhane, servis, tuvalet) ve <strong>yüksek ruh sağlığı riski</strong> ile dikkat çekmektedir. Servislerin kaldırılması personelin psikolojisini olumsuz etkilemiştir. Acil olarak servis hizmetinin yeniden değerlendirilmesi, yemekhane kalitesinin iyileştirilmesi ve personel ruh sağlığının desteklenmesi önerilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -8492,8 +8494,6 @@ const RAPOR_VERILERI = {
 <li><strong>Tuvalet/hijyen şikayetleri:</strong> Çok sayıda yorumda tuvalet temizliği ve yetersizliği vurgulanmış.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Plan ve Proje Müdürlüğü, güçlü ekip dayanışmasına rağmen <strong>ciddi çalışma koşulları sorunları</strong> (yemekhane, servis, tuvalet) ve <strong>yüksek ruh sağlığı riski</strong> ile dikkat çekmektedir. Servislerin kaldırılması personelin psikolojisini olumsuz etkilemiştir. Acil olarak servis hizmetinin yeniden değerlendirilmesi, yemekhane kalitesinin iyileştirilmesi ve personel ruh sağlığının desteklenmesi önerilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -8839,6 +8839,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Halkla İlişkiler Müdürlüğü, güçlü kamu hizmeti motivasyonu ve yönetici ilişkilerine sahip olmakla birlikte, anket sonuçlarına göre personel iş-kişi uyumunu düşük bulmaktadır. Özellikle çağrı merkezi personelinin iş yükünün dengelenmesi, çalışma koşullarının iyileştirilmesi ve personelin yetenek-görev uyumunun gözden geçirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -8943,8 +8945,6 @@ const RAPOR_VERILERI = {
 <li><strong>Servis yetersizliği:</strong> "Boğazköy servisi yetersiz, ayakta gidiyoruz" şikayeti.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Halkla İlişkiler Müdürlüğü, güçlü kamu hizmeti motivasyonu ve yönetici ilişkilerine sahip olmakla birlikte, anket sonuçlarına göre personel iş-kişi uyumunu düşük bulmaktadır. Özellikle çağrı merkezi personelinin iş yükünün dengelenmesi, çalışma koşullarının iyileştirilmesi ve personelin yetenek-görev uyumunun gözden geçirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -9282,6 +9282,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İklim Değişikliği ve Sıfır Atık Müdürlüğü, güçlü iş-kişi uyumu ve kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel yoğun iş yükü altında çalışmaktadır. Kritik düzeyde düşük stres-destek dengesi (+0,7) ve çok yüksek sigara kullanımı (%70,6), personel takviyesi ve fiziksel çalışma koşullarının iyileştirilmesi gerekliliğine işaret etmektedir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -9386,8 +9388,6 @@ const RAPOR_VERILERI = {
 <li><strong>Fiziksel koşullar yetersiz:</strong> "Dolap yok, tuvalet kilitleri yok, üstümüzü değiştirecek yerimiz yok" şikayeti.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">İklim Değişikliği ve Sıfır Atık Müdürlüğü, güçlü iş-kişi uyumu ve kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel yoğun iş yükü altında çalışmaktadır. Kritik düzeyde düşük stres-destek dengesi (+0,7) ve çok yüksek sigara kullanımı (%70,6), personel takviyesi ve fiziksel çalışma koşullarının iyileştirilmesi gerekliliğine işaret etmektedir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -9721,6 +9721,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Hukuk İşleri Müdürlüğü, güçlü yönetici ilişkileri ve ekip dayanışmasına sahip olmakla birlikte, anket sonuçlarına göre personel çalışma koşullarını ve genel memnuniyetini düşük bulmaktadır. Özellikle yemek ücreti eşitliğinin sağlanması, eğitim imkanlarının artırılması ve fiziksel çalışma koşullarının iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -9824,8 +9826,6 @@ const RAPOR_VERILERI = {
 <li><strong>Ruh sağlığı göstergeleri yüksek:</strong> Gerginlik/kaygı (%57,5) ve endişe kontrolü (%56,8) belediye ortalamasının üzerinde.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Hukuk İşleri Müdürlüğü, güçlü yönetici ilişkileri ve ekip dayanışmasına sahip olmakla birlikte, anket sonuçlarına göre personel çalışma koşullarını ve genel memnuniyetini düşük bulmaktadır. Özellikle yemek ücreti eşitliğinin sağlanması, eğitim imkanlarının artırılması ve fiziksel çalışma koşullarının iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -10161,6 +10161,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Mali Hizmetler Müdürlüğü, güçlü yönetici ilişkileri ve ekip dayanışması ile güçlü bir çalışma ortamı sunmaktadır. Küçük ekip yapısı (9 kişi) yoğun görev yükü (%80,6) oluştursa da, güçlü stres-destek dengesi (+19,9) ile bu yük karşılanmaktadır. Çalışan ebeveynler için çocuk bakım/etüt hizmeti değerlendirilebilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -10265,8 +10267,6 @@ const RAPOR_VERILERI = {
 <li><strong>Vatandaş yoğunluğu düşük (%50,0):</strong> Belediye ortalamasının 20,6 puan altında - back-office birim olması nedeniyle beklenen.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Mali Hizmetler Müdürlüğü, güçlü yönetici ilişkileri ve ekip dayanışması ile güçlü bir çalışma ortamı sunmaktadır. Küçük ekip yapısı (9 kişi) yoğun görev yükü (%80,6) oluştursa da, güçlü stres-destek dengesi (+19,9) ile bu yük karşılanmaktadır. Çalışan ebeveynler için çocuk bakım/etüt hizmeti değerlendirilebilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -10596,6 +10596,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Koordinasyon İşleri Müdürlüğü, belediyenin en güçlü yönetici ve ekip ilişkilerine sahip birimidir. Güçlü sosyal ortam ve çok düşük iş stresi/yükü ile JD-R modeli açısından ideal profil sergilemektedir. Düşük memnuniyetin kaynağı ücret, servis ve yemekhane gibi maddi koşullardır - bunların iyileştirilmesi memnuniyeti artırabilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -10703,8 +10705,6 @@ const RAPOR_VERILERI = {
 <li><strong>Küçük örneklem (n=7):</strong> Sonuçlar temkinle değerlendirilmelidir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Koordinasyon İşleri Müdürlüğü, belediyenin en güçlü yönetici ve ekip ilişkilerine sahip birimidir. Güçlü sosyal ortam ve çok düşük iş stresi/yükü ile JD-R modeli açısından ideal profil sergilemektedir. Düşük memnuniyetin kaynağı ücret, servis ve yemekhane gibi maddi koşullardır - bunların iyileştirilmesi memnuniyeti artırabilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -11034,6 +11034,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesine rağmen belediyenin en düşük memnuniyet oranına sahiptir. Anket sonuçlarına göre sorun iş yükü değil, personelin yaptığı işle bağ kuramamasıdır. Ücret adaletsizliği algısı, iş-kişi uyumunun ve kamu hizmeti motivasyonunun güçlendirilmesi izlenmesi gereken alanlardır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -11138,8 +11140,6 @@ const RAPOR_VERILERI = {
 <li><strong>Kamu tavsiyesi çok düşük (%76,9):</strong> Belediye ortalamasının 13,8 puan altında - personel başkalarına kamu kurumlarında çalışmayı tavsiye etmiyor.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesine rağmen belediyenin en düşük memnuniyet oranına sahiptir. Anket sonuçlarına göre sorun iş yükü değil, personelin yaptığı işle bağ kuramamasıdır. Ücret adaletsizliği algısı, iş-kişi uyumunun ve kamu hizmeti motivasyonunun güçlendirilmesi izlenmesi gereken alanlardır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -11871,6 +11871,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %100 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir. <strong>Bu birim, belediyedeki diğer birimler için iyi uygulama örneği olarak değerlendirilebilir.</strong></p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -11976,8 +11978,6 @@ const RAPOR_VERILERI = {
 <li><strong>Belediyenin en düşük ruh sağlığı risklerinden:</strong> %39,2 ile personelin ruh sağlığı göstergeleri çok olumlu.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %100 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir. <strong>Bu birim, belediyedeki diğer birimler için iyi uygulama örneği olarak değerlendirilebilir.</strong></p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -12304,6 +12304,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Muhtarlık İşleri Müdürlüğü, güçlü sosyal ortam ve düşük iş stresi/yükü ile belediyenin en memnun birimlerinden biridir. Fiziksel çalışma koşullarının (ortak alanlar, ısıtma/soğutma, teknoloji altyapısı) iyileştirilmesi bu yüksek memnuniyeti daha da pekiştirebilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -12411,8 +12413,6 @@ const RAPOR_VERILERI = {
 <li><strong>Küçük örneklem (n=6):</strong> Sonuçlar temkinle değerlendirilmelidir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Muhtarlık İşleri Müdürlüğü, güçlü sosyal ortam ve düşük iş stresi/yükü ile belediyenin en memnun birimlerinden biridir. Fiziksel çalışma koşullarının (ortak alanlar, ısıtma/soğutma, teknoloji altyapısı) iyileştirilmesi bu yüksek memnuniyeti daha da pekiştirebilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -12741,6 +12741,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İşletme ve İştirakler Müdürlüğü, ankete katılan personel açısından belediyenin en memnun birimlerinden biridir. Güçlü kamu hizmeti motivasyonu, güçlü kurum içi iletişim ve yetkinlik değerlendirme sistemleri öne çıkmaktadır. Ancak çok düşük katılım oranı (%44,4), sonuçların temkinle değerlendirilmesini gerektirmektedir - katılmayan personelin görüşleri bilinmemektedir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -12844,8 +12846,6 @@ const RAPOR_VERILERI = {
 <li><strong>NextSosyal takibi sıfır:</strong> Her iki NextSosyal hesabında da %0 takip - platform farkındalığı düşük olabilir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">İşletme ve İştirakler Müdürlüğü, ankete katılan personel açısından belediyenin en memnun birimlerinden biridir. Güçlü kamu hizmeti motivasyonu, güçlü kurum içi iletişim ve yetkinlik değerlendirme sistemleri öne çıkmaktadır. Ancak çok düşük katılım oranı (%44,4), sonuçların temkinle değerlendirilmesini gerektirmektedir - katılmayan personelin görüşleri bilinmemektedir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -13174,6 +13174,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Park ve Bahçeler Müdürlüğü, güçlü çalışma koşulları ve görev netliğine rağmen yüksek iş stresi/yükü ve ruh sağlığı riski sergileyen bir birimdir. Saha çalışmasının yarattığı fiziksel ve duygusal yükün hafifletilmesi, personel ruh sağlığının izlenmesi ve destek mekanizmalarının güçlendirilmesi önerilir.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -13277,8 +13279,6 @@ const RAPOR_VERILERI = {
 <li><strong>Saha koşulları etkisi:</strong> Dış mekan çalışması, hava koşullarına maruz kalma ve fiziksel işin yarattığı stres olası etkenler.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Park ve Bahçeler Müdürlüğü, güçlü çalışma koşulları ve görev netliğine rağmen yüksek iş stresi/yükü ve ruh sağlığı riski sergileyen bir birimdir. Saha çalışmasının yarattığı fiziksel ve duygusal yükün hafifletilmesi, personel ruh sağlığının izlenmesi ve destek mekanizmalarının güçlendirilmesi önerilir.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
@@ -13599,6 +13599,8 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Ruhsat ve Denetim Müdürlüğü, düşük iş stresi/yükü ve güçlü kurum desteği dengesine sahip, işlevsel bir yapıda faaliyet göstermektedir. Ruhsat ve Denetim Müdürlüğüne göre eğitim faaliyetlerinin artırılması izlenmesi gereken alan olarak öne çıkmaktadır.</p>
+
 <table class="indicators-table">
     <thead>
         <tr>
@@ -13703,8 +13705,6 @@ const RAPOR_VERILERI = {
 <li><strong>Eğitim-memnuniyet ayrışması:</strong> Eğitim & Gelişim düşük (%68,2) olmasına rağmen genel memnuniyet yüksek (%90,9). Personel eğitim eksikliğinden ziyade iş ilişkilerine daha fazla önem veriyor olabilir.</li>
 </ul>
 
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Sonuç</h4>
-<p style="margin-top:0.3em;">Ruhsat ve Denetim Müdürlüğü, düşük iş stresi/yükü ve güçlü kurum desteği dengesine sahip, işlevsel bir yapıda faaliyet göstermektedir. Ruhsat ve Denetim Müdürlüğüne göre eğitim faaliyetlerinin artırılması izlenmesi gereken alan olarak öne çıkmaktadır.</p>
 </div>
 
 <h2>1. Tema Bazlı Performans Analizi</h2>
