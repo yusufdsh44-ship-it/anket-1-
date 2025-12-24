@@ -43,10 +43,10 @@ const RAPOR_VERILERI = {
         </tr>
         <tr class="highlight-row">
             <td class="label">
-                <strong style="font-size:10.5pt;">Denge (Müdürlük Ortalaması)</strong>
-                <span class="label-desc">(her müdürlüğün destek-stres farkı hesaplanıp 30 müdürlüğün ortalaması alınmıştır; belediye geneli %82,3-%69,1=+13,2 yerine müdürlük ortalaması saha/büro karşılaştırmasıyla tutarlıdır)</span>
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
-            <td class="value" style="font-size:12pt;">+14,5</td>
+            <td class="value" style="font-size:12pt;">+13,2</td>
         </tr>
         <tr>
             <td class="label">
@@ -198,13 +198,12 @@ const RAPOR_VERILERI = {
 </table>
 
 <p style="text-align:center; margin:0.8em 0; padding:10px; background:#f0f0f0; border:1px solid #999; font-size:10pt;">
-<strong>BELEDİYE GENELİ DENGE PUANI (Müdürlük Ortalaması):</strong> <strong>+14,5 puan</strong><br>
-<span style="font-size:9pt; color:#666;">Her müdürlüğün denge puanı = Kurumsal Destek - İş Stresi/Yükü formülüyle hesaplanmış, 30 müdürlüğün ortalaması alınmıştır.</span>
+<strong>DENGE</strong> = Kurumsal Destek (%82,3) − İş Stresi/Yükü (%69,1) = <strong>+13,2 puan</strong>
 </p>
 
 <p style="font-size:9.5pt;">Bu ankette memnuniyet oranının yanı sıra, endüstriyel psikoloji alanında yaygın olarak kullanılan <strong>JD-R Modeli</strong> ile Kurum Desteği - İş Stresi/Yükü Dengesi de ölçülmüştür. Memnuniyet skoru anketin sonucunu, Kurum Desteği - İş Stresi/Yükü Dengesi ise bu sonucun nedenini göstermektedir. Bu sayede memnuniyetin sürdürülebilir olup olmadığı ve hangi birimlerde önleyici müdahale gerektiği tespit edilebilmektedir.</p>
 
-<p>Belediye geneli denge <strong>+14,5 puan</strong> ile pozitiftir. Ancak birimler arasında önemli farklılıklar bulunmaktadır:</p>
+<p>Belediye geneli denge <strong>+13,2 puan</strong> ile pozitiftir. Ancak birimler arasında önemli farklılıklar bulunmaktadır:</p>
 <ul style="margin-top:0.5em;">
 <li><strong>3 müdürlükte denge negatiftir</strong> (öncelikli olarak ele alınmalıdır): Veteriner İşleri (-3,5), Gelirler (-2,5), İmar ve Şehircilik (-2,3)</li>
 <li><strong>Saha-büro farkı dikkat çekicidir:</strong> Saha birimleri ortalama +2,8 denge ile düşük seviyede, büro birimleri ise +16,8 ile sağlıklı seviyededir. Bu 14 puanlık fark, saha personelinin daha fazla desteğe ihtiyaç duyduğunu göstermektedir.</li>
@@ -252,7 +251,7 @@ const RAPOR_VERILERI = {
 <tr style="background:#ecf0f1; font-weight:bold;">
 <td style="padding:6px;">BELEDİYE GENELİ</td>
 <td style="text-align:center; padding:6px;">%90,8</td>
-<td style="text-align:center; padding:6px;">+14,5</td>
+<td style="text-align:center; padding:6px;">+13,2</td>
 <td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır. 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu, iş-kişi uyumu, topluma hizmet gururu. Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis, ücret, ortak alanlar. Saha-büro birimleri arasında 14 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
 </tr>
 <tr style="background:#ffebee;">
@@ -887,7 +886,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+5,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-7,7</td>
         </tr>
         <tr class="highlight-row">
@@ -1328,7 +1327,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+24,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+11,3</td>
         </tr>
         <tr>
@@ -1778,7 +1777,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt; color:#c00;">-3,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-16,7 ⚠️</td>
         </tr>
         <tr class="highlight-row">
@@ -2208,7 +2207,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+27,7</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+14,5</td>
         </tr>
         <tr class="highlight-row">
@@ -2639,7 +2638,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+19,1</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+5,9</td>
         </tr>
         <tr class="highlight-row">
@@ -3066,7 +3065,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+22,3</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+9,1</td>
         </tr>
         <tr>
@@ -3516,7 +3515,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+5,2</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-8,0</td>
         </tr>
         <tr>
@@ -3968,7 +3967,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+23,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+10,7</td>
         </tr>
         <tr>
@@ -4400,7 +4399,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+3,1</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-10,1</td>
         </tr>
         <tr class="highlight-row">
@@ -4832,7 +4831,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">-2,3</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-15,5</td>
         </tr>
         <tr>
@@ -5277,7 +5276,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+1,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-11,7</td>
         </tr>
         <tr>
@@ -5730,7 +5729,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+22,3</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+9,1</td>
         </tr>
         <tr>
@@ -6180,7 +6179,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">-2,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-15,7</td>
         </tr>
         <tr>
@@ -6629,7 +6628,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+24,2</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+11,0</td>
         </tr>
         <tr>
@@ -7064,7 +7063,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+2,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-10,3</td>
         </tr>
         <tr class="highlight-row">
@@ -7484,7 +7483,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+21,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+8,7</td>
         </tr>
         <tr>
@@ -7929,7 +7928,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+1,7</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-11,5</td>
         </tr>
         <tr>
@@ -8371,7 +8370,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+10,8</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-2,4</td>
         </tr>
         <tr>
@@ -8819,7 +8818,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+6,0</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-7,2</td>
         </tr>
         <tr>
@@ -9258,7 +9257,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+0,7</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-12,5</td>
         </tr>
         <tr>
@@ -9693,7 +9692,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+11,1</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-2,1</td>
         </tr>
         <tr>
@@ -10129,7 +10128,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+19,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+6,7</td>
         </tr>
         <tr>
@@ -10560,7 +10559,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+34,4</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+21,2</td>
         </tr>
         <tr>
@@ -10994,7 +10993,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+24,5</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+11,3</td>
         </tr>
         <tr>
@@ -11411,7 +11410,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+34,3</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+21,1</td>
         </tr>
         <tr>
@@ -11809,7 +11808,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+22,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+9,7</td>
         </tr>
         <tr>
@@ -12238,7 +12237,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+23,2</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+10,0</td>
         </tr>
         <tr>
@@ -12671,7 +12670,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+15,0</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+1,8</td>
         </tr>
         <tr>
@@ -13100,7 +13099,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+7,4</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff negative">-5,8</td>
         </tr>
         <tr>
@@ -13521,7 +13520,7 @@ const RAPOR_VERILERI = {
                 <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
             </td>
             <td class="value" style="font-size:12pt;">+25,9</td>
-            <td class="avg">+14,5</td>
+            <td class="avg">+13,2</td>
             <td class="diff positive">+12,7 (Çok sağlıklı)</td>
         </tr>
         <tr>
