@@ -5492,25 +5492,9 @@
                 setTimeout(() => {
                     const iframe = document.getElementById('belediyeGeneliIframe');
                     if (iframe) {
-                        const scrollToTable = () => {
-                            try {
-                                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                                const ozetTablosu = iframeDoc.getElementById('ozet-tablosu');
-                                if (ozetTablosu) {
-                                    ozetTablosu.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                }
-                            } catch (e) {
-                                console.log('Iframe scroll error:', e);
-                            }
-                        };
-                        
-                        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-                            scrollToTable();
-                        } else {
-                            iframe.onload = scrollToTable;
-                        }
+                        iframe.src = '/attached_assets/baskan_raporu_v2-6_1766557449901.html#ozet-tablosu';
                     }
-                }, 100);
+                }, 150);
             }
         };
 
