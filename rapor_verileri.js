@@ -390,7 +390,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>%80,8</strong></td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük memnuniyeti (%80,8)</strong> ancak güçlü denge - düşük iş stresi/yükü ve yönetici ilişkileri güçlü. Kritik sorun: iş-kişi uyumu belediyenin en düşüğü. "Yeni KHK'lı personelin eski memurlardan fazla maaş alması adil değil" şikayeti iş bağını zayıflatıyor. Kamu tavsiyesi çok düşük.</td>
+<td style="padding:6px;">Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı. Yönetici ilişkileri ve ekip dayanışması güçlü düzeyde. Personel gelişimi ve motivasyonu artırıcı çalışmalar planlanabilir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AFET İŞLERİ</td>
@@ -10942,7 +10942,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesine rağmen belediyenin en düşük memnuniyet oranına sahiptir. Anket sonuçlarına göre sorun iş yükü değil, personelin yaptığı işle bağ kuramamasıdır. Ücret adaletsizliği algısı, iş-kişi uyumunun ve kamu hizmeti motivasyonunun güçlendirilmesi izlenmesi gereken alanlardır.</p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,5) ile rahat bir çalışma ortamına sahiptir. Yönetici ilişkileri ve ekip dayanışması güçlü düzeydedir. Personel gelişimi ve motivasyonu artırıcı çalışmalar ile birimin potansiyeli daha da güçlendirilebilir.</p>
 
 <table class="indicators-table">
     <thead>
