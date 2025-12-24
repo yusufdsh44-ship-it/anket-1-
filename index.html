@@ -5429,7 +5429,7 @@
                 setTimeout(() => pageManager.populateMudurlukQuickNav(), 500);
             },
 
-            mudurlukNavExpanded: true,
+            mudurlukNavExpanded: false,
 
             toggleAllMudurlukler: () => {
                 pageManager.mudurlukNavExpanded = !pageManager.mudurlukNavExpanded;
@@ -5448,9 +5448,25 @@
                         .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'));
                 }
 
-                // İlk 5 müdürlük (veya tümü expanded ise)
-                const displayCount = pageManager.mudurlukNavExpanded ? mudurlukler.length : 5;
-                const visibleMudurlukler = mudurlukler.slice(0, displayCount);
+                // Seçili müdürlük varsa en üste taşı
+                let visibleMudurlukler = [];
+                const selectedKey = pageManager.selectedMudurluk;
+                
+                if (selectedKey && !pageManager.mudurlukNavExpanded) {
+                    // Seçili müdürlüğü bul
+                    const selectedEntry = mudurlukler.find(([key]) => key === selectedKey);
+                    if (selectedEntry) {
+                        // Seçili müdürlük en üstte, sonra diğer 4 tanesi
+                        const others = mudurlukler.filter(([key]) => key !== selectedKey).slice(0, 4);
+                        visibleMudurlukler = [selectedEntry, ...others];
+                    } else {
+                        visibleMudurlukler = mudurlukler.slice(0, 5);
+                    }
+                } else {
+                    // Normal davranış
+                    const displayCount = pageManager.mudurlukNavExpanded ? mudurlukler.length : 5;
+                    visibleMudurlukler = mudurlukler.slice(0, displayCount);
+                }
 
                 let html = '';
 
@@ -6055,10 +6071,9 @@
                 if (event.data && event.data.type === 'navigateToMudurluk') {
                     const mudurlukKey = event.data.mudurluk;
                     if (mudurlukKey && pageManager.goToMudurlukRapor) {
-                        // Listeyi genişlet ki seçili müdürlük görünsün
-                        pageManager.mudurlukNavExpanded = true;
-                        pageManager.populateMudurlukQuickNav();
+                        // Seçili müdürlüğü ayarla ve listeyi yenile (seçili en üste gelecek)
                         pageManager.goToMudurlukRapor(mudurlukKey);
+                        pageManager.populateMudurlukQuickNav();
                     }
                 }
                 
