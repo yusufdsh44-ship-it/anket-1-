@@ -366,16 +366,12 @@
         }
 
         .iframe-fullscreen-container {
-            width: calc(100% + 64px);
+            width: 100%;
             height: calc(100vh - 80px);
-            margin: -20px -32px -60px -32px;
         }
 
-        @media (max-width: 768px) {
-            .iframe-fullscreen-container {
-                width: calc(100% + 24px);
-                margin: -12px -12px -40px -12px;
-            }
+        .content-body.no-padding {
+            padding: 0 !important;
         }
 
         .footer-signature {
@@ -5348,6 +5344,12 @@
                 const activeMenuItem = document.querySelector(`.menu-item[data-page="${pageId}"]`);
                 if (activeMenuItem) {
                     activeMenuItem.classList.add('active');
+                }
+
+                if (pageId === 'belediye-geneli') {
+                    contentBody.classList.add('no-padding');
+                } else {
+                    contentBody.classList.remove('no-padding');
                 }
 
                 if (pageManager.pages[pageId]) {
