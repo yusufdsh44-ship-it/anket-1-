@@ -5465,17 +5465,25 @@
                 // Hover effect ekle
                 quickList.querySelectorAll('.mudurluk-quick-item').forEach(item => {
                     const arrow = item.querySelector('.material-icons-outlined');
+                    const key = item.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
                     item.onmouseover = () => { 
-                        item.style.background = 'rgba(168,144,128,0.15)'; 
-                        item.style.color = '#5A534A';
-                        if(arrow) { arrow.style.opacity = '1'; arrow.style.transform = 'translateX(2px)'; }
+                        if (key !== pageManager.selectedMudurluk) {
+                            item.style.background = 'rgba(168,144,128,0.15)'; 
+                            item.style.color = '#5A534A';
+                            if(arrow) { arrow.style.opacity = '1'; arrow.style.transform = 'translateX(2px)'; }
+                        }
                     };
                     item.onmouseout = () => { 
-                        item.style.background = 'transparent'; 
-                        item.style.color = '#7B746A';
-                        if(arrow) { arrow.style.opacity = '0.5'; arrow.style.transform = 'translateX(0)'; }
+                        if (key !== pageManager.selectedMudurluk) {
+                            item.style.background = 'transparent'; 
+                            item.style.color = '#7B746A';
+                            if(arrow) { arrow.style.opacity = '0.5'; arrow.style.transform = 'translateX(0)'; }
+                        }
                     };
                 });
+
+                // Seçili müdürlüğü vurgula
+                pageManager.highlightSelectedMudurluk();
 
                 // Show all button
                 if (showAllBtn && mudurlukler.length > 5) {
@@ -5486,12 +5494,15 @@
                 }
             },
 
+            selectedMudurluk: null,
+
             goToMudurlukRapor: (mudurlukKey) => {
+                pageManager.selectedMudurluk = mudurlukKey;
                 pageManager.showPage('mudurluk-raporlari');
+                pageManager.highlightSelectedMudurluk();
                 closeSidebarIfMobile();
                 
                 setTimeout(() => {
-                    // Filtreyi ayarla ve scroll
                     const filter = document.getElementById('mudurlukFilter');
                     if (filter) {
                         filter.value = mudurlukKey;
@@ -5502,6 +5513,26 @@
                         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }, 300);
+            },
+
+            highlightSelectedMudurluk: () => {
+                const items = document.querySelectorAll('.mudurluk-quick-item');
+                items.forEach(item => {
+                    const key = item.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                    if (key === pageManager.selectedMudurluk) {
+                        item.style.background = '#8B7355';
+                        item.style.color = 'white';
+                        item.style.fontWeight = '500';
+                        const arrow = item.querySelector('.material-icons-outlined');
+                        if (arrow) { arrow.style.opacity = '1'; arrow.style.color = 'white'; }
+                    } else {
+                        item.style.background = 'transparent';
+                        item.style.color = '#7B746A';
+                        item.style.fontWeight = '400';
+                        const arrow = item.querySelector('.material-icons-outlined');
+                        if (arrow) { arrow.style.opacity = '0.5'; arrow.style.color = 'inherit'; }
+                    }
+                });
             },
 
             goToOzetTablosu: () => {
@@ -5545,17 +5576,24 @@
 
                 quickList.querySelectorAll('.mudurluk-quick-item').forEach(item => {
                     const arrow = item.querySelector('.material-icons-outlined');
+                    const key = item.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
                     item.onmouseover = () => { 
-                        item.style.background = 'rgba(168,144,128,0.15)'; 
-                        item.style.color = '#5A534A';
-                        if(arrow) { arrow.style.opacity = '1'; arrow.style.transform = 'translateX(2px)'; }
+                        if (key !== pageManager.selectedMudurluk) {
+                            item.style.background = 'rgba(168,144,128,0.15)'; 
+                            item.style.color = '#5A534A';
+                            if(arrow) { arrow.style.opacity = '1'; arrow.style.transform = 'translateX(2px)'; }
+                        }
                     };
                     item.onmouseout = () => { 
-                        item.style.background = 'transparent'; 
-                        item.style.color = '#7B746A';
-                        if(arrow) { arrow.style.opacity = '0.5'; arrow.style.transform = 'translateX(0)'; }
+                        if (key !== pageManager.selectedMudurluk) {
+                            item.style.background = 'transparent'; 
+                            item.style.color = '#7B746A';
+                            if(arrow) { arrow.style.opacity = '0.5'; arrow.style.transform = 'translateX(0)'; }
+                        }
                     };
                 });
+
+                pageManager.highlightSelectedMudurluk();
 
                 if (showAllBtn) {
                     showAllBtn.style.display = term ? 'none' : (mudurlukler.length > 5 ? 'block' : 'none');
