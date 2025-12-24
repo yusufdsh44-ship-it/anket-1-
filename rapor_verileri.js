@@ -252,13 +252,13 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">BELEDİYE GENELİ</td>
 <td style="text-align:center; padding:6px;">%90,8</td>
 <td style="text-align:center; padding:6px;">+13,2</td>
-<td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır (%70,4). 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu (%92,8), iş-kişi uyumu (%91,3), topluma hizmet gururu (%94,5). Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis (%67,7), ücret (%69,0), ortak alanlar (%70,4). Saha-büro birimleri arasında 14 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
+<td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır. 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu, iş-kişi uyumu, topluma hizmet gururu. Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis, ücret, ortak alanlar. Saha-büro birimleri arasında 14 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
 </tr>
 <tr style="background:#ffebee;">
 <td style="padding:6px;">TEMİZLİK İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%91,9</td>
 <td style="text-align:center; padding:6px;">+5,5</td>
-<td style="padding:6px;">%91,9 memnuniyet ve %94,9 kamu hizmeti motivasyonu ile güçlü performans. Ancak şantiye altyapısı en kritik sorun: 66 kişi tuvalet, soyunma odası ve hijyen şikayeti bildirmiştir. Yönetici ilişkileri (%82,0) belediye ortalamasının altında, amir eşitliği algısı düşük. Yüksek sigara kullanımı (%56,7) ve en düşük katılım oranı (%37,2) dikkat çekicidir.</td>
+<td style="padding:6px;">Güçlü kamu hizmeti motivasyonu. Ancak şantiye altyapısı en kritik sorun: 66 kişi tuvalet, soyunma odası ve hijyen şikayeti bildirmiştir. Yönetici ilişkileri belediye ortalamasının altında, amir eşitliği algısı düşük. En düşük katılım oranı (%37,2) dikkat çekicidir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">DESTEK HİZMETLERİ</td>
