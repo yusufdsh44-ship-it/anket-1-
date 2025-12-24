@@ -206,7 +206,7 @@ const RAPOR_VERILERI = {
 <p>Belediye geneli denge <strong>+13,2 puan</strong> ile pozitiftir. Ancak birimler arasında önemli farklılıklar bulunmaktadır:</p>
 <ul style="margin-top:0.5em;">
 <li><strong>3 müdürlükte denge negatiftir</strong> (öncelikli olarak ele alınmalıdır): Veteriner İşleri (-3,5), Gelirler (-2,5), İmar ve Şehircilik (-2,3)</li>
-<li><strong>Saha-büro farkı dikkat çekicidir:</strong> Saha birimleri ortalama +2,8 denge ile düşük seviyede, büro birimleri ise +16,8 ile sağlıklı seviyededir. Bu 14 puanlık fark, saha personelinin daha fazla desteğe ihtiyaç duyduğunu göstermektedir.</li>
+<li><strong>Saha-büro farkı dikkat çekicidir:</strong> Saha birimleri (9 birim) ortalama +7,6 denge ile orta seviyede, büro birimleri (21 birim) ise +17,4 ile sağlıklı seviyededir. Bu 10 puanlık fark, saha personelinin daha fazla desteğe ihtiyaç duyduğunu göstermektedir.</li>
 </ul>
 
 <p><strong>🧠 Ruh Sağlığı Bulguları</strong></p>
@@ -252,7 +252,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">BELEDİYE GENELİ</td>
 <td style="text-align:center; padding:6px;">%90,8</td>
 <td style="text-align:center; padding:6px;">+13,2</td>
-<td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır. 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu, iş-kişi uyumu, topluma hizmet gururu. Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis, ücret, ortak alanlar. Saha-büro birimleri arasında 14 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
+<td style="padding:6px;">2.089 personelden 1.470'i ankete katılmıştır. 456 kişi açık uçlu yorum yazmıştır. Güçlü yönler: kamu hizmeti motivasyonu, iş-kişi uyumu, topluma hizmet gururu. Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük skorlar: yemek (%57,2), servis, ücret, ortak alanlar. Saha-büro birimleri arasında 10 puanlık denge farkı bulunmaktadır. 3 müdürlükte negatif denge tespit edilmiştir.</td>
 </tr>
 <tr style="background:#ffebee;">
 <td style="padding:6px;">TEMİZLİK İŞLERİ</td>
@@ -594,23 +594,23 @@ const RAPOR_VERILERI = {
     <thead>
         <tr>
             <th>Gösterge</th>
-            <th>Saha Birimleri (5)</th>
-            <th>Büro Birimleri (25)</th>
+            <th>Saha Birimleri (9)</th>
+            <th>Büro Birimleri (21)</th>
             <th>Fark</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><strong>İş Stresi/Yükü</strong></td>
-            <td class="stat-value" style="color:#c0392b;">%77,5</td>
-            <td class="stat-value">%65,5</td>
-            <td class="highlight-critical">+12,0</td>
+            <td class="stat-value" style="color:#c0392b;">%73,2</td>
+            <td class="stat-value">%66,8</td>
+            <td class="highlight-warning">+6,4</td>
         </tr>
         <tr>
             <td><strong>Denge (Kurum Desteği - İş Stresi/Yükü)</strong></td>
-            <td class="stat-value" style="color:#c0392b;">+2,8</td>
-            <td class="stat-value">+16,8</td>
-            <td class="highlight-critical">-14,0</td>
+            <td class="stat-value" style="color:#e67e22;">+7,6</td>
+            <td class="stat-value">+17,4</td>
+            <td class="highlight-warning">-9,8</td>
         </tr>
         <tr>
             <td><strong>Genel Memnuniyet</strong></td>
@@ -621,7 +621,7 @@ const RAPOR_VERILERI = {
     </tbody>
 </table>
 
-<p><strong>Saha-Büro Analizi:</strong> Saha birimleri (Temizlik, Zabıta, Fen İşleri, Park Bahçeler, Veteriner) büro birimlerine kıyasla <strong>12 puan daha yüksek iş stresi/yükü</strong> ve <strong>14 puan daha düşük denge</strong> yaşamaktadır. Saha birimlerinde +2,8 denge düşük düzeydedir (pozitif ama sınırda). Bu grupta Veteriner İşleri (-3,5) negatif dengeli iken, Temizlik (+5,5), Zabıta (+3,1), Fen İşleri (+1,7) ve Park Bahçeler (+7,4) düşük pozitif denge ile takip edilmelidir.</p>
+<p><strong>Saha-Büro Analizi:</strong> Saha birimleri (Temizlik, Zabıta, Fen İşleri, Park Bahçeler, Veteriner, İklim Değişikliği, Destek Hizmetleri, Ruhsat ve Denetim, Yapı Kontrol) büro birimlerine kıyasla <strong>6,4 puan daha yüksek iş stresi/yükü</strong> ve <strong>10 puan daha düşük denge</strong> yaşamaktadır. Saha birimlerinde +7,6 denge orta düzeydedir. Bu grupta Veteriner İşleri (-3,5) negatif dengeli iken, İklim Değişikliği (+0,7), Fen İşleri (+1,7), Yapı Kontrol (+2,9), Zabıta (+3,1) düşük pozitif denge ile takip edilmelidir.</p>
 
 <h2>4. Denge (Kurum Desteği - İş Stresi/Yükü) (En Düşük Dengeli Birimler)</h2>
 
