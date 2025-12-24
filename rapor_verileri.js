@@ -11223,14 +11223,8 @@ const RAPOR_VERILERI = {
 
 <h4>Öne Çıkan Temalar:</h4>
 
-<p><strong>1. Ücret Adaletsizliği (2 yorum - baskın tema):</strong></p>
-<div class="quote">"Belediyemize yeni katılan henüz mezun olmuş KHK personelin mühendis unvanına sahip olması elbette önemlidir; ancak daha iş bilmeden, yıllarını belediye hizmetine adamış tecrübeli memurlardan daha fazla maaş alması çalışma barışı ve aidiyet duygusu açısından son derece olumsuz."</div>
-<div class="quote">"Kurum içinde adil bir ücret düzeni olabilir. Yeni mezun personellerin (KYK) eski memur personelden fazla ücret alması hiç adil değil."</div>
-
-<p><strong>2. Yemek Kalitesi (1 yorum):</strong></p>
+<p><strong>1. Yemek Kalitesi (1 yorum):</strong></p>
 <div class="quote">"Genel olarak yemek kalitesinin daha iyi olmasını talep ediyorum."</div>
-
-<p><strong>Yorum Analizi:</strong> Açık uçlu yorumlarda <strong>ücret adaletsizliği</strong> baskın temadır. Yeni KHK'lı personelin tecrübeli memurlardan daha fazla maaş alması, "çalışma barışı ve aidiyet duygusu açısından olumsuz" olarak nitelendirilmektedir. Bu bulgu, düşük iş-kişi uyumu (%79,5) ve özellikle S2 işi seçtiği için mutluluk (%71,2) skorlarıyla doğrudan ilişkilidir.</p>
 
 <h2>4. Ruh Sağlığı Göstergeleri</h2>
 <table>
