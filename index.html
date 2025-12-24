@@ -5489,12 +5489,24 @@
                 pageManager.showPage('belediye-geneli');
                 closeSidebarIfMobile();
                 
-                setTimeout(() => {
+                const checkAndScroll = () => {
                     const iframe = document.getElementById('belediyeGeneliIframe');
-                    if (iframe && iframe.contentWindow) {
-                        iframe.contentWindow.postMessage({ type: 'scrollToOzetTablosu' }, '*');
+                    if (iframe) {
+                        const sendMessage = () => {
+                            if (iframe.contentWindow) {
+                                iframe.contentWindow.postMessage({ type: 'scrollToOzetTablosu' }, '*');
+                            }
+                        };
+                        
+                        if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                            sendMessage();
+                        } else {
+                            iframe.addEventListener('load', sendMessage, { once: true });
+                        }
                     }
-                }, 500);
+                };
+                
+                setTimeout(checkAndScroll, 100);
             }
         };
 
