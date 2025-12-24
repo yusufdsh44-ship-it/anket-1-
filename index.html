@@ -347,6 +347,15 @@
             position: sticky;
             top: 0;
             z-index: 20;
+            transition: padding 0.2s, height 0.2s;
+        }
+
+        .content-header.minimized {
+            padding: 8px 32px;
+        }
+
+        .content-header.minimized h2 {
+            font-size: 11px;
         }
 
         .content-header h2 {
@@ -367,7 +376,7 @@
 
         .iframe-fullscreen-container {
             width: 100%;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 44px);
         }
 
         .content-body.no-padding {
@@ -5346,10 +5355,13 @@
                     activeMenuItem.classList.add('active');
                 }
 
+                const contentHeader = document.querySelector('.content-header');
                 if (pageId === 'belediye-geneli') {
                     contentBody.classList.add('no-padding');
+                    if (contentHeader) contentHeader.classList.add('minimized');
                 } else {
                     contentBody.classList.remove('no-padding');
+                    if (contentHeader) contentHeader.classList.remove('minimized');
                 }
 
                 if (pageManager.pages[pageId]) {
