@@ -343,23 +343,14 @@
         .content-header {
             background: rgba(251, 247, 239, 0.95);
             backdrop-filter: blur(8px);
-            padding: 24px 32px;
+            padding: 8px 32px;
             position: sticky;
             top: 0;
             z-index: 20;
-            transition: padding 0.2s, height 0.2s;
-        }
-
-        .content-header.minimized {
-            padding: 8px 32px;
-        }
-
-        .content-header.minimized h2 {
-            font-size: 11px;
         }
 
         .content-header h2 {
-            font-size: 13px;
+            font-size: 11px;
             color: #9A8F80;
             margin-bottom: 0;
             font-weight: 500;
@@ -5355,13 +5346,10 @@
                     activeMenuItem.classList.add('active');
                 }
 
-                const contentHeader = document.querySelector('.content-header');
                 if (pageId === 'belediye-geneli') {
                     contentBody.classList.add('no-padding');
-                    if (contentHeader) contentHeader.classList.add('minimized');
                 } else {
                     contentBody.classList.remove('no-padding');
-                    if (contentHeader) contentHeader.classList.remove('minimized');
                 }
 
                 if (pageManager.pages[pageId]) {
