@@ -258,181 +258,181 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">TEMİZLİK İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%91,9</td>
 <td style="text-align:center; padding:6px;">+5,5</td>
-<td style="padding:6px;">Belediyenin en kalabalık birimi olmakla birlikte en düşük katılım oranı (%37,2) dikkat çekmektedir - 578 personelden yalnızca 215'ine ulaşılabilmiştir. <strong>66 kişi şantiye altyapısından şikayetçidir:</strong> "500 küsür insana 3 tuvalet yetersiz", soyunma odası, dolap ve çay ocağı bulunmadığı, tuvaletlerin hijyenik olmadığı ifade edilmektedir. Amirlerden "köle gibi aşağılayıcı tavır" şikayeti mevcuttur. Şoförler kaza değer kaybı kesintisinden şikayetçidir. Topluma hizmet motivasyonu yüksek olmakla birlikte fiziksel koşullar ve yönetici iletişimi iyileştirilmelidir.</td>
+<td style="padding:6px;">%91,9 memnuniyet ve %94,9 kamu hizmeti motivasyonu ile güçlü performans. Ancak şantiye altyapısı en kritik sorun: 66 kişi tuvalet, soyunma odası ve hijyen şikayeti bildirmiştir. Yönetici ilişkileri (%82,0) belediye ortalamasının altında, amir eşitliği algısı düşük. Yüksek sigara kullanımı (%56,7) ve en düşük katılım oranı (%37,2) dikkat çekicidir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">DESTEK HİZMETLERİ</td>
 <td style="text-align:center; padding:6px; color:#27ae60;">%95,1</td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;">Belediyenin en yüksek eğitim-gelişim skoruna sahip birimidir. Mesai dışı sosyal medya paylaşımı istendiği şikayeti mevcuttur. Saha personeli araç ve ekipman takviyesi talep etmektedir.</td>
+<td style="padding:6px;">Belediyenin en yüksek eğitim-gelişim skoru (%85,3, +9,5 puan). %95,1 memnuniyet ve +24,5 denge ile çok güçlü performans. Çalışma arkadaşları (%93,9) ve yönetici ilişkileri (%92,7) belediyenin en yüksek düzeylerinde. Tek sorun yemekhane (%50,0, -7,2) ve ücret (%63,3, -5,7) memnuniyeti. Saha personeli araç/ekipman takviyesi talep etmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">ZABITA</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%83,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+3,1</td>
-<td style="padding:6px;">Belediyenin en yüksek açık uçlu yorum oranına sahip birimlerinden biridir - 62 kişi (%55,4) görüş bildirmiştir. Ortak alan koşulları belediyenin en düşük skorlarındandır: çay ocağı, dinlenme alanı, soyunma odaları yetersiz bulunmaktadır. <strong>28 kişi ücret/SDS şikayeti bildirmiştir:</strong> İstanbul'daki diğer belediye zabıtalarıyla eşit haklar talep edilmektedir. Haftalık 40 saat çalışma ve yönetmelikte geçen ücretsiz spor salonu hakkı istenmektedir. Servis güzergahı yetersiz bulunmaktadır. Topluma hizmet motivasyonu ve ekip dayanışması güçlü düzeydedir.</td>
+<td style="padding:6px;">Yüksek iş stresi/yükü (%77,9) ve en düşük ortak alan skoru (%47,3). 62 kişi (%55,4) açık uçlu yorum yazarak görüş bildirme motivasyonu göstermiştir. 28 kişi ücret/SDS şikayeti: İstanbul geneli zabıta haklarıyla eşitlik talep edilmektedir. Kamu hizmeti motivasyonu (%92,9) güçlü ancak fiziksel koşullar yetersiz, servis güzergahı iyileştirme beklemektedir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">GENÇLİK VE SPOR</td>
 <td style="text-align:center; padding:6px;">%92,7</td>
 <td style="text-align:center; padding:6px;">+22,3</td>
-<td style="padding:6px;">10 temanın tamamında belediye ortalaması üzerinde skor almıştır. Ekip uyumu ve yönetici ilişkileri güçlüdür. Personel düğün salonu indirimli/ücretsiz kullanım talep etmektedir.</td>
+<td style="padding:6px;">10 temanın tamamında belediye ortalaması üzerinde performans - belediyenin en dengeli birimlerinden. Çalışma arkadaşları (%92,5), yönetici ilişkileri (%92,2) ve kamu hizmeti motivasyonu (%95,4) çok güçlü. Düşük iş stresi/yükü (%55,9) ile +22,3 denge. Belediyenin en düşük sigara kullanımlarından (%29,6). Tek zayıf alan yemekhane (%49,4, -7,8).</td>
 </tr>
 <tr style="background:#ffebee;">
 <td style="padding:6px;">FEN İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%88,1</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,7</td>
-<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski bu birimde tespit edilmiştir.</strong> Saha araçları sorunu öne çıkmaktadır: "Araçlar çok kötü, aşırı sarsıntılar bizi çok yoruyor", "Saha araçları çok eski ve sık arıza yapıyor", "Direksiyon ve debriyaj kullanışsız" ifadeleri yer almaktadır. Yemek kalitesi şikayeti mevcuttur: "Yemekhanede yemek yedikten sonra sürekli rahatsızlık hissediyorum" denilmektedir. Amir eşitliği algısı düşük düzeyde kalmaktadır. Sigara kullanımı belediye ortalamasının üzerindedir. Kamu hizmeti motivasyonu güçlü olmakla birlikte fiziksel koşullar yetersizdir.</td>
+<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski (%61,9)</strong> bu birimde tespit edilmiştir. Kamu hizmeti motivasyonu (%93,5) ve ekip uyumu (%88,9) güçlü olmakla birlikte, saha araçları sorunu kritik: "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği (%76,9, -5,9) düşük, sigara kullanımı (%62,7) yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz görünmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">SOSYAL DESTEK</td>
 <td style="text-align:center; padding:6px;">%89,9</td>
 <td style="text-align:center; padding:6px;">+5,2</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından birine sahiptir. Ancak görev tanımları belirsiz, eğitim imkanları yetersiz değerlendirilmektedir. 7 kişi yönetici ilişkileri şikayeti bildirmiştir. "Kurum içi etkinlikler, kişisel gelişim kursları, geziler arttırılmalı" talebi mevcuttur. İş ortamının daha keyifli hale getirilmesi istenmektedir.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından (%95,7) birine sahip. Topluma hizmet gururu (%98,3), işin toplum için faydalılığı (%96,6) tam puana yakın. Ancak görev-rol netliği (%80,7, -5,9) ve eğitim imkanları (%66,7, -9,1) zayıf. Çalışma arkadaşları (%89,9) güçlü olmasına rağmen 7 kişi yönetici ilişkileri şikayeti bildirmiştir. Kurum içi etkinlik ve gezi talebi yaygındır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">KÜLTÜR İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%89,6</td>
 <td style="text-align:center; padding:6px;">+21,9</td>
-<td style="padding:6px;">Düşük stresli ve dengeli çalışma ortamı dikkat çekmektedir. Belediyenin en düşük sigara kullanım oranlarından biridir. Personel tuvaletlerinin vatandaştan ayrılması ve yardımcı personel eksikliği şikayeti mevcuttur.</td>
+<td style="padding:6px;">Düşük iş stresi/yükü (%52,6) ile +21,9 güçlü denge. Çok düşük sigara kullanımı (%15,4). Yönetici ilişkileri (%91,9), çalışma arkadaşları (%91,3) ve kurum içi iletişim (%86,5) güçlü. Görev-rol netliği (%76,3, -10,3) en zayıf alan. Personel tuvaletlerinin ayrılması ve yardımcı personel takviyesi talep edilmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">PARK VE BAHÇELER</td>
 <td style="text-align:center; padding:6px;">%91,7</td>
 <td style="text-align:center; padding:6px;">+7,4</td>
-<td style="padding:6px;">Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerindedir. Ancak ruh sağlığı riski yüksek düzeyde seyretmektedir. Kamu hizmeti motivasyonu oldukça güçlüdür. Hiç açık uçlu yorum yazılmamış olması dikkat çekicidir.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından (%95,2) - topluma hizmet gururu %95,8, işin anlamlılığı %97,5. Saha birimi olmasına rağmen çalışma koşulları (%76,5, +4,3) ortalamanın üzerinde. Ancak ruh sağlığı riski (%57,9, +5,7) yüksek. Yönetici ilişkileri (%90,6) ve ekip uyumu (%88,6) güçlü. Hiç açık uçlu yorum yazılmamış olması dikkat çekicidir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">İMAR VE ŞEHİRCİLİK</td>
 <td style="text-align:center; padding:6px;">%87,5</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,3</strong></td>
-<td style="padding:6px;"><strong>NEGATİF DENGE.</strong> Belediyenin en yoğun vatandaş talebiyle karşılaşan ve en yüksek iş stresi/yükü taşıyan birimidir. "Ruhsat başvurularındaki yoğunluktan neredeyse günde bir evraktan çıkıyoruz, bunun maddi ve manevi karşılığı yok" ifadesi dikkat çekmektedir. Vatandaş iletişimi sorunu mevcuttur: "Vatandaş çok asabi, küfür yiyoruz, saygısızlık çok oluyor" denilmektedir. Yemekhane pahalı ve lezzetsiz bulunmaktadır: "Dışarıya göre uygun yanı yok, lezzetleri de iyi değil." Servis yetersiz değerlendirilmektedir. Yönetici ilişkileri güçlü olmasına rağmen iş yükü karşılanamamaktadır. Personel takviyesi gerekli görünmektedir.</td>
+<td style="padding:6px;"><strong>NEGATİF DENGE (-2,3).</strong> Belediyenin en yüksek vatandaş yoğunluğu (%88,5, +17,9) ve iş stresi/yükü (%82,9, +13,8). Yönetici ilişkileri (%88,9) güçlü olmasına rağmen kurumsal destek yetersiz. Vatandaş iletişiminde stres: "Küfür yiyoruz, saygısızlık çok oluyor" şikayeti mevcut. Yemekhane (%47,1, -10,1) ve servis (%55,6, -12,1) skorları düşük. Kamu hizmeti motivasyonu (%93,7) güçlü - personel takviyesi acil görünmektedir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">İNOVASYON</td>
 <td style="text-align:center; padding:6px; color:#27ae60;">%95,3</td>
 <td style="text-align:center; padding:6px;">+24,2</td>
-<td style="padding:6px;">Belediyenin en yüksek iş-kişi uyumuna sahip birimidir. 9 temada ortalama üzeri skor elde edilmiştir. 11 kişi yemek şikayeti bildirmiştir: "Her ankette şikayet ediyoruz ama değişen bir şey yok" ifadesi mevcuttur.</td>
+<td style="padding:6px;">Belediyenin en yüksek iş-kişi uyumu (%97,4, +6,1). %95,3 memnuniyet ve +24,2 denge ile çok güçlü performans. Yönetici ilişkileri (%93,5), ekip uyumu (%92,5) ve kamu hizmeti motivasyonu (%95,3) belediyenin en yüksek düzeylerinde. 10 temadan 9'unda ortalamanın üzerinde. Tek sorun yemekhane (%54,4, -2,8): "Her ankette şikayet ediyoruz ama değişen bir şey yok" ifadesi dikkat çekici.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">GELİRLER</td>
 <td style="text-align:center; padding:6px;">%87,1</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,5</strong></td>
-<td style="padding:6px;"><strong>NEGATİF DENGE.</strong> Fiziksel koşullar şikayeti yoğundur: "Ofiste camlar açılmıyor, hava alınmıyor", "Emlak tahakkukta çalışıyorum, üşüyorum, merkezi sistem ısıtmıyor" ifadeleri yer almaktadır. "İş yükümüz diğer birimlere göre fazla" denilmektedir. Şirket personelinin yemekhaneden memurlar gibi yararlanamaması "büyük eşitsizlik ve haksızlık" olarak nitelendirilmektedir. Temizlik ve çay hizmeti yetersiz bulunmaktadır. Liyakat bazlı kariyer gelişimi ve "Ayın personeli ödülü" uygulaması talep edilmektedir. Personelin yarısı açık uçlu yorum yazmıştır - görüş bildirme motivasyonu yüksektir.</td>
+<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık (%86,3, +15,5) ve vatandaş yoğunluğu (%78,4). Fiziksel koşullar kritik: ısıtma (%56,9), ortak alanlar (%56,9), temizlik (%64,7) düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri (%88,2) ve ekip uyumu (%89,6) güçlü - koruyucu faktörler olarak öne çıkmaktadır. Liyakat bazlı kariyer ve ödül sistemi talep edilmektedir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%86,5</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-3,5</strong></td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ.</strong> Amir eşitliği algısı belediyenin en düşük düzeyindedir - yönetim adaleti sorgulanmaktadır. "Yapılan iş hem stresli hem tehlikeli, maddi açıdan tatmin edici olmasını temenni ediyorum" ifadesi dikkat çekmektedir. "Diğer ilçe belediyeleri ile kıyaslama yaparsak maaşlarımız çok düşük" denilmektedir. Yassıören barınağı altyapısı yetersiz bulunmaktadır. Banka hizmetlerinden (Vakıfbank) memnuniyetsizlik bildirilmektedir. Kamu hizmeti motivasyonu güçlü olmakla birlikte kurumsal destek yetersiz kalmaktadır. Psikolojik destek sunulması önerilmektedir.</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği (%71,2, -11,6) belediyenin en düşük skoru - yönetim adaleti sorgulanmaktadır. İş stresli ve tehlikeli, ücret yetersiz: "Diğer ilçe belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı kritik: hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu (%93,3) güçlü ancak kurumsal destek karşılamıyor. Psikolojik destek sunulması önerilmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">YAZI İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%90,5</td>
 <td style="text-align:center; padding:6px;">+19,1</td>
-<td style="padding:6px;">Belediyenin en yüksek anket katılım oranlarından biridir. 12 kişi yemek şikayeti bildirmiştir: yemeklerin ilgisiz ve özensiz yapıldığı, çatal-kaşıkların kirli olduğu ifade edilmektedir. Bina koku makinelerinin kaldırılması ve arşiv havalandırmasının iyileştirilmesi talep edilmektedir.</td>
+<td style="padding:6px;">%100 anket katılımı ile belediyenin en yüksek oranlarından. +19,1 denge ve %90,5 memnuniyet ile dengeli performans. Yönetici ilişkileri (%89,9), ekip uyumu (%89,9) ve kamu hizmeti motivasyonu (%94,2) güçlü. Çalışma koşulları belediye ortalamasının üzerinde. Yemekhane (%53,4, -3,8) en zayıf alan: hijyen ve lezzet şikayetleri mevcut. Arşiv havalandırması iyileştirmesi talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">YAPI KONTROL</td>
 <td style="text-align:center; padding:6px;">%88,0</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+2,9</td>
-<td style="padding:6px;">Ekip uyumu ve yönetici ilişkileri güçlü düzeydedir - yüksek iş stresi/yükünün etkilerini azaltan koruyucu faktörler olarak öne çıkmaktadır. Ücret şikayeti yaygındır: "Diğer belediyelerde aynı pozisyonda çalışan meslektaşlarımızla aramızdaki maaş farkının iyileştirilmesini istiyorum", "Maaşlar piyasa şartlarına göre çok düşük" ifadeleri mevcuttur. Servis adaleti sorgulanmaktadır: "Bazı personeller 100-200 metre yürümemek için güzergahı değiştirtiyor" denilmektedir. Yemekte memur-işçi eşitliği talep edilmektedir. Masa başı çalışanlar için egzersiz alanı ve sigara bağımlılığıyla mücadele önerilmektedir.</td>
+<td style="padding:6px;">Yüksek iş stresi/yükü (%76,7, +7,6) ancak ekip uyumu (%91,3, +4,4) ve yönetici ilişkileri (%89,2) koruyucu faktör olarak öne çıkıyor. Kamu hizmeti motivasyonu (%93,3) güçlü. Ücret şikayeti yaygın: "Diğer belediyelere göre maaş farkı iyileştirilmeli." Yemek memur-işçi eşitliği talep edilmektedir. +2,9 denge ile kurumsal destek sınırda yeterli görünmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">HALKLA İLİŞKİLER</td>
 <td style="text-align:center; padding:6px;">%92,4</td>
 <td style="text-align:center; padding:6px;">+6,0</td>
-<td style="padding:6px;">Çağrı merkezi personeli yoğun iş yükü bildirmektedir: "Günde ortalama 160-200 çağrı, 3-4 saat konuşma süresi iş içi gerginliğe sebep olmaktadır" ifadesi dikkat çekmektedir. İş-kişi uyumu düşük düzeyde kalmaktadır - personelin yetenek-görev uyumu sorgulanmaktadır. Boğazköy servisi yetersiz bulunmakta, "ayakta gidiyoruz" denilmektedir. Personel Wi-Fi ağı, bina içi yönlendirme tabelalarının güncellenmesi ve mola süresinin uzatılması talep edilmektedir. Kamu hizmeti motivasyonu güçlü görünmektedir.</td>
+<td style="padding:6px;">Çağrı merkezi personeli yoğun stres altında: "Günde 160-200 çağrı, 3-4 saat konuşma süresi gerginlik yaratıyor." İş stresi/yükü (%75,1, +6,0) yüksek ancak ekip uyumu (%92,9, +6,0) güçlü koruyucu faktör. Kamu hizmeti motivasyonu (%94,9) ve yönetici ilişkileri (%89,1) belediye ortalamasının üzerinde. Servis şikayeti: Boğazköy hattında "ayakta gidiyoruz" denilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">EMLAK VE İSTİMLAK</td>
 <td style="text-align:center; padding:6px;">%91,7</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,5</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru bu birimdedir</strong> - personel kendini geliştirme imkanı bulamamaktadır. İş stresi/yükü yüksek, çalışma koşulları yetersiz değerlendirilmektedir. Yemek şikayeti yoğundur: "Yemek kalitesi yıllardır iyileşmedi", "Belediyenin yemekleri çok ağır, rahatsız edici", "Vejetaryen biri olarak yemek yiyemiyorum" ifadeleri mevcuttur. Servis ağının genişletilmesi ve Taşoluk metro istasyonundan ücretsiz ring seferi talep edilmektedir. Tekniker-mühendis ücret dengesi sorgulanmaktadır: "Sorumluluk çok daha fazla ama fark az" denilmektedir. Ekip uyumu belediyenin en yüksek düzeylerindedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru (%62,5, -13,3)</strong> - personel kendini geliştirme imkanı bulamamaktadır. Yüksek iş stresi/yükü (%77,5) ile +1,5 sınırda denge. Ekip uyumu (%95,8, +8,9) belediyenin en yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane (%47,6, -9,6) en düşük skorlardan. Servis ağı genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
 <td style="text-align:center; padding:6px;">%88,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+0,7</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesidir.</strong> Personel ihtiyacı acil düzeyde bildirilmektedir: "Birimde yeni personele ihtiyacımız var acil", "Acil araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz" ifadeleri yer almaktadır. Fiziksel koşullar yetersizdir: "Yeterli dolap yok, tuvalet kapılarının kilitleri yok, oturacak oda yok" denilmektedir. "Çalışma alanlarımız diğer birimlerle eşit değil, hijyenik değil" şikayeti mevcuttur. Sigara kullanımı ikinci en yüksek düzeydedir. Sosyal hakların geliştirilmesi ve moral motivasyon artışı için gezi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesi (+0,7).</strong> Yüksek iş stresi/yükü (%80,9, +11,8) ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları (%64,2, -8,0) zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı (%70,6) ikinci en yüksek. Ekip uyumu (%89,2) ve kamu hizmeti motivasyonu (%91,2) koruyucu faktörler.</td>
 </tr>
 <tr>
 <td style="padding:6px;">BASIN VE YAYIN</td>
 <td style="text-align:center; padding:6px;">%93,1</td>
 <td style="text-align:center; padding:6px;">+22,3</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonuna sahip birimidir. Ofis temizliği ve ısıtma/soğutma yetersiz bulunmaktadır. Ücret iyileştirme talebi yaygındır: "Maaşlarımızın piyasa koşullarına göre güncellenmesi hepimizi mutlu edecektir" ifadesi mevcuttur.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonu (%97,4, +4,6). %93,1 memnuniyet ve +22,3 denge ile güçlü performans. Yönetici ilişkileri (%91,1), ekip uyumu (%91,1) ve iş-kişi uyumu (%96,6) çok yüksek. Düşük iş stresi/yükü (%58,6) ile stressiz çalışma ortamı. Ofis temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AKILLI ULAŞIM</td>
 <td style="text-align:center; padding:6px;">%88,3</td>
 <td style="text-align:center; padding:6px;">+23,9</td>
-<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu güçlü düzeydedir. Ücret memnuniyeti düşük, eğitim imkanları yetersiz değerlendirilmektedir: "Ücretlerin iyileştirilmesi gerektiğini düşünüyorum" ifadesi mevcuttur. Personel bilgilendirme sistemi talep edilmektedir: "Doğum günü, cenaze, evlilik ya da çocuğu olduğunda mail gruplarına bilgilendirme atılması" istenmektedir.</td>
+<td style="padding:6px;">%88,3 memnuniyet ve +23,9 güçlü denge. Çalışma arkadaşları (%94,2, +7,3), yönetici ilişkileri (%92,3, +5,5) ve kamu hizmeti motivasyonu (%95,1, +2,3) belediye ortalamasının üzerinde. Düşük iş stresi/yükü (%59,2) ile rahat çalışma ortamı. Ücret (%55,8, -13,2) ve eğitim (%68,3, -7,5) memnuniyeti düşük. Personel bilgilendirme sistemi (doğum, cenaze, evlilik) talep edilmektedir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">İŞLETME</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%96,9</strong></td>
 <td style="text-align:center; padding:6px;">+15,0</td>
-<td style="padding:6px;">İkinci en yüksek memnuniyet düzeyindedir. Ancak düşük katılım oranı nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar bulunmaktadır. Sabah ikram (poğaça, simit) ve dinlenme alanı talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin ikinci en yüksek memnuniyeti (%96,9).</strong> Yönetici ilişkileri (%91,5), ekip uyumu (%92,0) ve kamu hizmeti motivasyonu (%95,0) çok güçlü. +15,0 denge ile kurumsal destek yeterli. 10 temadan 8'inde ortalamanın üzerinde. Küçük örneklem (n=16) nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">PLAN VE PROJE</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,4</td>
 <td style="text-align:center; padding:6px;">+10,8</td>
-<td style="padding:6px;">Çalışma koşulları (servis, yemek, tuvalet) belediyenin en düşük skorları arasındadır. Servis şikayeti en çok dile getirilen konudur: "Psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır", "Servis hizmetinin eskisi gibi geri gelmesi", "Servislere KYK ve memurlar ücretsiz binebilmeli" ifadeleri yer almaktadır. Tuvalet koşulları yetersiz bulunmaktadır: "Lavabolar yetersiz ve temiz değil", "Peçeteler yetersiz" denilmektedir. Ücret memnuniyeti düşük düzeydedir. Belediyenin en düşük sigara kullanımı bu birimdedir. Ekip uyumu güçlü görünmektedir.</td>
+<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden (%84,4) olmakla birlikte +10,8 denge. Çalışma koşulları (%58,3, -13,9) belediyenin en düşüğü: servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Belediyenin en düşük sigara kullanımı (%12,5). Ekip uyumu (%90,6, +3,7) ve yönetici ilişkileri (%88,3) güçlü koruyucu faktörler. Ücret (%50,0, -19,0) çok düşük.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">ÖZEL KALEM</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%98,4</strong></td>
 <td style="text-align:center; padding:6px;">+22,9</td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK MEMNUNİYETİNE SAHİPTİR.</strong> Genel memnuniyet sorusunda %100 tam puan alınmıştır. Belediyenin en düşük ruh sağlığı risklerinden biridir. Yemek şikayeti mevcuttur: "Yediğimiz yemeklerden tat tuz şeker alamıyoruz" ifadesi yer almaktadır. Maaş iyileştirme ve kurum içi eğitim talebi bildirilmektedir.</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK MEMNUNİYETİ (%98,4).</strong> Genel memnuniyet sorusunda %100 tam puan. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu (%97,9), görev netliği (%95,7), yönetici ilişkileri (%94,3) çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden (%39,2). +22,9 güçlü denge. Tek şikayet yemekhane (%54,7) lezzeti.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>%80,8</strong></td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;">Düşük iş stresi/yükü ve güçlü stres-destek dengesine sahiptir. Yönetici ilişkileri güçlü düzeydedir. İş-kişi uyumu (%79,5) belediyenin en düşük düzeyinde kalmaktadır - personelin yaptığı işle bağ kurma konusu izlenmesi gereken bir alandır. Yemek kalitesinin iyileştirilmesi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük memnuniyeti (%80,8)</strong> ancak +24,5 güçlü denge - düşük iş stresi/yükü (%53,9) ve yönetici ilişkileri (%90,1) güçlü. Kritik sorun: iş-kişi uyumu (%79,5, -11,8) belediyenin en düşüğü. "Yeni KHK'lı personelin eski memurlardan fazla maaş alması adil değil" şikayeti iş bağını zayıflatıyor. Kamu tavsiyesi (%76,9, -13,8) çok düşük.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AFET İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%90,9</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+34,3</strong></td>
-<td style="padding:6px;">İkinci en yüksek denge düzeyindedir. Belediyenin en yüksek görev netliğine sahiptir. Yönetici ilişkileri oldukça güçlüdür. Psikolojik destek hizmetinden memnuniyet bildirilmektedir. Isıtma/soğutma ve yemek koşulları iyileştirilebilir bulunmaktadır.</td>
+<td style="padding:6px;"><strong>Belediyenin en yüksek görev netliği (%97,7, +11,1)</strong> ve ikinci en yüksek iş-kişi uyumu (%98,5, +7,2). %90,9 memnuniyet ve +34,3 denge ile çok güçlü performans. Yönetici ilişkileri (%96,6), ekip uyumu (%95,5) belediyenin en yüksek düzeylerinde. Psikolojik destek farkındalığı yüksek. Çalışma koşulları (%68,2) ve yemekhane (%47,2) iyileştirme bekliyor.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">HUKUK İŞLERİ</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,1</td>
 <td style="text-align:center; padding:6px;">+11,1</td>
-<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu güçlü olmakla birlikte memnuniyet düşük düzeydedir. <strong>Yemekte memur-işçi-KHK fiyat farkı adaletsiz bulunmaktadır:</strong> "Şirket personeli ile memur personel arası fark daha uygun olmalı" ifadesi mevcuttur. Servis hizmetinin tasarruf tedbirleri kapsamında ilçe içine alınmasının ilçe dışından gelenleri olumsuz etkilediği bildirilmektedir. Dinlenme ve etkinlik odası yetersiz bulunmaktadır. Çay ocağı görevlilerinin personele saygılı iletişimde bulunması talep edilmektedir.</td>
+<td style="padding:6px;">%84,1 memnuniyet (belediyenin en düşüklerinden) ancak +11,1 pozitif denge. Yönetici ilişkileri (%89,7) ve ekip uyumu (%90,3, +3,4) güçlü. Kamu hizmeti motivasyonu (%90,6) ortalamanın altında. Yemekte memur-şirket personeli fiyat farkı adaletsiz bulunmaktadır. Servis tasarruf tedbirlerinin ilçe dışından gelenleri olumsuz etkilediği bildirilmektedir. Dinlenme alanı yetersiz.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">RUHSAT VE DENETİM</td>
 <td style="text-align:center; padding:6px;">%90,9</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+25,9</strong></td>
-<td style="padding:6px;">Belediyenin en düşük ruh sağlığı riskine sahip birimidir. Görev netliği ikinci en yüksek düzeydedir - küçük ve uzmanlaşmış ekip avantajı dikkat çekmektedir. Yönetici ilişkileri ve ekip uyumu oldukça güçlüdür. Eğitim faaliyetlerinin artırılması ve performans değerlendirme adaletinin güçlendirilmesi beklenmektedir. Açık uçlu yorum yazılmamıştır.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük ruh sağlığı riski (%38,6, -13,6).</strong> Görev netliği (%96,2, +9,6) ikinci en yüksek - küçük ve uzmanlaşmış ekip avantajı. %90,9 memnuniyet ve +25,9 güçlü denge. Yönetici ilişkileri (%95,5), ekip uyumu (%95,5) ve kamu hizmeti motivasyonu (%95,5) çok güçlü. Düşük iş stresi/yükü (%54,5). Açık uçlu yorum yazılmamıştır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">STRATEJİ GELİŞTİRME</td>
 <td style="text-align:center; padding:6px;">%85,7</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+27,7</strong></td>
-<td style="padding:6px;">Belediyenin en düşük iş stresi/yükü ve en düşük vatandaş yoğunluğuna sahip birimidir. Fiziksel çalışma koşulları (ısıtma/soğutma, bireysel çalışma alanı) belediye ortalamasının üzerindedir. Personelin %75'i açık uçlu yorum yazmıştır. Yemekhane ücretleri yüksek bulunmaktadır: "Kart bastığım kadar yemek yiyebilmem daha uygun olur" denilmektedir. Servis güzergahları uzun ve dolambaçlı olarak değerlendirilmektedir. Performans değerlendirme sistemi yetersiz bulunmaktadır. Kapalı ofislerde sigara kullanımından şikayet edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük iş stresi/yükü (%44,4, -24,7)</strong> ve en düşük vatandaş yoğunluğu (%33,3). +27,7 güçlü denge ile stressiz ortam. Çalışma arkadaşları (%91,7), yönetici ilişkileri (%90,3) güçlü. Çalışma koşulları (%82,6, +10,4) belediye ortalamasının çok üzerinde. Personelin %75'i yorum yazmış. Servis güzergahları uzun ve yemekhane fiyatları yüksek bulunmaktadır.</td>
 </tr>
 <tr>
 <td style="padding:6px;">MALİ HİZMETLER</td>
 <td style="text-align:center; padding:6px;">%86,1</td>
 <td style="text-align:center; padding:6px;">+19,9</td>
-<td style="padding:6px;">Yönetici ilişkileri ve ekip uyumu oldukça güçlüdür - amir saygısı %100 düzeyindedir. Topluma hizmet gururu %100 tam puan almıştır. <strong>Çalışan ebeveynler çocuk etüt merkezi talep etmektedir:</strong> "İlkokul çağındaki çocuklarımız için okul sonrası etüt alanı, etkinlik alanı tahsis edilsin" ifadesi iki kişi tarafından vurgulanmıştır. Taşoluk merkez binada diyetisyen hizmeti talep edilmektedir. Yemekhane ve servis skorları belediye ortalamasının altındadır.</td>
+<td style="padding:6px;">%86,1 memnuniyet ve +19,9 denge. Yönetici ilişkileri (%93,5, +6,7), ekip uyumu (%93,9, +7,0) ve kurum içi iletişim (%87,5, +7,7) belediyenin en yüksek düzeylerinde. Amir saygısı ve topluma hizmet gururu %100 tam puan. Düşük sigara kullanımı (%22,2). Çalışan ebeveynler çocuk etüt merkezi talep etmektedir. Yemekhane (%53,6) ve servis (%64,3) iyileştirme bekliyor.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">KOORDİNASYON</td>
 <td style="text-align:center; padding:6px;">%85,7</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+34,4</strong></td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK DENGESİNE SAHİPTİR.</strong> Yönetici ilişkileri ve ekip uyumu belediyenin en yüksek düzeyindedir. %100 katılım sağlanmıştır. Ancak sigara kullanımı da en yüksek düzeydedir. Servis güzergahı yetersiz bulunmaktadır. Ücret memnuniyeti düşüktür. Çay-kahve ikramı talep edilmektedir.</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK DENGESİ (+34,4).</strong> Yönetici ilişkileri (%98,2, +11,4) ve ekip uyumu (%97,9, +11,0) belediyenin en yüksek skorları. %100 katılım ve düşük iş stresi/yükü (%51,8). Ancak memnuniyet (%85,7) ortalamanın altında - ücret (%53,6, -15,4) ve servis (%53,6, -14,1) yetersiz. Sigara kullanımı (%71,4) belediyenin en yüksek oranı.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">MUHTARLIK</td>
 <td style="text-align:center; padding:6px; color:#27ae60;">%95,8</td>
 <td style="text-align:center; padding:6px;">+23,2</td>
-<td style="padding:6px;">Üçüncü en yüksek memnuniyet düzeyindedir. 6 kişilik katılım sağlanmıştır. Düşük iş stresi/yükü ve güçlü ekip uyumu dikkat çekmektedir. Ortak alan koşulları belediyenin en düşük skorları arasındadır. Personel tuvaletinin vatandaştan ayrılması talep edilmektedir: "Personel ve vatandaşın kullanacağı ayrı tuvaletler olması" istenmektedir. Yemekhane kullanmayanlar için yemek alanı talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin üçüncü en yüksek memnuniyeti (%95,8).</strong> Düşük iş stresi/yükü (%56,3) ile +23,2 güçlü denge. Çalışma arkadaşları (%90,8, +3,9) ve kurum içi iletişim (%83,3, +3,5) ortalamanın üzerinde. Ortak alanlar (%50,0, -20,4) belediyenin en düşüğü. Eğitim & gelişim (%64,6, -11,2) zayıf. Personel tuvaletinin vatandaştan ayrılması talep edilmektedir. Küçük örneklem (n=6).</td>
 </tr>
 </tbody>
 </table>
