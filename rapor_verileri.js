@@ -914,10 +914,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Temizlik İşleri Müdürlüğü, <strong>belediyenin en büyük birimidir</strong> (578 personel). Düşük katılım oranına (%37,2) rağmen <strong>genel memnuniyet (%91,9)</strong> belediye ortalamasının üzerindedir. Ancak <strong>fiziksel çalışma koşulları ciddi sorun alanıdır</strong>: ortak alanlar (%47,1, -23,3), bireysel çalışma alanı (%61,1, -18,1), ısıtma/soğutma (%56,7, -17,4). İş stresi (%71,9) ve ruh sağlığı riski (%56,7) belediye ortalamasının üzerindedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,3):</strong> İşin toplum için anlamlı olduğuna inanç (%94,5) çok yüksek.</li>
@@ -1360,10 +1356,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Destek Hizmetleri Müdürlüğü <strong>%83,9 katılım oranı</strong> ile ankete yüksek katılım sağlamıştır. <strong>Genel memnuniyet %95,1</strong> ile belediye ortalamasının (%90,8) 4,3 puan üzerindedir - bu belediyenin en yüksek memnuniyet oranlarından biridir. Müdürlük, <strong>düşük iş stresi/yükü (%62,3)</strong> ve <strong>yüksek kurum desteği (%86,8)</strong> ile +24,5 puanlık olumlu bir denge sergilemektedir. Ruh sağlığı riski (%47,9) belediye ortalamasının altında, sigara kullanımı (%46,0) ise ortalamayla benzer düzeydedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%94,4):</strong> Belediye ortalamasının 1,6 puan üzerinde. Topluma hizmet gururu (%94,8) ve işin anlamlılığı (%94,3) yüksek.</li>
@@ -1813,10 +1805,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Veteriner İşleri Müdürlüğü, <strong>belediyenin en stresli birimlerinden biridir</strong>. İş stresi (%82,3) belediye ortalamasının %13,2 üzerinde ve stres-destek dengesi <strong>negatif (-3,5)</strong> çıkmıştır - bu, personelin iş stresi/yüküni karşılayacak düzeyde kurumsal destek almadığını göstermektedir. Amir eşitliği (%69,8, -13,0) belediyenin en düşük skorlarından biridir. Sigara kullanımı (%62,5) ve ruh sağlığı riski (%58,5) belediye ortalamasının belirgin üzerindedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%93,4):</strong> Topluma hizmet gururu (%96,9) çok yüksek.</li>
@@ -2247,10 +2235,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Strateji Geliştirme Müdürlüğü, <strong>belediyenin en düşük iş stresi/yüküne (%50,9)</strong> sahip birimlerinden biridir. Bu düşük stres ile kurum desteği (%78,6) arasındaki <strong>+27,7 puanlık güçlü denge</strong>, belediye ortalamasının (+13,2) iki katından fazladır. Ancak <strong>genel memnuniyet (%85,7)</strong> belediye ortalamasının 5 puan altında kalmaktadır - düşük stresli bir ortamda bu sonuç dikkat çekicidir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok düşük iş stresi/yükü (%50,9):</strong> Vatandaş yoğunluğu (%32,1) ve duygusal zorlayıcılık (%39,3) belediyenin en düşük skorları.</li>
@@ -2682,10 +2666,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Yazı İşleri Müdürlüğü, <strong>belediyenin en yüksek anket katılım oranına (%94,6)</strong> sahip birimidir. İş stresi (%57,6) belediye ortalamasının çok altındadır (-11,5 olumlu). Ancak <strong>fiziksel çalışma koşulları ciddi sorun alanıdır</strong>: çalışma alanı temizliği (%56,9, -22,5) belediyenin en düşük skorlarından biri, ısıtma/soğutma (%59,5, -14,6) ve yemekhane hizmeti ile ilgili yoğun şikayetler mevcuttur. Açık uçlu yorumların büyük çoğunluğu yemekhane kalitesi, memur-işçi fiyat eşitsizliği ve bina içi koku makinelerinden rahatsızlık konularında yoğunlaşmaktadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok yüksek anket katılımı (%94,6):</strong> Personelin görüşlerini bildirme motivasyonu güçlü.</li>
@@ -3114,10 +3094,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Gençlik ve Spor Hizmetleri Müdürlüğü <strong>%89,3 katılım oranı</strong> ile belediye ortalamasının üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %92,7</strong> ile belediye ortalamasının (%90,8) 1,9 puan üzerindedir. Müdürlük, <strong>düşük iş stresi/yükü (%63,6)</strong> ve <strong>güçlü kurum desteği (%85,9)</strong> ile <strong>+22,3 puanlık pozitif denge</strong> sergilemektedir - bu belediyenin en iyi dengelerinden biridir. Ruh sağlığı risk göstergeleri (%48,0) belediye ortalamasının altındadır (olumlu).</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>10 temada da ortalamanın üzerinde:</strong> Müdürlük, tüm tema alanlarında belediye ortalamasını aşmaktadır - belediyenin en dengeli ve güçlü performans gösteren birimlerinden biridir.</li>
@@ -3567,10 +3543,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Sosyal Destek Hizmetleri Müdürlüğü, <strong>genel memnuniyet %89,9</strong> ile belediye ortalamasına yakın performans sergilemektedir. Ancak <strong>iş stresi/yükü (%75,2)</strong> belediye ortalamasının 6 puan üzerinde olup, <strong>kurum desteği (%80,4)</strong> ortalamanın 2 puan altındadır. Bu durum <strong>+5,2 puanlık pozitif bir denge</strong> oluşturmaktadır. Ruh sağlığı risk göstergeleri (%55,6) belediye ortalamasının üzerindedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%95,0):</strong> Belediyenin en yüksek skorlarından biri. Topluma hizmet gururu (%97,4) çok yüksek.</li>
@@ -4024,10 +3996,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Akıllı Ulaşım Sistemleri Müdürlüğü <strong>%94,7 katılım oranı</strong> ile ankete yüksek ilgi göstermiştir. <strong>Genel memnuniyet %88,3</strong> ile belediye ortalamasının (%90,8) 2,5 puan altındadır. Müdürlük, <strong>düşük iş stresi/yükü (%60,3)</strong> ve <strong>yüksek kurum desteği (%84,2)</strong> ile +23,9 puanlık olumlu bir denge sergilemektedir. Ruh sağlığı riski (%44,5) ve sigara kullanımı (%26,7) belediye ortalamalarının belirgin altındadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yönetici ilişkileri (%94,1):</strong> Belediye ortalamasının 7,3 puan üzerinde. Amir ulaşılabilirliği (%98,3) ve geri bildirim kalitesi (%93,3) çok yüksek.</li>
@@ -4459,10 +4427,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Zabıta Müdürlüğü, belediyenin en büyük birimlerinden biridir (161 personel) ve <strong>genel memnuniyet (%83,2, -7,6)</strong> belediye ortalamasının belirgin altındadır. İş stresi (%76,7, +7,6) yüksek olup, özellikle <strong>vatandaş yoğunluğu (%84,0, +13,4)</strong> ve <strong>duygusal zorlayıcılık (%82,3, +11,5)</strong> belediyenin en yüksek değerleri arasındadır. Açık uçlu yorumlarda <strong>çalışma saatleri, ücret/SDS iyileştirmesi, ücretsiz spor salonu</strong> ve <strong>servis güzergahları</strong> en sık dile getirilen konulardır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,5):</strong> Topluma hizmet gururu yüksek.</li>
@@ -4895,10 +4859,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>İmar ve Şehircilik Müdürlüğü <strong>%91,5 katılım oranı</strong> ile belediye ortalamasının üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %87,5</strong> ile belediye ortalamasının (%90,8) 3,3 puan altındadır. Müdürlük, <strong>çok yüksek iş stresi/yükü (%83,2)</strong> ve <strong>ortalamanın altında kurum desteği (%80,9)</strong> ile <strong>-2,3 puanlık negatif denge</strong> sergilemektedir - bu, Gelirler Müdürlüğü'nden sonra belediyenin ikinci negatif dengeli birimidir. <strong>Yüksek açık uçlu yorum oranı (%53,5)</strong> personelin görüş bildirme isteğini göstermektedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%91,4):</strong> Belediye ortalamasının 0,1 puan üzerinde. Yetenek-iş uyumu (%94,4) çok yüksek.</li>
@@ -5345,10 +5305,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Emlak ve İstimlak Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %91,7</strong> ile belediye ortalamasının (%90,8) hafif üzerindedir. Ancak müdürlük, <strong>yüksek iş stresi/yükü (%78,6)</strong> ve <strong>ortalamanın altında kurum desteği (%80,1)</strong> ile sadece +1,5 puanlık zayıf bir denge sergilemektedir - bu belediye ortalamasının (+13,2) 11,7 puan altındadır. Ruh sağlığı riski (%56,7) belediye ortalamasının üzerinde olmakla birlikte, sigara kullanımı (%14,3) belediyenin en düşük oranlarından biridir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma arkadaşları (%94,8):</strong> Belediye ortalamasının 7,9 puan üzerinde. Ekip uyumu (%97,6), dayanışma (%94,0) ve bilgi paylaşımı (%95,2) çok güçlü.</li>
@@ -5802,10 +5758,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Basın ve Yayın Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %93,1</strong> ile belediye ortalamasının (%90,8) 2,3 puan üzerindedir. Müdürlük, <strong>düşük iş stresi/yükü (%61,8)</strong> ve <strong>yüksek kurum desteği (%84,1)</strong> ile +22,3 puanlık olumlu bir denge sergilemektedir. Ruh sağlığı riski (%47,6) ve sigara kullanımı (%38,9) belediye ortalamalarının altındadır. <strong>Sosyal medya takip oranları tüm platformlarda belediye ortalamasının çok üzerindedir</strong> - bu, birimin görev alanıyla doğrudan ilişkilidir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yönetici ilişkileri (%94,8):</strong> Belediye ortalamasının 8,0 puan üzerinde. Amir ulaşılabilirliği (%100), geri bildirim (%97,2) ve destek (%97,2) çok yüksek.</li>
@@ -6256,10 +6208,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Gelirler Müdürlüğü <strong>%87,2 katılım oranı</strong> ile belediye ortalamasının üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %87,1</strong> ile belediye ortalamasının (%90,8) 3,7 puan altındadır. Müdürlük, <strong>yüksek iş stresi/yükü (%79,9)</strong> ve <strong>ortalamanın altında kurum desteği (%77,4)</strong> ile <strong>-2,5 puanlık negatif denge</strong> sergilemektedir - bu belediyenin en düşük denge skorlarından biridir. Ruh sağlığı risk göstergeleri (%53,7) belediye ortalamasına yakın, sigara kullanımı (%54,8) ise ortalamanın üzerindedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,1):</strong> Belediye ortalamasına yakın. Topluma hizmet gururu (%94,4) ve kamu kurumlarını tavsiye (%91,7) yüksek.</li>
@@ -6708,10 +6656,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>İnovasyon ve Teknoloji Müdürlüğü <strong>%95,1 katılım oranı</strong> ile belediye ortalamasının çok üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %95,3</strong> ile belediye ortalamasının (%90,8) 4,5 puan üzerindedir - belediyenin en yüksek memnuniyet oranlarından biridir. Müdürlük, <strong>düşük iş stresi/yükü (%61,0)</strong> ve <strong>yüksek kurum desteği (%85,2)</strong> ile <strong>+24,2 puanlık güçlü denge</strong> sergilemektedir. <strong>JD-R modeli açısından ideal profil</strong> - düşük talepler, yüksek kaynaklar.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%97,6):</strong> Belediye ortalamasının 6,3 puan üzerinde - belediyenin en yüksek skoru. Yetenek-iş uyumu (%98,4) ve işi seçtiği için mutluluk (%97,7) güçlü.</li>
@@ -7147,10 +7091,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Yapı Kontrol Müdürlüğü, <strong>yüksek iş stresi/yükü (%79,3, +10,2)</strong> yaşayan ancak <strong>güçlü ekip uyumu (%90,0)</strong> ve <strong>yönetici ilişkileri (%89,8)</strong> ile bu stresi dengelemeye çalışan bir birimdir. Çalışma koşulları teması (%68,6, -3,6) düşük olup, özellikle <strong>servis hizmeti (%54,2, -13,5)</strong> ve <strong>ücret memnuniyeti (%54,0, -15,0)</strong> belediyenin en düşük skorları arasındadır. Ruh sağlığı riski (%50,2) belediye ortalamasının altındadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%93,3):</strong> Topluma hizmet gururu yüksek.</li>
@@ -7571,10 +7511,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Kültür İşleri Müdürlüğü <strong>%69,0 katılım oranı</strong> ile belediye ortalamasına yakın düzeyde katılım sağlamıştır. <strong>Genel memnuniyet %89,6</strong> ile belediye ortalamasına (%90,8) yakındır. Müdürlük <strong>düşük iş stresi/yükü (%58,4)</strong> ve <strong>+21,9 puanlık güçlü stres-destek dengesi</strong> ile sağlıklı bir çalışma ortamı sunmaktadır. <strong>Sigara kullanımı (%29,3) belediyenin en düşük oranlarından</strong> biridir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Düşük iş stresi/yükü (%58,4):</strong> Belediye ortalamasının 10,7 puan altında. Görev yükü (%55,1), zaman sıkışıklığı (%51,9) çok düşük.</li>
@@ -8021,10 +7957,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Fen İşleri Müdürlüğü <strong>%60,8 katılım oranı</strong> ile belediye ortalamasının altında katılım sağlamıştır. <strong>Genel memnuniyet %88,1</strong> ile belediye ortalamasının (%90,8) 2,7 puan altındadır. Müdürlük, <strong>yüksek iş stresi/yükü (%80,3)</strong> ve <strong>ortalama kurum desteği (%82,0)</strong> ile sadece +1,7 puanlık zayıf bir denge sergilemektedir. <strong>Ruh sağlığı risk göstergeleri (%63,7)</strong> ve <strong>sigara kullanımı (%62,7)</strong> belediye ortalamalarının belirgin üzerindedir (olumsuz). Sosyal medya takip oranları tüm platformlarda ortalamanın altındadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%90,9):</strong> Belediye ortalamasına yakın. Topluma hizmet gururu (%92,4) ve işin anlamlılığı (%92,8) yüksek.</li>
@@ -8466,10 +8398,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Plan ve Proje Müdürlüğü <strong>%100 katılım oranı</strong> ile tam katılım sağlayan bir birimdir (17 personel). <strong>Genel memnuniyet %84,4</strong> ile belediye ortalamasının (%90,8) 6,4 puan altındadır. <strong>Ruh sağlığı riski (%60,0) belediyenin en yüksek oranlarından</strong> biridir - özellikle gerginlik (%65,0) ve endişe kontrolü (%61,7) çok yüksektir. <strong>Yemekhane (%35,0) ve servis (%44,6) belediyenin en düşük skorlarındandır</strong>.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma arkadaşları (%89,6):</strong> Belediye ortalamasının 2,7 puan üzerinde. Anlaşmazlık çözümü (%93,3) çok güçlü.</li>
@@ -8918,10 +8846,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Halkla İlişkiler Müdürlüğü <strong>%83,3 katılım oranı</strong> ile belediye ortalamasının üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %92,4</strong> ile belediye ortalamasının (%90,8) 1,6 puan üzerindedir. Müdürlük, <strong>ortalamanın üzerinde iş stresi/yükü (%72,6)</strong> ve <strong>ortalamanın altında kurum desteği (%78,6)</strong> ile <strong>+6,0 puanlık zayıf denge</strong> sergilemektedir. Sigara kullanımı (%60,9) belediye ortalamasının 16 puan üzerindedir. <strong>Sosyal medya takip oranları tüm platformlarda belediye ortalamasının çok üzerindedir</strong> - bu, birimin görev alanıyla doğrudan ilişkilidir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%95,3):</strong> Belediye ortalamasının 2,5 puan üzerinde. Topluma hizmet gururu (%96,7) ve kamu kurumlarını tavsiye (%95,7) çok yüksek.</li>
@@ -9361,10 +9285,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>İklim Değişikliği ve Sıfır Atık Müdürlüğü <strong>%95,8 katılım oranı</strong> ile belediye ortalamasının çok üzerinde katılım sağlamıştır. <strong>Genel memnuniyet %88,2</strong> ile belediye ortalamasının (%90,8) 2,6 puan altındadır. Müdürlük, <strong>ortalamanın belirgin üzerinde iş stresi/yükü (%78,7)</strong> ve <strong>ortalamanın altında kurum desteği (%79,4)</strong> ile <strong>+0,7 puanlık kritik düzeyde düşük denge</strong> sergilemektedir. <strong>Sigara kullanımı (%70,6) belediyenin en yüksek oranlarından biridir</strong> (+25,7 puan).</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%91,2):</strong> Belediye ortalamasının 1,6 puan altında olmakla birlikte, topluma hizmet gururu (%94,1) yüksek.</li>
@@ -9800,10 +9720,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Hukuk İşleri Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %84,1</strong> ile belediye ortalamasının (%90,8) 6,7 puan altındadır - bu belediyenin en düşük memnuniyet oranlarından biridir. Müdürlük, <strong>ortalama düzeyde iş stresi/yükü (%69,3)</strong> ve <strong>ortalamanın hafif altında kurum desteği (%80,4)</strong> ile <strong>+11,1 puanlık denge</strong> sergilemektedir. Ruh sağlığı risk göstergeleri (%55,0) ve sigara kullanımı (%54,5) belediye ortalamasının üzerindedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%93,6):</strong> Belediye ortalamasının 6,8 puan üzerinde. Amir desteği (%95,5) ve amir saygısı (%95,5) çok yüksek.</li>
@@ -10240,10 +10156,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Mali Hizmetler Müdürlüğü küçük ama <strong>%100 katılım oranı</strong> ile tam katılım sağlayan bir birimdir (9 personel). <strong>Genel memnuniyet %86,1</strong> ile belediye ortalamasının (%90,8) 4,7 puan altındadır. Müdürlük <strong>çok güçlü yönetici ilişkileri (%93,5)</strong>, <strong>güçlü ekip dayanışması (%93,9)</strong> ve <strong>çok düşük sigara kullanımı (%22,2)</strong> ile dikkat çekmektedir. S17 amir saygısı ve S35 topluma hizmet gururu <strong>%100</strong> tam puandır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%93,5):</strong> Belediye ortalamasının 6,7 puan üzerinde. Amir saygısı (%100), amir eşitliği (%97,2), amir ulaşılabilirliği (%97,2) güçlü.</li>
@@ -10677,10 +10589,6 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Koordinasyon İşleri Müdürlüğü <strong>7 kişilik katılım</strong> ile ankete katılmıştır. <strong>Genel memnuniyet %85,7</strong> ile belediye ortalamasının (%90,8) 5,1 puan altındadır. Ancak müdürlük, <strong>çok düşük iş stresi/yükü (%51,8)</strong> ve <strong>yüksek kurum desteği (%86,2)</strong> ile <strong>+34,4 puanlık çok güçlü denge</strong> sergilemektedir - bu, Afet İşleri Müdürlüğü (+34,3) ile birlikte belediyenin en güçlü dengesidir. <strong>Yönetici ilişkileri (%98,2) ve çalışma arkadaşları (%97,9) güçlü düzeyde</strong> ancak çalışma koşulları (ücret, servis, yemekhane) zayıftır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%98,2):</strong> Belediye ortalamasının 11,4 puan üzerinde - belediyenin en yüksek skoru. S12, S13, S14, S17 sorularında %100 tam puan.</li>
@@ -11113,10 +11021,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>İnsan Kaynakları ve Eğitim Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %80,8</strong> ile belediye ortalamasının (%90,8) 10 puan altındadır - <strong>belediyenin en düşük memnuniyet oranı</strong>. Paradoks olarak, müdürlük <strong>çok düşük iş stresi/yükü (%53,9)</strong> ve <strong>+24,5 puanlık güçlü stres-destek dengesi</strong> sergilemektedir. Düşük memnuniyetin kaynağı <strong>iş-kişi uyumu (%79,5) ve kamu hizmeti motivasyonu (%83,3)</strong> alanlarındaki düşük skorlardır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok düşük iş stresi/yükü (%53,9):</strong> Belediye ortalamasının 15,2 puan altında - belediyenin en düşük stresli birimi. Vatandaş yoğunluğu (%46,2) ve duygusal zorlayıcılık (%47,9) çok düşük.</li>
@@ -11549,10 +11453,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Afet İşleri Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %90,9</strong> ile belediye ortalamasıyla (%90,8) hemen hemen aynı seviyededir. Müdürlük, <strong>belediyenin en düşük iş stresi/yükü skorlarından birine (%52,3)</strong> sahipken, <strong>yüksek kurum desteği (%86,6)</strong> ile +34,3 puanlık güçlü bir denge sergilemektedir. Ruh sağlığı riski (%46,6) ve sigara kullanımı (%27,3) belediye ortalamalarının belirgin altındadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev netliği (%97,7):</strong> Belediyenin en yüksek skorlarından biri (+11,1 puan). Küçük ve uzmanlaşmış bir birimin avantajı.</li>
@@ -11952,10 +11852,6 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Özel Kalem Müdürlüğü <strong>16 kişilik katılım</strong> ile ankete katılmıştır. <strong>Genel memnuniyet %98,4</strong> ile belediye ortalamasının (%90,8) 7,6 puan üzerindedir - <strong>belediyenin en yüksek memnuniyet oranlarından biri</strong>. S44 genel memnuniyet sorusunda <strong>%100 tam puan</strong> alınmıştır. Müdürlük, <strong>çok yüksek kurum desteği (%90,0)</strong> ve <strong>çok düşük ruh sağlığı riski (%39,2)</strong> ile <strong>belediyenin en güçlü profillerinden birini</strong> sergilemektedir. <strong>JD-R modeli açısından ideal birim.</strong></p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%97,9):</strong> Belediye ortalamasının 6,6 puan üzerinde. S1 yetenek-iş uyumu (%98,4) ve S3 işin anlamlılığı (%98,4) neredeyse tam puan.</li>
@@ -12385,10 +12281,6 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Muhtarlık İşleri Müdürlüğü <strong>6 kişilik katılım</strong> ile ankete katılmıştır. <strong>Genel memnuniyet %95,8</strong> ile belediye ortalamasının (%90,8) 5 puan üzerindedir - belediyenin en yüksek memnuniyet oranlarından biridir. Müdürlük, <strong>düşük iş stresi/yükü (%56,3)</strong> ile <strong>+23,2 puanlık güçlü denge</strong> sergilemektedir. <strong>İş-kişi uyumu (%91,7) ve çalışma arkadaşları ilişkileri (%90,8) güçlü</strong> ancak fiziksel çalışma koşulları zayıftır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek memnuniyet (%95,8):</strong> Belediye ortalamasının 5 puan üzerinde - belediyenin en memnun birimlerinden.</li>
@@ -12820,10 +12712,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>İşletme ve İştirakler Müdürlüğü <strong>%44,4 katılım oranı</strong> ile belediye ortalamasının çok altında katılım sağlamıştır - <strong>bu, belediyenin en düşük katılım oranıdır ve sonuçlar temkinle değerlendirilmelidir</strong>. <strong>Genel memnuniyet %96,9</strong> ile belediye ortalamasının (%90,8) 6,1 puan üzerindedir - belediyenin en yüksek memnuniyet oranlarından biri. Müdürlük, <strong>ortalama düzeyde iş stresi/yükü (%69,5)</strong> ve <strong>ortalamanın üzerinde kurum desteği (%84,5)</strong> ile <strong>+15,0 puanlık sağlıklı denge</strong> sergilemektedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%96,9):</strong> Belediye ortalamasının 4,1 puan üzerinde. İşin anlamlılığı (%96,9), topluma hizmet gururu (%96,9), kamu tavsiyesi (%96,9) ve toplum faydalılığı (%96,9) güçlü.</li>
@@ -13253,10 +13141,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Park ve Bahçeler Müdürlüğü <strong>%65,9 katılım oranı</strong> ile belediye ortalamasına yakın katılım sağlamıştır. <strong>Genel memnuniyet %91,7</strong> ile belediye ortalamasına (%90,8) yakındır. Müdürlük <strong>yüksek iş stresi/yükü (%76,3)</strong> ve <strong>yüksek ruh sağlığı riski (%58,1)</strong> ile dikkat çekmektedir. Saha çalışması gerektiren birimler arasında tipik bir profil sergilemektedir.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev-rol netliği (%87,4):</strong> Belediye ortalamasının 0,8 puan üzerinde. Görev tanımı (%89,6) ve sorumluluk netliği (%87,5) yüksek.</li>
@@ -13678,10 +13562,6 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h3 style="margin-top:0;">Genel Değerlendirme Özeti</h3>
-
-<p>Ruhsat ve Denetim Müdürlüğü <strong>%100 katılım oranı</strong> ile ankete tam katılım sağlamıştır. <strong>Genel memnuniyet %90,9</strong> ile belediye ortalamasıyla (%90,8) aynı seviyededir. Müdürlük, <strong>düşük iş stresi/yükü (%59,1)</strong> ve <strong>yüksek kurum desteği (%85,0)</strong> ile +25,9 puanlık güçlü bir denge sergilemektedir. Ruh sağlığı riski (%38,4) belediyenin en düşük skoru olup sigara kullanımı (%36,4) da belediye ortalamasının altındadır.</p>
-
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev netliği (%96,0):</strong> Belediyenin 2. en yüksek skoru (+9,4 puan). Küçük ve uzmanlaşmış bir birimin avantajı.</li>
