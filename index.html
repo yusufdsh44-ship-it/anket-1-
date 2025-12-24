@@ -365,6 +365,19 @@
             background: #FBF7EF;
         }
 
+        .iframe-fullscreen-container {
+            width: calc(100% + 64px);
+            height: calc(100vh - 80px);
+            margin: -20px -32px -60px -32px;
+        }
+
+        @media (max-width: 768px) {
+            .iframe-fullscreen-container {
+                width: calc(100% + 24px);
+                margin: -12px -12px -40px -12px;
+            }
+        }
+
         .footer-signature {
             position: fixed;
             bottom: 16px;
@@ -5303,7 +5316,7 @@
                 'mudurluk-raporlari': () => reportManager.renderReportPage(),
 
                 'belediye-geneli': () => `
-                    <div style="width: 100%; height: calc(100vh - 80px); margin: -20px; margin-top: -30px;">
+                    <div class="iframe-fullscreen-container">
                         <iframe 
                             id="belediyeGeneliIframe"
                             src="/attached_assets/baskan_raporu_v2-6_1766557449901.html" 
