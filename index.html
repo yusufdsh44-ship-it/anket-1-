@@ -4807,7 +4807,7 @@
                                 .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'))
                                 .map(([key, data]) => `
                                             <div class="mudurluk-rapor-section mb-10 pb-10 border-b border-border-light" data-mudurluk="${key}">
-                                                <button onclick="pageManager.showPage('rapor'); closeSidebarIfMobile(); setTimeout(() => { const iframe = document.querySelector('#rapor iframe'); if(iframe && iframe.contentWindow) { const targetSection = iframe.contentDocument.querySelector('.mudurluk-table'); if(targetSection) targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}, 300);" 
+                                                <button onclick="pageManager.showPage('belediye-geneli'); closeSidebarIfMobile();" 
                                                     style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: linear-gradient(135deg, #8B7355, #6B5344); color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 16px; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(107,83,68,0.2);"
                                                     onmouseover="this.style.background='linear-gradient(135deg, #6B5344, #5A4333)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(107,83,68,0.3)';"
                                                     onmouseout="this.style.background='linear-gradient(135deg, #8B7355, #6B5344)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(107,83,68,0.2)';">
