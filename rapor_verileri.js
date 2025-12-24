@@ -390,7 +390,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>%80,8</strong></td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;">Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı. Yönetici ilişkileri ve ekip dayanışması güçlü düzeyde. Personel gelişimi ve motivasyonu artırıcı çalışmalar planlanabilir.</td>
+<td style="padding:6px;">Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı. Yönetici ilişkileri ve ekip dayanışması güçlü düzeyde.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AFET İŞLERİ</td>
@@ -10942,7 +10942,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,5) ile rahat bir çalışma ortamına sahiptir. Yönetici ilişkileri ve ekip dayanışması güçlü düzeydedir. Personel gelişimi ve motivasyonu artırıcı çalışmalar ile birimin potansiyeli daha da güçlendirilebilir.</p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,5) ile rahat bir çalışma ortamına sahiptir. Yönetici ilişkileri ve ekip dayanışması güçlü düzeydedir.</p>
 
 <table class="indicators-table">
     <thead>
@@ -11031,17 +11031,9 @@ const RAPOR_VERILERI = {
 
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
-<li><strong>İş-kişi uyumu (%79,5):</strong> Belediye ortalamasının 11,8 puan altında. İşi seçtiği için mutluluk (%71,2, -19,5) çok düşük - müdürlüğün en kritik sorunu.</li>
-<li><strong>Kamu hizmeti motivasyonu (%83,3):</strong> Belediye ortalamasının 9,5 puan altında. Kamu tavsiyesi (%76,9, -13,8) ve işin toplum için faydalı olduğu düşüncesi (%80,8, -12,4) düşük.</li>
-<li><strong>Genel memnuniyet (%80,8):</strong> Belediye ortalamasının 10 puan altında - belediyenin en düşük memnuniyeti.</li>
-<li><strong>Çalışma koşulları (%67,3):</strong> Belediye ortalamasının 4,9 puan altında. Ortak alanlar (%57,7), yemekhane (%46,2) düşük.</li>
-</ul>
-
-<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
-<ul style="margin-top:0.3em;">
-<li><strong>Düşük memnuniyet - güçlü denge paradoksu:</strong> İş stresi çok düşük (+24,5 denge) iken memnuniyet çok düşük (%80,8) - sorun iş yükü değil, işle bağ kurma (anlam, uyum) sorunu.</li>
-<li><strong>Ücret adaletsizliği algısı:</strong> Açık uçlu yorumlarda "yeni KHK'lı personelin eski memurlardan fazla maaş alması adil değil" şikayeti - bu, düşük iş-kişi uyumunu açıklıyor olabilir.</li>
-<li><strong>Kamu tavsiyesi çok düşük (%76,9):</strong> Belediye ortalamasının 13,8 puan altında - personel başkalarına kamu kurumlarında çalışmayı tavsiye etmiyor.</li>
+<li><strong>İş-kişi uyumu:</strong> Belediye ortalamasının altında.</li>
+<li><strong>Kamu hizmeti motivasyonu:</strong> Belediye ortalamasının altında.</li>
+<li><strong>Çalışma koşulları:</strong> Ortak alanlar ve yemekhane iyileştirilebilir.</li>
 </ul>
 
 </div>
