@@ -384,7 +384,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">ÖZEL KALEM</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%98,4</strong></td>
 <td style="text-align:center; padding:6px;">+22,9</td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN YÜKSEK MEMNUNİYETİ (%98,4).</strong> Genel memnuniyet sorusunda %100 tam puan. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
+<td style="padding:6px;">Genel memnuniyet sorusunda %100 tam puan. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
