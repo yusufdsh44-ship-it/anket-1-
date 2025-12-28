@@ -1651,6 +1651,39 @@
             }
         ];
 
+        const MUDURLUK_EMOJIS = {
+            'veteriner_isleri': '🐾',
+            'gelirler': '💰',
+            'imar_ve_sehircilik': '🏗️',
+            'iklim_degisikligi_ve_sifir_atik': '♻️',
+            'emlak_ve_istimlak': '🏠',
+            'fen_isleri': '🛠️',
+            'yapi_kontrol': '🏗️',
+            'zabita': '👮',
+            'sosyal_destek_hizmetleri': '❤️',
+            'temizlik_isleri': '🧹',
+            'halkla_iliskiler': '📞',
+            'park_ve_bahceler': '🌳',
+            'plan_ve_proje': '📍',
+            'hukuk_isleri': '⚖️',
+            'isletme_ve_istirakler': '🏭',
+            'yazi_isleri': '✍️',
+            'mali_hizmetler': '📈',
+            'kultur_isleri': '🎨',
+            'genclik_ve_spor_hizmetleri': '⚽',
+            'basin_ve_yayin': '🎙️',
+            'ozel_kalem': '⭐',
+            'muhtarlik_isleri': '📩',
+            'akilli_ulasim_sistemleri': '🚌',
+            'ar_ge_ve_inovasyon': '💡',
+            'destek_hizmetleri': '🔧',
+            'insan_kaynaklari_ve_egitim': '👥',
+            'ruhsat_ve_denetim': '📝',
+            'strateji_gelistirme': '📊',
+            'afet_isleri': '🚨',
+            'koordinasyon_isleri': '🔗'
+        };
+
         const state = {
             allSurveys: [],
             processedData: null,
@@ -5473,7 +5506,7 @@
                 visibleMudurlukler.forEach(([key, data]) => {
                     html += `
                         <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('${key}')" style="padding: 7px 10px; cursor: pointer; border-radius: 6px; font-size: 12px; color: #7B746A; display: flex; align-items: center; gap: 6px; transition: all 0.2s; white-space: nowrap; overflow: hidden; background: transparent;">
-                            <span class="material-icons-outlined" style="font-size: 14px; opacity: 0.5; transition: all 0.2s;">chevron_right</span>
+                            <span style="font-size: 13px; opacity: 0.85;">${MUDURLUK_EMOJIS[key] || '📋'}</span>
                             <span style="overflow: hidden; text-overflow: ellipsis; font-weight: 400;">${data.name}</span>
                         </div>
                     `;
@@ -5581,7 +5614,7 @@
                 filtered.forEach(([key, data]) => {
                     html += `
                         <div class="mudurluk-quick-item" onclick="pageManager.goToMudurlukRapor('${key}')" style="padding: 7px 10px; cursor: pointer; border-radius: 6px; font-size: 12px; color: #7B746A; display: flex; align-items: center; gap: 6px; transition: all 0.2s; white-space: nowrap; overflow: hidden; background: transparent;">
-                            <span class="material-icons-outlined" style="font-size: 14px; opacity: 0.5; transition: all 0.2s;">chevron_right</span>
+                            <span style="font-size: 13px; opacity: 0.85;">${MUDURLUK_EMOJIS[key] || '📋'}</span>
                             <span style="overflow: hidden; text-overflow: ellipsis; font-weight: 400;">${data.name}</span>
                         </div>
                     `;
