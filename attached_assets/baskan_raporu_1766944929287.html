@@ -1,0 +1,3106 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Arnavutköy Belediyesi - Çalışan Memnuniyeti Analizi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            corePlugins: {
+                preflight: false,
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4E342E", "secondary": "#8D6E63", "cream": "#FDFBF7", "cream-dark": "#F5F0EB", "text-dark": "#3E2723", "text-medium": "#5D4037", "text-light": "#8D6E63", "border-color": "#EFEBE9",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"],
+                        "serif": ["Noto Serif", "serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* İçindekiler Bölümü Özel Reset ve Stiller */
+        .toc-section {
+            font-family: 'Public Sans', sans-serif;
+            color: #3E2723;
+            text-align: left;
+            /* Sola hizalama */
+        }
+
+        .toc-section a {
+            text-decoration: none !important;
+            color: inherit !important;
+            display: block;
+            /* Tıklama alanını genişlet */
+        }
+
+        .toc-section h1,
+        .toc-section h2,
+        .toc-section h3 {
+            font-family: 'Noto Serif', serif;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .toc-section ul {
+            list-style: none;
+            /* !important kaldırdım */
+            margin: 0;
+            padding-left: 0;
+            /* Varsayılanı sıfırla, Tailwind pl- sınıfları bunu ezecek */
+        }
+
+        .toc-section li {
+            list-style: none;
+        }
+
+        .toc-connector {
+            flex-grow: 1;
+            border-bottom: 1px dotted #BCAAA4;
+            margin: 0 1rem;
+            position: relative;
+            top: -5px;
+            opacity: 0.5;
+        }
+
+        .chapter-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Diğer Genel Stiller */
+        .rec-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #C9B8A8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rec-title {
+            font-weight: 600;
+            color: #2C1810;
+            font-size: 10.5pt;
+        }
+
+        .rec-score {
+            font-size: 9pt;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .rec-score.low {
+            background: #F8D7DA;
+            color: #721C24;
+        }
+
+        .rec-score.medium {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .rec-impact {
+            font-size: 9pt;
+            color: #6B5344;
+            margin-bottom: 0.5em;
+        }
+
+        .rec-action {
+            font-size: 9.5pt;
+            color: #3D2B1F;
+            padding-top: 0.5em;
+            border-top: 1px dashed #E5DDD5;
+        }
+
+        /* Karne Table */
+        .karne-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(61, 43, 31, 0.08);
+        }
+
+        .karne-table th {
+            background: linear-gradient(135deg, #5C4033 0%, #4A3728 100%);
+            color: white;
+            font-size: 10.5pt;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .karne-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #E5DDD5;
+            font-size: 10pt;
+        }
+
+        .karne-table .label {
+            font-weight: 600;
+            background: #FAF8F5;
+        }
+
+        @page {
+            size: A4;
+            margin: 1.5cm 1.5cm 2cm 1.5cm;
+        }
+
+        @page :first {
+            margin: 0;
+        }
+
+        /* ===== YAZDIRMA STİLLERİ ===== */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+            }
+
+            body {
+                font-size: 10pt !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Kapak sayfası - tam sayfa, sonrasında kesme */
+            .cover-page {
+                page-break-after: always;
+                min-height: auto;
+                height: auto;
+                margin: 0 !important;
+                padding: 40px !important;
+                box-shadow: none !important;
+            }
+
+            /* İçindekiler */
+            .toc-section {
+                page-break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #E5DDD5 !important;
+            }
+
+            /* Ana bölümler - sadece öncesinde kesme */
+            .section-page {
+                page-break-before: always;
+            }
+
+            /* Bölüm başlıkları sonrası kesme yapma */
+            h1,
+            h2,
+            h3,
+            h4 {
+                page-break-after: avoid;
+            }
+
+            /* Kartlar ve kutular içinde kesme yapma */
+            .card {
+                box-shadow: none !important;
+                border: 1px solid #E5DDD5 !important;
+            }
+
+            .summary-box,
+            .warning-box,
+            .critical-box,
+            .exec-summary,
+            .finding-item,
+            .rec-card {
+                page-break-inside: avoid;
+            }
+
+            /* Tablolar */
+            table {
+                page-break-inside: auto;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            /* Tailwind blur efektini gizle */
+            .blur-3xl {
+                display: none !important;
+            }
+
+            /* Link altı çizgilerini kaldır */
+            a {
+                text-decoration: none !important;
+            }
+        }
+
+        /* Sayfa kesme yardımcı sınıfları */
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        .page-break-after {
+            page-break-after: always;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #3D2B1F;
+            background: #FAF8F5;
+            padding: 20px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 2em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 2px 12px rgba(61, 43, 31, 0.06);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18pt;
+            font-weight: 600;
+            color: #2C1810;
+            margin: 0 0 0.8em 0;
+            page-break-after: avoid;
+            border-bottom: 2px solid #C9B8A8;
+            padding-bottom: 0.5em;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 15pt;
+            font-weight: 700;
+            color: #3D2B1F;
+            margin: 2em 0 1em 0;
+            padding: 14px 20px;
+            border-left: 5px solid #5C4033;
+            background: linear-gradient(135deg, #F5F0EB 0%, #EDE6DE 100%);
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(92, 64, 51, 0.08);
+            page-break-after: avoid;
+        }
+
+        h2.simple-header {
+            font-size: 13pt;
+            font-weight: 600;
+            margin: 1.5em 0 0.6em 0;
+            padding: 0 0 0.3em 0;
+            border-left: none;
+            border-bottom: 1px solid #E5DDD5;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: #4A3728;
+            margin: 1.2em 0 0.5em 0;
+            page-break-after: avoid;
+        }
+
+        h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: #5C4033;
+            margin: 1em 0 0.4em 0;
+        }
+
+        p {
+            margin: 0.6em 0;
+            text-align: justify;
+            color: #3D2B1F;
+        }
+
+        .section-intro {
+            font-style: italic;
+            color: #6B5344;
+            margin-bottom: 1em;
+            padding: 1em 1.2em;
+            border-left: 4px solid #8B7355;
+            background: linear-gradient(90deg, rgba(139, 115, 85, 0.08) 0%, transparent 100%);
+            border-radius: 0 8px 8px 0;
+        }
+
+        ul,
+        ol {
+            margin: 0.8em 0 0.8em 1.8em;
+        }
+
+        li {
+            margin: 0.4em 0;
+            color: #3D2B1F;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            font-size: 9.5pt;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th {
+            background: linear-gradient(135deg, #5C4033 0%, #4A3728 100%);
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 12px 14px;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 9.5pt;
+        }
+
+        table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #E5DDD5;
+            color: #3D2B1F;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #FAF8F5;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #F5E6D3 0%, #EFD9C4 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .highlight-critical {
+            background: linear-gradient(120deg, #F8D4D4 0%, #F5C4C4 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #8B3A3A;
+        }
+
+        .highlight-positive {
+            background: linear-gradient(120deg, #D4EDDA 0%, #C3E6CB 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #2E5A3A;
+        }
+
+        .highlight-warning {
+            background: linear-gradient(120deg, #FFF3CD 0%, #FFE69C 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #856404;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #F0F7F4 0%, #E8F4F0 100%);
+            border: 1px solid #A8C5B8;
+            border-radius: 10px;
+            padding: 1.2em;
+            margin: 1em 0;
+            page-break-inside: avoid;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFF8E6 0%, #FFF3D4 100%);
+            border: 1px solid #D4B896;
+            border-radius: 10px;
+            padding: 1.2em;
+            margin: 1em 0;
+            page-break-inside: avoid;
+        }
+
+        .critical-box {
+            background: linear-gradient(135deg, #FDF2F2 0%, #FCE8E8 100%);
+            border: 1px solid #E8B4B4;
+            border-radius: 10px;
+            padding: 1.2em;
+            margin: 1em 0;
+            page-break-inside: avoid;
+        }
+
+        /* Executive Summary Styles */
+        .exec-summary {
+            background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%);
+            border: 2px solid #C9B8A8;
+            border-radius: 14px;
+            padding: 1.8em;
+            margin-bottom: 1.5em;
+        }
+
+        .exec-summary h1 {
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 1em;
+            color: #2C1810;
+        }
+
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+
+        .exec-metric {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 1.2em;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(61, 43, 31, 0.06);
+        }
+
+        .exec-metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 700;
+            margin-bottom: 0.2em;
+        }
+
+        .exec-metric-label {
+            font-size: 9pt;
+            color: #6B5344;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .positive {
+            color: #2E5A3A;
+        }
+
+        .warning {
+            color: #B8860B;
+        }
+
+        .critical {
+            color: #8B3A3A;
+        }
+
+        .finding-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 0.8em 0;
+            padding: 0.8em;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border-left: 4px solid #8B7355;
+        }
+
+        .finding-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .finding-icon.positive {
+            background: #D4EDDA;
+            color: #2E5A3A;
+        }
+
+        .finding-icon.warning {
+            background: #FFF3CD;
+            color: #856404;
+        }
+
+        .finding-icon.critical {
+            background: #F8D7DA;
+            color: #721C24;
+        }
+
+        .recommendation-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 1.2em;
+            margin: 0.8em 0;
+            border-left: 4px solid #5C4033;
+            box-shadow: 0 2px 6px rgba(61, 43, 31, 0.05);
+        }
+
+        .karne-table .value {
+            text-align: center;
+            font-weight: 700;
+            font-size: 12pt;
+        }
+
+        .karne-table .highlight-row {
+            background: linear-gradient(90deg, #E8F4E8 0%, #F0F7F4 100%);
+        }
+
+        /* Cover Page */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #FFFFFF;
+            border-radius: 16px;
+            margin-bottom: 1em;
+            padding: 40px;
+            min-height: 95vh;
+            box-shadow: 0 4px 20px rgba(61, 43, 31, 0.08);
+            border-bottom: none;
+        }
+
+        .cover-content {
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .cover-page table td {
+            border-bottom: none;
+        }
+
+        /* TOC */
+        .toc {
+            padding: 1.5em;
+            background: #FFFFFF;
+            border-radius: 12px;
+            margin-bottom: 2em;
+            box-shadow: 0 2px 12px rgba(61, 43, 31, 0.06);
+        }
+
+        .toc-item {
+            margin: 0.5em 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10.5pt;
+            color: #3D2B1F;
+            padding: 0.3em 0;
+        }
+
+        .toc-item.level1 {
+            font-weight: 600;
+            margin-top: 1em;
+            font-size: 11.5pt;
+            font-family: 'Playfair Display', serif;
+            color: #2C1810;
+        }
+
+        .toc-item.level2 {
+            margin-left: 1.8em;
+            font-size: 10.5pt;
+        }
+
+        .rec-impact,
+        .rec-action {
+            margin-bottom: 0.8rem;
+            font-size: 0.95em;
+        }
+
+        /* Özet Kutusu ve Tablo */
+        .summary-box {
+            background: #FAFAFA;
+            border: 1px solid #EFEBE9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Yönetici Özeti Grid */
+        .exec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .exec-metric {
+            background: #FFFFFF;
+            border: 1px solid #EFEBE9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .exec-metric-value {
+            font-family: 'Noto Serif', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3E2723;
+            margin-bottom: 0.5rem;
+        }
+
+        .exec-metric-value.positive {
+            color: #2E7D32;
+        }
+
+        .exec-metric-value.negative {
+            color: #C62828;
+        }
+
+        .exec-metric-label {
+            font-size: 0.875rem;
+            color: #8D6E63;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* Müdürlük Table */
+        .mudurluk-table {
+            font-size: 9pt;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(61, 43, 31, 0.08);
+        }
+
+        .mudurluk-table th {
+            background: linear-gradient(135deg, #3D2B1F 0%, #2C1810 100%);
+            color: #FFFFFF;
+            padding: 12px 8px;
+            font-size: 9pt;
+        }
+
+        .mudurluk-table td {
+            padding: 10px 8px;
+            vertical-align: top;
+        }
+
+        .mudurluk-table tr.belediye-geneli {
+            background: linear-gradient(90deg, #F0EDE9 0%, #E8E4DF 100%);
+            font-weight: 600;
+        }
+
+        .mudurluk-table tr.positive {
+            background: linear-gradient(90deg, #E8F5E9 0%, #F1F8F2 100%);
+        }
+
+        .mudurluk-table tr.warning {
+            background: linear-gradient(90deg, #FFF8E6 0%, #FFFBF0 100%);
+        }
+
+        .mudurluk-table tr.critical {
+            background: linear-gradient(90deg, #FFEBEE 0%, #FFF5F5 100%);
+        }
+
+        .small-table {
+            page-break-inside: avoid;
+        }
+
+        .quote {
+            font-style: italic;
+            margin: 0.8em 0 0.8em 1.5em;
+            padding: 0.8em 1em;
+            border-left: 3px solid #8B7355;
+            color: #6B5344;
+            font-size: 9pt;
+            background: rgba(139, 115, 85, 0.05);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Print & Responsive */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 1.2em;
+                border-radius: 8px;
+            }
+
+            h1 {
+                font-size: 15pt;
+            }
+
+            .exec-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print stilleri yukarıdaki @media print bloğunda tanımlandı */
+
+        /* Tıklanabilir müdürlük satırları */
+        .mudurluk-table tr[data-mudurluk] {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mudurluk-table tr[data-mudurluk]:hover {
+            background: linear-gradient(90deg, #E8E4DF 0%, #F5F2EE 100%) !important;
+            transform: translateX(2px);
+        }
+
+        .mudurluk-table tr[data-mudurluk] td:first-child {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .mudurluk-table tr[data-mudurluk] td:first-child::before {
+            content: '→';
+            position: absolute;
+            left: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            color: #8B7355;
+            font-weight: bold;
+        }
+
+        .mudurluk-table tr[data-mudurluk]:hover td:first-child::before {
+            opacity: 1;
+        }
+
+        .mudurluk-link-hint {
+            display: inline-block;
+            margin-left: 6px;
+            font-size: 8pt;
+            color: #A89080;
+            font-weight: normal;
+        }
+
+        /* ========== GÖRSEL BILEŞENLER ========== */
+
+        /* Progress Bar */
+        .progress-bar-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 8px 0;
+        }
+
+        .progress-bar-label {
+            font-size: 9pt;
+            font-weight: 600;
+            color: #3D2B1F;
+            min-width: 80px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 24px;
+            background: #F0EDE9;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            transition: width 0.8s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 9pt;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar-fill.positive {
+            background: linear-gradient(90deg, #4CAF50 0%, #2E7D32 100%);
+        }
+
+        .progress-bar-fill.warning {
+            background: linear-gradient(90deg, #FFC107 0%, #FF9800 100%);
+        }
+
+        .progress-bar-fill.critical {
+            background: linear-gradient(90deg, #ef5350 0%, #c62828 100%);
+        }
+
+        .progress-bar-fill.neutral {
+            background: linear-gradient(90deg, #8B7355 0%, #6B5344 100%);
+        }
+
+        /* Gauge / Termometre */
+        .gauge-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .gauge {
+            width: 200px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gauge-bg {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg,
+                    #c62828 0deg 60deg,
+                    #FF9800 60deg 90deg,
+                    #FFC107 90deg 120deg,
+                    #8BC34A 120deg 150deg,
+                    #4CAF50 150deg 180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .gauge-center {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .gauge-needle {
+            width: 4px;
+            height: 70px;
+            background: #2C1810;
+            position: absolute;
+            bottom: 0;
+            left: 98px;
+            transform-origin: bottom center;
+            border-radius: 2px;
+            transition: transform 0.8s ease;
+        }
+
+        .gauge-value {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2C1810;
+        }
+
+        .gauge-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin-top: 10px;
+            font-size: 8pt;
+            color: #6B5344;
+        }
+
+        /* İkon Kartları */
+        .icon-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .icon-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F5 100%);
+            border: 1px solid #E5DDD5;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(61, 43, 31, 0.06);
+        }
+
+        .icon-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(61, 43, 31, 0.12);
+        }
+
+        .icon-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .icon-card-icon.positive {
+            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+        }
+
+        .icon-card-icon.warning {
+            background: linear-gradient(135deg, #FFF8E6 0%, #FFE082 100%);
+        }
+
+        .icon-card-icon.critical {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FFCDD2 100%);
+        }
+
+        .icon-card-content {
+            flex: 1;
+        }
+
+        .icon-card-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 20pt;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .icon-card-value.positive {
+            color: #2E7D32;
+        }
+
+        .icon-card-value.warning {
+            color: #F57C00;
+        }
+
+        .icon-card-value.critical {
+            color: #c62828;
+        }
+
+        .icon-card-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #3D2B1F;
+            margin-bottom: 4px;
+        }
+
+        .icon-card-desc {
+            font-size: 9pt;
+            color: #6B5344;
+            line-height: 1.4;
+        }
+
+        /* Donut Chart */
+        .donut-chart-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .donut-chart {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donut-chart-center {
+            width: 90px;
+            height: 90px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+        }
+
+        .donut-chart-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .donut-chart-label {
+            font-size: 7pt;
+            color: #6B5344;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+            text-align: center;
+        }
+
+        /* Karşılaştırma Bar Chart */
+        .comparison-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px;
+            background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%);
+            border-radius: 12px;
+            border: 1px solid #E5DDD5;
+        }
+
+        .comparison-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .comparison-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comparison-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #3D2B1F;
+        }
+
+        .comparison-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            font-weight: 700;
+        }
+
+        .comparison-bar {
+            height: 32px;
+            background: #F0EDE9;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .comparison-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding-left: 12px;
+            font-size: 9pt;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Büyük Metrik Kartları */
+        .big-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .big-metric-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDFCFB 100%);
+            border: 2px solid #E5DDD5;
+            border-radius: 16px;
+            padding: 28px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .big-metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .big-metric-card.positive::before {
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+        }
+
+        .big-metric-card.warning::before {
+            background: linear-gradient(90deg, #FF9800, #FFC107);
+        }
+
+        .big-metric-card.critical::before {
+            background: linear-gradient(90deg, #ef5350, #ff7043);
+        }
+
+        .big-metric-card.neutral::before {
+            background: linear-gradient(90deg, #8B7355, #A89080);
+        }
+
+        .big-metric-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .big-metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .big-metric-value.positive {
+            color: #2E7D32;
+        }
+
+        .big-metric-value.warning {
+            color: #F57C00;
+        }
+
+        .big-metric-value.critical {
+            color: #c62828;
+        }
+
+        .big-metric-value.neutral {
+            color: #5C4033;
+        }
+
+        .big-metric-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 9pt;
+            font-weight: 600;
+            color: #8D6E63;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .big-metric-sublabel {
+            font-size: 8pt;
+            color: #A89080;
+            margin-top: 4px;
+        }
+
+        /* Özet Stat Ribbon */
+        .stat-ribbon {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, #5C4033 0%, #3D2B1F 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-ribbon-item {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-ribbon-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 700;
+        }
+
+        .stat-ribbon-label {
+            font-size: 8pt;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 4px;
+        }
+
+        /* Visual Separator */
+        .visual-separator {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C9B8A8, transparent);
+            margin: 24px 0;
+        }
+
+        /* Öneri Compact Cards */
+        .recommendation-compact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .rec-compact-card {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F5 100%);
+            border: 1px solid #E5DDD5;
+            border-left: 4px solid #8B7355;
+            border-radius: 0 10px 10px 0;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .rec-compact-card.priority-high {
+            border-left-color: #c62828;
+        }
+
+        .rec-compact-card.priority-medium {
+            border-left-color: #FF9800;
+        }
+
+        .rec-compact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            background: #F5F0EB;
+        }
+
+        .rec-compact-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #3D2B1F;
+            margin: 0 0 4px 0;
+        }
+
+        .rec-compact-content p {
+            font-size: 8.5pt;
+            color: #6B5344;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .rec-compact-score {
+            font-family: 'Playfair Display', serif;
+            font-size: 12pt;
+            font-weight: 700;
+            margin-left: auto;
+            padding-left: 12px;
+        }
+
+        /* Info Box with Icon */
+        .info-box-visual {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: linear-gradient(135deg, #F0F7F4 0%, #E8F4F0 100%);
+            border: 1px solid #A8C5B8;
+            border-radius: 12px;
+            margin: 16px 0;
+        }
+
+        .info-box-visual.warning {
+            background: linear-gradient(135deg, #FFF8E6 0%, #FFF3D4 100%);
+            border-color: #D4B896;
+        }
+
+        .info-box-visual.critical {
+            background: linear-gradient(135deg, #FDF2F2 0%, #FCE8E8 100%);
+            border-color: #E8B4B4;
+        }
+
+        .info-box-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .info-box-content {
+            flex: 1;
+        }
+
+        .info-box-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: #3D2B1F;
+            margin: 0 0 6px 0;
+        }
+
+        .info-box-content p {
+            font-size: 9.5pt;
+            color: #4A3728;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Premium Temel Çıkarım Box - Rapor Temasına Uygun */
+        .temel-cikarim-box {
+            background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%);
+            border: 2px solid #C9B8A8;
+            border-left: 5px solid #5C4033;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(92, 64, 51, 0.08);
+        }
+
+        .temel-cikarim-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .temel-cikarim-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #5C4033 0%, #4A3728 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(92, 64, 51, 0.25);
+        }
+
+        .temel-cikarim-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: #5C4033;
+            letter-spacing: 0.02em;
+        }
+
+        .temel-cikarim-content {
+            font-size: 9.5pt;
+            color: #3D2B1F;
+            line-height: 1.65;
+            text-align: justify;
+        }
+
+        .temel-cikarim-content strong {
+            color: #5C4033;
+            font-weight: 600;
+        }
+
+        @media print {
+            .temel-cikarim-box {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        @media print {
+            .icon-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .big-metrics-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .recommendation-compact {
+                grid-template-columns: 1fr;
+            }
+
+            .donut-chart-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- KAPAK SAYFASI -->
+    <div class="cover-page">
+        <div class="cover-content">
+            <!-- Üst Başlık -->
+            <div
+                style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 700; color: #2B1E16; letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 1px solid #D5CCC3; padding-bottom: 18px;">
+                ARNAVUTKÖY BELEDİYESİ
+            </div>
+
+            <!-- Ana Başlık -->
+            <div style="margin-top: 35px;">
+                <h1
+                    style="font-family: 'Playfair Display', serif; font-size: 3.75rem; font-weight: 500; color: #3E2723; line-height: 1.25; letter-spacing: -0.025em; text-align: center; margin: 0; border-bottom: none; padding-bottom: 0;">
+                    Çalışan Memnuniyeti ve<br />
+                    <span style="font-style: italic; color: #C26D45; position: relative; display: inline-block;">
+                        İyi Oluş Anketi
+                        <svg style="position: absolute; width: 100%; height: 0.75rem; bottom: -0.25rem; left: 0; color: rgba(194, 109, 69, 0.2);"
+                            fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.00025 6.99997C2.00025 6.99997 122.5 5.99999 212.5 2.00002" stroke="currentColor"
+                                stroke-linecap="round" stroke-width="3"></path>
+                        </svg>
+                    </span>
+                </h1>
+                <div
+                    style="font-family: 'Inter', sans-serif; font-size: 10pt; color: #795548; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 15px; text-align: center;">
+                    Analiz Raporu
+                </div>
+            </div>
+
+            <!-- Belediye Başkanı -->
+            <div style="margin-top: 35px;">
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 16pt; font-style: italic; color: #6B655F;">
+                    Belediye Başkanımız
+                </div>
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 18pt; font-weight: 700; color: #2B1E16; margin-top: 8px;">
+                    Sayın Mustafa Candaroğlu'na
+                </div>
+            </div>
+
+            <!-- Çizgi -->
+            <div style="width: 50px; height: 2px; background: #A89080; margin: 40px auto 35px auto;"></div>
+
+            <!-- Footer -->
+            <div style="margin-top: 0;">
+                <div
+                    style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #4A4641; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600;">
+                    İnsan Kaynakları ve Eğitim Müdürlüğü
+                </div>
+                <div
+                    style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #2B1E16; font-weight: 700; margin-top: 6px;">
+                    2025
+                </div>
+            </div>
+
+            <!-- QR Kodlar -->
+            <div style="display: inline-block; margin-top: 35px;">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="padding: 0 30px; text-align: center; vertical-align: top;">
+                            <div
+                                style="border: 1px solid #E5DDD5; border-radius: 8px; padding: 10px; display: inline-block;">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAFIAQAAAAAab1qeAAACV0lEQVR4nO1a7Y7bMAwjh7z/K3M/RNnugB3cYVdbB7lFmzgEbAmSqY9Q2By/doGNbOR/Qz4A40oUAAKKXyr+/LSMRMf1CQEAMTyfgkhRsnoBnt5nFeQDYGpNVN4JALU8rSLRNcjwbFIgKFDMo+ATq/9QJH1iMq3zo6vXRz4A8uQkCIEKt1fqVjfsswoSSivUXz4JqyLRWeTi1C/sQy2E/22r/zwkBSrU58jTgafVirhix597g6sx5mlJCEPN8tMqEp3XpxMjUZTzI2HaqEP9KhJdwUeSEN/5IJQZk2o+egvJwUbWXhBTZJzsfHMbGZ6t4fPz8AyKchja5+c+khIRyWWwPGGbzACKfX6+hUwalw2VQfR5ngpsf98dGjlQXkxeMlUFKVWR6Lw+/TfV+sLynmp9bo2Rb5rfk56QpfkM58tIdBxJksnmgBndJWVX6HnDPksgM1mHCWn0j9Z+UvP7NtL1EF/ClRHF9IhHO/58E0nQYVIoUfAtES2QS/Z5PXL4u919lOpXeur60jbyyfOSq98PdQ42Or3PQkiCjj5DjWKkn5G3C1THS+8ghcjfRYEvPWKCc+b4PusgHbKLGSLZ+6UojHb+vo18soBkM3Q6ZCMdk8f3WQW59jcxO0bRhY+Y3pAqEt1gn8B4rQ4vMf6i8CoSHdfnbLplfETABjqzzzISnddnJu0ZMjlzz+r8N67+85DPvNTgJUVbjllVpprf/w0ZERMEgvZ++eeqfd6NlDJbl4vHM/UM1d6xzwLI9f0630Z6qSwpB6L7HXvjj5dmP7x6Ixv59fgNTqFDV84LeuoAAAAASUVORK5CYII="
+                                    style="width: 55px; height: 55px;" alt="Video QR">
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <div
+                                    style="font-family: 'Playfair Display', serif; font-size: 9pt; font-weight: 700; color: #2B1E16;">
+                                    Raporun Sunum Videosu</div>
+                                <div
+                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    QR kodu okutarak izleyebilirsiniz</div>
+                                <a href="https://www.kisa.link/WNsCC" target="_blank"
+                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #A89080; margin-top: 4px; display: block; text-decoration: underline;">
+                                    kisa.link/WNsCC</a>
+                            </div>
+                        </td>
+                        <td style="padding: 0 30px; text-align: center; vertical-align: top;">
+                            <div
+                                style="border: 1px solid #E5DDD5; border-radius: 8px; padding: 10px; display: inline-block;">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAAEiCAIAAADS3EjhAAAFDklEQVR4nO3dwW0kNxBA0dXCgTgAx7DBOwYH4EzaV58ILEofJHveu8+opZkPHlQofj3P8wMo/dz9APB+MoOczCAnM8jJDHIyg5zMICczyMkMcjKDnMwgJzPIyQxyMoOczCAnM8jJDHIyg5zMIPfH5MW//vrzmx7jFH//82/0zuu/1frnvu+1N5p8N5xmkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpAbTYGsdRMVE5PphMlUxMSu2ZTO+74ba04zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8iFUyBr3X/cz5zGmLx2Mn1y48aOG78ba04zyMkMcjKDnMwgJzPIyQxyMoOczCAnM8htmwK50ZnTCd2GkjM3dtzIaQY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGOVMgv2GyV6ObxpjMpuz6jT6N0wxyMoOczCAnM8jJDHIyg5zMICczyMkMctumQG6cIeh2gdz4zp0bvxtrTjPIyQxyMoOczCAnM8jJDHIyg5zMICczyIVTIDfOH0x0ezXOfO3Ep303nGaQkxnkZAY5mUFOZpCTGeRkBjmZQU5mkPt6nmf3M7xEN9nwvt0Yn8ZpBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAa50S6QMzc67NpvsdY91eS1k/mSMzeUdK+dcJpBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQW40BdLNEEzs+k//2q6bWc78jCZu3IziNIOczCAnM8jJDHIyg5zMICczyMkMcjKDXLgLZPLf+l2bM87cJNG9c/cb3Tjl072z0wxyMoOczCAnM8jJDHIyg5zMICczyMkMcl/P80RvfeN/69/3c2+cetnFFAhcTGaQkxnkZAY5mUFOZpCTGeRkBjmZQW60C2Rt1y0n3RaKT7u35cxPcNenP+E0g5zMICczyMkMcjKDnMwgJzPIyQxyMoNceCPMmkmO73rnG3eufNp2E6cZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeRGN8K8b2fDxJn7PHYx5fN/TjPIyQxyMoOczCAnM8jJDHIyg5zMICczyIU3wqztmpm4cVaj21GxazfGxOSpds2mOM0gJzPIyQxyMoOczCAnM8jJDHIyg5zMILdtCmSXXbecdLqfe+OGksnn60YYuJjMICczyMkMcjKDnMwgJzPIyQxyMoPc6EaYT9PdgNO9dm3XVpW1M59qwmkGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBrnRLpAbd0WsnbkLpLvHpHvnbnJl160uk2d2mkFOZpCTGeRkBjmZQU5mkJMZ5GQGOZlBLrwR5sytDDfumegmKjq7NoXs2qqy5jSDnMwgJzPIyQxyMoOczCAnM8jJDHIyg1w4BbJ25s6GtTMnSHZtZNn1c2/cX+I0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPctimQ9+m2UJy532LXTTQ33kPkNIOczCAnM8jJDHIyg5zMICczyMkMcjKDnCmQb9PdVDKx66km0ye7nqr7FJxmkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpDbNgXS7ajYpfuNJu+8a6/GmffF7OI0g5zMICczyMkMcjKDnMwgJzPIyQxyMoNcOAVy480dZ3KbzAnvPOE0g5zMICczyMkMcjKDnMwgJzPIyQxyMoPc1/M8u58BXs5pBjmZQU5mkJMZ5GQGOZlBTmaQkxnkZAY5mUFOZpCTGeRkBjmZQU5mkJMZ5GQGOZlBTmaQ+w/xU45m04H+FgAAAABJRU5ErkJggg=="
+                                    style="width: 55px; height: 55px;" alt="Dijital Sistem QR">
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <div
+                                    style="font-family: 'Playfair Display', serif; font-size: 9pt; font-weight: 700; color: #2B1E16;">
+                                    Anket Değerlendirme Sistemi</div>
+                                <div
+                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    web adresi: arnv-anket.info</div>
+                                <div
+                                    style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #8C847D; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    password: arnbel34</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- İÇİNDEKİLER -->
+    <div
+        class="toc-section bg-white rounded-xl shadow-sm border border-border-color p-8 md:p-12 lg:p-16 relative overflow-hidden mb-8">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-cream-dark/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
+        </div>
+        <div class="relative z-10">
+            <div class="flex items-baseline justify-between mb-12 border-b border-border-color pb-6">
+                <h2 class="text-3xl font-serif font-bold text-text-dark">İçindekiler</h2>
+            </div>
+
+            <!-- 1.0 Takdim -->
+            <div class="mb-10 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">1.0</span> Takdim
+                    </h3>
+                </a>
+                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.1</span>
+                        <span class="text-sm md:text-base">Raporumuzun Amacı ve Stratejik Önemi</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.2</span>
+                        <span class="text-sm md:text-base">Birim Kapasitemiz</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">1.3</span>
+                        <span class="text-sm md:text-base">Çalışmamızın Kapsamı ve Gelecek Vizyonu</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2.0 Anket Metodolojisi -->
+            <div class="mb-10 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">2.0</span> Anket Metodolojisi ve
+                        Uygulama Süreci
+                    </h3>
+                </a>
+                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">2.1</span>
+                        <span class="text-sm md:text-base">Anketin Yapısı ve Analitik Çerçevesi</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">2.2</span>
+                        <span class="text-sm md:text-base">Saha Çalışması ve Katılım Düzeyi</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 3.0 Genel Değerlendirme -->
+            <div class="mb-10 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">3.0</span> Genel Değerlendirme: Temel
+                        Göstergeler ve Ana Bulgular
+                    </h3>
+                </a>
+                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.1</span>
+                        <span class="text-sm md:text-base">Kurumsal Karnemiz</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.2</span>
+                        <span class="text-sm md:text-base">Belediyemizin Güçlü Yönleri</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.3</span>
+                        <span class="text-sm md:text-base">Gelişim Alanlarımız</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.4</span>
+                        <span class="text-sm md:text-base">Kurum Desteği ve İş Stresi Dengesi</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">3.5</span>
+                        <span class="text-sm md:text-base">Müdürlüklerimizin Özet Bulguları</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 4.0 Çalışan İyi Oluşu -->
+            <div class="mb-10 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">4.0</span> Çalışan İyi Oluşu: Ruh
+                        Sağlığı Bulguları
+                    </h3>
+                </a>
+                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">4.1</span>
+                        <span class="text-sm md:text-base">Temel Ruh Sağlığı Göstergeleri</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">4.2</span>
+                        <span class="text-sm md:text-base">İş Stresi, Kurum Desteği ve Ruh Sağlığı İlişkisi</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 5.0 Sonuç ve Stratejik Öneriler -->
+            <div class="mb-10 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">5.0</span> Sonuç ve Stratejik Öneriler
+                    </h3>
+                </a>
+                <ul class="list-none space-y-3 pl-2 md:pl-10 border-l border-border-color ml-2.5">
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">5.1</span>
+                        <span class="text-sm md:text-base">Temel Çıkarımlarımız</span>
+                    </li>
+                    <li
+                        class="flex items-end text-text-medium hover:text-primary transition-colors cursor-pointer group/item py-0.5">
+                        <span
+                            class="text-sm md:text-base font-medium text-text-light w-10 shrink-0 group-hover/item:text-primary transition-colors">5.2</span>
+                        <span class="text-sm md:text-base">Belediye Geneli Stratejik Öneriler</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 6.0 Müdürlük Bazlı Detaylı Analizler -->
+            <div class="mb-6 group">
+                <a class="flex items-baseline justify-between mb-4 hover:text-primary transition-colors cursor-pointer"
+                    href="#">
+                    <h3 class="font-serif text-xl font-bold text-text-dark group-hover:text-primary transition-colors">
+                        <span class="text-secondary/70 mr-3 font-normal text-lg">6.0</span> Müdürlük Bazlı Detaylı
+                        Analizler
+                    </h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BÖLÜM 1: TAKDİM -->
+    <div class="card section-page">
+        <h1>1.0 Takdim</h1>
+
+        <h2 class="simple-header">1.1 Raporumuzun Amacı ve Stratejik Önemi</h2>
+
+        <p>Sayın Başkanım,</p>
+
+        <p>Elinizdeki rapor, Arnavutköy Belediyesi'nin kurumsal yapısının derinlemesine analizini sunmakta ve
+            çalışanlarımızın genel durumunu bilimsel verilerle ortaya koymaktadır. Büyük ölçekli kamu ve özel
+            kuruluşların yönetim stratejilerinin temelini oluşturan bu tür kapsamlı analiz çalışmaları, <span
+                class="highlight">Arnavutköy Belediyesi olarak ilk kez gerçekleştirilmekte</span> ve kurumsal
+            gelişimimiz adına önemli bir temel atmaktadır. Bu çalışma, önümüzdeki dönemde atılacak stratejik adımları
+            doğrudan şekillendirecek somut bir yol haritası sunmaktadır.</p>
+
+        <h2 class="simple-header">1.2 Birim Kapasitemiz</h2>
+
+        <p>Bu çalışmanın en ayırt edici özelliği; planlama, saha uygulaması, veri analizi ve yazılım geliştirme
+            süreçlerinin tamamının hiçbir dış hizmet alımı yapılmaksızın, <span class="highlight">tamamen İnsan
+                Kaynakları ve Eğitim Müdürlüğümüz tarafından gerçekleştirilmiş</span> olmasıdır.</p>
+
+        <h2 class="simple-header">1.3 Çalışmamızın Kapsamı ve Gelecek Vizyonu</h2>
+
+        <p>Bu çalışma, belirli
+            periyotlarla tekrarlanarak kurumsal değişimlerin ve iyileştirme çalışmalarının etkilerinin takip edileceği
+            sürdürülebilir bir izleme sisteminin temel taşıdır. Standartları korumak ve bu birikimi kurumsal hafızaya
+            kazandırmak amacıyla, tüm süreçleri detaylandıran bir "Metodoloji Kitapçığı" da hazırlanmıştır.</p>
+    </div>
+
+    <!-- BÖLÜM 2: METODOLOJİ - TAM GÖRSEL TASARIM -->
+    <div class="card section-page">
+        <h1>2.0 Anket Metodolojisi ve Uygulama Süreci</h1>
+
+
+        <h2 class="simple-header">2.1 Anketin Yapısı ve Analitik Çerçevesi</h2>
+
+        <!-- ANKET YAPISI DETAY -->
+        <div style="background: white; border: 2px solid #C9B8A8; border-radius: 16px; padding: 24px; margin: 20px 0;">
+
+            <!-- Ana Anket -->
+            <div
+                style="display: flex; align-items: flex-start; gap: 20px; padding: 16px; background: #FAF8F5; border-radius: 12px; margin-bottom: 16px;">
+                <div style="min-width: 80px; text-align: center;">
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 32pt; font-weight: 700; color: #5C4033;">
+                        45</div>
+                    <div style="font-size: 8pt; color: #6B5344; text-transform: uppercase;">Soru</div>
+                </div>
+                <div style="flex: 1;">
+                    <div style="font-weight: 600; color: #2C1810; margin-bottom: 10px;">45 soru 10 ayrı tema (başlık)
+                        olarak gruplandırıldı:</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">İş-Kişi
+                            Uyumu</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Görev-Rol
+                            Netliği</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Talep
+                            Yoğunluğu</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Yöneticilerle
+                            İlişkiler</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Çalışma
+                            Arkadaşları</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Kurum
+                            İçi İletişim</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Çalışma
+                            Koşulları</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Kamu
+                            Hizmeti Motivasyonu</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Yetkinlik
+                            & Performans</span>
+                        <span
+                            style="background: #E8E0D8; padding: 5px 12px; border-radius: 12px; font-size: 8pt; color: #5C4033;">Eğitim
+                            & Gelişim</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ek Modüller -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                <div
+                    style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 10px; padding: 16px; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">🧠</div>
+                    <div style="font-size: 9pt; font-weight: 600; color: #2E7D32;">Psikolojik İyi Oluş</div>
+                    <div style="font-size: 8pt; color: #4A6741;">Ruh sağlığı taraması</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #2E7D32; margin-top: 6px;">4 Soru</div>
+                </div>
+                <div
+                    style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-radius: 10px; padding: 16px; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">🚬</div>
+                    <div style="font-size: 9pt; font-weight: 600; color: #E65100;">Sigara Kullanımı</div>
+                    <div style="font-size: 8pt; color: #BF360C;">Sağlık alışkanlıkları</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #E65100; margin-top: 6px;">1 Soru</div>
+                </div>
+                <div
+                    style="background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-radius: 10px; padding: 16px; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">📱</div>
+                    <div style="font-size: 9pt; font-weight: 600; color: #1565C0;">Sosyal Medya</div>
+                    <div style="font-size: 8pt; color: #0D47A1;">Başkan & Belediye Hesapları</div>
+                    <div style="font-size: 10pt; font-weight: 700; color: #1565C0; margin-top: 6px;">1 Soru</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANONİMLİK ve QR KOD -->
+        <div style="display: flex; gap: 16px; margin: 20px 0; flex-wrap: wrap;">
+            <div
+                style="flex: 1; min-width: 220px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; border: 2px solid #81C784;">
+                <div
+                    style="width: 60px; height: 60px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;">
+                    🔒</div>
+                <div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 13pt; font-weight: 600; color: #2E7D32;">
+                        Tam Anonimlik</div>
+                    <div style="font-size: 9pt; color: #4A6741; margin-top: 4px;">Katılımcılardan hiçbir kişisel bilgi
+                        istenmemiştir
+                    </div>
+                </div>
+            </div>
+            <div
+                style="flex: 1; min-width: 220px; background: linear-gradient(135deg, #F5EBE0 0%, #E8DCD0 100%); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; border: 2px solid #C9B8A8;">
+                <div
+                    style="width: 60px; height: 60px; background: #5C4033; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;">
+                    📲</div>
+                <div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 13pt; font-weight: 600; color: #5C4033;">
+                        30 Özel QR Kod</div>
+                    <div style="font-size: 9pt; color: #6B5344; margin-top: 4px;">Her müdürlüğe özel oluşturulan QR kod
+                        sistemi sayesinde, veriler müdürlük bazında analiz edilmiştir.
+                    </div>
+                </div>
+            </div>
+            <div
+                style="flex: 1; min-width: 220px; background: linear-gradient(135deg, #F5EBE0 0%, #E8DCD0 100%); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; border: 2px solid #C9B8A8;">
+                <div
+                    style="width: 60px; height: 60px; background: #5C4033; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;">
+                    🔍</div>
+                <div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 13pt; font-weight: 600; color: #5C4033;">
+                        Gizli Kontrol Soruları</div>
+                    <div style="font-size: 9pt; color: #6B5344; margin-top: 4px;">Rastgele veya dikkatsiz işaretlenen
+                        anketler geçersiz sayılmıştır.
+                    </div>
+                </div>
+            </div>
+            <div
+                style="flex: 1; min-width: 220px; background: linear-gradient(135deg, #F5EBE0 0%, #E8DCD0 100%); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 16px; border: 2px solid #C9B8A8;">
+                <div
+                    style="width: 60px; height: 60px; background: #5C4033; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;">
+                    💻</div>
+                <div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 13pt; font-weight: 600; color: #5C4033;">
+                        Anket Değerlendirme Sistemi</div>
+                    <div style="font-size: 9pt; color: #6B5344; margin-top: 4px;">İnsan Kaynakları ve Eğitim Müdürlüğü
+                        tarafından geliştirilmiş, veri girişi ve rapor bu yazılım üzerinden gerçekleştirilmiştir.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="simple-header">2.2 Saha Çalışması ve Katılım Düzeyi</h2>
+
+        <!-- SAHA ÇALIŞMASI TIMELINE -->
+        <div
+            style="background: linear-gradient(135deg, #FDFCFB 0%, #F5F0EB 100%); border-radius: 16px; padding: 24px; margin: 20px 0; border: 1px solid #E5DDD5;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <div style="text-align: center; flex: 1; min-width: 120px;">
+                    <div
+                        style="width: 64px; height: 64px; background: #5C4033; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 28px; color: white;">
+                        🏢</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 700; color: #5C4033;">
+                        30</div>
+                    <div style="font-size: 9pt; color: #6B5344;">Müdürlük Ziyareti</div>
+                </div>
+                <div style="font-size: 24px; color: #C9B8A8;">→</div>
+                <div style="text-align: center; flex: 1; min-width: 120px;">
+                    <div
+                        style="width: 64px; height: 64px; background: #8B7355; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 28px; color: white;">
+                        📋</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 600; color: #5C4033;">
+                        Elden</div>
+                    <div style="font-size: 9pt; color: #6B5344;">Anket Ulaştırma</div>
+                </div>
+                <div style="font-size: 24px; color: #C9B8A8;">→</div>
+                <div style="text-align: center; flex: 1; min-width: 120px;">
+                    <div
+                        style="width: 64px; height: 64px; background: #A08060; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 28px; color: white;">
+                        💬</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 600; color: #5C4033;">
+                        Yerinde</div>
+                    <div style="font-size: 9pt; color: #6B5344;">Şikayet/öneriler ayrıca yüz yüze olarak da dinlendi
+                    </div>
+                </div>
+                <div style="font-size: 24px; color: #C9B8A8;">→</div>
+                <div style="text-align: center; flex: 1; min-width: 120px;">
+                    <div
+                        style="width: 64px; height: 64px; background: #C9B8A8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 28px; color: white;">
+                        📱</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 14pt; font-weight: 600; color: #5C4033;">
+                        Sosyal Medya</div>
+                    <div style="font-size: 9pt; color: #6B5344;">Başkan/Belediye hesaplarının takibi için teşvik edildi
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KATILIM İSTATİSTİKLERİ -->
+        <div style="background: white; border: 2px solid #C9B8A8; border-radius: 16px; padding: 24px; margin: 20px 0;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span
+                    style="background: #5C4033; color: white; padding: 8px 20px; border-radius: 20px; font-size: 10pt; font-weight: 600;">Katılım
+                    İstatistikleri</span>
+            </div>
+
+            <!-- Toplam vs Katılan -->
+            <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <div style="text-align: center; padding: 20px 40px; background: #FAF8F5; border-radius: 12px;">
+                    <div style="font-size: 9pt; color: #6B5344; text-transform: uppercase; margin-bottom: 8px;">Toplam
+                        Personel</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 36pt; font-weight: 700; color: #5C4033;">
+                        2.089</div>
+                </div>
+                <div style="display: flex; align-items: center; font-size: 32px; color: #C9B8A8;">→</div>
+                <div
+                    style="text-align: center; padding: 20px 40px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 12px; border: 2px solid #4CAF50;">
+                    <div style="font-size: 9pt; color: #2E7D32; text-transform: uppercase; margin-bottom: 8px;">Ankete
+                        Katılan</div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 36pt; font-weight: 700; color: #2E7D32;">
+                        1.470</div>
+                </div>
+            </div>
+
+            <!-- Katılım Oranı Progress Bar -->
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 10pt; font-weight: 600; color: #3D2B1F;">Katılım Oranı</span>
+                    <span style="font-size: 14pt; font-weight: 700; color: #2E7D32;">%70,4</span>
+                </div>
+                <div style="background: #E5DDD5; border-radius: 10px; height: 24px; overflow: hidden;">
+                    <div
+                        style="background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%); height: 100%; width: 70.4%; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 10pt; font-weight: 600;">
+                        1.470 kişi</div>
+                </div>
+            </div>
+
+            <!-- Açık Uçlu Yorum -->
+            <div
+                style="display: flex; align-items: center; justify-content: center; gap: 20px; padding: 16px; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-radius: 12px;">
+                <div style="font-size: 32px;">💬</div>
+                <div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 24pt; font-weight: 700; color: #E65100;">
+                        456 Kişi</div>
+                    <div style="font-size: 9pt; color: #BF360C;">Açık uçlu yorum yazarak analizin niteliksel derinliğini
+                        artırmıştır (%31)</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BÖLÜM 3: GENEL DEĞERLENDİRME -->
+    <div class="card section-page">
+        <h1>3.0 Genel Değerlendirme: Temel Göstergeler ve Ana Bulgular</h1>
+
+        <!-- Bir Bakışta Özet - Görsel Versiyon -->
+        <div class="exec-summary" style="margin-bottom: 1.5em;">
+            <h2 style="text-align: center; border-bottom: none; margin-bottom: 0.5em; font-size: 16pt;">📊 Bir Bakışta
+            </h2>
+
+            <div class="big-metrics-grid">
+                <div class="big-metric-card positive">
+                    <div class="big-metric-icon">😊</div>
+                    <div class="big-metric-value positive">%90,8</div>
+                    <div class="big-metric-label">Genel Memnuniyet</div>
+                    <div class="big-metric-sublabel">"Bu kurumda çalışmaktan memnunum"</div>
+                </div>
+                <div class="big-metric-card neutral">
+                    <div class="big-metric-icon">📋</div>
+                    <div class="big-metric-value neutral">%70,4</div>
+                    <div class="big-metric-label">Katılım Oranı</div>
+                    <div class="big-metric-sublabel">1.470 / 2.089 personel</div>
+                </div>
+                <div class="big-metric-card critical">
+                    <div class="big-metric-icon">🧠</div>
+                    <div class="big-metric-value critical">%52,2</div>
+                    <div class="big-metric-label">Ruh Sağlığı Riski</div>
+                    <div class="big-metric-sublabel">Son 2 haftada belirti bildiren</div>
+                </div>
+            </div>
+
+            <h2>3.1 Kurumsal Karnemiz</h2>
+
+            <table class="karne-table">
+                <thead>
+                    <tr>
+                        <th style="width:70%;">Gösterge</th>
+                        <th style="width:30%;">Değer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-row">
+                        <td class="label"><strong>Genel Memnuniyet</strong><br><span
+                                style="font-size:8.5pt; font-weight:normal; color:#6B5344;">("Bu kurumda çalışmaktan
+                                genel
+                                olarak memnunum" sorusuna verilen yanıtların skoru)</span></td>
+                        <td class="value" style="font-size:14pt; color:#2E5A3A;">%90,8</td>
+                    </tr>
+                    <tr>
+                        <td class="label"><strong>İş Stresi/Yükü</strong><br><span
+                                style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(iş yoğunluğu/yükü, görevin
+                                zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar)</span></td>
+                        <td class="value">%69,1</td>
+                    </tr>
+                    <tr>
+                        <td class="label"><strong>Kurum Desteği</strong><br><span
+                                style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(yönetici ilişkileri,
+                                çalışma
+                                arkadaşları desteği, çalışma koşulları vb.)</span></td>
+                        <td class="value">%82,3</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td class="label"><strong>Denge (Kurum Desteği - İş Stresi/Yükü)</strong><br><span
+                                style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(pozitif değer çalışanların
+                                iş
+                                stresi/yükünü karşılayacak düzeyde destek aldığını gösterir)</span></td>
+                        <td class="value" style="color:#2E5A3A;">+13,2</td>
+                    </tr>
+                    <tr>
+                        <td class="label"><strong>Ruh Sağlığı Riski</strong><br><span
+                                style="font-size:8.5pt; font-weight:normal; color:#6B5344;">(keyif alamama, üzgün/çökkün
+                                hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span></td>
+                        <td class="value" style="color:#8B3A3A;">%52,2</td>
+                    </tr>
+                    <tr>
+                        <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+                        <td class="value">456 kişi (%31,0)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>3.2 Belediyemizin Güçlü Yönleri</h2>
+
+
+            <!-- Görsel İkon Kartları -->
+            <div class="icon-cards-grid">
+                <div class="icon-card">
+                    <div class="icon-card-icon positive">🏆</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value positive">%94,5</div>
+                        <div class="icon-card-label">Topluma Hizmet Gururu</div>
+                        <div class="icon-card-desc">Çalışanlar, topluma hizmet etmekten büyük bir gurur duymaktadır.
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon positive">💡</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value positive">%92,4</div>
+                        <div class="icon-card-label">İşin Anlamlı Bulunması</div>
+                        <div class="icon-card-desc">Personel, yaptığı işin anlamlı ve toplum için faydalı olduğuna
+                            inanmaktadır.</div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon positive">💬</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value positive">%92,2</div>
+                        <div class="icon-card-label">Amirlerle Olumlu İletişim</div>
+                        <div class="icon-card-desc">Yöneticilerle kurulan iletişim ve onlara ulaşılabilirlik yüksek
+                            düzeydedir.</div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon positive">🤝</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value positive">%86,9</div>
+                        <div class="icon-card-label">Yüksek Ekip Uyumu</div>
+                        <div class="icon-card-desc">İş arkadaşları arasındaki dayanışma ve uyum, kurumun en güçlü sosyal
+                            dinamiklerinden biridir.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Görsel Progress Barlar -->
+            <div
+                style="background: linear-gradient(135deg, #F0F7F4 0%, #E8F4F0 100%); border-radius: 12px; padding: 20px; margin: 16px 0;">
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 160px;">Topluma Hizmet</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill positive" style="width: 94.5%;">%94,5</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 160px;">İşin Anlamlılığı</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill positive" style="width: 92.4%;">%92,4</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 160px;">Amir İletişimi</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill positive" style="width: 92.2%;">%92,2</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 160px;">Ekip Uyumu</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill positive" style="width: 86.9%;">%86,9</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="temel-cikarim-box">
+                <div class="temel-cikarim-header">
+                    <div class="temel-cikarim-icon">💡</div>
+                    <div class="temel-cikarim-title">Temel Çıkarım</div>
+                </div>
+                <div class="temel-cikarim-content">
+                    Memnuniyetin ve motivasyonun temelinde ücret veya fiziksel koşullar değil; <strong>işin topluma
+                        katkısı</strong>, <strong>anlam duygusu</strong> ve <strong>güçlü ekip ruhu</strong> yer
+                    almaktadır.
+                </div>
+            </div>
+
+
+            <h2>3.3 Gelişim Alanlarımız</h2>
+
+            <!-- Görsel Progress Bar'lar -->
+            <div
+                style="background: linear-gradient(135deg, #FDF2F2 0%, #FCE8E8 100%); border-radius: 12px; padding: 20px; margin: 16px 0; border: 1px solid #E8B4B4;">
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 180px;">🍽️ Yemek Hizmeti</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill critical" style="width: 57.2%;">%57,2</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 180px;">🚌 Servis Güzergahları</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill warning" style="width: 67.7%;">%67,7</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 180px;">💰 Ücret Politikaları</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill warning" style="width: 69%;">%69,0</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 180px;">🏢 Ortak Alanlar</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill warning" style="width: 70.4%;">%70,4</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-label" style="min-width: 180px;">👔 Yönetici İlişkileri</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill neutral" style="width: 86.8%;">%86,8</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Görsel İkon Kartları - Gelişim Alanları -->
+            <div class="icon-cards-grid">
+                <div class="icon-card">
+                    <div class="icon-card-icon critical">🍽️</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value critical">%57,2</div>
+                        <div class="icon-card-label">Yemek Hizmeti (83 yorum) — En Kritik Alan</div>
+                        <div class="icon-card-desc">Belediye genelinde memnuniyetin en düşük olduğu alandır. Açık uçlu
+                            yorumlarda yemeklerin kalitesi, çeşitliliği ve hijyen koşullarına yönelik yaygın bir
+                            iyileştirme beklentisi öne çıkmaktadır. Özellikle büro birimlerindeki personel, fiyat-kalite
+                            dengesini sorgulamakta; memurlar ve şirket personeli arasındaki fiyat farkının giderilmesini
+                            talep etmektedir. Ayrıca mevcut sabit kesinti yerine kart bastıkça (yemek yedikçe) ödeme
+                            sistemi talebi de sıklıkla dile getirilmektedir.</div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon warning">🚌</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value warning">%67,7</div>
+                        <div class="icon-card-label">Servis Güzergahları (32 yorum)</div>
+                        <div class="icon-card-desc">Tasarruf tedbirleri kapsamında ilçe dışı servislerin kaldırılması
+                            personeller tarafından bilinmesine rağmen, tekrar aktif edilme talebi mevcuttur. Mevcut
+                            güzergahların uzun ve dolambaçlı olduğu, bazı hatlarda ise kapasitenin üzerinde yolcu
+                            taşınması nedeniyle ayakta yolculuk yapıldığı belirtilmektedir.</div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon warning">📋</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value warning">%69,0</div>
+                        <div class="icon-card-label">Ücret ve Maaş Politikaları (116 yorum) — En Fazla Yorum</div>
+                        <div class="icon-card-desc">En fazla sayıda açık uçlu yorumun yapıldığı (116 kişi) bu konu,
+                            çalışanlar için en hassas başlıklardan biridir. Yorumlarda sıklıkla İstanbul'daki diğer
+                            belediyelerle maaş karşılaştırmaları yapılmaktadır. Özellikle saha personeli; maktu mesai,
+                            Sosyal Denge Sözleşmesi (SDS) ve fazla mesai ödemelerinde iyileştirme talep etmektedir.
+                        </div>
+                    </div>
+                </div>
+                <div class="icon-card">
+                    <div class="icon-card-icon warning">🏢</div>
+                    <div class="icon-card-content">
+                        <div class="icon-card-value warning">%70,4</div>
+                        <div class="icon-card-label">Ortak Alanlar ve Fiziksel Koşullar (81 yorum)</div>
+                        <div class="icon-card-desc">Özellikle saha birimlerinden gelen geri bildirimler, altyapı
+                            eksikliklerine odaklanmaktadır. Tuvalet sayısının yetersizliği (Temizlik İşleri'nde 66 kişi
+                            şikayet), soyunma odaları ve kişisel dolapların bulunmaması en sık dile getirilen
+                            şikayetlerdir.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Temel Çıkarım -->
+            <div class="temel-cikarim-box">
+                <div class="temel-cikarim-header">
+                    <div class="temel-cikarim-icon">📊</div>
+                    <div class="temel-cikarim-title">Temel Çıkarım</div>
+                </div>
+                <div class="temel-cikarim-content">
+                    Veriler ve personel yorumları, belediye genelinde <strong>beş temel gelişim alanını</strong> işaret
+                    etmektedir. Bu alanlar, iş stresi ve tükenmişlik riskini artırabilecek faktörlerdir.
+                </div>
+            </div>
+
+            <h2>3.4 Kurum Desteği ve İş Stresi Dengesi</h2>
+
+            <div class="info-box-visual" style="margin-bottom: 20px;">
+                <div class="info-box-icon">📊</div>
+                <div class="info-box-content">
+                    <h4>Denge Puanı Nedir?</h4>
+                    <p>"Denge" puanı, kurumun çalışanlarına sağladığı desteğin, onların yaşadığı iş stresi/yükünü ne
+                        ölçüde karşılayabildiğini ölçen temel bir performans göstergesidir. Kurumsal desteğin iş
+                        stresi/yükünü karşılayamadığı durumlarda tükenmişlik riski ve psikolojik risk artmaktadır.</p>
+                </div>
+            </div>
+
+            <!-- Görsel Denge Göstergesi -->
+            <div
+                style="background: linear-gradient(135deg, #FDFCFB 0%, #F8F6F3 100%); border: 2px solid #C9B8A8; border-radius: 16px; padding: 30px; text-align: center; margin: 20px 0;">
+                <div
+                    style="font-family: 'Inter', sans-serif; font-size: 10pt; color: #6B5344; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
+                    Belediye Geneli Denge Puanı</div>
+
+                <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;">
+                    <div
+                        style="text-align: center; padding: 16px 24px; background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%); border-radius: 12px; border: 1px solid #E5DDD5;">
+                        <div
+                            style="font-family: 'Playfair Display', serif; font-size: 28pt; font-weight: 700; color: #5C4033;">
+                            %82,3</div>
+                        <div style="font-size: 9pt; color: #6B5344;">Kurum Desteği</div>
+                    </div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 24pt; color: #8B7355;">−</div>
+                    <div
+                        style="text-align: center; padding: 16px 24px; background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%); border-radius: 12px; border: 1px solid #E5DDD5;">
+                        <div
+                            style="font-family: 'Playfair Display', serif; font-size: 28pt; font-weight: 700; color: #F57C00;">
+                            %69,1</div>
+                        <div style="font-size: 9pt; color: #6B5344;">İş Stresi/Yükü</div>
+                    </div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 24pt; color: #8B7355;">=</div>
+                    <div
+                        style="text-align: center; padding: 20px 32px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-radius: 12px; border: 2px solid #4CAF50;">
+                        <div
+                            style="font-family: 'Playfair Display', serif; font-size: 36pt; font-weight: 700; color: #2E7D32;">
+                            +13,2</div>
+                        <div style="font-size: 9pt; color: #2E7D32; font-weight: 600;">POZİTİF DENGE</div>
+                    </div>
+                </div>
+
+                <!-- Alt Bileşenler -->
+                <div style="display: flex; justify-content: center; gap: 60px; margin-top: 24px; flex-wrap: wrap;">
+
+                    <!-- Kurum Desteği Alt Bileşenleri -->
+                    <div style="text-align: left; max-width: 300px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <div style="width: 24px; height: 2px; background: #5C4033;"></div>
+                            <span
+                                style="font-size: 9pt; font-weight: 600; color: #5C4033; text-transform: uppercase; letter-spacing: 0.05em;">Kurum
+                                Desteği Kapsamı</span>
+                        </div>
+                        <div
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; font-size: 8pt; color: #6B5344;">
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Ekip Uyumu
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Yönetici İlişkileri
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Çalışma Koşulları
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Kariyer ve Gelişim
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Kurumsal Bağlılık
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> İş-Kişi Uyumu
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #5C4033;">→</span> Kurum İçi İletişim
+                            </div>
+
+                            <div style="display: flex; align-items: center; gap: 4px; grid-column: span 2;">
+                                <span style="color: #5C4033;">→</span> Sosyal İmkanlar (yemek, servis vb.)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İş Stresi/Yükü Alt Bileşenleri -->
+                    <div style="text-align: left; max-width: 280px;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <div style="width: 24px; height: 2px; background: #F57C00;"></div>
+                            <span
+                                style="font-size: 9pt; font-weight: 600; color: #F57C00; text-transform: uppercase; letter-spacing: 0.05em;">İş
+                                Stresi/Yükü Kapsamı</span>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 8pt; color: #6B5344;">
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #F57C00;">→</span> İş Yoğunluğu/Yükü
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #F57C00;">→</span> Görevin Zorlayıcılığı
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #F57C00;">→</span> Zaman Sıkışıklığı
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 4px;">
+                                <span style="color: #F57C00;">→</span> Duygusal Yorucu Durumlar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Açıklama Notu -->
+            <p style="text-align: center; margin-top: 16px; font-size: 9pt; color: #2E7D32; font-style: italic;">
+                +13,2 pozitif denge, kurumsal desteğin iş stresi/yükünden 13,2 puan daha yüksek olduğunu göstermektedir.
+                Ancak tüm müdürlüklerin denge puanları da ayrı ayrı ele alınmalıdır.
+            </p>
+
+        </div>
+
+
+        <!-- MÜDÜRLÜK TABLOSU -->
+        <div class="card" id="ozet-tablosu">
+            <h2>3.5 Müdürlüklerimizin Özet Bulguları</h2>
+
+            <p>Bu tablo, tüm müdürlüklerin temel göstergelerini karşılaştırmalı olarak sunmaktadır.</p>
+
+            <table class="mudurluk-table">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; width:16%;">Müdürlük</th>
+                        <th style="text-align:center; width:7%;">Memn.</th>
+                        <th style="text-align:center; width:7%;">Denge</th>
+                        <th style="text-align:left; width:70%;">Dikkat Çekici Bulgular (Özet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="belediye-geneli">
+                        <td>🏢 BELEDİYE GENELİ</td>
+                        <td style="text-align:center;">%90,8</td>
+                        <td style="text-align:center;">+13,2</td>
+                        <td>2.089 personelden 1.470'i ankete katılmıştır (%70,4). 456 kişi açık uçlu yorum yazmıştır.
+                            Güçlü yönler: kamu hizmeti motivasyonu (%92,8), iş-kişi uyumu (%91,3), topluma hizmet gururu
+                            (%94,5). Personelin yarısı son 2 haftada psikolojik belirti bildirmektedir. En düşük
+                            skorlar: yemek
+                            (%57,2), servis (%67,7), ücret (%69,0). 3 müdürlükte negatif denge tespit edilmiştir.</td>
+                    </tr>
+                    <tr class="critical" data-mudurluk="veteriner_isleri"
+                        onclick="goToMudurlukReport('veteriner_isleri')">
+                        <td>🐾 VETERİNER İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%86,5</td>
+                        <td style="text-align:center; color:#8B3A3A;"><strong>-3,5</strong></td>
+                        <td><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği belediyenin en düşük
+                            skoru - yönetim adaleti sorgulanmaktadır. İş stresli ve tehlikeli, ücret yetersiz: "Diğer
+                            ilçe
+                            belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı
+                            kritik:
+                            hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu güçlü ancak kurumsal destek
+                            karşılamıyor.
+                            <div
+                                style="margin-top: 12px; padding-left: 12px; border-left: 3px solid #2E7D32; font-style: italic; color: #5C4033;">
+                                <strong style="color:#2E7D32; font-style: normal;">💡 Öneri:</strong> Veteriner İşleri
+                                Müdürlüğü personeli işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak iş
+                                stresi/yükü kritik seviyelerdedir ve kurumsal destek yetersiz kalmaktadır. Yassıören
+                                barınağı altyapısının iyileştirilmesi, yönetim adaleti algısının güçlendirilmesi ve
+                                personele psikolojik destek sunulması acil önceliklerdir.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="critical" data-mudurluk="gelirler" onclick="goToMudurlukReport('gelirler')">
+                        <td>💰 GELİRLER MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%87,1</td>
+                        <td style="text-align:center; color:#8B3A3A;"><strong>-2,5</strong></td>
+                        <td><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve
+                            vatandaş
+                            yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane
+                            memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici
+                            ilişkileri
+                            ve ekip uyumu güçlü - koruyucu faktörler olarak öne çıkmaktadır.
+                            <div
+                                style="margin-top: 12px; padding-left: 12px; border-left: 3px solid #2E7D32; font-style: italic; color: #5C4033;">
+                                <strong style="color:#2E7D32; font-style: normal;">💡 Öneri:</strong> Gelirler
+                                Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına
+                                göre personel iş stresi/yükünü yüksek, çalışma koşullarını ise yetersiz bulmaktadır.
+                                Fiziksel çalışma ortamının iyileştirilmesi (temizlik, ısıtma, havalandırma), iş yükü
+                                dengesinin gözden geçirilmesi, şirket personeli-memur eşitliğinin sağlanması ve liyakat
+                                bazlı kariyer gelişimi fırsatlarının artırılması izlenmesi gereken alanlar olarak öne
+                                çıkmaktadır.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="critical" data-mudurluk="imar_sehircilik"
+                        onclick="goToMudurlukReport('imar_sehircilik')">
+                        <td>🏗️ İMAR VE ŞEHİRCİLİK MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%87,5</td>
+                        <td style="text-align:center; color:#8B3A3A;"><strong>-2,3</strong></td>
+                        <td><strong>NEGATİF DENGE (-2,3).</strong> Belediyenin en yüksek vatandaş yoğunluğu ve iş
+                            stresi/yükü. Yönetici ilişkileri güçlü olmasına rağmen kurumsal destek yetersiz. Vatandaş
+                            iletişiminde stres: "Küfür yiyoruz, saygısızlık çok oluyor" şikayeti mevcut. Yemekhane ve
+                            servis
+                            skorları düşük. Kamu hizmeti motivasyonu güçlü - personel takviyesi acil görünmektedir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="iklim_degisikligi"
+                        onclick="goToMudurlukReport('iklim_degisikligi')">
+                        <td>♻️ İKLİM DEĞİŞİKLİĞİ VE SIFIR ATIK MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%88,2</td>
+                        <td style="text-align:center; color:#B8860B;">+0,7</td>
+                        <td><strong>Belediyenin en düşük pozitif dengesi (+0,7).</strong> Yüksek iş stresi/yükü ve
+                            yetersiz
+                            kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız
+                            var,
+                            çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok."
+                            Sigara
+                            kullanımı ikinci en yüksek. Ekip uyumu ve kamu hizmeti motivasyonu koruyucu faktörler.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="emlak_istimlak" onclick="goToMudurlukReport('emlak_istimlak')">
+                        <td>🏠 EMLAK VE İSTİMLAK MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%91,7</td>
+                        <td style="text-align:center; color:#B8860B;">+1,5</td>
+                        <td><strong>Belediyenin en düşük eğitim-gelişim skoru (%62,5)</strong> - personel kendini
+                            geliştirme
+                            imkanı bulamamaktadır. Yüksek iş stresi/yükü ile +1,5 sınırda denge. Ekip uyumu belediyenin
+                            en
+                            yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane en düşük skorlardan. Servis ağı
+                            genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
+                    </tr>
+                    <tr class="critical" data-mudurluk="fen_isleri" onclick="goToMudurlukReport('fen_isleri')">
+                        <td>🛠️ FEN İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%88,1</td>
+                        <td style="text-align:center; color:#B8860B;">+1,7</td>
+                        <td><strong>Belediyenin en yüksek ruh sağlığı riski (%61,9)</strong> bu birimde tespit
+                            edilmiştir.
+                            Kamu hizmeti motivasyonu ve ekip uyumu güçlü olmakla birlikte, saha araçları sorunu kritik:
+                            "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği düşük, sigara
+                            kullanımı
+                            yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz
+                            görünmektedir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="yapi_kontrol" onclick="goToMudurlukReport('yapi_kontrol')">
+                        <td>🏗️ YAPI KONTROL MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%88,0</td>
+                        <td style="text-align:center; color:#B8860B;">+2,9</td>
+                        <td>Yüksek iş stresi/yükü ancak ekip uyumu ve yönetici ilişkileri koruyucu faktör olarak öne
+                            çıkıyor. Kamu hizmeti motivasyonu güçlü. Ücret şikayeti yaygın: "Diğer belediyelere göre
+                            maaş
+                            farkı iyileştirilmeli." Yemek memur-işçi eşitliği talep edilmektedir. +2,9 denge ile
+                            kurumsal
+                            destek sınırda yeterli görünmektedir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="zabita" onclick="goToMudurlukReport('zabita')">
+                        <td>👮 ZABITA MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#8B3A3A;">%83,2</td>
+                        <td style="text-align:center; color:#B8860B;">+3,1</td>
+                        <td>Yüksek iş stresi/yükü ve en düşük ortak alan skoru. 62 kişi açık uçlu yorum yazarak görüş
+                            bildirme motivasyonu göstermiştir. 28 kişi ücret/SDS şikayeti: İstanbul geneli zabıta
+                            haklarıyla
+                            eşitlik talep edilmektedir. Kamu hizmeti motivasyonu güçlü ancak fiziksel koşullar yetersiz,
+                            servis güzergahı iyileştirme beklemektedir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="sosyal_destek" onclick="goToMudurlukReport('sosyal_destek')">
+                        <td>❤️ SOSYAL DESTEK HİZMETLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%89,9</td>
+                        <td style="text-align:center;">+5,2</td>
+                        <td>Belediyenin en yüksek kamu hizmeti motivasyonlarından birine sahip. Topluma hizmet gururu ve
+                            işin toplum için faydalılığı tam puana yakın. Ancak görev-rol netliği ve eğitim imkanları
+                            zayıf.
+                            Çalışma arkadaşları güçlü olmasına rağmen 7 kişi yönetici ilişkileri şikayeti bildirmiştir.
+                            Kurum içi etkinlik ve gezi talebi yaygındır.</td>
+                    </tr>
+                    <tr class="critical" data-mudurluk="temizlik_isleri"
+                        onclick="goToMudurlukReport('temizlik_isleri')">
+                        <td>🧹 TEMİZLİK İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%91,9</td>
+                        <td style="text-align:center;">+5,5</td>
+                        <td>Güçlü kamu hizmeti motivasyonu. Ancak şantiye altyapısı en kritik sorun: 66 kişi tuvalet,
+                            soyunma odası ve hijyen şikayeti bildirmiştir. Yönetici ilişkileri belediye ortalamasının
+                            altında, amir eşitliği algısı düşük. En düşük katılım oranı (%37,2) dikkat çekicidir.</td>
+                    </tr>
+                    <tr data-mudurluk="halkla_iliskiler" onclick="goToMudurlukReport('halkla_iliskiler')">
+                        <td>📞 HALKLA İLİŞKİLER MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%92,4</td>
+                        <td style="text-align:center;">+6,0</td>
+                        <td>Çağrı merkezi personeli yoğun stres altında: "Günde 160-200 çağrı, 3-4 saat konuşma süresi
+                            gerginlik yaratıyor." İş stresi/yükü yüksek ancak ekip uyumu güçlü koruyucu faktör. Kamu
+                            hizmeti
+                            motivasyonu ve yönetici ilişkileri belediye ortalamasının üzerinde. Servis şikayeti:
+                            Boğazköy
+                            hattında "ayakta gidiyoruz" denilmektedir.</td>
+                    </tr>
+                    <tr data-mudurluk="park_bahceler" onclick="goToMudurlukReport('park_bahceler')">
+                        <td>🌳 PARK VE BAHÇELER MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%91,7</td>
+                        <td style="text-align:center;">+7,4</td>
+                        <td>Belediyenin en yüksek kamu hizmeti motivasyonlarından - topluma hizmet gururu ve işin
+                            anlamlılığı çok yüksek. Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerinde.
+                            Ancak ruh sağlığı riski yüksek. Yönetici ilişkileri ve ekip uyumu güçlü. Hiç açık uçlu yorum
+                            yazılmamış olması dikkat çekicidir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="plan_proje" onclick="goToMudurlukReport('plan_proje')">
+                        <td>📍 PLAN VE PROJE MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#8B3A3A;">%84,4</td>
+                        <td style="text-align:center;">+10,8</td>
+                        <td>Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları
+                            belediyenin en düşüğü (%58,3): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet:
+                            "Psikolojimi en çok düşüren etken." Belediyenin en düşük sigara kullanımı (%12,5). Ekip
+                            uyumu ve
+                            yönetici ilişkileri güçlü koruyucu faktörler. Ücret çok düşük.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="hukuk_isleri" onclick="goToMudurlukReport('hukuk_isleri')">
+                        <td>⚖️ HUKUK İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#8B3A3A;">%84,1</td>
+                        <td style="text-align:center;">+11,1</td>
+                        <td>Belediyenin en düşüklerinden memnuniyet ancak pozitif denge. Yönetici ilişkileri ve ekip
+                            uyumu
+                            güçlü. Kamu hizmeti motivasyonu ortalamanın altında. Yemekte memur-şirket personeli fiyat
+                            farkı
+                            adaletsiz bulunmaktadır. Servis tasarruf tedbirlerinin ilçe dışından gelenleri olumsuz
+                            etkilediği bildirilmektedir. Dinlenme alanı yetersiz.</td>
+                    </tr>
+                    <tr data-mudurluk="isletme_istirakler" onclick="goToMudurlukReport('isletme_istirakler')">
+                        <td>🏭 İŞLETME VE İŞTİRAKLER MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>%96,9</strong></td>
+                        <td style="text-align:center;">+15,0</td>
+                        <td><strong>Belediyenin ikinci en yüksek memnuniyeti (%96,9).</strong> Yönetici ilişkileri, ekip
+                            uyumu ve kamu hizmeti motivasyonu çok güçlü. Kurumsal destek yeterli. 10 temadan 8'inde
+                            ortalamanın üzerinde. Küçük örneklem (n=16) nedeniyle sonuçlar temkinle
+                            değerlendirilmelidir.
+                            Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
+                    </tr>
+                    <tr data-mudurluk="yazi_isleri" onclick="goToMudurlukReport('yazi_isleri')">
+                        <td>✍️ YAZI İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%90,5</td>
+                        <td style="text-align:center;">+19,1</td>
+                        <td>%100 anket katılımı ile belediyenin en yüksek oranlarından. Dengeli performans. Yönetici
+                            ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu güçlü. Çalışma koşulları belediye
+                            ortalamasının üzerinde. Yemekhane en zayıf alan: hijyen ve lezzet şikayetleri mevcut. Arşiv
+                            havalandırması iyileştirmesi talep edilmektedir.</td>
+                    </tr>
+                    <tr data-mudurluk="mali_hizmetler" onclick="goToMudurlukReport('mali_hizmetler')">
+                        <td>📈 MALİ HİZMETLER MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%86,1</td>
+                        <td style="text-align:center;">+19,9</td>
+                        <td>Dengeli performans. Yönetici ilişkileri, ekip uyumu ve kurum içi iletişim belediyenin en
+                            yüksek
+                            düzeylerinde. Amir saygısı ve topluma hizmet gururu %100 tam puan. Düşük sigara kullanımı.
+                            Çalışan ebeveynler çocuk etüt merkezi talep etmektedir. Yemekhane ve servis iyileştirme
+                            bekliyor.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="kultur_isleri" onclick="goToMudurlukReport('kultur_isleri')">
+                        <td>🎨 KÜLTÜR İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%89,6</td>
+                        <td style="text-align:center;">+21,9</td>
+                        <td>Düşük iş stresi/yükü ile güçlü denge. Çok düşük sigara kullanımı. Yönetici ilişkileri,
+                            çalışma
+                            arkadaşları ve kurum içi iletişim güçlü. Görev-rol netliği en zayıf alan. Personel
+                            tuvaletlerinin ayrılması ve yardımcı personel takviyesi talep edilmektedir.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="genclik_spor" onclick="goToMudurlukReport('genclik_spor')">
+                        <td>⚽ GENÇLİK VE SPOR HİZMETLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%92,7</td>
+                        <td style="text-align:center;">+22,3</td>
+                        <td>10 temanın tamamında belediye ortalaması üzerinde performans - belediyenin en dengeli
+                            birimlerinden. Çalışma arkadaşları, yönetici ilişkileri ve kamu hizmeti motivasyonu çok
+                            güçlü.
+                            Düşük iş stresi/yükü. Belediyenin en düşük sigara kullanımlarından. Tek zayıf alan
+                            yemekhane.
+                        </td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="basin_yayin" onclick="goToMudurlukReport('basin_yayin')">
+                        <td>🎙️ BASIN VE YAYIN MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%93,1</td>
+                        <td style="text-align:center;">+22,3</td>
+                        <td>Belediyenin en yüksek kamu hizmeti motivasyonu (%97,4). Güçlü performans. Yönetici
+                            ilişkileri,
+                            ekip uyumu ve iş-kişi uyumu çok yüksek. Düşük iş stresi/yükü ile stressiz çalışma ortamı.
+                            Ofis
+                            temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="ozel_kalem" onclick="goToMudurlukReport('ozel_kalem')">
+                        <td>⭐ ÖZEL KALEM MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>%98,4</strong></td>
+                        <td style="text-align:center;">+22,9</td>
+                        <td><strong>BELEDİYENİN EN YÜKSEK MEMNUNİYETİ (%98,4).</strong> Genel memnuniyet sorusunda %100
+                            tam
+                            puan. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi
+                            uyumu,
+                            görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden.
+                            Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="muhtarlik" onclick="goToMudurlukReport('muhtarlik')">
+                        <td>📩 MUHTARLIK İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#2E5A3A;">%95,8</td>
+                        <td style="text-align:center;">+23,2</td>
+                        <td><strong>Belediyenin üçüncü en yüksek memnuniyeti (%95,8).</strong> Düşük iş stresi/yükü ile
+                            güçlü denge. Çalışma arkadaşları ve kurum içi iletişim ortalamanın üzerinde. Ortak alanlar
+                            belediyenin en düşüğü. Eğitim & gelişim zayıf. Personel tuvaletinin vatandaştan ayrılması
+                            talep
+                            edilmektedir. Küçük örneklem (n=6).</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="akilli_ulasim" onclick="goToMudurlukReport('akilli_ulasim')">
+                        <td>🚌 AKILLI ULAŞIM SİSTEMLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%88,3</td>
+                        <td style="text-align:center;">+23,9</td>
+                        <td>Güçlü denge. Çalışma arkadaşları, yönetici ilişkileri ve kamu hizmeti motivasyonu belediye
+                            ortalamasının üzerinde. Düşük iş stresi/yükü ile rahat çalışma ortamı. Ücret ve eğitim
+                            memnuniyeti düşük. Personel bilgilendirme sistemi (doğum, cenaze, evlilik) talep
+                            edilmektedir.
+                        </td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="inovasyon" onclick="goToMudurlukReport('inovasyon')">
+                        <td>💡 AR-GE VE İNOVASYON MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#2E5A3A;">%95,3</td>
+                        <td style="text-align:center;">+24,2</td>
+                        <td>Belediyenin en yüksek iş-kişi uyumu. Çok güçlü performans. Yönetici ilişkileri, ekip uyumu
+                            ve
+                            kamu hizmeti motivasyonu belediyenin en yüksek düzeylerinde. 10 temadan 9'unda ortalamanın
+                            üzerinde. Tek sorun yemekhane: "Her ankette şikayet ediyoruz ama değişen bir şey yok"
+                            ifadesi
+                            dikkat çekici.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="destek_hizmetleri"
+                        onclick="goToMudurlukReport('destek_hizmetleri')">
+                        <td>🔧 DESTEK HİZMETLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#2E5A3A;">%95,1</td>
+                        <td style="text-align:center;">+24,5</td>
+                        <td>Belediyenin en yüksek eğitim-gelişim skoru. Çok güçlü performans. Çalışma arkadaşları ve
+                            yönetici ilişkileri belediyenin en yüksek düzeylerinde. Tek sorun yemekhane ve ücret
+                            memnuniyeti. Saha personeli araç/ekipman takviyesi talep etmektedir.</td>
+                    </tr>
+                    <tr class="warning" data-mudurluk="insan_kaynaklari"
+                        onclick="goToMudurlukReport('insan_kaynaklari')">
+                        <td>👥 İNSAN KAYNAKLARI VE EĞİTİM MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center; color:#8B3A3A;"><strong>%80,8</strong></td>
+                        <td style="text-align:center;">+24,5</td>
+                        <td>Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı.
+                            Yönetici
+                            ilişkileri ve ekip dayanışması güçlü düzeyde.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="ruhsat_denetim" onclick="goToMudurlukReport('ruhsat_denetim')">
+                        <td>📝 RUHSAT VE DENETİM MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%90,9</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>+25,9</strong></td>
+                        <td><strong>Belediyenin en düşük ruh sağlığı riski (%38,6).</strong> Görev netliği ikinci en
+                            yüksek
+                            - küçük ve uzmanlaşmış ekip avantajı. Güçlü denge. Yönetici ilişkileri, ekip uyumu ve kamu
+                            hizmeti motivasyonu çok güçlü. Düşük iş stresi/yükü. Açık uçlu yorum yazılmamıştır.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="strateji_gelistirme"
+                        onclick="goToMudurlukReport('strateji_gelistirme')">
+                        <td>📊 STRATEJİ GELİŞTİRME MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%85,7</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>+27,7</strong></td>
+                        <td><strong>Belediyenin en düşük iş stresi/yükü (%44,4)</strong> ve en düşük vatandaş yoğunluğu.
+                            Güçlü denge ile stressiz ortam. Çalışma arkadaşları ve yönetici ilişkileri güçlü. Çalışma
+                            koşulları belediye ortalamasının çok üzerinde. Personelin %75'i yorum yazmış. Servis
+                            güzergahları uzun ve yemekhane fiyatları yüksek bulunmaktadır.</td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="afet_isleri" onclick="goToMudurlukReport('afet_isleri')">
+                        <td>🚨 AFET İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%90,9</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>+34,3</strong></td>
+                        <td><strong>Belediyenin en yüksek görev netliği (%97,7)</strong> ve ikinci en yüksek iş-kişi
+                            uyumu.
+                            Çok güçlü performans. Yönetici ilişkileri ve ekip uyumu belediyenin en yüksek düzeylerinde.
+                            Psikolojik destek farkındalığı yüksek. Çalışma koşulları ve yemekhane iyileştirme bekliyor.
+                        </td>
+                    </tr>
+                    <tr class="positive" data-mudurluk="koordinasyon" onclick="goToMudurlukReport('koordinasyon')">
+                        <td>🔗 KOORDİNASYON İŞLERİ MÜDÜRLÜĞÜ</td>
+                        <td style="text-align:center;">%85,7</td>
+                        <td style="text-align:center; color:#2E5A3A;"><strong>+34,4</strong></td>
+                        <td><strong>BELEDİYENİN EN YÜKSEK DENGESİ (+34,4).</strong> Yönetici ilişkileri ve ekip uyumu
+                            belediyenin en yüksek skorları. %100 katılım ve düşük iş stresi/yükü. Ancak memnuniyet
+                            ortalamanın altında - ücret ve servis yetersiz. Sigara kullanımı belediyenin en yüksek
+                            oranı.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary-box">
+                <p><strong>Özet İstatistikler:</strong></p>
+                <ul style="margin-top:0.5em; font-size:9.5pt;">
+                    <li><strong>3 müdürlükte negatif denge:</strong> Veteriner İşleri Müdürlüğü (-3,5), Gelirler
+                        Müdürlüğü
+                        (-2,5), İmar ve Şehircilik Müdürlüğü (-2,3)</li>
+                    <li><strong>5 müdürlükte düşük pozitif denge</strong> (0-5 arası): İklim Değişikliği ve Sıfır Atık
+                        Müdürlüğü (+0,7), Emlak ve İstimlak Müdürlüğü (+1,5), Fen İşleri Müdürlüğü
+                        (+1,7), Yapı Kontrol Müdürlüğü (+2,9), Zabıta Müdürlüğü (+3,1)</li>
+                    <li><strong>En yüksek memnuniyet:</strong> Özel Kalem %98,4, İşletme %96,9, Muhtarlık %95,8</li>
+                </ul>
+            </div>
+
+            <h3>Saha ve Büro Birimleri Arasındaki Denge Puanı Farkı</h3>
+
+            <p>Genel tablonun olumlu olmasına karşın, saha ve büro birimleri arasında ortaya çıkan <strong>10 puanlık
+                    denge puanı farkı</strong>, analizin önemli bulgularından biridir.</p>
+
+            <!-- Karşılaştırma Chart -->
+            <div class="comparison-chart">
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span class="comparison-label">🏢 Büro Birimleri (21 müdürlük)</span>
+                        <span class="comparison-value" style="color: #2E7D32;">+17,4</span>
+                    </div>
+                    <div style="font-size: 8pt; color: #6B5344; margin-bottom: 6px;">Ortalama Denge Puanı</div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill"
+                            style="width: 87%; background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);">Sağlıklı
+                            Seviye</div>
+                    </div>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-header">
+                        <span class="comparison-label">🚧 Saha Birimleri (9 müdürlük)</span>
+                        <span class="comparison-value" style="color: #F57C00;">+7,6</span>
+                    </div>
+                    <div style="font-size: 8pt; color: #6B5344; margin-bottom: 6px;">Ortalama Denge Puanı</div>
+                    <div class="comparison-bar">
+                        <div class="comparison-bar-fill"
+                            style="width: 54%; background: linear-gradient(90deg, #FF9800 0%, #FFC107 100%);">İzleme
+                            Gerekli
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 16px;">
+                    <div
+                        style="background: linear-gradient(135deg, #FFF3CD 0%, #FFE082 100%); border-radius: 20px; padding: 8px 20px; font-size: 11pt; font-weight: 600; color: #856404;">
+                        ⚠️ Denge Puanı Farkı: 17,4 − 7,6 = <strong>10 Puan</strong>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 8.5pt; color: #6B5344; margin-top: 1em; line-height: 1.5;">
+                <strong>*Saha Birimleri (9):</strong> Temizlik İşleri, Fen İşleri, Park ve Bahçeler, Veteriner İşleri,
+                İklim Değişikliği ve Sıfır Atık, Zabıta, Destek Hizmetleri, Ruhsat ve Denetim, Yapı Kontrol<br>
+                <strong>**Büro Birimleri (21):</strong> Özel Kalem, İnsan Kaynakları, Mali Hizmetler, Strateji
+                Geliştirme, Hukuk İşleri, Yazı İşleri, Plan ve Proje, İmar ve Şehircilik, Gelirler, Basın ve Yayın ve
+                diğer idari
+                birimler
+            </p>
+
+            <div class="info-box-visual warning">
+                <div class="info-box-icon">💡</div>
+                <div class="info-box-content">
+                    <h4>Stratejik Öneri</h4>
+                    <p>Bu 10 puanlık denge puanı farkı, saha personelinin daha yoğun iş stresi/yükü altında çalıştığını
+                        ve kurumsal desteğe daha fazla ihtiyaç duyduğunu ortaya koymaktadır.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 4: RUH SAĞLIĞI -->
+        <div class="card section-page">
+            <h1>4.0 Çalışan İyi Oluşu: Ruh Sağlığı Bulguları</h1>
+
+            <h2>4.1 Temel Ruh Sağlığı Göstergeleri</h2>
+
+            <p style="margin-bottom: 16px;">Personelin yarısından fazlası (%52,2) son iki haftada en az bir psikolojik
+                belirti bildirmiştir:</p>
+
+            <!-- Donut Charts -->
+            <div class="donut-chart-container"
+                style="background: linear-gradient(135deg, #FDF2F2 0%, #FCE8E8 100%); border-radius: 16px; border: 1px solid #E8B4B4; padding: 30px;">
+                <div style="text-align: center;">
+                    <div class="donut-chart"
+                        style="background: conic-gradient(#c62828 0deg 201deg, #F0EDE9 201deg 360deg);">
+                        <div class="donut-chart-center">
+                            <div class="donut-chart-value" style="color: #c62828;">%56,1</div>
+                            <div class="donut-chart-label">Keyif<br>Alamama</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="donut-chart"
+                        style="background: conic-gradient(#F57C00 0deg 183deg, #F0EDE9 183deg 360deg);">
+                        <div class="donut-chart-center">
+                            <div class="donut-chart-value" style="color: #F57C00;">%50,9</div>
+                            <div class="donut-chart-label">Üzgünlük<br>Çökkünlük</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="donut-chart"
+                        style="background: conic-gradient(#F57C00 0deg 183deg, #F0EDE9 183deg 360deg);">
+                        <div class="donut-chart-center">
+                            <div class="donut-chart-value" style="color: #F57C00;">%50,9</div>
+                            <div class="donut-chart-label">Endişe<br>Kontrolü</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="donut-chart"
+                        style="background: conic-gradient(#F57C00 0deg 183deg, #F0EDE9 183deg 360deg);">
+                        <div class="donut-chart-center">
+                            <div class="donut-chart-value" style="color: #F57C00;">%50,8</div>
+                            <div class="donut-chart-label">Gerginlik<br>Kaygı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>4.2 Denge Puanı ve Ruh Sağlığı İlişkisi</h2>
+
+            <!-- Korelasyon Görselleştirmesi - Premium Tasarım -->
+            <div style="display: flex; justify-content: center; margin: 24px 0;">
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border: 2px solid #C9B8A8; border-radius: 16px; padding: 32px 48px; text-align: center; box-shadow: 0 4px 20px rgba(92, 64, 51, 0.1);">
+                    <div
+                        style="font-size: 11pt; color: #5C4033; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px;">
+                        📉 DENGE PUANI ↔ RUH SAĞLIĞI RİSKİ
+                    </div>
+                    <div
+                        style="font-family: 'Playfair Display', serif; font-size: 56pt; font-weight: 700; color: #c62828; line-height: 1;">
+                        -0,64
+                    </div>
+                    <div style="font-size: 12pt; color: #5C4033; margin-top: 12px; font-weight: 600;">
+                        Güçlü Ters İlişki
+                    </div>
+                    <div style="font-size: 10pt; color: #6B5344; margin-top: 16px; line-height: 1.6; max-width: 350px;">
+                        Denge puanı düşük olan müdürlüklerde<br>ruh sağlığı riski daha yüksektir.
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 8.5pt; color: #8B7355; text-align: center; margin-top: 8px; font-style: italic;">
+                * Yukarıdaki değer korelasyon puanıdır ve iki değişken arasındaki ilişkinin gücünü gösterir (-1 ile +1
+                arasında).
+            </p>
+
+        </div>
+
+        <!-- BÖLÜM 5: SONUÇ VE ÖNERİLER -->
+        <div class="card section-page">
+            <h1>5.0 Sonuç ve Stratejik Öneriler</h1>
+
+            <h2>5.1 Belediye Geneli Stratejik Öneriler (8 Ana Başlık)</h2>
+
+            <!-- Kompakt Öneri Kartları Grid -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 20px;">
+
+                <!-- Öneri 1 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #c62828;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🍽️</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">1.
+                                Yemekhane Hizmetinin İyileştirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        <strong>💡 Öneri:</strong> Yemekhane hizmetinin kalite, çeşitlilik ve hijyen standartlarının
+                        gözden geçirilmesi; memur ve şirket personeli arasındaki fiyat farklılığının değerlendirilmesi;
+                        kart bazlı (kullandıkça ödeme) sistemin araştırılması.
+                    </div>
+                </div>
+
+                <!-- Öneri 2 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #c62828;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🚧</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">2.
+                                Saha Birimi Fiziksel Koşullarının İyileştirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Şantiye alanlarında tuvalet sayısının artırılması; soyunma odası, kişisel dolap ve dinlenme
+                        alanı tahsisi; Temizlik İşleri ekipman kalitesinin gözden geçirilmesi; saha araçlarının bakım ve
+                        yenileme programı; Veteriner Yassıören altyapısının iyileştirilmesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 3 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #FF9800;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🏢</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">3.
+                                Büro Fiziksel Koşullarının Gözden Geçirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Şikayet bildirilen birimlerde (Muhtarlık, Yazı İşleri, Gelirler, Plan Proje, Kültür) fiziksel
+                        koşulların yerinde incelenmesi; havalandırma, temizlik ve iklimlendirme sorunlarının
+                        giderilmesi; ortak alan ve tuvalet koşullarının iyileştirilmesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 4 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #c62828;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">⚡</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">4.
+                                Yoğun İş Yükü Altındaki Birimlerin Desteklenmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Negatif ve kritik dengeli müdürlüklerde iş süreçlerinin ve personel ihtiyacının
+                        değerlendirilmesi; İklim Değişikliği'ne acil personel takviyesi; İmar'da iş akışı optimizasyonu;
+                        Veteriner'de Yassıören altyapısı ve yönetim adaleti; Halkla İlişkiler çağrı merkezinde iş yükü
+                        dengelemesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 5 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #FF9800;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🧠</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">5.
+                                Çalışan Psikolojik İyi Oluşunun Desteklenmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Kurum Psikoloğu koordinasyonunda öncelikli olarak Fen İşleri, Plan Proje ve Park Bahçeler gibi
+                        yüksek riskli birimlere yönelik destek programlarının planlanması; belediye genelinde psikolojik
+                        iyi oluş farkındalık çalışmalarının yürütülmesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 6 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #FF9800;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🎯</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">6.
+                                İş-Kişi Uyumunun Güçlendirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Düşük iş-kişi uyumu gösteren birimlerde personelin mevcut görev tanımları ile yetkinlik ve ilgi
+                        alanlarının karşılaştırılması; uygun personelin birim içi farklı görevlere yönlendirilmesi veya
+                        rotasyon imkanlarının değerlendirilmesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 7 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #c62828;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">🚌</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">7.
+                                Servis Hizmetinin İyileştirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        Servis güzergahlarının ve kapasitelerinin belediye genelinde yeniden değerlendirilmesi.
+                    </div>
+                </div>
+
+                <!-- Öneri 8 -->
+                <div
+                    style="background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE5 100%); border-radius: 12px; padding: 16px; border-left: 4px solid #c62828;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 24px;">📋</span>
+                            <span
+                                style="font-family: 'Playfair Display', serif; font-size: 12pt; font-weight: 600; color: #5C4033;">8.
+                                Ücret ve Maaş Politikalarının Değerlendirilmesi</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 9pt; color: #6B5344; line-height: 1.5;">
+                        En fazla sayıda açık uçlu yorumun yapıldığı bu konu, çalışanlar için en hassas başlıklardan
+                        biridir. İstanbul'daki diğer belediyelerle maaş karşılaştırmaları yapılmaktadır. Maktu mesai,
+                        Sosyal Denge Sözleşmesi (SDS) ve fazla mesai ödemelerinin değerlendirilmesi önerilmektedir.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BÖLÜM 6: MÜDÜRLÜK ANALİZLERİ -->
+        <div class="card section-page">
+            <h1>6.0 Müdürlük Bazlı Detaylı Analizler</h1>
+
+            <p>Bu genel raporun yanı sıra, belediyemize bağlı <strong>30 müdürlüğün her biri için ayrı ayrı detaylı
+                    analiz
+                    raporları</strong> titizlikle hazırlanmıştır.</p>
+
+            <div class="warning-box">
+                <p><strong>Önemli Not:</strong> Yukarıda sunulan stratejik öneriler belediye geneline yöneliktir.
+                    Müdürlük bazında spesifik aksiyonlar için <strong>Müdürlük Özetleri Tablosu</strong> hızlı bir genel
+                    bakış sunarken, detaylı bulgular ve öneriler ilgili müdürlük raporlarında yer almaktadır.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2em;">
+                <button onclick="goToMudurlukReport('afet_isleri')"
+                    style="padding: 14px 32px; background: linear-gradient(135deg, #8B7355 0%, #6B5344 100%); color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(107,83,68,0.3); transition: all 0.3s;">
+                    <span style="margin-right: 8px;">📋</span> Müdürlük Raporlarına Git
+                </button>
+            </div>
+
+            <div style="text-align: right; margin-top: 3em; padding-top: 1.5em; border-top: 1px solid #E5DDD5;">
+                <p style="margin: 0;"><strong>Saygılarımızla,</strong></p>
+                <p
+                    style="margin: 0.5em 0 0 0; font-family: 'Playfair Display', serif; font-weight: 600; color: #2C1810;">
+                    <strong>İnsan Kaynakları ve Eğitim Müdürlüğü</strong>
+                </p>
+            </div>
+        </div>
+
+
+        <script>
+            function goToMudurlukReport(mudurlukKey) {
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({
+                        type: 'navigateToMudurluk',
+                        mudurluk: mudurlukKey
+                    }, '*');
+                }
+            }
+
+            window.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'scrollToOzetTablosu') {
+                    const ozetTablosu = document.getElementById('ozet-tablosu');
+                    if (ozetTablosu) {
+                        ozetTablosu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                if (window.parent && window.parent !== window) {
+                    window.parent.postMessage({ type: 'belediyeGeneliReady' }, '*');
+                }
+            });
+        </script>
+</body>
+
+</html>
