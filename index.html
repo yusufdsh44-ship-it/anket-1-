@@ -5086,11 +5086,8 @@
                                 <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Tüm müdürlüklerin genel performans skorları ve JD-R dengesi. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
                             </div>
                             
-                            <div class="flex justify-between items-center mb-4 gap-4">
+                            <div class="mb-4">
                                 ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
-                                <button onclick="csvExporter.exportGenelSkorlar()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
-                                    CSV İndir
-                                </button>
                             </div>
                             
                             <div class="overflow-x-auto rounded-xl border border-border-light">
@@ -5130,11 +5127,8 @@
                                 <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Müdürlüklerin belediye ve başkan sosyal medya hesaplarını takip oranları. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
                             </div>
                             
-                            <div class="flex justify-between items-center mb-4 gap-4">
+                            <div class="mb-4">
                                 ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
-                                <button onclick="csvExporter.exportSosyalMedya()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
-                                    CSV İndir
-                                </button>
                             </div>
                     
                     <div class="table-container">
@@ -5168,11 +5162,8 @@
                                 <p class="text-sm text-amber-800"><strong class="font-semibold">Önemli:</strong> Ruh sağlığı taraması skorlarında yüksek değerler olumsuz durumu gösterir. <em>Başlıklara tıklayarak sıralayın</em></p>
                             </div>
                             
-                            <div class="flex justify-between items-center mb-4 gap-4">
+                            <div class="mb-4">
                                 ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
-                                <button onclick="csvExporter.exportRuhSagligi()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
-                                    CSV İndir
-                                </button>
                             </div>
                     
                     <div class="table-container">
@@ -5204,11 +5195,8 @@
                                 <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Her temanın müdürlük bazında detaylı analizi. <em class="text-text-meta">Başlıklara tıklayarak sıralayın</em></p>
                             </div>
                             
-                            <div class="flex justify-between items-center mb-4 gap-4">
+                            <div class="mb-4">
                                 ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
-                                <button onclick="csvExporter.exportTemalar()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
-                                    CSV İndir
-                                </button>
                             </div>
                     
                     <div class="table-container">
@@ -5271,10 +5259,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button onclick="csvExporter.exportSorular()" style="background: #10b981; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap; font-size: 14px;">
-                            📊 CSV İndir
-                        </button>
-                    </div>
+                                            </div>
                     
                     <div class="table-container">
                         <table id="sorularTable">
@@ -5293,14 +5278,9 @@
                 'acik-uclu': () => `
                     <div class="max-w-7xl mx-auto">
                         <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
-                            <div class="flex justify-between items-start mb-6">
-                                <div>
-                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-2">Açık Uçlu Cevaplar</h2>
-                                    <p class="text-sm text-text-meta">Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</p>
-                                </div>
-                                <button onclick="csvExporter.exportAcikUclu()" class="px-5 py-3 bg-sidebar-active text-white rounded-full text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
-                                    CSV İndir
-                                </button>
+                            <div class="mb-6">
+                                <h2 class="font-serif text-2xl font-semibold text-title-brown mb-2">Açık Uçlu Cevaplar</h2>
+                                <p class="text-sm text-text-meta">Müdürlük bazında en çok tekrarlanan kelimeler ve tüm açık uçlu cevaplar. Kelimeler üzerine gelerek detayları görebilir, cevap sayısına tıklayarak tüm cevapları okuyabilirsiniz.</p>
                             </div>
                     
                     <div class="table-container">
