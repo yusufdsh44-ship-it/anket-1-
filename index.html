@@ -780,6 +780,39 @@
             background: #a7f3d0;
         }
 
+        /* STICKY TABLE HEADERS */
+        .overflow-x-auto {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .overflow-x-auto thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .overflow-x-auto thead th {
+            background: #F8F4EC !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .table-container {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .table-container thead {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .table-container thead th {
+            background: #F8F4EC !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
         /* SORTABLE HEADERS */
         .sortable-header {
             cursor: pointer;
@@ -2173,9 +2206,14 @@
                 const dengeClass = denge >= 0 ? 'positive' : 'negative';
                 const dengeSymbol = denge >= 0 ? '+' : '';
 
+                const toplamPersonel = data.toplamPersonel || 0;
+                const toplamKatilan = data.anketler?.length || 0;
+                const katilmayan = toplamPersonel - toplamKatilan;
+
                 const fields = [
-                    {value: data.toplamPersonel || 0},
-                    {value: data.anketler?.length || 0},
+                    {value: toplamPersonel},
+                    {value: toplamKatilan},
+                    {value: katilmayan},
                     {value: data.gecerliAnketler?.length || 0},
                     {value: data.gecersizAnketler?.length || 0},
                     {value: data.katilimOrani || 0, percent: true},
@@ -5062,17 +5100,18 @@
                                             ${tableRenderer.createSortableHeader('Müdürlükler', 'genelSkorlarTable', 0)}
                                             ${tableRenderer.createSortableHeader('Toplam Personel', 'genelSkorlarTable', 1)}
                                             ${tableRenderer.createSortableHeader('Toplam Katılan', 'genelSkorlarTable', 2)}
-                                            ${tableRenderer.createSortableHeader('Geçerli Anket', 'genelSkorlarTable', 3)}
-                                            ${tableRenderer.createSortableHeader('Geçersiz Anket', 'genelSkorlarTable', 4)}
-                                            ${tableRenderer.createSortableHeader('Katılım Oranı (%)', 'genelSkorlarTable', 5)}
-                                            ${tableRenderer.createSortableHeader('Genel Memnuniyet (%)', 'genelSkorlarTable', 6)}
-                                            ${tableRenderer.createSortableHeader('İş Yükü/Stresi (%)', 'genelSkorlarTable', 7)}
-                                            ${tableRenderer.createSortableHeader('Kurum Desteği (%)', 'genelSkorlarTable', 8)}
-                                            ${tableRenderer.createSortableHeader('İş Yükü-Destek Dengesi', 'genelSkorlarTable', 9)}
+                                            ${tableRenderer.createSortableHeader('Katılmayan', 'genelSkorlarTable', 3)}
+                                            ${tableRenderer.createSortableHeader('Geçerli Anket', 'genelSkorlarTable', 4)}
+                                            ${tableRenderer.createSortableHeader('Geçersiz Anket', 'genelSkorlarTable', 5)}
+                                            ${tableRenderer.createSortableHeader('Katılım Oranı (%)', 'genelSkorlarTable', 6)}
+                                            ${tableRenderer.createSortableHeader('Genel Memnuniyet (%)', 'genelSkorlarTable', 7)}
+                                            ${tableRenderer.createSortableHeader('İş Yükü/Stresi (%)', 'genelSkorlarTable', 8)}
+                                            ${tableRenderer.createSortableHeader('Kurum Desteği (%)', 'genelSkorlarTable', 9)}
+                                            ${tableRenderer.createSortableHeader('İş Yükü-Destek Dengesi', 'genelSkorlarTable', 10)}
                                         </tr>
                                     </thead>
                                     <tbody id="genelSkorlarBody">
-                                        <tr><td colspan="10" class="text-center py-8 text-text-meta">Lütfen veri girişi yapınız...</td></tr>
+                                        <tr><td colspan="11" class="text-center py-8 text-text-meta">Lütfen veri girişi yapınız...</td></tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -5786,7 +5825,7 @@
 
                 let csvContent = '\uFEFF';
 
-                const headers = ['Müdürlükler', 'Toplam Personel', 'Toplam Katılan', 'Geçerli Anket', 'Geçersiz Anket',
+                const headers = ['Müdürlükler', 'Toplam Personel', 'Toplam Katılan', 'Katılmayan', 'Geçerli Anket', 'Geçersiz Anket',
                     'Katılım Oranı (%)', 'Genel Memnuniyet (%)', 'İş Yükü/Stresi (%)', 'Kurum Desteği (%)', 'İş Yükü-Destek Dengesi'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';
 
@@ -5794,6 +5833,7 @@
                     '"GENEL BELEDİYE"',
                     genelBelediye.toplamPersonel,
                     genelBelediye.anketler.length,
+                    genelBelediye.toplamPersonel - genelBelediye.anketler.length,
                     genelBelediye.gecerliAnketler.length,
                     genelBelediye.gecersizAnketler.length,
                     genelBelediye.katilimOrani,
@@ -5808,14 +5848,15 @@
                     const row = [
                         `"#${md.kod} - ${md.ad}"`,
                         md.toplamPersonel,
-                        md.toplamKatilan,
-                        md.gecerliAnketSayisi,
-                        md.gecersizAnketSayisi,
+                        md.anketler?.length || 0,
+                        md.toplamPersonel - (md.anketler?.length || 0),
+                        md.gecerliAnketler?.length || 0,
+                        md.gecersizAnketler?.length || 0,
                         md.katilimOrani,
                         md.genelMemnuniyet,
                         md.isYuku,
                         md.kurumDestegi,
-                        md.jdrDengesi
+                        md.denge
                     ];
                     csvContent += row.join(',') + '\n';
                 });
