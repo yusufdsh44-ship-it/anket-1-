@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -61,7 +62,7 @@
             box-sizing: border-box;
         }
 
-        .material-icons-outlined {
+        .material-icons-outlined, .material-symbols-outlined {
             vertical-align: middle;
         }
 
@@ -1754,7 +1755,7 @@
                     {id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Skorlar', iconColor: '#3B82F6'},
                     {id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz', iconColor: '#8B5CF6'},
                     {id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları', iconColor: '#06B6D4'},
-                    {id: 'ruh-sagligi', icon: 'psychology', title: 'Ruh Sağlığı Taraması', iconColor: '#EF4444'},
+                    {id: 'ruh-sagligi', icon: 'stethoscope', title: 'Ruh Sağlığı Taraması', iconColor: '#EF4444', useSymbols: true},
                     {id: 'sorular', icon: 'analytics', title: 'Sorular Üzerinden Analiz', iconColor: '#F59E0B'},
                     {id: 'mudurluk-karsilastir', icon: 'compare_arrows', title: 'Müdürlük Karşılaştırma', iconColor: '#10B981'},
                     {id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi', iconColor: '#6366F1'},
@@ -5754,8 +5755,9 @@
                         menuItem.className = item.highlight ? 'menu-item menu-item-highlight' : 'menu-item';
                         menuItem.dataset.page = item.id;
                         const iconColorStyle = item.iconColor ? `style="color: ${item.iconColor};"` : '';
+                        const iconClass = item.useSymbols ? 'material-symbols-outlined' : 'material-icons-outlined';
                         menuItem.innerHTML = `
-                            <span class="material-icons-outlined menu-item-icon" ${iconColorStyle}>${item.icon}</span>
+                            <span class="${iconClass} menu-item-icon" ${iconColorStyle}>${item.icon}</span>
                             <span>${item.title}</span>
                         `;
                         menuItem.onclick = () => {
