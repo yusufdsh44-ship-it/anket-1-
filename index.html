@@ -1812,26 +1812,53 @@
                 return isNaN(num) ? '0' : num.toFixed(1);
             },
             
-            getBelowAvgClass: (value, baseline) => {
+            // Ters kodlanacak sorular (psikoloji soruları - düşük = iyi)
+            REVERSE_CODED_QUESTIONS: [45, 46, 47, 48],
+            
+            getBelowAvgClass: (value, baseline, reverse = false) => {
                 if (baseline === null || baseline === undefined) return '';
                 const val = parseFloat(value) || 0;
                 const base = parseFloat(baseline) || 0;
-                if (base <= 0 || val >= base) return '';
-                const diff = ((base - val) / base) * 100;
-                if (isNaN(diff) || !isFinite(diff)) return '';
-                if (diff > 20) return 'below-avg-severe';
-                if (diff > 10) return 'below-avg-moderate';
-                return 'below-avg-mild';
+                if (base <= 0) return '';
+                
+                if (reverse) {
+                    // Ters kodlama: yüksek değer = kötü
+                    if (val <= base) return '';
+                    const diff = ((val - base) / base) * 100;
+                    if (isNaN(diff) || !isFinite(diff)) return '';
+                    if (diff > 20) return 'below-avg-severe';
+                    if (diff > 10) return 'below-avg-moderate';
+                    return 'below-avg-mild';
+                } else {
+                    // Normal kodlama: düşük değer = kötü
+                    if (val >= base) return '';
+                    const diff = ((base - val) / base) * 100;
+                    if (isNaN(diff) || !isFinite(diff)) return '';
+                    if (diff > 20) return 'below-avg-severe';
+                    if (diff > 10) return 'below-avg-moderate';
+                    return 'below-avg-mild';
+                }
             },
             
-            getBelowAvgTooltip: (value, baseline) => {
+            getBelowAvgTooltip: (value, baseline, reverse = false) => {
                 if (baseline === null || baseline === undefined) return '';
                 const val = parseFloat(value) || 0;
                 const base = parseFloat(baseline) || 0;
-                if (base <= 0 || val >= base) return '';
-                const diff = ((base - val) / base) * 100;
-                if (isNaN(diff) || !isFinite(diff)) return '';
-                return `Belediye ortalamasının %${diff.toFixed(1)} altında`;
+                if (base <= 0) return '';
+                
+                if (reverse) {
+                    // Ters kodlama: yüksek değer = kötü
+                    if (val <= base) return '';
+                    const diff = ((val - base) / base) * 100;
+                    if (isNaN(diff) || !isFinite(diff)) return '';
+                    return `Belediye ortalamasının %${diff.toFixed(1)} üstünde (risk)`;
+                } else {
+                    // Normal kodlama: düşük değer = kötü
+                    if (val >= base) return '';
+                    const diff = ((base - val) / base) * 100;
+                    if (isNaN(diff) || !isFinite(diff)) return '';
+                    return `Belediye ortalamasının %${diff.toFixed(1)} altında`;
+                }
             },
 
             calculateAverage: (surveys, questionIndices) => {
@@ -2528,12 +2555,12 @@
 
             createRuhSagligiRow: (name, data, isGenel, baseline) => {
                 const fields = [
-                    {key: 'ruhSagligi', value: data.ruhSagligi || 0},
-                    {key: 'sigaraOrani', value: data.sigaraOrani || 0},
-                    {key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detayKey: 'keyifAlamama'},
-                    {key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detayKey: 'uzgunCokkun'},
-                    {key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detayKey: 'gerginKaygili'},
-                    {key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detayKey: 'endiseKontrol'}
+                    {key: 'ruhSagligi', value: data.ruhSagligi || 0, reverse: true},
+                    {key: 'sigaraOrani', value: data.sigaraOrani || 0, reverse: true},
+                    {key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detayKey: 'keyifAlamama', reverse: true},
+                    {key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detayKey: 'uzgunCokkun', reverse: true},
+                    {key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detayKey: 'gerginKaygili', reverse: true},
+                    {key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detayKey: 'endiseKontrol', reverse: true}
                 ];
 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
@@ -2547,8 +2574,8 @@
                             baseVal = baseline[field.key];
                         }
                     }
-                    const colorClass = !isGenel && baseVal !== undefined ? utils.getBelowAvgClass(field.value, baseVal) : '';
-                    const tooltip = !isGenel && baseVal !== undefined ? utils.getBelowAvgTooltip(field.value, baseVal) : '';
+                    const colorClass = !isGenel && baseVal !== undefined ? utils.getBelowAvgClass(field.value, baseVal, field.reverse) : '';
+                    const tooltip = !isGenel && baseVal !== undefined ? utils.getBelowAvgTooltip(field.value, baseVal, field.reverse) : '';
                     const titleAttr = tooltip ? ` title="${tooltip}"` : '';
                     rowHTML += `<td class="${colorClass}"${titleAttr}>${field.value}%</td>`;
                 });
@@ -2701,8 +2728,9 @@
 
                     Object.values(state.processedData).forEach((md, index) => {
                         const baseVal = genelBelediyeSorular[i];
-                        const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[i], baseVal);
-                        const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[i], baseVal);
+                        const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(i);
+                        const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[i], baseVal, isReverseCoded);
+                        const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[i], baseVal, isReverseCoded);
                         const titleAttr = tooltip ? ` title="${tooltip}"` : '';
                         rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" class="${colorClass}"${titleAttr}>${md.soruOrtalamalar[i]}%</td>`;
                     });
