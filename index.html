@@ -2324,7 +2324,7 @@
 
                 sortedMudurlukler.forEach(md => {
                     tbody.innerHTML += tableRenderer.createGenelSkorRow(
-                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        `${md.ad}`,
                         md,
                         false,
                         genelBelediye
@@ -2503,7 +2503,7 @@
                 Object.values(state.processedData).forEach(md => {
                     if (md.sosyalMedya) {
                         tbody.innerHTML += tableRenderer.createSosyalMedyaRow(
-                            `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                            `${md.ad}`,
                             md.sosyalMedya,
                             false,
                             genelBelediye
@@ -2541,7 +2541,7 @@
 
                 Object.values(state.processedData).forEach(md => {
                     tbody.innerHTML += tableRenderer.createRuhSagligiRow(
-                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        `${md.ad}`,
                         {
                             ruhSagligi: md.ruhSagligi,
                             sigaraOrani: md.sigaraOrani,
@@ -2616,7 +2616,7 @@
 
                 Object.values(state.processedData).forEach(md => {
                     tbody.innerHTML += tableRenderer.createTemalarRow(
-                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        `${md.ad}`,
                         md.temalar,
                         false,
                         genelBelediye
@@ -2712,7 +2712,7 @@
                     const colIndex = index + 2;
                     headerHTML += `
                         <th class="sortable-header" data-mudurluk="md_${md.kod}" data-col="${colIndex}" onclick="tableSorter.sort('sorularTable', ${colIndex})">
-                            <span class="code-label" style="display:block; margin-bottom:4px;">#${md.kod}</span>${mdName}<span class="sort-icon"></span>
+                            ${mdName}<span class="sort-icon"></span>
                         </th>
                     `;
                 });
@@ -2779,7 +2779,7 @@
                     const count = allMdSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
                     const keywords = utils.analyzeKeywords(allMdSurveys);
                     tbody.innerHTML += tableRenderer.createAcikUcluRow(
-                        `<span class="code-label">#${md.kod}</span> ${md.ad}`,
+                        `${md.ad}`,
                         keywords,
                         count,
                         md.kod,
