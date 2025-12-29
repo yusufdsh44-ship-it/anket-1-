@@ -3495,10 +3495,13 @@
                 if (!thead || !tbody) return;
                 
                 const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
-                const selectedMudurluk = state.processedData[`md_${mudurlukKod}`];
+                const selectedMudurluk = state.processedData[mudurlukKod];
                 const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
                 
-                if (!selectedMudurluk) return;
+                if (!selectedMudurluk) {
+                    console.log('selectedMudurluk not found for kod:', mudurlukKod);
+                    return;
+                }
                 
                 const emoji = MUDURLUK_KOD_EMOJI[selectedMudurluk.kod] || '📋';
                 
