@@ -209,7 +209,7 @@ const RAPOR_VERILERI = {
 <li><strong>Saha-büro farkı dikkat çekicidir:</strong> Saha birimleri (9 birim) ortalama +7,6 denge ile orta seviyede, büro birimleri (21 birim) ise +17,4 ile sağlıklı seviyededir. Bu 10 puanlık fark, saha personelinin daha fazla desteğe ihtiyaç duyduğunu göstermektedir.</li>
 </ul>
 
-<p><strong>🧠 Ruh Sağlığı Bulguları</strong></p>
+<p><strong>🩺 Ruh Sağlığı Bulguları</strong></p>
 <p>Personelin yaklaşık <strong>yarısı</strong> son 2 haftada psikolojik belirtiler yaşadığını bildirmiştir: gerginlik/kaygı (%50,8), üzgünlük/çökkünlük (%50,9), endişeleri kontrol edememe (%50,9). Analizler göstermektedir ki iş stresi/yükü arttıkça ruh sağlığı riski artmakta, ancak <strong>kurum desteği güçlü olan birimlerde bu risk belirgin şekilde düşmektedir</strong>.</p>
 <p>Bu doğrultuda fiziksel çalışma koşulları, yönetici ilişkileri, ekip uyumu ve iş yükü dengesi gibi kurumsal destek mekanizmalarının güçlendirilmesi ruh sağlığı riskini azaltmada önemli rol oynamaktadır. Buna ek olarak, personelin ruh sağlığı yalnızca iş yaşamından ibaret olmadığından, kurum psikoloğu tarafından hem belediye genelinde hem de müdürlük bazında psikolojik destek aksiyon planları hazırlanacaktır. Kurumsal iyileştirmeler ve psikolojik destek programlarının birlikte yürütülmesiyle bir sonraki ankette daha olumlu sonuçlar alınması beklenmektedir.</p>
 
