@@ -2543,7 +2543,7 @@
                 let headerHTML = '<tr>';
 
                 // Soru sütunu
-                headerHTML += '<th data-col="0">Soru</th>';
+                headerHTML += '<th data-col="0" style="min-width: 350px; text-align: left;">Soru</th>';
 
                 // Genel Belediye sütunu
                 headerHTML += `
@@ -2902,11 +2902,16 @@
                 const tbody = table.querySelector('tbody');
                 const rows = Array.from(tbody.querySelectorAll('tr'));
 
-                if (rows.length <= 1) return;
+                if (rows.length === 0) return;
 
-                const [headerRow, ...dataRows] = rows;
-                const headers = table.querySelectorAll('.sortable-header');
-                const clickedHeader = headers[columnIndex];
+                const thead = table.querySelector('thead');
+                const headers = thead ? thead.querySelectorAll('.sortable-header') : table.querySelectorAll('.sortable-header');
+                const clickedHeader = Array.from(headers).find(h => {
+                    const col = h.getAttribute('data-col');
+                    return col ? parseInt(col) === columnIndex : false;
+                }) || headers[columnIndex];
+
+                if (!clickedHeader) return;
 
                 const direction = tableSorter.getNextSortDirection(clickedHeader);
 
@@ -2921,9 +2926,17 @@
 
                 const isNumeric = columnIndex !== 0;
 
+                const dataRows = rows.filter(row => !row.classList.contains('highlight') || tableId === 'sorularTable');
+                const highlightRows = tableId !== 'sorularTable' ? rows.filter(row => row.classList.contains('highlight')) : [];
+
                 dataRows.sort((a, b) => {
-                    let aVal = a.cells[columnIndex].textContent.trim();
-                    let bVal = b.cells[columnIndex].textContent.trim();
+                    const aCell = a.querySelector(`td[data-col="${columnIndex}"]`) || a.cells[columnIndex];
+                    const bCell = b.querySelector(`td[data-col="${columnIndex}"]`) || b.cells[columnIndex];
+                    
+                    if (!aCell || !bCell) return 0;
+                    
+                    let aVal = aCell.textContent.trim();
+                    let bVal = bCell.textContent.trim();
 
                     if (isNumeric) {
                         aVal = parseFloat(aVal.replace(/[^0-9.-]/g, '')) || 0;
@@ -2937,7 +2950,7 @@
                 });
 
                 tbody.innerHTML = '';
-                tbody.appendChild(headerRow);
+                highlightRows.forEach(row => tbody.appendChild(row));
                 dataRows.forEach(row => tbody.appendChild(row));
             },
 
@@ -5231,38 +5244,34 @@
                 `,
 
                 'sorular': () => `
-                    <div class="max-w-7xl mx-auto">
+                    <div style="max-width: 100%; margin: 0 auto;">
                         <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
                             <h2 class="font-serif text-2xl font-semibold text-title-brown mb-4">Sorular Üzerinden Analiz</h2>
                             
                             <div class="mb-6 p-4 bg-page-bg rounded-lg border-l-4 border-primary">
-                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Her sorunun tüm müdürlüklerdeki performansı. <em class="text-text-meta">Soru seçerek mercek altına alabilir, başlıklara tıklayarak sıralayabilirsiniz.</em></p>
+                                <p class="text-sm text-text-body"><strong class="font-semibold">Açıklama:</strong> Her sorunun tüm müdürlüklerdeki performansı. <em class="text-text-meta">Sütun başlıklarına tıklayarak sıralayabilirsiniz.</em></p>
                             </div>
                             
-                            <div class="flex gap-4 mb-4 items-center">
-                                <div class="flex-1">
-                                    <div class="bg-page-bg p-4 rounded-xl border border-border-light flex items-center gap-3 flex-wrap">
-                                        <label for="mudurlukSoruSelect" class="text-sm font-semibold text-text-body whitespace-nowrap">Müdürlük Seç:</label>
-                                        <select id="mudurlukSoruSelect" onchange="sorularManager.selectMudurluk()" class="min-w-[350px] px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
-                                            <option value="">-- Tüm Müdürlükler --</option>
-                                        </select>
-                                        <button class="px-4 py-2 bg-white text-text-sidebar border border-border-light rounded-lg text-sm font-medium hover:bg-page-bg transition-all flex items-center gap-2" onclick="sorularManager.resetFilters()">
-                                            <span class="material-icons-outlined text-base">refresh</span> Sıfırla
-                                        </button>
-                                    </div>
-                        </div>
-                        <div style="min-width: 400px;">
-                            <div style="background: #ffffff; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
-                                <label for="soruSelect" style="font-size: 13px; font-weight: 600; color: #374151; margin-right: 10px;">🔍 Soru Seç:</label>
-                                <select id="soruSelect" onchange="sorularManager.selectQuestion()" style="min-width: 300px;">
-                                    <option value="">-- Tüm Sorular --</option>
-                                </select>
+                            <div class="flex flex-wrap gap-4 mb-6 items-center">
+                                <div class="bg-page-bg p-4 rounded-xl border border-border-light flex items-center gap-3 flex-wrap">
+                                    <label for="mudurlukSoruSelect" class="text-sm font-semibold text-text-body whitespace-nowrap">Müdürlük Seç:</label>
+                                    <select id="mudurlukSoruSelect" onchange="sorularManager.selectMudurluk()" class="min-w-[300px] px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                        <option value="">-- Tüm Müdürlükler --</option>
+                                    </select>
+                                </div>
+                                <div class="bg-page-bg p-4 rounded-xl border border-border-light flex items-center gap-3 flex-wrap">
+                                    <label for="soruSelect" class="text-sm font-semibold text-text-body whitespace-nowrap">Soru Seç:</label>
+                                    <select id="soruSelect" onchange="sorularManager.selectQuestion()" class="min-w-[350px] px-3 py-2 border border-border-light rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50">
+                                        <option value="">-- Tüm Sorular --</option>
+                                    </select>
+                                </div>
+                                <button class="px-4 py-2 bg-white text-text-sidebar border border-border-light rounded-lg text-sm font-medium hover:bg-page-bg transition-all flex items-center gap-2" onclick="sorularManager.resetFilters()">
+                                    <span class="material-icons-outlined text-base">refresh</span> Sıfırla
+                                </button>
                             </div>
-                        </div>
-                                            </div>
                     
-                    <div class="table-container">
-                        <table id="sorularTable">
+                    <div class="table-container" style="max-height: 75vh;">
+                        <table id="sorularTable" style="font-size: 13px;">
                             <thead id="sorularTableHead">
                                 <tr>
                                     <th>Soru</th>
