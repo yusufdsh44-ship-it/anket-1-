@@ -3430,9 +3430,12 @@
 
                 const selectedIndex = select.value;
                 const selectedMudurlukKod = mudurlukSelect ? mudurlukSelect.value : '';
+                
+                console.log('selectQuestion called:', { selectedIndex, selectedMudurlukKod });
 
                 // Hem müdürlük hem soru seçiliyse - satır filtreleme yap
                 if (selectedIndex !== '' && selectedMudurlukKod !== '') {
+                    console.log('Rendering combined view');
                     sorularManager.renderCombinedView(parseInt(selectedIndex), selectedMudurlukKod);
                 }
                 // Sadece soru seçildiyse - tabloyu ters çevir (müdürlükler satırda)
