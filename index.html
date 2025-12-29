@@ -3419,36 +3419,53 @@
         const sorularManager = {
             selectQuestion: () => {
                 const select = document.getElementById('soruSelect');
+                const thead = document.getElementById('sorularTableHead');
                 const tbody = document.getElementById('sorularBody');
 
-                if (!select || !tbody) return;
+                if (!select || !thead || !tbody) return;
 
                 const selectedIndex = select.value;
-                const rows = tbody.querySelectorAll('tr');
 
-                // Tüm satırları göster ve highlight'ı temizle
-                rows.forEach(row => {
-                    row.style.display = '';
-                    row.classList.remove('soru-highlighted');
-                });
-
-                // Eğer bir soru seçildiyse
+                // Eğer bir soru seçildiyse - tabloyu ters çevir (müdürlükler satırda, sorular sütunda)
                 if (selectedIndex !== '') {
-                    rows.forEach(row => {
-                        const soruIndex = row.getAttribute('data-soru-index');
-
-                        if (soruIndex === selectedIndex) {
-                            // Seçilen soruyu highlight et
-                            row.classList.add('soru-highlighted');
-                            // Seçilen soruya scroll yap
-                            setTimeout(() => {
-                                row.scrollIntoView({behavior: 'smooth', block: 'center'});
-                            }, 100);
-                        } else {
-                            // Diğer soruları gizle
-                            row.style.display = 'none';
-                        }
+                    const soruIndex = parseInt(selectedIndex);
+                    const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
+                    const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
+                    
+                    // Header: Müdürlük | Soru
+                    let headerHTML = '<tr>';
+                    headerHTML += '<th class="sticky-col" style="min-width: 300px; text-align: left; position: sticky; left: 0; background: #2B241C; z-index: 12;">Müdürlük</th>';
+                    headerHTML += `<th style="min-width: 400px; text-align: left;">S${soruIndex + 1}. ${SORULAR[soruIndex]}</th>`;
+                    headerHTML += '</tr>';
+                    thead.innerHTML = headerHTML;
+                    
+                    // Body: Her müdürlük bir satır
+                    let bodyHTML = '';
+                    
+                    // Genel Belediye satırı
+                    bodyHTML += `<tr class="highlight">
+                        <td style="position: sticky; left: 0; background: #fef9c3; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>GENEL BELEDİYE</strong></td>
+                        <td><strong>${genelBelediyeSorular[soruIndex]}%</strong></td>
+                    </tr>`;
+                    
+                    // Müdürlükler
+                    Object.values(state.processedData).forEach(md => {
+                        const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
+                        const baseVal = genelBelediyeSorular[soruIndex];
+                        const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
+                        const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
+                        const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                        
+                        bodyHTML += `<tr>
+                            <td style="position: sticky; left: 0; background: #fff; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>${emoji} ${md.ad}</strong></td>
+                            <td class="${colorClass}"${titleAttr}>${md.soruOrtalamalar[soruIndex]}%</td>
+                        </tr>`;
                     });
+                    
+                    tbody.innerHTML = bodyHTML;
+                } else {
+                    // Tüm sorular - orijinal yapıyı yeniden oluştur
+                    tableRenderer.renderSorular();
                 }
             },
 
