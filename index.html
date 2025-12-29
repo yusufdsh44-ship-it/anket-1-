@@ -3421,34 +3421,7 @@
             questionViewSortAsc: true,
             
             selectQuestion: () => {
-                const select = document.getElementById('soruSelect');
-                const mudurlukSelect = document.getElementById('mudurlukSoruSelect');
-                const thead = document.getElementById('sorularTableHead');
-                const tbody = document.getElementById('sorularBody');
-
-                if (!select || !thead || !tbody) return;
-
-                const selectedIndex = select.value;
-                const selectedMudurlukKod = mudurlukSelect ? mudurlukSelect.value : '';
-                
-                console.log('selectQuestion called:', { selectedIndex, selectedMudurlukKod });
-
-                // Hem müdürlük hem soru seçiliyse - satır filtreleme yap
-                if (selectedIndex !== '' && selectedMudurlukKod !== '') {
-                    console.log('Rendering combined view');
-                    sorularManager.renderCombinedView(parseInt(selectedIndex), selectedMudurlukKod);
-                }
-                // Sadece soru seçildiyse - tabloyu ters çevir (müdürlükler satırda)
-                else if (selectedIndex !== '') {
-                    const soruIndex = parseInt(selectedIndex);
-                    sorularManager.renderQuestionView(soruIndex, true);
-                } else {
-                    // Tüm sorular veya sadece müdürlük - orijinal yapıyı yeniden oluştur
-                    tableRenderer.renderSorular();
-                    if (selectedMudurlukKod !== '') {
-                        sorularManager.selectMudurluk();
-                    }
-                }
+                sorularManager.updateTable();
             },
             
             renderQuestionView: (soruIndex, sortAsc = true) => {
@@ -3553,30 +3526,47 @@
             },
 
             selectMudurluk: () => {
-                const select = document.getElementById('mudurlukSoruSelect');
+                sorularManager.updateTable();
+            },
+            
+            updateTable: () => {
                 const soruSelect = document.getElementById('soruSelect');
+                const mudurlukSelect = document.getElementById('mudurlukSoruSelect');
                 const thead = document.getElementById('sorularTableHead');
                 const tbody = document.getElementById('sorularBody');
 
-                if (!select || !thead || !tbody) return;
+                if (!thead || !tbody) return;
 
-                const selectedKod = select.value;
                 const selectedSoruIndex = soruSelect ? soruSelect.value : '';
+                const selectedMudurlukKod = mudurlukSelect ? mudurlukSelect.value : '';
                 
-                // Hem müdürlük hem soru seçiliyse - combined view
-                if (selectedKod !== '' && selectedSoruIndex !== '') {
-                    sorularManager.renderCombinedView(parseInt(selectedSoruIndex), selectedKod);
+                // Durum 1: Hem müdürlük hem soru seçili - tek satır göster
+                if (selectedSoruIndex !== '' && selectedMudurlukKod !== '') {
+                    sorularManager.renderCombinedView(parseInt(selectedSoruIndex), selectedMudurlukKod);
                     return;
                 }
                 
-                // Sadece soru seçiliyse - question view'a geç
+                // Durum 2: Sadece soru seçili - müdürlükler satırda
                 if (selectedSoruIndex !== '') {
-                    sorularManager.renderQuestionView(parseInt(selectedSoruIndex), true);
+                    sorularManager.renderQuestionView(parseInt(selectedSoruIndex), sorularManager.questionViewSortAsc);
                     return;
                 }
                 
-                // Sadece müdürlük seçili veya hiçbiri - sütun filtreleme yap
-                const selectedMudurluk = selectedKod ? `md_${selectedKod}` : '';
+                // Durum 3: Sadece müdürlük veya hiçbiri - tam tablo + sütun gizleme
+                tableRenderer.renderSorular();
+                
+                if (selectedMudurlukKod !== '') {
+                    sorularManager.applyColumnFilter(selectedMudurlukKod);
+                }
+            },
+            
+            applyColumnFilter: (selectedKod) => {
+                const thead = document.getElementById('sorularTableHead');
+                const tbody = document.getElementById('sorularBody');
+                
+                if (!thead || !tbody) return;
+                
+                const selectedMudurluk = `md_${selectedKod}`;
 
                 // Header'dan hangi data-col'ları gizleyeceğimizi belirle
                 const headerCells = thead.querySelectorAll('th[data-col]');
@@ -3586,18 +3576,11 @@
                     const col = cell.getAttribute('data-col');
                     const mudurlukKod = cell.getAttribute('data-mudurluk');
 
-                    // col=0: Soru - her zaman göster
-                    // col=1 veya genel: Genel Belediye - her zaman göster
                     if (col === '0' || col === '1' || mudurlukKod === 'genel') {
                         cell.style.display = '';
-                    } else if (!selectedKod) {
-                        // Seçim yoksa tümünü göster
-                        cell.style.display = '';
                     } else if (mudurlukKod === selectedMudurluk) {
-                        // Seçili müdürlüğü göster
                         cell.style.display = '';
                     } else {
-                        // Diğerlerini gizle ve col numarasını kaydet
                         cell.style.display = 'none';
                         colsToHide.push(col);
                     }
