@@ -562,6 +562,17 @@
             color: #ef4444;
             font-weight: 600;
         }
+        
+        /* Below average spectrum colors */
+        .below-avg-mild {
+            color: #D97706; /* amber-600 */
+        }
+        .below-avg-moderate {
+            color: #EA580C; /* orange-600 */
+        }
+        .below-avg-severe {
+            color: #DC2626; /* red-600 */
+        }
 
         /* INFO BOXES */
         .info-box,
@@ -1800,6 +1811,28 @@
                 const num = parseFloat(value);
                 return isNaN(num) ? '0' : num.toFixed(1);
             },
+            
+            getBelowAvgClass: (value, baseline) => {
+                if (baseline === null || baseline === undefined) return '';
+                const val = parseFloat(value) || 0;
+                const base = parseFloat(baseline) || 0;
+                if (base <= 0 || val >= base) return '';
+                const diff = ((base - val) / base) * 100;
+                if (isNaN(diff) || !isFinite(diff)) return '';
+                if (diff > 20) return 'below-avg-severe';
+                if (diff > 10) return 'below-avg-moderate';
+                return 'below-avg-mild';
+            },
+            
+            getBelowAvgTooltip: (value, baseline) => {
+                if (baseline === null || baseline === undefined) return '';
+                const val = parseFloat(value) || 0;
+                const base = parseFloat(baseline) || 0;
+                if (base <= 0 || val >= base) return '';
+                const diff = ((base - val) / base) * 100;
+                if (isNaN(diff) || !isFinite(diff)) return '';
+                return `Belediye ortalamasının %${diff.toFixed(1)} altında`;
+            },
 
             calculateAverage: (surveys, questionIndices) => {
                 const {total, count} = surveys.reduce((acc, survey) => {
@@ -2287,18 +2320,22 @@
                     {value: katilmayan},
                     {value: data.gecerliAnketler?.length || 0},
                     {value: data.gecersizAnketler?.length || 0},
-                    {value: data.katilimOrani || 0, percent: true},
-                    {value: data.genelMemnuniyet || 0, percent: true, bold: true},
-                    {value: data.isYuku || 0, percent: true},
-                    {value: data.kurumDestegi || 0, percent: true}
+                    {value: data.katilimOrani || 0, percent: true, baselineKey: 'katilimOrani'},
+                    {value: data.genelMemnuniyet || 0, percent: true, bold: true, baselineKey: 'genelMemnuniyet'},
+                    {value: data.isYuku || 0, percent: true, baselineKey: 'isYuku'},
+                    {value: data.kurumDestegi || 0, percent: true, baselineKey: 'kurumDestegi'}
                 ];
 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
 
                 fields.forEach(field => {
                     const displayValue = field.percent ? `${field.value}%` : field.value;
+                    const baseVal = baseline && field.baselineKey ? baseline[field.baselineKey] : null;
+                    const colorClass = !isGenel && baseVal ? utils.getBelowAvgClass(field.value, baseVal) : '';
+                    const tooltip = !isGenel && baseVal ? utils.getBelowAvgTooltip(field.value, baseVal) : '';
+                    const titleAttr = tooltip ? ` title="${tooltip}"` : '';
                     const content = field.bold ? `<strong>${displayValue}</strong>` : displayValue;
-                    rowHTML += `<td>${content}</td>`;
+                    rowHTML += `<td class="${colorClass}"${titleAttr}>${content}</td>`;
                 });
 
                 rowHTML += `<td class="${dengeClass}"><strong>${dengeSymbol}${data.denge || 0}%</strong></td>`;
@@ -2456,7 +2493,11 @@
 
                 platforms.forEach(platform => {
                     const value = sm.detay?.[platform] || 0;
-                    rowHTML += `<td>${value}%</td>`;
+                    const baseVal = baseline?.detay?.[platform];
+                    const colorClass = !isGenel && baseVal !== undefined ? utils.getBelowAvgClass(value, baseVal) : '';
+                    const tooltip = !isGenel && baseVal !== undefined ? utils.getBelowAvgTooltip(value, baseVal) : '';
+                    const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                    rowHTML += `<td class="${colorClass}"${titleAttr}>${value}%</td>`;
                 });
 
                 return rowHTML + '</tr>';
@@ -2489,16 +2530,27 @@
                 const fields = [
                     {key: 'ruhSagligi', value: data.ruhSagligi || 0},
                     {key: 'sigaraOrani', value: data.sigaraOrani || 0},
-                    {key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detay: true},
-                    {key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detay: true},
-                    {key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detay: true},
-                    {key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detay: true}
+                    {key: 'keyifAlamama', value: data.ruhSagligiDetay?.keyifAlamama || 0, detayKey: 'keyifAlamama'},
+                    {key: 'uzgunCokkun', value: data.ruhSagligiDetay?.uzgunCokkun || 0, detayKey: 'uzgunCokkun'},
+                    {key: 'gerginKaygili', value: data.ruhSagligiDetay?.gerginKaygili || 0, detayKey: 'gerginKaygili'},
+                    {key: 'endiseKontrol', value: data.ruhSagligiDetay?.endiseKontrol || 0, detayKey: 'endiseKontrol'}
                 ];
 
                 let rowHTML = `<tr class="${isGenel ? 'highlight' : ''}"><td><strong>${name}</strong></td>`;
 
                 fields.forEach(field => {
-                    rowHTML += `<td>${field.value}%</td>`;
+                    let baseVal = null;
+                    if (baseline) {
+                        if (field.detayKey) {
+                            baseVal = baseline.ruhSagligiDetay?.[field.detayKey];
+                        } else {
+                            baseVal = baseline[field.key];
+                        }
+                    }
+                    const colorClass = !isGenel && baseVal !== undefined ? utils.getBelowAvgClass(field.value, baseVal) : '';
+                    const tooltip = !isGenel && baseVal !== undefined ? utils.getBelowAvgTooltip(field.value, baseVal) : '';
+                    const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                    rowHTML += `<td class="${colorClass}"${titleAttr}>${field.value}%</td>`;
                 });
 
                 return rowHTML + '</tr>';
@@ -2554,7 +2606,11 @@
 
                 temaKeys.forEach(key => {
                     const value = temalar[key] || 0;
-                    rowHTML += `<td>${value}%</td>`;
+                    const baseVal = baseline?.[key];
+                    const colorClass = !isGenel && baseVal !== undefined ? utils.getBelowAvgClass(value, baseVal) : '';
+                    const tooltip = !isGenel && baseVal !== undefined ? utils.getBelowAvgTooltip(value, baseVal) : '';
+                    const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                    rowHTML += `<td class="${colorClass}"${titleAttr}>${value}%</td>`;
                 });
 
                 return rowHTML + '</tr>';
@@ -2644,8 +2700,11 @@
                     rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
 
                     Object.values(state.processedData).forEach((md, index) => {
-                        const colorStyle = utils.getGradientColor(md.soruOrtalamalar[i], genelBelediyeSorular[i]);
-                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" style="${colorStyle}">${md.soruOrtalamalar[i]}%</td>`;
+                        const baseVal = genelBelediyeSorular[i];
+                        const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[i], baseVal);
+                        const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[i], baseVal);
+                        const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                        rowHTML += `<td data-mudurluk="md_${md.kod}" data-col="${index + 2}" class="${colorClass}"${titleAttr}>${md.soruOrtalamalar[i]}%</td>`;
                     });
 
                     return rowHTML + '</tr>';
