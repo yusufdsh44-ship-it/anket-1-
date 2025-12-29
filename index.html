@@ -686,7 +686,8 @@
             border-radius: 16px;
         }
 
-        /* STICKY COLUMNS - SORULAR TABLE */
+        /* STICKY TABLE WRAPPER - shared class for all sticky tables */
+        .sticky-table-wrapper,
         #sorularTableWrapper {
             position: relative;
             overflow: auto !important;
@@ -696,6 +697,7 @@
             background: white;
         }
         
+        .sticky-table-wrapper table,
         #sorularTable {
             border-collapse: separate !important;
             border-spacing: 0 !important;
@@ -5172,8 +5174,8 @@
                                 ${tableRenderer.createFilterBar('filterGenelInput', 'genelSkorlarTable')}
                             </div>
                             
-                            <div class="overflow-x-auto rounded-xl border border-border-light">
-                                <table id="genelSkorlarTable" class="w-full">
+                            <div id="genelSkorlarTableWrapper" class="sticky-table-wrapper">
+                                <table id="genelSkorlarTable">
                                     <thead class="bg-page-bg">
                                         <tr>
                                             ${tableRenderer.createSortableHeader('Müdürlükler', 'genelSkorlarTable', 0)}
@@ -5213,7 +5215,7 @@
                                 ${tableRenderer.createFilterBar('filterSosyalInput', 'sosyalMedyaTable')}
                             </div>
                     
-                    <div class="table-container">
+                    <div id="sosyalMedyaTableWrapper" class="sticky-table-wrapper">
                         <table id="sosyalMedyaTable">
                             <thead>
                                 <tr>
@@ -5248,7 +5250,7 @@
                                 ${tableRenderer.createFilterBar('filterRuhInput', 'ruhSagligiTable')}
                             </div>
                     
-                    <div class="table-container">
+                    <div id="ruhSagligiTableWrapper" class="sticky-table-wrapper">
                         <table id="ruhSagligiTable">
                             <thead>
                                 <tr>
@@ -5281,7 +5283,7 @@
                                 ${tableRenderer.createFilterBar('filterTemalarInput', 'temalarTable')}
                             </div>
                     
-                    <div class="table-container">
+                    <div id="temalarTableWrapper" class="sticky-table-wrapper">
                         <table id="temalarTable">
                             <thead>
                                 <tr>
