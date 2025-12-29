@@ -2542,8 +2542,8 @@
 
                 let headerHTML = '<tr>';
 
-                // Soru sütunu
-                headerHTML += '<th data-col="0" style="min-width: 350px; text-align: left;">Soru</th>';
+                // Soru sütunu - sticky
+                headerHTML += '<th data-col="0" class="sticky-col" style="min-width: 350px; text-align: left; position: sticky; left: 0; background: #2B241C; z-index: 12;">Soru</th>';
 
                 // Genel Belediye sütunu
                 headerHTML += `
@@ -2569,7 +2569,7 @@
                 const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
 
                 tbody.innerHTML = SORULAR.map((soru, i) => {
-                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0"><strong>S${i + 1}.</strong> ${soru}</td>`;
+                    let rowHTML = `<tr data-soru-index="${i}"><td data-col="0" class="sticky-col" style="position: sticky; left: 0; background: #fff; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>S${i + 1}.</strong> ${soru}</td>`;
                     rowHTML += `<td class="highlight" data-mudurluk="genel" data-col="1"><strong>${genelBelediyeSorular[i]}%</strong></td>`;
 
                     Object.values(state.processedData).forEach((md, index) => {
