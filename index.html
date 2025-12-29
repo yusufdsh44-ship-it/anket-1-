@@ -1745,26 +1745,26 @@
         const MENU_ITEMS = [
             {
                 category: 'RAPOR', items: [
-                    {id: 'belediye-geneli', icon: 'apartment', title: 'Belediye Geneli'},
-                    {id: 'mudurluk-raporlari', icon: 'description', title: 'Müdürlük Raporları'}
+                    {id: 'belediye-geneli', icon: 'apartment', title: 'Belediye Geneli', iconColor: '#C86A3C'},
+                    {id: 'mudurluk-raporlari', icon: 'description', title: 'Müdürlük Raporları', iconColor: '#C86A3C'}
                 ]
             },
             {
                 category: 'Detaylı Tablolar (tüm müdürlükler)', items: [
-                    {id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları'},
-                    {id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz'},
-                    {id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları'},
-                    {id: 'ruh-sagligi', icon: 'smoking_rooms', title: 'Ruh Sağlığı Taraması'},
-                    {id: 'sorular', icon: 'analytics', title: 'Sorular Üzerinden Analiz'},
-                    {id: 'mudurluk-karsilastir', icon: 'compare_arrows', title: 'Müdürlük Karşılaştırma'},
-                    {id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi'},
-                    {id: 'acik-uclu', icon: 'rule', title: 'Açık Uçlu Cevaplar'}
+                    {id: 'genel-skorlar', icon: 'dashboard', title: 'Genel Memnuniyet Oranları', iconColor: '#3B82F6'},
+                    {id: 'temalar', icon: 'insights', title: 'Konular Üzerinden Analiz', iconColor: '#8B5CF6'},
+                    {id: 'sosyal-medya', icon: 'groups', title: 'Sosyal Medya Takip Oranları', iconColor: '#06B6D4'},
+                    {id: 'ruh-sagligi', icon: 'health_and_safety', title: 'Ruh Sağlığı Taraması', iconColor: '#EF4444'},
+                    {id: 'sorular', icon: 'analytics', title: 'Sorular Üzerinden Analiz', iconColor: '#F59E0B'},
+                    {id: 'mudurluk-karsilastir', icon: 'compare_arrows', title: 'Müdürlük Karşılaştırma', iconColor: '#10B981'},
+                    {id: 'mudurluk-sec', icon: 'check_circle_outline', title: 'Müdürlük Detay Analizi', iconColor: '#6366F1'},
+                    {id: 'acik-uclu', icon: 'rule', title: 'Açık Uçlu Cevaplar', iconColor: '#EC4899'}
                 ]
             },
             {
                 category: 'VERİ PANELİ', items: [
-                    {id: 'veri-girisi', icon: 'input', title: 'Veri Girişi'},
-                    {id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler'}
+                    {id: 'veri-girisi', icon: 'input', title: 'Veri Girişi', iconColor: '#22C55E'},
+                    {id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler', iconColor: '#64748B'}
                 ]
             }
         ];
@@ -5757,8 +5757,9 @@
                         const menuItem = document.createElement('div');
                         menuItem.className = item.highlight ? 'menu-item menu-item-highlight' : 'menu-item';
                         menuItem.dataset.page = item.id;
+                        const iconColorStyle = item.iconColor ? `style="color: ${item.iconColor};"` : '';
                         menuItem.innerHTML = `
-                            <span class="material-icons-outlined menu-item-icon">${item.icon}</span>
+                            <span class="material-icons-outlined menu-item-icon" ${iconColorStyle}>${item.icon}</span>
                             <span>${item.title}</span>
                         `;
                         menuItem.onclick = () => {
