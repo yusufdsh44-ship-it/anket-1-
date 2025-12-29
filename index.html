@@ -1798,6 +1798,16 @@
             'afet_isleri': '🚨',
             'koordinasyon': '🔗'
         };
+        
+        // Müdürlük kodu -> emoji eşleştirmesi
+        const MUDURLUK_KOD_EMOJI = {
+            101: '🚨', 102: '🚌', 103: '🎙️', 104: '🔧', 105: '🏠',
+            106: '🛠️', 107: '💰', 108: '⚽', 109: '📞', 110: '⚖️',
+            111: '♻️', 112: '🏗️', 113: '💡', 114: '👥', 115: '🏭',
+            116: '🔗', 117: '🎨', 118: '📈', 119: '📩', 120: '⭐',
+            121: '🌳', 122: '📍', 123: '📝', 124: '❤️', 125: '📊',
+            126: '🧹', 127: '🐾', 1288: '🏗️', 129: '✍️', 130: '👮'
+        };
 
         const state = {
             allSurveys: [],
@@ -2323,8 +2333,9 @@
                     .sort((a, b) => parseFloat(b.genelMemnuniyet || 0) - parseFloat(a.genelMemnuniyet || 0));
 
                 sortedMudurlukler.forEach(md => {
+                    const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
                     tbody.innerHTML += tableRenderer.createGenelSkorRow(
-                        `${md.ad}`,
+                        `${emoji} ${md.ad}`,
                         md,
                         false,
                         genelBelediye
@@ -2340,11 +2351,26 @@
                 const toplamPersonel = data.toplamPersonel || 0;
                 const toplamKatilan = data.anketler?.length || 0;
                 const katilmayan = toplamPersonel - toplamKatilan;
+                const katilimOrani = parseFloat(data.katilimOrani) || 0;
+
+                // Katılmayan sütunu için renk hesapla (katılım oranına göre)
+                let katilmayanClass = '';
+                let katilmayanTooltip = '';
+                if (!isGenel && baseline) {
+                    const baseKatilim = parseFloat(baseline.katilimOrani) || 0;
+                    if (baseKatilim > 0 && katilimOrani < baseKatilim) {
+                        const diff = ((baseKatilim - katilimOrani) / baseKatilim) * 100;
+                        if (diff > 20) katilmayanClass = 'below-avg-severe';
+                        else if (diff > 10) katilmayanClass = 'below-avg-moderate';
+                        else katilmayanClass = 'below-avg-mild';
+                        katilmayanTooltip = `Katılım oranı ortalamanın %${diff.toFixed(1)} altında`;
+                    }
+                }
 
                 const fields = [
                     {value: toplamPersonel},
                     {value: toplamKatilan},
-                    {value: katilmayan},
+                    {value: katilmayan, colorClass: katilmayanClass, tooltip: katilmayanTooltip},
                     {value: data.gecerliAnketler?.length || 0},
                     {value: data.gecersizAnketler?.length || 0},
                     {value: data.katilimOrani || 0, percent: true, baselineKey: 'katilimOrani'},
@@ -2357,9 +2383,15 @@
 
                 fields.forEach(field => {
                     const displayValue = field.percent ? `${field.value}%` : field.value;
-                    const baseVal = baseline && field.baselineKey ? baseline[field.baselineKey] : null;
-                    const colorClass = !isGenel && baseVal ? utils.getBelowAvgClass(field.value, baseVal) : '';
-                    const tooltip = !isGenel && baseVal ? utils.getBelowAvgTooltip(field.value, baseVal) : '';
+                    let colorClass = field.colorClass || '';
+                    let tooltip = field.tooltip || '';
+                    
+                    if (!colorClass && baseline && field.baselineKey) {
+                        const baseVal = baseline[field.baselineKey];
+                        colorClass = !isGenel && baseVal ? utils.getBelowAvgClass(field.value, baseVal) : '';
+                        tooltip = !isGenel && baseVal ? utils.getBelowAvgTooltip(field.value, baseVal) : '';
+                    }
+                    
                     const titleAttr = tooltip ? ` title="${tooltip}"` : '';
                     const content = field.bold ? `<strong>${displayValue}</strong>` : displayValue;
                     rowHTML += `<td class="${colorClass}"${titleAttr}>${content}</td>`;
@@ -2502,8 +2534,9 @@
 
                 Object.values(state.processedData).forEach(md => {
                     if (md.sosyalMedya) {
+                        const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
                         tbody.innerHTML += tableRenderer.createSosyalMedyaRow(
-                            `${md.ad}`,
+                            `${emoji} ${md.ad}`,
                             md.sosyalMedya,
                             false,
                             genelBelediye
@@ -2540,8 +2573,9 @@
                 tbody.innerHTML += tableRenderer.createRuhSagligiRow('GENEL BELEDİYE', genelBelediye, true, null);
 
                 Object.values(state.processedData).forEach(md => {
+                    const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
                     tbody.innerHTML += tableRenderer.createRuhSagligiRow(
-                        `${md.ad}`,
+                        `${emoji} ${md.ad}`,
                         {
                             ruhSagligi: md.ruhSagligi,
                             sigaraOrani: md.sigaraOrani,
@@ -2615,8 +2649,9 @@
                 tbody.innerHTML += tableRenderer.createTemalarRow('GENEL BELEDİYE', genelBelediye, true, null);
 
                 Object.values(state.processedData).forEach(md => {
+                    const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
                     tbody.innerHTML += tableRenderer.createTemalarRow(
-                        `${md.ad}`,
+                        `${emoji} ${md.ad}`,
                         md.temalar,
                         false,
                         genelBelediye
@@ -2778,8 +2813,9 @@
                     const allMdSurveys = [...md.gecerliAnketler, ...md.gecersizAnketler];
                     const count = allMdSurveys.filter(s => s.acikUclu && s.acikUclu.trim()).length;
                     const keywords = utils.analyzeKeywords(allMdSurveys);
+                    const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
                     tbody.innerHTML += tableRenderer.createAcikUcluRow(
-                        `${md.ad}`,
+                        `${emoji} ${md.ad}`,
                         keywords,
                         count,
                         md.kod,
