@@ -3499,7 +3499,6 @@
                 const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
                 
                 if (!selectedMudurluk) {
-                    console.log('selectedMudurluk not found for kod:', mudurlukKod);
                     return;
                 }
                 
@@ -3546,11 +3545,8 @@
                 const selectedSoruIndex = soruSelect ? soruSelect.value : '';
                 const selectedMudurlukKod = mudurlukSelect ? mudurlukSelect.value : '';
                 
-                console.log('updateTable:', { selectedSoruIndex, selectedMudurlukKod });
-                
                 // Durum 1: Hem müdürlük hem soru seçili - tek satır göster
                 if (selectedSoruIndex !== '' && selectedMudurlukKod !== '') {
-                    console.log('-> renderCombinedView');
                     sorularManager.renderCombinedView(parseInt(selectedSoruIndex), selectedMudurlukKod);
                     return;
                 }
