@@ -3417,6 +3417,9 @@
         };
 
         const sorularManager = {
+            // Soru bazlı görünümde sıralama durumu
+            questionViewSortAsc: true,
+            
             selectQuestion: () => {
                 const select = document.getElementById('soruSelect');
                 const thead = document.getElementById('sorularTableHead');
@@ -3429,44 +3432,72 @@
                 // Eğer bir soru seçildiyse - tabloyu ters çevir (müdürlükler satırda, sorular sütunda)
                 if (selectedIndex !== '') {
                     const soruIndex = parseInt(selectedIndex);
-                    const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
-                    const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
-                    
-                    // Header: Müdürlük | Soru
-                    let headerHTML = '<tr>';
-                    headerHTML += '<th class="sticky-col" style="min-width: 300px; text-align: left; position: sticky; left: 0; background: #2B241C; z-index: 12;">Müdürlük</th>';
-                    headerHTML += `<th style="min-width: 400px; text-align: left;">S${soruIndex + 1}. ${SORULAR[soruIndex]}</th>`;
-                    headerHTML += '</tr>';
-                    thead.innerHTML = headerHTML;
-                    
-                    // Body: Her müdürlük bir satır
-                    let bodyHTML = '';
-                    
-                    // Genel Belediye satırı
-                    bodyHTML += `<tr class="highlight">
-                        <td style="position: sticky; left: 0; background: #fef9c3; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>GENEL BELEDİYE</strong></td>
-                        <td><strong>${genelBelediyeSorular[soruIndex]}%</strong></td>
-                    </tr>`;
-                    
-                    // Müdürlükler
-                    Object.values(state.processedData).forEach(md => {
-                        const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
-                        const baseVal = genelBelediyeSorular[soruIndex];
-                        const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
-                        const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
-                        const titleAttr = tooltip ? ` title="${tooltip}"` : '';
-                        
-                        bodyHTML += `<tr>
-                            <td style="position: sticky; left: 0; background: #fff; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>${emoji} ${md.ad}</strong></td>
-                            <td class="${colorClass}"${titleAttr}>${md.soruOrtalamalar[soruIndex]}%</td>
-                        </tr>`;
-                    });
-                    
-                    tbody.innerHTML = bodyHTML;
+                    sorularManager.renderQuestionView(soruIndex, true); // varsayılan: en düşükten en yükseğe
                 } else {
                     // Tüm sorular - orijinal yapıyı yeniden oluştur
                     tableRenderer.renderSorular();
                 }
+            },
+            
+            renderQuestionView: (soruIndex, sortAsc = true) => {
+                const thead = document.getElementById('sorularTableHead');
+                const tbody = document.getElementById('sorularBody');
+                
+                if (!thead || !tbody) return;
+                
+                sorularManager.questionViewSortAsc = sortAsc;
+                const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
+                const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
+                
+                // Sıralama ikonu
+                const sortIcon = sortAsc ? '↑' : '↓';
+                const sortTitle = sortAsc ? 'En düşükten yükseğe' : 'En yüksekten düşüğe';
+                
+                // Header: Müdürlük | Soru (tıklanabilir sıralama)
+                let headerHTML = '<tr>';
+                headerHTML += '<th class="sticky-col" style="min-width: 300px; text-align: left; position: sticky; left: 0; background: #2B241C; z-index: 12;">Müdürlük</th>';
+                headerHTML += `<th class="sortable-header" style="min-width: 400px; text-align: left; cursor: pointer;" onclick="sorularManager.toggleQuestionSort(${soruIndex})" title="${sortTitle}">
+                    S${soruIndex + 1}. ${SORULAR[soruIndex]} <span style="opacity: 0.7;">${sortIcon}</span>
+                </th>`;
+                headerHTML += '</tr>';
+                thead.innerHTML = headerHTML;
+                
+                // Müdürlükleri sırala
+                const sortedMudurlukler = Object.values(state.processedData).sort((a, b) => {
+                    const valA = parseFloat(a.soruOrtalamalar[soruIndex]) || 0;
+                    const valB = parseFloat(b.soruOrtalamalar[soruIndex]) || 0;
+                    return sortAsc ? valA - valB : valB - valA;
+                });
+                
+                // Body: Her müdürlük bir satır
+                let bodyHTML = '';
+                
+                // Genel Belediye satırı (her zaman en üstte)
+                bodyHTML += `<tr class="highlight">
+                    <td style="position: sticky; left: 0; background: #fef9c3; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>GENEL BELEDİYE</strong></td>
+                    <td><strong>${genelBelediyeSorular[soruIndex]}%</strong></td>
+                </tr>`;
+                
+                // Sıralanmış müdürlükler
+                sortedMudurlukler.forEach(md => {
+                    const emoji = MUDURLUK_KOD_EMOJI[md.kod] || '📋';
+                    const baseVal = genelBelediyeSorular[soruIndex];
+                    const colorClass = utils.getBelowAvgClass(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
+                    const tooltip = utils.getBelowAvgTooltip(md.soruOrtalamalar[soruIndex], baseVal, isReverseCoded);
+                    const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                    
+                    bodyHTML += `<tr>
+                        <td style="position: sticky; left: 0; background: #fff; z-index: 2; border-right: 2px solid #e5e7eb;"><strong>${emoji} ${md.ad}</strong></td>
+                        <td class="${colorClass}"${titleAttr}>${md.soruOrtalamalar[soruIndex]}%</td>
+                    </tr>`;
+                });
+                
+                tbody.innerHTML = bodyHTML;
+            },
+            
+            toggleQuestionSort: (soruIndex) => {
+                // Sıralamayı tersine çevir
+                sorularManager.renderQuestionView(soruIndex, !sorularManager.questionViewSortAsc);
             },
 
             selectMudurluk: () => {
