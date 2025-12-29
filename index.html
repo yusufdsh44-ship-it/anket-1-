@@ -799,7 +799,7 @@
 
         .table-container {
             max-height: 70vh;
-            overflow-y: auto;
+            overflow: auto;
         }
 
         .table-container thead {
@@ -811,6 +811,19 @@
         .table-container thead th {
             background: #F8F4EC !important;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        /* Sorular table sticky fix */
+        #sorularTable .sticky-col {
+            position: sticky !important;
+            left: 0 !important;
+            z-index: 20 !important;
+            background: #fff !important;
+        }
+        
+        #sorularTable thead .sticky-col {
+            background: #2B241C !important;
+            z-index: 30 !important;
         }
 
         /* SORTABLE HEADERS */
@@ -5270,9 +5283,9 @@
                                 </button>
                             </div>
                     
-                    <div class="table-container" style="max-height: 75vh;">
-                        <table id="sorularTable" style="font-size: 13px;">
-                            <thead id="sorularTableHead">
+                    <div id="sorularTableWrapper" style="max-height: 75vh; overflow: auto; border: 1px solid #E2D9CA; border-radius: 16px; background: white;">
+                        <table id="sorularTable" style="font-size: 13px; border-collapse: separate; border-spacing: 0;">
+                            <thead id="sorularTableHead" style="position: sticky; top: 0; z-index: 40;">
                                 <tr>
                                     <th>Soru</th>
                                 </tr>
