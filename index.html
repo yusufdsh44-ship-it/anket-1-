@@ -686,53 +686,61 @@
             border-radius: 16px;
         }
 
-        /* STICKY COLUMNS - ONLY FOR SORULAR TABLE */
+        /* STICKY COLUMNS - SORULAR TABLE */
+        #sorularTableWrapper {
+            position: relative;
+            overflow: auto !important;
+            max-height: 75vh;
+            border: 1px solid #E2D9CA;
+            border-radius: 16px;
+            background: white;
+        }
+        
         #sorularTable {
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+            width: max-content;
         }
 
         #sorularTable th:first-child,
         #sorularTable td:first-child {
-            position: sticky;
-            left: 0;
-            z-index: 20;
-            background: white;
-            border-right: 2px solid #e5e7eb;
-            width: 400px;
-            min-width: 400px;
-            max-width: 400px;
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            left: 0 !important;
+            z-index: 50 !important;
+            background: #fff !important;
+            box-shadow: 4px 0 8px -2px rgba(0,0,0,0.15);
+            min-width: 380px !important;
+            max-width: 380px !important;
         }
 
-        #sorularTable th:first-child {
-            background: #FDFCFA;
-            z-index: 30;
+        #sorularTable thead th:first-child {
+            background: #2B241C !important;
+            color: white !important;
+            z-index: 100 !important;
         }
 
-        #sorularTable th:nth-child(2),
-        #sorularTable td:nth-child(2) {
-            position: sticky;
-            left: 400px;
-            z-index: 15;
-            background: white;
-            border-right: 2px solid #e5e7eb;
-            width: 180px;
-            min-width: 180px;
-        }
-
-        #sorularTable th:nth-child(2) {
-            background: #FDFCFA;
-            z-index: 25;
+        #sorularTable thead th {
+            position: -webkit-sticky !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 40 !important;
+            background: #2B241C !important;
+            color: white !important;
         }
 
         #sorularTable th,
         #sorularTable td {
-            min-width: 180px;
+            min-width: 140px;
+            padding: 12px 10px;
         }
 
-        #sorularTable tr:hover td:first-child,
-        #sorularTable tr:hover td:nth-child(2) {
-            background: #FDFCFA;
+        #sorularTable tr:nth-child(even) td:first-child {
+            background: #f9f9f9 !important;
+        }
+        
+        #sorularTable tr:hover td:first-child {
+            background: #FFF8F0 !important;
         }
 
         /* EXCEL TABLE */
@@ -5283,9 +5291,9 @@
                                 </button>
                             </div>
                     
-                    <div id="sorularTableWrapper" style="max-height: 75vh; overflow: auto; border: 1px solid #E2D9CA; border-radius: 16px; background: white;">
-                        <table id="sorularTable" style="font-size: 13px; border-collapse: separate; border-spacing: 0;">
-                            <thead id="sorularTableHead" style="position: sticky; top: 0; z-index: 40;">
+                    <div id="sorularTableWrapper">
+                        <table id="sorularTable">
+                            <thead id="sorularTableHead">
                                 <tr>
                                     <th>Soru</th>
                                 </tr>
