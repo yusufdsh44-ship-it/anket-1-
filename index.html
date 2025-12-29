@@ -779,11 +779,14 @@
             background: #FFF8F0 !important;
         }
         
-        /* Override overflow for sticky tables */
+        /* Override for sticky tables - must have border-collapse: separate */
         #genelSkorlarTable,
         #sosyalMedyaTable,
         #ruhSagligiTable,
         #temalarTable {
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+            width: max-content;
             overflow: visible !important;
             border-radius: 0 !important;
         }
