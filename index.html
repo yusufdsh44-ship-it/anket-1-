@@ -3422,20 +3422,29 @@
             
             selectQuestion: () => {
                 const select = document.getElementById('soruSelect');
+                const mudurlukSelect = document.getElementById('mudurlukSoruSelect');
                 const thead = document.getElementById('sorularTableHead');
                 const tbody = document.getElementById('sorularBody');
 
                 if (!select || !thead || !tbody) return;
 
                 const selectedIndex = select.value;
+                const selectedMudurlukKod = mudurlukSelect ? mudurlukSelect.value : '';
 
-                // Eğer bir soru seçildiyse - tabloyu ters çevir (müdürlükler satırda, sorular sütunda)
-                if (selectedIndex !== '') {
+                // Hem müdürlük hem soru seçiliyse - satır filtreleme yap
+                if (selectedIndex !== '' && selectedMudurlukKod !== '') {
+                    sorularManager.renderCombinedView(parseInt(selectedIndex), selectedMudurlukKod);
+                }
+                // Sadece soru seçildiyse - tabloyu ters çevir (müdürlükler satırda)
+                else if (selectedIndex !== '') {
                     const soruIndex = parseInt(selectedIndex);
-                    sorularManager.renderQuestionView(soruIndex, true); // varsayılan: en düşükten en yükseğe
+                    sorularManager.renderQuestionView(soruIndex, true);
                 } else {
-                    // Tüm sorular - orijinal yapıyı yeniden oluştur
+                    // Tüm sorular veya sadece müdürlük - orijinal yapıyı yeniden oluştur
                     tableRenderer.renderSorular();
+                    if (selectedMudurlukKod !== '') {
+                        sorularManager.selectMudurluk();
+                    }
                 }
             },
             
@@ -3499,15 +3508,71 @@
                 // Sıralamayı tersine çevir
                 sorularManager.renderQuestionView(soruIndex, !sorularManager.questionViewSortAsc);
             },
+            
+            renderCombinedView: (soruIndex, mudurlukKod) => {
+                const thead = document.getElementById('sorularTableHead');
+                const tbody = document.getElementById('sorularBody');
+                
+                if (!thead || !tbody) return;
+                
+                const genelBelediyeSorular = tableRenderer.calculateGenelBelediyeSorular();
+                const selectedMudurluk = state.processedData[`md_${mudurlukKod}`];
+                const isReverseCoded = utils.REVERSE_CODED_QUESTIONS.includes(soruIndex);
+                
+                if (!selectedMudurluk) return;
+                
+                const emoji = MUDURLUK_KOD_EMOJI[selectedMudurluk.kod] || '📋';
+                
+                // Header: Soru | Genel Belediye | Seçili Müdürlük
+                let headerHTML = '<tr>';
+                headerHTML += '<th class="sticky-col" style="min-width: 400px; text-align: left; position: sticky; left: 0; background: #2B241C; z-index: 12;">Soru</th>';
+                headerHTML += '<th style="min-width: 120px; text-align: center; background: #2B241C;">GENEL BELEDİYE</th>';
+                headerHTML += `<th style="min-width: 180px; text-align: center; background: #2B241C;">${emoji} ${selectedMudurluk.ad}</th>`;
+                headerHTML += '</tr>';
+                thead.innerHTML = headerHTML;
+                
+                // Body: Sadece seçili soru satırı
+                const baseVal = genelBelediyeSorular[soruIndex];
+                const mudurlukVal = selectedMudurluk.soruOrtalamalar[soruIndex];
+                const colorClass = utils.getBelowAvgClass(mudurlukVal, baseVal, isReverseCoded);
+                const tooltip = utils.getBelowAvgTooltip(mudurlukVal, baseVal, isReverseCoded);
+                const titleAttr = tooltip ? ` title="${tooltip}"` : '';
+                
+                let bodyHTML = `<tr>
+                    <td style="position: sticky; left: 0; background: #fff; z-index: 2; border-right: 2px solid #e5e7eb;">
+                        <strong>S${soruIndex + 1}.</strong> ${SORULAR[soruIndex]}
+                    </td>
+                    <td style="text-align: center; background: #fef9c3;"><strong>${baseVal}%</strong></td>
+                    <td style="text-align: center;" class="${colorClass}"${titleAttr}>${mudurlukVal}%</td>
+                </tr>`;
+                
+                tbody.innerHTML = bodyHTML;
+            },
 
             selectMudurluk: () => {
                 const select = document.getElementById('mudurlukSoruSelect');
+                const soruSelect = document.getElementById('soruSelect');
                 const thead = document.getElementById('sorularTableHead');
                 const tbody = document.getElementById('sorularBody');
 
                 if (!select || !thead || !tbody) return;
 
                 const selectedKod = select.value;
+                const selectedSoruIndex = soruSelect ? soruSelect.value : '';
+                
+                // Hem müdürlük hem soru seçiliyse - combined view
+                if (selectedKod !== '' && selectedSoruIndex !== '') {
+                    sorularManager.renderCombinedView(parseInt(selectedSoruIndex), selectedKod);
+                    return;
+                }
+                
+                // Sadece soru seçiliyse - question view'a geç
+                if (selectedSoruIndex !== '') {
+                    sorularManager.renderQuestionView(parseInt(selectedSoruIndex), true);
+                    return;
+                }
+                
+                // Sadece müdürlük seçili veya hiçbiri - sütun filtreleme yap
                 const selectedMudurluk = selectedKod ? `md_${selectedKod}` : '';
 
                 // Header'dan hangi data-col'ları gizleyeceğimizi belirle
