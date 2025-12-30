@@ -384,7 +384,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">ÖZEL KALEM</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%98,4</strong></td>
 <td style="text-align:center; padding:6px;">+22,9</td>
-<td style="padding:6px;">Genel memnuniyet sorusunda %100 tam puan. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
+<td style="padding:6px;">Belediyenin en yüksek memnuniyeti. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
@@ -11757,7 +11757,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %100 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir. <strong>Bu birim, belediyedeki diğer birimler için iyi uygulama örneği olarak değerlendirilebilir.</strong></p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %98,4 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir. <strong>Bu birim, belediyedeki diğer birimler için iyi uygulama örneği olarak değerlendirilebilir.</strong></p>
 
 <table class="indicators-table">
     <thead>
@@ -11855,7 +11855,7 @@ const RAPOR_VERILERI = {
 
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
-<li><strong>%100 memnuniyet (S44):</strong> Bu kurumda çalışmaktan genel olarak memnunum sorusunda tam puan - belediyede nadir görülen başarı.</li>
+<li><strong>Yüksek memnuniyet (%98,4):</strong> Bu kurumda çalışmaktan genel olarak memnunum sorusunda belediyenin en yüksek skoru.</li>
 <li><strong>10 temada 10 ortalamanın üzerinde:</strong> Tüm temalarda belediye ortalamasının üzerinde performans - belediyenin en dengeli birimi.</li>
 <li><strong>Belediyenin en düşük ruh sağlığı risklerinden:</strong> %39,2 ile personelin ruh sağlığı göstergeleri çok olumlu.</li>
 </ul>
