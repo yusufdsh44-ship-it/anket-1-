@@ -372,7 +372,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İŞLETME</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%96,9</strong></td>
 <td style="text-align:center; padding:6px;">+15,0</td>
-<td style="padding:6px;"><strong>Belediyenin ikinci en yüksek memnuniyeti (%96,9).</strong> Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Kurumsal destek yeterli. 10 temadan 8'inde ortalamanın üzerinde. Küçük örneklem (n=16) nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
+<td style="padding:6px;">Yüksek memnuniyet (%96,9). Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Kurumsal destek yeterli. 10 temadan 8'inde ortalamanın üzerinde. Küçük örneklem (n=16) nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">PLAN VE PROJE</td>
@@ -384,7 +384,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">ÖZEL KALEM</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%98,4</strong></td>
 <td style="text-align:center; padding:6px;">+22,9</td>
-<td style="padding:6px;">Belediyenin en yüksek memnuniyeti. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
+<td style="padding:6px;">Yüksek memnuniyet. 10 temanın tamamında ortalamanın üzerinde - belediyenin en dengeli birimi. İş-kişi uyumu, görev netliği, yönetici ilişkileri çok güçlü. Belediyenin en düşük ruh sağlığı risklerinden. Güçlü denge. Tek şikayet yemekhane lezzeti.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
@@ -432,7 +432,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">MUHTARLIK</td>
 <td style="text-align:center; padding:6px; color:#27ae60;">%95,8</td>
 <td style="text-align:center; padding:6px;">+23,2</td>
-<td style="padding:6px;"><strong>Belediyenin üçüncü en yüksek memnuniyeti (%95,8).</strong> Düşük iş stresi/yükü ile güçlü denge. Çalışma arkadaşları ve kurum içi iletişim ortalamanın üzerinde. Ortak alanlar belediyenin en düşüğü. Eğitim & gelişim zayıf. Personel tuvaletinin vatandaştan ayrılması talep edilmektedir. Küçük örneklem (n=6).</td>
+<td style="padding:6px;">Yüksek memnuniyet (%95,8). Düşük iş stresi/yükü ile güçlü denge. Çalışma arkadaşları ve kurum içi iletişim ortalamanın üzerinde. Ortak alanlar belediyenin en düşüğü. Eğitim & gelişim zayıf. Personel tuvaletinin vatandaştan ayrılması talep edilmektedir. Küçük örneklem (n=6).</td>
 </tr>
 </tbody>
 </table>
@@ -443,7 +443,7 @@ const RAPOR_VERILERI = {
 <ul style="margin-top:0.5em; font-size:10pt;">
 <li><strong>3 müdürlükte negatif denge:</strong> Veteriner (-3,5), Gelirler (-2,5), İmar (-2,3)</li>
 <li><strong>5 müdürlükte düşük pozitif denge</strong> (0-5 arası): İklim (+0,7), Emlak (+1,5), Fen (+1,7), Yapı Kontrol (+2,9), Zabıta (+3,1)</li>
-<li><strong>En yüksek memnuniyet:</strong> Özel Kalem %98,4, İşletme %96,9, Muhtarlık %95,8</li>
+<li><strong>Yüksek memnuniyet:</strong> Özel Kalem %98,4, İşletme %96,9, Muhtarlık %95,8</li>
 <li><strong>En düşük memnuniyet:</strong> İnsan Kaynakları %80,8, Zabıta %83,2, Hukuk %84,1</li>
 </ul>
 <p style="margin-top:1.5em; padding:1em; background:#e8f5e9; border-left:4px solid #4caf50;"><strong>Sonuç:</strong> Arnavutköy Belediyesi %90,8 genel memnuniyet ve %92,8 kamu hizmeti motivasyonu ile güçlü bir çalışan bağlılığına sahiptir. Personelimiz işini seviyor ve topluma hizmet etmekten gurur duyuyor. Yukarıda belirlenen sorun alanlarına (özellikle negatif dengeli 3 müdürlük ve kritik dengeli 5 müdürlük) odaklanılması, bu yüksek motivasyonun sürdürülmesine katkı sağlayacaktır.</p>
@@ -11757,7 +11757,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %98,4 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir. <strong>Bu birim, belediyedeki diğer birimler için iyi uygulama örneği olarak değerlendirilebilir.</strong></p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %98,4 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir.</p>
 
 <table class="indicators-table">
     <thead>
