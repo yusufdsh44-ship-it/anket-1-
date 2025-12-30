@@ -282,7 +282,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">FEN İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%88,1</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,7</td>
-<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski (%61,9)</strong> bu birimde tespit edilmiştir. Kamu hizmeti motivasyonu güçlü olmakla birlikte ekip uyumu ortalamanın altında. Saha araçları sorunu kritik: "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği düşük, sigara kullanımı yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz görünmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski (%63,7)</strong> bu birimde tespit edilmiştir. Kamu hizmeti motivasyonu güçlü olmakla birlikte ekip uyumu ortalamanın altında. Saha araçları sorunu kritik: "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği düşük, sigara kullanımı yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz görünmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">SOSYAL DESTEK</td>
@@ -348,7 +348,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">EMLAK VE İSTİMLAK</td>
 <td style="text-align:center; padding:6px;">%91,7</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,5</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru (%62,5)</strong> - personel kendini geliştirme imkanı bulamamaktadır. Yüksek iş stresi/yükü ile +1,5 sınırda denge. Ekip uyumu belediyenin en yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane en düşük skorlardan. Servis ağı genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru (%58,6)</strong> - personel kendini geliştirme imkanı bulamamaktadır. Yüksek iş stresi/yükü ile +1,5 sınırda denge. Ekip uyumu belediyenin en yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane en düşük skorlardan. Servis ağı genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
@@ -378,7 +378,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">PLAN VE PROJE</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,4</td>
 <td style="text-align:center; padding:6px;">+10,8</td>
-<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları belediyenin en düşüğü (%58,3): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Belediyenin en düşük sigara kullanımı (%12,5). Ekip uyumu güçlü koruyucu faktör, yönetici ilişkileri ortalamanın altında. Ücret çok düşük.</td>
+<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları ortalamanın altında (%65,2): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Düşük sigara kullanımı (%25,0). Ekip uyumu güçlü koruyucu faktör, yönetici ilişkileri ortalamanın altında. Ücret çok düşük.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">ÖZEL KALEM</td>
@@ -408,13 +408,13 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">RUHSAT VE DENETİM</td>
 <td style="text-align:center; padding:6px;">%90,9</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+25,9</strong></td>
-<td style="padding:6px;"><strong>Belediyenin en düşük ruh sağlığı riski (%38,6).</strong> Görev netliği ikinci en yüksek - küçük ve uzmanlaşmış ekip avantajı. Güçlü denge. Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Düşük iş stresi/yükü. Açık uçlu yorum yazılmamıştır.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük ruh sağlığı riski (%38,4).</strong> Görev netliği ikinci en yüksek - küçük ve uzmanlaşmış ekip avantajı. Güçlü denge. Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Düşük iş stresi/yükü. Açık uçlu yorum yazılmamıştır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">STRATEJİ GELİŞTİRME</td>
 <td style="text-align:center; padding:6px;">%85,7</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>+27,7</strong></td>
-<td style="padding:6px;"><strong>Belediyenin en düşük iş stresi/yükü (%44,4)</strong> ve en düşük vatandaş yoğunluğu. Güçlü denge ile stressiz ortam. Çalışma arkadaşları ve yönetici ilişkileri güçlü. Çalışma koşulları belediye ortalamasının çok üzerinde. Personelin %75'i yorum yazmış. Servis güzergahları uzun ve yemekhane fiyatları yüksek bulunmaktadır.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük iş stresi/yükü (%50,9)</strong> ve en düşük vatandaş yoğunluğu. Güçlü denge ile stressiz ortam. Çalışma arkadaşları ve yönetici ilişkileri güçlü. Çalışma koşulları belediye ortalamasının çok üzerinde. Personelin %75'i yorum yazmış. Servis güzergahları uzun ve yemekhane fiyatları yüksek bulunmaktadır.</td>
 </tr>
 <tr>
 <td style="padding:6px;">MALİ HİZMETLER</td>
