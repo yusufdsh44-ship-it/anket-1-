@@ -288,7 +288,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">SOSYAL DESTEK</td>
 <td style="text-align:center; padding:6px;">%89,9</td>
 <td style="text-align:center; padding:6px;">+5,2</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından birine sahip. Topluma hizmet gururu ve işin toplum için faydalılığı tam puana yakın. Ancak görev-rol netliği ve eğitim imkanları zayıf. Çalışma arkadaşları güçlü olmasına rağmen 7 kişi yönetici ilişkileri şikayeti bildirmiştir. Kurum içi etkinlik ve gezi talebi yaygındır.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından birine sahip. Topluma hizmet gururu ve işin toplum için faydalılığı tam puana yakın. Ancak görev-rol netliği ve eğitim imkanları zayıf. Ekip uyumu ve yönetici ilişkileri ortalamanın altında, 7 kişi yönetici şikayeti bildirmiştir. Kurum içi etkinlik ve gezi talebi yaygındır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">KÜLTÜR İŞLERİ</td>
@@ -318,7 +318,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">GELİRLER</td>
 <td style="text-align:center; padding:6px;">%87,1</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,5</strong></td>
-<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve vatandaş yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu ortalamanın altında. Liyakat bazlı kariyer ve ödül sistemi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve vatandaş yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu ortalamanın altında. Kariyer gelişimi ve ödül sistemi talep edilmektedir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
@@ -6128,7 +6128,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Gelirler Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Gelirler Müdürlüğüne göre fiziksel çalışma ortamının iyileştirilmesi (temizlik, ısıtma, havalandırma), iş yükü dengesinin gözden geçirilmesi, şirket personeli-memur eşitliğinin sağlanması ve liyakat bazlı kariyer gelişimi fırsatlarının artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Gelirler Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek, çalışma koşullarını ise yetersiz bulmaktadır. Gelirler Müdürlüğüne göre fiziksel çalışma ortamının iyileştirilmesi (temizlik, ısıtma, havalandırma), iş yükü dengesinin gözden geçirilmesi, şirket personeli-memur eşitliğinin sağlanması ve kariyer gelişimi fırsatlarının artırılması izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
 
 <table class="indicators-table">
     <thead>
@@ -6230,7 +6230,7 @@ const RAPOR_VERILERI = {
 <li><strong>Vatandaş yoğunluğu çok yüksek (%84,7):</strong> Belediye ortalamasının (%70,6) 14,1 puan üzerinde. Gelirler birimi doğası gereği yoğun vatandaş trafiğine maruz.</li>
 <li><strong>Fiziksel çalışma ortamı sorunları:</strong> Açık uçlu yorumlarda "camların açılıp kapanır olması", "merkezi sistem ısıtma sorunu", "temizlik yetersizliği" gibi somut şikayetler var.</li>
 <li><strong>Şirket personeli-memur eşitsizliği:</strong> "Şirket personelinin yemekhane hizmetinden memurlar gibi faydalanmaması büyük eşitsizlik ve haksızlık" ifadesi dikkat çekici.</li>
-<li><strong>Liyakat ve terfi sistemi:</strong> "Sadakat ölçütüne göre değil, liyakat ölçütüne göre davranılması sağlanmalı" yorumu, kariyer gelişimi beklentisini yansıtmaktadır.</li>
+<li><strong>Kariyer ve terfi sistemi:</strong> "Performansa dayalı değerlendirme yapılmalı" yorumu, kariyer gelişimi beklentisini yansıtmaktadır.</li>
 <li><strong>Kadın çalışan deneyimi:</strong> "Erkek çalışan sayısının fazla olması, zaman zaman sosyal yalnızlık ve dışlanmışlık hissi oluşturabilmektedir" ifadesi dikkat çekici.</li>
 </ul>
 
@@ -6431,8 +6431,8 @@ const RAPOR_VERILERI = {
 <div class="quote">"Hijyen - Temizlik - Yemek kalitesi."</div>
 <div class="quote">"Yemekhanenin daha temiz ortamda olması gerekmektedir."</div>
 
-<p><strong>3. Liyakat ve Kariyer Gelişimi:</strong></p>
-<div class="quote">"Sadakat ölçütüne göre değil, liyakat ölçütüne göre davranılması sağlanmalı; düzenli olarak hak edenlere görevde yükselme ve/veya unvan değişikliği imkânı verilmeli."</div>
+<p><strong>3. Kariyer Gelişimi:</strong></p>
+<div class="quote">"Performansa dayalı değerlendirme yapılmalı; düzenli olarak hak edenlere görevde yükselme ve/veya unvan değişikliği imkânı verilmeli."</div>
 <div class="quote">"Sayın Başkanım, Ayın personel ödülü uygulamasını talep ediyoruz."</div>
 
 <p><strong>4. Cinsiyet Dengesi ve Sosyal Ortam:</strong></p>
