@@ -831,7 +831,26 @@ const RAPOR_VERILERI = {
     mudurlukler: {
         "temizlik_isleri": {
             name: "Temizlik İşleri Müdürlüğü",
-            html: `<h1>Temizlik İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Temizlik İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Temizlik İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -1272,7 +1291,26 @@ const RAPOR_VERILERI = {
         },
         "destek_hizmetleri": {
             name: "Destek Hizmetleri Müdürlüğü",
-            html: `<h1>Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Destek Hizmetleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -1722,7 +1760,26 @@ const RAPOR_VERILERI = {
         },
         "veteriner_isleri": {
             name: "Veteriner İşleri Müdürlüğü",
-            html: `<h1>Veteriner İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Veteriner İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Veteriner İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -2152,7 +2209,26 @@ const RAPOR_VERILERI = {
         },
         "strateji_gelistirme": {
             name: "Strateji Geliştirme Müdürlüğü",
-            html: `<h1>Strateji Geliştirme Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Strateji Geliştirme Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Strateji Geliştirme Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -2583,7 +2659,26 @@ const RAPOR_VERILERI = {
         },
         "yazi_isleri": {
             name: "Yazı İşleri Müdürlüğü",
-            html: `<h1>Yazı İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Yazı İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Yazı İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -3010,7 +3105,26 @@ const RAPOR_VERILERI = {
         },
         "genclik_spor": {
             name: "Gençlik ve Spor Hizmetleri Müdürlüğü",
-            html: `<h1>Gençlik ve Spor Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Gençlik ve Spor Hizmetleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Gençlik ve Spor Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -3460,7 +3574,26 @@ const RAPOR_VERILERI = {
         },
         "sosyal_destek": {
             name: "Sosyal Destek Hizmetleri Müdürlüğü",
-            html: `<h1>Sosyal Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Sosyal Destek Hizmetleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Sosyal Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -3912,7 +4045,26 @@ const RAPOR_VERILERI = {
         },
         "akilli_ulasim": {
             name: "Akıllı Ulaşım Sistemleri Müdürlüğü",
-            html: `<h1>Akıllı Ulaşım Sistemleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Akıllı Ulaşım Sistemleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Akıllı Ulaşım Sistemleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -4344,7 +4496,26 @@ const RAPOR_VERILERI = {
         },
         "zabita": {
             name: "Zabıta Müdürlüğü",
-            html: `<h1>Zabıta Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Zabıta Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Zabıta Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -4776,7 +4947,26 @@ const RAPOR_VERILERI = {
         },
         "imar_sehircilik": {
             name: "İmar ve Şehircilik Müdürlüğü",
-            html: `<h1>İmar ve Şehircilik Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">İmar ve Şehircilik Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>İmar ve Şehircilik Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -5221,7 +5411,26 @@ const RAPOR_VERILERI = {
         },
         "emlak_istimlak": {
             name: "Emlak ve İstimlak Müdürlüğü",
-            html: `<h1>Emlak ve İstimlak Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Emlak ve İstimlak Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Emlak ve İstimlak Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -5674,7 +5883,26 @@ const RAPOR_VERILERI = {
         },
         "basin_yayin": {
             name: "Basın ve Yayın Müdürlüğü",
-            html: `<h1>Basın ve Yayın Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Basın ve Yayın Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Basın ve Yayın Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -6124,7 +6352,26 @@ const RAPOR_VERILERI = {
         },
         "gelirler": {
             name: "Gelirler Müdürlüğü",
-            html: `<h1>Gelirler Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Gelirler Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Gelirler Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -6573,7 +6820,26 @@ const RAPOR_VERILERI = {
         },
         "inovasyon": {
             name: "İnovasyon ve Teknoloji Müdürlüğü",
-            html: `<h1>İnovasyon ve Teknoloji Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">İnovasyon ve Teknoloji Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>İnovasyon ve Teknoloji Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -7008,7 +7274,26 @@ const RAPOR_VERILERI = {
         },
         "yapi_kontrol": {
             name: "Yapı Kontrol Müdürlüğü",
-            html: `<h1>Yapı Kontrol Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Yapı Kontrol Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Yapı Kontrol Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -7428,7 +7713,26 @@ const RAPOR_VERILERI = {
         },
         "kultur_isleri": {
             name: "Kültür İşleri Müdürlüğü",
-            html: `<h1>Kültür İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Kültür İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Kültür İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -7873,7 +8177,26 @@ const RAPOR_VERILERI = {
         },
         "fen_isleri": {
             name: "Fen İşleri Müdürlüğü",
-            html: `<h1>Fen İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Fen İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Fen İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -8315,7 +8638,26 @@ const RAPOR_VERILERI = {
         },
         "plan_proje": {
             name: "Plan ve Proje Müdürlüğü",
-            html: `<h1>Plan ve Proje Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Plan ve Proje Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Plan ve Proje Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -8763,7 +9105,26 @@ const RAPOR_VERILERI = {
         },
         "halkla_iliskiler": {
             name: "Halkla İlişkiler Müdürlüğü",
-            html: `<h1>Halkla İlişkiler Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Halkla İlişkiler Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Halkla İlişkiler Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -9202,7 +9563,26 @@ const RAPOR_VERILERI = {
         },
         "iklim_degisikligi": {
             name: "İklim Değişikliği ve Sıfır Atık Müdürlüğü",
-            html: `<h1>İklim Değişikliği ve Sıfır Atık Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">İklim Değişikliği ve Sıfır Atık Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>İklim Değişikliği ve Sıfır Atık Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -9637,7 +10017,26 @@ const RAPOR_VERILERI = {
         },
         "hukuk_isleri": {
             name: "Hukuk İşleri Müdürlüğü",
-            html: `<h1>Hukuk İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Hukuk İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Hukuk İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -10073,7 +10472,26 @@ const RAPOR_VERILERI = {
         },
         "mali_hizmetler": {
             name: "Mali Hizmetler Müdürlüğü",
-            html: `<h1>Mali Hizmetler Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Mali Hizmetler Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Mali Hizmetler Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -10504,7 +10922,26 @@ const RAPOR_VERILERI = {
         },
         "koordinasyon": {
             name: "Koordinasyon İşleri Müdürlüğü",
-            html: `<h1>Koordinasyon İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Koordinasyon İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Koordinasyon İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -10938,7 +11375,26 @@ const RAPOR_VERILERI = {
         },
         "insan_kaynaklari": {
             name: "İnsan Kaynakları ve Eğitim Müdürlüğü",
-            html: `<h1>İnsan Kaynakları ve Eğitim Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">İnsan Kaynakları ve Eğitim Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>İnsan Kaynakları ve Eğitim Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -11355,7 +11811,26 @@ const RAPOR_VERILERI = {
         },
         "afet_isleri": {
             name: "Afet İşleri Müdürlüğü",
-            html: `<h1>Afet İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Afet İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Afet İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -11753,7 +12228,26 @@ const RAPOR_VERILERI = {
         },
         "ozel_kalem": {
             name: "Özel Kalem Müdürlüğü",
-            html: `<h1>Özel Kalem Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Özel Kalem Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Özel Kalem Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -12182,7 +12676,26 @@ const RAPOR_VERILERI = {
         },
         "muhtarlik": {
             name: "Muhtarlık İşleri Müdürlüğü",
-            html: `<h1>Muhtarlık İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Muhtarlık İşleri Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Muhtarlık İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -12615,7 +13128,26 @@ const RAPOR_VERILERI = {
         },
         "isletme_istirakler": {
             name: "İşletme ve İştirakler Müdürlüğü",
-            html: `<h1>İşletme ve İştirakler Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">İşletme ve İştirakler Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>İşletme ve İştirakler Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -13044,7 +13576,26 @@ const RAPOR_VERILERI = {
         },
         "park_bahceler": {
             name: "Park ve Bahçeler Müdürlüğü",
-            html: `<h1>Park ve Bahçeler Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Park ve Bahçeler Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Park ve Bahçeler Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
@@ -13465,7 +14016,26 @@ const RAPOR_VERILERI = {
         },
         "ruhsat_denetim": {
             name: "Ruhsat ve Denetim Müdürlüğü",
-            html: `<h1>Ruhsat ve Denetim Müdürlüğü - Detaylı Analiz Raporu</h1>
+            html: `<div style="page-break-after: always; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90vh; text-align: center; padding: 40px;">
+    <img src="attached_assets/yeni-logo-png-4_1766556169325.png" alt="Arnavutköy Belediyesi Logo" style="height: 100px; margin-bottom: 30px;">
+    
+    <h1 style="font-family: 'Playfair Display', serif; font-size: 2.2em; font-weight: 600; color: #1a5276; letter-spacing: 8px; margin: 0; border: none;">ARNAVUTKÖY</h1>
+    <p style="font-family: 'Playfair Display', serif; font-size: 1.1em; color: #1a5276; letter-spacing: 12px; margin: 5px 0 40px 0;">B E L E D İ Y E S İ</p>
+    
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; color: #2980b9; margin: 20px 0 30px 0; border: none;">Ruhsat ve Denetim Müdürlüğü</h2>
+    
+    <p style="font-size: 1.3em; font-weight: 600; color: #2B241C; margin: 10px 0;">Çalışan Memnuniyeti ve İyi Oluş Anketi</p>
+    <p style="font-size: 1em; color: #666; margin: 5px 0 60px 0;">Müdürlük Analiz Raporu</p>
+    
+    <div style="margin-top: auto;">
+        <p style="font-size: 0.9em; color: #888; margin: 5px 0;">İnsan Kaynakları Müdürlüğü</p>
+        <p style="font-size: 1.1em; font-weight: 600; color: #2B241C; margin: 5px 0;">2025</p>
+    </div>
+</div>
+
+<div style="page-break-before: always;"></div>
+
+<h1>Ruhsat ve Denetim Müdürlüğü - Detaylı Analiz Raporu</h1>
 
 <h2>Temel Göstergeler</h2>
 
