@@ -869,7 +869,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%71,9</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+2,8 ↑</td>
+            <td class="diff">+2,8 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -1343,7 +1343,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%46,0</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+1,1</td>
+            <td class="diff">+1,1</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -3507,7 +3507,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%80,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-1,9</td>
+            <td class="diff highlight-positive">-1,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3941,7 +3941,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%88,3</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-2,5</td>
+            <td class="diff">-2,5</td>
         </tr>
         <tr>
             <td class="label">
@@ -4391,7 +4391,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%79,8</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-2,5</td>
+            <td class="diff highlight-positive">-2,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -4823,7 +4823,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%80,9</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-1,4</td>
+            <td class="diff highlight-positive">-1,4</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -5268,7 +5268,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%80,1</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-2,2</td>
+            <td class="diff highlight-positive">-2,2</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -6189,7 +6189,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%53,7</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+1,5 (olumsuz)</td>
+            <td class="diff">+1,5 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -7037,7 +7037,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%88,0</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-2,8</td>
+            <td class="diff">-2,8</td>
         </tr>
         <tr>
             <td class="label">
@@ -7902,7 +7902,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%88,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-2,7</td>
+            <td class="diff">-2,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -7920,7 +7920,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%82,0</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-0,3</td>
+            <td class="diff highlight-positive">-0,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -8828,7 +8828,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%52,9</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+0,7 (olumsuz)</td>
+            <td class="diff">+0,7 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -9231,7 +9231,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%88,2</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-2,6</td>
+            <td class="diff">-2,6</td>
         </tr>
         <tr>
             <td class="label">
@@ -9249,7 +9249,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%79,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-2,9</td>
+            <td class="diff highlight-positive">-2,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -9684,7 +9684,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%80,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-1,9</td>
+            <td class="diff highlight-positive">-1,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -9702,7 +9702,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%55,0</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+2,8 (olumsuz)</td>
+            <td class="diff">+2,8 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -12680,7 +12680,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%54,8</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+2,6 (olumsuz)</td>
+            <td class="diff">+2,6 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
