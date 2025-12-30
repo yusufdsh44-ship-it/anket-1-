@@ -955,71 +955,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">92,4</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+1,1</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">85,1</td>
-<td>86,6</td>
-<td class="">-1,5</td>
+<td class="stat-value">86,6</td>
+<td>-1,5</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">71,9</td>
-<td>69,1</td>
-<td class="highlight">+2,8</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+2,8</td>
 <td>Ortalamanın biraz üzerinde (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">81,0</td>
-<td>86,8</td>
-<td class="highlight-critical">-5,8</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-warning">-5,8</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">82,9</td>
-<td>86,9</td>
-<td class="">-4,0</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-4,0</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">74,5</td>
-<td>79,8</td>
-<td class="highlight-critical">-5,3</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-warning">-5,3</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">61,8</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-critical">-10,4</td>
 <td class="highlight-critical">Çok düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">92,3</td>
-<td>92,8</td>
-<td class="">-0,5</td>
+<td class="stat-value">92,8</td>
+<td>-0,5</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">72,7</td>
-<td>77,2</td>
-<td class="">-4,5</td>
+<td class="stat-value">77,2</td>
+<td class="highlight">-4,5</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">73,0</td>
-<td>75,8</td>
-<td class="">-2,8</td>
+<td class="stat-value">75,8</td>
+<td>-2,8</td>
 <td>Ortalamada</td>
 </tr>
 </tbody>
@@ -1398,70 +1398,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">93,4</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+2,1</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">89,4</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+2,8</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">62,3</td>
-<td>69,1</td>
-<td class="highlight-positive">-6,8</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-6,8</td>
 <td class="highlight-positive">Düşük stres (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">86,6</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td>-0,2</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">88,3</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+1,4</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">84,5</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+4,7</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">82,6</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+10,4</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">94,4</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+1,6</td>
 <td class="highlight-positive">Yüksek motivasyon</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">82,7</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+5,5</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">86,1</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+10,3</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
@@ -1846,71 +1846,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">89,2</td>
-<td>91,3</td>
-<td class="">-2,1</td>
+<td class="stat-value">91,3</td>
+<td>-2,1</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">78,9</td>
-<td>86,6</td>
-<td class="highlight-critical">-7,7</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-warning">-7,7</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">82,3</td>
-<td>69,1</td>
-<td class="highlight-critical">+13,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+13,2</td>
 <td class="highlight-critical">Çok yüksek (olumsuz) ⚠️</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">80,9</td>
-<td>86,8</td>
-<td class="highlight-critical">-5,9</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-warning">-5,9</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">80,0</td>
-<td>86,9</td>
-<td class="highlight-critical">-6,9</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-warning">-6,9</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">78,7</td>
-<td>79,8</td>
-<td class="">-1,1</td>
+<td class="stat-value">79,8</td>
+<td>-1,1</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">71,3</td>
-<td>72,2</td>
-<td class="">-0,9</td>
+<td class="stat-value">72,2</td>
+<td>-0,9</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">93,4</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+0,6</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">73,7</td>
-<td>77,2</td>
-<td class="">-3,5</td>
+<td class="stat-value">77,2</td>
+<td class="highlight">-3,5</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">75,5</td>
-<td>75,8</td>
-<td class="">-0,3</td>
+<td class="stat-value">75,8</td>
+<td>-0,3</td>
 <td>Ortalamada</td>
 </tr>
 </tbody>
@@ -2275,71 +2275,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">89,3</td>
-<td>91,3</td>
-<td class="">-2,0</td>
+<td class="stat-value">91,3</td>
+<td>-2,0</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">75,0</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-critical">-11,6</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">50,9</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-18,2</td>
 <td class="highlight-positive">Çok düşük (olumlu) ✓</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">89,9</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+3,1</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">77,9</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-critical">-9,0</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">80,4</td>
-<td>79,8</td>
-<td class="">+0,6</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+0,6</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">73,0</td>
-<td>72,2</td>
-<td class="">+0,8</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+0,8</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">90,5</td>
-<td>92,8</td>
-<td class="">-2,3</td>
+<td class="stat-value">92,8</td>
+<td>-2,3</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">64,3</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-critical">-12,9</td>
 <td class="highlight-critical">Çok düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">71,4</td>
-<td>75,8</td>
-<td class="">-4,4</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-4,4</td>
 <td>Ortalamanın altında</td>
 </tr>
 </tbody>
@@ -2707,71 +2707,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">84,7</td>
-<td>91,3</td>
-<td class="highlight-critical">-6,6</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-warning">-6,6</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">82,2</td>
-<td>86,6</td>
-<td class="">-4,4</td>
+<td class="stat-value">86,6</td>
+<td class="highlight">-4,4</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">57,6</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-11,5</td>
 <td>Düşük (olumlu) ✓</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">88,4</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+1,6</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">83,7</td>
-<td>86,9</td>
-<td class="">-3,2</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-3,2</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">69,8</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-critical">-10,0</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">62,7</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-critical">-9,5</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">87,5</td>
-<td>92,8</td>
-<td class="">-5,3</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-warning">-5,3</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">68,2</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-critical">-9,0</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">68,4</td>
-<td>75,8</td>
-<td class="highlight-critical">-7,4</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,4</td>
 <td>Ortalamanın altında</td>
 </tr>
 </tbody>
@@ -3135,70 +3135,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">91,9</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+0,6</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">90,4</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+3,8</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">63,6</td>
-<td>69,1</td>
-<td class="highlight-positive">-5,5</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-5,5</td>
 <td class="highlight-positive">Düşük stres (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">90,9</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+4,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">90,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+3,9</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">82,0</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+2,2</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">76,8</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+4,6</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">94,5</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+1,7</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">81,0</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+3,8</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">80,6</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+4,8</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
@@ -3585,77 +3585,77 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">91,4</td>
-<td>91,3</td>
-<td class="">+0,1</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+0,1</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">78,4</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-critical">-8,2</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">75,2</td>
-<td>69,1</td>
-<td class="highlight-critical">+6,1</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+6,1</td>
 <td class="highlight-critical">Yüksek (olumsuz) ⚠️</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">84,1</td>
-<td>86,8</td>
-<td class="">-2,7</td>
+<td class="stat-value">86,8</td>
+<td>-2,7</td>
 <td>Ortalamanın biraz altında</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">82,7</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-4,2</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">79,8</td>
-<td>79,8</td>
-<td class="">0,0</td>
+<td class="stat-value">79,8</td>
+<td>0,0</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">73,7</td>
-<td>72,4</td>
-<td class="">+1,2</td>
+<td class="stat-value">72,4</td>
+<td class="highlight-positive">+1,2</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Ücret</strong></td>
 <td class="stat-value">73,4</td>
-<td>69,0</td>
+<td class="stat-value">69,0</td>
 <td class="highlight-positive">+4,4</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">95,0</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+2,2</td>
 <td class="highlight-positive">Yüksek ✓</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">76,0</td>
-<td>77,2</td>
-<td class="">-1,3</td>
+<td class="stat-value">77,2</td>
+<td>-1,3</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">67,8</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-critical">-8,0</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
@@ -4037,70 +4037,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">92,6</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+1,3</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">88,8</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+2,2</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">60,3</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-8,8</td>
 <td class="highlight-positive">Düşük stres (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">94,1</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+7,3</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">94,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+7,1</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">81,0</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+1,2</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">72,5</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+0,3</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">94,4</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+1,6</td>
 <td class="highlight-positive">Yüksek motivasyon</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">75,0</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-2,2</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">66,7</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-critical">-9,1</td>
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
@@ -4468,71 +4468,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">90,6</td>
-<td>91,3</td>
-<td class="">-0,7</td>
+<td class="stat-value">91,3</td>
+<td>-0,7</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">85,1</td>
-<td>86,6</td>
-<td class="">-1,5</td>
+<td class="stat-value">86,6</td>
+<td>-1,5</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">76,7</td>
-<td>69,1</td>
-<td class="highlight">+7,6</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+7,6</td>
 <td>Yüksek (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">83,1</td>
-<td>86,8</td>
-<td class="">-3,7</td>
+<td class="stat-value">86,8</td>
+<td class="highlight">-3,7</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">89,2</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+2,3</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">74,7</td>
-<td>79,8</td>
-<td class="highlight-critical">-5,1</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-warning">-5,1</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">68,5</td>
-<td>72,2</td>
-<td class="">-3,7</td>
+<td class="stat-value">72,2</td>
+<td class="highlight">-3,7</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">92,5</td>
-<td>92,8</td>
-<td class="">-0,3</td>
+<td class="stat-value">92,8</td>
+<td>-0,3</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">71,8</td>
-<td>77,2</td>
-<td class="highlight-critical">-5,4</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-warning">-5,4</td>
 <td class="highlight-critical">Düşük ⚠️</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">71,9</td>
-<td>75,8</td>
-<td class="">-3,9</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-3,9</td>
 <td>Ortalamanın altında</td>
 </tr>
 </tbody>
@@ -4898,70 +4898,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">91,4</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+0,1</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">87,7</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+1,1</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">83,2</td>
-<td>69,1</td>
-<td class="highlight-critical">+14,1</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+14,1</td>
 <td class="highlight-critical">Çok yüksek (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">88,6</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+1,8</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">86,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td>-0,9</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">82,4</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+2,6</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">66,3</td>
-<td>72,2</td>
-<td class="highlight-critical">-5,9</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-5,9</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">89,0</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight">-3,8</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">76,7</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td>-0,5</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">74,7</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td>-1,1</td>
 <td>Ortalama düzeyde</td>
 </tr>
@@ -5349,70 +5349,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">93,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+2,2</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">83,9</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight">-2,7</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">78,6</td>
-<td>69,1</td>
-<td class="highlight-critical">+9,5</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+9,5</td>
 <td class="highlight-critical">Yüksek stres (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">89,4</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+2,6</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">94,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+7,9</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">77,4</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight">-2,4</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">63,4</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-critical">-8,8</td>
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">94,8</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+2,0</td>
 <td class="highlight-positive">Yüksek motivasyon</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">70,1</td>
-<td>77,2</td>
-<td class="highlight-critical">-7,1</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-warning">-7,1</td>
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">58,6</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-critical">-17,2</td>
 <td class="highlight-critical">Çok düşük</td>
 </tr>
@@ -5799,70 +5799,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">97,1</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+5,8</td>
 <td class="highlight-positive">Çok yüksek</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">90,6</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+4,0</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">61,8</td>
-<td>69,1</td>
-<td class="highlight-positive">-7,3</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-7,3</td>
 <td class="highlight-positive">Düşük stres (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">94,8</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+8,0</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">83,6</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-3,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">81,9</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+2,1</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">69,1</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight">-3,1</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">97,2</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+4,4</td>
 <td class="highlight-positive">Çok yüksek</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">82,4</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+5,2</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">74,3</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-1,5</td>
 <td>Ortalama düzeyde</td>
 </tr>
@@ -6251,70 +6251,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">85,7</td>
-<td>91,3</td>
-<td class="highlight-critical">-5,6</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-warning">-5,6</td>
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">81,0</td>
-<td>86,6</td>
-<td class="highlight-critical">-5,6</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-warning">-5,6</td>
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">79,9</td>
-<td>69,1</td>
-<td class="highlight-critical">+10,8</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+10,8</td>
 <td class="highlight-critical">Yüksek stres (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">84,6</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight">-2,2</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">84,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-2,9</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">79,6</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td>-0,2</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">62,1</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-critical">-10,1</td>
 <td class="highlight-critical">Çok düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">92,1</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td>-0,7</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">72,9</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-4,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">71,3</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-4,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
@@ -6695,71 +6695,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">97,6</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+6,3</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">92,0</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+5,4</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">61,0</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-8,1</td>
 <td class="highlight-positive">Düşük (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">90,8</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+4,0</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">89,3</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+2,4</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">82,1</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+2,3</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">74,0</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+1,8</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">96,6</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+3,8</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">79,5</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+2,3</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">70,6</td>
-<td>75,8</td>
-<td class="highlight">-5,2</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-5,2</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 </tbody>
@@ -7132,71 +7132,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">88,3</td>
-<td>91,3</td>
-<td class="">-3,0</td>
+<td class="stat-value">91,3</td>
+<td class="highlight">-3,0</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">87,3</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+0,7</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong></td>
 <td class="stat-value">79,3</td>
-<td>69,1</td>
-<td class="highlight">+10,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+10,2</td>
 <td>Yüksek (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yönetici İlişkileri</strong></td>
 <td class="stat-value">89,8</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+3,0</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Ekip Uyumu</strong></td>
 <td class="stat-value">90,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+3,1</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kurumsal İletişim</strong></td>
 <td class="stat-value">83,0</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+3,2</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">68,6</td>
-<td>72,2</td>
-<td class="">-3,6</td>
+<td class="stat-value">72,2</td>
+<td class="highlight">-3,6</td>
 <td>Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">93,3</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+0,5</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">77,0</td>
-<td>77,2</td>
-<td class="">-0,2</td>
+<td class="stat-value">77,2</td>
+<td>-0,2</td>
 <td>Ortalamada</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">73,5</td>
-<td>75,8</td>
-<td class="">-2,3</td>
+<td class="stat-value">75,8</td>
+<td>-2,3</td>
 <td>Ortalamanın altında</td>
 </tr>
 </tbody>
@@ -7551,71 +7551,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">88,8</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight">-2,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">82,8</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight">-3,8</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">58,4</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-10,7</td>
 <td class="highlight-positive">Düşük (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">89,9</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+3,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">85,2</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td>-1,7</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">77,7</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td>-2,1</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">68,8</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight">-3,4</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">93,0</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+0,2</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">71,8</td>
-<td>77,2</td>
-<td class="highlight">-5,4</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-warning">-5,4</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">68,5</td>
-<td>75,8</td>
-<td class="highlight-critical">-7,3</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,3</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 </tbody>
@@ -8000,70 +8000,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">90,8</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td>-0,5</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">87,5</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+0,9</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">80,3</td>
-<td>69,1</td>
-<td class="highlight-critical">+11,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+11,2</td>
 <td class="highlight-critical">Yüksek stres (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">85,2</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight">-1,6</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">85,2</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-1,7</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">78,8</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight">-1,0</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">72,6</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+0,4</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">90,9</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight">-1,9</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">80,7</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+3,5</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">73,9</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-1,9</td>
 <td>Ortalama düzeyde</td>
 </tr>
@@ -8439,71 +8439,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">87,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight">-3,8</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">84,9</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight">-1,7</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">68,3</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-0,8</td>
 <td class="highlight-positive">Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">84,5</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight">-2,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">89,6</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+2,7</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">78,2</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td>-1,6</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">65,2</td>
-<td>72,2</td>
-<td class="highlight-critical">-7,0</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-7,0</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">89,6</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight">-3,2</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">73,7</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-3,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">68,5</td>
-<td>75,8</td>
-<td class="highlight-critical">-7,3</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,3</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 </tbody>
@@ -8886,70 +8886,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">80,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-critical">-10,8</td>
 <td class="highlight-critical">Çok düşük</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">81,5</td>
-<td>86,6</td>
-<td class="highlight">-5,1</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-warning">-5,1</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">72,6</td>
-<td>69,1</td>
-<td class="highlight">+3,5</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+3,5</td>
 <td class="highlight">Ortalamanın üzerinde (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">89,9</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+3,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">83,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-3,9</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">74,5</td>
-<td>79,8</td>
-<td class="highlight">-5,3</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-warning">-5,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">64,4</td>
-<td>72,2</td>
-<td class="highlight-critical">-7,8</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-7,8</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">95,3</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+2,5</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">73,9</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-3,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">72,3</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-3,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
@@ -9325,70 +9325,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">90,7</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td>-0,6</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">85,2</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td>-1,4</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">78,7</td>
-<td>69,1</td>
-<td class="highlight-critical">+9,6</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+9,6</td>
 <td class="highlight-critical">Yüksek (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">85,1</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td>-1,7</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">82,6</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-4,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">76,5</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight">-3,3</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">65,9</td>
-<td>72,2</td>
-<td class="highlight-critical">-6,3</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-6,3</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">91,2</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td>-1,6</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">77,6</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+0,4</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">71,3</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-4,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
@@ -9759,71 +9759,71 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">88,6</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight">-2,7</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">86,9</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+0,3</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">69,3</td>
-<td>69,1</td>
-<td>+0,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+0,2</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">93,6</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+6,8</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">90,0</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+3,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">76,1</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight">-3,7</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">64,8</td>
-<td>72,2</td>
-<td class="highlight-critical">-7,4</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-7,4</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">87,1</td>
-<td>92,8</td>
-<td class="highlight-critical">-5,7</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-warning">-5,7</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">73,8</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-3,4</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">68,2</td>
-<td>75,8</td>
-<td class="highlight-critical">-7,6</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,6</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 </tbody>
@@ -10196,70 +10196,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">94,2</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+2,9</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">88,9</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+2,3</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">65,3</td>
-<td>69,1</td>
-<td class="highlight-positive">-3,8</td>
+<td class="stat-value">69,1</td>
+<td class="highlight">-3,8</td>
 <td class="highlight-positive">Ortalamanın altında (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">93,5</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+6,7</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">93,9</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+7,0</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">87,5</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+7,7</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">72,7</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+0,5</td>
 <td class="highlight-positive">Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">95,4</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+2,6</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">73,6</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight">-3,6</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">77,8</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+2,0</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
@@ -10630,70 +10630,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">89,3</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td>-2,0</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">93,8</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+7,2</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">51,8</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-17,3</td>
 <td class="highlight-positive">Çok düşük (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">98,2</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+11,4</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">97,9</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+11,0</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">89,3</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+9,5</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">69,0</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight">-3,2</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">86,9</td>
-<td>92,8</td>
-<td class="highlight-critical">-5,9</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-warning">-5,9</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">86,1</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+8,9</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">75,0</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td>-0,8</td>
 <td>Ortalama düzeyde</td>
 </tr>
@@ -11053,70 +11053,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">79,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-critical">-11,8</td>
 <td class="highlight-critical">Çok düşük</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">85,6</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td>-1,0</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">53,9</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-15,2</td>
 <td class="highlight-positive">Çok düşük (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">90,1</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+3,3</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">83,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-3,1</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">75,0</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight">-4,8</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">67,3</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight">-4,9</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">83,3</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-critical">-9,5</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">71,6</td>
-<td>77,2</td>
-<td class="highlight">-5,6</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-warning">-5,6</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">74,0</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td>-1,8</td>
 <td>Ortalama düzeyde</td>
 </tr>
@@ -11479,70 +11479,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">98,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+7,2</td>
 <td class="highlight-positive">Belediyenin en yüksek skorlarından</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">97,7</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+11,1</td>
 <td class="highlight-positive">Belediyenin en yüksek skoru</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">96,6</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+9,8</td>
 <td class="highlight-positive">Çok yüksek</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">95,5</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+8,6</td>
 <td class="highlight-positive">Çok yüksek</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">90,9</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td>-1,9</td>
 <td>Ortalama civarı</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">88,6</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+8,8</td>
 <td>Yüksek</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">80,1</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+2,9</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">79,5</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+3,7</td>
 <td>Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">68,2</td>
-<td>72,2</td>
-<td class="highlight-critical">-4,0</td>
+<td class="stat-value">72,2</td>
+<td class="highlight">-4,0</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü</strong> <em>(iş yükü, zaman sıkışıklığı, vatandaş/iş yoğunluğu vb.)</em></td>
 <td class="stat-value">52,3</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-16,8</td>
 <td>Düşük stres düzeyi</td>
 </tr>
@@ -11877,70 +11877,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">97,9</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+6,6</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">95,7</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+9,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">67,1</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-2,0</td>
 <td class="highlight-positive">Ortalamanın altında (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">94,3</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+7,5</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">94,7</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+7,8</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">81,3</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+1,5</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">83,5</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+11,3</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">95,8</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+3,0</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">85,2</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+8,0</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">81,3</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+5,5</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
@@ -12308,70 +12308,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">91,7</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+0,4</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">81,3</td>
-<td>86,6</td>
-<td class="highlight-critical">-5,3</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-warning">-5,3</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">56,3</td>
-<td>69,1</td>
+<td class="stat-value">69,1</td>
 <td class="highlight-positive">-12,8</td>
 <td class="highlight-positive">Düşük (olumlu)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">88,9</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+2,1</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">90,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+3,9</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">83,3</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+3,5</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">63,3</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-critical">-8,9</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">90,3</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight">-2,5</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">68,8</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-critical">-8,4</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">64,6</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-critical">-11,2</td>
 <td class="highlight-critical">Çok düşük</td>
 </tr>
@@ -12737,70 +12737,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">87,5</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight">-3,8</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">88,3</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+1,7</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">69,5</td>
-<td>69,1</td>
-<td>+0,4</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+0,4</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">87,5</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+0,7</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">88,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+1,9</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">89,1</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td class="highlight-positive">+9,3</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">74,0</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+1,8</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">96,9</td>
-<td>92,8</td>
+<td class="stat-value">92,8</td>
 <td class="highlight-positive">+4,1</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">86,7</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+9,5</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">73,4</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight">-2,4</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
@@ -13166,70 +13166,70 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">88,3</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight">-3,0</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">87,4</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+0,8</td>
 <td class="highlight-positive">Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
 <td class="stat-value">76,3</td>
-<td>69,1</td>
-<td class="highlight-critical">+7,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">+7,2</td>
 <td class="highlight-critical">Yüksek (olumsuz)</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">86,7</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td>-0,1</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">84,8</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight">-2,1</td>
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">79,4</td>
-<td>79,8</td>
+<td class="stat-value">79,8</td>
 <td>-0,4</td>
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">80,0</td>
-<td>72,2</td>
+<td class="stat-value">72,2</td>
 <td class="highlight-positive">+7,8</td>
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">87,2</td>
-<td>92,8</td>
-<td class="highlight-critical">-5,6</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-warning">-5,6</td>
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">80,6</td>
-<td>77,2</td>
+<td class="stat-value">77,2</td>
 <td class="highlight-positive">+3,4</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">79,4</td>
-<td>75,8</td>
+<td class="stat-value">75,8</td>
 <td class="highlight-positive">+3,6</td>
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
@@ -13589,81 +13589,81 @@ const RAPOR_VERILERI = {
 <tr>
 <td><strong>Görev-Rol Netliği</strong></td>
 <td class="stat-value">96,0</td>
-<td>86,6</td>
+<td class="stat-value">86,6</td>
 <td class="highlight-positive">+9,4</td>
-<td>2/30</td>
+<td class="highlight-positive">2/30</td>
 <td class="highlight-positive">Çok güçlü netlik</td>
 </tr>
 <tr>
 <td><strong>Yöneticilerle İlişkiler</strong></td>
 <td class="stat-value">95,5</td>
-<td>86,8</td>
+<td class="stat-value">86,8</td>
 <td class="highlight-positive">+8,7</td>
-<td>3/30</td>
+<td class="highlight-positive">3/30</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>İş-Kişi Uyumu</strong></td>
 <td class="stat-value">93,9</td>
-<td>91,3</td>
+<td class="stat-value">91,3</td>
 <td class="highlight-positive">+2,6</td>
-<td>7/30</td>
+<td class="highlight-positive">7/30</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Çalışma Arkadaşları</strong></td>
 <td class="stat-value">93,2</td>
-<td>86,9</td>
+<td class="stat-value">86,9</td>
 <td class="highlight-positive">+6,3</td>
-<td>5/30</td>
+<td class="highlight-positive">5/30</td>
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
 <td><strong>Kamu Hizmeti Motivasyonu</strong></td>
 <td class="stat-value">87,1</td>
-<td>92,8</td>
-<td class="highlight">-5,7</td>
-<td>29/30</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-warning">-5,7</td>
+<td class="highlight-positive">29/30</td>
 <td>Güçlü</td>
 </tr>
 <tr>
 <td><strong>Kurum İçi İletişim</strong></td>
 <td class="stat-value">79,5</td>
-<td>79,8</td>
-<td class="">-0,3</td>
-<td>17/30</td>
+<td class="stat-value">79,8</td>
+<td>-0,3</td>
+<td class="highlight-positive">17/30</td>
 <td>Orta-güçlü</td>
 </tr>
 <tr>
 <td><strong>Yetkinlik & Performans</strong></td>
 <td class="stat-value">75,6</td>
-<td>77,2</td>
-<td class="">-1,6</td>
-<td>18/30</td>
+<td class="stat-value">77,2</td>
+<td>-1,6</td>
+<td class="highlight-positive">18/30</td>
 <td>Orta</td>
 </tr>
 <tr>
 <td><strong>Çalışma Koşulları</strong></td>
 <td class="stat-value">73,7</td>
-<td>72,2</td>
-<td class="">+1,5</td>
-<td>13/30</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+1,5</td>
+<td class="highlight-positive">13/30</td>
 <td>Orta</td>
 </tr>
 <tr>
 <td><strong>Eğitim & Gelişim</strong></td>
 <td class="stat-value">68,2</td>
-<td>75,8</td>
-<td class="highlight-critical">-7,6</td>
-<td>25/30</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,6</td>
+<td class="highlight-positive">25/30</td>
 <td class="highlight-critical">Zayıf - İyileştirme gerekli</td>
 </tr>
 <tr>
 <td><strong>Talep Yoğunluğu (İş Yükü)</strong></td>
 <td class="stat-value">59,1</td>
-<td>69,1</td>
-<td class="highlight-positive">-10,0</td>
-<td>24/30</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-critical">-10,0</td>
+<td class="highlight-positive">24/30</td>
 <td class="highlight-positive">DÜŞÜK - Rahat tempo</td>
 </tr>
 </tbody>
