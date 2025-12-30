@@ -264,7 +264,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">DESTEK HİZMETLERİ</td>
 <td style="text-align:center; padding:6px; color:#27ae60;">%95,1</td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;">Belediyenin en yüksek eğitim-gelişim skoru. Çok güçlü performans. Çalışma arkadaşları ve yönetici ilişkileri belediyenin en yüksek düzeylerinde. Tek sorun yemekhane ve ücret memnuniyeti. Saha personeli araç/ekipman takviyesi talep etmektedir.</td>
+<td style="padding:6px;">Belediyenin en yüksek eğitim-gelişim skoru. Çok güçlü performans. Çalışma arkadaşları ortalamanın üzerinde, yönetici ilişkileri ortalama düzeyde. Tek sorun yemekhane ve ücret memnuniyeti. Saha personeli araç/ekipman takviyesi talep etmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">ZABITA</td>
@@ -282,7 +282,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">FEN İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%88,1</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,7</td>
-<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski (%61,9)</strong> bu birimde tespit edilmiştir. Kamu hizmeti motivasyonu ve ekip uyumu güçlü olmakla birlikte, saha araçları sorunu kritik: "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği düşük, sigara kullanımı yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz görünmektedir.</td>
+<td style="padding:6px;"><strong>Belediyenin en yüksek ruh sağlığı riski (%61,9)</strong> bu birimde tespit edilmiştir. Kamu hizmeti motivasyonu güçlü olmakla birlikte ekip uyumu ortalamanın altında. Saha araçları sorunu kritik: "Araçlar çok eski, sarsıntılar yorucu" ifadeleri yaygın. Amir eşitliği düşük, sigara kullanımı yüksek. Yemek kalitesi ve servis şikayetleri mevcut. +1,7 denge ile kurumsal destek yetersiz görünmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">SOSYAL DESTEK</td>
@@ -294,13 +294,13 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">KÜLTÜR İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%89,6</td>
 <td style="text-align:center; padding:6px;">+21,9</td>
-<td style="padding:6px;">Düşük iş stresi/yükü ile güçlü denge. Çok düşük sigara kullanımı. Yönetici ilişkileri, çalışma arkadaşları ve kurum içi iletişim güçlü. Görev-rol netliği en zayıf alan. Personel tuvaletlerinin ayrılması ve yardımcı personel takviyesi talep edilmektedir.</td>
+<td style="padding:6px;">Düşük iş stresi/yükü ile güçlü denge. Çok düşük sigara kullanımı. Yönetici ilişkileri ve kurum içi iletişim güçlü, çalışma arkadaşları ortalamanın altında. Görev-rol netliği en zayıf alan. Personel tuvaletlerinin ayrılması ve yardımcı personel takviyesi talep edilmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">PARK VE BAHÇELER</td>
 <td style="text-align:center; padding:6px;">%91,7</td>
 <td style="text-align:center; padding:6px;">+7,4</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından - topluma hizmet gururu ve işin anlamlılığı çok yüksek. Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerinde. Ancak ruh sağlığı riski yüksek. Yönetici ilişkileri ve ekip uyumu güçlü. Hiç açık uçlu yorum yazılmamış olması dikkat çekicidir.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonlarından - topluma hizmet gururu ve işin anlamlılığı çok yüksek. Saha birimi olmasına rağmen çalışma koşulları ortalamanın üzerinde. Ancak ruh sağlığı riski yüksek, ekip uyumu ortalamanın altında. Yönetici ilişkileri ortalama düzeyde. Hiç açık uçlu yorum yazılmamış olması dikkat çekicidir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">İMAR VE ŞEHİRCİLİK</td>
@@ -318,7 +318,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">GELİRLER</td>
 <td style="text-align:center; padding:6px;">%87,1</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,5</strong></td>
-<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve vatandaş yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu güçlü - koruyucu faktörler olarak öne çıkmaktadır. Liyakat bazlı kariyer ve ödül sistemi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve vatandaş yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu ortalamanın altında. Liyakat bazlı kariyer ve ödül sistemi talep edilmektedir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
@@ -342,7 +342,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">HALKLA İLİŞKİLER</td>
 <td style="text-align:center; padding:6px;">%92,4</td>
 <td style="text-align:center; padding:6px;">+6,0</td>
-<td style="padding:6px;">Çağrı merkezi personeli yoğun stres altında: "Günde 160-200 çağrı, 3-4 saat konuşma süresi gerginlik yaratıyor." İş stresi/yükü yüksek ancak ekip uyumu güçlü koruyucu faktör. Kamu hizmeti motivasyonu ve yönetici ilişkileri belediye ortalamasının üzerinde. Servis şikayeti: Boğazköy hattında "ayakta gidiyoruz" denilmektedir.</td>
+<td style="padding:6px;">Çağrı merkezi personeli yoğun stres altında: "Günde 160-200 çağrı, 3-4 saat konuşma süresi gerginlik yaratıyor." İş stresi/yükü yüksek, ekip uyumu ortalamanın altında. Kamu hizmeti motivasyonu ve yönetici ilişkileri belediye ortalamasının üzerinde - koruyucu faktörler. Servis şikayeti: Boğazköy hattında "ayakta gidiyoruz" denilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">EMLAK VE İSTİMLAK</td>
@@ -354,13 +354,13 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
 <td style="text-align:center; padding:6px;">%88,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+0,7</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesi (+0,7).</strong> Yüksek iş stresi/yükü ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ve kamu hizmeti motivasyonu koruyucu faktörler.</td>
+<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesi (+0,7).</strong> Yüksek iş stresi/yükü ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ortalamanın altında, kamu hizmeti motivasyonu koruyucu faktör.</td>
 </tr>
 <tr>
 <td style="padding:6px;">BASIN VE YAYIN</td>
 <td style="text-align:center; padding:6px;">%93,1</td>
 <td style="text-align:center; padding:6px;">+22,3</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonu (%97,4). Güçlü performans. Yönetici ilişkileri, ekip uyumu ve iş-kişi uyumu çok yüksek. Düşük iş stresi/yükü ile stressiz çalışma ortamı. Ofis temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonu (%97,4). Güçlü performans. Yönetici ilişkileri ve iş-kişi uyumu çok yüksek, ekip uyumu ortalamanın altında. Düşük iş stresi/yükü ile stressiz çalışma ortamı. Ofis temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AKILLI ULAŞIM</td>
@@ -378,7 +378,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">PLAN VE PROJE</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,4</td>
 <td style="text-align:center; padding:6px;">+10,8</td>
-<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları belediyenin en düşüğü (%58,3): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Belediyenin en düşük sigara kullanımı (%12,5). Ekip uyumu ve yönetici ilişkileri güçlü koruyucu faktörler. Ücret çok düşük.</td>
+<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları belediyenin en düşüğü (%58,3): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Belediyenin en düşük sigara kullanımı (%12,5). Ekip uyumu güçlü koruyucu faktör, yönetici ilişkileri ortalamanın altında. Ücret çok düşük.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">ÖZEL KALEM</td>
