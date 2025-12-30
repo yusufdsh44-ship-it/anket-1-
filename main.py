@@ -306,6 +306,49 @@ def serve_rapor_verileri():
     return response
 
 
+@app.route('/api/reports-list')
+def get_reports_list():
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
+    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
+    
+    if not os.path.exists(reports_dir):
+        return jsonify({'success': False, 'error': 'Reports folder not found'}), 404
+    
+    reports = []
+    for filename in sorted(os.listdir(reports_dir)):
+        if filename.endswith('.html'):
+            name = filename.replace('.html', '').replace('_', ' ').title()
+            reports.append({
+                'filename': filename,
+                'name': name,
+                'key': filename.replace('.html', '')
+            })
+    
+    return jsonify({'success': True, 'reports': reports})
+
+
+@app.route('/api/download-report/<report_name>')
+def download_single_report(report_name):
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
+    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
+    filename = f"{report_name}.html"
+    filepath = os.path.join(reports_dir, filename)
+    
+    if not os.path.exists(filepath):
+        return jsonify({'success': False, 'error': 'Report not found'}), 404
+    
+    return send_file(
+        filepath,
+        mimetype='text/html',
+        as_attachment=True,
+        download_name=filename
+    )
+
+
 @app.route('/api/download-reports-zip')
 def download_reports_zip():
     if APP_PASSWORD and not check_auth(request):
@@ -319,7 +362,7 @@ def download_reports_zip():
     memory_file = io.BytesIO()
     
     with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for filename in os.listdir(reports_dir):
+        for filename in sorted(os.listdir(reports_dir)):
             if filename.endswith('.html'):
                 filepath = os.path.join(reports_dir, filename)
                 zf.write(filepath, filename)
