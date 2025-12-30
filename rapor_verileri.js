@@ -390,7 +390,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İNSAN KAYNAKLARI</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>%80,8</strong></td>
 <td style="text-align:center; padding:6px;">+24,5</td>
-<td style="padding:6px;">Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı. Yönetici ilişkileri ve ekip dayanışması güçlü düzeyde.</td>
+<td style="padding:6px;">Güçlü stres-destek dengesi (+24,5) ve düşük iş stresi/yükü ile rahat çalışma ortamı. Yönetici ilişkileri güçlü düzeyde.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AFET İŞLERİ</td>
@@ -10942,7 +10942,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,5) ile rahat bir çalışma ortamına sahiptir. Yönetici ilişkileri ve ekip dayanışması güçlü düzeydedir.</p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">İnsan Kaynakları ve Eğitim Müdürlüğü, düşük iş stresi/yükü ve güçlü stres-destek dengesi (+24,5) ile rahat bir çalışma ortamına sahiptir. Yönetici ilişkileri güçlü düzeydedir.</p>
 
 <table class="indicators-table">
     <thead>
