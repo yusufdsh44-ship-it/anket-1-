@@ -914,7 +914,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,3):</strong> İşin toplum için anlamlı olduğuna inanç (%94,5) çok yüksek.</li>
 <li><strong>İş-kişi uyumu (%92,4):</strong> Personel işini anlamlı buluyor (%94,8).</li>
@@ -922,7 +922,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yüksek yorum katılımı (%50,2):</strong> 108 kişi açık uçlu yorum yapmış - personelin sesini duyurma isteği güçlü.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ortak alanlar (%47,1, -23,3):</strong> Çay ocağı, dinlenme alanı, tuvaletler - belediyenin en düşük skoru.</li>
 <li><strong>Bireysel çalışma alanı (%61,1, -18,1):</strong> Soyunma odaları, dolaplar yetersiz.</li>
@@ -930,7 +930,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yönetici ilişkileri (%81,0, -5,8):</strong> Şef/amir tutumlarına yönelik ciddi şikayetler.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Şantiye altyapısı sorunu:</strong> Tuvalet, çay ocağı, soyunma odası, dolap yetersizliği açık uçlu yorumların büyük çoğunluğunu oluşturuyor.</li>
 <li><strong>Şef/amir şikayetleri:</strong> Tutanak tehditleri, mobbing iddiaları, iletişim sorunları sıkça dile getirilmiş.</li>
@@ -1356,7 +1356,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%94,4):</strong> Belediye ortalamasının 1,6 puan üzerinde. Topluma hizmet gururu (%94,8) ve işin anlamlılığı (%94,3) yüksek.</li>
 <li><strong>İş-kişi uyumu (%93,4):</strong> Belediye ortalamasının 2,1 puan üzerinde. Personel işini anlamlı buluyor (%93,8) ve işi seçtiği için mutlu (%93,8).</li>
@@ -1365,14 +1365,14 @@ const RAPOR_VERILERI = {
 <li><strong>Eğitim & Gelişim (%86,1):</strong> Belediye ortalamasının 10,3 puan üzerinde. Eğitim faaliyetleri (%85,9) ve eğitimlerin katkısı (%86,3) çok olumlu.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane hizmeti (%70,0):</strong> Belediye ortalamasının üzerinde olsa da açık uçlu yorumlarda vardiyalı çalışanların yemek hizmeti talebi mevcut.</li>
 <li><strong>Mesai dışı çalışma talepleri:</strong> Açık uçlu yorumlarda gece saatlerinde ve izin günlerinde paylaşım/çalışma talep edilmesinden şikayet var.</li>
 <li><strong>Araç/ekipman eksikliği:</strong> Özellikle güvenlik personeli ve mesire alanı çalışanları için devriye aracı talebi belirgin.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Belediyenin en büyük müdürlüğü:</strong> 366 personel ile en kalabalık birim. %83,9 katılım oranı ile 307 kişiden veri toplanmış - bu örneklem istatistiksel olarak güçlü.</li>
 <li><strong>Yüksek memnuniyet - Düşük stres kombinasyonu:</strong> %95,1 genel memnuniyet ve %62,3 iş stresi/yükü ile belediyenin en dengeli birimlerinden biri.</li>
@@ -1805,7 +1805,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%93,4):</strong> Topluma hizmet gururu (%96,9) çok yüksek.</li>
 <li><strong>İş-kişi uyumu (%89,2):</strong> Personel işini seviyor ve anlamlı buluyor.</li>
@@ -1813,7 +1813,7 @@ const RAPOR_VERILERI = {
 <li><strong>Ekip içi uyum (%92,7):</strong> İş arkadaşlarıyla uyum yüksek.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Amir eşitliği (%69,8, -13,0):</strong> Ayrımcılık algısı çok yüksek - belediyenin en düşük skorlarından.</li>
 <li><strong>Bilgi paylaşımı (%74,0, -11,4):</strong> Deneyim aktarımı yetersiz.</li>
@@ -1821,7 +1821,7 @@ const RAPOR_VERILERI = {
 <li><strong>Ekip dayanışması (%79,3, -7,7):</strong> Bireysel uyum yüksek olmasına rağmen ekip dayanışması zayıf.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yassıören barınağı izolasyonu:</strong> Açık uçlu yorumlarda merkeze uzaklık, su sıkıntısı (tuzlu su) ve altyapı yetersizliği sıkça dile getirilmiş.</li>
 <li><strong>Amirlerin eşit davranışı:</strong> Açık uçlu yorumlarda amirlerden hakkaniyetli ve adil yaklaşım beklentisi dile getirilmiş - S16 amir eşitliği skoru (%69,8) ile tutarlı.</li>
@@ -2235,7 +2235,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok düşük iş stresi/yükü (%50,9):</strong> Vatandaş yoğunluğu (%32,1) ve duygusal zorlayıcılık (%39,3) belediyenin en düşük skorları.</li>
 <li><strong>Fiziksel çalışma koşulları:</strong> Temizlik (%92,9, +13,5), ısıtma/soğutma (%85,7, +11,6), bireysel çalışma alanı (%89,3, +10,1).</li>
@@ -2243,7 +2243,7 @@ const RAPOR_VERILERI = {
 <li><strong>Güçlü stres-destek dengesi (+27,7):</strong> Belediye ortalamasının iki katı.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Performans değerlendirme sistemi:</strong> Kriterlerin netliği (%64,3, -16,3) ve adaleti (%60,7, -16,5) belediyenin en düşük skorları.</li>
 <li><strong>Servis hizmeti (%50,0, -17,7):</strong> Belediyenin en düşük skorlarından biri.</li>
@@ -2251,7 +2251,7 @@ const RAPOR_VERILERI = {
 <li><strong>Görev-rol netliği (%75,0, -11,6):</strong> Sorumluluk alanları belirsiz.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Düşük stres - düşük memnuniyet paradoksu:</strong> Belediyenin en rahat çalışma ortamına sahip olmasına rağmen memnuniyet ortalamanın altında.</li>
 <li><strong>Performans sistemi sorunu:</strong> Değerlendirme kriterleri hem net değil hem de adil bulunmuyor - bu durum kariyer gelişimi beklentilerini olumsuz etkiliyor olabilir.</li>
@@ -2666,7 +2666,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok yüksek anket katılımı (%94,6):</strong> Personelin görüşlerini bildirme motivasyonu güçlü.</li>
 <li><strong>Düşük iş stresi/yükü (%57,6, -11,5):</strong> Belediyenin en rahat çalışma ortamlarından biri.</li>
@@ -2674,7 +2674,7 @@ const RAPOR_VERILERI = {
 <li><strong>Düşük sigara kullanımı (%34,5, -10,4):</strong> Belediye ortalamasının belirgin altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma alanı temizliği (%56,9, -22,5):</strong> Belediyenin en düşük skorlarından - masa/ofis temizliği yetersiz.</li>
 <li><strong>Isıtma/soğutma (%59,5, -14,6):</strong> Özellikle arşiv birimi havalandırma sorunu mevcut.</li>
@@ -2682,7 +2682,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yetkinlik & performans (%68,2, -9,0):</strong> Performans değerlendirme sistemi memnuniyeti düşük.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane sorunu yaygın:</strong> Açık uçlu yorumların büyük çoğunluğu yemek kalitesi, temizlik (tepsi, çatal-kaşık kirliliği) ve memur-işçi fiyat eşitsizliği konularında.</li>
 <li><strong>Koku makineleri rahatsızlığı:</strong> Koridorlardaki kokumatikler astım ve alerji hastaları için ciddi sorun oluşturuyor - birden fazla kişi tarafından dile getirilmiş.</li>
@@ -3094,7 +3094,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>10 temada da ortalamanın üzerinde:</strong> Müdürlük, tüm tema alanlarında belediye ortalamasını aşmaktadır - belediyenin en dengeli ve güçlü performans gösteren birimlerinden biridir.</li>
 <li><strong>Kamu hizmeti motivasyonu (%94,5):</strong> Belediye ortalamasının 1,7 puan üzerinde. Topluma hizmet gururu (%95,9) çok yüksek.</li>
@@ -3103,14 +3103,14 @@ const RAPOR_VERILERI = {
 <li><strong>Düşük iş stresi/yükü (%63,6):</strong> Belediye ortalamasının 5,5 puan altında. Zaman sıkışıklığı (%54,1) ve görev yükü (%57,8) düşük.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane hizmeti (%61,4):</strong> Belediye ortalamasının 4,2 puan üzerinde olmakla birlikte, açık uçlu yorumlarda yemek kalitesi ve fiyat eşitliği şikayetleri var.</li>
 <li><strong>Servis hizmeti (%65,5):</strong> Belediye ortalamasının 2,2 puan altında.</li>
 <li><strong>Sosyal medya takibi:</strong> Instagram dışındaki platformlarda belediye ortalamasının altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Belediyenin en dengeli müdürlüklerinden:</strong> 10 temanın tamamında belediye ortalamasının üzerinde - JD-R modeli açısından ideal profil.</li>
 <li><strong>Düğün salonu talebi:</strong> Açık uçlu yorumlarda en sık tekrar eden tema, personele düğün salonunda indirimli/ücretsiz hizmet talebidir.</li>
@@ -3543,7 +3543,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%95,0):</strong> Belediyenin en yüksek skorlarından biri. Topluma hizmet gururu (%97,4) çok yüksek.</li>
 <li><strong>Yüksek yorum oranı (%41,6):</strong> 89 kişiden 37'si açık uçlu yorum yapmış - personelin görüşlerini ifade etme konusunda cesaretli olduğunu göstermektedir.</li>
@@ -3552,7 +3552,7 @@ const RAPOR_VERILERI = {
 <li><strong>İş-kişi uyumu (%91,4):</strong> Personel yaptığı işi anlamlı buluyor.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev-rol netliği (%78,4):</strong> Belediye ortalamasının 8,2 puan altında. Sorumluluk alanları ve görev tanımları net değil.</li>
 <li><strong>Eğitim & gelişim (%67,8):</strong> Belediye ortalamasının 8 puan altında. Eğitim faaliyetleri yetersiz bulunuyor.</li>
@@ -3560,7 +3560,7 @@ const RAPOR_VERILERI = {
 <li><strong>Ekip uyumu (%82,7):</strong> Belediye ortalamasının 4,2 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Sosyal hizmet paradoksu:</strong> Kamu hizmeti motivasyonu çok yüksek (%95) ancak görev-rol netliği düşük (%78,4). Personel işini seviyor ama görev sınırları belirsiz.</li>
 <li><strong>Yüksek vatandaş yoğunluğu:</strong> Sosyal destek birimi olması nedeniyle yoğun vatandaş trafiği doğal, ancak bu stres kaynağı oluşturuyor.</li>
@@ -3996,7 +3996,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yönetici ilişkileri (%94,1):</strong> Belediye ortalamasının 7,3 puan üzerinde. Amir ulaşılabilirliği (%98,3) ve geri bildirim kalitesi (%93,3) çok yüksek.</li>
 <li><strong>Çalışma arkadaşları uyumu (%94,0):</strong> Belediye ortalamasının 7,1 puan üzerinde. Ekip dayanışması (%96,4) ve bilgi paylaşımı (%89,6) güçlü.</li>
@@ -4004,7 +4004,7 @@ const RAPOR_VERILERI = {
 <li><strong>Düşük iş stresi/yükü (%60,3):</strong> Belediye ortalamasının 8,8 puan altında. Özellikle vatandaş/başvuru yoğunluğu (%63,3) görece düşük.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Eğitim & Gelişim (%66,7):</strong> Belediye ortalamasının 9,1 puan altında. Eğitim faaliyetleri (%68,3) ve eğitimlerin katkısı (%65,0) düşük skorlu.</li>
 <li><strong>Ücret memnuniyeti (%53,3):</strong> Belediye ortalamasının (%69,0) 15,7 puan altında. Açık uçlu yorumlarda da ücret konusu vurgulanmış.</li>
@@ -4012,7 +4012,7 @@ const RAPOR_VERILERI = {
 <li><strong>Servis hizmeti (%62,5):</strong> Belediye ortalamasının (%67,7) 5,2 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Teknik birim - Düşük stres dengesi:</strong> Akıllı ulaşım sistemleri gibi teknik bir birimde vatandaşla doğrudan temas az olduğundan iş stresi/yükü düşük (%60,3), bu da sağlıklı bir çalışma ortamı sağlıyor.</li>
 <li><strong>Yüksek ekip uyumu - Düşük ruh sağlığı riski:</strong> Çalışma arkadaşları uyumu (%94,0) ile düşük ruh sağlığı riski (%44,5) arasında pozitif korelasyon görülüyor.</li>
@@ -4427,7 +4427,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,5):</strong> Topluma hizmet gururu yüksek.</li>
 <li><strong>İş-kişi uyumu (%90,6):</strong> Personel işini seviyor ve anlamlı buluyor.</li>
@@ -4435,7 +4435,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yüksek katılım (%83,7):</strong> Hem ankete hem açık uçlu yorumlara (62 kişi) yüksek katılım.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ücret memnuniyeti (%56,1, -12,9):</strong> Diğer belediyelerle maaş/SDS karşılaştırması yapılmakta, yetersiz bulunmakta.</li>
 <li><strong>Servis hizmeti (%58,3, -9,4):</strong> Güzergahların yetersizliği ve ilçe dışından gelenlerin mağduriyeti.</li>
@@ -4443,7 +4443,7 @@ const RAPOR_VERILERI = {
 <li><strong>Genel memnuniyet (%83,2, -7,6):</strong> Belediye ortalamasının altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma saatleri sorunu:</strong> Haftalık 40 saate indirilme talebi, hafta sonu mesailerinin kaldırılması, nöbet düzeninin iyileştirilmesi yoğun şekilde dile getirilmiş.</li>
 <li><strong>Maktu mesai/SDS yetersizliği:</strong> Diğer İstanbul ilçe belediyeleriyle karşılaştırıldığında ücretlerin düşük kaldığı sıkça belirtilmiş.</li>
@@ -4859,21 +4859,21 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%91,4):</strong> Belediye ortalamasının 0,1 puan üzerinde. Yetenek-iş uyumu (%94,4) çok yüksek.</li>
 <li><strong>Yöneticilerle ilişkiler (%88,6):</strong> Belediye ortalamasının 1,8 puan üzerinde. Amir desteği (%90,9) ve amir saygısı (%92,9) güçlü.</li>
 <li><strong>Düşük sigara kullanımı (%28,6):</strong> Belediye ortalamasının 16,3 puan altında - belediyenin en düşük oranlarından biri.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş stresi (%83,2):</strong> Belediye ortalamasının 14,1 puan üzerinde. Vatandaş yoğunluğu (%90,2, +19,6), görev yükü (%86,6, +16,2) ve zaman sıkışıklığı (%81,5, +16,8) çok yüksek.</li>
 <li><strong>Çalışma koşulları (%66,3):</strong> Belediye ortalamasının 5,9 puan altında. Yemekhane (%40,2, -17,0) belediyenin en düşük skorlarından.</li>
 <li><strong>Ruh sağlığı riski (%58,5):</strong> Belediye ortalamasının 6,3 puan üzerinde (olumsuz). Keyif alamama (%64,0) ve endişe kontrolü (%59,1) yüksek.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Negatif stres-destek dengesi (-2,3):</strong> Belediyenin Gelirler Müdürlüğü'nden sonra ikinci negatif dengeli birimi - kritik profil.</li>
 <li><strong>Çok yüksek vatandaş yoğunluğu (%90,2):</strong> Belediye ortalamasının 19,6 puan üzerinde - açık uçlu yorumlardaki "küfür yiyoruz, saygısızlık çok oluyor" ifadesiyle tutarlı.</li>
@@ -5305,7 +5305,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma arkadaşları (%94,8):</strong> Belediye ortalamasının 7,9 puan üzerinde. Ekip uyumu (%97,6), dayanışma (%94,0) ve bilgi paylaşımı (%95,2) çok güçlü.</li>
 <li><strong>Kamu hizmeti motivasyonu (%94,8):</strong> Belediye ortalamasının 2,0 puan üzerinde. Topluma hizmet gururu (%97,6) ve işin anlamlılığı (%95,0) yüksek.</li>
@@ -5314,7 +5314,7 @@ const RAPOR_VERILERI = {
 <li><strong>Düşük sigara kullanımı (%14,3):</strong> Belediye ortalamasının (%44,9) 30,6 puan altında - belediyenin en düşük oranlarından biri.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Eğitim & Gelişim (%58,6):</strong> Belediye ortalamasının 17,2 puan altında. Eğitim faaliyetleri (%56,6) ve eğitimlerin katkısı (%60,5) çok düşük skorlu.</li>
 <li><strong>Çalışma koşulları (%63,4):</strong> Belediye ortalamasının 8,8 puan altında. Temizlik (%65,5), ortak alanlar (%61,9), yemekhane (%47,2) ve servis (%51,4) düşük.</li>
@@ -5323,7 +5323,7 @@ const RAPOR_VERILERI = {
 <li><strong>Ücret memnuniyeti (%51,2):</strong> Belediye ortalamasının (%69,0) 17,8 puan altında - açık uçlu yorumlarda da en sık dile getirilen konulardan.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek yorum oranı (%76,9):</strong> 26 kişiden 20'si açık uçlu yorum yapmış - belediyenin en yüksek yorum oranı. Personelin görüş bildirme motivasyonu çok yüksek.</li>
 <li><strong>Güçlü ekip - Düşük çalışma koşulları skoru:</strong> Çalışma arkadaşları skoru (%94,8) çok yüksek iken çalışma koşulları skoru (%63,4) düşük. Anket sonuçlarına göre personel, çalışma koşullarını yetersiz bulmakla birlikte güçlü bir ekip dayanışması sergilemektedir.</li>
@@ -5758,7 +5758,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yönetici ilişkileri (%94,8):</strong> Belediye ortalamasının 8,0 puan üzerinde. Amir ulaşılabilirliği (%100), geri bildirim (%97,2) ve destek (%97,2) çok yüksek.</li>
 <li><strong>İş-kişi uyumu (%97,1):</strong> Belediye ortalamasının 5,8 puan üzerinde. Personel işini anlamlı buluyor (%98,4) ve işi seçtiği için mutlu (%97,2).</li>
@@ -5767,14 +5767,14 @@ const RAPOR_VERILERI = {
 <li><strong>Sosyal medya takibi:</strong> Tüm platformlarda belediye ortalamasının 20-55 puan üzerinde. Birimin görev alanı gereği beklenen bir sonuç.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma koşulları (%69,1):</strong> Belediye ortalamasının 3,1 puan altında. Özellikle temizlik (%68,1), ısıtma/soğutma (%65,3) ve ortak alanlar (%63,9) düşük skorlu.</li>
 <li><strong>Çalışma arkadaşları (%83,6):</strong> Belediye ortalamasının 3,3 puan altında. Anlaşmazlık çözümü (%76,4) ve iş arkadaşları desteği (%81,9) görece düşük.</li>
 <li><strong>Ücret memnuniyeti (%68,1):</strong> Belediye ortalamasına yakın olsa da açık uçlu yorumlarda en sık dile getirilen konu.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek yorum oranı (%61,9):</strong> 21 kişiden 13'ü açık uçlu yorum yapmış - bu belediyenin en yüksek yorum oranlarından biri. Personelin görüş bildirme motivasyonu yüksek.</li>
 <li><strong>Açık uçlu yorumlarda tekrar eden temalar:</strong> Maaş iyileştirmesi (7+ kez), çalışma alanı temizliği (5+ kez), ısıtma sorunu (3+ kez), sosyal alan/kafeterya eksikliği, çay servisi talebi.</li>
@@ -6208,14 +6208,14 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%92,1):</strong> Belediye ortalamasına yakın. Topluma hizmet gururu (%94,4) ve kamu kurumlarını tavsiye (%91,7) yüksek.</li>
 <li><strong>Yüksek katılım oranı (%87,2):</strong> Belediye ortalamasının 16,8 puan üzerinde - personelin ankete ilgisi yüksek.</li>
 <li><strong>Yüksek yorum oranı (%50,0):</strong> 34 kişiden 17'si açık uçlu yorum yapmış - personelin görüş bildirme motivasyonu güçlü.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma koşulları (%62,1):</strong> Belediye ortalamasının 10,1 puan altında. Temizlik (%55,6), ısıtma/soğutma (%58,3), ortak alanlar (%57,3) ve yemekhane (%43,8) çok düşük skorlu.</li>
 <li><strong>Yüksek iş stresi/yükü (%79,9):</strong> Belediye ortalamasının 10,8 puan üzerinde. Vatandaş yoğunluğu (%84,7), zaman sıkışıklığı (%80,0) ve görev yükü (%76,6) yüksek.</li>
@@ -6224,7 +6224,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yetkinlik & Performans (%72,9):</strong> Belediye ortalamasının 4,3 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Negatif stres-destek dengesi (-2,5):</strong> Belediyenin en düşük denge skorlarından biri. Anket sonuçlarına göre personel, iş stresi/yüküni karşılayacak düzeyde kurum desteği almadığını düşünmektedir.</li>
 <li><strong>Vatandaş yoğunluğu çok yüksek (%84,7):</strong> Belediye ortalamasının (%70,6) 14,1 puan üzerinde. Gelirler birimi doğası gereği yoğun vatandaş trafiğine maruz.</li>
@@ -6656,7 +6656,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%97,6):</strong> Belediye ortalamasının 6,3 puan üzerinde - belediyenin en yüksek skoru. Yetenek-iş uyumu (%98,4) ve işi seçtiği için mutluluk (%97,7) güçlü.</li>
 <li><strong>Kamu hizmeti motivasyonu (%96,6):</strong> Belediye ortalamasının 3,8 puan üzerinde. Topluma hizmet gururu (%99,2) neredeyse tam puan.</li>
@@ -6664,14 +6664,14 @@ const RAPOR_VERILERI = {
 <li><strong>Teknoloji altyapısı (%89,1):</strong> Belediye ortalamasının 13,9 puan üzerinde - görev alanı gereği beklenen güçlü altyapı.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane (%41,4):</strong> Belediye ortalamasının 15,8 puan altında - müdürlüğün tek belirgin zayıf noktası. Açık uçlu yorumların neredeyse tamamı yemekle ilgili.</li>
 <li><strong>Servis hizmeti (%61,2):</strong> Belediye ortalamasının 6,5 puan altında.</li>
 <li><strong>Eğitim faaliyetleri (%66,9):</strong> Belediye ortalamasının 7,9 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane şikayetleri yoğunluğu:</strong> 14 açık uçlu yorumun 12'si yemekle ilgili - "Her anket, şikayet talebinde bulunuyoruz ama değişen bir şey yok" ifadesi kronik soruna işaret.</li>
 <li><strong>Yemek ücreti eşitsizliği:</strong> "KHK'lı personeller de memurlar gibi yediği kadar ödemeli" şikayeti tekrar ediyor.</li>
@@ -7091,7 +7091,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%93,3):</strong> Topluma hizmet gururu yüksek.</li>
 <li><strong>Ekip uyumu (%90,0, +3,1):</strong> Belediye ortalamasının üzerinde, güçlü dayanışma.</li>
@@ -7099,7 +7099,7 @@ const RAPOR_VERILERI = {
 <li><strong>Amir eşitliği (%90,0, +7,2):</strong> Adil yönetim algısı güçlü.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ücret memnuniyeti (%54,0, -15,0):</strong> Belediyenin en düşük skorlarından - diğer belediyelerle maaş farkı şikayeti yaygın.</li>
 <li><strong>Servis hizmeti (%54,2, -13,5):</strong> Güzergah sorunları ve adaletsizlik algısı mevcut.</li>
@@ -7107,7 +7107,7 @@ const RAPOR_VERILERI = {
 <li><strong>Çalışma alanı temizliği (%74,0, -5,4):</strong> Ortalamanın altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Servis adaletsizliği:</strong> Açık uçlu yorumlarda bazı personelin kısa mesafeler için güzergah değiştirttiği, diğerlerinin uzun mesafe yürümek zorunda kaldığı belirtilmiş.</li>
 <li><strong>Maaş karşılaştırması:</strong> Diğer belediyelerde aynı pozisyonda çalışan meslektaşlarla maaş farkı sıkça dile getirilmiş.</li>
@@ -7511,7 +7511,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Düşük iş stresi/yükü (%58,4):</strong> Belediye ortalamasının 10,7 puan altında. Görev yükü (%55,1), zaman sıkışıklığı (%51,9) çok düşük.</li>
 <li><strong>Kamu hizmeti motivasyonu (%93,0):</strong> Belediye ortalamasının 0,2 puan üzerinde. Topluma hizmet gururu (%96,3) çok yüksek.</li>
@@ -7519,7 +7519,7 @@ const RAPOR_VERILERI = {
 <li><strong>Çok düşük sigara kullanımı (%29,3):</strong> Belediye ortalamasının 15,6 puan altında - belediyenin en sağlıklı birimlerinden.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane (%46,6):</strong> Belediye ortalamasının 10,6 puan altında - müdürlüğün en zayıf noktası.</li>
 <li><strong>Servis hizmeti (%59,2):</strong> Belediye ortalamasının 8,5 puan altında.</li>
@@ -7527,7 +7527,7 @@ const RAPOR_VERILERI = {
 <li><strong>Eğitim faaliyetleri (%70,4):</strong> Belediye ortalamasının 4,4 puan altında. "Böyle bir eğitim yok" yorumu dikkat çekici.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Tuvalet/lavabo şikayetleri yoğunluğu:</strong> 11 yorumun 3'ü tuvalet/lavabo sorunlarıyla ilgili - "Personel tuvaletleri ayrı olmalı" talebi tekrar ediyor.</li>
 <li><strong>Kütüphane personeli özgün talepleri:</strong> Kütüphane binası, turnike sistemi, personel yeterliliğinin değerlendirilmesi gibi sektöre özgü talepler var.</li>
@@ -7957,7 +7957,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%90,9):</strong> Belediye ortalamasına yakın. Topluma hizmet gururu (%92,4) ve işin anlamlılığı (%92,8) yüksek.</li>
 <li><strong>İş-kişi uyumu (%90,8):</strong> Belediye ortalamasına yakın. Personel işinin yetenek/becerileriyle uyumlu olduğunu düşünüyor (%92,4).</li>
@@ -7965,7 +7965,7 @@ const RAPOR_VERILERI = {
 <li><strong>Yetkinlik & Performans (%80,7):</strong> Belediye ortalamasının 3,5 puan üzerinde. Performans değerlendirme kriterleri net bulunuyor (%83,6).</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek iş stresi/yükü (%80,3):</strong> Belediye ortalamasının 11,2 puan üzerinde. Zaman sıkışıklığı (%79,3), görev yükü (%82,2) ve duygusal zorlayıcılık (%80,5) yüksek skorlu.</li>
 <li><strong>Amir eşitliği (%75,4):</strong> Belediye ortalamasının 7,4 puan altında. Açık uçlu yorumlarda adalet konusu da dile getirilmiş.</li>
@@ -7974,7 +7974,7 @@ const RAPOR_VERILERI = {
 <li><strong>Sosyal medya takibi:</strong> Tüm platformlarda belediye ortalamasının altında. Özellikle Başkan Instagram (%54,2) dikkat çekici düşüklükte (-22,7).</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>JD-R modeli açısından kritik profil:</strong> Yüksek iş stresi/yükü (%80,3) ile düşük stres-destek dengesi (+1,7) kombinasyonu, anket sonuçlarına göre zorlanma göstergesi açısından izlenmesi gereken bir profil oluşturmaktadır.</li>
 <li><strong>Ruh sağlığı risk göstergeleri yüksek:</strong> Keyif alamama (%68,6 vs ort %56,1), gerginlik/kaygı (%60,1 vs ort %50,8) ve endişe kontrolü (%64,8 vs ort %50,9) belirgin yüksek. Bu durum yüksek iş stresi/yüküyle tutarlıdır.</li>
@@ -8398,7 +8398,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma arkadaşları (%89,6):</strong> Belediye ortalamasının 2,7 puan üzerinde. Anlaşmazlık çözümü (%93,3) çok güçlü.</li>
 <li><strong>Kamu hizmeti motivasyonu (%89,6):</strong> Belediye ortalamasının 3,2 puan altında ama hala güçlü. Topluma hizmet gururu (%95,3) yüksek.</li>
@@ -8406,7 +8406,7 @@ const RAPOR_VERILERI = {
 <li><strong>Amir saygısı (%95,0):</strong> Belediye ortalamasının 5,1 puan üzerinde.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane (%35,0):</strong> Belediye ortalamasının 22,2 puan altında - <strong>belediyenin en düşük skoru!</strong></li>
 <li><strong>Servis hizmeti (%44,6):</strong> Belediye ortalamasının 23,1 puan altında - <strong>belediyenin en düşük skorlarından!</strong> "Servislerin kaldırılması motivasyonu düşürüyor" yorumu.</li>
@@ -8414,7 +8414,7 @@ const RAPOR_VERILERI = {
 <li><strong>Ruh sağlığı riski (%60,0):</strong> Belediye ortalamasının 7,8 puan üzerinde - acil dikkat gerektirir.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>⚠️ Ruh sağlığı uyarısı (kritik):</strong> Gergin/kaygılı hissetme %65,0 (+14,2), endişe kontrolü %61,7 (+10,8) - belediyenin en yüksek değerleri.</li>
 <li><strong>Servis kaldırılması şikayeti:</strong> "Psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır" - doğrudan ifade.</li>
@@ -8846,14 +8846,14 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%95,3):</strong> Belediye ortalamasının 2,5 puan üzerinde. Topluma hizmet gururu (%96,7) ve kamu kurumlarını tavsiye (%95,7) çok yüksek.</li>
 <li><strong>Yöneticilerle ilişkiler (%89,9):</strong> Belediye ortalamasının 3,1 puan üzerinde. Amir ulaşılabilirliği (%92,4) ve amir saygısı (%91,3) güçlü.</li>
 <li><strong>Sosyal medya takibi:</strong> Tüm platformlarda belediye ortalamasının çok üzerinde - birimin görev alanı gereği beklenen bir sonuç.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%80,5):</strong> Belediye ortalamasının 10,8 puan altında - müdürlüğün en belirgin zayıf yönü. Yetenek-iş uyumu (%77,2) ve işi seçtiği için mutluluk (%79,3) düşük.</li>
 <li><strong>Çalışma koşulları (%64,4):</strong> Belediye ortalamasının 7,8 puan altında. Ortak alanlar (%51,1), yemekhane (%48,5) ve İSG (%59,8) düşük.</li>
@@ -8861,7 +8861,7 @@ const RAPOR_VERILERI = {
 <li><strong>Görev-rol netliği (%81,5):</strong> Belediye ortalamasının 5,1 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek çağrı yükü:</strong> Açık uçlu yorumda "günde ortalama 160-200 çağrı, 3-4 saat konuşma süresi, iş içi gerginliğe sebep olmakta" ifadesi - çağrı merkezi personelinin iş yükü çok yüksek.</li>
 <li><strong>Yüksek sigara kullanımı (%60,9):</strong> Belediye ortalamasının 16 puan üzerinde - yüksek iş stresi/yükü ile ilişkili olabilir.</li>
@@ -9285,14 +9285,14 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%91,2):</strong> Belediye ortalamasının 1,6 puan altında olmakla birlikte, topluma hizmet gururu (%94,1) yüksek.</li>
 <li><strong>İş-kişi uyumu (%90,7):</strong> Belediye ortalamasının 0,6 puan altında. Yetenek-iş uyumu (%95,6) çok yüksek.</li>
 <li><strong>Ruh sağlığı göstergeleri (olumlu):</strong> Gerginlik/kaygı (%43,3) ve üzgün hissetme (%45,0) belediye ortalamasının altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş stresi (%78,7):</strong> Belediye ortalamasının 9,6 puan üzerinde. Görev yükü (%86,8, +16,4) ve zaman sıkışıklığı (%77,9, +13,2) çok yüksek.</li>
 <li><strong>Çalışma koşulları (%65,9):</strong> Belediye ortalamasının 6,3 puan altında. Temizlik (%65,6), yemekhane (%55,4), servis (%55,8) düşük.</li>
@@ -9300,7 +9300,7 @@ const RAPOR_VERILERI = {
 <li><strong>Personel yetersizliği:</strong> Açık uçlu yorumlarda "acil personel ihtiyacı" vurgusu.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kritik stres-destek dengesi (+0,7):</strong> Belediyenin en düşük dengelerinden - Gelirler Müdürlüğü'nden (-2,5) sonra en kritik profil.</li>
 <li><strong>Çok yüksek sigara kullanımı (%70,6):</strong> Belediye ortalamasının 25,7 puan üzerinde - belediyenin en yüksek oranı.</li>
@@ -9720,14 +9720,14 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%93,6):</strong> Belediye ortalamasının 6,8 puan üzerinde. Amir desteği (%95,5) ve amir saygısı (%95,5) çok yüksek.</li>
 <li><strong>Çalışma arkadaşları (%90,0):</strong> Belediye ortalamasının 3,1 puan üzerinde. Bilgi paylaşımı (%93,2) güçlü.</li>
 <li><strong>İş-kişi uyumu (%88,6):</strong> Belediye ortalamasının 2,7 puan altında olmakla birlikte, işi anlamlı bulma (%93,2) yüksek.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma koşulları (%64,8):</strong> Belediye ortalamasının 7,4 puan altında. Yemekhane (%45,5), servis (%52,5), ücret (%52,3) ve ortak alanlar (%61,4) düşük.</li>
 <li><strong>Eğitim & Gelişim (%68,2):</strong> Belediye ortalamasının 7,6 puan altında. Eğitimlerin katkısı (%65,9) düşük.</li>
@@ -9735,7 +9735,7 @@ const RAPOR_VERILERI = {
 <li><strong>Kamu hizmeti motivasyonu (%87,1):</strong> Belediye ortalamasının 5,7 puan altında. Kamu kurumlarını tavsiye (%81,8) düşük.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemek ücreti eşitsizliği:</strong> Açık uçlu yorumlarda en sık tekrar eden tema "memur, işçi ve KHK'lı personel arasındaki yemek ücreti farkı"dır.</li>
 <li><strong>Düşük memnuniyet - güçlü yönetici ilişkileri paradoksu:</strong> Yöneticilerle ilişkiler çok güçlü (%93,6) iken genel memnuniyet düşük (%84,1) - sorun yönetici kaynaklı değil, çalışma koşulları ve ücret kaynaklı olabilir.</li>
@@ -10156,7 +10156,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%93,5):</strong> Belediye ortalamasının 6,7 puan üzerinde. Amir saygısı (%100), amir eşitliği (%97,2), amir ulaşılabilirliği (%97,2) güçlü.</li>
 <li><strong>Çalışma arkadaşları (%93,9):</strong> Belediye ortalamasının 7,0 puan üzerinde - belediyenin en yüksek skorlarından. Ekip dayanışması, bilgi paylaşımı, anlaşmazlık çözümü tümü %94,4.</li>
@@ -10164,7 +10164,7 @@ const RAPOR_VERILERI = {
 <li><strong>Çok düşük sigara kullanımı (%22,2):</strong> Belediye ortalamasının 22,7 puan altında - belediyenin en düşük oranı.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane (%53,6):</strong> Belediye ortalamasının 3,6 puan altında.</li>
 <li><strong>Servis hizmeti (%64,3):</strong> Belediye ortalamasının 3,4 puan altında.</li>
@@ -10172,7 +10172,7 @@ const RAPOR_VERILERI = {
 <li><strong>Performans değerlendirme kriterleri netliği (%72,2):</strong> Belediye ortalamasının 8,4 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-yaşam dengesi talebi:</strong> 3 yorumun 2'si çocuklar için etüt/dinlenme alanı talebiyle ilgili - çalışan ebeveynlerin iş-yaşam dengesi ihtiyacına işaret.</li>
 <li><strong>Görev yükü yüksek (%80,6):</strong> Belediye ortalamasının 10,2 puan üzerinde - küçük ekip yoğun çalışıyor.</li>
@@ -10589,7 +10589,7 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yöneticilerle ilişkiler (%98,2):</strong> Belediye ortalamasının 11,4 puan üzerinde - belediyenin en yüksek skoru. S12, S13, S14, S17 sorularında %100 tam puan.</li>
 <li><strong>Çalışma arkadaşları (%97,9):</strong> Belediye ortalamasının 11,0 puan üzerinde - belediyenin en yüksek skoru. S19, S20, S21 sorularında %100 tam puan.</li>
@@ -10597,7 +10597,7 @@ const RAPOR_VERILERI = {
 <li><strong>Görev-rol netliği (%93,8):</strong> Belediye ortalamasının 7,2 puan üzerinde. S4, S5 sorularında %96,4.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ücret (%53,6):</strong> Belediye ortalamasının 15,4 puan altında - müdürlüğün en düşük skoru.</li>
 <li><strong>Servis hizmeti (%53,6):</strong> Belediye ortalamasının 14,1 puan altında. Açık uçlu yorumlarda servis iyileştirmesi talebi.</li>
@@ -10605,7 +10605,7 @@ const RAPOR_VERILERI = {
 <li><strong>Kamu hizmeti motivasyonu (%86,9):</strong> Belediye ortalamasının 5,9 puan altında. Kamu tavsiyesi (%82,1, -8,6) düşük.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Güçlü ilişkiler - düşük memnuniyet paradoksu:</strong> Yönetici (%98,2) ve çalışma arkadaşları (%97,9) ilişkileri güçlü, iş stresi/yükü çok düşük (%51,8), ama memnuniyet ortalamanın altında (%85,7). Sorun çalışma koşulları (ücret, servis) kaynaklı.</li>
 <li><strong>Çok yüksek sigara kullanımı (%71,4):</strong> Belediye ortalamasının 26,5 puan üzerinde - İklim Değişikliği Müdürlüğü (%70,6) ile birlikte belediyenin en yüksek oranlarından.</li>
@@ -11021,7 +11021,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok düşük iş stresi/yükü (%53,9):</strong> Belediye ortalamasının 15,2 puan altında - belediyenin en düşük stresli birimi. Vatandaş yoğunluğu (%46,2) ve duygusal zorlayıcılık (%47,9) çok düşük.</li>
 <li><strong>Yöneticilerle ilişkiler (%90,1):</strong> Belediye ortalamasının 3,3 puan üzerinde. Amir ulaşılabilirliği (%94,2) ve amir saygısı (%94,2) çok yüksek.</li>
@@ -11029,7 +11029,7 @@ const RAPOR_VERILERI = {
 <li><strong>Güçlü stres-destek dengesi (+24,5):</strong> Belediye ortalamasının 11,3 puan üzerinde.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu:</strong> Belediye ortalamasının altında.</li>
 <li><strong>Kamu hizmeti motivasyonu:</strong> Belediye ortalamasının altında.</li>
@@ -11439,7 +11439,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev netliği (%97,7):</strong> Belediyenin en yüksek skorlarından biri (+11,1 puan). Küçük ve uzmanlaşmış bir birimin avantajı.</li>
 <li><strong>Yönetici ilişkileri (%96,6):</strong> Tüm yönetici sorularında (ulaşılabilirlik, geri bildirim, destek, eşit yaklaşım, saygı) %95+ skorlar.</li>
@@ -11447,14 +11447,14 @@ const RAPOR_VERILERI = {
 <li><strong>İş-kişi uyumu (%98,5):</strong> Personel yaptığı işi anlamlı buluyor (%100) ve yetenek-görev uyumu yüksek.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çalışma koşulları (%68,2):</strong> Belediye ortalamasının 4 puan altında. Özellikle ısıtma/soğutma (%59,1) ve yemekhane (%47,2) memnuniyeti düşük.</li>
 <li><strong>İSG uygulamaları (%70,5):</strong> Belediye ortalamasının 5,8 puan altında. Afet birimi için bu gösterge önemlidir.</li>
 <li><strong>Kamu kurumlarını tavsiye (%79,5):</strong> Belediye ortalamasının 11,2 puan altında. Personel kendi işinden memnun (%100 "Bu işi seçtiğim için mutluyum") ancak kurumu tavsiye etmekte çekingen - bu 20,5 puanlık fark dikkat çekicidir.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Düşük stres - Yüksek memnuniyet ilişkisi:</strong> En düşük iş stresi/yüküne sahip birimlerden biri (%52,3), aynı zamanda yüksek memnuniyet (%90,9) ve düşük ruh sağlığı riski (%46,6) sergiliyor. JD-R (İş Talepleri-Kaynakları) modeli ile uyumlu.</li>
 <li><strong>Küçük ekip - Net görev tanımı:</strong> 12 kişilik birimde sorumluluk alanları net tanımlanmış (%97,7). Küçük ekiplerde görev dağılımının daha kolay yapılabildiği görülüyor.</li>
@@ -11838,7 +11838,7 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş-kişi uyumu (%97,9):</strong> Belediye ortalamasının 6,6 puan üzerinde. S1 yetenek-iş uyumu (%98,4) ve S3 işin anlamlılığı (%98,4) neredeyse tam puan.</li>
 <li><strong>Görev-rol netliği (%95,7):</strong> Belediye ortalamasının 9,1 puan üzerinde. S4 (%98,4) ve S5 (%95,3) güçlü.</li>
@@ -11847,13 +11847,13 @@ const RAPOR_VERILERI = {
 <li><strong>Çok düşük ruh sağlığı riski (%39,2):</strong> Belediye ortalamasının 13,0 puan altında - belediyenin en düşük risk seviyelerinden biri.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yemekhane (%54,7):</strong> Belediye ortalamasının 2,5 puan altında - müdürlüğün tek zayıf noktası. Açık uçlu yorumlarda lezzet şikayeti.</li>
 <li><strong>Kurum iletişimi - S24 (%70,3):</strong> Belediye ortalamasının 10,1 puan altında - tek düşük skor.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek memnuniyet (%98,4):</strong> Bu kurumda çalışmaktan genel olarak memnunum sorusunda belediyenin en yüksek skoru.</li>
 <li><strong>10 temada 10 ortalamanın üzerinde:</strong> Tüm temalarda belediye ortalamasının üzerinde performans - belediyenin en dengeli birimi.</li>
@@ -12267,7 +12267,7 @@ const RAPOR_VERILERI = {
 <p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek memnuniyet (%95,8):</strong> Belediye ortalamasının 5 puan üzerinde - belediyenin en memnun birimlerinden.</li>
 <li><strong>Düşük iş stresi/yükü (%56,3):</strong> Belediye ortalamasının 12,8 puan altında. Duygusal zorlayıcılık (%50,0) düşük.</li>
@@ -12275,7 +12275,7 @@ const RAPOR_VERILERI = {
 <li><strong>İş-kişi uyumu (%91,7):</strong> Belediye ortalamasının 0,4 puan üzerinde. Tüm alt sorular %91,7 düzeyinde.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ortak alanlar (%50,0):</strong> Belediye ortalamasının 20,4 puan altında - müdürlüğün en kritik sorunu.</li>
 <li><strong>Ücret (%54,2):</strong> Belediye ortalamasının 14,8 puan altında.</li>
@@ -12284,7 +12284,7 @@ const RAPOR_VERILERI = {
 <li><strong>Isıtma/soğutma (%58,3):</strong> Belediye ortalamasının 15,8 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yüksek memnuniyet - düşük fiziksel koşullar paradoksu:</strong> Memnuniyet çok yüksek (%95,8) iken fiziksel koşullar (ortak alan, ısıtma, teknoloji) çok zayıf - sosyal ortam memnuniyeti taşıyor.</li>
 <li><strong>%100 Instagram takibi:</strong> Her iki Instagram hesabında da tam takip oranı.</li>
@@ -12698,7 +12698,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Kamu hizmeti motivasyonu (%96,9):</strong> Belediye ortalamasının 4,1 puan üzerinde. İşin anlamlılığı (%96,9), topluma hizmet gururu (%96,9), kamu tavsiyesi (%96,9) ve toplum faydalılığı (%96,9) güçlü.</li>
 <li><strong>Kurum içi iletişim (%89,1):</strong> Belediye ortalamasının 9,3 puan üzerinde. Bilgilendirme (%90,6) ve öneri geri bildirimi (%87,5) çok güçlü.</li>
@@ -12706,14 +12706,14 @@ const RAPOR_VERILERI = {
 <li><strong>Çalışma arkadaşları (%88,8):</strong> Belediye ortalamasının 1,9 puan üzerinde. Ekip dayanışması (%90,6) güçlü.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Katılım oranı (%44,4):</strong> Belediye ortalamasının 26 puan altında - belediyenin en düşük katılımı. Ankete katılmayan %55,6'lık kesimin görüşleri bilinmiyor.</li>
 <li><strong>Yemekhane (%53,1):</strong> Belediye ortalamasının 4,1 puan altında.</li>
 <li><strong>Çalışma alanı yetersizliği:</strong> Açık uçlu yorumlarda "çalıştığımız ofis küçük geliyor" şikayeti.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Çok düşük katılım - çok yüksek memnuniyet paradoksu:</strong> Sadece %44,4 katılım ama %96,9 memnuniyet - katılanlar memnun ancak katılmayanların durumu bilinmiyor.</li>
 <li><strong>Güçlü kamu hizmeti motivasyonu:</strong> S3, S35, S36, S37 sorularının tamamında %96,9 skor - belediyenin en yüksek motivasyon oranlarından.</li>
@@ -13127,7 +13127,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev-rol netliği (%87,4):</strong> Belediye ortalamasının 0,8 puan üzerinde. Görev tanımı (%89,6) ve sorumluluk netliği (%87,5) yüksek.</li>
 <li><strong>Çalışma koşulları (%80,0):</strong> Belediye ortalamasının 7,8 puan üzerinde - saha birimi için çok iyi. Ortak alanlar (%82,4), ısıtma/soğutma (%82,8) güçlü.</li>
@@ -13135,14 +13135,14 @@ const RAPOR_VERILERI = {
 <li><strong>Eğitim & gelişim (%79,4):</strong> Belediye ortalamasının 3,6 puan üzerinde.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>İş stresi (%76,3):</strong> Belediye ortalamasının 7,2 puan üzerinde. Duygusal zorlayıcılık (%77,7), görev yükü (%79,3), zaman sıkışıklığı (%72,9) yüksek.</li>
 <li><strong>Ruh sağlığı riski (%58,1):</strong> Belediye ortalamasının 5,9 puan üzerinde (olumsuz). Üzgün hissetme (%62,0, +11,1) ve gerginlik (%59,8, +9,0) yüksek.</li>
 <li><strong>Kamu hizmeti motivasyonu (%87,2):</strong> Belediye ortalamasının 5,6 puan altında.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Ruh sağlığı uyarısı:</strong> Üzgün/çökkün hissetme %62,0 (+11,1), gergin/kaygılı hissetme %59,8 (+9,0) - belediye ortalamasının belirgin üzerinde.</li>
 <li><strong>Hiç açık uçlu yorum yok:</strong> 56 katılımcıdan hiçbiri yorum yapmamış - bu, ya memnuniyet ya da iletişim tercihi nedeniyle olabilir.</li>
@@ -13548,7 +13548,7 @@ const RAPOR_VERILERI = {
 </table>
 
 <div class="summary-box">
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-left: 4px solid #2E7D32; border-radius: 0 6px 6px 0; color: #1B5E20; font-size: 1.05em;">✓ Güçlü Yönler</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #2E7D32; color:#2E7D32; font-size:1.05em; font-weight:600;">✓ Güçlü Yönler</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Görev netliği (%96,0):</strong> Belediyenin 2. en yüksek skoru (+9,4 puan). Küçük ve uzmanlaşmış bir birimin avantajı.</li>
 <li><strong>Yönetici ilişkileri (%95,5):</strong> Tüm yönetici sorularında (ulaşılabilirlik, geri bildirim, destek, eşit yaklaşım, saygı) %95+ skorlar.</li>
@@ -13556,14 +13556,14 @@ const RAPOR_VERILERI = {
 <li><strong>İş-kişi uyumu (%93,9):</strong> Personel yaptığı işi anlamlı buluyor ve yetenek-görev uyumu yüksek.</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); border-left: 4px solid #E65100; border-radius: 0 6px 6px 0; color: #E65100; font-size: 1.05em;">⚠ Geliştirilmesi Gereken Alanlar</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Eğitim & Gelişim (%68,2):</strong> Belediye ortalamasının 7,6 puan altında. Özellikle eğitim faaliyetleri yeterliliği (%61,4) düşük.</li>
 <li><strong>Performans değerlendirme adalet algısı (%72,7):</strong> Belediye ortalamasının 4,4 puan altında.</li>
 <li><strong>Kamu Hizmeti Motivasyonu (%87,1):</strong> Belediye ortalamasının 5,7 puan altında (29. sıra).</li>
 </ul>
 
-<h4 style="margin-top:1.5em; margin-bottom:0.5em; padding: 0.6em 1em; background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); border-left: 4px solid #1565C0; border-radius: 0 6px 6px 0; color: #0D47A1; font-size: 1.05em;">◆ Dikkat Çeken Bulgular</h4>
+<h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #1565C0; color:#1565C0; font-size:1.05em; font-weight:600;">◆ Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Düşük stres - Yüksek memnuniyet ilişkisi:</strong> En düşük iş stresi/yüküne (%59,1) sahip birimlerden biri, aynı zamanda yüksek memnuniyet (%90,9) ve düşük ruh sağlığı riski (%38,4) sergiliyor. JD-R (İş Talepleri-Kaynakları) modeli ile uyumlu.</li>
 <li><strong>Küçük ekip - Net görev tanımı:</strong> 12 kişilik birimde sorumluluk alanları net tanımlanmış (%96,0). Küçük ekiplerde görev dağılımının daha kolay yapılabildiği görülüyor.</li>
