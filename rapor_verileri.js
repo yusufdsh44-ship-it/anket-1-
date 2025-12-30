@@ -324,7 +324,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%86,5</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-3,5</strong></td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği belediyenin en düşük skoru - yönetim adaleti sorgulanmaktadır. İş stresli ve tehlikeli, ücret yetersiz: "Diğer ilçe belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı kritik: hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu güçlü ancak kurumsal destek karşılamıyor. Psikolojik destek sunulması önerilmektedir.</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği belediyenin en düşük skoru - personel amirlerin eşit davranışını düşük bulmaktadır. İş stresli ve tehlikeli, ücret yetersiz: "Diğer ilçe belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı kritik: hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu güçlü ancak kurumsal destek karşılamıyor. Psikolojik destek sunulması önerilmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">YAZI İŞLERİ</td>
@@ -1726,7 +1726,7 @@ const RAPOR_VERILERI = {
 
 <h2>Temel Göstergeler</h2>
 
-<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Veteriner İşleri Müdürlüğü personeli işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak iş stresi/yükü kritik seviyelerdedir ve kurumsal destek yetersiz kalmaktadır. Yassıören barınağı altyapısının iyileştirilmesi, yönetim adaleti algısının güçlendirilmesi ve personele psikolojik destek sunulması acil önceliklerdir.</p>
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A;">Veteriner İşleri Müdürlüğü personeli işine bağlı ve topluma hizmet motivasyonu yüksektir. Ancak iş stresi/yükü kritik seviyelerdedir ve kurumsal destek yetersiz kalmaktadır. Yassıören barınağı altyapısının iyileştirilmesi, amirlerin eşit davranış algısının güçlendirilmesi ve personele psikolojik destek sunulması acil önceliklerdir.</p>
 
 <table class="indicators-table">
     <thead>
@@ -1824,7 +1824,7 @@ const RAPOR_VERILERI = {
 <h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
 <ul style="margin-top:0.3em;">
 <li><strong>Yassıören barınağı izolasyonu:</strong> Açık uçlu yorumlarda merkeze uzaklık, su sıkıntısı (tuzlu su) ve altyapı yetersizliği sıkça dile getirilmiş.</li>
-<li><strong>Yönetim adaleti algısı:</strong> Açık uçlu yorumlarda yönetimden hakkaniyetli ve adil yaklaşım beklentisi dile getirilmiş - S16 amir eşitliği skoru (%69,8) ile tutarlı.</li>
+<li><strong>Amirlerin eşit davranışı:</strong> Açık uçlu yorumlarda amirlerden hakkaniyetli ve adil yaklaşım beklentisi dile getirilmiş - S16 amir eşitliği skoru (%69,8) ile tutarlı.</li>
 <li><strong>Psikolojik sıkıntı beyanı:</strong> Personel, işin stresli ve tehlikeli doğası nedeniyle psikolojik zorluklar yaşadığını ifade etmiş.</li>
 <li><strong>Zorlanma göstergesi:</strong> Yüksek stres + düşük destek + negatif denge = iş yükü baskısı göstergesi.</li>
 </ul>
@@ -7294,7 +7294,7 @@ const RAPOR_VERILERI = {
 </tbody>
 </table>
 
-<p><strong>Soru Bazlı Değerlendirme:</strong> S34 ücret memnuniyeti (%54,0, -15,0) ve S32 servis hizmeti (%54,2, -13,5) belediyenin en düşük skorları arasındadır. Açık uçlu yorumlarda bu iki alan en sık dile getirilen konulardır: diğer belediyelerdeki meslektaşlarla maaş farkı ve servis güzergahlarındaki adaletsizlik şikayetleri nicel verilerle örtüşmektedir. S9 (%82,0, +11,6) ve S10 (%83,0, +12,4) iş yükü ve vatandaş talebi yoğunluğu belediyenin en yüksek değerleri arasındadır. S16 amir eşitliği (%90,0, +7,2) çok yüksektir - yönetim adaleti algısı güçlüdür ve bu durum, yüksek iş stresi/yüküne rağmen ekip uyumunun (%90,0) korunmasını açıklamaktadır.</p>
+<p><strong>Soru Bazlı Değerlendirme:</strong> S34 ücret memnuniyeti (%54,0, -15,0) ve S32 servis hizmeti (%54,2, -13,5) belediyenin en düşük skorları arasındadır. Açık uçlu yorumlarda bu iki alan en sık dile getirilen konulardır: diğer belediyelerdeki meslektaşlarla maaş farkı ve servis güzergahlarındaki adaletsizlik şikayetleri nicel verilerle örtüşmektedir. S9 (%82,0, +11,6) ve S10 (%83,0, +12,4) iş yükü ve vatandaş talebi yoğunluğu belediyenin en yüksek değerleri arasındadır. S16 amir eşitliği (%90,0, +7,2) çok yüksektir - amirlerin eşit davranış algısı güçlüdür ve bu durum, yüksek iş stresi/yüküne rağmen ekip uyumunun (%90,0) korunmasını açıklamaktadır.</p>
 
 <h2>3. Ruh Sağlığı Taraması</h2>
 
