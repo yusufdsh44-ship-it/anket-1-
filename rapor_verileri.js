@@ -360,7 +360,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">BASIN VE YAYIN</td>
 <td style="text-align:center; padding:6px;">%93,1</td>
 <td style="text-align:center; padding:6px;">+22,3</td>
-<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonu (%97,4). Güçlü performans. Yönetici ilişkileri ve iş-kişi uyumu çok yüksek, ekip uyumu ortalamanın altında. Düşük iş stresi/yükü ile stressiz çalışma ortamı. Ofis temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
+<td style="padding:6px;">Belediyenin en yüksek kamu hizmeti motivasyonu (%97,2). Güçlü performans. Yönetici ilişkileri ve iş-kişi uyumu çok yüksek, ekip uyumu ortalamanın altında. Düşük iş stresi/yükü ile stressiz çalışma ortamı. Ofis temizliği ve ısıtma/soğutma iyileştirme bekliyor. Ücret güncelleme talebi yaygındır.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">AKILLI ULAŞIM</td>
