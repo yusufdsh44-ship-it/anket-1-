@@ -1,8 +1,6 @@
 import os
-import io
-import zipfile
 import hashlib
-from flask import Flask, request, jsonify, make_response, send_file
+from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.orm import DeclarativeBase
@@ -304,77 +302,6 @@ def serve_rapor_verileri():
     response.headers['Content-Type'] = 'application/javascript; charset=utf-8'
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     return response
-
-
-@app.route('/api/reports-list')
-def get_reports_list():
-    if APP_PASSWORD and not check_auth(request):
-        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
-    
-    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
-    
-    if not os.path.exists(reports_dir):
-        return jsonify({'success': False, 'error': 'Reports folder not found'}), 404
-    
-    reports = []
-    for filename in sorted(os.listdir(reports_dir)):
-        if filename.endswith('.html'):
-            name = filename.replace('.html', '').replace('_', ' ').title()
-            reports.append({
-                'filename': filename,
-                'name': name,
-                'key': filename.replace('.html', '')
-            })
-    
-    return jsonify({'success': True, 'reports': reports})
-
-
-@app.route('/api/download-report/<report_name>')
-def download_single_report(report_name):
-    if APP_PASSWORD and not check_auth(request):
-        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
-    
-    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
-    filename = f"{report_name}.html"
-    filepath = os.path.join(reports_dir, filename)
-    
-    if not os.path.exists(filepath):
-        return jsonify({'success': False, 'error': 'Report not found'}), 404
-    
-    return send_file(
-        filepath,
-        mimetype='text/html',
-        as_attachment=True,
-        download_name=filename
-    )
-
-
-@app.route('/api/download-reports-zip')
-def download_reports_zip():
-    if APP_PASSWORD and not check_auth(request):
-        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
-    
-    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
-    
-    if not os.path.exists(reports_dir):
-        return jsonify({'success': False, 'error': 'Reports folder not found'}), 404
-    
-    memory_file = io.BytesIO()
-    
-    with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
-        for filename in sorted(os.listdir(reports_dir)):
-            if filename.endswith('.html'):
-                filepath = os.path.join(reports_dir, filename)
-                zf.write(filepath, filename)
-    
-    memory_file.seek(0)
-    
-    return send_file(
-        memory_file,
-        mimetype='application/zip',
-        as_attachment=True,
-        download_name='mudurluk_raporlari.zip'
-    )
 
 
 if __name__ == '__main__':

@@ -5213,10 +5213,6 @@
                                         <input type="text" id="raporArama" placeholder="Ara..." onkeyup="reportManager.searchReports(this.value)" class="pl-10 pr-4 py-2.5 w-full bg-white border border-[#E5DDD5] rounded-full text-sm font-sans text-[#4A4641] placeholder:text-[#B0A99F] focus:outline-none focus:ring-2 focus:ring-[#A89080]/20 focus:border-[#A89080] transition-all hover:border-[#C5B8AA]">
                                         <span class="material-icons-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#8C847D] text-[18px]">search</span>
                                     </div>
-                                    <button onclick="reportManager.downloadZip()" class="inline-flex items-center gap-2 px-4 py-2.5 bg-[#C86A3C] hover:bg-[#B55D33] text-white rounded-full text-sm font-sans font-medium transition-all hover:shadow-md cursor-pointer border-none">
-                                        <span class="material-icons-outlined text-[18px]">folder_zip</span>
-                                        Tum Raporlari Indir (ZIP)
-                                    </button>
                                 </div>
                                 
                                 <div id="mudurlukRaporlari" class="mt-8">
@@ -5224,22 +5220,13 @@
                                 .sort((a, b) => a[1].name.localeCompare(b[1].name, 'tr'))
                                 .map(([key, data]) => `
                                             <div class="mudurluk-rapor-section mb-10 pb-10 border-b border-border-light" data-mudurluk="${key}">
-                                                <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;">
-                                                    <button onclick="pageManager.goToOzetTablosu();" 
-                                                        style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: linear-gradient(135deg, #8B7355, #6B5344); color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(107,83,68,0.2);"
-                                                        onmouseover="this.style.background='linear-gradient(135deg, #6B5344, #5A4333)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(107,83,68,0.3)';"
-                                                        onmouseout="this.style.background='linear-gradient(135deg, #8B7355, #6B5344)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(107,83,68,0.2)';">
-                                                        <span style="font-size: 16px;">&#8592;</span>
-                                                        Ozet Tabloya Don
-                                                    </button>
-                                                    <button onclick="reportManager.downloadSingleReport('${key}')" 
-                                                        style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: linear-gradient(135deg, #C86A3C, #B55D33); color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(200,106,60,0.2);"
-                                                        onmouseover="this.style.background='linear-gradient(135deg, #B55D33, #A04D28)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(200,106,60,0.3)';"
-                                                        onmouseout="this.style.background='linear-gradient(135deg, #C86A3C, #B55D33)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(200,106,60,0.2)';">
-                                                        <span class="material-icons-outlined" style="font-size: 16px;">download</span>
-                                                        Bu Raporu Indir (HTML)
-                                                    </button>
-                                                </div>
+                                                <button onclick="pageManager.goToOzetTablosu();" 
+                                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: linear-gradient(135deg, #8B7355, #6B5344); color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; margin-bottom: 16px; transition: all 0.2s ease; box-shadow: 0 2px 4px rgba(107,83,68,0.2);"
+                                                    onmouseover="this.style.background='linear-gradient(135deg, #6B5344, #5A4333)'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 8px rgba(107,83,68,0.3)';"
+                                                    onmouseout="this.style.background='linear-gradient(135deg, #8B7355, #6B5344)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(107,83,68,0.2)';">
+                                                    <span style="font-size: 16px;">&#8592;</span>
+                                                    Özet Tabloya Dön
+                                                </button>
                                                 ${data.html}
                                             </div>
                                         `).join('')}
@@ -5265,31 +5252,6 @@
                         </div>
                     </div>
                 `;
-            },
-
-            downloadZip: async () => {
-                const token = localStorage.getItem('authToken') || new URLSearchParams(window.location.search).get('token');
-                const url = token ? `/api/download-reports-zip?token=${token}` : '/api/download-reports-zip';
-                
-                try {
-                    utils.showMessage('ZIP dosyasi hazirlaniyor...', 'success');
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error('ZIP indirme hatasi');
-                    }
-                    const blob = await response.blob();
-                    const downloadUrl = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = downloadUrl;
-                    a.download = 'mudurluk_raporlari.zip';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    window.URL.revokeObjectURL(downloadUrl);
-                    utils.showMessage('ZIP dosyasi indirildi!', 'success');
-                } catch (error) {
-                    utils.showMessage('ZIP indirme hatasi: ' + error.message, 'error');
-                }
             },
 
             filterReports: (mudurlukKey) => {
