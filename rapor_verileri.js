@@ -851,7 +851,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">215/578 kişi (%37,2)</td>
             <td class="avg">%70,4</td>
-            <td class="diff negative">-33,2</td>
+            <td class="diff highlight-critical">-33,2</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -860,7 +860,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%91,9</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+1,1</td>
+            <td class="diff highlight-positive">+1,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -878,7 +878,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%77,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-4,9</td>
+            <td class="diff highlight">-4,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -887,7 +887,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+5,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-7,7</td>
+            <td class="diff highlight-critical">-7,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -896,13 +896,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%56,7</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+4,5 (olumsuz)</td>
+            <td class="diff highlight">+4,5 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%51,2</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+6,3 ↑</td>
+            <td class="diff highlight-warning">+6,3 ↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -1292,7 +1292,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">307/366 kişi (%83,9)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+13,5</td>
+            <td class="diff highlight-positive">+13,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -1301,7 +1301,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%95,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+4,3</td>
+            <td class="diff highlight-positive">+4,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -1310,7 +1310,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%62,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-6,8 ↓</td>
+            <td class="diff highlight-positive">-6,8 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -1319,7 +1319,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%86,8</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+4,5</td>
+            <td class="diff highlight-positive">+4,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -1328,7 +1328,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+24,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+11,3</td>
+            <td class="diff highlight">+11,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -1337,7 +1337,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%47,9</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-4,3 (olumlu)</td>
+            <td class="diff highlight-positive">-4,3 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -1742,7 +1742,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">27/38 kişi (%71,1)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+0,7</td>
+            <td class="diff highlight-positive">+0,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -1751,7 +1751,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%86,5</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-4,3</td>
+            <td class="diff highlight">-4,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -1760,7 +1760,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%82,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+13,2 ↑ ⚠️</td>
+            <td class="diff highlight-critical">+13,2 ↑ ⚠️</td>
         </tr>
         <tr>
             <td class="label">
@@ -1769,7 +1769,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,8</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-3,5</td>
+            <td class="diff highlight">-3,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -1778,7 +1778,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt; color:#c00;">-3,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-16,7 ⚠️</td>
+            <td class="diff highlight-critical">-16,7 ⚠️</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -1787,13 +1787,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%58,5</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+6,3 (olumsuz)</td>
+            <td class="diff highlight-warning">+6,3 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%62,5</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+17,6 ↑ ⚠️</td>
+            <td class="diff highlight-critical">+17,6 ↑ ⚠️</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -2172,7 +2172,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">8/10 kişi (%80,0)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+9,6</td>
+            <td class="diff highlight-positive">+9,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2181,7 +2181,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%85,7</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-5,1</td>
+            <td class="diff highlight-warning">-5,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -2190,7 +2190,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%50,9</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-18,2 ↓</td>
+            <td class="diff highlight-positive">-18,2 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -2199,7 +2199,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,6</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-3,7</td>
+            <td class="diff highlight">-3,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2208,7 +2208,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+27,7</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+14,5</td>
+            <td class="diff highlight-positive">+14,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2217,13 +2217,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%50,9</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-1,3 (olumlu)</td>
+            <td class="diff highlight-positive">-1,3 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%42,9</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-2,0 ↓</td>
+            <td class="diff highlight-positive">-2,0 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -2603,7 +2603,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">35/37 kişi (%94,6)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+24,2 ⭐</td>
+            <td class="diff highlight-positive">+24,2 ⭐</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2621,7 +2621,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%57,6</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-11,5 ↓ (olumlu)</td>
+            <td class="diff highlight-positive">-11,5 ↓ (olumlu)</td>
         </tr>
         <tr>
             <td class="label">
@@ -2630,7 +2630,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%76,7</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-5,6</td>
+            <td class="diff highlight-warning">-5,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2639,7 +2639,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+19,1</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+5,9</td>
+            <td class="diff highlight">+5,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -2654,7 +2654,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%34,5</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-10,4 (olumlu)</td>
+            <td class="diff highlight-positive">-10,4 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -3030,7 +3030,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">117/131 kişi (%89,3)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+18,9</td>
+            <td class="diff highlight-positive">+18,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3039,7 +3039,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%92,7</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+1,9</td>
+            <td class="diff highlight-positive">+1,9</td>
         </tr>
         <tr>
             <td class="label">
@@ -3048,7 +3048,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%63,6</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-5,5 ↓</td>
+            <td class="diff highlight-positive">-5,5 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -3057,7 +3057,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%85,9</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+3,6</td>
+            <td class="diff highlight-positive">+3,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3066,7 +3066,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+22,3</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+9,1</td>
+            <td class="diff highlight">+9,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -3075,13 +3075,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%48,0</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-4,2 (olumlu)</td>
+            <td class="diff highlight-positive">-4,2 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%43,6</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-1,3</td>
+            <td class="diff highlight-positive">-1,3</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -3480,7 +3480,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">89/97 kişi (%91,8)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+21,4</td>
+            <td class="diff highlight-positive">+21,4</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3498,7 +3498,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%75,2</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+6,0 ↑</td>
+            <td class="diff highlight-warning">+6,0 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -3516,7 +3516,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+5,2</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-8,0</td>
+            <td class="diff highlight-critical">-8,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -3525,13 +3525,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%55,6</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+3,4 (olumsuz)</td>
+            <td class="diff highlight">+3,4 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%36,4</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-8,5 ↓</td>
+            <td class="diff highlight-positive">-8,5 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -3932,7 +3932,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">18/19 kişi (%94,7)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+24,3</td>
+            <td class="diff highlight-positive">+24,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3950,7 +3950,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%60,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-8,8 ↓</td>
+            <td class="diff highlight-positive">-8,8 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -3959,7 +3959,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%84,2</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+1,9</td>
+            <td class="diff highlight-positive">+1,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -3968,7 +3968,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+23,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+10,7</td>
+            <td class="diff highlight">+10,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -3977,13 +3977,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%44,5</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-7,7 (olumlu)</td>
+            <td class="diff highlight-positive">-7,7 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%26,7</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-18,2 ↓</td>
+            <td class="diff highlight-positive">-18,2 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -4364,7 +4364,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">112/134 kişi (%83,7)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+13,3</td>
+            <td class="diff highlight-positive">+13,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -4373,7 +4373,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%83,2</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-7,6 ⚠️</td>
+            <td class="diff highlight-warning">-7,6 ⚠️</td>
         </tr>
         <tr>
             <td class="label">
@@ -4382,7 +4382,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%76,7</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+7,6 ↑</td>
+            <td class="diff highlight-warning">+7,6 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -4400,7 +4400,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+3,1</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-10,1</td>
+            <td class="diff highlight-critical">-10,1</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -4796,7 +4796,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">43/47 kişi (%91,5)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+21,1</td>
+            <td class="diff highlight-positive">+21,1</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -4805,7 +4805,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%87,5</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-3,3</td>
+            <td class="diff highlight">-3,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -4814,7 +4814,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%83,2</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+14,1 ↑↑</td>
+            <td class="diff highlight-critical">+14,1 ↑↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -4832,7 +4832,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">-2,3</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-15,5</td>
+            <td class="diff highlight-critical">-15,5</td>
         </tr>
         <tr>
             <td class="label">
@@ -4841,13 +4841,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%58,5</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+6,3 (olumsuz)</td>
+            <td class="diff highlight-warning">+6,3 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%28,6</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-16,3 ↓</td>
+            <td class="diff highlight-positive">-16,3 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -5241,7 +5241,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">26/26 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -5250,7 +5250,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%91,7</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+0,9</td>
+            <td class="diff highlight-positive">+0,9</td>
         </tr>
         <tr>
             <td class="label">
@@ -5259,7 +5259,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,6</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+9,5 ↑</td>
+            <td class="diff highlight-critical">+9,5 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -5277,7 +5277,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+1,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-11,7</td>
+            <td class="diff highlight-critical">-11,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -5286,13 +5286,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%56,7</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+4,5 (olumsuz)</td>
+            <td class="diff highlight">+4,5 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%14,3</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-30,6 ↓</td>
+            <td class="diff highlight-positive">-30,6 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -5694,7 +5694,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">21/21 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -5703,7 +5703,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%93,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+2,3</td>
+            <td class="diff highlight-positive">+2,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -5712,7 +5712,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%61,8</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-7,3 ↓</td>
+            <td class="diff highlight-positive">-7,3 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -5721,7 +5721,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%84,1</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+1,8</td>
+            <td class="diff highlight-positive">+1,8</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -5730,7 +5730,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+22,3</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+9,1</td>
+            <td class="diff highlight">+9,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -5739,13 +5739,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%47,6</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-4,6 (olumlu)</td>
+            <td class="diff highlight-positive">-4,6 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%38,9</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-6,0 ↓</td>
+            <td class="diff highlight-positive">-6,0 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -6144,7 +6144,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">34/39 kişi (%87,2)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+16,8</td>
+            <td class="diff highlight-positive">+16,8</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -6153,7 +6153,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%87,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-3,7</td>
+            <td class="diff highlight">-3,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -6162,7 +6162,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%79,9</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+10,8 ↑</td>
+            <td class="diff highlight-critical">+10,8 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -6171,7 +6171,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%77,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-4,9</td>
+            <td class="diff highlight">-4,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -6180,7 +6180,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">-2,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-15,7</td>
+            <td class="diff highlight-critical">-15,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -6195,7 +6195,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%54,8</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+9,9 ↑</td>
+            <td class="diff highlight-critical">+9,9 ↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -6593,7 +6593,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">39/41 kişi (%95,1)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+24,7</td>
+            <td class="diff highlight-positive">+24,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -6602,7 +6602,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%95,3</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+4,5</td>
+            <td class="diff highlight-positive">+4,5</td>
         </tr>
         <tr>
             <td class="label">
@@ -6611,7 +6611,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%61,0</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-8,1 ↓</td>
+            <td class="diff highlight-positive">-8,1 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -6620,7 +6620,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%85,2</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+2,9</td>
+            <td class="diff highlight-positive">+2,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -6629,7 +6629,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+24,2</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+11,0</td>
+            <td class="diff highlight">+11,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -6638,7 +6638,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%46,4</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-5,8 (olumlu)</td>
+            <td class="diff highlight-positive">-5,8 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -7028,7 +7028,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">28/37 kişi (%75,7)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+5,3</td>
+            <td class="diff highlight-positive">+5,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -7046,7 +7046,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%79,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+10,2 ↑</td>
+            <td class="diff highlight-critical">+10,2 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -7064,7 +7064,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+2,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-10,3</td>
+            <td class="diff highlight-critical">-10,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -7073,7 +7073,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%50,2</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-2,0 (olumlu)</td>
+            <td class="diff highlight-positive">-2,0 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
@@ -7466,7 +7466,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%58,4</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-10,7 ↓↓</td>
+            <td class="diff highlight-positive">-10,7 ↓↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -7484,7 +7484,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+21,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+8,7</td>
+            <td class="diff highlight">+8,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -7493,13 +7493,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%48,9</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-3,3 (olumlu)</td>
+            <td class="diff highlight-positive">-3,3 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%29,3</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-15,6 ↓↓</td>
+            <td class="diff highlight-positive">-15,6 ↓↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -7893,7 +7893,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">73/120 kişi (%60,8)</td>
             <td class="avg">%70,4</td>
-            <td class="diff negative">-9,6</td>
+            <td class="diff highlight-critical">-9,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -7911,7 +7911,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%80,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+11,2 ↑</td>
+            <td class="diff highlight-critical">+11,2 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -7929,7 +7929,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+1,7</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-11,5</td>
+            <td class="diff highlight-critical">-11,5</td>
         </tr>
         <tr>
             <td class="label">
@@ -7938,13 +7938,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%63,7</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+11,5 (olumsuz)</td>
+            <td class="diff highlight-critical">+11,5 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%62,7</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+17,8 ↑</td>
+            <td class="diff highlight-critical">+17,8 ↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -8335,7 +8335,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">17/17 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -8344,7 +8344,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%84,4</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-6,4</td>
+            <td class="diff highlight-warning">-6,4</td>
         </tr>
         <tr>
             <td class="label">
@@ -8353,7 +8353,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%68,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-0,8</td>
+            <td class="diff highlight-positive">-0,8</td>
         </tr>
         <tr>
             <td class="label">
@@ -8362,7 +8362,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%79,1</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-3,2</td>
+            <td class="diff highlight">-3,2</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -8371,7 +8371,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+10,8</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-2,4</td>
+            <td class="diff highlight-critical">-2,4</td>
         </tr>
         <tr>
             <td class="label">
@@ -8380,13 +8380,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%60,0</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+7,8 (olumsuz) ⚠️</td>
+            <td class="diff highlight-warning">+7,8 (olumsuz) ⚠️</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%25,0</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-19,9 ↓↓</td>
+            <td class="diff highlight-positive">-19,9 ↓↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -8783,7 +8783,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">25/30 kişi (%83,3)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+12,9</td>
+            <td class="diff highlight-positive">+12,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -8792,7 +8792,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%92,4</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+1,6</td>
+            <td class="diff highlight-positive">+1,6</td>
         </tr>
         <tr>
             <td class="label">
@@ -8801,7 +8801,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%72,6</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+3,5 ↑</td>
+            <td class="diff highlight">+3,5 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -8810,7 +8810,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,6</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-3,7</td>
+            <td class="diff highlight">-3,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -8819,7 +8819,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+6,0</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-7,2</td>
+            <td class="diff highlight-critical">-7,2</td>
         </tr>
         <tr>
             <td class="label">
@@ -8834,7 +8834,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%60,9</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+16,0 ↑</td>
+            <td class="diff highlight-critical">+16,0 ↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -9222,7 +9222,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">23/24 kişi (%95,8)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+25,4</td>
+            <td class="diff highlight-positive">+25,4</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -9240,7 +9240,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,7</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+9,6 ↑</td>
+            <td class="diff highlight-critical">+9,6 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -9258,7 +9258,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+0,7</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-12,5</td>
+            <td class="diff highlight-critical">-12,5</td>
         </tr>
         <tr>
             <td class="label">
@@ -9267,13 +9267,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%48,0</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-4,2 (olumlu)</td>
+            <td class="diff highlight-positive">-4,2 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%70,6</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+25,7 ↑↑</td>
+            <td class="diff highlight-critical">+25,7 ↑↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -9657,7 +9657,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">12/12 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -9666,7 +9666,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%84,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-6,7</td>
+            <td class="diff highlight-warning">-6,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -9693,7 +9693,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+11,1</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-2,1</td>
+            <td class="diff highlight-critical">-2,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -9708,7 +9708,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%54,5</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+9,6 ↑</td>
+            <td class="diff highlight-critical">+9,6 ↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -10093,7 +10093,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">9/9 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10102,7 +10102,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%86,1</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-4,7</td>
+            <td class="diff highlight">-4,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -10111,7 +10111,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%65,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-3,8</td>
+            <td class="diff highlight-positive">-3,8</td>
         </tr>
         <tr>
             <td class="label">
@@ -10120,7 +10120,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%85,2</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+2,9</td>
+            <td class="diff highlight-positive">+2,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10129,7 +10129,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+19,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+6,7</td>
+            <td class="diff highlight">+6,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -10144,7 +10144,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%22,2</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-22,7 ↓↓↓</td>
+            <td class="diff highlight-positive">-22,7 ↓↓↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -10524,7 +10524,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">7/7 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+46,3</td>
+            <td class="diff highlight-positive">+46,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10533,7 +10533,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%85,7</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-5,1</td>
+            <td class="diff highlight-warning">-5,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -10542,7 +10542,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%51,8</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-17,3 ↓↓</td>
+            <td class="diff highlight-positive">-17,3 ↓↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -10551,7 +10551,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%86,2</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+3,9</td>
+            <td class="diff highlight-positive">+3,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10560,7 +10560,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+34,4</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+21,2</td>
+            <td class="diff highlight-positive">+21,2</td>
         </tr>
         <tr>
             <td class="label">
@@ -10569,13 +10569,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%46,2</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-6,0 (olumlu)</td>
+            <td class="diff highlight-positive">-6,0 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%71,4</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+26,5 ↑↑</td>
+            <td class="diff highlight-critical">+26,5 ↑↑</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -10958,7 +10958,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">13/13 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10967,7 +10967,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%80,8</td>
             <td class="avg">%90,8</td>
-            <td class="diff negative">-10,0</td>
+            <td class="diff highlight-critical">-10,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -10976,7 +10976,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%53,9</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-15,2 ↓↓</td>
+            <td class="diff highlight-positive">-15,2 ↓↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -10985,7 +10985,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%78,4</td>
             <td class="avg">%82,3</td>
-            <td class="diff negative">-3,9</td>
+            <td class="diff highlight">-3,9</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -10994,7 +10994,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+24,5</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+11,3</td>
+            <td class="diff highlight">+11,3</td>
         </tr>
         <tr>
             <td class="label">
@@ -11003,13 +11003,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%48,1</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-4,1 (olumlu)</td>
+            <td class="diff highlight-positive">-4,1 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%30,8</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-14,1 ↓</td>
+            <td class="diff highlight-positive">-14,1 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -11375,7 +11375,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">12/12 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -11384,7 +11384,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%90,9</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+0,1</td>
+            <td class="diff highlight-positive">+0,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -11393,7 +11393,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%52,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-16,8 ↓</td>
+            <td class="diff highlight-positive">-16,8 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -11402,7 +11402,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%86,6</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+4,3</td>
+            <td class="diff highlight-positive">+4,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -11411,7 +11411,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+34,3</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+21,1</td>
+            <td class="diff highlight-positive">+21,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -11420,13 +11420,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%46,6</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-5,6 (olumlu)</td>
+            <td class="diff highlight-positive">-5,6 (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%27,3</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-17,6 ↓</td>
+            <td class="diff highlight-positive">-17,6 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -11773,7 +11773,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">16/16 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+36,3</td>
+            <td class="diff highlight-positive">+36,3</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -11782,7 +11782,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%98,4</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+7,6 ↑↑</td>
+            <td class="diff highlight-positive">+7,6 ↑↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -11791,7 +11791,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%67,1</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-2,0</td>
+            <td class="diff highlight-positive">-2,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -11800,7 +11800,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%90,0</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+7,7 ↑</td>
+            <td class="diff highlight-positive">+7,7 ↑</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -11809,7 +11809,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+22,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+9,7</td>
+            <td class="diff highlight">+9,7</td>
         </tr>
         <tr>
             <td class="label">
@@ -11818,13 +11818,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%39,2</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-13,0 ↓↓ (olumlu)</td>
+            <td class="diff highlight-positive">-13,0 ↓↓ (olumlu)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%43,8</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-1,1</td>
+            <td class="diff highlight-positive">-1,1</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -12202,7 +12202,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">6/6 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+49,6</td>
+            <td class="diff highlight-positive">+49,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -12211,7 +12211,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%95,8</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+5,0</td>
+            <td class="diff highlight-positive">+5,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -12220,7 +12220,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%56,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-12,8 ↓</td>
+            <td class="diff highlight-positive">-12,8 ↓</td>
         </tr>
         <tr>
             <td class="label">
@@ -12238,7 +12238,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+23,2</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+10,0</td>
+            <td class="diff highlight">+10,0</td>
         </tr>
         <tr>
             <td class="label">
@@ -12253,7 +12253,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%33,3</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-11,6 ↓</td>
+            <td class="diff highlight-positive">-11,6 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -12635,7 +12635,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">8/18 kişi (%44,4)</td>
             <td class="avg">%70,4</td>
-            <td class="diff negative">-26,0 ↓</td>
+            <td class="diff highlight-critical">-26,0 ↓</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -12644,7 +12644,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%96,9</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+6,1</td>
+            <td class="diff highlight-positive">+6,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -12662,7 +12662,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%84,5</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+2,2</td>
+            <td class="diff highlight-positive">+2,2</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -12671,7 +12671,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+15,0</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+1,8</td>
+            <td class="diff highlight-warning">+1,8</td>
         </tr>
         <tr>
             <td class="label">
@@ -12686,7 +12686,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%50,0</td>
             <td class="avg">%44,9</td>
-            <td class="diff negative">+5,1</td>
+            <td class="diff highlight-warning">+5,1</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -13064,7 +13064,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">56/85 kişi (%65,9)</td>
             <td class="avg">%70,4</td>
-            <td class="diff">-4,5</td>
+            <td class="diff highlight">-4,5</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -13073,7 +13073,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%91,7</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+0,9</td>
+            <td class="diff highlight-positive">+0,9</td>
         </tr>
         <tr>
             <td class="label">
@@ -13082,7 +13082,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%76,3</td>
             <td class="avg">%69,1</td>
-            <td class="diff negative">+7,2 ↑</td>
+            <td class="diff highlight-warning">+7,2 ↑</td>
         </tr>
         <tr>
             <td class="label">
@@ -13091,7 +13091,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%83,7</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+1,4</td>
+            <td class="diff highlight-positive">+1,4</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -13100,7 +13100,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+7,4</td>
             <td class="avg">+13,2</td>
-            <td class="diff negative">-5,8</td>
+            <td class="diff highlight-critical">-5,8</td>
         </tr>
         <tr>
             <td class="label">
@@ -13109,13 +13109,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%58,1</td>
             <td class="avg">%52,2</td>
-            <td class="diff negative">+5,9 (olumsuz)</td>
+            <td class="diff highlight-warning">+5,9 (olumsuz)</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%39,6</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-5,3</td>
+            <td class="diff highlight-positive">-5,3</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
@@ -13485,7 +13485,7 @@ const RAPOR_VERILERI = {
             <td class="label"><strong>Toplam Personel / Katılım</strong></td>
             <td class="value">12/12 kişi (%100)</td>
             <td class="avg">%70,4</td>
-            <td class="diff positive">+29,6</td>
+            <td class="diff highlight-positive">+29,6</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -13494,7 +13494,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">%90,9</td>
             <td class="avg">%90,8</td>
-            <td class="diff positive">+0,1</td>
+            <td class="diff highlight-positive">+0,1</td>
         </tr>
         <tr>
             <td class="label">
@@ -13503,7 +13503,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%59,1</td>
             <td class="avg">%69,1</td>
-            <td class="diff positive">-10,0 ↓ (Düşük)</td>
+            <td class="diff highlight-positive">-10,0 ↓ (Düşük)</td>
         </tr>
         <tr>
             <td class="label">
@@ -13512,7 +13512,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%85,0</td>
             <td class="avg">%82,3</td>
-            <td class="diff positive">+2,7</td>
+            <td class="diff highlight-positive">+2,7</td>
         </tr>
         <tr class="highlight-row">
             <td class="label">
@@ -13521,7 +13521,7 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value" style="font-size:12pt;">+25,9</td>
             <td class="avg">+13,2</td>
-            <td class="diff positive">+12,7 (Çok sağlıklı)</td>
+            <td class="diff highlight">+12,7 (Çok sağlıklı)</td>
         </tr>
         <tr>
             <td class="label">
@@ -13530,13 +13530,13 @@ const RAPOR_VERILERI = {
             </td>
             <td class="value">%38,4</td>
             <td class="avg">%52,2</td>
-            <td class="diff positive">-13,8 (BELEDİYE REKORU!) ✓</td>
+            <td class="diff highlight-positive">-13,8 (BELEDİYE REKORU!) ✓</td>
         </tr>
         <tr>
             <td class="label"><strong>Sigara Kullanımı</strong></td>
             <td class="value">%36,4</td>
             <td class="avg">%44,9</td>
-            <td class="diff positive">-8,5 ↓</td>
+            <td class="diff highlight-positive">-8,5 ↓</td>
         </tr>
         <tr>
             <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
