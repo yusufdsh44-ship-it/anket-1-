@@ -1,6 +1,8 @@
 import os
+import io
+import zipfile
 import hashlib
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, send_file
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from sqlalchemy.orm import DeclarativeBase
@@ -302,6 +304,34 @@ def serve_rapor_verileri():
     response.headers['Content-Type'] = 'application/javascript; charset=utf-8'
     response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
     return response
+
+
+@app.route('/api/download-reports-zip')
+def download_reports_zip():
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
+    reports_dir = os.path.join(os.path.dirname(__file__), 'reports')
+    
+    if not os.path.exists(reports_dir):
+        return jsonify({'success': False, 'error': 'Reports folder not found'}), 404
+    
+    memory_file = io.BytesIO()
+    
+    with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for filename in os.listdir(reports_dir):
+            if filename.endswith('.html'):
+                filepath = os.path.join(reports_dir, filename)
+                zf.write(filepath, filename)
+    
+    memory_file.seek(0)
+    
+    return send_file(
+        memory_file,
+        mimetype='application/zip',
+        as_attachment=True,
+        download_name='mudurluk_raporlari.zip'
+    )
 
 
 if __name__ == '__main__':
