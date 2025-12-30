@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Ulaşım Sistemleri Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Akıllı Ulaşım Sistemleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Akıllı Ulaşım Sistemleri Müdürlüğü, güçlü yönetici ilişkileri ve ekip uyumu ile işlevsel bir yapıda faaliyet göstermektedir. Akıllı Ulaşım Sistemleri Müdürlüğüne göre eğitim imkanlarının artırılması ve ücret politikasının gözden geçirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">18/19 kişi (%94,7)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+24,3</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%88,3</td>
+            <td class="avg">%90,8</td>
+            <td class="diff">-2,5</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%60,3</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-8,8 ↓</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%84,2</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">+1,9</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+23,9</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight">+10,7</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%44,5</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-7,7 (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%26,7</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-18,2 ↓</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">2 kişi (%11,1)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yönetici ilişkileri (%94,1):</strong> Belediye ortalamasının 7,3 puan üzerinde. Amir ulaşılabilirliği (%98,3) ve geri bildirim kalitesi (%93,3) çok yüksek.</li>
+<li><strong>Çalışma arkadaşları uyumu (%94,0):</strong> Belediye ortalamasının 7,1 puan üzerinde. Ekip dayanışması (%96,4) ve bilgi paylaşımı (%89,6) güçlü.</li>
+<li><strong>Kamu hizmeti motivasyonu (%94,4):</strong> Topluma hizmet gururu (%96,7) ve işin toplum için anlamlı olduğu düşüncesi (%95,0) çok yüksek.</li>
+<li><strong>Düşük iş stresi/yükü (%60,3):</strong> Belediye ortalamasının 8,8 puan altında. Özellikle vatandaş/başvuru yoğunluğu (%63,3) görece düşük.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Eğitim & Gelişim (%66,7):</strong> Belediye ortalamasının 9,1 puan altında. Eğitim faaliyetleri (%68,3) ve eğitimlerin katkısı (%65,0) düşük skorlu.</li>
+<li><strong>Ücret memnuniyeti (%53,3):</strong> Belediye ortalamasının (%69,0) 15,7 puan altında. Açık uçlu yorumlarda da ücret konusu vurgulanmış.</li>
+<li><strong>Yetkinlik & Performans (%75,0):</strong> Belediye ortalamasının 2,2 puan altında. Değerlendirme sonrası geri bildirim (%67,9) düşük.</li>
+<li><strong>Servis hizmeti (%62,5):</strong> Belediye ortalamasının (%67,7) 5,2 puan altında.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Teknik birim - Düşük stres dengesi:</strong> Akıllı ulaşım sistemleri gibi teknik bir birimde vatandaşla doğrudan temas az olduğundan iş stresi/yükü düşük (%60,3), bu da sağlıklı bir çalışma ortamı sağlıyor.</li>
+<li><strong>Yüksek ekip uyumu - Düşük ruh sağlığı riski:</strong> Çalışma arkadaşları uyumu (%94,0) ile düşük ruh sağlığı riski (%44,5) arasında pozitif korelasyon görülüyor.</li>
+<li><strong>Ücret memnuniyetsizliği:</strong> Genel memnuniyet (%88,3) belediye ortalamasının altında kalmasında ücret memnuniyetsizliği (%53,3) etkili olabilir. Açık uçlu yorumlarda da "ücretlerin iyileştirilmesi" talebi mevcut.</li>
+<li><strong>Sosyal medya Twitter/X kullanımı:</strong> Başkan (%40,0) ve Belediye (%40,0) Twitter hesapları belediye ortalamasının üzerinde takip ediliyor. Teknik personelin dijital platform kullanımına yatkınlığı olabilir.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Akıllı Ulaşım (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">92,6</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+1,3</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">88,8</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+2,2</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">60,3</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">-8,8</td>
+<td class="highlight-positive">Düşük stres (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">94,1</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-positive">+7,3</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">94,0</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+7,1</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">81,0</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+1,2</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">72,5</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+0,3</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">94,4</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+1,6</td>
+<td class="highlight-positive">Yüksek motivasyon</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">75,0</td>
+<td class="stat-value">77,2</td>
+<td class="highlight">-2,2</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">66,7</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-critical">-9,1</td>
+<td class="highlight-critical">Belirgin düşük</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Akıllı Ulaşım Sistemleri Müdürlüğü, 10 temadan 8'inde belediye ortalamasının üzerinde veya eşit performans göstermektedir. En yüksek skorlu alanlar yönetici ilişkileri (+7,3) ve çalışma arkadaşları (+7,1) iken, en düşük skorlu alan eğitim & gelişim (-9,1) olarak öne çıkmaktadır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Akıllı Ulaşım (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S8: Duygusal olarak zorlayıcı durumlarla karşılaşırım</strong></td>
+<td class="stat-value">50,0</td>
+<td>70,8</td>
+<td class="highlight-positive">-20,8 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S15: Kararlara katılma ve fikrimi söyleme fırsatı</strong></td>
+<td class="stat-value">96,7</td>
+<td>82,5</td>
+<td class="highlight-positive">+14,2</td>
+</tr>
+<tr>
+<td><strong>S22: Anlaşmazlıkları iş arkadaşlarımızla kendi aramızda çözeriz</strong></td>
+<td class="stat-value">95,0</td>
+<td>84,7</td>
+<td class="highlight-positive">+10,3</td>
+</tr>
+<tr>
+<td><strong>S19: Ekibimizde dayanışma güçlüdür</strong></td>
+<td class="stat-value">96,4</td>
+<td>87,0</td>
+<td class="highlight-positive">+9,4</td>
+</tr>
+<tr>
+<td><strong>S16: Amirim çalışanlara eşit yaklaşır</strong></td>
+<td class="stat-value">91,7</td>
+<td>82,8</td>
+<td class="highlight-positive">+8,9</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Akıllı Ulaşım (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S31: İş sağlığı ve güvenliği (İSG) uygulamaları yeterlidir</strong></td>
+<td class="stat-value">70,0</td>
+<td>76,3</td>
+<td class="highlight">-6,3</td>
+</tr>
+<tr>
+<td><strong>S41: Değerlendirme sonrasında yapıcı geri bildirim alırım</strong></td>
+<td class="stat-value">67,9</td>
+<td>74,2</td>
+<td class="highlight">-6,3</td>
+</tr>
+<tr>
+<td><strong>S42: Kurumda yapılan eğitim faaliyetlerini yeterli bulurum</strong></td>
+<td class="stat-value">68,3</td>
+<td>74,8</td>
+<td class="highlight">-6,5</td>
+</tr>
+<tr>
+<td><strong>S43: Eğitimler mesleki gelişimime katkı sağlar</strong></td>
+<td class="stat-value">65,0</td>
+<td>76,8</td>
+<td class="highlight-critical">-11,8</td>
+</tr>
+<tr>
+<td><strong>S34: Ücretler piyasa koşullarına göre makul</strong></td>
+<td class="stat-value">53,3</td>
+<td>69,0</td>
+<td class="highlight-critical">-15,7</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Akıllı Ulaşım Sistemleri'nde düşük iş stresi/yükü (%60,3) ile yüksek ekip uyumu (%94,0) arasındaki olumlu ilişki, düşük ruh sağlığı riski (%44,5) sonucunu desteklemektedir. Kararlara katılma fırsatı (S15: %96,7, +14,2) ve anlaşmazlık çözme becerisi (S22: %95,0, +10,3) birimin güçlü iç dinamiklerini yansıtmaktadır. Öte yandan ücret memnuniyetsizliği (S34: %53,3, -15,7) müdürlüğün en kritik sorunudur ve genel memnuniyetin (%88,3) belediye ortalamasının altında kalmasında belirleyici faktör olabilir. Eğitim alanındaki düşük skorlar (S42: %68,3; S43: %65,0) ile performans geri bildirimi eksikliği (S41: %67,9) birlikte değerlendirildiğinde, kariyer gelişimi ve yetkinlik artırma konusunda iyileştirme ihtiyacı ortaya çıkmaktadır.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Akıllı Ulaşım Sistemleri Müdürlüğü'nden <strong>2 kişi (%11,1)</strong> açık uçlu yorum yapmıştır:</p>
+
+<div class="quote">
+"Ücretlerin iyileştirilmesi gerektiğini düşünüyorum."
+</div>
+
+<div class="quote">
+"Personelin doğum günü, cenaze, evlilik ya da çocuğu olduğunda özel/genel mail gruplarına bilgilendirme veya tebrik maili atılması."
+</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yanıtlarda iki ana tema öne çıkmaktadır: (1) <strong>Ücret memnuniyetsizliği</strong> - bu bulgu, S34 sorusundaki düşük skor (%53,3) ile tutarlıdır. (2) <strong>Sosyal iletişim talebi</strong> - personelin özel günlerinde kurumsal düzeyde bilgilendirme yapılması talebi, kurum içi iletişim ve aidiyet duygusunu güçlendirme ihtiyacına işaret etmektedir.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Akıllı Ulaşım (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">44,5</td>
+<td>52,2</td>
+<td class="highlight-positive">-7,7</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">45,0</td>
+<td>56,1</td>
+<td class="highlight-positive">-11,1</td>
+<td class="highlight-positive">Ortalamanın belirgin altında</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">45,8</td>
+<td>50,9</td>
+<td class="highlight-positive">-5,1</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">46,2</td>
+<td>50,8</td>
+<td class="highlight-positive">-4,6</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">41,7</td>
+<td>50,9</td>
+<td class="highlight-positive">-9,2</td>
+<td class="highlight-positive">Ortalamanın belirgin altında</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">26,7</td>
+<td>44,9</td>
+<td class="highlight-positive">-18,2</td>
+<td class="highlight-positive">Belediyenin en düşük oranlarından</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Akıllı Ulaşım Sistemleri Müdürlüğü personelinin ruh sağlığı risk göstergeleri belediye ortalamasının altındadır (olumlu). Özellikle sigara kullanım oranı (%26,7), belediye ortalamasının (%44,9) çok altındadır. Düşük iş stresi/yükü (%60,3) ve güçlü ekip dayanışmasının (%96,4) bu olumlu tabloya katkı sağladığı düşünülebilir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Akıllı Ulaşım (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">80,0</td>
+<td>81,0</td>
+<td>-1,0</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">80,0</td>
+<td>76,9</td>
+<td class="highlight-positive">+3,1</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">40,0</td>
+<td>31,1</td>
+<td class="highlight-positive">+8,9</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">40,0</td>
+<td>29,3</td>
+<td class="highlight-positive">+10,7</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">40,0</td>
+<td>42,8</td>
+<td>-2,8</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">26,7</td>
+<td>39,6</td>
+<td class="highlight-critical">-12,9</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">13,3</td>
+<td>17,8</td>
+<td>-4,5</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">13,3</td>
+<td>17,6</td>
+<td>-4,3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Twitter/X kullanımı belediye ortalamasının belirgin üzerindedir (Başkan +10,7, Belediye +8,9). Bu durum, teknik bir birim olan Akıllı Ulaşım Sistemleri personelinin dijital platformlara yatkınlığını yansıtıyor olabilir. Facebook Başkan hesabı takibi ise ortalamanın altında kalmaktadır (-12,9).</p>
+
+<!-- ==================== #103 - BASIN VE YAYIN MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

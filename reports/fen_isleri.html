@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fen İşleri Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Fen İşleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Fen İşleri Müdürlüğü, güçlü kamu hizmeti motivasyonu ve görev netliğine sahip olmakla birlikte, anket sonuçlarına göre personel iş stresi/yüküni yüksek bulmaktadır. Fen İşleri Müdürlüğüne göre saha araçlarının yenilenmesi, iş yükü dengesinin gözden geçirilmesi, yönetici-çalışan ilişkilerinde adalet algısının güçlendirilmesi ve yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">73/120 kişi (%60,8)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-critical">-9,6</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%88,1</td>
+            <td class="avg">%90,8</td>
+            <td class="diff">-2,7</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%80,3</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-critical">+11,2 ↑</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%82,0</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">-0,3</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+1,7</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight-critical">-11,5</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%63,7</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-critical">+11,5 (olumsuz)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%62,7</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-critical">+17,8 ↑</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">10 kişi (%13,7)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kamu hizmeti motivasyonu (%90,9):</strong> Belediye ortalamasına yakın. Topluma hizmet gururu (%92,4) ve işin anlamlılığı (%92,8) yüksek.</li>
+<li><strong>İş-kişi uyumu (%90,8):</strong> Belediye ortalamasına yakın. Personel işinin yetenek/becerileriyle uyumlu olduğunu düşünüyor (%92,4).</li>
+<li><strong>Görev-rol netliği (%87,5):</strong> Belediye ortalamasının 0,9 puan üzerinde. Görev tanımları ve sorumluluklar net.</li>
+<li><strong>Yetkinlik & Performans (%80,7):</strong> Belediye ortalamasının 3,5 puan üzerinde. Performans değerlendirme kriterleri net bulunuyor (%83,6).</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yüksek iş stresi/yükü (%80,3):</strong> Belediye ortalamasının 11,2 puan üzerinde. Zaman sıkışıklığı (%79,3), görev yükü (%82,2) ve duygusal zorlayıcılık (%80,5) yüksek skorlu.</li>
+<li><strong>Amir eşitliği (%75,4):</strong> Belediye ortalamasının 7,4 puan altında. Açık uçlu yorumlarda adalet konusu da dile getirilmiş.</li>
+<li><strong>Anlaşmazlık çözümü (%75,0):</strong> Belediye ortalamasının 9,7 puan altında. Ekip içi sorun çözme mekanizması geliştirilmeye açık.</li>
+<li><strong>Ücret memnuniyeti (%61,6):</strong> Belediye ortalamasının 7,4 puan altında.</li>
+<li><strong>Sosyal medya takibi:</strong> Tüm platformlarda belediye ortalamasının altında. Özellikle Başkan Instagram (%54,2) dikkat çekici düşüklükte (-22,7).</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>JD-R modeli açısından kritik profil:</strong> Yüksek iş stresi/yükü (%80,3) ile düşük stres-destek dengesi (+1,7) kombinasyonu, anket sonuçlarına göre zorlanma göstergesi açısından izlenmesi gereken bir profil oluşturmaktadır.</li>
+<li><strong>Ruh sağlığı risk göstergeleri yüksek:</strong> Keyif alamama (%68,6 vs ort %56,1), gerginlik/kaygı (%60,1 vs ort %50,8) ve endişe kontrolü (%64,8 vs ort %50,9) belirgin yüksek. Bu durum yüksek iş stresi/yüküyle tutarlıdır.</li>
+<li><strong>Saha personeli araç sorunu:</strong> Açık uçlu yorumlarda saha araçlarının eski, konforsuz ve arızalı olduğu vurgulanmış. "Araziye çıktığımız araçlar çok kötü, bizi çok yoruyor" ifadesi dikkat çekici.</li>
+<li><strong>Yemek kalitesi şikayeti:</strong> Yorumlarda yemeklerin yağlı ve kalitesiz olduğu, vejetaryen seçenek bulunmadığı belirtilmiş.</li>
+<li><strong>Adaletsiz ceza sistemi:</strong> "Ceza vermek için bir gerekçe olsun ve cezalandırılan kişi neden cezalandırıldığını bilsin. Bu adalettir." ifadesi, amir eşitliği skorunun düşüklüğüyle (%75,4) tutarlı.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Fen İşleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">90,8</td>
+<td class="stat-value">91,3</td>
+<td>-0,5</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">87,5</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+0,9</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">80,3</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-critical">+11,2</td>
+<td class="highlight-critical">Yüksek stres (olumsuz)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">85,2</td>
+<td class="stat-value">86,8</td>
+<td class="highlight">-1,6</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">85,2</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-1,7</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">78,8</td>
+<td class="stat-value">79,8</td>
+<td class="highlight">-1,0</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">72,6</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+0,4</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">90,9</td>
+<td class="stat-value">92,8</td>
+<td class="highlight">-1,9</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">80,7</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+3,5</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">73,9</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-1,9</td>
+<td>Ortalama düzeyde</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Fen İşleri Müdürlüğü, 10 temadan 3'ünde belediye ortalamasının üzerinde performans göstermektedir. En yüksek skorlu alanlar yetkinlik & performans (+3,5) ve görev-rol netliği (+0,9) iken, iş stresi/yükü (+11,2 - yüksek stres olumsuz) en kritik alan olarak öne çıkmaktadır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Fen İşleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">73,7</td>
+<td>67,7</td>
+<td class="highlight-positive">+6,0</td>
+</tr>
+<tr>
+<td><strong>S30: Yemekhane/yemek hizmeti kalitesinden memnunum</strong></td>
+<td class="stat-value">62,7</td>
+<td>57,2</td>
+<td class="highlight-positive">+5,5</td>
+</tr>
+<tr>
+<td><strong>S40: Performansım düzenli aralıklarla değerlendirilir</strong></td>
+<td class="stat-value">82,2</td>
+<td>77,0</td>
+<td class="highlight-positive">+5,2</td>
+</tr>
+<tr>
+<td><strong>S41: Değerlendirme sonrasında yapıcı geri bildirim alırım</strong></td>
+<td class="stat-value">79,2</td>
+<td>74,2</td>
+<td class="">+5,0</td>
+</tr>
+<tr>
+<td><strong>S28: Bireysel çalışma alanım (masa, sandalye vb.) yeterlidir</strong></td>
+<td class="stat-value">82,8</td>
+<td>79,2</td>
+<td class="">+3,6</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Fen İşleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S10: Vatandaş/başvuru talep yoğunluğu fazladır</strong></td>
+<td class="stat-value">79,2</td>
+<td>70,6</td>
+<td class="highlight-critical">+8,6</td>
+</tr>
+<tr>
+<td><strong>S8: Duygusal olarak zorlayıcı durumlarla karşılaşırım</strong></td>
+<td class="stat-value">80,5</td>
+<td>70,8</td>
+<td class="highlight-critical">+9,7</td>
+</tr>
+<tr>
+<td><strong>S22: Anlaşmazlıkları iş arkadaşlarımızla kendi aramızda çözeriz</strong></td>
+<td class="stat-value">75,0</td>
+<td>84,7</td>
+<td class="highlight-critical">-9,7</td>
+</tr>
+<tr>
+<td><strong>S9: Görev yükü fazladır</strong></td>
+<td class="stat-value">82,2</td>
+<td>70,4</td>
+<td class="highlight-critical">+11,8 (yüksek stres)</td>
+</tr>
+<tr>
+<td><strong>S11: Zaman sıkışıklığı yaşarım</strong></td>
+<td class="stat-value">79,3</td>
+<td>64,7</td>
+<td class="highlight-critical">+14,6 (yüksek stres)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Fen İşleri Müdürlüğü, belediyenin en yüksek iş stresi/yüküne sahip birimlerinden biridir. Dört stres göstergesinin tamamı - zaman sıkışıklığı (S11: %79,3, +14,6), görev yükü (S9: %82,2, +11,8), duygusal zorlayıcılık (S8: %80,5, +9,7) ve vatandaş yoğunluğu (S10: %79,2, +8,6) - belediye ortalamasının çok üzerindedir. Bu yoğun iş temposuna rağmen servis (S32: %73,7, +6,0) ve performans değerlendirme (S40: %82,2, +5,2) skorları ortalamanın üzerinde olması, birimin operasyonel kapasitesinin güçlü olduğunu göstermektedir. Ancak ekip içi anlaşmazlık çözme becerisi (S22: %75,0, -9,7) düşük kalması, yüksek stres ortamında iletişim sorunları yaşandığına işaret edebilir. Bu stres profili, ruh sağlığı göstergeleriyle birlikte değerlendirilmelidir.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Fen İşleri Müdürlüğü'nden <strong>10 kişi (%13,7)</strong> açık uçlu yorum yapmıştır.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Saha Araçları Sorunu (3+ yorum):</strong></p>
+<div class="quote">"Araziye çıktığımız araçlar çok kötü. Aşırı sarsıntılarımız olduğundan arabalar bizi çok yoruyor."</div>
+<div class="quote">"Saha personelinin saha denetiminde kullandığı araçlar çok eski ve sık arıza yapıyor."</div>
+<div class="quote">"Saha personelleri için arabalar konforsuz. 1 gün arabada geçiyor, direksiyon ve debriyaj kullanışsız, bizi yoruyor."</div>
+
+<p><strong>2. Yemek Kalitesi (4+ yorum):</strong></p>
+<div class="quote">"Yemekhane yemeklerinde kalite bulunmuyor. Yemek kalitesinde iyileştirme yapılmalı."</div>
+<div class="quote">"Yemekhanede yemek yedikten sonra sürekli rahatsızlık hissediyorum. Yemekler olması gerekenden çok daha fazla yağlı oluyor."</div>
+<div class="quote">"Alternatif yemek seçeneği olmalı (vejetaryen biri olarak yemek yiyemiyorum)."</div>
+
+<p><strong>3. Adalet ve Ücret:</strong></p>
+<div class="quote">"Ceza vermek için bir gerekçe olsun ve cezalandırılan kişi neden cezalandırıldığını bilsin. Bu adalettir."</div>
+<div class="quote">"Kurum içinde daha fazla emek veren personellerin daha yüksek ücret alması gerektiğini düşünüyorum."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yanıtlarda en belirgin tema <strong>saha araçlarının yetersizliği</strong>dir - eski, konforsuz ve arızalı araçların personeli yorduğu vurgulanmaktadır. <strong>Yemek kalitesi</strong> ikinci önemli tema olup, yağlı yemekler ve vejetaryen seçenek eksikliği dile getirilmiştir. <strong>Adalet algısı</strong> konusundaki yorum, amir eşitliği skorunun düşüklüğüyle (%75,4) tutarlıdır.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Fen İşleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">63,7</td>
+<td>52,2</td>
+<td class="highlight-critical">+11,5</td>
+<td class="highlight-critical">(olumsuz)</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">68,6</td>
+<td>56,1</td>
+<td class="highlight-critical">+12,5</td>
+<td class="highlight-critical">(olumsuz)</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">60,6</td>
+<td>50,9</td>
+<td class="highlight-critical">+9,7</td>
+<td class="highlight-critical">(olumsuz)</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">60,1</td>
+<td>50,8</td>
+<td class="highlight-critical">+9,3</td>
+<td class="highlight-critical">(olumsuz)</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">64,8</td>
+<td>50,9</td>
+<td class="highlight-critical">+13,9</td>
+<td class="highlight-critical">(olumsuz)</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">62,7</td>
+<td>44,9</td>
+<td class="highlight-critical">+17,8</td>
+<td class="highlight-critical">Yüksek</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Fen İşleri Müdürlüğü personelinin ruh sağlığı risk göstergeleri belediye ortalamasının belirgin üzerindedir (olumsuz). Tüm alt göstergelerde +9 ile +14 puan arası farklar dikkat çekicidir. Bu durum, yüksek iş stresi/yükü (%80,3) ve zayıf stres-destek dengesi (+1,7) ile tutarlıdır. Sigara kullanımı (%62,7) belediye ortalamasının (%44,9) 17,8 puan üzerindedir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Fen İşleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">74,6</td>
+<td>81,0</td>
+<td class="highlight">-6,4</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">54,2</td>
+<td>76,9</td>
+<td class="highlight-critical">-22,7</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">22,0</td>
+<td>31,1</td>
+<td class="highlight">-9,1</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">15,3</td>
+<td>29,3</td>
+<td class="highlight-critical">-14,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">28,8</td>
+<td>42,8</td>
+<td class="highlight-critical">-14,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">28,8</td>
+<td>39,6</td>
+<td class="highlight">-10,8</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">6,8</td>
+<td>17,8</td>
+<td class="highlight">-11,0</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">6,8</td>
+<td>17,6</td>
+<td class="highlight">-10,8</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Fen İşleri Müdürlüğü, tüm sosyal medya platformlarında belediye ortalamasının altında takip oranlarına sahiptir. Özellikle Başkan Instagram hesabı takibi (%54,2) belediye ortalamasının (%76,9) 22,7 puan altındadır - bu belediyenin en düşük oranlarından biridir. Bu durum, saha ağırlıklı çalışan personelin sosyal medya kullanım alışkanlıklarıyla ilişkili olabilir.</p>
+
+<!-- ==================== #107 - GELİRLER MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosyal Destek Hizmetleri Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Sosyal Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Sosyal Destek Hizmetleri Müdürlüğü, güçlü kamu hizmeti motivasyonuna sahip olmakla birlikte, yüksek iş stresi/yükü ve belirsiz görev tanımları nedeniyle zorlu bir çalışma ortamına sahiptir. Görev-rol netliğinin artırılması, eğitim faaliyetlerinin güçlendirilmesi ve stres yönetimi desteği sağlanması önerilmektedir.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">89/97 kişi (%91,8)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+21,4</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%89,9</td>
+            <td class="avg">%90,8</td>
+            <td class="diff">-0,9</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar)</span>
+            </td>
+            <td class="value">%75,2</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-warning">+6,0 ↑</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları vb.)</span>
+            </td>
+            <td class="value">%80,4</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">-1,9</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+5,2</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight-critical">-8,0</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%55,6</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight">+3,4 (olumsuz)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%36,4</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-8,5 ↓</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">37 kişi (%41,6)</td>
+            <td class="avg">-</td>
+            <td class="diff">Yüksek katılım</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kamu hizmeti motivasyonu (%95,0):</strong> Belediyenin en yüksek skorlarından biri. Topluma hizmet gururu (%97,4) çok yüksek.</li>
+<li><strong>Yüksek yorum oranı (%41,6):</strong> 89 kişiden 37'si açık uçlu yorum yapmış - personelin görüşlerini ifade etme konusunda cesaretli olduğunu göstermektedir.</li>
+<li><strong>Servis hizmeti (%74,7):</strong> Belediye ortalamasının 7 puan üzerinde.</li>
+<li><strong>Ücret memnuniyeti (%73,4):</strong> Belediye ortalamasının 4,4 puan üzerinde.</li>
+<li><strong>İş-kişi uyumu (%91,4):</strong> Personel yaptığı işi anlamlı buluyor.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Görev-rol netliği (%78,4):</strong> Belediye ortalamasının 8,2 puan altında. Sorumluluk alanları ve görev tanımları net değil.</li>
+<li><strong>Eğitim & gelişim (%67,8):</strong> Belediye ortalamasının 8 puan altında. Eğitim faaliyetleri yetersiz bulunuyor.</li>
+<li><strong>Yüksek iş stresi/yükü (%75,1):</strong> Vatandaş yoğunluğu (%78,3) ve zaman sıkışıklığı (%71,3) yüksek.</li>
+<li><strong>Ekip uyumu (%82,7):</strong> Belediye ortalamasının 4,2 puan altında.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Sosyal hizmet paradoksu:</strong> Kamu hizmeti motivasyonu çok yüksek (%95) ancak görev-rol netliği düşük (%78,4). Personel işini seviyor ama görev sınırları belirsiz.</li>
+<li><strong>Yüksek vatandaş yoğunluğu:</strong> Sosyal destek birimi olması nedeniyle yoğun vatandaş trafiği doğal, ancak bu stres kaynağı oluşturuyor.</li>
+<li><strong>Zayıf stres-destek dengesi (+3,1):</strong> Belediye ortalamasının 10 puan altında. Yüksek stres yeterli destekle karşılanmıyor.</li>
+<li><strong>Ruh sağlığı riski:</strong> Tüm ruh sağlığı göstergeleri belediye ortalamasının üzerinde - izlenmesi gereken bir durum.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Sosyal Destek (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">91,4</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+0,1</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">78,4</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-critical">-8,2</td>
+<td class="highlight-critical">Düşük ⚠️</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü</strong></td>
+<td class="stat-value">75,2</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">+6,1</td>
+<td class="highlight-critical">Yüksek (olumsuz) ⚠️</td>
+</tr>
+<tr>
+<td><strong>Yönetici İlişkileri</strong></td>
+<td class="stat-value">84,1</td>
+<td class="stat-value">86,8</td>
+<td>-2,7</td>
+<td>Ortalamanın biraz altında</td>
+</tr>
+<tr>
+<td><strong>Ekip Uyumu</strong></td>
+<td class="stat-value">82,7</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-4,2</td>
+<td>Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kurumsal İletişim</strong></td>
+<td class="stat-value">79,8</td>
+<td class="stat-value">79,8</td>
+<td>0,0</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">73,7</td>
+<td class="stat-value">72,4</td>
+<td class="highlight-positive">+1,2</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Ücret</strong></td>
+<td class="stat-value">73,4</td>
+<td class="stat-value">69,0</td>
+<td class="highlight-positive">+4,4</td>
+<td>Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">95,0</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+2,2</td>
+<td class="highlight-positive">Yüksek ✓</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">76,0</td>
+<td class="stat-value">77,2</td>
+<td>-1,3</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">67,8</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-critical">-8,0</td>
+<td class="highlight-critical">Düşük ⚠️</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Bazlı Değerlendirme:</strong> Sosyal Destek Hizmetleri Müdürlüğü, kamu hizmeti motivasyonunda (%95,0) belediyenin en yüksek skorlarından birine sahipken, görev-rol netliği (%78,4, -8,2) ve eğitim & gelişim (%67,8, -8,0) alanlarında ciddi eksiklikler görülmektedir. Yüksek iş stresi/yükü (%75,1, +6,0) sosyal hizmet birimlerinin doğası gereği beklenen bir durum olmakla birlikte, düşük kurum desteği ile birleştiğinde zorlanma göstergesi oluşturmaktadır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Sosyal Destek (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">74,7</td>
+<td>67,7</td>
+<td class="highlight-positive">+7,0</td>
+</tr>
+<tr>
+<td><strong>S34: Ücretler piyasa koşullarına göre makul</strong></td>
+<td class="stat-value">73,4</td>
+<td>69,0</td>
+<td class="highlight-positive">+4,4</td>
+</tr>
+<tr>
+<td><strong>S24: Belediyedeki karar ve gelişmelerden haberdar edilirim</strong></td>
+<td class="stat-value">83,4</td>
+<td>80,4</td>
+<td class="highlight-positive">+3,0</td>
+</tr>
+<tr>
+<td><strong>S35: Topluma hizmet etmekten gurur duyuyorum</strong></td>
+<td class="stat-value">97,4</td>
+<td>94,5</td>
+<td class="highlight-positive">+2,9</td>
+</tr>
+<tr>
+<td><strong>S30: Yemekhane/yemek hizmeti kalitesinden memnunum</strong></td>
+<td class="stat-value">59,8</td>
+<td>57,2</td>
+<td class="">+2,6</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Sosyal Destek (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S11: Zaman sıkışıklığı yaşarım</strong></td>
+<td class="stat-value">71,3</td>
+<td>64,7</td>
+<td class="highlight">+6,6</td>
+</tr>
+<tr>
+<td><strong>S10: Vatandaş/başvuru talep yoğunluğu fazladır</strong></td>
+<td class="stat-value">78,3</td>
+<td>70,6</td>
+<td class="highlight">+7,7</td>
+</tr>
+<tr>
+<td><strong>S42: Kurumda yapılan eğitim faaliyetlerini yeterli bulurum</strong></td>
+<td class="stat-value">65,3</td>
+<td>74,8</td>
+<td class="highlight-critical">-9,5</td>
+</tr>
+<tr>
+<td><strong>S4: Görev tanımım ve sorumluluklarım açıktır</strong></td>
+<td class="stat-value">78,6</td>
+<td>88,4</td>
+<td class="highlight-critical">-9,8</td>
+</tr>
+<tr>
+<td><strong>S5: Birimimde işlerin kimin sorumluluğunda olduğu açıktır</strong></td>
+<td class="stat-value">76,6</td>
+<td>86,6</td>
+<td class="highlight-critical">-10,0</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Topluma hizmet gururu (S35: %97,4, +2,9) belediyenin en yüksek skorlarından biri iken, görev tanımı netliği (S4: %78,6, -9,8) ve sorumluluk alanları (S5: %76,6, -10,0) belediyenin en düşük skorları arasındadır - personel işini seviyor ancak "kimin ne yapacağı" konusunda belirsizlik yaşıyor. Vatandaş yoğunluğu (S10: %78,3, +7,7) ve zaman sıkışıklığı (S11: %71,3, +6,6) yüksek olup, sosyal hizmet birimlerinin yoğun iş temposuyla tutarlıdır. Eğitim yeterliliği (S42: %65,3, -9,5) düşük kalması, zorlu vakalara müdahale için yeterli eğitim verilmediğine işaret etmektedir. Servis hizmeti (S32: %74,7, +7,0) ve ücret memnuniyeti (S34: %73,4, +4,4) belediye ortalamasının üzerinde olması, kurumsal destek hizmetlerinin görece iyi durumda olduğunu göstermektedir.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Sosyal Destek Hizmetleri Müdürlüğü'nden <strong>37 kişi (%41,6)</strong> açık uçlu yorum yapmıştır - belediyenin en yüksek yorum oranlarından biridir.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Eğitim ve Etkinlik Talepleri (6+ yorum):</strong></p>
+<div class="quote">"Kurum içi etkinlikler, kişisel gelişim kursları, belediye personelleri ile geziler arttırılmalı, ilk yardım, afet eğitimleri her personele eğitim verilmeli."</div>
+<div class="quote">"Kurum içi eğitimlerin sık olması gerektiğini ve çeşitli etkinliklerle iş ortamının daha keyifli hale getirilmesini, workshop düzenlemesinin iş verimini arttıracağını düşünüyorum."</div>
+<div class="quote">"Birimimiz içerisinde eğitimler arttırılabilir."</div>
+
+<p><strong>2. Yönetim ve İletişim Sorunları (5 yorum):</strong></p>
+<div class="quote">"Müdürlükler içerisinde şef veya koordinatör gibi yetkili kişiler, zaman zaman yetkilerini kullanırken üstten konuşma tarzı sergileyebilmektedir. Bu durum, çalışma ortamında huzursuzluğa neden olmaktadır."</div>
+<div class="quote">"Herkes çalıştığı mesleğini yapmak ister. Bizim birimde kimse kendi mesleğini yapmıyor. Müdür, şef, koordinatör çalışanlarına mobbing yapılıyor."</div>
+<div class="quote">"Belediyemizde şefler ve amirler arasında personel ayrımcılığı olduğunu düşünüyorum."</div>
+
+<p><strong>3. Maaş ve Özlük Hakları (5 yorum):</strong></p>
+<div class="quote">"Meslek elemanları ve ofis elemanları arasındaki maaş farkının bir tık iyileştirilmesini rica ederim."</div>
+<div class="quote">"Maaşlarla ilgili biraz iyileştirme olabilir."</div>
+<div class="quote">"Moral ve motivasyon gezileri, maaşların iyileştirilmesi, çalışma sisteminin daha adil olması."</div>
+
+<p><strong>4. Servis Hizmetleri (3 yorum):</strong></p>
+<div class="quote">"Uzak mesafeden geldiğim için daha önce olan servisimiz kaldırıldı."</div>
+<div class="quote">"Servis hizmetinin ilçe dışında da kullanılması konusunda, ilçe dışından gelen çalışma arkadaşlarımız sıkıntı yaşıyor."</div>
+
+<p><strong>5. Sosyal Tesisler ve İndirimler (4 yorum):</strong></p>
+<div class="quote">"Sosyal tesislerde indirim yeterli değil, çalışan performansı artırmak için şehir dışında geziler yapılmasını isterim."</div>
+<div class="quote">"Sosyal tesislerdeki personel indirimi yetersiz."</div>
+
+<p><strong>6. Olumlu Geri Bildirimler (3 yorum):</strong></p>
+<div class="quote">"Öncelikle belediyede ve Sosyal Destek'te çalışmaktan mutluyum."</div>
+<div class="quote">"Kurumumuzdan genel anlamda çok memnunum."</div>
+
+<p><strong>Yorum Analizi:</strong> En sık dile getirilen konular <strong>eğitim talepleri</strong> ve <strong>yönetim/iletişim sorunlarıdır</strong>. Eğitim taleplerinin yoğunluğu, düşük eğitim skoru (%67,8, -8,0) ile tutarlıdır. Yönetim şikayetlerinde "mobbing", "ayrımcılık" ve "üstten konuşma" gibi ifadeler dikkat çekmektedir - bu durum görev-rol netliği eksikliği (%78,4, -8,2) ile birlikte değerlendirildiğinde, birim içi iletişim ve yetki kullanımında iyileştirme ihtiyacına işaret etmektedir.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Sosyal Destek (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S46: Keyif/İlgi Kaybı</strong></td>
+<td class="stat-value">58,0</td>
+<td>56,1</td>
+<td class="highlight">+1,9</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">55,2</td>
+<td>50,9</td>
+<td class="highlight">+4,3</td>
+<td>Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">54,6</td>
+<td>50,8</td>
+<td class="highlight">+3,8</td>
+<td>Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">54,5</td>
+<td>50,9</td>
+<td class="highlight">+3,6</td>
+<td>Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">36,4</td>
+<td>44,9</td>
+<td class="highlight-positive">-8,5</td>
+<td class="highlight-positive">Düşük (olumlu)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Sosyal Destek Hizmetleri Müdürlüğü personelinin ruh sağlığı göstergeleri belediye ortalamasının <strong>3-4 puan üzerindedir</strong>. Özellikle üzgün/çökkün hissetme (%55,2, +4,3) ve gergin/kaygılı hissetme (%54,6, +3,8) dikkat çekicidir. Sosyal hizmet personelinin zorlu vakalarla (yoksulluk, aile sorunları, engelli bakımı vb.) sürekli temas halinde olması, bu sonuçları açıklayabilir. Düzenli süpervizyon ve psikolojik destek mekanizmaları oluşturulması önerilmektedir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Sosyal Destek (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram - Belediye</strong></td>
+<td class="stat-value">87,0</td>
+<td>81,0</td>
+<td class="highlight-positive">+6,0</td>
+</tr>
+<tr>
+<td><strong>Instagram - Başkan</strong></td>
+<td class="stat-value">85,7</td>
+<td>76,9</td>
+<td class="highlight-positive">+8,8</td>
+</tr>
+<tr>
+<td><strong>Twitter/X - Belediye</strong></td>
+<td class="stat-value">31,2</td>
+<td>31,1</td>
+<td class="">+0,1</td>
+</tr>
+<tr>
+<td><strong>Twitter/X - Başkan</strong></td>
+<td class="stat-value">26,0</td>
+<td>29,3</td>
+<td class="">-3,3</td>
+</tr>
+<tr>
+<td><strong>Facebook - Belediye</strong></td>
+<td class="stat-value">33,8</td>
+<td>42,8</td>
+<td class="">-9,0</td>
+</tr>
+<tr>
+<td><strong>Facebook - Başkan</strong></td>
+<td class="stat-value">31,2</td>
+<td>39,6</td>
+<td class="">-8,4</td>
+</tr>
+<tr>
+<td><strong>NextSosyal - Belediye</strong></td>
+<td class="stat-value">15,6</td>
+<td>17,8</td>
+<td class="">-2,2</td>
+</tr>
+<tr>
+<td><strong>NextSosyal - Başkan</strong></td>
+<td class="stat-value">15,6</td>
+<td>17,6</td>
+<td class="">-2,0</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Instagram takip oranları belediye ortalamasının üzerindedir (Belediye: +6,0; Başkan: +8,8). Facebook ve NextSosyal takip oranları ortalamanın altında kalmaktadır.</p>
+
+<div class="page-break"></div>
+    </div>
+</body>
+</html>

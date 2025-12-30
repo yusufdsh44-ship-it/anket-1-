@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destek Hizmetleri Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Destek Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Destek Hizmetleri Müdürlüğü, yüksek memnuniyet ve güçlü çalışma koşulları ile belediyenin en olumlu performans gösteren birimlerinden biridir. Destek Hizmetleri Müdürlüğüne göre mesai dışı çalışma taleplerinin düzenlenmesi, saha personeli için araç/ekipman desteğinin artırılması ve vardiyalı çalışanların yemek hizmetinin iyileştirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">307/366 kişi (%83,9)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+13,5</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%95,1</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-positive">+4,3</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%62,3</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-6,8 ↓</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%86,8</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">+4,5</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+24,5</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight">+11,3</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%47,9</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-4,3 (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%46,0</td>
+            <td class="avg">%44,9</td>
+            <td class="diff">+1,1</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">28 kişi (%9,1)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kamu hizmeti motivasyonu (%94,4):</strong> Belediye ortalamasının 1,6 puan üzerinde. Topluma hizmet gururu (%94,8) ve işin anlamlılığı (%94,3) yüksek.</li>
+<li><strong>İş-kişi uyumu (%93,4):</strong> Belediye ortalamasının 2,1 puan üzerinde. Personel işini anlamlı buluyor (%93,8) ve işi seçtiği için mutlu (%93,8).</li>
+<li><strong>Çalışma arkadaşları (%88,3):</strong> Belediye ortalamasının 1,4 puan üzerinde. Ekip uyumu (%93,0) ve dayanışma (%88,6) güçlü.</li>
+<li><strong>Çalışma koşulları (%82,6):</strong> Belediye ortalamasının 10,4 puan üzerinde. Temizlik (%87,6), ısıtma/soğutma (%84,1), ortak alanlar (%85,2) ve servis (%82,4) skorları yüksek.</li>
+<li><strong>Eğitim & Gelişim (%86,1):</strong> Belediye ortalamasının 10,3 puan üzerinde. Eğitim faaliyetleri (%85,9) ve eğitimlerin katkısı (%86,3) çok olumlu.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yemekhane hizmeti (%70,0):</strong> Belediye ortalamasının üzerinde olsa da açık uçlu yorumlarda vardiyalı çalışanların yemek hizmeti talebi mevcut.</li>
+<li><strong>Mesai dışı çalışma talepleri:</strong> Açık uçlu yorumlarda gece saatlerinde ve izin günlerinde paylaşım/çalışma talep edilmesinden şikayet var.</li>
+<li><strong>Araç/ekipman eksikliği:</strong> Özellikle güvenlik personeli ve mesire alanı çalışanları için devriye aracı talebi belirgin.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Belediyenin en büyük müdürlüğü:</strong> 366 personel ile en kalabalık birim. %83,9 katılım oranı ile 307 kişiden veri toplanmış - bu örneklem istatistiksel olarak güçlü.</li>
+<li><strong>Yüksek memnuniyet - Düşük stres kombinasyonu:</strong> %95,1 genel memnuniyet ve %62,3 iş stresi/yükü ile belediyenin en dengeli birimlerinden biri.</li>
+<li><strong>Çalışma koşulları memnuniyeti:</strong> Çalışma koşulları skoru (%82,6) belediye ortalamasının (%72,2) 10,4 puan üzerinde - bu müdürlüğün en güçlü yönlerinden biri.</li>
+<li><strong>Mesai dışı çalışma sorunu:</strong> Açık uçlu yorumlarda "gece saatlerinde paylaşım isteniyor", "izin günlerinde çalışma talep ediliyor" ifadeleri dikkat çekici. İş-yaşam dengesi konusunda hassasiyet mevcut.</li>
+<li><strong>Güvenlik personeli özel talepleri:</strong> Devriye aracı, kamera sistemi iyileştirmesi, spor salonu erişimi gibi saha çalışanlarına özgü talepler var.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Destek Hiz. (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">93,4</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+2,1</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">89,4</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+2,8</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">62,3</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-6,8</td>
+<td class="highlight-positive">Düşük stres (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">86,6</td>
+<td class="stat-value">86,8</td>
+<td>-0,2</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">88,3</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+1,4</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">84,5</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+4,7</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">82,6</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+10,4</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">94,4</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+1,6</td>
+<td class="highlight-positive">Yüksek motivasyon</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">82,7</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+5,5</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">86,1</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-positive">+10,3</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Destek Hizmetleri Müdürlüğü, 10 temanın 9'unda belediye ortalamasının üzerinde veya eşit performans göstermektedir. En güçlü alanlar çalışma koşulları (+10,4) ve eğitim & gelişim (+10,3) iken, yöneticilerle ilişkiler (-0,2) tek negatif fark gösteren temadır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Destek Hizmetleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S29: Ortak alanlar yeterlidir</strong></td>
+<td class="stat-value">85,2</td>
+<td>70,4</td>
+<td class="highlight-positive">+14,8</td>
+</tr>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">82,4</td>
+<td>67,7</td>
+<td class="highlight-positive">+14,7</td>
+</tr>
+<tr>
+<td><strong>S30: Yemekhane/yemek hizmeti kalitesinden memnunum</strong></td>
+<td class="stat-value">70,0</td>
+<td>57,2</td>
+<td class="highlight-positive">+12,8</td>
+</tr>
+<tr>
+<td><strong>S42: Kurumda yapılan eğitim faaliyetlerini yeterli bulurum</strong></td>
+<td class="stat-value">85,9</td>
+<td>74,8</td>
+<td class="highlight-positive">+11,1</td>
+</tr>
+<tr>
+<td><strong>S27: Isıtma/soğutma sistemleri yeterlidir</strong></td>
+<td class="stat-value">84,1</td>
+<td>74,1</td>
+<td class="highlight-positive">+10,0</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Destek Hizmetleri (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S15: Kararlara katılma ve fikrimi söyleme fırsatı</strong></td>
+<td class="stat-value">82,4</td>
+<td>82,5</td>
+<td class="">-0,1</td>
+</tr>
+<tr>
+<td><strong>S20: Bilgi ve deneyim paylaşımı yaygındır</strong></td>
+<td class="stat-value">85,3</td>
+<td>85,4</td>
+<td class="">-0,1</td>
+</tr>
+<tr>
+<td><strong>S14: Amirim destek olmak için çaba gösterir</strong></td>
+<td class="stat-value">86,3</td>
+<td>86,7</td>
+<td class="">-0,4</td>
+</tr>
+<tr>
+<td><strong>S17: Amirim bana karşı saygılıdır</strong></td>
+<td class="stat-value">89,3</td>
+<td>89,9</td>
+<td class="">-0,6</td>
+</tr>
+<tr>
+<td><strong>S16: Amirim çalışanlara eşit yaklaşır</strong></td>
+<td class="stat-value">81,4</td>
+<td>82,8</td>
+<td class="">-1,4</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Destek Hizmetleri Müdürlüğü, tüm sorularda belediye ortalamasına yakın veya üzerinde performans sergileyerek dengeli bir profil çizmektedir. Fiziksel koşullar kategorisinde belirgin üstünlük göze çarpmaktadır: ortak alanlar (S29: %85,2, +14,8), servis (S32: %82,4, +14,7) ve yemekhane (S30: %70,0, +12,8). Bu durum, birimin kendi hizmet alanlarında (destek hizmetleri) başarılı olduğuna işaret etmektedir. "Geliştirilmesi gereken" olarak sınıflandırılan alanlar bile belediye ortalamasına çok yakındır (en büyük negatif fark -1,4 puan), bu da müdürlüğün genel olarak sorunsuz işlediğini göstermektedir.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Destek Hizmetleri Müdürlüğü'nden <strong>28 kişi (%9,1)</strong> açık uçlu yorum yapmıştır.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Mesai Dışı Çalışma Talepleri (3+ yorum):</strong></p>
+<div class="quote">"Gece saatlerinde paylaşım isteniyor, paylaşımlar gece saatlerinde ve izin günlerinde istenilmesin."</div>
+<div class="quote">"Mesai saatleri dışında saat farketmeksizin sürekli paylaşım yapmak talebinde bulunuluyor. Bu durum özel yaşantımı ve bireysel performansımı olumsuz etkiliyor."</div>
+
+<p><strong>2. Araç/Ekipman İhtiyacı (5+ yorum):</strong></p>
+<div class="quote">"Bir devriye aracı verilebilir. Alan çok karanlık ve hayvanlar olabiliyor."</div>
+<div class="quote">"Devriye aracımız yok. Acil bir durum olduğunda hızlıca yetişemiyoruz."</div>
+<div class="quote">"İmrahor mesire alanı için bir ulaşım vasıtası gereklidir."</div>
+
+<p><strong>3. Kamera/Güvenlik Sistemleri (2+ yorum):</strong></p>
+<div class="quote">"Çalıştığımız birimlerin kamera görüntü kalitesini arttırmak faydalı olur."</div>
+
+<p><strong>4. Vardiyalı Çalışan Hizmetleri (2+ yorum):</strong></p>
+<div class="quote">"Vardiyalı çalışanların servis ve yemek hizmeti almasını isterdim."</div>
+<div class="quote">"Mesaiye kaldığımız zamanlar acıkıyoruz, aç karına çalışırken zorlanıyoruz."</div>
+
+<p><strong>5. Sosyal İmkanlar:</strong></p>
+<div class="quote">"Spor salonları ücretsiz olsun."</div>
+<div class="quote">"Güvenlik görevlilerine spor salonları ücretsiz veya düşük bir miktar olursa iyi olur."</div>
+
+<p><strong>6. Ekip İçi İletişim:</strong></p>
+<div class="quote">"Çalışma arkadaşlarımızda genel olarak anlaşmazlıklar var. Çoğunlukla iletişim bozukluğu karşı tarafı zor durumda bırakıyor."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yanıtlarda en belirgin tema <strong>saha personelinin araç/ekipman ihtiyacı</strong>dır. Özellikle güvenlik ve mesire alanı personeli devriye aracı talep etmektedir. <strong>Mesai dışı çalışma talepleri</strong> iş-yaşam dengesi açısından dikkat çekici bir sorundur. Genel memnuniyet yüksek olmasına rağmen, operasyonel düzeyde iyileştirme beklentileri mevcuttur.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Destek Hiz. (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">47,9</td>
+<td>52,2</td>
+<td class="highlight-positive">-4,3</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">52,3</td>
+<td>56,1</td>
+<td class="highlight-positive">-3,8</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">46,5</td>
+<td>50,9</td>
+<td class="highlight-positive">-4,4</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">46,0</td>
+<td>50,8</td>
+<td class="highlight-positive">-4,8</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">46,6</td>
+<td>50,9</td>
+<td class="highlight-positive">-4,3</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">46,0</td>
+<td>44,9</td>
+<td>+1,1</td>
+<td>Ortalama düzeyde</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Destek Hizmetleri Müdürlüğü personelinin ruh sağlığı risk göstergeleri belediye ortalamasının altındadır (olumlu). Düşük iş stresi/yükü (%62,3) ve yüksek genel memnuniyetin (%95,1) bu olumlu tabloya katkı sağladığı düşünülebilir. Sigara kullanımı (%46,0) belediye ortalamasıyla benzer düzeydedir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Destek Hiz. (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">82,5</td>
+<td>81,0</td>
+<td class="highlight-positive">+1,5</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">81,7</td>
+<td>76,9</td>
+<td class="highlight-positive">+4,8</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">33,8</td>
+<td>31,1</td>
+<td class="highlight-positive">+2,7</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">33,5</td>
+<td>29,3</td>
+<td class="highlight-positive">+4,2</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">55,9</td>
+<td>42,8</td>
+<td class="highlight-positive">+13,1</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">53,6</td>
+<td>39,6</td>
+<td class="highlight-positive">+14,0</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">24,7</td>
+<td>17,8</td>
+<td class="highlight-positive">+6,9</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">24,0</td>
+<td>17,6</td>
+<td class="highlight-positive">+6,4</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Destek Hizmetleri Müdürlüğü, tüm sosyal medya platformlarında belediye ortalamasının üzerinde takip oranlarına sahiptir. Özellikle Facebook takibi belirgin şekilde yüksektir (Belediye +13,1, Başkan +14,0). Bu durum, müdürlük personelinin demografik yapısıyla ilişkili olabilir.</p>
+
+<!-- ==================== #105 - EMLAK VE İSTİMLAK MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

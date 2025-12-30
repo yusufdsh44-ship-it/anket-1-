@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan ve Proje Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Plan ve Proje Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Plan ve Proje Müdürlüğü, güçlü ekip dayanışmasına rağmen <strong>ciddi çalışma koşulları sorunları</strong> (yemekhane, servis, tuvalet) ve <strong>yüksek ruh sağlığı riski</strong> ile dikkat çekmektedir. Servislerin kaldırılması personelin psikolojisini olumsuz etkilemiştir. Acil olarak servis hizmetinin yeniden değerlendirilmesi, yemekhane kalitesinin iyileştirilmesi ve personel ruh sağlığının desteklenmesi önerilir.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">17/17 kişi (%100)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+29,6</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%84,4</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-warning">-6,4</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%68,3</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-0,8</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%79,1</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight">-3,2</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+10,8</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight-critical">-2,4</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%60,0</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-warning">+7,8 (olumsuz) ⚠️</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%25,0</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-19,9 ↓↓</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">9 kişi (%52,9)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Çalışma arkadaşları (%89,6):</strong> Belediye ortalamasının 2,7 puan üzerinde. Anlaşmazlık çözümü (%93,3) çok güçlü.</li>
+<li><strong>Kamu hizmeti motivasyonu (%89,6):</strong> Belediye ortalamasının 3,2 puan altında ama hala güçlü. Topluma hizmet gururu (%95,3) yüksek.</li>
+<li><strong>Çok düşük sigara kullanımı (%25,0):</strong> Belediye ortalamasının 19,9 puan altında - belediyenin en düşüklerinden.</li>
+<li><strong>Amir saygısı (%95,0):</strong> Belediye ortalamasının 5,1 puan üzerinde.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yemekhane (%35,0):</strong> Belediye ortalamasının 22,2 puan altında - <strong>belediyenin en düşük skoru!</strong></li>
+<li><strong>Servis hizmeti (%44,6):</strong> Belediye ortalamasının 23,1 puan altında - <strong>belediyenin en düşük skorlarından!</strong> "Servislerin kaldırılması motivasyonu düşürüyor" yorumu.</li>
+<li><strong>Ücret (%53,1):</strong> Belediye ortalamasının 15,9 puan altında.</li>
+<li><strong>Ruh sağlığı riski (%60,0):</strong> Belediye ortalamasının 7,8 puan üzerinde - acil dikkat gerektirir.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>⚠️ Ruh sağlığı uyarısı (kritik):</strong> Gergin/kaygılı hissetme %65,0 (+14,2), endişe kontrolü %61,7 (+10,8) - belediyenin en yüksek değerleri.</li>
+<li><strong>Servis kaldırılması şikayeti:</strong> "Psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır" - doğrudan ifade.</li>
+<li><strong>Yüksek yorum oranı (%52,9):</strong> 17 kişiden 9'u yorum yapmış - birim talep ve şikayetlerini aktif olarak ifade ediyor.</li>
+<li><strong>Tuvalet/hijyen şikayetleri:</strong> Çok sayıda yorumda tuvalet temizliği ve yetersizliği vurgulanmış.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Plan ve Proje (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">87,5</td>
+<td class="stat-value">91,3</td>
+<td class="highlight">-3,8</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">84,9</td>
+<td class="stat-value">86,6</td>
+<td class="highlight">-1,7</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">68,3</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">-0,8</td>
+<td class="highlight-positive">Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">84,5</td>
+<td class="stat-value">86,8</td>
+<td class="highlight">-2,3</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">89,6</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+2,7</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">78,2</td>
+<td class="stat-value">79,8</td>
+<td>-1,6</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">65,2</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-7,0</td>
+<td class="highlight-critical">Düşük</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">89,6</td>
+<td class="stat-value">92,8</td>
+<td class="highlight">-3,2</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">73,7</td>
+<td class="stat-value">77,2</td>
+<td class="highlight">-3,5</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">68,5</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-warning">-7,3</td>
+<td class="highlight-critical">Düşük</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Plan ve Proje Müdürlüğü, 10 temadan yalnızca 2'sinde (iş stresi/yükü, çalışma arkadaşları) belediye ortalamasının üzerinde veya eşit performans göstermektedir. Çalışma koşulları (-7,0) ve eğitim & gelişim (-7,3) en kritik alanlardır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Plan ve Proje (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S28: Bireysel çalışma alanım (masa, sandalye vb.) yeterlidir</strong></td>
+<td class="stat-value">90,6</td>
+<td>79,2</td>
+<td class="highlight-positive">+11,4</td>
+</tr>
+<tr>
+<td><strong>S27: Isıtma/soğutma sistemleri yeterlidir</strong></td>
+<td class="stat-value">82,8</td>
+<td>74,1</td>
+<td class="highlight-positive">+8,7</td>
+</tr>
+<tr>
+<td><strong>S22: Anlaşmazlıkları iş arkadaşlarımızla kendi aramızda çözeriz</strong></td>
+<td class="stat-value">93,3</td>
+<td>84,7</td>
+<td class="highlight-positive">+8,6</td>
+</tr>
+<tr>
+<td><strong>S8: Duygusal olarak zorlayıcı durumlarla karşılaşırım</strong></td>
+<td class="stat-value">62,5</td>
+<td>70,8</td>
+<td class="highlight-positive">-8,3 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S17: Amirim bana karşı saygılıdır</strong></td>
+<td class="stat-value">95,0</td>
+<td>89,9</td>
+<td class="highlight-positive">+5,1</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Plan ve Proje (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S42: Kurumda yapılan eğitim faaliyetlerini yeterli bulurum</strong></td>
+<td class="stat-value">65,6</td>
+<td>74,8</td>
+<td class="highlight-critical">-9,2</td>
+</tr>
+<tr>
+<td><strong>S36: Kamu kurumlarında çalışmayı tavsiye ederim</strong></td>
+<td class="stat-value">81,3</td>
+<td>90,7</td>
+<td class="highlight-critical">-9,4</td>
+</tr>
+<tr>
+<td><strong>S34: Ücretler piyasa koşullarına göre makul</strong></td>
+<td class="stat-value">53,1</td>
+<td>69,0</td>
+<td class="highlight-critical">-15,9</td>
+</tr>
+<tr>
+<td><strong>S30: Yemekhane/yemek hizmeti kalitesinden memnunum</strong></td>
+<td class="stat-value">35,0</td>
+<td>57,2</td>
+<td class="highlight-critical">-22,2</td>
+</tr>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">44,6</td>
+<td>67,7</td>
+<td class="highlight-critical">-23,1</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Plan ve Proje Müdürlüğü'nde ofis çalışma koşulları güçlü iken kurumsal hizmetler ciddi sorun alanıdır. Bireysel çalışma alanı (S28: %90,6, +11,4), ısıtma/soğutma (S27: %82,8, +8,7) ve ekip içi anlaşmazlık çözümü (S22: %93,3, +8,6) belediye ortalamasının çok üzerindedir. Düşük duygusal zorlayıcılık (S8: %62,5, -8,3) teknik bir birimin profilini yansıtmaktadır. Ancak servis (S32: %44,6, -23,1) ve yemekhane (S30: %35,0, -22,2) belediyenin en düşük skorları arasındadır - bu durum birimin belediye merkezinden uzak bir lokasyonda olabileceğine işaret etmektedir. Ücret memnuniyetsizliği (S34: %53,1, -15,9) ve kamu kurumlarını tavsiye etme oranının düşüklüğü (S36: %81,3, -9,4), teknik personelin piyasa karşılaştırması yaptığını düşündürmektedir.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Plan ve Proje Müdürlüğü'nden <strong>9 kişi (%52,9)</strong> açık uçlu yorum yapmıştır - yüksek katılım.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Servis Hizmeti Sorunu (4 yorum - baskın tema):</strong></p>
+<div class="quote">"Bir çalışan olarak psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılmasıdır (ilçe dışı)."</div>
+<div class="quote">"Servis hizmetinin eskisi gibi geri gelmesi."</div>
+<div class="quote">"Servislere KYK ve memurlar ücretsiz bir şekilde binebilmeli."</div>
+<div class="quote">"Servis şoförleri daha dikkatli olmalı."</div>
+
+<p><strong>2. Tuvalet/Hijyen Sorunları (4 yorum):</strong></p>
+<div class="quote">"Lavabolar yetersiz ve yeteri kadar temiz değil."</div>
+<div class="quote">"Tuvaletler temiz değil. Peçeteler yetersiz."</div>
+<div class="quote">"Asansör ve tuvaletlerin bakım/temizliği."</div>
+<div class="quote">"Dinlenme alanı, WC'ler iyileştirilmeli."</div>
+
+<p><strong>3. Yemekhane Kalitesi (3 yorum):</strong></p>
+<div class="quote">"Yemekhanenin yemekleri gerçekten iyileştirilmeli. Yemekte zorlanıyoruz, daha fazla çeşitte ve kalitede olmasını temenni ediyorum."</div>
+<div class="quote">"Yemekhane servis tepsileri değiştirilmelidir."</div>
+
+<p><strong>4. Maaş ve Mesai (3 yorum):</strong></p>
+<div class="quote">"Mesaiye kaldığımız halde ücret alamıyoruz. Maaşlar iyileştirilmeli."</div>
+<div class="quote">"Maaşların diğer belediye çalışanlara göre az kalması."</div>
+
+<p><strong>5. İletişim ve İş Dağılımı (2 yorum):</strong></p>
+<div class="quote">"Belediye genelinde iletişim kopukluğu tarafımca mevcut. Bunun giderilmesi için girişimlerde bulunulmasını talep ediyorum."</div>
+<div class="quote">"Çalışanlar arası eşit iş dağılımı ve ekip çalışmasına daha fazla önem verilmesi gerektiğini düşünüyorum."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yorumlarda <strong>servis kaldırılması/sorunları</strong> ve <strong>tuvalet hijyeni</strong> baskın temalar olarak öne çıkmaktadır. "Psikolojimi, motivasyonumu ve enerjimi en çok düşüren etken servislerin kaldırılması" ifadesi, S32 servis skoru (%44,6, -23,1) ile doğrudan tutarlıdır. Yemekhane şikayetleri de S30 (%35,0, -22,2) skoru ile örtüşmektedir.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Plan ve Proje (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">60,0</td>
+<td>52,2</td>
+<td class="highlight-critical">+7,8</td>
+<td class="highlight-critical">Yüksek (olumsuz) ⚠️</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">56,7</td>
+<td>56,1</td>
+<td>+0,6</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">56,7</td>
+<td>50,9</td>
+<td class="highlight">+5,8</td>
+<td class="highlight">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">65,0</td>
+<td>50,8</td>
+<td class="highlight-critical">+14,2</td>
+<td class="highlight-critical">Çok yüksek (olumsuz) ⚠️</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">61,7</td>
+<td>50,9</td>
+<td class="highlight-critical">+10,8</td>
+<td class="highlight-critical">Çok yüksek (olumsuz) ⚠️</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">25,0</td>
+<td>44,9</td>
+<td class="highlight-positive">-19,9</td>
+<td class="highlight-positive">Çok düşük (olumlu)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Plan ve Proje Müdürlüğü personelinin ruh sağlığı göstergeleri <strong>ciddi düzeyde endişe vericidir</strong>. <strong>Gergin/kaygılı hissetme (%65,0, +14,2)</strong> ve <strong>endişe kontrolünde zorluk (%61,7, +10,8)</strong> belediyenin en yüksek değerleri arasındadır. Servis kaldırılması ve yemekhane/hijyen sorunlarının yarattığı stres bu tabloya katkıda bulunuyor olabilir. Sigara kullanımının düşük olması (%25,0) pozitif bir bulgudur.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Plan ve Proje (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">93,8</td>
+<td>81,0</td>
+<td class="highlight-positive">+12,8</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">93,8</td>
+<td>76,9</td>
+<td class="highlight-positive">+16,9</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">25,0</td>
+<td>31,1</td>
+<td class="highlight">-6,1</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">18,8</td>
+<td>29,3</td>
+<td class="highlight">-10,5</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">18,8</td>
+<td>42,8</td>
+<td class="highlight-critical">-24,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">12,5</td>
+<td>39,6</td>
+<td class="highlight-critical">-27,1</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">12,5</td>
+<td>17,8</td>
+<td class="highlight">-5,3</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">12,5</td>
+<td>17,6</td>
+<td class="highlight">-5,1</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Plan ve Proje Müdürlüğü, Instagram'da belediye ortalamasının belirgin üzerinde (+12,8 ve +16,9) takip oranlarına sahipken, Facebook'ta çok düşük (-24,0 ve -27,1), Twitter/X ve NextSosyal'de de ortalamanın altında takip görülmektedir.</p>
+
+</body>
+</html>
+    </div>
+</body>
+</html>

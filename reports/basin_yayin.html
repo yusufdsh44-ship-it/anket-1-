@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basın ve Yayın Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Basın ve Yayın Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Basın ve Yayın Müdürlüğü, güçlü yönetici ilişkileri ve yüksek kamu hizmeti motivasyonu ile işlevsel bir yapıda faaliyet göstermektedir. Basın ve Yayın Müdürlüğüne göre çalışma koşullarının (temizlik, ısıtma, ortak alanlar) iyileştirilmesi, ücret politikasının gözden geçirilmesi ve ekip içi iletişimin güçlendirilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">21/21 kişi (%100)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+29,6</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%93,1</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-positive">+2,3</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%61,8</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-7,3 ↓</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%84,1</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">+1,8</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+22,3</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight">+9,1</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%47,6</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-4,6 (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%38,9</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-6,0 ↓</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">13 kişi (%61,9)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yönetici ilişkileri (%94,8):</strong> Belediye ortalamasının 8,0 puan üzerinde. Amir ulaşılabilirliği (%100), geri bildirim (%97,2) ve destek (%97,2) çok yüksek.</li>
+<li><strong>İş-kişi uyumu (%97,1):</strong> Belediye ortalamasının 5,8 puan üzerinde. Personel işini anlamlı buluyor (%98,4) ve işi seçtiği için mutlu (%97,2).</li>
+<li><strong>Kamu hizmeti motivasyonu (%97,2):</strong> Belediye ortalamasının 4,4 puan üzerinde. Topluma hizmet gururu (%98,6) ve işin toplum için anlamlılığı (%98,6) çok yüksek.</li>
+<li><strong>Yetkinlik & Performans (%82,4):</strong> Belediye ortalamasının 5,2 puan üzerinde. Performans değerlendirme kriterleri net ve adil bulunuyor.</li>
+<li><strong>Sosyal medya takibi:</strong> Tüm platformlarda belediye ortalamasının 20-55 puan üzerinde. Birimin görev alanı gereği beklenen bir sonuç.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Çalışma koşulları (%69,1):</strong> Belediye ortalamasının 3,1 puan altında. Özellikle temizlik (%68,1), ısıtma/soğutma (%65,3) ve ortak alanlar (%63,9) düşük skorlu.</li>
+<li><strong>Çalışma arkadaşları (%83,6):</strong> Belediye ortalamasının 3,3 puan altında. Anlaşmazlık çözümü (%76,4) ve iş arkadaşları desteği (%81,9) görece düşük.</li>
+<li><strong>Ücret memnuniyeti (%68,1):</strong> Belediye ortalamasına yakın olsa da açık uçlu yorumlarda en sık dile getirilen konu.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yüksek yorum oranı (%61,9):</strong> 21 kişiden 13'ü açık uçlu yorum yapmış - bu belediyenin en yüksek yorum oranlarından biri. Personelin görüş bildirme motivasyonu yüksek.</li>
+<li><strong>Açık uçlu yorumlarda tekrar eden temalar:</strong> Maaş iyileştirmesi (7+ kez), çalışma alanı temizliği (5+ kez), ısıtma sorunu (3+ kez), sosyal alan/kafeterya eksikliği, çay servisi talebi.</li>
+<li><strong>İş yükü dengesizliği:</strong> Açık uçlu yorumlarda "zaman zaman iş yükü dengesizliği" ve "personel alımı artırılmalı" ifadeleri mevcut.</li>
+<li><strong>Güçlü yönetici - Zayıf ekip dengesi:</strong> Yönetici ilişkileri (%94,8) çok güçlü iken çalışma arkadaşları skoru (%83,6) görece düşük. Bu durum, yönetici odaklı bir çalışma kültürüne işaret edebilir.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Basın Yayın (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">97,1</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+5,8</td>
+<td class="highlight-positive">Çok yüksek</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">90,6</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+4,0</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">61,8</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-7,3</td>
+<td class="highlight-positive">Düşük stres (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">94,8</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-positive">+8,0</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">83,6</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-3,3</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">81,9</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+2,1</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">69,1</td>
+<td class="stat-value">72,2</td>
+<td class="highlight">-3,1</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">97,2</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+4,4</td>
+<td class="highlight-positive">Çok yüksek</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">82,4</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+5,2</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">74,3</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-1,5</td>
+<td>Ortalama düzeyde</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Basın ve Yayın Müdürlüğü, 10 temadan 7'sinde belediye ortalamasının üzerinde performans göstermektedir. En güçlü alanlar yöneticilerle ilişkiler (+8,0), iş-kişi uyumu (+5,8) ve yetkinlik & performans (+5,2) iken, çalışma arkadaşları (-3,3) ve çalışma koşulları (-3,1) geliştirilmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Basın Yayın (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S10: Vatandaş/başvuru talep yoğunluğu fazladır</strong></td>
+<td class="stat-value">52,8</td>
+<td>70,6</td>
+<td class="highlight-positive">-17,8 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S8: Duygusal olarak zorlayıcı durumlarla karşılaşırım</strong></td>
+<td class="stat-value">58,3</td>
+<td>70,8</td>
+<td class="highlight-positive">-12,5 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S13: Amirimin geri bildirimleri gelişimime katkı sağlar</strong></td>
+<td class="stat-value">97,2</td>
+<td>86,5</td>
+<td class="highlight-positive">+10,7</td>
+</tr>
+<tr>
+<td><strong>S14: Amirim destek olmak için çaba gösterir</strong></td>
+<td class="stat-value">97,2</td>
+<td>86,7</td>
+<td class="highlight-positive">+10,5</td>
+</tr>
+<tr>
+<td><strong>S16: Amirim çalışanlara eşit yaklaşır</strong></td>
+<td class="stat-value">91,7</td>
+<td>82,8</td>
+<td class="highlight-positive">+8,9</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Basın Yayın (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S28: Bireysel çalışma alanım (masa, sandalye vb.) yeterlidir</strong></td>
+<td class="stat-value">75,0</td>
+<td>79,2</td>
+<td class="">-4,2</td>
+</tr>
+<tr>
+<td><strong>S29: Ortak alanlar yeterlidir</strong></td>
+<td class="stat-value">63,9</td>
+<td>70,4</td>
+<td class="highlight">-6,5</td>
+</tr>
+<tr>
+<td><strong>S22: Anlaşmazlıkları iş arkadaşlarımızla kendi aramızda çözeriz</strong></td>
+<td class="stat-value">76,4</td>
+<td>84,7</td>
+<td class="highlight-critical">-8,3</td>
+</tr>
+<tr>
+<td><strong>S27: Isıtma/soğutma sistemleri yeterlidir</strong></td>
+<td class="stat-value">65,3</td>
+<td>74,1</td>
+<td class="highlight-critical">-8,8</td>
+</tr>
+<tr>
+<td><strong>S26: Çalışma alanlarımın temizliği yeterlidir</strong></td>
+<td class="stat-value">68,1</td>
+<td>79,4</td>
+<td class="highlight-critical">-11,3</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Basın ve Yayın Müdürlüğü'nde güçlü yönetici ilişkileri (S13: %97,2, +10,7; S14: %97,2, +10,5) ile zayıf çalışma koşulları arasında belirgin bir kontrast bulunmaktadır. Fiziksel ortam sorunları - temizlik (S26: %68,1, -11,3), ısıtma/soğutma (S27: %65,3, -8,8), ortak alanlar (S29: %63,9, -6,5) - açık uçlu yorumlarda da en sık tekrarlanan şikayetlerdir ve bu tutarlılık sorunun ciddiyetini teyit etmektedir. Ekip içi anlaşmazlık çözme becerisi (S22: %76,4, -8,3) belediye ortalamasının altında kalması, yüksek yorum oranı (%61,9) ile birlikte değerlendirildiğinde personelin kendini ifade etme ihtiyacı hissettiğine işaret edebilir. Düşük iş stresi/yükü (%61,8) ve düşük ruh sağlığı riski (%47,6) arasındaki olumlu korelasyon, JD-R modeli ile uyumludur.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Basın ve Yayın Müdürlüğü'nden <strong>13 kişi (%61,9)</strong> açık uçlu yorum yapmıştır. Bu, belediyenin en yüksek yorum oranlarından biridir.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Maaş/Ücret İyileştirmesi (7+ yorum):</strong></p>
+<div class="quote">"Maaşlarımızın iyileştrilmesini talep ediyorum."</div>
+<div class="quote">"Maaşlarımızın piyasa koşullarına göre güncellenmesi hepimizi mutlu edecektir."</div>
+<div class="quote">"Maaşlar düzeltilmeli ve mesai ücretleri artırılmalı."</div>
+
+<p><strong>2. Çalışma Alanı Temizliği (5+ yorum):</strong></p>
+<div class="quote">"Çalışma alanlarımız ve masalarımızın düzenli olarak temizlenmesini rica ediyorum."</div>
+<div class="quote">"Çalışma Masalarımızın temizliğinin düzenli yapılması."</div>
+
+<p><strong>3. Isıtma/İklimlendirme (3+ yorum):</strong></p>
+<div class="quote">"Çalışma ortamlarımızın yeterli derecede ısıtılmaması" sorunu dile getirilmiş.</div>
+
+<p><strong>4. Sosyal Alanlar ve Hizmetler:</strong></p>
+<div class="quote">"Belediye binası içerisinde personel için bir kafeterya olabilir."</div>
+<div class="quote">"Personel için vakit geçirilecek alan yetersiz."</div>
+<div class="quote">"Çay servisinin ilgili personel tarafından yapılması kurumsal imaj için daha uygun."</div>
+
+<p><strong>5. Yemekhane ve Servis:</strong></p>
+<div class="quote">"Yemekhane hizmeti var fakat, bütün personele uygun değil. Servislerin ilçe dışına çıkmasını isterim."</div>
+
+<p><strong>6. İş Yükü:</strong></p>
+<div class="quote">"Çalışma ortamı genel olarak iyi ancak zaman zaman iş yükü dengesizliği hissediliyor."</div>
+<div class="quote">"İş yükü genel olarak fazla, bence personel alımı artırılmalı."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yanıtlarda en sık tekrar eden tema <strong>maaş iyileştirmesi</strong>dir. İkinci sırada <strong>çalışma alanı temizliği</strong> gelmektedir. Personelin yüksek yorum oranı (%61,9) ve detaylı geri bildirimleri, kuruma olan bağlılık ve iyileştirme beklentisinin yüksek olduğunu göstermektedir.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Basın Yayın (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">47,6</td>
+<td>52,2</td>
+<td class="highlight-positive">-4,6</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">51,4</td>
+<td>56,1</td>
+<td class="highlight-positive">-4,7</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">50,0</td>
+<td>50,9</td>
+<td class="highlight-positive">-0,9</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">44,4</td>
+<td>50,8</td>
+<td class="highlight-positive">-6,4</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">44,4</td>
+<td>50,9</td>
+<td class="highlight-positive">-6,5</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">38,9</td>
+<td>44,9</td>
+<td class="highlight-positive">-6,0</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Basın ve Yayın Müdürlüğü personelinin ruh sağlığı risk göstergeleri genel olarak belediye ortalamasının altındadır (olumlu). Özellikle gerginlik/kaygı (-6,4) ve endişe kontrolü (-6,5) göstergelerinde olumlu bir tablo görülmektedir. Düşük iş stresi/yükü (%61,8) ve güçlü yönetici desteğinin (%94,8) bu sonuca katkı sağladığı düşünülebilir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Basın Yayın (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">100,0</td>
+<td>81,0</td>
+<td class="highlight-positive">+19,0</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">100,0</td>
+<td>76,9</td>
+<td class="highlight-positive">+23,1</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">83,3</td>
+<td>31,1</td>
+<td class="highlight-positive">+52,2</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">83,3</td>
+<td>29,3</td>
+<td class="highlight-positive">+54,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">83,3</td>
+<td>42,8</td>
+<td class="highlight-positive">+40,5</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">83,3</td>
+<td>39,6</td>
+<td class="highlight-positive">+43,7</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">72,2</td>
+<td>17,8</td>
+<td class="highlight-positive">+54,4</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">72,2</td>
+<td>17,6</td>
+<td class="highlight-positive">+54,6</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Basın ve Yayın Müdürlüğü, tüm sosyal medya platformlarında belediye ortalamasının çok üzerinde takip oranlarına sahiptir. Instagram hesapları %100 takip oranına ulaşırken, NextSosyal'de +54 puanlık fark dikkat çekicidir. Bu sonuç, birimin görev alanı (kurumsal iletişim, medya takibi) ile doğrudan ilişkilidir ve beklenen bir bulgudur.</p>
+
+<!-- ==================== #104 - DESTEK HİZMETLERİ MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gençlik ve Spor Hizmetleri Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Gençlik ve Spor Hizmetleri Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Gençlik ve Spor Hizmetleri Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Tüm tema alanlarında belediye ortalamasının üzerinde skorlar, düşük iş stresi/yükü ve güçlü kurum desteği ile sağlıklı bir çalışma ortamına sahiptir. Personelin düğün salonu ve sosyal imkan talepleri, tesis bakımı ve ekipman yenileme ihtiyaçları izlenmesi gereken alanlar olarak öne çıkmaktadır.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">117/131 kişi (%89,3)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+18,9</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%92,7</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-positive">+1,9</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%63,6</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-5,5 ↓</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%85,9</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">+3,6</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+22,3</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight">+9,1</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%48,0</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-4,2 (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%43,6</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-1,3</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">22 kişi (%18,8)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>10 temada da ortalamanın üzerinde:</strong> Müdürlük, tüm tema alanlarında belediye ortalamasını aşmaktadır - belediyenin en dengeli ve güçlü performans gösteren birimlerinden biridir.</li>
+<li><strong>Kamu hizmeti motivasyonu (%94,5):</strong> Belediye ortalamasının 1,7 puan üzerinde. Topluma hizmet gururu (%95,9) çok yüksek.</li>
+<li><strong>Yöneticilerle ilişkiler (%90,9):</strong> Belediye ortalamasının 4,1 puan üzerinde. Amir ulaşılabilirliği (%95,5), amir saygısı (%94,3) ve amir desteği (%91,8) çok güçlü.</li>
+<li><strong>Çalışma arkadaşları (%90,8):</strong> Belediye ortalamasının 3,9 puan üzerinde. Ekip dayanışması (%93,1) ve iş arkadaşları uyumu (%95,0) çok yüksek.</li>
+<li><strong>Düşük iş stresi/yükü (%63,6):</strong> Belediye ortalamasının 5,5 puan altında. Zaman sıkışıklığı (%54,1) ve görev yükü (%57,8) düşük.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yemekhane hizmeti (%61,4):</strong> Belediye ortalamasının 4,2 puan üzerinde olmakla birlikte, açık uçlu yorumlarda yemek kalitesi ve fiyat eşitliği şikayetleri var.</li>
+<li><strong>Servis hizmeti (%65,5):</strong> Belediye ortalamasının 2,2 puan altında.</li>
+<li><strong>Sosyal medya takibi:</strong> Instagram dışındaki platformlarda belediye ortalamasının altında.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Belediyenin en dengeli müdürlüklerinden:</strong> 10 temanın tamamında belediye ortalamasının üzerinde - JD-R modeli açısından ideal profil.</li>
+<li><strong>Düğün salonu talebi:</strong> Açık uçlu yorumlarda en sık tekrar eden tema, personele düğün salonunda indirimli/ücretsiz hizmet talebidir.</li>
+<li><strong>Tesis bakımı ve ekipman yenileme:</strong> Spor tesislerinde çalışan personel, eski tesislerin bakıma ihtiyacı olduğunu ve ekipmanların yetersiz olduğunu belirtmiştir.</li>
+<li><strong>Dönüşümlü çalışma sorunları:</strong> Farklı tesislerde dönüşümlü çalışan personel, iş bölümü uyumsuzluğundan şikayet etmiştir.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Gençlik Spor (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">91,9</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+0,6</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">90,4</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+3,8</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">63,6</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">-5,5</td>
+<td class="highlight-positive">Düşük stres (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">90,9</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-positive">+4,1</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">90,8</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+3,9</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">82,0</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+2,2</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">76,8</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+4,6</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">94,5</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+1,7</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">81,0</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+3,8</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">80,6</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-positive">+4,8</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Gençlik ve Spor Hizmetleri Müdürlüğü, 10 temanın tamamında belediye ortalamasının üzerinde performans göstermektedir. En güçlü alanlar düşük iş stresi/yükü (-5,5), eğitim & gelişim (+4,8), çalışma koşulları (+4,6) ve yöneticilerle ilişkiler (+4,1) olarak öne çıkmaktadır. Bu profil, JD-R modeli açısından ideal bir denge göstermektedir.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Gençlik Spor (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S9: Görev yükü fazladır</strong></td>
+<td class="stat-value">57,8</td>
+<td>70,4</td>
+<td class="highlight-positive">-12,6 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S11: Zaman sıkışıklığı yaşarım</strong></td>
+<td class="stat-value">54,1</td>
+<td>64,7</td>
+<td class="highlight-positive">-10,6 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S26: Çalışma alanlarımın temizliği yeterlidir</strong></td>
+<td class="stat-value">88,6</td>
+<td>79,4</td>
+<td class="highlight-positive">+9,2</td>
+</tr>
+<tr>
+<td><strong>S34: Ücretler piyasa koşullarına göre makul</strong></td>
+<td class="stat-value">78,0</td>
+<td>69,0</td>
+<td class="highlight-positive">+9,0</td>
+</tr>
+<tr>
+<td><strong>S29: Ortak alanlar yeterlidir</strong></td>
+<td class="stat-value">78,3</td>
+<td>70,4</td>
+<td class="highlight-positive">+7,9</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Gençlik Spor (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S27: Isıtma/soğutma sistemleri yeterlidir</strong></td>
+<td class="stat-value">74,1</td>
+<td>74,1</td>
+<td class="">+0,0</td>
+</tr>
+<tr>
+<td><strong>S1: Yaptığım iş yetenek ve becerilerimle uyumludur</strong></td>
+<td class="stat-value">90,5</td>
+<td>90,9</td>
+<td class="">-0,4</td>
+</tr>
+<tr>
+<td><strong>S24: Belediyedeki karar ve gelişmelerden haberdar edilirim</strong></td>
+<td class="stat-value">78,9</td>
+<td>80,4</td>
+<td class="">-1,5</td>
+</tr>
+<tr>
+<td><strong>S10: Vatandaş/başvuru talep yoğunluğu fazladır</strong></td>
+<td class="stat-value">72,2</td>
+<td>70,6</td>
+<td class="highlight-critical">+1,6</td>
+</tr>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">65,5</td>
+<td>67,7</td>
+<td class="">-2,2</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Gençlik ve Spor Hizmetleri Müdürlüğü, belediyenin en dengeli profillerinden birine sahiptir. Düşük iş stresi/yükü (S9: %57,8, -12,6; S11: %54,1, -10,6) ile yüksek çalışma koşulları memnuniyeti (S26: %88,6, +9,2) ve ücret memnuniyeti (S34: %78,0, +9,0) birlikte olumlu bir tablo oluşturmaktadır. Dikkat çekici olan, "geliştirilmesi gereken" alanların bile belediye ortalamasına çok yakın olmasıdır - en büyük negatif fark sadece -2,2 puandır (S32 servis). Bu durum, birimin genel olarak tüm alanlarda ortalama veya üzerinde performans sergilediğini göstermektedir. Düşük stres ve yüksek memnuniyet (%92,7) kombinasyonu, JD-R modeli açısından sağlıklı bir çalışma ortamına işaret etmektedir.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Gençlik ve Spor Hizmetleri Müdürlüğü'nden <strong>22 kişi (%18,8)</strong> açık uçlu yorum yapmıştır.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Düğün Salonu Talebi (4+ yorum - en sık):</strong></p>
+<div class="quote">"Personele düğün salonunda fiyat ayrıcalığı tanınması."</div>
+<div class="quote">"Düğün salonumuz personele ücretsiz veya indirimli olarak faydalanması."</div>
+<div class="quote">"Evlenecek olan belediye personellerimize düğün salonunun tahsis edilmesi."</div>
+
+<p><strong>2. Yemekhane Fiyat Eşitliği (3+ yorum):</strong></p>
+<div class="quote">"Yemekhane ücretlerinin tüm personel için adil olması gerekli. Tüm belediye personeline aynı fiyat tarifesinin uygulanması gerekli."</div>
+<div class="quote">"Yemekler çok kötü lütfen ilgilenin."</div>
+
+<p><strong>3. Tesis Bakımı ve Ekipman (3+ yorum):</strong></p>
+<div class="quote">"Tesisimiz eski olduğundan bakıma ihtiyacı var."</div>
+<div class="quote">"Çalışma alanlarımızdaki ekipmanların eski ve yetersiz durumda olması sağlıklı bir çalışmaya engel olmaktadır."</div>
+<div class="quote">"Havuz bakım ve temizliğine önem verilmesini rica ediyorum."</div>
+
+<p><strong>4. Sosyal Etkinlik Talebi (3+ yorum):</strong></p>
+<div class="quote">"Personel için aktivitelerin ve gezilerin artırılması."</div>
+<div class="quote">"Personeller arası kaynaşma, tanışma ve kurumumuza daha iyi hizmet vermek adına etkinlik ve organizasyonlar düzenlenebilir."</div>
+
+<p><strong>5. Dönüşümlü Çalışma Sorunları (2 yorum):</strong></p>
+<div class="quote">"Dönüşümlü çalışılan tesislerde işlerin iş bölümüne uyum sağlamadığı ve bu da bizi olumsuz etkilemektedir. Çözüm odaklı sonuçlar alamıyoruz."</div>
+
+<p><strong>6. Personel Alanları:</strong></p>
+<div class="quote">"Personel dolabı, yeme ve içme alanı iyileştirilmeli. Lavabo temizliği daha özenli olmalı."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yorumlarda en belirgin tema <strong>düğün salonu talebi</strong>dir - personelin sosyal imkan beklentisini yansıtmaktadır. <strong>Tesis bakımı ve ekipman yenileme</strong> ihtiyacı, spor tesislerinde çalışan personelin somut bir sorunu olarak öne çıkmaktadır. <strong>Dönüşümlü çalışma</strong> sisteminde iş bölümü uyumsuzluğu, operasyonel bir sorun olarak belirtilmiştir.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Gençlik Spor (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">48,0</td>
+<td>52,2</td>
+<td class="highlight-positive">-4,2</td>
+<td class="highlight-positive">(olumlu)</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">51,6</td>
+<td>56,1</td>
+<td class="highlight-positive">-4,5</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">45,8</td>
+<td>50,9</td>
+<td class="highlight-positive">-5,1</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">46,2</td>
+<td>50,8</td>
+<td class="highlight-positive">-4,6</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">48,2</td>
+<td>50,9</td>
+<td class="highlight-positive">-2,7</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">43,6</td>
+<td>44,9</td>
+<td class="highlight-positive">-1,3</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Gençlik ve Spor Hizmetleri Müdürlüğü personelinin ruh sağlığı risk göstergeleri belediye ortalamasının altındadır (olumlu). Tüm göstergelerde (keyif alamama, üzgünlük, gerginlik, endişe kontrolü) belediye ortalamasının 2,7-5,1 puan altında skorlar elde edilmiştir. Sigara kullanımı da ortalamanın altındadır. Bu sonuçlar, düşük iş stresi/yükü ve güçlü kurum desteği ile tutarlıdır.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Gençlik Spor (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">83,6</td>
+<td>81,0</td>
+<td class="highlight-positive">+2,6</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">75,5</td>
+<td>76,9</td>
+<td class="highlight">-1,4</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">25,5</td>
+<td>31,1</td>
+<td class="highlight">-5,6</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">23,6</td>
+<td>29,3</td>
+<td class="highlight">-5,7</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">36,4</td>
+<td>42,8</td>
+<td class="highlight">-6,4</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">34,5</td>
+<td>39,6</td>
+<td class="highlight">-5,1</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">10,0</td>
+<td>17,8</td>
+<td class="highlight">-7,8</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">10,0</td>
+<td>17,6</td>
+<td class="highlight">-7,6</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Gençlik ve Spor Hizmetleri Müdürlüğü'nde Belediye Instagram takibi belediye ortalamasının üzerinde (+2,6) olmakla birlikte, diğer tüm platformlarda (Twitter, Facebook, NextSosyal) belediye ortalamasının altında takip oranları görülmektedir. Spor tesislerinde saha ağırlıklı çalışan personelin sosyal medya kullanım alışkanlıkları bu farklılığı açıklayabilir.</p>
+
+<!-- ==================== #109 - HALKLA İLİŞKİLER MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

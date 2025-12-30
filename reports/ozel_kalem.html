@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Kalem Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Özel Kalem Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Özel Kalem Müdürlüğü, belediyenin en güçlü performans gösteren birimlerinden biridir. Güçlü iş-kişi uyumu, yönetici ve ekip ilişkileri, düşük ruh sağlığı riski ve %98,4 memnuniyet ile JD-R modeli açısından örnek profil sergilemektedir.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">16/16 kişi (%100)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+36,3</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%98,4</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-positive">+7,6 ↑↑</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%67,1</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-positive">-2,0</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%90,0</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">+7,7 ↑</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+22,9</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight">+9,7</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%39,2</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-13,0 ↓↓ (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%43,8</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-positive">-1,1</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">2 kişi (%12,5)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size:9pt; color:#666;">* Katılım oranının %100'ü aşması, muhtemelen geçici personelin de ankete katılmasından kaynaklanmaktadır.</p>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>İş-kişi uyumu (%97,9):</strong> Belediye ortalamasının 6,6 puan üzerinde. S1 yetenek-iş uyumu (%98,4) ve S3 işin anlamlılığı (%98,4) neredeyse tam puan.</li>
+<li><strong>Görev-rol netliği (%95,7):</strong> Belediye ortalamasının 9,1 puan üzerinde. S4 (%98,4) ve S5 (%95,3) güçlü.</li>
+<li><strong>Yöneticilerle ilişkiler (%94,3):</strong> Belediye ortalamasının 7,5 puan üzerinde. S12, S13 sorularında %98,4.</li>
+<li><strong>Çalışma arkadaşları (%94,7):</strong> Belediye ortalamasının 7,8 puan üzerinde. S18, S19 sorularında %96,9.</li>
+<li><strong>Çok düşük ruh sağlığı riski (%39,2):</strong> Belediye ortalamasının 13,0 puan altında - belediyenin en düşük risk seviyelerinden biri.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yemekhane (%54,7):</strong> Belediye ortalamasının 2,5 puan altında - müdürlüğün tek zayıf noktası. Açık uçlu yorumlarda lezzet şikayeti.</li>
+<li><strong>Kurum iletişimi - S24 (%70,3):</strong> Belediye ortalamasının 10,1 puan altında - tek düşük skor.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Yüksek memnuniyet (%98,4):</strong> Bu kurumda çalışmaktan genel olarak memnunum sorusunda belediyenin en yüksek skoru.</li>
+<li><strong>10 temada 10 ortalamanın üzerinde:</strong> Tüm temalarda belediye ortalamasının üzerinde performans - belediyenin en dengeli birimi.</li>
+<li><strong>Belediyenin en düşük ruh sağlığı risklerinden:</strong> %39,2 ile personelin ruh sağlığı göstergeleri çok olumlu.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Özel Kalem (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">97,9</td>
+<td class="stat-value">91,3</td>
+<td class="highlight-positive">+6,6</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">95,7</td>
+<td class="stat-value">86,6</td>
+<td class="highlight-positive">+9,1</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">67,1</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-positive">-2,0</td>
+<td class="highlight-positive">Ortalamanın altında (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">94,3</td>
+<td class="stat-value">86,8</td>
+<td class="highlight-positive">+7,5</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">94,7</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+7,8</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">81,3</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-positive">+1,5</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">83,5</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-positive">+11,3</td>
+<td class="highlight-positive">Çok güçlü</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">95,8</td>
+<td class="stat-value">92,8</td>
+<td class="highlight-positive">+3,0</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">85,2</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+8,0</td>
+<td class="highlight-positive">Güçlü</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">81,3</td>
+<td class="stat-value">75,8</td>
+<td class="highlight-positive">+5,5</td>
+<td class="highlight-positive">Ortalamanın üzerinde</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> Özel Kalem Müdürlüğü, <strong>10 temanın tamamında belediye ortalamasının üzerinde</strong> performans göstermektedir - belediyede bu başarıya ulaşan nadir birimlerden biri. Çalışma koşulları (+11,3), görev-rol netliği (+9,1), yetkinlik & performans (+8,0), çalışma arkadaşları (+7,8) ve yöneticilerle ilişkiler (+7,5) özellikle güçlüdür.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Özel Kalem (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S29: Ortak alanlar yeterlidir</strong></td>
+<td class="stat-value">92,2</td>
+<td>70,4</td>
+<td class="highlight-positive">+21,8</td>
+</tr>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">85,9</td>
+<td>67,7</td>
+<td class="highlight-positive">+18,2</td>
+</tr>
+<tr>
+<td><strong>S28: Bireysel çalışma alanım (masa, sandalye vb.) yeterlidir</strong></td>
+<td class="stat-value">93,8</td>
+<td>79,2</td>
+<td class="highlight-positive">+14,6</td>
+</tr>
+<tr>
+<td><strong>S23: Öneri ve şikayetlerimle ilgili geri bildirim alırım</strong></td>
+<td class="stat-value">92,2</td>
+<td>79,2</td>
+<td class="highlight-positive">+13,0</td>
+</tr>
+<tr>
+<td><strong>S33: Sağlanan teknoloji altyapısı yeterlidir</strong></td>
+<td class="stat-value">87,5</td>
+<td>75,2</td>
+<td class="highlight-positive">+12,3</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Özel Kalem (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S9: Görev yükü fazladır</strong></td>
+<td class="stat-value">69,6</td>
+<td>70,4</td>
+<td class="highlight-positive">-0,8 (düşük stres)</td>
+</tr>
+<tr>
+<td><strong>S38: Performans değerlendirme kriterleri nettir</strong></td>
+<td class="stat-value">81,3</td>
+<td>80,6</td>
+<td class="">+0,7</td>
+</tr>
+<tr>
+<td><strong>S8: Duygusal olarak zorlayıcı durumlarla karşılaşırım</strong></td>
+<td class="stat-value">71,7</td>
+<td>70,8</td>
+<td class="highlight-critical">+0,9</td>
+</tr>
+<tr>
+<td><strong>S30: Yemekhane/yemek hizmeti kalitesinden memnunum</strong></td>
+<td class="stat-value">54,7</td>
+<td>57,2</td>
+<td class="">-2,5</td>
+</tr>
+<tr>
+<td><strong>S24: Belediyedeki karar ve gelişmelerden haberdar edilirim</strong></td>
+<td class="stat-value">70,3</td>
+<td>80,4</td>
+<td class="highlight-critical">-10,1</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> Özel Kalem Müdürlüğü, fiziksel çalışma koşullarında belediyenin en yüksek skorlarına sahiptir: ortak alanlar (S29: %92,2, +21,8), servis (S32: %85,9, +18,2), bireysel çalışma alanı (S28: %93,8, +14,6) ve teknoloji altyapısı (S33: %87,5, +12,3). Bu üstünlük, birimin Başkanlık makamına yakınlığı ve öncelikli kaynak tahsisi ile açıklanabilir. İş stresi belediye ortalamasına çok yakındır (S9: -0,8; S8: +0,9), dengeli bir profil sergilemektedir. "Geliştirilmesi gereken" alanların bile belediye ortalamasına yakın olması, birimin genel olarak olumlu bir tabloya sahip olduğunu göstermektedir. Tek dikkat çekici düşük skor, karar ve gelişmelerden bilgilendirme (S24: %70,3, -10,1) konusundadır.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>Özel Kalem Müdürlüğü'nden <strong>2 kişi (%12,5)</strong> açık uçlu yorum yapmıştır.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Yemek Lezzeti (2 yorum):</strong></p>
+<div class="quote">"Yediğimiz yemeklerden hiç tat tuz şeker alamıyoruz!!!"</div>
+<div class="quote">"Maaşların iyileştirilmesi konusunda talebim var. Kurum içi eğitimlerin çoğaltılmasını istiyorum. Yemekhane hizmetinden memnunum fakat yemeklerin lezzet konusunda iyileştirilmesini talep ediyorum."</div>
+
+<p><strong>Yorum Analizi:</strong> Her iki yorum da yemek lezzetine odaklanmaktadır. S30 yemekhane skoru (%54,7) ortalamanın hafif altındadır. Ayrıca maaş iyileştirmesi ve eğitim talebi de dile getirilmiştir. Genel olarak şikayet yoğunluğu düşük olup, bu durum yüksek memnuniyet skorlarıyla tutarlıdır.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Özel Kalem (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">39,2</td>
+<td>52,2</td>
+<td class="highlight-positive">-13,0</td>
+<td class="highlight-positive">Çok düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">45,0</td>
+<td>56,1</td>
+<td class="highlight-positive">-11,1</td>
+<td class="highlight-positive">Düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">40,0</td>
+<td>50,9</td>
+<td class="highlight-positive">-10,9</td>
+<td class="highlight-positive">Düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">36,7</td>
+<td>50,8</td>
+<td class="highlight-positive">-14,1</td>
+<td class="highlight-positive">Çok düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">35,0</td>
+<td>50,9</td>
+<td class="highlight-positive">-15,9</td>
+<td class="highlight-positive">Çok düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">43,8</td>
+<td>44,9</td>
+<td class="highlight-positive">-1,1</td>
+<td class="highlight-positive">Ortalama düzeyde</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Özel Kalem Müdürlüğü personelinin ruh sağlığı risk göstergeleri <strong>belediyenin en düşük değerleri</strong>ndedir (çok olumlu). Tüm göstergelerde 10-16 puan düşüklük görülmektedir. Özellikle S49 endişe kontrolü (%35,0, -15,9) ve S48 gerginlik/kaygı (%36,7, -14,1) çok olumludur. Bu bulgular, yüksek kurum desteği (%90,0) ve güçlü iş-kişi uyumu (%97,9) ile tutarlıdır.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Özel Kalem (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">93,8</td>
+<td>81,0</td>
+<td class="highlight-positive">+12,8</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">93,8</td>
+<td>76,9</td>
+<td class="highlight-positive">+16,9</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">50,0</td>
+<td>31,1</td>
+<td class="highlight-positive">+18,9</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">62,5</td>
+<td>29,3</td>
+<td class="highlight-positive">+33,2</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">68,8</td>
+<td>42,8</td>
+<td class="highlight-positive">+26,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">68,8</td>
+<td>39,6</td>
+<td class="highlight-positive">+29,2</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">25,0</td>
+<td>17,8</td>
+<td class="highlight-positive">+7,2</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">25,0</td>
+<td>17,6</td>
+<td class="highlight-positive">+7,4</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Özel Kalem Müdürlüğü, tüm sosyal medya platformlarında belediye ortalamasının üzerinde takip oranlarına sahiptir. Twitter/X Başkan (+33,2), Facebook Başkan (+29,2), Facebook Belediye (+26,0) ve Twitter/X Belediye (+18,9) takibinde belirgin yükseklik görülmektedir. Başkanlık makamına yakınlık, başkan hesaplarının takip oranlarını artırmaktadır.</p>
+
+<!-- ==================== #121 - PARK VE BAHÇELER MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>

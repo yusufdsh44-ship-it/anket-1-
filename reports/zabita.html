@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zabıta Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>Zabıta Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> Zabıta Müdürlüğüne göre çalışma saatlerinin yeniden düzenlenmesi (haftalık 40 saat talebi), maktu mesai ve SDS ödemelerinin diğer belediyelerle eşitlenmesi, zabıta yönetmeliğindeki ücretsiz spor salonu hakkının kullandırılması ve servis güzergahlarının genişletilmesi izlenmesi gereken alanlar olarak öne çıkmaktadır. Güçlü ekip dayanışması ve kamu hizmeti motivasyonu, çalışma koşullarına rağmen birimin ayakta kalmasını sağlayan önemli faktörlerdir.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">112/134 kişi (%83,7)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+13,3</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%83,2</td>
+            <td class="avg">%90,8</td>
+            <td class="diff highlight-warning">-7,6 ⚠️</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar)</span>
+            </td>
+            <td class="value">%76,7</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-warning">+7,6 ↑</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları vb.)</span>
+            </td>
+            <td class="value">%79,8</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">-2,5</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+3,1</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight-critical">-10,1</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%52,2</td>
+            <td class="avg">%52,2</td>
+            <td class="diff">0,0</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%46,3</td>
+            <td class="avg">%44,9</td>
+            <td class="diff">+1,4</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">62 kişi (%55,4)</td>
+            <td class="avg">-</td>
+            <td class="diff">Çok yüksek katılım</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kamu hizmeti motivasyonu (%92,5):</strong> Topluma hizmet gururu yüksek.</li>
+<li><strong>İş-kişi uyumu (%90,6):</strong> Personel işini seviyor ve anlamlı buluyor.</li>
+<li><strong>Ekip uyumu (%89,2, +2,3):</strong> Dayanışma güçlü - zorlu saha koşullarında birbirine destek.</li>
+<li><strong>Yüksek katılım (%83,7):</strong> Hem ankete hem açık uçlu yorumlara (62 kişi) yüksek katılım.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Ücret memnuniyeti (%56,1, -12,9):</strong> Diğer belediyelerle maaş/SDS karşılaştırması yapılmakta, yetersiz bulunmakta.</li>
+<li><strong>Servis hizmeti (%58,3, -9,4):</strong> Güzergahların yetersizliği ve ilçe dışından gelenlerin mağduriyeti.</li>
+<li><strong>İSG uygulamaları (%67,6, -8,7):</strong> Saha çalışması riskleri göz önünde bulundurulmalı.</li>
+<li><strong>Genel memnuniyet (%83,2, -7,6):</strong> Belediye ortalamasının altında.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Çalışma saatleri sorunu:</strong> Haftalık 40 saate indirilme talebi, hafta sonu mesailerinin kaldırılması, nöbet düzeninin iyileştirilmesi yoğun şekilde dile getirilmiş.</li>
+<li><strong>Maktu mesai/SDS yetersizliği:</strong> Diğer İstanbul ilçe belediyeleriyle karşılaştırıldığında ücretlerin düşük kaldığı sıkça belirtilmiş.</li>
+<li><strong>Ücretsiz spor salonu talebi:</strong> Zabıta yönetmeliğinde yer alan hakkın kullandırılması talep edilmiş.</li>
+<li><strong>Müdürlük binası yetersizliği:</strong> Temel ihtiyaçların karşılanmadığı, etkinlik yapılmadığı ifade edilmiş.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Zabıta (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">90,6</td>
+<td class="stat-value">91,3</td>
+<td>-0,7</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">85,1</td>
+<td class="stat-value">86,6</td>
+<td>-1,5</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü</strong></td>
+<td class="stat-value">76,7</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-warning">+7,6</td>
+<td>Yüksek (olumsuz)</td>
+</tr>
+<tr>
+<td><strong>Yönetici İlişkileri</strong></td>
+<td class="stat-value">83,1</td>
+<td class="stat-value">86,8</td>
+<td class="highlight">-3,7</td>
+<td>Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Ekip Uyumu</strong></td>
+<td class="stat-value">89,2</td>
+<td class="stat-value">86,9</td>
+<td class="highlight-positive">+2,3</td>
+<td>Ortalamanın üzerinde</td>
+</tr>
+<tr>
+<td><strong>Kurumsal İletişim</strong></td>
+<td class="stat-value">74,7</td>
+<td class="stat-value">79,8</td>
+<td class="highlight-warning">-5,1</td>
+<td class="highlight-critical">Düşük ⚠️</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">68,5</td>
+<td class="stat-value">72,2</td>
+<td class="highlight">-3,7</td>
+<td>Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">92,5</td>
+<td class="stat-value">92,8</td>
+<td>-0,3</td>
+<td>Ortalamada</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">71,8</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-warning">-5,4</td>
+<td class="highlight-critical">Düşük ⚠️</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">71,9</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-3,9</td>
+<td>Ortalamanın altında</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Bazlı Değerlendirme:</strong> İş stresi teması (%76,7, +7,6) yüksek olup, zabıtanın saha çalışmasının doğası gereği vatandaş yoğunluğu ve duygusal zorlayıcılık yaşandığını göstermektedir. Ekip uyumu (%89,2, +2,3) güçlü olması, zorlu koşullarda dayanışmanın korunduğuna işaret etmektedir. Kurumsal iletişim (%74,7, -5,1) ve yetkinlik & performans (%71,8, -5,4) düşük olması, açık uçlu yorumlardaki taleplerin yeterince karşılanmadığı algısıyla tutarlıdır.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Zabıta (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S10.</strong> Vatandaş/başvuru talep yoğunluğu işim gereği fazladır. <em>(olumsuz)</em></td>
+<td class="stat-value">84,0</td>
+<td>70,6</td>
+<td class="highlight">+13,4</td>
+</tr>
+<tr>
+<td><strong>S8.</strong> İşim gereği duygusal olarak zorlayıcı durumlarla sık karşılaşırım. <em>(olumsuz)</em></td>
+<td class="stat-value">82,3</td>
+<td>70,8</td>
+<td class="highlight">+11,5</td>
+</tr>
+<tr>
+<td><strong>S27.</strong> Isıtma/soğutma (iklimlendirme) sistemleri yeterlidir.</td>
+<td class="stat-value">81,8</td>
+<td>74,1</td>
+<td class="highlight-positive">+7,7</td>
+</tr>
+<tr>
+<td><strong>S19.</strong> Ekibimizde dayanışma güçlüdür.</td>
+<td class="stat-value">90,3</td>
+<td>87,0</td>
+<td class="highlight-positive">+3,3</td>
+</tr>
+<tr>
+<td><strong>S9.</strong> Gün içinde yetiştirmem gereken görevler çoğu zaman fazla olur. <em>(olumsuz)</em></td>
+<td class="stat-value">73,4</td>
+<td>70,4</td>
+<td class="">+3,0</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>Zabıta (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S34.</strong> Piyasa koşullarıyla kıyaslandığında verilen ücretler makuldür.</td>
+<td class="stat-value">56,1</td>
+<td>69,0</td>
+<td class="highlight-critical">-12,9 ⚠️</td>
+</tr>
+<tr>
+<td><strong>S32.</strong> Servis (ulaşım) hizmeti kalitesi yeterlidir.</td>
+<td class="stat-value">58,3</td>
+<td>67,7</td>
+<td class="highlight-critical">-9,4 ⚠️</td>
+</tr>
+<tr>
+<td><strong>S31.</strong> İş sağlığı ve güvenliği (İSG) uygulamaları düzenli ve yeterlidir.</td>
+<td class="stat-value">67,6</td>
+<td>76,3</td>
+<td class="highlight-critical">-8,7</td>
+</tr>
+<tr>
+<td><strong>S33.</strong> Sağlanan teknoloji altyapısı yeterlidir.</td>
+<td class="stat-value">67,2</td>
+<td>75,2</td>
+<td class="highlight-critical">-8,0</td>
+</tr>
+<tr>
+<td><strong>S25.</strong> Bu kurumda çalışmaktan genel olarak memnunum.</td>
+<td class="stat-value">83,2</td>
+<td>90,8</td>
+<td class="highlight-critical">-7,6 ⚠️</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> S34 ücret memnuniyeti (%56,1, -12,9) belediyenin en düşük skorlarından biridir. Açık uçlu yorumlarda İstanbul'daki diğer belediyelerle maaş ve SDS karşılaştırması yapılarak yetersizlik vurgulanmıştır. S32 servis hizmeti (%58,3, -9,4) düşük olup, güzergah yetersizliği şikayetleriyle tutarlıdır. S10 vatandaş yoğunluğu (%84,0, +13,4) ve S8 duygusal zorlayıcılık (%82,3, +11,5) belediyenin en yüksek değerleri arasındadır - zabıta mesleğinin doğası gereği yoğun vatandaş etkileşimi ve çatışma durumlarıyla karşılaşılmaktadır. S19 ekip dayanışması (%90,3, +3,3) yüksek olması, zorlu saha koşullarında personelin birbirine destek olduğunu göstermektedir.</p>
+
+<h2>3. Ruh Sağlığı Taraması</h2>
+
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>Zabıta (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S46.</strong> Keyif alamama</td>
+<td class="stat-value">58,7</td>
+<td>56,1</td>
+<td class="">+2,6</td>
+</tr>
+<tr>
+<td><strong>S47.</strong> Üzgün/çökkün hissetme</td>
+<td class="stat-value">51,1</td>
+<td>50,9</td>
+<td class="">+0,2</td>
+</tr>
+<tr>
+<td><strong>S48.</strong> Gerginlik/kaygı</td>
+<td class="stat-value">51,4</td>
+<td>50,8</td>
+<td class="">+0,6</td>
+</tr>
+<tr>
+<td><strong>S49.</strong> Endişeleri kontrol edememe</td>
+<td class="stat-value">46,3</td>
+<td>50,9</td>
+<td class="highlight-positive">-4,6</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">46,3</td>
+<td>44,9</td>
+<td class="">+1,4</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> Genel ruh sağlığı riski (%52,2) belediye ortalamasına eşittir. Yüksek iş stresi/yüküne rağmen ruh sağlığı göstergelerinin ortalamada kalması, güçlü ekip dayanışmasının koruyucu etkisine işaret etmektedir. S49 endişe kontrolü (%46,3, -4,6) belediye ortalamasının altında olması olumlu bir bulgudur. Açık uçlu yorumlarda çalışma saatlerinin kişisel ve aile yaşantısına olumsuz etkisi dile getirilmiştir.</p>
+
+<h2>4. Açık Uçlu Yorumlar</h2>
+
+<p>Zabıta Müdürlüğü'nden <strong>62 kişi</strong> açık uçlu yorum yapmıştır (%55,4 katılım) - belediyenin en yüksek yorum sayısına sahip birimlerinden biridir.</p>
+
+<p><strong>1. Maaş ve SDS İyileştirmesi (20+ yorum):</strong></p>
+<div class="quote">"İstanbul içindeki belediyelerdeki zabıta memuru meslektaşlarımızla eşit maddi ve sosyal haklara sahip olmak istiyoruz."</div>
+<div class="quote">"Diğer belediyelere kıyasen maaşları az buluyorum."</div>
+<div class="quote">"Bizimle aynı işi yapanlara göre maaşımız çok az, hak ettiğimiz ücreti almak istiyorum."</div>
+<div class="quote">"Maktu mesai ücreti aylık çalıştığımız 30 saat fazla çalışmaya ve resmi tatillerde izin yapmadan çalışmalarımıza rağmen çok düşük."</div>
+
+<p><strong>2. Çalışma Saatleri (15+ yorum):</strong></p>
+<div class="quote">"Çalışma saatlerimizin haftalık 40 saat olmasını talep ediyoruz."</div>
+<div class="quote">"Meslek dezavantajlarından dolayı çalışma saatlerinin 40 saate indirilmesi, kişisel ve ailevi olarak yeteri kadar zaman ayıramama problemi yaşanmaktadır."</div>
+<div class="quote">"Zabıta memuru olarak çalışma saatlerinin düşmesi veya hafta sonu mesaisinin kaldırılmasını talep ediyorum."</div>
+
+<p><strong>3. Ücretsiz Spor Salonu Talebi (10+ yorum):</strong></p>
+<div class="quote">"Zabıta yönetmeliğinde bulunan ücretsiz spor salonu kullanma hakkımızı talep ediyorum."</div>
+<div class="quote">"Belediyemizin spor tesislerinin ücretsiz veya indirimli olmasını talep ederiz."</div>
+<div class="quote">"Ücretsiz spor salonu istiyoruz."</div>
+
+<p><strong>4. Servis ve Ulaşım (8+ yorum):</strong></p>
+<div class="quote">"Servis güzergahlarını yetersiz buluyorum."</div>
+<div class="quote">"Servis ağının güçlendirilmesi ve ilçe dışından gelen çalışanlara yakın yerlere kadar gitmesini talep ediyorum."</div>
+
+<p><strong>5. Yemek Hizmeti ve Diğer (5+ yorum):</strong></p>
+<div class="quote">"Yemek ücretlerinin artırılsın ama kalitesinin biraz daha iyileştirilmesi gerekiyor."</div>
+<div class="quote">"Müdürlük binası yeterli değil, temel ihtiyaçlarımızı karşılamıyor. Müdürlüğümüzde hiçbir etkinlik mevcut değil."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yorumlar, nicel verilerle güçlü bir tutarlılık göstermektedir. S34 ücret skoru (%56,1, -12,9) ile maaş/SDS şikayetlerinin yoğunluğu, S32 servis skoru (%58,3, -9,4) ile güzergah yetersizliği doğrudan örtüşmektedir. Çalışma saatleri konusu anket sorularında doğrudan yer almamakla birlikte, iş stresi/yükü (%76,7, +7,6) ve genel memnuniyet (%83,2, -7,6) üzerindeki etkisi açıkça görülmektedir. Ücretsiz spor salonu talebi, zabıta yönetmeliğinde yer alan bir hakkın kullandırılması isteğidir.</p>
+
+<h2>5. Sosyal Medya Takip Analizi</h2>
+
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Zabıta (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram - Belediye</strong></td>
+<td class="stat-value">82,1</td>
+<td>81,0</td>
+<td class="highlight-positive">+1,1</td>
+</tr>
+<tr>
+<td><strong>Instagram - Başkan</strong></td>
+<td class="stat-value">73,7</td>
+<td>76,9</td>
+<td class="">-3,2</td>
+</tr>
+<tr>
+<td><strong>Twitter/X - Belediye</strong></td>
+<td class="stat-value">25,3</td>
+<td>31,1</td>
+<td class="">-5,8</td>
+</tr>
+<tr>
+<td><strong>Twitter/X - Başkan</strong></td>
+<td class="stat-value">21,1</td>
+<td>29,3</td>
+<td class="highlight-critical">-8,2</td>
+</tr>
+<tr>
+<td><strong>Facebook - Belediye</strong></td>
+<td class="stat-value">30,5</td>
+<td>42,8</td>
+<td class="highlight-critical">-12,3</td>
+</tr>
+<tr>
+<td><strong>Facebook - Başkan</strong></td>
+<td class="stat-value">28,4</td>
+<td>39,6</td>
+<td class="highlight-critical">-11,2</td>
+</tr>
+<tr>
+<td><strong>NextSosyal - Belediye</strong></td>
+<td class="stat-value">13,7</td>
+<td>17,8</td>
+<td class="">-4,1</td>
+</tr>
+<tr>
+<td><strong>NextSosyal - Başkan</strong></td>
+<td class="stat-value">14,7</td>
+<td>17,6</td>
+<td class="">-2,9</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> Instagram Belediye takip oranı ortalamanın üzerinde iken, Facebook ve Twitter takip oranları belediye ortalamasının belirgin altındadır (Facebook Belediye: -12,3; Facebook Başkan: -11,2). Bu durum, saha personelinin sosyal medya kullanım tercihlerini ve yoğun çalışma temposunu yansıtmaktadır.</p>
+    </div>
+</body>
+</html>

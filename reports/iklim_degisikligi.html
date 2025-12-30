@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İklim Değişikliği ve Sıfır Atık Müdürlüğü - Arnavutköy Belediyesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #FBF7EF;
+            color: #211A16;
+            line-height: 1.6;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 3px solid #C86A3C;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.5em 0 0.75em 0;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2B241C;
+            margin: 1.2em 0 0.6em 0;
+        }
+        
+        p {
+            margin-bottom: 1em;
+            color: #4A4A4A;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0 1.5em 0;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #F8F4EC 0%, #EDE8DD 100%);
+            padding: 12px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #2B241C;
+            border: 1px solid #E2D9CA;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #E2D9CA;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #FDFBF7;
+        }
+        
+        .indicators-table th {
+            background: linear-gradient(135deg, #2B241C 0%, #3D342A 100%);
+            color: white;
+        }
+        
+        .highlight-row {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%) !important;
+        }
+        
+        .highlight-critical {
+            background: #FFEBEE !important;
+            color: #C62828 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-warning {
+            background: #FFF3E0 !important;
+            color: #E65100 !important;
+            font-weight: 600;
+        }
+        
+        .highlight {
+            background: #FFFDE7 !important;
+            color: #F9A825 !important;
+            font-weight: 600;
+        }
+        
+        .highlight-positive {
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: 600;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%);
+            border-left: 4px solid #C86A3C;
+            padding: 1.5em;
+            margin: 1.5em 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .label-desc {
+            display: block;
+            font-size: 0.85em;
+            color: #7B746A;
+            font-weight: normal;
+            margin-top: 4px;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #E2D9CA;
+        }
+        
+        .header-logo img {
+            height: 60px;
+        }
+        
+        .header-info {
+            flex: 1;
+        }
+        
+        .header-info h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 1.5em;
+        }
+        
+        .header-info p {
+            margin: 0;
+            color: #7B746A;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            table {
+                page-break-inside: avoid;
+            }
+            
+            h2, h3 {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-logo">
+            <div class="header-info">
+                <p style="font-size: 0.85em; color: #C86A3C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Arnavutköy Belediyesi</p>
+                <p style="color: #7B746A;">JD-R Çalışan Memnuniyeti Analizi - 2024</p>
+            </div>
+        </div>
+        <h1>İklim Değişikliği ve Sıfır Atık Müdürlüğü - Detaylı Analiz Raporu</h1>
+
+<h2>Temel Göstergeler</h2>
+
+<p style="margin-bottom: 1.5em; line-height: 1.6; color: #4A4A4A; background: linear-gradient(135deg, #FBF7EF 0%, #F5EFE4 100%); padding: 1em 1.2em; border-left: 4px solid #C86A3C; border-radius: 0 8px 8px 0;"><span style="font-weight: 700; color: #C86A3C; font-size: 1.1em;">Sonuç:</span> İklim Değişikliği ve Sıfır Atık Müdürlüğü, güçlü iş-kişi uyumu ve kamu hizmeti motivasyonuna sahip olmakla birlikte, anket sonuçlarına göre personel yoğun iş yükü altında çalışmaktadır. Kritik düzeyde düşük stres-destek dengesi (+0,7) ve çok yüksek sigara kullanımı (%70,6), personel takviyesi ve fiziksel çalışma koşullarının iyileştirilmesi gerekliliğine işaret etmektedir.</p>
+
+<table class="indicators-table">
+    <thead>
+        <tr>
+            <th style="width:45%;">Gösterge</th>
+            <th style="width:18%;">Müdürlük</th>
+            <th style="width:18%;">Belediye Ort.</th>
+            <th style="width:19%;">Fark</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="label"><strong>Toplam Personel / Katılım</strong></td>
+            <td class="value">23/24 kişi (%95,8)</td>
+            <td class="avg">%70,4</td>
+            <td class="diff highlight-positive">+25,4</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Genel Memnuniyet</strong>
+                <span class="label-desc">("Bu kurumda çalışmaktan genel olarak memnunum" sorusuna verilen yanıtların skoru)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">%88,2</td>
+            <td class="avg">%90,8</td>
+            <td class="diff">-2,6</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>İş Stresi/Yükü</strong>
+                <span class="label-desc">(iş yoğunluğu/yükü, görevin zorlayıcılığı, zaman sıkışıklığı, duygusal yorucu durumlar örn: zor vatandaşlarla iletişim vb.)</span>
+            </td>
+            <td class="value">%78,7</td>
+            <td class="avg">%69,1</td>
+            <td class="diff highlight-critical">+9,6 ↑</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Kurum Desteği</strong>
+                <span class="label-desc">(yönetici ilişkileri, çalışma arkadaşları desteği, çalışma koşulları, yemekhane, ortak alanlar, ısıtma/soğutma, teknoloji altyapısı, servis, eğitim imkanları vb.)</span>
+            </td>
+            <td class="value">%79,4</td>
+            <td class="avg">%82,3</td>
+            <td class="diff highlight-positive">-2,9</td>
+        </tr>
+        <tr class="highlight-row">
+            <td class="label">
+                <strong style="font-size:10.5pt;">Denge (Kurum Desteği - İş Stresi/Yükü)</strong>
+                <span class="label-desc">(kurum desteği - iş stresi/yükü; pozitif değer çalışanların iş stresi/yüküni karşılayacak düzeyde destek aldığını gösterir)</span>
+            </td>
+            <td class="value" style="font-size:12pt;">+0,7</td>
+            <td class="avg">+13,2</td>
+            <td class="diff highlight-critical">-12,5</td>
+        </tr>
+        <tr>
+            <td class="label">
+                <strong>Ruh Sağlığı Riski</strong>
+                <span class="label-desc">(Ruh sağlığı taraması testi: keyif alamama, üzgün/çökkün hissetme, gerginlik/kaygı, endişeleri kontrol edememe)</span>
+            </td>
+            <td class="value">%48,0</td>
+            <td class="avg">%52,2</td>
+            <td class="diff highlight-positive">-4,2 (olumlu)</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Sigara Kullanımı</strong></td>
+            <td class="value">%70,6</td>
+            <td class="avg">%44,9</td>
+            <td class="diff highlight-critical">+25,7 ↑↑</td>
+        </tr>
+        <tr>
+            <td class="label"><strong>Açık Uçlu Yorum Yapan</strong></td>
+            <td class="value">5 kişi (%21,7)</td>
+            <td class="avg">-</td>
+            <td class="diff"></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="summary-box">
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Güçlü Yönler</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kamu hizmeti motivasyonu (%91,2):</strong> Belediye ortalamasının 1,6 puan altında olmakla birlikte, topluma hizmet gururu (%94,1) yüksek.</li>
+<li><strong>İş-kişi uyumu (%90,7):</strong> Belediye ortalamasının 0,6 puan altında. Yetenek-iş uyumu (%95,6) çok yüksek.</li>
+<li><strong>Ruh sağlığı göstergeleri (olumlu):</strong> Gerginlik/kaygı (%43,3) ve üzgün hissetme (%45,0) belediye ortalamasının altında.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Geliştirilmesi Gereken Alanlar</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>İş stresi (%78,7):</strong> Belediye ortalamasının 9,6 puan üzerinde. Görev yükü (%86,8, +16,4) ve zaman sıkışıklığı (%77,9, +13,2) çok yüksek.</li>
+<li><strong>Çalışma koşulları (%65,9):</strong> Belediye ortalamasının 6,3 puan altında. Temizlik (%65,6), yemekhane (%55,4), servis (%55,8) düşük.</li>
+<li><strong>Eğitim & Gelişim (%71,3):</strong> Belediye ortalamasının 4,5 puan altında.</li>
+<li><strong>Personel yetersizliği:</strong> Açık uçlu yorumlarda "acil personel ihtiyacı" vurgusu.</li>
+</ul>
+
+<h4 style="margin-top:1em; margin-bottom:0.5em;">Dikkat Çeken Bulgular</h4>
+<ul style="margin-top:0.3em;">
+<li><strong>Kritik stres-destek dengesi (+0,7):</strong> Belediyenin en düşük dengelerinden - Gelirler Müdürlüğü'nden (-2,5) sonra en kritik profil.</li>
+<li><strong>Çok yüksek sigara kullanımı (%70,6):</strong> Belediye ortalamasının 25,7 puan üzerinde - belediyenin en yüksek oranı.</li>
+<li><strong>Personel ve araç yetersizliği:</strong> Açık uçlu yorumlarda "acil şekilde araba, kamyonet ve iş arkadaşlarına ihtiyacımız var" ifadesi - yüksek iş stresi/yüküyle tutarlı.</li>
+<li><strong>Fiziksel koşullar yetersiz:</strong> "Dolap yok, tuvalet kilitleri yok, üstümüzü değiştirecek yerimiz yok" şikayeti.</li>
+</ul>
+
+</div>
+
+<h2>1. Tema Bazlı Performans Analizi</h2>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>İklim Değişikliği (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>İş-Kişi Uyumu</strong></td>
+<td class="stat-value">90,7</td>
+<td class="stat-value">91,3</td>
+<td>-0,6</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Görev-Rol Netliği</strong></td>
+<td class="stat-value">85,2</td>
+<td class="stat-value">86,6</td>
+<td>-1,4</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td class="stat-value">78,7</td>
+<td class="stat-value">69,1</td>
+<td class="highlight-critical">+9,6</td>
+<td class="highlight-critical">Yüksek (olumsuz)</td>
+</tr>
+<tr>
+<td><strong>Yöneticilerle İlişkiler</strong></td>
+<td class="stat-value">85,1</td>
+<td class="stat-value">86,8</td>
+<td>-1,7</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Çalışma Arkadaşları</strong></td>
+<td class="stat-value">82,6</td>
+<td class="stat-value">86,9</td>
+<td class="highlight">-4,3</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Kurum İçi İletişim</strong></td>
+<td class="stat-value">76,5</td>
+<td class="stat-value">79,8</td>
+<td class="highlight">-3,3</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Çalışma Koşulları</strong></td>
+<td class="stat-value">65,9</td>
+<td class="stat-value">72,2</td>
+<td class="highlight-warning">-6,3</td>
+<td class="highlight-critical">Düşük</td>
+</tr>
+<tr>
+<td><strong>Kamu Hizmeti Motivasyonu</strong></td>
+<td class="stat-value">91,2</td>
+<td class="stat-value">92,8</td>
+<td>-1,6</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Yetkinlik & Performans</strong></td>
+<td class="stat-value">77,6</td>
+<td class="stat-value">77,2</td>
+<td class="highlight-positive">+0,4</td>
+<td>Ortalama düzeyde</td>
+</tr>
+<tr>
+<td><strong>Eğitim & Gelişim</strong></td>
+<td class="stat-value">71,3</td>
+<td class="stat-value">75,8</td>
+<td class="highlight">-4,5</td>
+<td class="highlight">Ortalamanın altında</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Tema Değerlendirmesi:</strong> İklim Değişikliği ve Sıfır Atık Müdürlüğü, 10 temadan sadece 1'inde (yetkinlik & performans) belediye ortalamasının üzerinde performans göstermektedir. En kritik alan iş stresi/yükü (+9,6) olup, çalışma koşulları (-6,3), eğitim & gelişim (-4,5) ve çalışma arkadaşları (-4,3) alanları da geliştirilmesi gereken bölgelerdir.</p>
+
+<h2>2. Soru Bazlı Detaylı Bulgular</h2>
+
+<h3>2.1. En İyi Performans Gösteren Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>İklim Değişikliği (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S6: Görevlerim ve sorumlulukların uyumludur</strong></td>
+<td class="stat-value">91,7</td>
+<td>87,0</td>
+<td class="">+4,7</td>
+</tr>
+<tr>
+<td><strong>S1: Yaptığım iş yetenek ve becerilerimle uyumludur</strong></td>
+<td class="stat-value">95,6</td>
+<td>90,9</td>
+<td class="">+4,7</td>
+</tr>
+<tr>
+<td><strong>S38: Performans değerlendirme kriterleri nettir</strong></td>
+<td class="stat-value">83,8</td>
+<td>80,6</td>
+<td class="">+3,2</td>
+</tr>
+<tr>
+<td><strong>S39: Performans değerlendirme kriterleri adildir</strong></td>
+<td class="stat-value">79,4</td>
+<td>77,2</td>
+<td class="">+2,2</td>
+</tr>
+<tr>
+<td><strong>S27: Isıtma/soğutma sistemleri yeterlidir</strong></td>
+<td class="stat-value">75,0</td>
+<td>74,1</td>
+<td class="">+0,9</td>
+</tr>
+</tbody>
+</table>
+
+<h3>2.2. Geliştirilmesi Gereken Alanlar</h3>
+<table>
+<thead>
+<tr>
+<th>Soru</th>
+<th>İklim Değişikliği (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>S28: Bireysel çalışma alanım (masa, sandalye vb.) yeterlidir</strong></td>
+<td class="stat-value">67,6</td>
+<td>79,2</td>
+<td class="highlight-critical">-11,6</td>
+</tr>
+<tr>
+<td><strong>S32: Servis hizmeti kalitesi yeterlidir</strong></td>
+<td class="stat-value">55,8</td>
+<td>67,7</td>
+<td class="highlight-critical">-11,9</td>
+</tr>
+<tr>
+<td><strong>S11: Zaman sıkışıklığı yaşarım</strong></td>
+<td class="stat-value">77,9</td>
+<td>64,7</td>
+<td class="highlight-critical">+13,2 (yüksek stres)</td>
+</tr>
+<tr>
+<td><strong>S26: Çalışma alanlarımın temizliği yeterlidir</strong></td>
+<td class="stat-value">65,6</td>
+<td>79,4</td>
+<td class="highlight-critical">-13,8</td>
+</tr>
+<tr>
+<td><strong>S9: Görev yükü fazladır</strong></td>
+<td class="stat-value">86,8</td>
+<td>70,4</td>
+<td class="highlight-critical">+16,4 (yüksek stres)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Soru Bazlı Değerlendirme:</strong> İklim Değişikliği ve Sıfır Atık Müdürlüğü'nde personel işiyle uyumlu olduğunu düşünmekte (S1: %95,6, +4,7; S6: %91,7, +4,7) ve performans değerlendirme sistemini olumlu bulmaktadır (S38: %83,8, +3,2; S39: %79,4, +2,2). Ancak yüksek iş stresi/yükü dikkat çekmektedir - görev yükü (S9: %86,8, +16,4) ve zaman sıkışıklığı (S11: %77,9, +13,2) belediyenin en yüksek stres skorları arasındadır. Bu durum, yeni kurulan ve gelişmekte olan bir birimin artan iş yüküyle karşı karşıya olduğuna işaret edebilir. Fiziksel koşullar da sorun alanıdır: temizlik (S26: %65,6, -13,8), servis (S32: %55,8, -11,9) ve bireysel çalışma alanı (S28: %67,6, -11,6). Yüksek stres ile düşük fiziksel koşullar kombinasyonu, zorlanma göstergesi açısından izlenmesi gereken bir profil oluşturmaktadır.</p>
+
+<h2>3. Açık Uçlu Yorumların Analizi</h2>
+
+<p>İklim Değişikliği ve Sıfır Atık Müdürlüğü'nden <strong>5 kişi (%21,7)</strong> açık uçlu yorum yapmıştır.</p>
+
+<h4>Öne Çıkan Temalar:</h4>
+
+<p><strong>1. Personel ve Araç Yetersizliği (2 yorum - kritik):</strong></p>
+<div class="quote">"Birimde yeni personele ihtiyacımız var acil."</div>
+<div class="quote">"Acil bir şekilde araba, kamyonet ve iş arkadaşlarına ihtiyacımız var. Çok zorlanıyoruz."</div>
+
+<p><strong>2. Fiziksel Çalışma Koşulları (2 yorum):</strong></p>
+<div class="quote">"Yeterli dolap yok. Tuvalet kapılarının kilitleri komple yok. Oturacağımız oda yok, üstümüzü değiştirecek ne yerimiz ne de dolabımız var."</div>
+<div class="quote">"Belediyemizin çalışma ve dinlenme alanları diğer birimler ile eşit değildir. Temizlik açısından çalıştığımız alan hijyenik değil."</div>
+
+<p><strong>3. Sosyal Haklar ve Eğitim:</strong></p>
+<div class="quote">"Sosyal hakların geliştirilmesi, personelin moral motivasyon artışı için geziler düzenlenmesi, maaşların personelin faydasına olacak şekilde düzenlenmesi, eğitim faaliyetlerinin artırılması belediyenin çalışanlarının verimliliğini artıracaktır."</div>
+
+<p><strong>Yorum Analizi:</strong> Açık uçlu yorumlarda en belirgin tema <strong>personel ve araç yetersizliği</strong>dir. Bu bulgu, yüksek iş stresi/yükü (%78,7) ve özellikle S9 görev yükü (%86,8) skoru ile tutarlıdır. Fiziksel çalışma koşullarının yetersizliği (dolap, tuvalet, dinlenme alanı) de sık vurgulanan konulardandır.</p>
+
+<h2>4. Ruh Sağlığı Göstergeleri</h2>
+<table>
+<thead>
+<tr>
+<th>Gösterge</th>
+<th>İklim Değişikliği (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+<th>Değerlendirme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruh Sağlığı Riski (Genel)</strong></td>
+<td class="stat-value">48,0</td>
+<td>52,2</td>
+<td class="highlight-positive">-4,2</td>
+<td class="highlight-positive">Ortalamanın altında (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S46: Keyif Alamama</strong></td>
+<td class="stat-value">54,4</td>
+<td>56,1</td>
+<td class="highlight-positive">-1,7</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S47: Üzgün/Çökkün Hissetme</strong></td>
+<td class="stat-value">45,0</td>
+<td>50,9</td>
+<td class="highlight-positive">-5,9</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>S48: Gergin/Kaygılı Hissetme</strong></td>
+<td class="stat-value">43,3</td>
+<td>50,8</td>
+<td class="highlight-positive">-7,5</td>
+<td class="highlight-positive">Düşük (olumlu)</td>
+</tr>
+<tr>
+<td><strong>S49: Endişe Kontrolünde Zorluk</strong></td>
+<td class="stat-value">48,4</td>
+<td>50,9</td>
+<td class="highlight-positive">-2,5</td>
+<td class="highlight-positive">Ortalamanın altında</td>
+</tr>
+<tr>
+<td><strong>Sigara Kullanımı</strong></td>
+<td class="stat-value">70,6</td>
+<td>44,9</td>
+<td class="highlight-critical">+25,7</td>
+<td class="highlight-critical">Çok yüksek</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Ruh Sağlığı Değerlendirmesi:</strong> İklim Değişikliği ve Sıfır Atık Müdürlüğü personelinin ruh sağlığı risk göstergeleri belediye ortalamasının altındadır (olumlu). Özellikle gerginlik/kaygı (-7,5) ve üzgün hissetme (-5,9) göstergelerinde belirgin düşüklük dikkat çekicidir. Ancak sigara kullanımı (%70,6) belediye ortalamasının (%44,9) 25,7 puan üzerindedir - bu, belediyenin en yüksek sigara kullanım oranıdır ve yüksek iş stresi/yükü ile ilişkili olabilir.</p>
+
+<h2>5. Sosyal Medya Takip Oranları</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>İklim Değişikliği (%)</th>
+<th>Belediye Ort. (%)</th>
+<th>Fark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instagram Belediye</strong></td>
+<td class="stat-value">82,4</td>
+<td>81,0</td>
+<td class="highlight-positive">+1,4</td>
+</tr>
+<tr>
+<td><strong>Instagram Başkan</strong></td>
+<td class="stat-value">88,2</td>
+<td>76,9</td>
+<td class="highlight-positive">+11,3</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Belediye</strong></td>
+<td class="stat-value">35,3</td>
+<td>31,1</td>
+<td class="highlight-positive">+4,2</td>
+</tr>
+<tr>
+<td><strong>Twitter/X Başkan</strong></td>
+<td class="stat-value">23,5</td>
+<td>29,3</td>
+<td class="highlight">-5,8</td>
+</tr>
+<tr>
+<td><strong>Facebook Belediye</strong></td>
+<td class="stat-value">58,8</td>
+<td>42,8</td>
+<td class="highlight-positive">+16,0</td>
+</tr>
+<tr>
+<td><strong>Facebook Başkan</strong></td>
+<td class="stat-value">52,9</td>
+<td>39,6</td>
+<td class="highlight-positive">+13,3</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Belediye</strong></td>
+<td class="stat-value">11,8</td>
+<td>17,8</td>
+<td class="highlight">-6,0</td>
+</tr>
+<tr>
+<td><strong>NextSosyal Başkan</strong></td>
+<td class="stat-value">11,8</td>
+<td>17,6</td>
+<td class="highlight">-5,8</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Sosyal Medya Değerlendirmesi:</strong> İklim Değişikliği ve Sıfır Atık Müdürlüğü, Instagram ve Facebook platformlarında belediye ortalamasının üzerinde takip oranlarına sahipken, NextSosyal ve Twitter/X Başkan hesaplarında ortalamanın altında kalmaktadır. Facebook takibi (+16,0 ve +13,3) özellikle güçlüdür.</p>
+
+<!-- ==================== #112 - İMAR VE ŞEHİRCİLİK MÜDÜRLÜĞÜ ==================== -->
+
+<div style="page-break-before: always;"></div>
+    </div>
+</body>
+</html>
