@@ -1739,7 +1739,7 @@
                 description: 'Çalışanların mevcut görevlerinin yetenek ve becerilerine uygunluğu, iş tatmini ve işin anlamlılığı algısı'
             },
             hizmetTalepYogunlugu: {
-                title: 'Hizmet ve Talep Yoğunluğu',
+                title: 'Hizmet ve İş Yükü/Stresi',
                 icon: '⚡',
                 keywords: ['yoğunluk', 'iş yükü', 'zaman', 'yetiş', 'talep', 'vatandaş'],
                 description: 'İş yoğunluğu, zaman baskısı, duygusal emek gereksinimi ve hizmet talep düzeyi'
@@ -5539,7 +5539,7 @@
                                     ${tableRenderer.createSortableHeader('Müdürlükler', 'temalarTable', 0)}
                                     ${tableRenderer.createSortableHeader('İş-Kişi Uyumu', 'temalarTable', 1)}
                                     ${tableRenderer.createSortableHeader('Görev-Rol Netliği', 'temalarTable', 2)}
-                                    ${tableRenderer.createSortableHeader('Talep Yoğunluğu', 'temalarTable', 3)}
+                                    ${tableRenderer.createSortableHeader('İş Yükü/Stresi', 'temalarTable', 3)}
                                     ${tableRenderer.createSortableHeader('Yöneticilerle İlişkiler', 'temalarTable', 4)}
                                     ${tableRenderer.createSortableHeader('Çalışma Arkadaşları', 'temalarTable', 5)}
                                     ${tableRenderer.createSortableHeader('Kurum İçi İletişim', 'temalarTable', 6)}
@@ -6326,7 +6326,7 @@
 
                 let csvContent = '\uFEFF';
 
-                const headers = ['Müdürlükler', 'İş-Kişi Uyumu', 'Görev-Rol Netliği', 'Talep Yoğunluğu',
+                const headers = ['Müdürlükler', 'İş-Kişi Uyumu', 'Görev-Rol Netliği', 'İş Yükü/Stresi',
                     'Yöneticilerle İlişkiler', 'Çalışma Arkadaşları', 'Kurum İçi İletişim',
                     'Çalışma Koşulları', 'Kamu Hizmeti Motivasyonu', 'Yetkinlik & Performans', 'Eğitim & Gelişim'];
                 csvContent += headers.map(h => `"${h}"`).join(',') + '\n';

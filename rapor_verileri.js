@@ -1410,7 +1410,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">62,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-warning">-6,8</td>
@@ -3146,7 +3146,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">63,6</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-warning">-5,5</td>
@@ -4048,7 +4048,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">60,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-8,8</td>
@@ -4909,7 +4909,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">83,2</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">+14,1</td>
@@ -5360,7 +5360,7 @@ const RAPOR_VERILERI = {
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">78,6</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">+9,5</td>
@@ -5810,7 +5810,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">61,8</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-warning">-7,3</td>
@@ -6262,7 +6262,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-critical">Belirgin düşük</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">79,9</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">+10,8</td>
@@ -6706,7 +6706,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">61,0</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-8,1</td>
@@ -7562,7 +7562,7 @@ const RAPOR_VERILERI = {
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">58,4</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-10,7</td>
@@ -8011,7 +8011,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">80,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">+11,2</td>
@@ -8450,7 +8450,7 @@ const RAPOR_VERILERI = {
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">68,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-0,8</td>
@@ -8897,7 +8897,7 @@ const RAPOR_VERILERI = {
 <td class="highlight">Ortalamanın altında</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">72,6</td>
 <td class="stat-value">69,1</td>
 <td class="highlight">+3,5</td>
@@ -9336,7 +9336,7 @@ const RAPOR_VERILERI = {
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">78,7</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">+9,6</td>
@@ -9770,7 +9770,7 @@ const RAPOR_VERILERI = {
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">69,3</td>
 <td class="stat-value">69,1</td>
 <td>+0,2</td>
@@ -10207,7 +10207,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">65,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight">-3,8</td>
@@ -10641,7 +10641,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Çok güçlü</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">51,8</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-17,3</td>
@@ -11064,7 +11064,7 @@ const RAPOR_VERILERI = {
 <td>Ortalama düzeyde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">53,9</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-15,2</td>
@@ -11888,7 +11888,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Güçlü</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">67,1</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-2,0</td>
@@ -12319,7 +12319,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-critical">Düşük</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">56,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-positive">-12,8</td>
@@ -12748,7 +12748,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalamanın üzerinde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">69,5</td>
 <td class="stat-value">69,1</td>
 <td>+0,4</td>
@@ -13177,7 +13177,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-positive">Ortalama düzeyde</td>
 </tr>
 <tr>
-<td><strong>İş Stresi/Yükü (Talep Yoğunluğu)</strong></td>
+<td><strong>İş Stresi/Yükü (İş Yükü/Stresi)</strong></td>
 <td class="stat-value">76,3</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-warning">+7,2</td>
@@ -13658,7 +13658,7 @@ const RAPOR_VERILERI = {
 <td class="highlight-critical">Zayıf - İyileştirme gerekli</td>
 </tr>
 <tr>
-<td><strong>Talep Yoğunluğu (İş Yükü)</strong></td>
+<td><strong>İş Yükü/Stresi (İş Yükü)</strong></td>
 <td class="stat-value">59,1</td>
 <td class="stat-value">69,1</td>
 <td class="highlight-critical">-10,0</td>
