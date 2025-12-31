@@ -324,7 +324,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
 <td style="text-align:center; padding:6px;">%86,5</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-3,5</strong></td>
-<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği belediyenin en düşük skoru - personel amirlerin eşit davranışını düşük bulmaktadır. İş stresli ve tehlikeli, ücret yetersiz: "Diğer ilçe belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı kritik: hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu güçlü ancak kurumsal destek karşılamıyor. Psikolojik destek sunulması önerilmektedir.</td>
+<td style="padding:6px;"><strong>BELEDİYENİN EN DÜŞÜK DENGESİ (-3,5).</strong> Amir eşitliği algısı düşük - personel amirlerin adil davranışı konusunda iyileştirme beklemektedir. İş stresli ve tehlikeli, ücret yetersiz: "Diğer ilçe belediyelerine göre maaşlarımız çok düşük" şikayeti yaygın. Yassıören barınağı altyapısı kritik: hijyen, güvenlik, ekipman yetersiz. Kamu hizmeti motivasyonu güçlü ancak kurumsal destek karşılamıyor. Psikolojik destek sunulması önerilmektedir.</td>
 </tr>
 <tr>
 <td style="padding:6px;">YAZI İŞLERİ</td>
@@ -1814,7 +1814,7 @@ const RAPOR_VERILERI = {
 
 <h4 style="margin:1.5em 0 0.5em; padding:0.35em 0.75em; border-left:4px solid #E65100; color:#E65100; font-size:1.05em; font-weight:600;">⚠ Geliştirilmesi Gereken Alanlar</h4>
 <ul style="margin-top:0.3em;">
-<li><strong>Amir eşitliği (%69,8, -13,0):</strong> Ayrımcılık algısı çok yüksek - belediyenin en düşük skorlarından.</li>
+<li><strong>Amir eşitliği (%69,8, -13,0):</strong> Personel amirlerin adil davranışı konusunda güçlü iyileştirme beklemektedir.</li>
 <li><strong>Bilgi paylaşımı (%74,0, -11,4):</strong> Deneyim aktarımı yetersiz.</li>
 <li><strong>Ücret (%59,4, -9,6):</strong> Piyasa koşullarına göre düşük algılanıyor.</li>
 <li><strong>Ekip dayanışması (%79,3, -7,7):</strong> Bireysel uyum yüksek olmasına rağmen ekip dayanışması zayıf.</li>
