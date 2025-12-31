@@ -372,7 +372,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İŞLETME</td>
 <td style="text-align:center; padding:6px; color:#27ae60;"><strong>%96,9</strong></td>
 <td style="text-align:center; padding:6px;">+15,0</td>
-<td style="padding:6px;">Yüksek memnuniyet (%96,9). Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Kurumsal destek yeterli. 10 temadan 8'inde ortalamanın üzerinde. Küçük örneklem (n=16) nedeniyle sonuçlar temkinle değerlendirilmelidir. Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
+<td style="padding:6px;">Yüksek memnuniyet (%96,9). Yönetici ilişkileri, ekip uyumu ve kamu hizmeti motivasyonu çok güçlü. Kurumsal destek yeterli. 10 temadan 8'inde ortalamanın üzerinde. Ofis alanı dar, sabah ikram ve dinlenme alanı talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">PLAN VE PROJE</td>
