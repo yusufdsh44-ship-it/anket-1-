@@ -318,7 +318,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">GELİRLER</td>
 <td style="text-align:center; padding:6px;">%87,1</td>
 <td style="text-align:center; padding:6px; color:#c0392b;"><strong>-2,5</strong></td>
-<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Belediyenin en yüksek duygusal zorlayıcılık ve vatandaş yoğunluğu. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu ortalamanın altında. Kariyer gelişimi ve ödül sistemi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>NEGATİF DENGE (-2,5).</strong> Vatandaş iletişiminden kaynaklanan duygusal zorlanma ve yoğunluk belediyenin en yüksek düzeyinde. Fiziksel koşullar kritik: ısıtma, ortak alanlar, temizlik düşük. Yemekhane memur-şirket personeli eşitsizliği "büyük haksızlık" olarak nitelenmektedir. Yönetici ilişkileri ve ekip uyumu ortalamanın altında. Kariyer gelişimi ve ödül sistemi talep edilmektedir.</td>
 </tr>
 <tr style="background:#ffcdd2;">
 <td style="padding:6px;">VETERİNER İŞLERİ</td>
