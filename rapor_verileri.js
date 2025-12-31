@@ -354,7 +354,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
 <td style="text-align:center; padding:6px;">%88,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+0,7</td>
-<td style="padding:6px;"><strong>Sınırda pozitif denge (+0,7) - kaynak-talep dengesi kritik eşikte.</strong> Yüksek iş stresi/yükü ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ortalamanın altında, kamu hizmeti motivasyonu koruyucu faktör.</td>
+<td style="padding:6px;"><strong>Sınırda pozitif denge (+0,7) - kaynak-talep dengesi kritik eşikte.</strong> Yüksek iş stresi/yükü ve zayıf pozitif kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ortalamanın altında, kamu hizmeti motivasyonu koruyucu faktör.</td>
 </tr>
 <tr>
 <td style="padding:6px;">BASIN VE YAYIN</td>
