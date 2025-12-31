@@ -348,13 +348,13 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">EMLAK VE İSTİMLAK</td>
 <td style="text-align:center; padding:6px;">%91,7</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+1,5</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük eğitim-gelişim skoru (%58,6)</strong> - personel kendini geliştirme imkanı bulamamaktadır. Yüksek iş stresi/yükü ile +1,5 sınırda denge. Ekip uyumu belediyenin en yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane en düşük skorlardan. Servis ağı genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
+<td style="padding:6px;"><strong>Eğitim-gelişim alanında iyileştirme ihtiyacı mevcut (%58,6)</strong> - personel kendini geliştirme imkanı konusunda beklenti içindedir. Yüksek iş stresi/yükü ile +1,5 sınırda denge. Ekip uyumu belediyenin en yüksek düzeyinde - güçlü koruyucu faktör. Yemekhane en düşük skorlardan. Servis ağı genişletilmesi ve Taşoluk metro ring seferi talep edilmektedir.</td>
 </tr>
 <tr style="background:#fff3e0;">
 <td style="padding:6px;">İKLİM DEĞİŞİKLİĞİ</td>
 <td style="text-align:center; padding:6px;">%88,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+0,7</td>
-<td style="padding:6px;"><strong>Belediyenin en düşük pozitif dengesi (+0,7).</strong> Yüksek iş stresi/yükü ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ortalamanın altında, kamu hizmeti motivasyonu koruyucu faktör.</td>
+<td style="padding:6px;"><strong>Sınırda pozitif denge (+0,7) - kaynak-talep dengesi kritik eşikte.</strong> Yüksek iş stresi/yükü ve yetersiz kurum desteği. Personel takviyesi acil: "Araba, kamyonet ve iş arkadaşlarına ihtiyacımız var, çok zorlanıyoruz." Çalışma koşulları zayıf: "Tuvalet kapılarında kilit yok, dolap yok." Sigara kullanımı ikinci en yüksek. Ekip uyumu ortalamanın altında, kamu hizmeti motivasyonu koruyucu faktör.</td>
 </tr>
 <tr>
 <td style="padding:6px;">BASIN VE YAYIN</td>
@@ -378,7 +378,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">PLAN VE PROJE</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,4</td>
 <td style="text-align:center; padding:6px;">+10,8</td>
-<td style="padding:6px;">Belediyenin en düşük memnuniyetlerinden olmakla birlikte pozitif denge. Çalışma koşulları ortalamanın altında (%65,2): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Düşük sigara kullanımı (%25,0). Ekip uyumu güçlü koruyucu faktör, yönetici ilişkileri ortalamanın altında. Ücret çok düşük.</td>
+<td style="padding:6px;">Memnuniyet düzeyi iyileştirme gerektirmekle birlikte pozitif denge korunmaktadır. Çalışma koşulları ortalamanın altında (%65,2): servis, tuvalet, yemekhane kritik. Servis en büyük şikayet: "Psikolojimi en çok düşüren etken." Düşük sigara kullanımı (%25,0). Ekip uyumu güçlü koruyucu faktör, yönetici ilişkileri ortalamanın altında. Ücret çok düşük.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">ÖZEL KALEM</td>
@@ -402,7 +402,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">HUKUK İŞLERİ</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%84,1</td>
 <td style="text-align:center; padding:6px;">+11,1</td>
-<td style="padding:6px;">Belediyenin en düşüklerinden memnuniyet ancak pozitif denge. Yönetici ilişkileri ve ekip uyumu güçlü. Kamu hizmeti motivasyonu ortalamanın altında. Yemekte memur-şirket personeli fiyat farkı adaletsiz bulunmaktadır. Servis tasarruf tedbirlerinin ilçe dışından gelenleri olumsuz etkilediği bildirilmektedir. Dinlenme alanı yetersiz.</td>
+<td style="padding:6px;">Memnuniyet düzeyi iyileştirme alanı olmakla birlikte pozitif denge korunmaktadır. Yönetici ilişkileri ve ekip uyumu güçlü. Kamu hizmeti motivasyonu ortalamanın altında. Yemekte memur-şirket personeli fiyat farkı adaletsiz bulunmaktadır. Servis tasarruf tedbirlerinin ilçe dışından gelenleri olumsuz etkilediği bildirilmektedir. Dinlenme alanı yetersiz.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">RUHSAT VE DENETİM</td>
