@@ -270,7 +270,7 @@ const RAPOR_VERILERI = {
 <td style="padding:6px;">ZABITA</td>
 <td style="text-align:center; padding:6px; color:#c0392b;">%83,2</td>
 <td style="text-align:center; padding:6px; color:#e67e22;">+3,1</td>
-<td style="padding:6px;">Yüksek iş stresi/yükü ve en düşük ortak alan skoru. 62 kişi açık uçlu yorum yazarak görüş bildirme motivasyonu göstermiştir. 28 kişi ücret/SDS şikayeti: İstanbul geneli zabıta haklarıyla eşitlik talep edilmektedir. Kamu hizmeti motivasyonu güçlü ancak fiziksel koşullar yetersiz, servis güzergahı iyileştirme beklemektedir.</td>
+<td style="padding:6px;">Yüksek iş stresi/yükü. 62 kişi açık uçlu yorum yazarak görüş bildirme motivasyonu göstermiştir. 28 kişi ücret/SDS şikayeti: İstanbul geneli zabıta haklarıyla eşitlik talep edilmektedir. Kamu hizmeti motivasyonu güçlü ancak fiziksel koşullar yetersiz, servis güzergahı iyileştirme beklemektedir.</td>
 </tr>
 <tr style="background:#e8f5e9;">
 <td style="padding:6px;">GENÇLİK VE SPOR</td>
