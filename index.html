@@ -1788,6 +1788,11 @@
                     {id: 'veri-girisi', icon: 'input', title: 'Veri Girişi', iconColor: '#22C55E'},
                     {id: 'girilen-anketler', icon: 'list_alt', title: 'Girilen Anketler', iconColor: '#64748B'}
                 ]
+            },
+            {
+                category: 'AYARLAR', items: [
+                    {id: 'giris-loglari', icon: 'history', title: 'Giriş Logları', iconColor: '#94A3B8'}
+                ]
             }
         ];
 
@@ -5389,6 +5394,38 @@
                         </table>
                     </div>
                 `,
+                
+                'giris-loglari': () => `
+                    <div class="max-w-5xl mx-auto">
+                        <div class="bg-white rounded-2xl shadow-soft p-8 border border-border-light">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h2 class="font-serif text-2xl font-semibold text-title-brown mb-2">Giriş Logları</h2>
+                                    <p class="text-sm text-text-meta">Sisteme yapılan tüm giriş denemeleri</p>
+                                </div>
+                                <button onclick="loadAccessLogs()" class="px-4 py-2 bg-sidebar-active text-white rounded-lg text-sm font-medium hover:opacity-90 transition-all flex items-center gap-2">
+                                    <span class="material-icons-outlined text-base">refresh</span> Yenile
+                                </button>
+                            </div>
+                            
+                            <div class="overflow-x-auto rounded-xl border border-border-light">
+                                <table class="w-full">
+                                    <thead class="bg-page-bg">
+                                        <tr>
+                                            <th class="px-4 py-3 text-left text-sm font-semibold text-title-brown">Tarih/Saat</th>
+                                            <th class="px-4 py-3 text-left text-sm font-semibold text-title-brown">IP Adresi</th>
+                                            <th class="px-4 py-3 text-left text-sm font-semibold text-title-brown">Tarayıcı</th>
+                                            <th class="px-4 py-3 text-center text-sm font-semibold text-title-brown">Durum</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="accessLogsBody">
+                                        <tr><td colspan="4" class="text-center py-8 text-text-meta">Yükleniyor...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `,
 
                 'genel-skorlar': () => `
                     <div class="max-w-7xl mx-auto space-y-6">
@@ -5756,6 +5793,10 @@
                             comparisonManager.populateSelects();
                             comparisonManager.updateComparison();
                         }, 100);
+                    }
+                    
+                    if (pageId === 'giris-loglari') {
+                        setTimeout(() => loadAccessLogs(), 100);
                     }
 
                     setTimeout(() => tableRenderer.renderAllTables(), 100);
@@ -6584,6 +6625,40 @@ En sık ifadeler:
     </div>
 
     <script>
+        async function loadAccessLogs() {
+            const tbody = document.getElementById('accessLogsBody');
+            if (!tbody) return;
+            
+            try {
+                const token = localStorage.getItem('authToken') || new URLSearchParams(window.location.search).get('token');
+                const response = await fetch(`/api/access-logs?token=${token}`);
+                const data = await response.json();
+                
+                if (data.success && data.logs.length > 0) {
+                    tbody.innerHTML = data.logs.map(log => {
+                        const date = new Date(log.login_time);
+                        const formattedDate = date.toLocaleDateString('tr-TR', {day: '2-digit', month: '2-digit', year: 'numeric'});
+                        const formattedTime = date.toLocaleTimeString('tr-TR', {hour: '2-digit', minute: '2-digit'});
+                        const browserInfo = log.user_agent ? log.user_agent.substring(0, 60) + (log.user_agent.length > 60 ? '...' : '') : '-';
+                        const statusBadge = log.success 
+                            ? '<span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">Basarili</span>'
+                            : '<span class="px-2 py-1 bg-red-100 text-red-700 text-xs rounded-full font-medium">Basarisiz</span>';
+                        
+                        return `<tr class="border-b border-border-light hover:bg-page-bg transition-colors">
+                            <td class="px-4 py-3 text-sm text-text-body">${formattedDate} ${formattedTime}</td>
+                            <td class="px-4 py-3 text-sm text-text-body font-mono">${log.ip_address}</td>
+                            <td class="px-4 py-3 text-xs text-text-meta" title="${log.user_agent || ''}">${browserInfo}</td>
+                            <td class="px-4 py-3 text-center">${statusBadge}</td>
+                        </tr>`;
+                    }).join('');
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="4" class="text-center py-8 text-text-meta">Henuz giris kaydı yok</td></tr>';
+                }
+            } catch (err) {
+                tbody.innerHTML = '<tr><td colspan="4" class="text-center py-8 text-red-500">Loglar yuklenemedi</td></tr>';
+            }
+        }
+        
         function saveAIInsight() {
             const topic = document.getElementById('aiTopic').value;
             const sentiment = parseInt(document.getElementById('aiSentiment').value);
