@@ -42,6 +42,25 @@ class SurveyData(db.Model):
         }
 
 
+class AccessLog(db.Model):
+    __tablename__ = 'access_logs'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    ip_address = db.Column(db.String(45), nullable=False)
+    user_agent = db.Column(db.String(500))
+    login_time = db.Column(db.DateTime, default=db.func.now())
+    success = db.Column(db.Boolean, default=True)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'ip_address': self.ip_address,
+            'user_agent': self.user_agent,
+            'login_time': self.login_time.isoformat() if self.login_time else None,
+            'success': self.success
+        }
+
+
 with app.app_context():
     db.create_all()
 
@@ -236,10 +255,34 @@ def api_login():
     data = request.get_json()
     password = data.get('password', '') if data else ''
     
+    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+    if ip_address and ',' in ip_address:
+        ip_address = ip_address.split(',')[0].strip()
+    user_agent = request.headers.get('User-Agent', '')[:500]
+    
     if password == APP_PASSWORD:
         token = generate_token(APP_PASSWORD)
+        log = AccessLog(ip_address=ip_address, user_agent=user_agent, success=True)
+        db.session.add(log)
+        db.session.commit()
         return jsonify({'success': True, 'token': token})
+    
+    log = AccessLog(ip_address=ip_address, user_agent=user_agent, success=False)
+    db.session.add(log)
+    db.session.commit()
     return jsonify({'success': False, 'error': 'Invalid password'}), 401
+
+
+@app.route('/api/access-logs', methods=['GET'])
+def get_access_logs():
+    if APP_PASSWORD and not check_auth(request):
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    
+    logs = AccessLog.query.order_by(AccessLog.login_time.desc()).limit(100).all()
+    return jsonify({
+        'success': True,
+        'logs': [log.to_dict() for log in logs]
+    })
 
 
 @app.route('/api/check-auth')
