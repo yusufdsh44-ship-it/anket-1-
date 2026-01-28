@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Risk Analizleri - Kurumsal Yönetim Sistemi{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="flex h-screen overflow-hidden">
+    {% include '_sidebar.html' %}
+
+    <div class="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-cream/50 to-white">
+        <!-- Header -->
+        <header class="bg-white/80 backdrop-blur-md border-b border-accent/50 px-8 py-4 shrink-0 z-30">
+            <div class="flex items-center gap-4">
+                <div class="size-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-xl text-primary">analytics</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-serif font-bold text-primary">Risk Analizleri</h1>
+                    <p class="text-xs text-secondary">Müdürlük bazlı karşılaştırmalı analiz</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto">
+            <div class="max-w-[1600px] mx-auto p-8 space-y-6">
+                <!-- Page Title -->
+                <div class="flex items-end justify-between">
+                    <div>
+                        <p class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-1">Analiz Merkezi</p>
+                        <h2 class="text-3xl font-serif font-bold text-primary">Müdürlük Bazlı Risk Haritası</h2>
+                        <p class="text-secondary mt-1">Tüm müdürlüklerin risk ve memnuniyet karşılaştırması</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-secondary">Toplam {{ mudurlukler|length }} müdürlük</p>
+                    </div>
+                </div>
+
+                <!-- Summary Stats -->
+                <div class="grid grid-cols-4 gap-4">
+                    {% set total_personel = mudurlukler|sum(attribute='personel_sayisi') %}
+                    {% set total_riskli = mudurlukler|sum(attribute='riskli_sayi') %}
+                    {% set total_mmpi = mudurlukler|sum(attribute='mmpi_tamamlanan') %}
+                    {% set total_seans = mudurlukler|sum(attribute='seans_yapilan') %}
+
+                    <div class="bg-white p-5 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">groups</span>
+                            </div>
+                            <span class="text-xs font-bold text-secondary uppercase">Toplam Personel</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-primary">{{ total_personel }}</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-danger/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-danger">warning</span>
+                            </div>
+                            <span class="text-xs font-bold text-secondary uppercase">Riskli Personel</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-danger">{{ total_riskli }}</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-blue-500">psychology</span>
+                            </div>
+                            <span class="text-xs font-bold text-secondary uppercase">MMPI Tamamlayan</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-blue-500">{{ total_mmpi }}</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-purple-500">event_available</span>
+                            </div>
+                            <span class="text-xs font-bold text-secondary uppercase">Yapılan Seans</span>
+                        </div>
+                        <p class="text-3xl font-serif font-bold text-purple-500">{{ total_seans }}</p>
+                    </div>
+                </div>
+
+                <!-- Müdürlük Cards Grid -->
+                <div class="grid grid-cols-3 gap-5">
+                    {% for m in mudurlukler %}
+                    <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden hover:shadow-lg transition-all group">
+                        <!-- Card Header -->
+                        <div class="p-5 border-b border-accent/30">
+                            <div class="flex items-start justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-3xl">{{ m.emoji or '🏢' }}</span>
+                                    <div>
+                                        <h3 class="font-serif font-bold text-primary text-sm leading-tight">
+                                            {{ m.ad[:35] }}{% if m.ad|length > 35 %}...{% endif %}
+                                        </h3>
+                                        <p class="text-xs text-secondary mt-1">{{ m.personel_sayisi }} personel</p>
+                                    </div>
+                                </div>
+                                {% if m.ort_triyaj %}
+                                <div class="text-right">
+                                    <div class="text-2xl font-serif font-bold
+                                        {% if m.ort_triyaj >= 3.5 %}text-danger
+                                        {% elif m.ort_triyaj >= 2.5 %}text-warning
+                                        {% else %}text-success{% endif %}">
+                                        {{ m.ort_triyaj | round(1) }}
+                                    </div>
+                                    <p class="text-[10px] text-secondary uppercase">Ort. Triyaj</p>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Card Stats -->
+                        <div class="grid grid-cols-3 divide-x divide-accent/30">
+                            <div class="p-4 text-center">
+                                <p class="text-xl font-bold text-danger">{{ m.riskli_sayi }}</p>
+                                <p class="text-[10px] text-secondary uppercase font-medium">Riskli</p>
+                            </div>
+                            <div class="p-4 text-center">
+                                <p class="text-xl font-bold text-success">{{ m.mmpi_tamamlanan }}</p>
+                                <p class="text-[10px] text-secondary uppercase font-medium">MMPI</p>
+                            </div>
+                            <div class="p-4 text-center">
+                                <p class="text-xl font-bold text-primary">{{ m.seans_yapilan }}</p>
+                                <p class="text-[10px] text-secondary uppercase font-medium">Seans</p>
+                            </div>
+                        </div>
+
+                        <!-- Card Action -->
+                        <div class="p-4 bg-cream/30">
+                            <a href="{{ url_for('psikoloji_mudurluk_analiz', mudurluk_id=m.id) }}"
+                                class="flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white rounded-xl font-medium text-sm hover:bg-primary/90 transition-colors">
+                                <span class="material-symbols-outlined text-lg">insights</span>
+                                Detaylı Analiz
+                            </a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="col-span-3 text-center py-16">
+                        <div class="size-20 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-4xl text-secondary/50">business</span>
+                        </div>
+                        <p class="text-secondary font-medium">Henüz müdürlük kaydedilmemiş</p>
+                        <a href="{{ url_for('psikoloji_import') }}" class="text-primary text-sm font-medium mt-2 inline-block hover:underline">
+                            Veri yüklemek için tıklayın
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

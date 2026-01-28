@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr" class="light h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Arnavutkoy Belediyesi{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2F2A24",
+                        secondary: "#7B746A",
+                        accent: "#E2D9CA",
+                        cream: "#F4EFE6",
+                        danger: "#A94442",
+                        warning: "#C9A14C",
+                        success: "#5E8062",
+                        'sidebar-active': '#C86A3C',
+                    },
+                    fontFamily: {
+                        serif: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'card': '0 2px 8px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2D9CA;
+            border-radius: 10px;
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print { display: none !important; }
+            .print-break { page-break-before: always; }
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="bg-cream text-primary font-sans antialiased h-full overflow-hidden">
+    {% block body %}{% endblock %}
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('main-sidebar');
+            if (sidebar) {
+                sidebar.classList.toggle('w-72');
+                sidebar.classList.toggle('w-20');
+                const labels = sidebar.querySelectorAll('span:not(.material-symbols-outlined), p');
+                labels.forEach(label => label.classList.toggle('hidden'));
+            }
+        }
+    </script>
+</body>
+
+</html>

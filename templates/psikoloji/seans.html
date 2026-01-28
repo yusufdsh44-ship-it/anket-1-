@@ -1,0 +1,1361 @@
+{% extends "base.html" %}
+
+{% block title %}{{ personel.ad_soyad }} - Klinik Seans{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Tab Styles */
+    .tab-btn { position: relative; transition: all 0.2s ease; }
+    .tab-btn::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 3px; background: transparent; transition: background 0.2s; }
+    .tab-btn.active { color: #C86A3C; font-weight: 600; }
+    .tab-btn.active::after { background: #C86A3C; }
+    .tab-panel { display: none; animation: fadeIn 0.3s ease; }
+    .tab-panel.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Mood Slider */
+    .mood-slider { -webkit-appearance: none; width: 100%; height: 8px; border-radius: 4px; outline: none; transition: all 0.2s; }
+    .mood-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #C86A3C; cursor: pointer; box-shadow: 0 2px 8px rgba(200, 106, 60, 0.4); transition: transform 0.2s; }
+    .mood-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+    .mood-gradient { background: linear-gradient(to right, #ef4444, #f59e0b, #22c55e); }
+
+    /* Tag Button */
+    .tag-btn { transition: all 0.15s ease; }
+    .tag-btn.selected { transform: scale(1.05); box-shadow: 0 0 0 2px #C86A3C; background: #C86A3C !important; color: white !important; border-color: #C86A3C !important; }
+
+    /* Recording Animation */
+    .recording { animation: pulse-red 1.5s infinite; }
+    @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+    /* Auto-save Indicator */
+    .auto-save-indicator { transition: opacity 0.3s ease; }
+
+    /* Floating Button */
+    .floating-btn { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .floating-btn:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(47, 42, 36, 0.3); }
+
+    /* MSE Cards */
+    .mse-card { transition: all 0.2s ease; }
+    .mse-card:hover { border-color: #C86A3C; }
+
+    /* Slide Panel */
+    .slide-panel { transform: translateX(100%); transition: transform 0.3s ease; }
+    .slide-panel.open { transform: translateX(0); }
+
+    /* Keyboard Shortcuts Modal */
+    kbd { display: inline-block; padding: 2px 6px; background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 4px; font-family: monospace; font-size: 12px; }
+
+    /* Progress Line */
+    .progress-dot { width: 12px; height: 12px; border-radius: 50%; transition: all 0.2s; }
+    .progress-dot.completed { background: #22c55e; }
+    .progress-dot.current { background: #C86A3C; box-shadow: 0 0 0 4px rgba(200, 106, 60, 0.2); }
+    .progress-dot.pending { background: #e5e7eb; }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="flex h-screen overflow-hidden">
+    {% include '_sidebar.html' %}
+
+    <div class="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-cream/50 to-white">
+        <!-- Header -->
+        <header class="bg-white/90 backdrop-blur-md border-b border-accent/50 px-6 py-3 shrink-0 z-30">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="{{ url_for('psikoloji_personel_detail', personel_id=personel.id) }}"
+                        class="p-2 hover:bg-cream rounded-xl transition-colors text-secondary">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <div class="size-11 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center text-lg font-bold shadow-lg">
+                        {{ personel.ad_soyad[0] }}
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-lg text-primary font-bold flex items-center gap-2">
+                            {{ personel.ad_soyad }}
+                            {% if personel.risk_kategori == 'Kritik' %}
+                            <span class="px-2 py-0.5 bg-danger text-white text-[10px] font-bold rounded-full animate-pulse">KRITIK</span>
+                            {% elif personel.risk_kategori == 'Yuksek' %}
+                            <span class="px-2 py-0.5 bg-orange-500 text-white text-[10px] font-bold rounded-full">YUKSEK RISK</span>
+                            {% endif %}
+                        </h1>
+                        <p class="text-xs text-secondary">Seans #{{ seans_no }} • {{ mudurluk.ad if mudurluk else 'Bilinmiyor' }}</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <!-- Auto-save indicator -->
+                    <div id="auto-save-indicator" class="auto-save-indicator opacity-0 flex items-center gap-1 text-xs text-success bg-success/10 px-2 py-1 rounded-lg">
+                        <span class="material-symbols-outlined text-sm">check_circle</span>
+                        <span>Kaydedildi</span>
+                    </div>
+
+                    <!-- Session Timer -->
+                    <div class="flex items-center gap-2 bg-gradient-to-r from-primary/10 to-primary/5 px-4 py-2 rounded-xl border border-primary/20">
+                        <span class="material-symbols-outlined text-primary text-lg">timer</span>
+                        <span id="session-timer" class="font-mono text-lg font-bold text-primary">00:00:00</span>
+                    </div>
+
+                    <!-- Keyboard Shortcuts -->
+                    <button type="button" onclick="showKeyboardShortcuts()"
+                        class="p-2 text-secondary hover:text-primary hover:bg-cream rounded-xl transition-colors" title="Klavye Kisayollari">
+                        <span class="material-symbols-outlined">keyboard</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="bg-white border-b border-accent/30 px-6">
+            <div class="flex gap-1">
+                <button type="button" class="tab-btn active px-5 py-3 text-sm font-medium text-secondary hover:text-primary" data-tab="0" onclick="switchTab(0)">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">person</span>
+                        Hasta
+                    </span>
+                </button>
+                <button type="button" class="tab-btn px-5 py-3 text-sm font-medium text-secondary hover:text-primary" data-tab="1" onclick="switchTab(1)">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">psychology</span>
+                        Degerlendirme
+                    </span>
+                </button>
+                <button type="button" class="tab-btn px-5 py-3 text-sm font-medium text-secondary hover:text-primary" data-tab="2" onclick="switchTab(2)">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">edit_note</span>
+                        Notlar
+                    </span>
+                </button>
+                <button type="button" class="tab-btn px-5 py-3 text-sm font-medium text-secondary hover:text-primary" data-tab="3" onclick="switchTab(3)">
+                    <span class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-lg">assignment</span>
+                        Plan
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 overflow-y-auto">
+            <form id="seans-form" method="post">
+                <!-- Hidden Fields -->
+                <input type="hidden" name="seans_no" value="{{ seans_no }}">
+                <input type="hidden" name="hizli_etiketler" id="hizli-etiketler-input" value="{}">
+                <input type="hidden" name="mse_data" id="mse-data-input" value="{}">
+                <input type="hidden" name="baslangic_saat" id="baslangic-saat" value="">
+                <input type="hidden" name="bitis_saat" id="bitis-saat" value="">
+
+                <div class="max-w-[1300px] mx-auto p-6">
+
+                    <!-- TAB 0: HASTA BILGILERI -->
+                    <div class="tab-panel active" id="tab-panel-0">
+                        <div class="grid grid-cols-12 gap-5">
+                            <!-- Sol: Hasta Bilgileri -->
+                            <div class="col-span-4 space-y-4">
+                                <!-- Demografik Bilgiler -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">badge</span>
+                                            Demografik Bilgiler
+                                        </h3>
+                                    </div>
+                                    <div class="p-4 space-y-2">
+                                        <div class="flex justify-between py-1.5 border-b border-accent/20">
+                                            <span class="text-xs text-secondary">Yas</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.yas or '-' }}</span>
+                                        </div>
+                                        <div class="flex justify-between py-1.5 border-b border-accent/20">
+                                            <span class="text-xs text-secondary">Cinsiyet</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.cinsiyet or '-' }}</span>
+                                        </div>
+                                        <div class="flex justify-between py-1.5 border-b border-accent/20">
+                                            <span class="text-xs text-secondary">Egitim</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.egitim or '-' }}</span>
+                                        </div>
+                                        <div class="flex justify-between py-1.5 border-b border-accent/20">
+                                            <span class="text-xs text-secondary">Medeni Durum</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.medeni_durum or '-' }}</span>
+                                        </div>
+                                        <div class="flex justify-between py-1.5 border-b border-accent/20">
+                                            <span class="text-xs text-secondary">Cocuk Sayisi</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.cocuk_sayisi or '0' }}</span>
+                                        </div>
+                                        <div class="flex justify-between py-1.5">
+                                            <span class="text-xs text-secondary">Kidem</span>
+                                            <span class="text-xs font-medium text-primary">{{ personel.kidem_yil or '-' }} yil</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Risk Ozeti -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">warning</span>
+                                            Risk Durumu
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <span class="text-sm font-medium text-primary">Triyaj Puani</span>
+                                            <span class="text-2xl font-bold
+                                                {% if personel.triyaj_puani and personel.triyaj_puani >= 3.5 %}text-danger
+                                                {% elif personel.triyaj_puani and personel.triyaj_puani >= 2.5 %}text-orange-500
+                                                {% else %}text-success{% endif %}">
+                                                {{ personel.triyaj_puani | round(1) if personel.triyaj_puani else '-' }}
+                                            </span>
+                                        </div>
+                                        <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                            <div class="h-full rounded-full
+                                                {% if personel.triyaj_puani and personel.triyaj_puani >= 3.5 %}bg-danger
+                                                {% elif personel.triyaj_puani and personel.triyaj_puani >= 2.5 %}bg-orange-500
+                                                {% else %}bg-success{% endif %}"
+                                                style="width: {{ ((personel.triyaj_puani or 0) / 5 * 100) | round }}%"></div>
+                                        </div>
+                                        <p class="text-xs text-secondary mt-2">Kategori: <span class="font-medium text-primary">{{ personel.risk_kategori or 'Belirsiz' }}</span></p>
+
+                                        {% if personel.anket_skoru %}
+                                        <div class="mt-3 pt-3 border-t border-accent/30">
+                                            <div class="flex justify-between text-xs">
+                                                <span class="text-secondary">Anket Skoru</span>
+                                                <span class="font-medium text-primary">{{ personel.anket_skoru }}/100</span>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <!-- MMPI Ozeti -->
+                                {% if personel.mmpiL or personel.mmpiF or personel.mmpiK %}
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">psychology_alt</span>
+                                            MMPI Sonuclari
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="grid grid-cols-3 gap-2">
+                                            <div class="text-center p-2 bg-cream/50 rounded-lg">
+                                                <p class="text-[10px] text-secondary uppercase">L</p>
+                                                <p class="text-lg font-bold text-primary">{{ personel.mmpiL or '-' }}</p>
+                                            </div>
+                                            <div class="text-center p-2 bg-cream/50 rounded-lg">
+                                                <p class="text-[10px] text-secondary uppercase">F</p>
+                                                <p class="text-lg font-bold text-primary">{{ personel.mmpiF or '-' }}</p>
+                                            </div>
+                                            <div class="text-center p-2 bg-cream/50 rounded-lg">
+                                                <p class="text-[10px] text-secondary uppercase">K</p>
+                                                <p class="text-lg font-bold text-primary">{{ personel.mmpiK or '-' }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Sag: Seans Gecmisi & Trend -->
+                            <div class="col-span-8 space-y-4">
+                                <!-- Ruh Hali Trendi -->
+                                {% if onceki_seanslar and onceki_seanslar|length > 0 %}
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">trending_up</span>
+                                            Seans Gecmisi & Ilerleme
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <!-- Mini Timeline -->
+                                        <div class="flex items-center justify-between mb-4">
+                                            {% for s in onceki_seanslar[:5]|reverse %}
+                                            <div class="flex flex-col items-center">
+                                                <div class="progress-dot {% if loop.last %}current{% else %}completed{% endif %}"></div>
+                                                <span class="text-[10px] text-secondary mt-1">#{{ s.seans_no }}</span>
+                                            </div>
+                                            {% if not loop.last %}
+                                            <div class="flex-1 h-0.5 bg-gray-200 mx-2"></div>
+                                            {% endif %}
+                                            {% endfor %}
+                                            <div class="flex flex-col items-center">
+                                                <div class="progress-dot pending border-2 border-dashed border-primary"></div>
+                                                <span class="text-[10px] text-primary font-medium mt-1">#{{ seans_no }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                <!-- Onceki Seanslar Listesi -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30 flex items-center justify-between">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">history</span>
+                                            Onceki Seanslar
+                                        </h3>
+                                        <span class="text-xs text-secondary">{{ onceki_seanslar|length if onceki_seanslar else 0 }} seans</span>
+                                    </div>
+                                    <div class="p-4">
+                                        {% if onceki_seanslar and onceki_seanslar|length > 0 %}
+                                        <div class="space-y-2 max-h-[300px] overflow-y-auto custom-scrollbar">
+                                            {% for s in onceki_seanslar %}
+                                            <div class="p-3 bg-cream/30 rounded-xl hover:bg-cream/50 transition-colors cursor-pointer border border-transparent hover:border-primary/20"
+                                                 onclick="openPrevSessionPanel({{ s.id }}, {{ s.seans_no }}, '{{ s.tarih.strftime('%d.%m.%Y') }}', {{ s.sure_dakika or 0 }}, '{{ s.klinik_gozlemler|e if s.klinik_gozlemler else '' }}', '{{ s.nihai_klinik_sentez|e if s.nihai_klinik_sentez else '' }}', {{ s.seans_risk_puani or 3 }})">
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center gap-3">
+                                                        <div class="size-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">
+                                                            #{{ s.seans_no }}
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-sm font-medium text-primary">{{ s.tarih.strftime('%d %B %Y') }}</p>
+                                                            <p class="text-xs text-secondary">{{ s.sure_dakika or '-' }} dakika</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-xs px-2 py-0.5 rounded
+                                                            {% if s.seans_risk_puani and s.seans_risk_puani >= 4 %}bg-danger/10 text-danger
+                                                            {% elif s.seans_risk_puani and s.seans_risk_puani >= 3 %}bg-warning/10 text-warning
+                                                            {% else %}bg-success/10 text-success{% endif %}">
+                                                            Risk: {{ s.seans_risk_puani or '-' }}/5
+                                                        </span>
+                                                        <span class="material-symbols-outlined text-secondary text-lg">chevron_right</span>
+                                                    </div>
+                                                </div>
+                                                {% if s.klinik_gozlemler %}
+                                                <p class="text-xs text-secondary mt-2 line-clamp-2">{{ s.klinik_gozlemler[:100] }}{% if s.klinik_gozlemler|length > 100 %}...{% endif %}</p>
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        <div class="text-center py-8">
+                                            <span class="material-symbols-outlined text-4xl text-secondary/30">history</span>
+                                            <p class="text-sm text-secondary mt-2">Henuz seans kaydi yok</p>
+                                            <p class="text-xs text-secondary/70">Bu ilk seans olacak</p>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 1: DEGERLENDIRME (MSE + Etiketler) -->
+                    <div class="tab-panel" id="tab-panel-1">
+                        <div class="grid grid-cols-12 gap-5">
+                            <!-- Sol: Ruh Hali Slider + Hizli Etiketler -->
+                            <div class="col-span-4 space-y-4">
+                                <!-- Ruh Hali Slider -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">mood</span>
+                                            Ruh Hali Degerlendirmesi
+                                        </h3>
+                                    </div>
+                                    <div class="p-5">
+                                        <div class="text-center mb-4">
+                                            <span id="mood-emoji" class="text-5xl">😐</span>
+                                            <p id="mood-label" class="text-sm font-medium text-primary mt-2">Normal</p>
+                                            <p id="mood-value" class="text-2xl font-bold text-primary">5<span class="text-sm font-normal text-secondary">/10</span></p>
+                                        </div>
+                                        <div class="relative">
+                                            <div class="mood-gradient h-2 rounded-full mb-2"></div>
+                                            <input type="range" id="mood-slider" name="ruh_hali_puan" min="1" max="10" value="5"
+                                                class="mood-slider w-full absolute top-0 bg-transparent">
+                                        </div>
+                                        <div class="flex justify-between text-[10px] text-secondary mt-3">
+                                            <span>Cok Kotu</span>
+                                            <span>Cok Iyi</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Hizli Etiketler -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">label</span>
+                                            Hizli Etiketler
+                                        </h3>
+                                    </div>
+                                    <div class="p-4 space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar">
+                                        <!-- Intihar Riski -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2 flex items-center gap-1">
+                                                <span class="material-symbols-outlined text-sm text-danger">warning</span>
+                                                Intihar Riski
+                                            </p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="intihar" data-value="Yok" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-success/30 bg-success/10 text-success">Yok</button>
+                                                <button type="button" data-category="intihar" data-value="Dusuk" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-warning/30 bg-warning/10 text-warning">Dusuk</button>
+                                                <button type="button" data-category="intihar" data-value="Orta" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-orange-500/30 bg-orange-500/10 text-orange-600">Orta</button>
+                                                <button type="button" data-category="intihar" data-value="Yuksek" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-danger/30 bg-danger/10 text-danger">Yuksek</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Anksiyete -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Anksiyete</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="anksiyete" data-value="Yok" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Yok</button>
+                                                <button type="button" data-category="anksiyete" data-value="Hafif" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Hafif</button>
+                                                <button type="button" data-category="anksiyete" data-value="Orta" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Orta</button>
+                                                <button type="button" data-category="anksiyete" data-value="Siddetli" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Siddetli</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Depresyon -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Depresyon</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="depresyon" data-value="Yok" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Yok</button>
+                                                <button type="button" data-category="depresyon" data-value="Hafif" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Hafif</button>
+                                                <button type="button" data-category="depresyon" data-value="Orta" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Orta</button>
+                                                <button type="button" data-category="depresyon" data-value="Siddetli" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Siddetli</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Uyku -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Uyku Durumu</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="uyku" data-value="Normal" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Normal</button>
+                                                <button type="button" data-category="uyku" data-value="Bozuk" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Bozuk</button>
+                                                <button type="button" data-category="uyku" data-value="Insomnia" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Insomnia</button>
+                                                <button type="button" data-category="uyku" data-value="Hipersomnia" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Hipersomnia</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Istah -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Istah</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="istah" data-value="Normal" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Normal</button>
+                                                <button type="button" data-category="istah" data-value="Azalmis" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Azalmis</button>
+                                                <button type="button" data-category="istah" data-value="Artmis" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Artmis</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Madde Kullanimi -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Madde Kullanimi</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="madde" data-value="Yok" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Yok</button>
+                                                <button type="button" data-category="madde" data-value="Gecmiste" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Gecmiste</button>
+                                                <button type="button" data-category="madde" data-value="Aktif" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-danger/30 bg-danger/10 text-danger">Aktif</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Ilac Uyumu -->
+                                        <div>
+                                            <p class="text-xs font-medium text-primary mb-2">Ilac Uyumu</p>
+                                            <div class="flex flex-wrap gap-1.5">
+                                                <button type="button" data-category="ilac" data-value="Tam" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Tam</button>
+                                                <button type="button" data-category="ilac" data-value="Kismen" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Kismen</button>
+                                                <button type="button" data-category="ilac" data-value="Kotu" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Kotu</button>
+                                                <button type="button" data-category="ilac" data-value="Kullanmiyor" class="tag-btn px-2.5 py-1 text-xs rounded-lg border border-accent bg-cream/50 text-secondary">Kullanmiyor</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sag: MSE (Mental Durum Muayenesi) -->
+                            <div class="col-span-8">
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">psychology</span>
+                                            Mental Durum Muayenesi (MSE)
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <!-- 1. Gorunum & Davranis -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">1. Gorunum & Davranis</label>
+                                                <select name="mse_gorunum" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Bakimli, isbirlikci">Bakimli, isbirlikci</option>
+                                                    <option value="Bakimli, mesafeli">Bakimli, mesafeli</option>
+                                                    <option value="Bakimsiz, isbirlikci">Bakimsiz, isbirlikci</option>
+                                                    <option value="Bakimsiz, direncli">Bakimsiz, direncli</option>
+                                                    <option value="Ajite">Ajite</option>
+                                                    <option value="Retarde">Retarde</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 2. Konusma -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">2. Konusma</label>
+                                                <select name="mse_konusma" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Normal hiz, ton">Normal hiz, ton</option>
+                                                    <option value="Yavaslamis">Yavaslamis</option>
+                                                    <option value="Hizlanmis">Hizlanmis</option>
+                                                    <option value="Monoton">Monoton</option>
+                                                    <option value="Baski altinda">Baski altinda</option>
+                                                    <option value="Sessiz/az konusuyor">Sessiz/az konusuyor</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 3. Duygudurum -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">3. Duygudurum (Mood)</label>
+                                                <select name="mse_duygudurum" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Otimik">Otimik (Normal)</option>
+                                                    <option value="Depresif">Depresif</option>
+                                                    <option value="Anksiyoz">Anksiyoz</option>
+                                                    <option value="Irritabl">Irritabl</option>
+                                                    <option value="Oforik">Oforik</option>
+                                                    <option value="Disforik">Disforik</option>
+                                                    <option value="Aleksitimik">Aleksitimik</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 4. Duygulanim -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">4. Duygulanim (Affect)</label>
+                                                <select name="mse_duygulanim" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Uygun">Uygun</option>
+                                                    <option value="Kisitli">Kisitli</option>
+                                                    <option value="Duz/Kor">Duz/Kor</option>
+                                                    <option value="Labil">Labil</option>
+                                                    <option value="Uygunsuz">Uygunsuz</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 5. Dusunce Sureci -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">5. Dusunce Sureci</label>
+                                                <select name="mse_dusunce_sureci" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Hedef yonelimli">Hedef yonelimli</option>
+                                                    <option value="Tegetsel">Tegetsel</option>
+                                                    <option value="Sirkumstansiyel">Sirkumstansiyel</option>
+                                                    <option value="Enkoheran">Enkoheran</option>
+                                                    <option value="Fikir ucusmasi">Fikir ucusmasi</option>
+                                                    <option value="Blokaj">Blokaj</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 6. Dusunce Icerigi -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">6. Dusunce Icerigi</label>
+                                                <select name="mse_dusunce_icerik" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Normal">Normal</option>
+                                                    <option value="Obsesyon var">Obsesyon var</option>
+                                                    <option value="Fobi var">Fobi var</option>
+                                                    <option value="Suisidal dusunce">Suisidal dusunce</option>
+                                                    <option value="Homisidal dusunce">Homisidal dusunce</option>
+                                                    <option value="Deluzyon">Deluzyon</option>
+                                                    <option value="Referans fikirleri">Referans fikirleri</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 7. Algi -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">7. Algi</label>
+                                                <select name="mse_algi" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Normal">Normal</option>
+                                                    <option value="Isitsel halusin">Isitsel halusinasyon</option>
+                                                    <option value="Gorsel halusin">Gorsel halusinasyon</option>
+                                                    <option value="Illuzyon">Illuzyon</option>
+                                                    <option value="Depersonalizasyon">Depersonalizasyon</option>
+                                                    <option value="Derealizasyon">Derealizasyon</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 8. Bilis -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">8. Bilis (Kognitif)</label>
+                                                <select name="mse_bilis" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Uyanic, oryante">Uyanic, oryante</option>
+                                                    <option value="Dikkat bozuk">Dikkat bozuk</option>
+                                                    <option value="Bellek bozuk">Bellek bozuk</option>
+                                                    <option value="Oryantasyon bozuk">Oryantasyon bozuk</option>
+                                                    <option value="Konfuzyon">Konfuzyon</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 9. Icgoru -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">9. Icgoru</label>
+                                                <select name="mse_icgoru" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Tam">Tam</option>
+                                                    <option value="Kismen">Kismen</option>
+                                                    <option value="Yok">Yok</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- 10. Yargi -->
+                                            <div class="mse-card p-3 border border-accent/30 rounded-xl">
+                                                <label class="text-xs font-medium text-primary block mb-2">10. Yargi</label>
+                                                <select name="mse_yargi" class="w-full px-3 py-2 text-xs border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                    <option value="">Secin...</option>
+                                                    <option value="Bozulmamis">Bozulmamis</option>
+                                                    <option value="Kismen bozulmus">Kismen bozulmus</option>
+                                                    <option value="Ciddi bozulmus">Ciddi bozulmus</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- MSE Ek Notlar -->
+                                        <div class="mt-4">
+                                            <label class="text-xs font-medium text-primary block mb-2">MSE Ek Notlar</label>
+                                            <textarea name="mse_notlar" rows="3" placeholder="MSE ile ilgili ek gozlemler..."
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: NOTLAR -->
+                    <div class="tab-panel" id="tab-panel-2">
+                        <div class="grid grid-cols-12 gap-5">
+                            <!-- Sol: Ses Kaydi -->
+                            <div class="col-span-4 space-y-4">
+                                <!-- Ses Kaydi -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30 flex items-center justify-between">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">mic</span>
+                                            Ses Kaydi
+                                        </h3>
+                                        <span id="recording-time" class="text-xs font-mono text-secondary hidden">00:00</span>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <button type="button" id="btn-record" onclick="toggleRecording()"
+                                            class="w-full py-3 bg-danger text-white text-sm font-medium rounded-xl hover:bg-danger/90 flex items-center justify-center gap-2 transition-all">
+                                            <span class="material-symbols-outlined">fiber_manual_record</span>
+                                            <span id="record-btn-text">Kayit Baslat</span>
+                                        </button>
+
+                                        <div id="audio-preview" class="hidden">
+                                            <audio id="audio-player" controls class="w-full h-10"></audio>
+                                        </div>
+
+                                        <textarea name="ai_transkript" id="transkript-area" rows="6"
+                                            placeholder="Seans transkripti buraya yazilabilir..."
+                                            class="w-full px-3 py-2 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none bg-cream/20"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Seans Suresi -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">schedule</span>
+                                            Seans Bilgileri
+                                        </h3>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <div>
+                                            <label class="text-xs font-medium text-primary block mb-1.5">Sure (dakika)</label>
+                                            <input type="number" name="sure_dakika" value="45" min="5" max="180"
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs font-medium text-primary block mb-1.5">Risk Puani (1-5)</label>
+                                            <select name="risk_puani"
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                                <option value="1">1 - Dusuk</option>
+                                                <option value="2">2 - Dusuk/Orta</option>
+                                                <option value="3" selected>3 - Orta</option>
+                                                <option value="4">4 - Yuksek</option>
+                                                <option value="5">5 - Kritik</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sag: Klinik Notlar -->
+                            <div class="col-span-8">
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden h-full">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30 flex items-center justify-between">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">edit_note</span>
+                                            Klinik Gozlemler
+                                        </h3>
+                                        <div class="flex items-center gap-2">
+                                            <select id="note-format" onchange="applyNoteFormat(this.value)"
+                                                class="px-3 py-1.5 text-xs border border-accent rounded-lg focus:border-primary bg-white">
+                                                <option value="">Format Sec...</option>
+                                                <option value="soap">SOAP</option>
+                                                <option value="dap">DAP</option>
+                                                <option value="birp">BIRP</option>
+                                                <option value="ilk_gorusme">Ilk Gorusme</option>
+                                                <option value="takip">Takip Seansi</option>
+                                                <option value="kriz">Kriz Mudahale</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <textarea name="klinik_gozlemler" id="klinik-notlar" rows="20"
+                                            placeholder="Seans notlarinizi buraya yazin...
+
+Ipucu: Format secip sablonu otomatik uygulayabilirsiniz.
+
+SOAP: Subjektif, Objektif, Assessment, Plan
+DAP: Data, Assessment, Plan
+BIRP: Behavior, Intervention, Response, Plan"
+                                            class="w-full px-4 py-3 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none font-mono"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: PLAN & SONUC -->
+                    <div class="tab-panel" id="tab-panel-3">
+                        <div class="grid grid-cols-12 gap-5">
+                            <!-- Sol: Tani & Tedavi -->
+                            <div class="col-span-6 space-y-4">
+                                <!-- Tani Izlenimi -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">medical_information</span>
+                                            Tani Izlenimi
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <textarea name="tani_izlenimi" rows="4" placeholder="DSM-5 / ICD-10 tani izlenimi..."
+                                            class="w-full px-3 py-2 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Tedavi Plani -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">assignment</span>
+                                            Tedavi Plani
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <textarea name="nihai_sentez" id="nihai-sentez" rows="6" placeholder="Tedavi yaklasimi, hedefler, mudahale plani..."
+                                            class="w-full px-3 py-2 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Sonraki Adimlar Checklist -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">checklist</span>
+                                            Sonraki Adimlar
+                                        </h3>
+                                    </div>
+                                    <div class="p-4 space-y-2">
+                                        <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-cream/50 cursor-pointer">
+                                            <input type="checkbox" name="takip_gerekli" id="takip-checkbox" class="w-4 h-4 rounded border-accent text-primary">
+                                            <span class="text-sm text-primary">Takip randevusu planla</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-cream/50 cursor-pointer">
+                                            <input type="checkbox" name="ilac_referans" class="w-4 h-4 rounded border-accent text-primary">
+                                            <span class="text-sm text-primary">Psikiyatri referansi gerekli</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-cream/50 cursor-pointer">
+                                            <input type="checkbox" name="aile_gorusmesi" class="w-4 h-4 rounded border-accent text-primary">
+                                            <span class="text-sm text-primary">Aile gorusmesi planla</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-2 rounded-lg hover:bg-cream/50 cursor-pointer">
+                                            <input type="checkbox" name="test_uygulamasi" class="w-4 h-4 rounded border-accent text-primary">
+                                            <span class="text-sm text-primary">Test/olcek uygulamasi</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sag: Ev Odevi & Randevu -->
+                            <div class="col-span-6 space-y-4">
+                                <!-- Ev Odevi -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">home_work</span>
+                                            Ev Odevi / Gorevler
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <textarea name="ev_odevi" rows="4" placeholder="Hastaya verilen ev odevleri ve gorevler..."
+                                            class="w-full px-3 py-2 text-sm border border-accent rounded-xl focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Randevu Planlama -->
+                                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-accent/30 bg-gradient-to-r from-cream/50 to-cream/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg">event</span>
+                                            Sonraki Randevu
+                                        </h3>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <div>
+                                            <label class="text-xs font-medium text-primary block mb-1.5">Tarih</label>
+                                            <input type="date" name="sonraki_randevu_tarih"
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs font-medium text-primary block mb-1.5">Saat</label>
+                                            <input type="time" name="sonraki_randevu_saat"
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs font-medium text-primary block mb-1.5">Not</label>
+                                            <input type="text" name="sonraki_randevu_not" placeholder="Randevu notu..."
+                                                class="w-full px-3 py-2 text-sm border border-accent rounded-lg focus:border-primary focus:ring-1 focus:ring-primary/20">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Onemli Notlar -->
+                                <div class="bg-gradient-to-r from-warning/10 to-warning/5 rounded-2xl border border-warning/30 shadow-sm overflow-hidden">
+                                    <div class="p-4 border-b border-warning/30">
+                                        <h3 class="font-serif font-bold text-primary text-sm flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-lg text-warning">priority_high</span>
+                                            Onemli Notlar
+                                        </h3>
+                                    </div>
+                                    <div class="p-4">
+                                        <textarea name="onemli_notlar" rows="4" placeholder="Kritik bilgiler, uyarilar, dikkat edilmesi gerekenler..."
+                                            class="w-full px-3 py-2 text-sm border border-warning/30 rounded-xl focus:border-warning focus:ring-1 focus:ring-warning/20 resize-none bg-white/80"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer Actions -->
+                <div class="sticky bottom-0 bg-white/90 backdrop-blur-md border-t border-accent/30 px-6 py-4 mt-4">
+                    <div class="max-w-[1300px] mx-auto flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <button type="button" onclick="saveDraft()" class="px-4 py-2 border border-accent text-secondary rounded-xl text-sm font-medium hover:bg-cream transition-colors flex items-center gap-2">
+                                <span class="material-symbols-outlined text-lg">save</span>
+                                Taslak Kaydet
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <a href="{{ url_for('psikoloji_personel_detail', personel_id=personel.id) }}"
+                                class="px-5 py-2.5 border border-accent text-secondary rounded-xl text-sm font-medium hover:bg-cream transition-colors">
+                                Iptal
+                            </a>
+                            <button type="submit" id="save-btn"
+                                class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary/90 text-white rounded-xl text-sm font-medium hover:from-primary/90 hover:to-primary/80 transition-all flex items-center gap-2 shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined text-lg">check_circle</span>
+                                Seansi Tamamla
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Quick Note Button -->
+    <button type="button" onclick="openQuickNote()"
+        class="floating-btn fixed bottom-24 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-xl flex items-center justify-center z-40">
+        <span class="material-symbols-outlined">add</span>
+    </button>
+
+    <!-- Quick Note Modal -->
+    <div id="quick-note-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+            <div class="p-4 border-b border-accent/30 bg-cream/30 flex items-center justify-between">
+                <h3 class="font-serif font-bold text-primary">Hizli Not</h3>
+                <button onclick="closeQuickNote()" class="text-secondary hover:text-primary">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-4">
+                <textarea id="quick-note-text" rows="4" placeholder="Notunuzu yazin... (Ctrl+Enter ile ekle)"
+                    class="w-full px-4 py-3 border border-accent rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm resize-none"></textarea>
+                <div class="flex justify-end gap-2 mt-4">
+                    <button type="button" onclick="closeQuickNote()" class="px-4 py-2 border border-accent text-secondary rounded-lg hover:bg-cream text-sm">Iptal</button>
+                    <button type="button" onclick="addQuickNote()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 text-sm">Ekle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="keyboard-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden">
+            <div class="p-4 border-b border-accent/30 bg-cream/30 flex items-center justify-between">
+                <h3 class="font-serif font-bold text-primary">Klavye Kisayollari</h3>
+                <button onclick="hideKeyboardShortcuts()" class="text-secondary hover:text-primary">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-4 space-y-3">
+                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                    <span class="text-sm text-primary">Tab degistir</span>
+                    <span><kbd>Ctrl</kbd> + <kbd>1-4</kbd></span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                    <span class="text-sm text-primary">Taslak kaydet</span>
+                    <span><kbd>Ctrl</kbd> + <kbd>S</kbd></span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                    <span class="text-sm text-primary">Seansi kaydet</span>
+                    <span><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                    <span class="text-sm text-primary">Hizli not</span>
+                    <span><kbd>Ctrl</kbd> + <kbd>N</kbd></span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                    <span class="text-sm text-primary">Ses kaydi</span>
+                    <span><kbd>Ctrl</kbd> + <kbd>R</kbd></span>
+                </div>
+                <div class="flex justify-between items-center py-2">
+                    <span class="text-sm text-primary">Modali kapat</span>
+                    <span><kbd>Esc</kbd></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Previous Session Slide Panel -->
+    <div id="prev-session-panel" class="slide-panel fixed top-0 right-0 h-full w-full max-w-lg bg-white shadow-2xl z-50 flex flex-col">
+        <div class="p-4 border-b border-accent/30 bg-cream/30 flex items-center justify-between shrink-0">
+            <h3 class="font-serif font-bold text-primary" id="prev-session-title">Onceki Seans</h3>
+            <button onclick="closePrevSessionPanel()" class="text-secondary hover:text-primary">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6" id="prev-session-content">
+            <!-- Dynamically loaded -->
+        </div>
+        <div class="p-4 border-t border-accent/30 shrink-0">
+            <button type="button" onclick="copyPrevSessionNotes()" class="w-full py-2.5 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-lg">content_copy</span>
+                Notlari Kopyala
+            </button>
+        </div>
+    </div>
+    <div id="prev-session-overlay" class="fixed inset-0 bg-black/30 z-40 hidden" onclick="closePrevSessionPanel()"></div>
+</div>
+
+<script>
+// ===== Session Timer =====
+let sessionSeconds = 0;
+const startTime = new Date();
+document.getElementById('baslangic-saat').value = startTime.toTimeString().slice(0,8);
+
+setInterval(() => {
+    sessionSeconds++;
+    const h = Math.floor(sessionSeconds / 3600);
+    const m = Math.floor((sessionSeconds % 3600) / 60);
+    const s = sessionSeconds % 60;
+    document.getElementById('session-timer').textContent =
+        `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+}, 1000);
+
+// Store active session in localStorage for sidebar
+localStorage.setItem('aktif_seans', JSON.stringify({
+    personel_id: {{ personel.id }},
+    personel_ad: '{{ personel.ad_soyad }}',
+    baslangic: startTime.toISOString()
+}));
+
+// ===== Tab Switching =====
+function switchTab(index) {
+    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+    });
+    document.querySelectorAll('.tab-panel').forEach((panel, i) => {
+        panel.classList.toggle('active', i === index);
+    });
+}
+
+// ===== Mood Slider =====
+const moodData = {
+    1: { emoji: '😢', label: 'Cok Kotu' },
+    2: { emoji: '😢', label: 'Kotu' },
+    3: { emoji: '😔', label: 'Dusuk' },
+    4: { emoji: '😔', label: 'Dusuk-Orta' },
+    5: { emoji: '😐', label: 'Normal' },
+    6: { emoji: '😐', label: 'Normal-Iyi' },
+    7: { emoji: '🙂', label: 'Iyi' },
+    8: { emoji: '🙂', label: 'Oldukca Iyi' },
+    9: { emoji: '😊', label: 'Cok Iyi' },
+    10: { emoji: '😊', label: 'Mukemmel' }
+};
+
+const moodSlider = document.getElementById('mood-slider');
+if (moodSlider) {
+    moodSlider.addEventListener('input', function() {
+        const val = parseInt(this.value);
+        document.getElementById('mood-emoji').textContent = moodData[val].emoji;
+        document.getElementById('mood-label').textContent = moodData[val].label;
+        document.getElementById('mood-value').innerHTML = `${val}<span class="text-sm font-normal text-secondary">/10</span>`;
+    });
+}
+
+// ===== Quick Tags =====
+const selectedTags = {};
+document.querySelectorAll('.tag-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const category = this.dataset.category;
+        const value = this.dataset.value;
+
+        document.querySelectorAll(`.tag-btn[data-category="${category}"]`).forEach(b => {
+            b.classList.remove('selected');
+        });
+
+        if (selectedTags[category] === value) {
+            delete selectedTags[category];
+        } else {
+            selectedTags[category] = value;
+            this.classList.add('selected');
+        }
+
+        document.getElementById('hizli-etiketler-input').value = JSON.stringify(selectedTags);
+
+        // Warning for high suicide risk
+        if (category === 'intihar' && value === 'Yuksek') {
+            alert('DIKKAT: Yuksek intihar riski secildi!\n\nLutfen guvenlik protokolunu uygulayiniz:\n1. Kriz hatti bilgisi verin\n2. Guvenlik planini doldurun\n3. Aile/yakini bilgilendirin');
+        }
+    });
+});
+
+// ===== Note Formats =====
+const noteFormats = {
+    soap: `SUBJEKTIF (S):
+Hastanin ifadeleri ve sikayetleri...
+
+OBJEKTIF (O):
+Gozlenen davranislar, MSE bulgulari...
+
+DEGERLENDIRME (A):
+Klinik yorumlama, tani izlenimi...
+
+PLAN (P):
+Tedavi plani, sonraki adimlar...`,
+
+    dap: `VERI (D):
+Gozlemler, raporlar, hasta ifadeleri...
+
+DEGERLENDIRME (A):
+Klinik yorumlama...
+
+PLAN (P):
+Mudahaleler ve sonraki adimlar...`,
+
+    birp: `DAVRANIS (B):
+Gozlenen davranislar...
+
+MUDAHALE (I):
+Yapilan islemler, kullanilan teknikler...
+
+TEPKI (R):
+Hastanin tepkisi...
+
+PLAN (P):
+Sonraki adimlar...`,
+
+    ilk_gorusme: `## BASVURU NEDENI
+Hasta ... sikayeti ile basvurdu.
+
+## OYKÜ
+- Baslangic:
+- Suresi:
+- Tetikleyici faktorler:
+- Onceki tedaviler:
+
+## MENTAL DURUM MUAYENESI
+(Bkz. Degerlendirme sekmesi)
+
+## TANI IZLENIMI
+
+## TEDAVI PLANI
+1.
+2.
+3.`,
+
+    takip: `## SON GORUSMEDEN BU YANA
+- Genel durum:
+- Belirtilerdeki degisim:
+- Ilac kullanimi:
+- Onemli olaylar:
+
+## GUNCEL DEGERLENDIRME
+
+## MUDAHALE
+- Yapilan calismalar:
+- Kullanilan teknikler:
+
+## SONRAKI ADIMLAR`,
+
+    kriz: `## KRIZ DURUMU
+
+### Tetikleyici
+- Olay:
+- Baslangic:
+- Siddet:
+
+### GUNCEL DURUM
+- Mental durum:
+- Guvenlik:
+- Destek:
+
+## MUDAHALE
+1.
+2.
+3.
+
+## GUVENLIK PLANI
+- Acil kontaklar:
+- Kriz hatti: 182
+- Aile bilgilendirildi: [ ]`
+};
+
+function applyNoteFormat(format) {
+    if (!format) return;
+    const textarea = document.getElementById('klinik-notlar');
+    if (textarea.value.trim() && !confirm('Mevcut notlar silinecek. Devam?')) {
+        document.getElementById('note-format').value = '';
+        return;
+    }
+    textarea.value = noteFormats[format] || '';
+    document.getElementById('note-format').value = '';
+}
+
+// ===== Audio Recording =====
+let mediaRecorder, audioChunks = [], recordingInterval, recordingSeconds = 0, isRecording = false;
+
+async function toggleRecording() {
+    const btn = document.getElementById('btn-record');
+    const btnText = document.getElementById('record-btn-text');
+    const timeDisplay = document.getElementById('recording-time');
+
+    if (!isRecording) {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            audioChunks = [];
+
+            mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(audioChunks, { type: 'audio/webm' });
+                document.getElementById('audio-player').src = URL.createObjectURL(blob);
+                document.getElementById('audio-preview').classList.remove('hidden');
+            };
+
+            mediaRecorder.start();
+            isRecording = true;
+            btn.classList.add('recording');
+            btnText.textContent = 'Durdur';
+            timeDisplay.classList.remove('hidden');
+
+            recordingSeconds = 0;
+            recordingInterval = setInterval(() => {
+                recordingSeconds++;
+                const m = Math.floor(recordingSeconds / 60);
+                const s = recordingSeconds % 60;
+                timeDisplay.textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+            }, 1000);
+        } catch (err) {
+            alert('Mikrofon erisimi reddedildi.');
+        }
+    } else {
+        mediaRecorder.stop();
+        mediaRecorder.stream.getTracks().forEach(t => t.stop());
+        isRecording = false;
+        btn.classList.remove('recording');
+        btnText.textContent = 'Kayit Baslat';
+        clearInterval(recordingInterval);
+    }
+}
+
+// ===== Quick Note =====
+function openQuickNote() {
+    document.getElementById('quick-note-modal').classList.remove('hidden');
+    document.getElementById('quick-note-modal').classList.add('flex');
+    document.getElementById('quick-note-text').focus();
+}
+
+function closeQuickNote() {
+    document.getElementById('quick-note-modal').classList.add('hidden');
+    document.getElementById('quick-note-modal').classList.remove('flex');
+    document.getElementById('quick-note-text').value = '';
+}
+
+function addQuickNote() {
+    const text = document.getElementById('quick-note-text').value.trim();
+    if (!text) return;
+    const time = new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('klinik-notlar').value += `\n\n[${time}] ${text}`;
+    closeQuickNote();
+    switchTab(2); // Switch to notes tab
+}
+
+document.getElementById('quick-note-text')?.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.key === 'Enter') addQuickNote();
+});
+
+// ===== Keyboard Shortcuts =====
+function showKeyboardShortcuts() {
+    document.getElementById('keyboard-modal').classList.remove('hidden');
+    document.getElementById('keyboard-modal').classList.add('flex');
+}
+
+function hideKeyboardShortcuts() {
+    document.getElementById('keyboard-modal').classList.add('hidden');
+    document.getElementById('keyboard-modal').classList.remove('flex');
+}
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        closeQuickNote();
+        hideKeyboardShortcuts();
+        closePrevSessionPanel();
+    }
+    if (e.ctrlKey) {
+        if (e.key >= '1' && e.key <= '4') {
+            e.preventDefault();
+            switchTab(parseInt(e.key) - 1);
+        }
+        if (e.key === 's') {
+            e.preventDefault();
+            saveDraft();
+        }
+        if (e.key === 'n') {
+            e.preventDefault();
+            openQuickNote();
+        }
+        if (e.key === 'r') {
+            e.preventDefault();
+            toggleRecording();
+        }
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('seans-form').submit();
+        }
+    }
+});
+
+// ===== Previous Session Panel =====
+let currentPrevSessionNotes = '';
+
+function openPrevSessionPanel(id, no, tarih, sure, gozlemler, sentez, risk) {
+    currentPrevSessionNotes = gozlemler;
+    document.getElementById('prev-session-title').textContent = `Seans #${no} - ${tarih}`;
+    document.getElementById('prev-session-content').innerHTML = `
+        <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-cream/50 rounded-xl">
+                <span class="text-sm text-secondary">Sure</span>
+                <span class="text-sm font-medium text-primary">${sure || '-'} dakika</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-cream/50 rounded-xl">
+                <span class="text-sm text-secondary">Risk Puani</span>
+                <span class="text-sm font-medium ${risk >= 4 ? 'text-danger' : risk >= 3 ? 'text-warning' : 'text-success'}">${risk || '-'}/5</span>
+            </div>
+            ${gozlemler ? `
+            <div>
+                <h4 class="text-sm font-medium text-primary mb-2">Klinik Gozlemler</h4>
+                <div class="p-3 bg-cream/30 rounded-xl text-sm text-secondary whitespace-pre-wrap">${gozlemler}</div>
+            </div>` : ''}
+            ${sentez ? `
+            <div>
+                <h4 class="text-sm font-medium text-primary mb-2">Tedavi Plani</h4>
+                <div class="p-3 bg-cream/30 rounded-xl text-sm text-secondary whitespace-pre-wrap">${sentez}</div>
+            </div>` : ''}
+        </div>
+    `;
+    document.getElementById('prev-session-panel').classList.add('open');
+    document.getElementById('prev-session-overlay').classList.remove('hidden');
+}
+
+function closePrevSessionPanel() {
+    document.getElementById('prev-session-panel').classList.remove('open');
+    document.getElementById('prev-session-overlay').classList.add('hidden');
+}
+
+function copyPrevSessionNotes() {
+    if (currentPrevSessionNotes) {
+        document.getElementById('klinik-notlar').value += `\n\n--- Onceki Seanstan ---\n${currentPrevSessionNotes}`;
+        closePrevSessionPanel();
+        switchTab(2);
+    }
+}
+
+// ===== Auto-save =====
+const AUTOSAVE_KEY = `seans_draft_{{ personel.id }}`;
+
+function saveDraft() {
+    const draft = {
+        klinik_gozlemler: document.getElementById('klinik-notlar').value,
+        nihai_sentez: document.getElementById('nihai-sentez')?.value || '',
+        ai_transkript: document.getElementById('transkript-area')?.value || '',
+        hizli_etiketler: selectedTags,
+        mood: document.getElementById('mood-slider')?.value || 5,
+        timestamp: Date.now()
+    };
+    localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(draft));
+
+    const indicator = document.getElementById('auto-save-indicator');
+    indicator.classList.remove('opacity-0');
+    setTimeout(() => indicator.classList.add('opacity-0'), 2000);
+}
+
+setInterval(saveDraft, 120000);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem(AUTOSAVE_KEY);
+    if (saved) {
+        const draft = JSON.parse(saved);
+        const age = (Date.now() - draft.timestamp) / 1000 / 60;
+        if (age < 60 && confirm(`${Math.round(age)} dk once kaydedilmis taslak bulundu. Yukle?`)) {
+            document.getElementById('klinik-notlar').value = draft.klinik_gozlemler || '';
+            if (document.getElementById('nihai-sentez')) document.getElementById('nihai-sentez').value = draft.nihai_sentez || '';
+            if (document.getElementById('transkript-area')) document.getElementById('transkript-area').value = draft.ai_transkript || '';
+            if (document.getElementById('mood-slider')) {
+                document.getElementById('mood-slider').value = draft.mood || 5;
+                document.getElementById('mood-slider').dispatchEvent(new Event('input'));
+            }
+            if (draft.hizli_etiketler) {
+                Object.entries(draft.hizli_etiketler).forEach(([cat, val]) => {
+                    selectedTags[cat] = val;
+                    const btn = document.querySelector(`.tag-btn[data-category="${cat}"][data-value="${val}"]`);
+                    if (btn) btn.classList.add('selected');
+                });
+                document.getElementById('hizli-etiketler-input').value = JSON.stringify(selectedTags);
+            }
+        } else if (age >= 60) {
+            localStorage.removeItem(AUTOSAVE_KEY);
+        }
+    }
+});
+
+window.addEventListener('beforeunload', e => {
+    const notes = document.getElementById('klinik-notlar').value;
+    if (notes.trim()) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+
+document.getElementById('seans-form').addEventListener('submit', function() {
+    document.getElementById('bitis-saat').value = new Date().toTimeString().slice(0,8);
+    localStorage.removeItem(AUTOSAVE_KEY);
+    localStorage.removeItem('aktif_seans');
+});
+</script>
+{% endblock %}

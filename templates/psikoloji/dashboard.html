@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+
+{% block title %}Genel Bakış - Kurumsal Yönetim Sistemi{% endblock %}
+
+{% block body %}
+<div class="flex h-screen overflow-hidden">
+    {% include '_sidebar.html' %}
+
+    <div class="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-cream/50 to-white">
+        <!-- Header -->
+        <header class="sticky top-0 bg-white/80 backdrop-blur-md px-8 py-4 z-10 flex justify-between items-center border-b border-accent/50 shrink-0">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 text-secondary">
+                    <span class="material-symbols-outlined text-primary">dashboard</span>
+                    <span class="text-sm font-medium">Genel Bakış</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="relative w-96 group ml-6">
+                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-secondary/60 text-lg">search</span>
+                    <input type="text" id="global-search" placeholder="Personel ara (isim veya sicil no)..."
+                        class="w-full pl-12 pr-4 py-2.5 bg-cream/50 border-0 rounded-xl focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all text-sm placeholder-secondary/50">
+
+                    <!-- Search Results Dropdown -->
+                    <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-2 bg-white border border-accent rounded-xl shadow-xl overflow-hidden z-50">
+                        <div class="max-h-80 overflow-y-auto" id="results-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="text-right mr-2">
+                    <p class="text-sm font-bold text-primary">{{ session.get('user_name', 'Kullanıcı') }}</p>
+                    <p class="text-[10px] text-secondary uppercase tracking-widest font-semibold">Klinik Psikolog</p>
+                </div>
+                <div class="size-11 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center font-bold shadow-lg">
+                    {{ session.get('user_name', 'K')[0] }}
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto">
+            <div class="px-8 py-6 max-w-[1600px] mx-auto space-y-6">
+                <!-- Page Title -->
+                <div class="flex items-end justify-between">
+                    <div>
+                        <p class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-1">Hoş Geldiniz</p>
+                        <h1 class="text-3xl font-serif text-primary font-bold">Günlük Genel Bakış</h1>
+                        <p class="text-secondary mt-1">Bugünün randevuları ve önemli güncellemeler</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-2xl font-serif font-bold text-primary">{{ "now"|default("") }}{% set months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'] %}</p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-4 gap-5">
+                    <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-2xl text-primary">groups</span>
+                            </div>
+                            <span class="text-xs font-bold text-success bg-success/10 px-2 py-1 rounded-full">Aktif</span>
+                        </div>
+                        <div class="text-4xl font-serif text-primary font-bold">{{ stats.toplam_personel }}</div>
+                        <p class="text-sm text-secondary mt-1">Toplam Personel</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-2xl text-blue-500">psychology</span>
+                            </div>
+                            <span class="text-xs font-bold text-blue-500">MMPI</span>
+                        </div>
+                        <div class="text-4xl font-serif text-primary font-bold">
+                            %{{ ((stats.mmpi_tamamlanan / stats.toplam_personel * 100) if stats.toplam_personel > 0 else 0) | round(0) | int }}
+                        </div>
+                        <p class="text-sm text-secondary mt-1">{{ stats.mmpi_tamamlanan }} kişi tamamladı</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="size-12 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-2xl text-purple-500">record_voice_over</span>
+                            </div>
+                            <span class="text-xs font-bold text-purple-500">Seans</span>
+                        </div>
+                        <div class="text-4xl font-serif text-primary font-bold">
+                            %{{ ((stats.gorusme_yapilan / stats.toplam_personel * 100) if stats.toplam_personel > 0 else 0) | round(0) | int }}
+                        </div>
+                        <p class="text-sm text-secondary mt-1">{{ stats.gorusme_yapilan }} görüşme yapıldı</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-danger/10 to-danger/5 p-6 rounded-2xl border border-danger/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="size-12 rounded-xl bg-danger/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-2xl text-danger">warning</span>
+                            </div>
+                            <span class="text-xs font-bold text-danger bg-danger/10 px-2 py-1 rounded-full animate-pulse">Acil</span>
+                        </div>
+                        <div class="text-4xl font-serif text-danger font-bold">{{ stats.riskli_personel }}</div>
+                        <p class="text-sm text-danger/70 mt-1">Riskli personel</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-12 gap-6">
+                    <!-- Sol: Günün Randevuları -->
+                    <div class="col-span-5 space-y-5">
+                        <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm">
+                            <div class="flex items-center justify-between mb-5">
+                                <h3 class="font-serif text-xl font-bold text-primary">Bugünün Randevuları</h3>
+                                <a href="{{ url_for('psikoloji_takvim') }}" class="text-xs text-primary hover:text-primary/70 font-medium flex items-center gap-1">
+                                    Takvime Git
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </a>
+                            </div>
+                            <div class="space-y-3">
+                                {% for apt in today_appointments[:5] %}
+                                <div class="group p-4 bg-cream/30 rounded-xl hover:bg-cream/50 transition-all border border-transparent hover:border-primary/20">
+                                    <div class="flex items-center gap-4">
+                                        <div class="size-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                                            <span class="text-lg font-bold text-primary">{{ apt.saat[:2] }}</span>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-xs text-secondary font-medium">{{ apt.saat }}</p>
+                                            <p class="text-base text-primary font-semibold truncate">{{ apt.ad_soyad }}</p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            {% if apt.risk_kategori == 'Kritik' %}
+                                            <span class="px-2 py-1 bg-danger text-white text-[10px] font-bold rounded-full">KRİTİK</span>
+                                            {% elif apt.risk_kategori == 'Yuksek' %}
+                                            <span class="px-2 py-1 bg-danger/70 text-white text-[10px] font-bold rounded-full">YÜKSEK</span>
+                                            {% elif apt.risk_kategori == 'Orta' %}
+                                            <span class="px-2 py-1 bg-warning text-white text-[10px] font-bold rounded-full">ORTA</span>
+                                            {% else %}
+                                            <span class="px-2 py-1 bg-success text-white text-[10px] font-bold rounded-full">DÜŞÜK</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex gap-2">
+                                        <a href="{{ url_for('psikoloji_seans', personel_id=apt.personel_id) }}"
+                                            class="flex-1 text-center py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">play_arrow</span>
+                                            Seans Başlat
+                                        </a>
+                                        <a href="{{ url_for('psikoloji_personel_detail', personel_id=apt.personel_id) }}"
+                                            class="flex-1 text-center py-2 border border-accent text-primary text-xs font-bold rounded-lg hover:bg-cream transition-colors flex items-center justify-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">person</span>
+                                            Profil
+                                        </a>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="text-center py-12">
+                                    <div class="size-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <span class="material-symbols-outlined text-3xl text-secondary/50">event_available</span>
+                                    </div>
+                                    <p class="text-secondary font-medium">Bugün randevu yok</p>
+                                    <a href="{{ url_for('psikoloji_takvim') }}" class="text-primary text-sm font-medium mt-2 inline-block hover:underline">
+                                        Yeni randevu oluştur
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ: Müdürlük Matrisi -->
+                    <div class="col-span-7">
+                        <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm">
+                            <div class="flex justify-between items-center mb-5">
+                                <h3 class="font-serif text-xl font-bold text-primary">Müdürlük Risk Matrisi</h3>
+                                <a href="{{ url_for('psikoloji_analiz') }}" class="text-xs text-primary hover:text-primary/70 font-medium flex items-center gap-1">
+                                    Tümünü Gör
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </a>
+                            </div>
+                            <div class="overflow-hidden rounded-xl border border-accent/50">
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="bg-cream/50">
+                                            <th class="px-4 py-3 text-left text-[10px] font-bold text-secondary uppercase tracking-wider">Müdürlük</th>
+                                            <th class="px-4 py-3 text-center text-[10px] font-bold text-secondary uppercase tracking-wider">Personel</th>
+                                            <th class="px-4 py-3 text-center text-[10px] font-bold text-secondary uppercase tracking-wider">Ort. Risk</th>
+                                            <th class="px-4 py-3 text-right text-[10px] font-bold text-secondary uppercase tracking-wider">İşlem</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-accent/30">
+                                        {% for m in mudurlukler[:6] %}
+                                        <tr class="hover:bg-cream/30 transition-colors">
+                                            <td class="px-4 py-3">
+                                                <div class="flex items-center gap-3">
+                                                    <span class="text-xl">{{ m.emoji }}</span>
+                                                    <span class="font-medium text-primary text-sm">{{ m.ad[:30] }}{% if m.ad|length > 30 %}...{% endif %}</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-3 text-center">
+                                                <span class="inline-flex items-center justify-center size-8 bg-cream rounded-full text-sm font-bold text-primary">{{ m.personel_sayisi }}</span>
+                                            </td>
+                                            <td class="px-4 py-3 text-center">
+                                                {% if m.ort_risk %}
+                                                <span class="inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-bold
+                                                    {% if m.ort_risk >= 3.5 %}bg-danger/10 text-danger
+                                                    {% elif m.ort_risk >= 2.5 %}bg-warning/10 text-warning
+                                                    {% else %}bg-success/10 text-success{% endif %}">
+                                                    {{ m.ort_risk | round(1) }}
+                                                </span>
+                                                {% else %}<span class="text-secondary">-</span>{% endif %}
+                                            </td>
+                                            <td class="px-4 py-3 text-right">
+                                                <a href="{{ url_for('psikoloji_mudurluk_analiz', mudurluk_id=m.id) }}"
+                                                    class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary/20 transition-colors">
+                                                    <span class="material-symbols-outlined text-sm">analytics</span>
+                                                    Analiz
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Dağılımı -->
+                <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="font-serif text-xl font-bold text-primary">Risk Dağılımı</h3>
+                            <p class="text-sm text-secondary mt-1">Tüm personelin triyaj sonuçlarına göre dağılımı</p>
+                        </div>
+                        <a href="{{ url_for('psikoloji_triyaj') }}" class="text-xs font-bold text-primary flex items-center gap-1 hover:text-primary/70">
+                            Detaylı Liste <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div class="p-4 bg-success/10 rounded-xl border border-success/20 text-center">
+                            <div class="text-3xl font-bold text-success">{{ risk_dagilim.get('Dusuk', 0) }}</div>
+                            <div class="text-xs font-bold text-success/70 uppercase mt-1">Düşük Risk</div>
+                        </div>
+                        <div class="p-4 bg-warning/10 rounded-xl border border-warning/20 text-center">
+                            <div class="text-3xl font-bold text-warning">{{ risk_dagilim.get('Orta', 0) }}</div>
+                            <div class="text-xs font-bold text-warning/70 uppercase mt-1">Orta Risk</div>
+                        </div>
+                        <div class="p-4 bg-orange-500/10 rounded-xl border border-orange-500/20 text-center">
+                            <div class="text-3xl font-bold text-orange-500">{{ risk_dagilim.get('Yuksek', 0) }}</div>
+                            <div class="text-xs font-bold text-orange-500/70 uppercase mt-1">Yüksek Risk</div>
+                        </div>
+                        <div class="p-4 bg-danger/10 rounded-xl border border-danger/20 text-center">
+                            <div class="text-3xl font-bold text-danger">{{ risk_dagilim.get('Kritik', 0) }}</div>
+                            <div class="text-xs font-bold text-danger/70 uppercase mt-1">Kritik</div>
+                        </div>
+                    </div>
+
+                    {% set total = (risk_dagilim.get('Dusuk', 0) + risk_dagilim.get('Orta', 0) + risk_dagilim.get('Yuksek', 0) + risk_dagilim.get('Kritik', 0)) or 1 %}
+                    <div class="relative h-4 w-full rounded-full overflow-hidden flex bg-gray-100">
+                        <div class="h-full bg-success transition-all" style="width: {{ (risk_dagilim.get('Dusuk', 0) / total * 100) | round(1) }}%;"></div>
+                        <div class="h-full bg-warning transition-all" style="width: {{ (risk_dagilim.get('Orta', 0) / total * 100) | round(1) }}%;"></div>
+                        <div class="h-full bg-orange-500 transition-all" style="width: {{ (risk_dagilim.get('Yuksek', 0) / total * 100) | round(1) }}%;"></div>
+                        <div class="h-full bg-danger transition-all" style="width: {{ (risk_dagilim.get('Kritik', 0) / total * 100) | round(1) }}%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search Script -->
+<script>
+    const searchInput = document.getElementById('global-search');
+    const resultsContainer = document.getElementById('results-container');
+    const resultsDropdown = document.getElementById('search-results');
+    let searchTimeout;
+
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        const query = e.target.value;
+
+        if (query.length < 2) {
+            resultsDropdown.classList.add('hidden');
+            return;
+        }
+
+        searchTimeout = setTimeout(async () => {
+            try {
+                const response = await fetch(`/api/psikoloji/search?q=${encodeURIComponent(query)}`);
+                const data = await response.json();
+
+                resultsContainer.innerHTML = '';
+                if (data.length > 0) {
+                    data.forEach(p => {
+                        const riskColor = p.risk_kategori === 'Kritik' ? 'bg-danger' :
+                                         p.risk_kategori === 'Yuksek' ? 'bg-orange-500' :
+                                         p.risk_kategori === 'Orta' ? 'bg-warning' : 'bg-success';
+                        resultsContainer.innerHTML += `
+                            <a href="/psikoloji/personel/${p.id}" class="flex items-center gap-4 p-4 hover:bg-cream/50 transition-colors border-b border-accent/30 last:border-0">
+                                <div class="size-10 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center font-bold text-sm">
+                                    ${p.ad_soyad[0]}
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="font-semibold text-primary">${p.ad_soyad}</p>
+                                    <p class="text-xs text-secondary">${p.mudurluk_adi || 'Birim belirtilmemiş'}</p>
+                                </div>
+                                <div class="size-3 rounded-full ${riskColor}"></div>
+                            </a>
+                        `;
+                    });
+                    resultsDropdown.classList.remove('hidden');
+                } else {
+                    resultsContainer.innerHTML = '<p class="p-4 text-sm text-secondary text-center">Sonuç bulunamadı</p>';
+                    resultsDropdown.classList.remove('hidden');
+                }
+            } catch (err) {
+                console.error('Search error:', err);
+            }
+        }, 300);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.relative')) {
+            resultsDropdown.classList.add('hidden');
+        }
+    });
+</script>
+{% endblock %}

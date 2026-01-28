@@ -1793,6 +1793,11 @@
                 category: 'AYARLAR', items: [
                     {id: 'giris-loglari', icon: 'history', title: 'Giriş Logları', iconColor: '#94A3B8'}
                 ]
+            },
+            {
+                category: 'PSİKOLOJİ MODÜLÜ', items: [
+                    {id: 'psikoloji-modulu', icon: 'psychology', title: 'Psikoloji Modülüne Git', iconColor: '#8B5CF6', useSymbols: true, externalLink: '/psikoloji/'}
+                ]
             }
         ];
 
@@ -5823,8 +5828,12 @@
                             <span>${item.title}</span>
                         `;
                         menuItem.onclick = () => {
-                            pageManager.showPage(item.id);
-                            closeSidebarIfMobile();
+                            if (item.externalLink) {
+                                window.location.href = item.externalLink;
+                            } else {
+                                pageManager.showPage(item.id);
+                                closeSidebarIfMobile();
+                            }
                         };
                         menu.appendChild(menuItem);
                     });

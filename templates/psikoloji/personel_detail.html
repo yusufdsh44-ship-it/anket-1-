@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}{{ personel.ad_soyad }} - Personel Profili{% endblock %}
+
+{% block body %}
+<div class="flex h-screen overflow-hidden">
+    {% include '_sidebar.html' %}
+
+    <main class="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-cream/50 to-white">
+        <!-- Header -->
+        <header class="bg-white/80 backdrop-blur-md border-b border-accent/50 px-8 py-4 shrink-0">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-5">
+                    <a href="{{ url_for('psikoloji_triyaj') }}" class="p-2 hover:bg-cream rounded-xl transition-colors text-secondary">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <div class="size-16 rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
+                        {{ personel.ad_soyad[0] if personel.ad_soyad else '?' }}
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <h1 class="text-2xl font-serif font-bold text-primary">{{ personel.ad_soyad }}</h1>
+                            {% if personel.risk_kategori == 'Kritik' %}
+                            <span class="px-3 py-1 bg-danger text-white text-xs font-bold rounded-full animate-pulse">KRİTİK</span>
+                            {% elif personel.risk_kategori == 'Yuksek' %}
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">YÜKSEK</span>
+                            {% elif personel.risk_kategori == 'Orta' %}
+                            <span class="px-3 py-1 bg-warning text-white text-xs font-bold rounded-full">ORTA</span>
+                            {% else %}
+                            <span class="px-3 py-1 bg-success text-white text-xs font-bold rounded-full">DÜŞÜK</span>
+                            {% endif %}
+                        </div>
+                        <p class="text-secondary text-sm mt-1">{{ personel.gorev or 'Görev belirtilmemiş' }} • {{ mudurluk.ad if mudurluk else 'Birim belirtilmemiş' }}</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="{{ url_for('psikoloji_seans', personel_id=personel.id) }}"
+                        class="px-5 py-2.5 bg-primary text-white rounded-xl font-medium text-sm hover:bg-primary/90 transition-colors flex items-center gap-2 shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-lg">add</span>
+                        Yeni Seans Başlat
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto">
+            <div class="max-w-[1400px] mx-auto p-8 space-y-6">
+                <div class="grid grid-cols-12 gap-6">
+                    <!-- Sol Panel - Kişisel Bilgiler -->
+                    <div class="col-span-4 space-y-6">
+                        <!-- Demografik Bilgiler -->
+                        <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-accent/30 bg-cream/30">
+                                <h3 class="font-serif font-bold text-primary flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-lg">badge</span>
+                                    Kişisel Bilgiler
+                                </h3>
+                            </div>
+                            <div class="p-5 space-y-4">
+                                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                                    <span class="text-sm text-secondary">TC Kimlik No</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.tc_no or '***' }}</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                                    <span class="text-sm text-secondary">Yaş</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.yas or '-' }}</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                                    <span class="text-sm text-secondary">Cinsiyet</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.cinsiyet or '-' }}</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                                    <span class="text-sm text-secondary">Eğitim</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.egitim or '-' }}</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-accent/20">
+                                    <span class="text-sm text-secondary">Medeni Durum</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.medeni_durum or '-' }}</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2">
+                                    <span class="text-sm text-secondary">Kıdem (Yıl)</span>
+                                    <span class="text-sm font-medium text-primary">{{ personel.kidem_yil or '-' }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Triyaj Özeti -->
+                        <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-accent/30 bg-cream/30">
+                                <h3 class="font-serif font-bold text-primary flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-lg">monitoring</span>
+                                    Triyaj Özeti
+                                </h3>
+                            </div>
+                            <div class="p-5">
+                                <div class="text-center mb-6">
+                                    <div class="text-5xl font-serif font-bold
+                                        {% if personel.triyaj_puani and personel.triyaj_puani >= 3.5 %}text-danger
+                                        {% elif personel.triyaj_puani and personel.triyaj_puani >= 2.5 %}text-warning
+                                        {% else %}text-success{% endif %}">
+                                        {{ personel.triyaj_puani | round(1) if personel.triyaj_puani else '-' }}
+                                    </div>
+                                    <p class="text-sm text-secondary mt-2">Genel Risk Puanı</p>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 bg-cream/30 rounded-xl">
+                                        <span class="text-sm text-secondary">Anket Riski</span>
+                                        <span class="font-bold text-primary">{{ personel.anket_ruh_sagligi_risk or 0 }}/4</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 bg-cream/30 rounded-xl">
+                                        <span class="text-sm text-secondary">MMPI Durumu</span>
+                                        {% if personel.mmpi_tarih %}
+                                        <span class="text-success font-medium flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                                            Tamamlandı
+                                        </span>
+                                        {% else %}
+                                        <span class="text-secondary font-medium">Bekliyor</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sağ Panel - Seanslar ve Notlar -->
+                    <div class="col-span-8 space-y-6">
+                        <!-- MMPI Sonuçları -->
+                        {% if personel.mmpi_tarih %}
+                        <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-accent/30 bg-cream/30">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-serif font-bold text-primary flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-lg">psychology</span>
+                                        MMPI Sonuçları
+                                    </h3>
+                                    <span class="text-xs text-secondary">{{ personel.mmpi_tarih.strftime('%d.%m.%Y') if personel.mmpi_tarih else '' }}</span>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="grid grid-cols-4 gap-4">
+                                    <div class="text-center p-4 bg-cream/30 rounded-xl">
+                                        <p class="text-2xl font-bold text-primary">{{ personel.mmpi_l_skoru | round(0) | int if personel.mmpi_l_skoru else '-' }}</p>
+                                        <p class="text-xs text-secondary mt-1">L Skor</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-cream/30 rounded-xl">
+                                        <p class="text-2xl font-bold text-primary">{{ personel.mmpi_f_skoru | round(0) | int if personel.mmpi_f_skoru else '-' }}</p>
+                                        <p class="text-xs text-secondary mt-1">F Skor</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-cream/30 rounded-xl">
+                                        <p class="text-2xl font-bold text-primary">{{ personel.mmpi_k_skoru | round(0) | int if personel.mmpi_k_skoru else '-' }}</p>
+                                        <p class="text-xs text-secondary mt-1">K Skor</p>
+                                    </div>
+                                    <div class="text-center p-4 bg-cream/30 rounded-xl">
+                                        <p class="text-2xl font-bold text-primary">{{ personel.mmpi_pa_skoru | round(0) | int if personel.mmpi_pa_skoru else '-' }}</p>
+                                        <p class="text-xs text-secondary mt-1">PA Skor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Seans Geçmişi -->
+                        <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-accent/30 bg-cream/30">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-serif font-bold text-primary flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-lg">history</span>
+                                        Seans Geçmişi
+                                    </h3>
+                                    <span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">
+                                        {{ seanslar|length }} seans
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="divide-y divide-accent/20 max-h-96 overflow-y-auto">
+                                {% for seans in seanslar %}
+                                <div class="p-5 hover:bg-cream/20 transition-colors">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-primary">event_note</span>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-primary">Seans #{{ loop.index }}</p>
+                                                <p class="text-xs text-secondary">{{ seans.tarih.strftime('%d %B %Y') if seans.tarih else '-' }}</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-secondary">{{ seans.sure_dk or '-' }} dk</span>
+                                    </div>
+                                    {% if seans.notlar %}
+                                    <p class="text-sm text-secondary line-clamp-2">{{ seans.notlar }}</p>
+                                    {% endif %}
+                                </div>
+                                {% else %}
+                                <div class="p-8 text-center">
+                                    <div class="size-16 bg-cream rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <span class="material-symbols-outlined text-3xl text-secondary/50">note_add</span>
+                                    </div>
+                                    <p class="text-secondary font-medium">Henüz seans kaydı yok</p>
+                                    <a href="{{ url_for('psikoloji_seans', personel_id=personel.id) }}"
+                                        class="inline-flex items-center gap-2 text-primary text-sm font-medium mt-2 hover:underline">
+                                        <span class="material-symbols-outlined text-sm">add</span>
+                                        İlk seansı başlat
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <!-- Hızlı Notlar -->
+                        <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                            <div class="p-5 border-b border-accent/30 bg-cream/30">
+                                <h3 class="font-serif font-bold text-primary flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-lg">sticky_note_2</span>
+                                    Hızlı Not Ekle
+                                </h3>
+                            </div>
+                            <div class="p-5">
+                                <textarea rows="3" placeholder="Bu personel hakkında hızlı not ekleyin..."
+                                    class="w-full px-4 py-3 border border-accent rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm resize-none"></textarea>
+                                <div class="flex justify-end mt-3">
+                                    <button class="px-4 py-2 bg-primary text-white rounded-xl text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-sm">save</span>
+                                        Notu Kaydet
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

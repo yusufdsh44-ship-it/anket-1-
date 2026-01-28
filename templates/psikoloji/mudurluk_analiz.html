@@ -1,0 +1,266 @@
+{% extends "base.html" %}
+
+{% block title %}{{ mudurluk.ad }} - Detaylı Analiz{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block body %}
+<div class="flex h-screen overflow-hidden">
+    {% include '_sidebar.html' %}
+
+    <div class="flex-1 flex flex-col overflow-hidden bg-gradient-to-br from-cream/50 to-white">
+        <!-- Header -->
+        <header class="bg-white/80 backdrop-blur-md border-b border-accent/50 px-8 py-4 shrink-0">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <a href="{{ url_for('psikoloji_analiz') }}" class="p-2 hover:bg-cream rounded-xl transition-colors text-secondary">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <span class="text-4xl">{{ mudurluk.emoji or '🏢' }}</span>
+                    <div>
+                        <h1 class="font-serif text-xl text-primary font-bold">{{ mudurluk.ad }}</h1>
+                        <p class="text-sm text-secondary">Detaylı Risk ve Performans Analizi</p>
+                    </div>
+                </div>
+                <button onclick="window.print()"
+                    class="px-5 py-2.5 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all font-medium text-sm flex items-center gap-2 shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined text-lg">print</span>
+                    PDF İndir
+                </button>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto">
+            <div class="max-w-[1400px] mx-auto p-8 space-y-6">
+                <!-- İstatistik Kartları -->
+                <div class="grid grid-cols-4 gap-5">
+                    <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary">groups</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-serif font-bold text-primary">{{ stats.toplam }}</div>
+                        <p class="text-sm text-secondary mt-1">Toplam Personel</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-warning/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-warning">trending_up</span>
+                            </div>
+                        </div>
+                        {% set color = 'danger' if stats.ort_triyaj and stats.ort_triyaj >= 3.5 else 'warning' if stats.ort_triyaj and stats.ort_triyaj >= 2.5 else 'success' %}
+                        <div class="text-3xl font-serif font-bold text-{{ color }}">{{ stats.ort_triyaj|round(1) if stats.ort_triyaj else '-' }}</div>
+                        <p class="text-sm text-secondary mt-1">Ortalama Triyaj</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-danger/10 to-danger/5 p-6 rounded-2xl border border-danger/20 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-danger/20 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-danger">warning</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-serif font-bold text-danger">{{ stats.kritik + stats.yuksek }}</div>
+                        <p class="text-sm text-danger/70 mt-1">Riskli Personel</p>
+                        <p class="text-xs text-secondary mt-2">Kritik: {{ stats.kritik }}, Yüksek: {{ stats.yuksek }}</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border border-success/20 shadow-sm">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="size-10 rounded-xl bg-success/10 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-success">check_circle</span>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-serif font-bold text-success">{{ stats.mmpi_count }}</div>
+                        <p class="text-sm text-secondary mt-1">MMPI Tamamlayan</p>
+                        <p class="text-xs text-secondary mt-2">%{{ ((stats.mmpi_count / stats.toplam * 100) if stats.toplam > 0 else 0)|round(0)|int }}</p>
+                    </div>
+                </div>
+
+                <!-- Risk Dağılımı Grafik -->
+                <div class="grid grid-cols-12 gap-6">
+                    <div class="col-span-5">
+                        <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm h-full">
+                            <h3 class="font-serif text-lg font-bold text-primary mb-6">Risk Kategori Dağılımı</h3>
+                            <div class="flex items-center justify-center">
+                                <div class="w-64 h-64">
+                                    <canvas id="riskChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-7">
+                        <div class="bg-white p-6 rounded-2xl border border-accent/50 shadow-sm h-full">
+                            <h3 class="font-serif text-lg font-bold text-primary mb-6">Risk Detayı</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-5 bg-danger/10 rounded-xl border border-danger/20">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-danger">Kritik</span>
+                                        <span class="text-3xl font-bold text-danger">{{ stats.kritik }}</span>
+                                    </div>
+                                    <div class="mt-3 h-2 bg-danger/20 rounded-full overflow-hidden">
+                                        <div class="h-full bg-danger rounded-full" style="width: {{ (stats.kritik / stats.toplam * 100) if stats.toplam > 0 else 0 }}%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-5 bg-orange-500/10 rounded-xl border border-orange-500/20">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-orange-500">Yüksek</span>
+                                        <span class="text-3xl font-bold text-orange-500">{{ stats.yuksek }}</span>
+                                    </div>
+                                    <div class="mt-3 h-2 bg-orange-500/20 rounded-full overflow-hidden">
+                                        <div class="h-full bg-orange-500 rounded-full" style="width: {{ (stats.yuksek / stats.toplam * 100) if stats.toplam > 0 else 0 }}%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-5 bg-warning/10 rounded-xl border border-warning/20">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-warning">Orta</span>
+                                        <span class="text-3xl font-bold text-warning">{{ stats.orta }}</span>
+                                    </div>
+                                    <div class="mt-3 h-2 bg-warning/20 rounded-full overflow-hidden">
+                                        <div class="h-full bg-warning rounded-full" style="width: {{ (stats.orta / stats.toplam * 100) if stats.toplam > 0 else 0 }}%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-5 bg-success/10 rounded-xl border border-success/20">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-success">Düşük</span>
+                                        <span class="text-3xl font-bold text-success">{{ stats.dusuk }}</span>
+                                    </div>
+                                    <div class="mt-3 h-2 bg-success/20 rounded-full overflow-hidden">
+                                        <div class="h-full bg-success rounded-full" style="width: {{ (stats.dusuk / stats.toplam * 100) if stats.toplam > 0 else 0 }}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personel Listesi -->
+                <div class="bg-white rounded-2xl border border-accent/50 shadow-sm overflow-hidden">
+                    <div class="p-6 border-b border-accent/30 bg-cream/30">
+                        <h3 class="font-serif text-lg font-bold text-primary">Personel Listesi (Risk Sırasına Göre)</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-cream/50">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-xs font-bold text-secondary uppercase tracking-wider">Personel</th>
+                                    <th class="px-6 py-4 text-center text-xs font-bold text-secondary uppercase tracking-wider">Triyaj</th>
+                                    <th class="px-6 py-4 text-center text-xs font-bold text-secondary uppercase tracking-wider">Risk</th>
+                                    <th class="px-6 py-4 text-center text-xs font-bold text-secondary uppercase tracking-wider">MMPI</th>
+                                    <th class="px-6 py-4 text-center text-xs font-bold text-secondary uppercase tracking-wider">Seans</th>
+                                    <th class="px-6 py-4 text-right text-xs font-bold text-secondary uppercase tracking-wider">İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-accent/30">
+                                {% for p in personeller %}
+                                <tr class="hover:bg-cream/30 transition-colors">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="size-10 rounded-full bg-gradient-to-br from-primary to-primary/80 text-white flex items-center justify-center font-bold text-sm">
+                                                {{ p.ad_soyad[0] }}
+                                            </div>
+                                            <span class="font-medium text-primary">{{ p.ad_soyad }}</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        {% set color = 'danger' if p.triyaj_puani and p.triyaj_puani >= 3.5 else 'warning' if p.triyaj_puani and p.triyaj_puani >= 2.5 else 'success' %}
+                                        <span class="font-bold text-{{ color }}">{{ p.triyaj_puani|round(1) if p.triyaj_puani else '-' }}</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        {% if p.risk_kategori == 'Kritik' %}
+                                        <span class="px-3 py-1 bg-danger text-white text-xs font-bold rounded-full">KRİTİK</span>
+                                        {% elif p.risk_kategori == 'Yuksek' %}
+                                        <span class="px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">YÜKSEK</span>
+                                        {% elif p.risk_kategori == 'Orta' %}
+                                        <span class="px-3 py-1 bg-warning text-white text-xs font-bold rounded-full">ORTA</span>
+                                        {% else %}
+                                        <span class="px-3 py-1 bg-success text-white text-xs font-bold rounded-full">DÜŞÜK</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        {% if p.mmpi_tarih %}
+                                        <span class="material-symbols-outlined text-success">check_circle</span>
+                                        {% else %}
+                                        <span class="material-symbols-outlined text-secondary/30">radio_button_unchecked</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="inline-flex items-center justify-center size-8 bg-cream rounded-full text-sm font-bold text-primary">{{ p.seans_sayisi }}</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right">
+                                        <a href="{{ url_for('psikoloji_personel_detail', personel_id=p.id) }}"
+                                            class="inline-flex items-center gap-1 px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary/20 transition-colors">
+                                            Detay
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% else %}
+                                <tr>
+                                    <td colspan="6" class="px-6 py-12 text-center text-secondary">
+                                        <span class="material-symbols-outlined text-4xl text-secondary/30 mb-2">search_off</span>
+                                        <p>Kayıt bulunamadı</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart Data -->
+<div id="chart-data" class="hidden"
+    data-kritik="{{ stats.kritik }}"
+    data-yuksek="{{ stats.yuksek }}"
+    data-orta="{{ stats.orta }}"
+    data-dusuk="{{ stats.dusuk }}">
+</div>
+
+<script>
+    const dataDiv = document.getElementById('chart-data');
+    const chartData = [
+        parseInt(dataDiv.dataset.kritik) || 0,
+        parseInt(dataDiv.dataset.yuksek) || 0,
+        parseInt(dataDiv.dataset.orta) || 0,
+        parseInt(dataDiv.dataset.dusuk) || 0
+    ];
+
+    const ctx = document.getElementById('riskChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Kritik', 'Yüksek', 'Orta', 'Düşük'],
+            datasets: [{
+                data: chartData,
+                backgroundColor: ['#DC2626', '#F97316', '#EAB308', '#22C55E'],
+                borderWidth: 0,
+                cutout: '60%'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

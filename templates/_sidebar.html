@@ -1,0 +1,150 @@
+<aside id="main-sidebar"
+    class="w-72 bg-white border-r border-accent flex flex-col h-screen sticky top-0 shrink-0 transition-all duration-300 ease-in-out overflow-hidden z-20">
+    <div class="w-72 flex flex-col h-full">
+        <!-- Header -->
+        <div class="p-6 pb-4">
+            <div>
+                <h1 class="font-serif text-2xl font-bold tracking-tight text-primary leading-tight">
+                    Arnavutkoy<br />Belediyesi</h1>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-secondary mt-2 font-semibold">
+                    Kurumsal Yonetim Sistemi</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex-1 px-4 space-y-1 mt-4 overflow-y-auto custom-scrollbar">
+            <!-- PSIKOLOJI Section -->
+            <p class="px-4 text-[10px] uppercase tracking-widest text-secondary mb-3 font-bold">PSIKOLOJI MODULU</p>
+
+            <!-- Aktif Seans - Ozel Stil -->
+            <a href="#" id="aktif-seans-link"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path.startswith('/psikoloji/seans') %}bg-gradient-to-r from-sidebar-active to-orange-500 text-white shadow-lg{% else %}bg-gradient-to-r from-primary/10 to-primary/5 text-primary hover:from-primary/20 hover:to-primary/10 border border-primary/20{% endif %} font-medium group"
+                onclick="handleAktifSeans(event)">
+                <span class="material-symbols-outlined {% if request.path.startswith('/psikoloji/seans') %}{% else %}animate-pulse{% endif %}">
+                    record_voice_over
+                </span>
+                <div class="flex-1">
+                    <span class="block text-sm" id="aktif-seans-text">Aktif Seans</span>
+                    <span class="text-[10px] opacity-75" id="aktif-seans-timer"></span>
+                </div>
+                <span class="material-symbols-outlined text-sm opacity-50 group-hover:opacity-100">arrow_forward</span>
+            </a>
+
+            <a href="{{ url_for('psikoloji_takvim') }}"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path == '/psikoloji/takvim' %}bg-sidebar-active text-white{% else %}text-secondary hover:bg-cream{% endif %} font-medium">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span>Randevu Takvimi</span>
+            </a>
+
+            <a href="{{ url_for('psikoloji_dashboard') }}"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path == '/psikoloji/dashboard' %}bg-sidebar-active text-white{% else %}text-secondary hover:bg-cream{% endif %} font-medium">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Genel Bakis</span>
+            </a>
+
+            <a href="{{ url_for('psikoloji_triyaj') }}"
+                class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path == '/psikoloji/triyaj' %}bg-sidebar-active text-white{% else %}text-secondary hover:bg-cream{% endif %} font-medium">
+                <span class="material-symbols-outlined">person_search</span>
+                <span>Personel Triyaji</span>
+            </a>
+
+            <!-- ARACLAR Section -->
+            <div class="pt-6">
+                <p class="px-4 text-[10px] uppercase tracking-widest text-secondary mb-3 font-bold">ARACLAR</p>
+
+                <a href="{{ url_for('psikoloji_analiz') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path.startswith('/psikoloji/analiz') %}bg-sidebar-active text-white{% else %}text-secondary hover:bg-cream{% endif %} font-medium">
+                    <span class="material-symbols-outlined">analytics</span>
+                    <span>Risk Analizleri</span>
+                </a>
+
+                <a href="{{ url_for('psikoloji_import') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all {% if request.path == '/psikoloji/import' %}bg-sidebar-active text-white{% else %}text-secondary hover:bg-cream{% endif %} font-medium">
+                    <span class="material-symbols-outlined">database</span>
+                    <span>Veri Yonetimi</span>
+                </a>
+            </div>
+
+            <!-- ANKET Section (en altta) -->
+            <div class="pt-6">
+                <p class="px-4 text-[10px] uppercase tracking-widest text-secondary mb-3 font-bold">ANKET SISTEMI</p>
+
+                <a href="/app?token={{ request.args.get('token', '') }}"
+                    class="flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-secondary hover:bg-cream font-medium">
+                    <span class="material-symbols-outlined">assessment</span>
+                    <span>Anket Degerlendirme</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- User Info -->
+        <div class="p-4 border-t border-accent">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+                    {{ session.get('user_name', 'K')[0] }}
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="text-sm font-bold text-primary truncate">{{ session.get('user_name', 'Kullanici') }}</div>
+                    <div class="text-[10px] text-secondary uppercase tracking-wider">Klinik Psikolog</div>
+                </div>
+                <a href="{{ url_for('psikoloji_logout') }}" class="text-secondary hover:text-danger transition-colors" title="Cikis">
+                    <span class="material-symbols-outlined">logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- Aktif Seans Script -->
+<script>
+(function() {
+    const AKTIF_SEANS_KEY = 'aktif_seans';
+
+    function getAktifSeans() {
+        const data = localStorage.getItem(AKTIF_SEANS_KEY);
+        if (!data) return null;
+        try {
+            return JSON.parse(data);
+        } catch { return null; }
+    }
+
+    function updateSidebarSeans() {
+        const seans = getAktifSeans();
+        const link = document.getElementById('aktif-seans-link');
+        const text = document.getElementById('aktif-seans-text');
+        const timer = document.getElementById('aktif-seans-timer');
+
+        if (seans && seans.personel_id) {
+            text.textContent = seans.personel_ad || 'Aktif Seans';
+            link.href = `/psikoloji/seans/${seans.personel_id}`;
+
+            // Calculate elapsed time
+            if (seans.baslangic) {
+                const start = new Date(seans.baslangic);
+                const now = new Date();
+                const diff = Math.floor((now - start) / 1000);
+                const m = Math.floor(diff / 60);
+                const s = diff % 60;
+                timer.textContent = `${m} dk ${s} sn`;
+            }
+        } else {
+            text.textContent = 'Seans Baslat';
+            timer.textContent = '';
+        }
+    }
+
+    window.handleAktifSeans = function(e) {
+        const seans = getAktifSeans();
+        if (seans && seans.personel_id) {
+            window.location.href = `/psikoloji/seans/${seans.personel_id}`;
+        } else {
+            e.preventDefault();
+            window.location.href = '/psikoloji/triyaj';
+        }
+    };
+
+    // Update on load and every 5 seconds
+    updateSidebarSeans();
+    setInterval(updateSidebarSeans, 5000);
+})();
+</script>
